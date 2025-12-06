@@ -1,0 +1,264 @@
+
+I’m currently working as an Angular developer with good knowledge of Angular and Node.js. I’ve also worked with React about 7–8 months ago. While I may not be fully updated on React now, I have practical experience and can quickly pick it up again if needed.
+
+✅ Basic Level
+1.What is React?
+->React is the javascript libray to create the Frontend Development.
+->React is used to build the SPA(Single Page Application).
+-----------------------------------------------------------------------------------------------------------------------
+2.Install React Command?
+->npm install -g create-react-app.
+-----------------------------------------------------------------------------------------------------------------------
+3.How to cheack the version of React App
+->create-react-app --version.
+-----------------------------------------------------------------------------------------------------------------------
+4.How to create React App 
+->npx create-react-app my-react-app
+-----------------------------------------------------------------------------------------------------------------------
+5.How to Start the React App.
+->npm start
+-----------------------------------------------------------------------------------------------------------------------
+2.What are the key features of React?
+
+->Component-Based Architecture
+->JSX (JavaScript XML)
+->Virtual DOM
+->Unidirectional Data Flow
+->Hooks
+->React Router
+->Context API
+->Performance Optimization
+->Integration with Other Libraries
+->Server-Side Rendering (SSR)
+
+-----------------------------------------------------------------------------------------------------------------------
+3.What is Component-Based Architecture
+->Reused the component , Encaspulation, parent-child component.
+
+-----------------------------------------------------------------------------------------------------------------------
+3.Types of Component?
+->Class Component 
+
+	A class component is a React component defined using an ES6 class. It can manage its own state and use lifecycle methods like componentDidMount.
+	
+	A class component is a React component written using a JavaScript class. It can hold data (state) and use lifecycle methods.
+	
+	import React from 'react';
+	
+	exports class About extends React.Component
+	{
+		render(){
+			return <h1>I am Currently Working as a Software Developer at Technogrowth Software Solution Pvt. Ltd.</h1>
+		}
+	}
+	
+->Functional Component 
+	
+	A functional component is a simpler React component defined as a function. With the introduction of Hooks, it can now manage state and side effects, making it as powerful as class components.
+	
+	Functional components are mostly used in modern React projects because:
+
+✅ They are simpler and easier to write.
+
+✅ They have less code compared to class components.
+
+✅ They return JSX (HTML-like code) directly.
+
+✅ With Hooks (like useState and useEffect), they can also manage state and lifecycle just like class components.
+
+	import React from 'react';
+	
+	function Header(){
+		return(
+			<h1>Software Developer..!</h1>
+		)
+	}
+	
+	export default Header;
+-----------------------------------------------------------------------------------------------------------------------
+3.What is JSX?
+->JSX (JavaScript XML) is a syntax extension for JavaScript that allows you to write HTML-like code within JavaScript.
+
+-----------------------------------------------------------------------------------------------------------------------
+4.What is the difference between functional and class components?
+
+->Class Component: Old style, more code, uses this.
+
+->Functional Component: Modern, shorter code, uses Hooks.
+-----------------------------------------------------------------------------------------------------------------------
+5.What is the virtual DOM and how does it work?
+
+->	The Virtual DOM is a lightweight copy of the real DOM (Document Object Model) used by React to improve performance.
+
+	How Virtual DOM Works (Step-by-step):
+	
+	React creates a Virtual DOM when a component is rendered.
+    
+	When something changes (like user input or state), a new Virtual DOM is created.
+
+	React compares the old Virtual DOM with the new one (this process is called "diffing").
+
+	It finds out what changed.
+
+	Then, it updates only the changed parts in the real DOM (not the whole page).
+-----------------------------------------------------------------------------------------------------------------------
+6.What are props in React?
+-> Props (short for properties) are used to pass data from one component to another in React, like arguments in a function.
+
+-> Props are a way to send data from a parent component to a child component.
+
+import React import 'react';
+function About(props){
+	return(
+		<h1>Hello,{props.name}</h1>
+	)
+}
+exports default About;
+
+index.js
+
+<About name='Vishal Nimbarte'></About>
+-----------------------------------------------------------------------------------------------------------------------
+7.What is State?
+-> State is a built-in object in React used to store and manage changing data in a component.
+-> State is used to keep track of data that can change in a component, like user input, button clicks, etc.
+-----------------------------------------------------------------------------------------------------------------------
+7.What is the difference between props and state?
+
+✅ Props:
+Props are used to pass data from parent to child component. They cannot be changed by the child.
+
+✅ State:
+State is local data in a component that can change over time (like on button click or user input).
+
+👉 In Short:
+Props = data from outside (read-only)
+
+State = data inside the component (can change)
+-----------------------------------------------------------------------------------------------------------------------
+8.How do you create a React app?
+	->First, install Node.js (comes with npm).
+
+	->Use npx and run: npx create-react-app app-name.
+
+	->This will create a new React application.
+
+	->Go inside the folder and run npm start to launch it.
+-----------------------------------------------------------------------------------------------------------------------
+9.What is the purpose of key in lists?
+->it's like are array and they are map to the our DOM or HTML using the list tag
+-----------------------------------------------------------------------------------------------------------------------
+10.What are fragments (<></>) in React?
+->Fragments let you return multiple tags from a component without using a div.
+
+import React from 'react';
+function Demo(){
+	return(
+		<>
+			<h1>Vishal Nimbarte</h1>
+		</>
+	)
+}
+
+export default Demo;
+-----------------------------------------------------------------------------------------------------------------------
+
+⚙️ Intermediate Level
+
+11.What are hooks in React?
+-> 	Hooks are special functions in React that let you use state, lifecycle methods, and other React features in functional components.
+
+	🔹 Common Hooks:
+	useState – for state
+
+	useEffect – for side effects (like API calls)
+
+	useContext – for accessing context.
+
+	useRef – for DOM refs or persistent values.
+
+	useMemo / useCallback – for performance optimization.
+-----------------------------------------------------------------------------------------------------------------------
+12.What is useState and how do you use it?
+
+-> useState is a React Hook that lets you add state to a functional component.
+-> State is used to store data that can change over time, like a counter, input value, or toggle.
+
+	🔹 How to Use useState
+	
+	import React, { useState } from 'react';
+
+	function Counter() {
+	  const [count, setCount] = useState(0); // count = value, setCount = function to change it
+
+	  return (
+		<div>
+		  <p>Count: {count}</p>
+		  <button onClick={() => setCount(count + 1)}>Increase</button>
+		</div>
+	  );
+	}
+	🔹 Simple Explanation
+	
+	useState(0) → 0 is the starting value
+
+	count → current value
+
+	setCount → function to update the value
+
+	When you call setCount, the component updates with the new value.
+	
+-----------------------------------------------------------------------------------------------------------------------
+13.What is useEffect and when do you use it?
+-> useEffect is a React Hook that lets you run side effects in a functional component.
+-> 
+-----------------------------------------------------------------------------------------------------------------------
+14.How does useEffect differ from lifecycle methods in class components?
+-----------------------------------------------------------------------------------------------------------------------
+15.How do you lift state up in React?
+-----------------------------------------------------------------------------------------------------------------------
+16.
+-----------------------------------------------------------------------------------------------------------------------
+17.What are controlled vs uncontrolled components?
+-----------------------------------------------------------------------------------------------------------------------
+18.What is React Router and how do you implement routing?
+-----------------------------------------------------------------------------------------------------------------------
+19.How do you handle form inputs in React?
+-----------------------------------------------------------------------------------------------------------------------
+20.How do you conditionally render components?
+-----------------------------------------------------------------------------------------------------------------------
+
+🔁 Advanced Level
+21.What is memoization and when do you use React.memo?
+-----------------------------------------------------------------------------------------------------------------------
+22.What is the purpose of useCallback and useMemo?
+-----------------------------------------------------------------------------------------------------------------------
+23.What are custom hooks and when should you create one?
+-----------------------------------------------------------------------------------------------------------------------
+24.What is React.lazy and Suspense?
+-----------------------------------------------------------------------------------------------------------------------
+25.How do you implement code splitting in React?
+-----------------------------------------------------------------------------------------------------------------------
+26.What is reconciliation in React?
+-----------------------------------------------------------------------------------------------------------------------
+27.What is the difference between useEffect, useLayoutEffect, and useInsertionEffect?
+-----------------------------------------------------------------------------------------------------------------------
+28.How does React handle reconciliation and re-rendering?
+-----------------------------------------------------------------------------------------------------------------------
+29.How would you optimize performance in a large React app?
+-----------------------------------------------------------------------------------------------------------------------
+30.Explain the React Fiber architecture.
+-----------------------------------------------------------------------------------------------------------------------
+
+🧪 Testing & Best Practices
+31.How do you test React components?
+-----------------------------------------------------------------------------------------------------------------------
+32.What is the difference between shallow and deep rendering?
+-----------------------------------------------------------------------------------------------------------------------
+33.What are some common performance issues in React and how do you fix them?
+-----------------------------------------------------------------------------------------------------------------------
+34.Why should keys be unique and stable in a list?
+-----------------------------------------------------------------------------------------------------------------------
+35.What are best practices when structuring a large-scale React app?
+-----------------------------------------------------------------------------------------------------------------------
+

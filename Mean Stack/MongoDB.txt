@@ -1,0 +1,406 @@
+1.what is mongodb?
+->MongoDB is a NoSQL database that stores data in the form of key-value pairs, and its structure is similar to JSON.
+->mongodb provides high scalability,flexibility and performance.
+->mongodb they are stored json formated.
+->mongodb is a open source and cross platform.
+-----------------------------------------------------------------------------------------------
+2.what is NoSQL database?
+->NoSQL database means Non Realtional database basically and they are faster as compared to the Relational database.
+-----------------------------------------------------------------------------------------------
+3.What is database?
+->database is the container of the collections.
+-----------------------------------------------------------------------------------------------
+4.what is collection?
+->collection is a group of documents.
+-----------------------------------------------------------------------------------------------
+5.what is BSON?(help mongodb drivers for this)?
+->Binary Representation of the Object Notation.
+->JSON ->[converted] BSON(Binary JSON) -> [pass] Database/storage
+-----------------------------------------------------------------------------------------------
+6.Difference between the JSON vs BSON?
+->JSON :- JSON files are written in text format.
+->BSON :- BSON files are Binary Formate.
+
+->JSON :- JSON files are human readable and they are contain to the key and values pair formate data stored.
+->BSON :- BSON file Machine readable and they are contain the 0 and 1 values only.
+
+->JSON :- JSON size is large as compare to the BSON.
+->BSON :- BSON size is lower or small as compare to the JSON.
+
+->JSON :- slower
+->BSON :- faster
+-----------------------------------------------------------------------------------------------
+7.Explain the basic structure of a MongoDB document.
+->A MongoDB document is a key-value pair structure, similar to a JSON object.
+
+Example :- 
+
+{
+  "_id": ObjectId("abc123"),
+  "name": "Vishal",
+  "age": 25,
+  "skills": ["Java", "MongoDB"],
+  "address": { "city": "Pune", "zip": "411001" }
+}
+
+-----------------------------------------------------------------------------------------------
+8.How is data stored in MongoDB compared to a traditional SQL database?
+
+->mongodb conatain number of the databases and every databases contain to the number of the collection and every colletion are contain to the number of the documents
+->basically traditional sql database contain the rows and coloumn structure but the mongodb are container of the colletions and documents.
+->So, MongoDB uses a flexible, document-based structure, while SQL uses fixed tables with rows and columns.
+
+-----------------------------------------------------------------------------------------------
+
+9.What is a collection in MongoDB?
+->A collection in MongoDB is a group of documents, similar to a table in SQL.
+->It stores multiple documents.
+
+-----------------------------------------------------------------------------------------------
+10.How do you insert a document into a MongoDB collection?
+
+->To insert a document into a MongoDB collection, you can use the insertOne() or insertMany() methods provided by the MongoDB driver or shell.
+->find() they are view the collections data 
+
+syntax :- 
+
+db["users"].find();
+
+->insertOne() they are inserted the data to the collections
+
+syntax :- 
+
+db.users.insertOne({"name":"Vishal Nimbarte","age":23,"location":"Mumbai"});
+
+->insertMany() they are inserted the multiple data to the collection 
+
+syntax :- 
+
+db.users.insertMany([
+    {"name":"Vishal Nimbarte","age":23,"location":"Mumbai"},
+    {"name":"Vishal Nimbarte","age":23,"location":"Mumbai"}
+])
+
+-----------------------------------------------------------------------------------------------
+11.What is the _id field in MongoDB and why is it important?
+-> _id is a unique identifier for each document in a collection.
+-> It is used to uniquely identify and track each document.
+-> MongoDB automatically creates it if you don’t provide one.
+-> _id works like a primary key in SQL.
+-----------------------------------------------------------------------------------------------
+12.What is the primary difference between findOne() and find() methods in MongoDB?
+->Method	      Description
+->findOne()	    Returns only one matching document
+->find()  	    Returns all -matching documents as a cursor
+-----------------------------------------------------------------------------------------------
+
+12.What is the purpose of indexing in MongoDB?
+
+->Indexing in MongoDB is used to improve the performance of search/query operations.
+
+->indexing they are provided the unique reference of the document so that reason was they are improve the performance of the search/query operation.
+
+-----------------------------------------------------------------------------------------------
+
+13.Explain the concept of aggregation in MongoDB?
+
+->Aggregation is used to perform operations on a group of documents, such as using $sum, $avg, $count, etc., to analyze and summarize data.
+
+orders:-
+
+[
+  { "item": "Book", "status": "delivered" },
+  { "item": "Pen", "status": "pending" },
+  { "item": "Bag", "status": "delivered" },
+  { "item": "Box", "status": "pending" },
+  { "item": "Watch", "status": "cancelled" }
+]
+
+db.orders.aggregate([
+  {
+    $group: {
+      _id: "$status",
+      totalOrders: { $sum: 1 }
+    }
+  }
+]);
+
+
+sales :- 
+
+[
+  { "item": "Book", "price": 200, "quantity": 2 },
+  { "item": "Book", "price": 150, "quantity": 1 },
+  { "item": "Pen", "price": 50, "quantity": 5 },
+  { "item": "Pen", "price": 60, "quantity": 3 }
+]
+
+db.sales.aggregate([
+  {
+    $group: {
+      _id: "$item",
+      totalQuantity: { $sum: "$quantity" }
+    }
+  }
+])
+
+db.sales.aggregate([
+  {
+    $group: {
+      _id: "$item",
+      averagePrice: { $avg: "$price" }
+    }
+  }
+])
+
+-----------------------------------------------------------------------------------------------
+
+14.create collection command?
+->db.createCollection("sales");
+
+-----------------------------------------------------------------------------------------------
+
+<COPY>
+
+15. What is the $lookup aggregation stage used for?
+->$lookup is basically used to perform an inner join between two or more different collections in MongoDB.
+->The join concept is applied with the help of the $lookup operator.
+->The $lookup aggregation stage in MongoDB is used for performing a left outer join between documents from two collections in the same database.
+
+->Suppose we have two collections: orders and customers. We want to retrieve orders along with the corresponding customer information.
+
+// customers
+{ _id: 1, name: "Vishal", city: "Pune" }
+{ _id: 2, name: "Riya", city: "Mumbai" }
+{ _id: 3, name: "Aman", city: "Delhi" }
+
+// orders
+{ _id: 101, product: "Laptop", customerId: 1 }
+{ _id: 102, product: "Phone", customerId: 2 }
+{ _id: 103, product: "Tablet", customerId: 1 }
+{ _id: 104, product: "Camera", customerId: 3 }
+
+db.orders.aggregate([
+  {
+    $lookup: {
+      from: "customers",        // Collection to join
+      localField: "customerId", // Field in orders
+      foreignField: "_id",      // Field in customers
+      as: "customer"            // Output array field
+    }
+  }
+]);
+
+-----------------------------------------------------------------------------------------------
+
+16.How do you update a document in MongoDB?
+->🔹 1. updateOne() – Updates the first matching document
+
+db.users.updateOne(
+  { name: "Vishal" },              // Filter
+  { $set: { age: 24 } }            // Update
+)
+
+➡️ This updates the age field to 24 for the first user with name "Vishal".
+
+🔹 2. updateMany() – Updates all matching documents
+
+db.users.updateMany(
+  { isActive: false },//filter
+  { $set: { status: "inactive" } }//set the data
+)
+
+🔹 3. replaceOne() – Replaces the whole document
+
+db.users.replaceOne(
+  { name: "Nick" },//filer data 
+  { name: "Nick", age: 22, email: "nick@example.com" }//set the data 
+)
+
+In short:
+Use updateOne() to modify one document, updateMany() for multiple, and replaceOne() to replace the entire document.
+
+-----------------------------------------------------------------------------------------------
+
+18.What is the purpose of the $set operator in MongoDB updates?
+->The $set operator is used to update specific fields in a document or add new fields if they don’t exist.
+
+-----------------------------------------------------------------------------------------------
+
+19.How do you delete documents in MongoDB?
+->In the MongoDB we can used the deleteOne() or deleteMany() methods.
+
+🔹 1. deleteOne() – Deletes the first matching document:
+db.users.deleteOne({ name: "Vishal" })
+
+🔹 2. deleteMany() – Deletes all matching documents:
+db.users.deleteMany({ isActive: false })
+
+In short:
+Use deleteOne() to remove a single document and deleteMany() to remove multiple documents based on a condition.
+-----------------------------------------------------------------------------------------------
+
+20.Difference between updateOne() and updateMany() in MongoDB?
+
+| Method         | Description                                                  |
+| -------------- | ------------------------------------------------------------ |
+| `updateOne()`  | Updates only the first document that matches the filter.     |
+| `updateMany()` | Updates all documents that match the filter.                 |
+-----------------------------------------------------------------------------------------------
+
+
+<COPY>
+
+21.What are the different types of indexes supported in MongoDB?
+
+MongoDB provides different types of indexes to make queries faster and improve performance:
+
+Single Field Index : Used to index one field in a document.
+Example: name, email.
+
+Compound Index : Used to index two or more fields together.
+Example: name and age together.
+
+Multikey Index : Used when a field has an array.
+MongoDB creates index entries for each element in the array.
+
+Geospatial Index: Used for location-based data (like latitude and longitude).
+Helps to find nearby places.
+
+Text Index : Used to search text content (like articles or descriptions).
+Supports searching with keywords.
+
+-----------------------------------------------------------------------------------------------
+22. What is a document in MongoDB?
+->A document is the basic unit of data in MongoDB.
+->It is similar to a row in SQL but stored in JSON-like format (BSON).
+-----------------------------------------------------------------------------------------------
+23. Is MongoDB schema-less?
+->Yes, MongoDB is schema-less, meaning each document in a collection can have different fields and structures.
+-----------------------------------------------------------------------------------------------
+
+24. What is the default port of MongoDB?
+->The default port is 27017.
+
+-----------------------------------------------------------------------------------------------
+25. What is MongoDB Compass?
+->MongoDB Compass is a GUI (Graphical User Interface) tool for MongoDB.
+->It allows you to visualize and manage databases, collections, and documents easily without writing queries.
+-----------------------------------------------------------------------------------------------
+26. How to check all databases in MongoDB?
+->  show dbs
+-----------------------------------------------------------------------------------------------
+27. How to check all collections in the current database?
+->show collections
+-----------------------------------------------------------------------------------------------
+28. How to switch to or create a database?
+->use myDatabase
+-----------------------------------------------------------------------------------------------
+29.How to drop a database?
+->db.dropDatabase()
+-----------------------------------------------------------------------------------------------
+30.How to drop a collection?
+->db.collectionName.drop()
+-----------------------------------------------------------------------------------------------
+31. What is ObjectId in MongoDB?
+->ObjectId is a unique ID created by MongoDB for each document as the value of the _id field.
+->It includes timestamp, machine ID, and process ID, making it unique.
+-----------------------------------------------------------------------------------------------
+33. Can MongoDB store binary data?
+->Yes, using the BinData data type, MongoDB can store images, videos, and other binary files.
+-----------------------------------------------------------------------------------------------
+
+34. How to limit the number of documents returned in a query?
+->db.users.find().limit(5)
+
+-----------------------------------------------------------------------------------------------
+
+I haven’t worked with handling large data in MongoDB yet, but I know how to do basic things like creating collections, adding data, finding data, and updating data using commands like find(), insertOne(), and updateOne().
+
+
+MongoDB Interview Questions
+
+What is MongoDB and how is it different from SQL databases?
+->MongoDB is a NoSQL database that stores data in flexible document format instead of tables.
+It is different from SQL databases because it does not require a fixed schema, and it is good for handling large or changing data structures.
+-----------------------------------------------------------------------------------------------
+What is Differance bwtween the SQL and NoSQL Database?
+-----------------------------------------------------------------------------------------------
+What is a document in MongoDB?
+->A document in MongoDB is like a JavaScript object that stores key-value data. It can have any structure and is stored inside a collection.
+-----------------------------------------------------------------------------------------------
+What is the difference between embedded and referenced documents?(IMP)
+->Embedded means the data is stored inside the main (parent) document.
+->Referenced means the data is stored in another document and connected using _id.
+-----------------------------------------------------------------------------------------------
+How do indexes work in MongoDB? How do you create one?
+->An index in MongoDB helps to quickly find and access documents in a collection.
+It improves performance when searching, filtering, or sorting by tracking the field values inside the documents.
+-----------------------------------------------------------------------------------------------
+Explain the aggregation pipeline.
+->The aggregation pipeline in MongoDB is used to filter, group, sort, and process data step by step to get useful results from large collections.
+-----------------------------------------------------------------------------------------------
+How does MongoDB handle relationships?
+->MongoDB handles relationships using embedded documents and referenced documents, depending on the project requirements.
+-----------------------------------------------------------------------------------------------
+What is the purpose of ObjectId in MongoDB?
+->ObjectId is used as a unique ID for each document in MongoDB.
+It helps in identifying, indexing, and sorting documents efficiently.
+->ObjectId is the default unique identifier for documents in MongoDB.
+It is stored in the _id field and used to uniquely identify each document in a collection.
+-----------------------------------------------------------------------------------------------
+What are the advantages of using MongoDB?
+->MongoDB is flexible, fast, scalable, and easy to use for modern apps — especially when data is dynamic or not strictly structured.
+-----------------------------------------------------------------------------------------------
+
+What is the use of $lookup, $match, $group in aggregation?
+->$match :- they are filter the document based on there condition.
+
+db.users.aggregate([
+  { $match: { age: { $gt: 25 } } }
+])
+
+In MongoDB:
+$gt means greater than
+$lt means less than
+$gte means greater than or equal to
+$lte means less than or equal to
+
+Quick Examples:
+Operator	Meaning	Example
+$gt	Greater than	{ age: { $gt: 25 } }
+$lt	Less than	{ age: { $lt: 25 } }
+$gte	Greater than or equal	{ age: { $gte: 25 } }
+$lte	Less than or equal	{ age: { $lte: 25 } }
+
+->$lookup : Joins another collection (like JOIN in SQL).
+->$group  : Group is used to perform operations on a group of documents
+-----------------------------------------------------------------------------------------------
+How do you perform transactions in MongoDB?
+->session.startTransaction();
+->session.commitTransaction();
+->session.endSession();
+there is the this three step are to handling the transactions in MongoDB.
+-----------------------------------------------------------------------------------------------
+What is sharding and replication in MongoDB?
+-> sharding : Splits large data into smaller parts that is called shards and across multiple servers.
+-> replication : Copies data from one server (primary) to other servers (secondaries).
+-----------------------------------------------------------------------------------------------
+Explain how to optimize queries in MongoDB.
+->use indexes 
+->use find
+->avoid $where and Regex without Prefix
+-----------------------------------------------------------------------------------------------
+Difference between find() and aggregate().
+->find() basicaclly used to filter and finding the document and 
+->aggregate() basicaclly used to perform the operation to the group of the document
+-----------------------------------------------------------------------------------------------
+What is the role of MongoDB Compass?
+->MongoDB Compass they are provided the Graphical User Interface.
+->with the help of this Compass they are not need to write a complex command. and no need to the remember every command.
+-----------------------------------------------------------------------------------------------
+How do you implement pagination in MongoDB?
+->Pagination is used to manage large amounts of data by breaking it into smaller parts (pages). It helps load data page by page, improving performance and user experience.
+->Pagination is basically used to manage a large amount of data efficiently. It loads data page by page based on page number and page size. This improves performance by avoiding loading all records at once. MongoDB supports pagination using skip() and limit() methods.
+->so in that case skip() is used skip number of documents as per requirements and limit() is used how many document are show.
+-----------------------------------------------------------------------------------------------

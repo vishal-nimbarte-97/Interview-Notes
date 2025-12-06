@@ -1,0 +1,1612 @@
+Good Morning Ma'am, 
+My name is Vishal Nimbarte. I am currently working as a Software Developer at Technogrowth Software Solutions, I have 2 years of experience in software development. So, During this time, I have worked on two to three major projects with differance domain like a e-commerce platform and logistics solution and i am currently worked as a client side Bajaj Finserv and my currently working to the Uniconnect Web application it's a bajaj product for calling center. i have strongly specialization in Angular and Node.js.I also have hands-on experience in developing scalable and user-friendly web applications.
+
+so, that's all about me.
+
+Thank you!
+
+------------------------------------------------------------------------------------------------------
+what is your current project and what i your role?
+->my current project is Kpay Web Application 
+->and In my current role, I handle both frontend and backend development, integrate third-party APIs, and improve application performance.
+------------------------------------------------------------------------------------------------------
+what is current role?
+->In my current role, I handle both frontend and backend development, integrate third-party APIs, and improve application performance.
+------------------------------------------------------------------------------------------------------
+what is size of team?
+->I'm part of an 10-members team that includes 5 Full Stack Developers, a Team Lead,a QA lead , Manager,  Business Analyst, and a Tester. We work together using the Agile methodology to deliver quality solutions.
+------------------------------------------------------------------------------------------------------
+what is notice period?
+->My current notice period is 2 months, but I am open to discussing an early release if needed.
+------------------------------------------------------------------------------------------------------
+what is your current salary?
+->My current salary is 4.5 LPA.
+------------------------------------------------------------------------------------------------------
+what is your expecetation ?
+->Based on my skills and experience, I am expecting around 8 LPA.
+------------------------------------------------------------------------------------------------------
+
+Kpay Project Description:
+
+Kpay is a platform that provides electronic and solar devices to end users on a monthly recharge-based model.
+Each device is assigned a unique activation code, and the device becomes active once the code is successfully recharged.
+
+The system implements role-based access control, ensuring secure, permission-based access for various user roles such as:
+
+Super Admin, Manufacturer, Owner, Distributor, Customer
+
+The platform supports real-time device recharging functionality.
+
+It is integrated with more than 6 payment gateways, including PayU, Pay Paisa, and others, tailored for different countries to support global transactions.
+
+IOT based applinces this device.
+------------------------------------------------------------------------------------------------------
+
+WPS Description :-
+
+->Wellington Parcel Service (WPS) is a Canada-based logistics platform that manages parcel shipments between customers and carriers.
+->they are contain the two types of the portal order create portal and order tracking portal 
+->basicacally end customer are create order and this are order are track using the tracking portal 
+->The WPS system uses role-based access, so each user sees only their own data.
+
+WPS is connected with many third-party carriers like:
+Midland, Obibox, Frontier, Roadrao, Canada Post, Corporate Courier
+
+WPS works with big business customers like:
+DHL, Atlas, CanPrev, Supership, Funding Innovations
+
+Main features of the system:
+Create and manage orders, Track parcels in real-time, Choose the best carrier automatically, Safe and secure user login with role-based access.
+
+->And in this project my role is also to contribute to both frontend and backend Technology, and i also integrating to the third parties carriers api.
+
+------------------------------------------------------------------------------------------------------
+0.What is HttpClientModule in Angular?
+->HttpClientModule is the Angular module that allows your app to communicate with backend APIs over HTTP or HTTPS.
+------------------------------------------------------------------------------------------------------
+1.What is Angular?
+------------------------------------------------------------------------------------------------------
+2.What are the key features of Angular?
+------------------------------------------------------------------------------------------------------
+3.What is a Component in Angular?
+------------------------------------------------------------------------------------------------------
+4.What is the differance between Angular & Angular.JS ?
+------------------------------------------------------------------------------------------------------
+5.What is Directives  in Angular?
+A directive in Angular is a class that is used to change or control the behavior and appearance of DOM elements.
+There are three main types of directives:
+Structural Directives – These change the layout or structure of the DOM.
+👉 Example: *ngIf, *ngFor, *ngSwitch
+Attribute Directives – These change the appearance or behavior of an element.
+👉 Example: ngClass, ngStyle
+Custom Directives – These are user-defined directives created to perform specific tasks or custom behaviors.
+------------------------------------------------------------------------------------------------------
+6.Types of Directives in Angular?
+->there is the three types of Directives in Angular 
+->structure directives 
+->attributes directive
+->custome diectives 
+------------------------------------------------------------------------------------------------------
+7.What is Data Binding?
+-> Data binding in Angular is the connection between the HTML template file and the component.ts file. It automatically syncs data between these two files. There are four main types of data binding in Angular:
+
+A.interpolation :- they are transfer the data compoent.ts to the html template file, and if there any changes in the compoent.ts file so they are automatically syncup to the html template and they are used double curly braces {{}}.
+
+B.property binding :- property binding case they are transfer the data from component.ts file to the html template file,this is syntax of the property binding [property]="value".
+
+C.event Binding :- event binding case they are transfer the data html template to component.ts file and they are syncup data automatically and sytax is (event)="methodName()".
+
+D.two way data binding :- two way data binding means they are combination bwtween the event binding and property binding , they are automatically sync up the data between the html template file and compoent.ts file.
+------------------------------------------------------------------------------------------------------
+8.Real Time Senario of the Two way Data Binding?
+->searching functionality is real time senario of the two way data binding.
+------------------------------------------------------------------------------------------------------
+9.What is Differance Between the ngIf and ngSwitch?
+->*ngIf and *ngSwitch both are used to handling condition in html temlate file 
+------------------------------------------------------------------------------------------------------
+10.What are Services in Angular?
+->A Service in Angular is a class where we write business logic that can be shared across the entire application.
+->Services are used to separate logic from components.
+->To use a service in a component, we use Dependency Injection (DI).
+->Services help make the code reusable, clean, and maintainable.
+------------------------------------------------------------------------------------------------------
+11.What is the Dependency Injection in Angular?
+->	We can write any service in the angular and this service if you want to used the our compoent so they are inject using the constructor and this process is called as the Dependency Injection. 
+------------------------------------------------------------------------------------------------------
+12.What is Routing in Angular?
+->If you want to navigate one view to another view that is the concept of the routing 
+------------------------------------------------------------------------------------------------------
+13.What is Route Gaurd and there types?
+->A Route Guard is used in Angular to protect routes from unauthorized access.
+
+There are five main types of route guards:
+	canActivate
+	canDeactivate
+	canActivateChild
+	canLoad
+	resolve
+
+------------------------------------------------------------------------------------------------------
+13.Explain Angular Lifecycle of Hooks?
+-> constructor -> The component is called so constructor is the first hooks of angular like cycle they are exexuted.
+-> ngOnchanges -> 
+-> ngOnInit 
+-> ngDoCheck
+-> ngAfterCotentInit
+-> ngAfterContentCheck
+-> ngAfterViewInit
+-> ngAfterViewCheck
+-> ngDestroy 
+------------------------------------------------------------------------------------------------------
+14.Explain Memory Leakage in Angular?
+------------------------------------------------------------------------------------------------------
+15.Why Memory Leaks Happens in Angular?
+------------------------------------------------------------------------------------------------------
+16.How to Detect Memory Leaks in Angular?
+------------------------------------------------------------------------------------------------------
+17.How to Avoid Memory Leaks in Angular?
+------------------------------------------------------------------------------------------------------
+18.How to Handle Large-Scale Data in Angular Tables?
+
+------------------------------------------------------------------------------------------------------
+-->19.What is OnPush in Angular?
+------------------------------------------------------------------------------------------------------
+-->20.Explain Real Time Senario of OnPush Used?
+------------------------------------------------------------------------------------------------------
+21.What is DOM Sanitization?
+------------------------------------------------------------------------------------------------------
+22.What is One & Two Way Data Binding and There Types ?
+------------------------------------------------------------------------------------------------------
+23.Explain About Dependency Injection?
+------------------------------------------------------------------------------------------------------
+24.How to Check a third-party Library for vulnerabilities?
+------------------------------------------------------------------------------------------------------
+25.What is Standalone Component?
+------------------------------------------------------------------------------------------------------
+26.How is it Different from Normal Component?
+------------------------------------------------------------------------------------------------------
+27.When to Use Standalone Component?
+------------------------------------------------------------------------------------------------------
+28.Key Features of Standalone Component?
+------------------------------------------------------------------------------------------------------
+29.What is <router-outlet>?
+------------------------------------------------------------------------------------------------------
+30.What is @HostLinsterner & @HostBinding?
+------------------------------------------------------------------------------------------------------
+31.What is an Interceptor in Angular?
+------------------------------------------------------------------------------------------------------
+32.Why use are Interceptor?
+------------------------------------------------------------------------------------------------------
+33.I have totoal 10 API , I want to used the interceptor only for 7 API and skip for 3 API , so How can I do this. 
+------------------------------------------------------------------------------------------------------
+34.How can you catch error get from backend?
+------------------------------------------------------------------------------------------------------
+35.What is used of (ng-model)?
+------------------------------------------------------------------------------------------------------
+36.Differance between Template driven from and Reactive form?
+->Imports needed	  FormsModule	           ReactiveFormsModule.
+
+-> Template driven forms are used basically small case or static forms are there so we will used the template dirvern forms 
+-> reactive form are used dynamic froms are there of complex form are there so we will used the reactive forms.
+
+template driven forms are used the two way data binding concept and used the ng-model 
+reactive forms case they are used the formgroup and formControlName 
+
+-> if you used the reactive forms so we need to the imports the reactiveFormsModule 
+-> and if you used the template driven forms so we need to the imports the forms module in the app.module.ts fie 
+------------------------------------------------------------------------------------------------------
+37.What is track by ?
+->trackBy is used with *ngFor to improve performance when displaying lists or tables.
+->It helps Angular identify which items changed, were added, or removed — so it only re-renders the affected items, not the whole list.
+
+🔍 Why use trackBy?
+By default, Angular uses object references to track changes. When data changes (like adding a new row), Angular may re-render the whole list.
+Using trackBy, Angular knows exactly which item changed, improving performance especially for large lists.
+
+------------------------------------------------------------------------------------------------------
+38.What is differance between ng build and ng serve?
+->ng build basically used to create a production build timing 
+->ng serve is used to if want only run test webapp on local system
+------------------------------------------------------------------------------------------------------
+39.I want to load some config before starting angular app, How can I do?
+->we can used APP_INITIALIZER they are exectued before starting angular app
+------------------------------------------------------------------------------------------------------
+
+40.Explain APP_INITIALIZER?
+->
+✅ Simple explanation:
+APP_INITIALIZER is used when you want to load important config files or dependencies before the Angular app starts.
+
+For example:
+Load API base URLs from a config file
+Load user roles, permissions, or settings from the backend
+Connect to external services (like Firebase, Auth0, etc.)
+This ensures that everything is ready before the app shows anything to the user.
+
+🔧 So think of APP_INITIALIZER like a setup step that runs before the Angular app starts
+------------------------------------------------------------------------------------------------------
+41.What is AuthGaurd in Angular?
+-> AuthGuard is used to protect routes in an Angular application.
+-> It checks whether the user is logged in (usually by verifying a token).
+-> If the user is not authenticated, it redirects them to the login page.
+------------------------------------------------------------------------------------------------------
+42.How to Use AuthGaurd?
+->AuthGaurd basically used to secure routes in angular application.
+->If check user are login or not for there authencatution process and user are not logged so in the auth gard they are direclty navigating to the login page.
+------------------------------------------------------------------------------------------------------
+43.What is Route Gaurd in Angular?
+->Route Gaurd is type of the AuthGaurd basicaclly we can write the mutliple conditon or they are used for the role base acces controlled case 
+-> A Route Guard is a feature in Angular used to control access to routes.
+It allows you to define conditions that must be true before navigating to a route.
+
+There are different types of route guards:
+
+CanActivate – Checks if the user can access a route.
+
+CanDeactivate – Checks if the user can leave a route.
+
+CanActivateChild – Checks if a child route can be accessed.
+
+CanLoad – Checks if a module can be lazily loaded.
+
+Resolve – Loads data before navigating to a route.
+------------------------------------------------------------------------------------------------------
+44.Dirreance Between AuthGaurd and Route Gaurd?
+->AuthGaurd is a type of the route gaurd and there main work is they are check user are logged or not 
+->Route Gaurd case they are multiple condition write role bases accessed controlled wise and perticular are access the perticular routes for there authorization wise.
+------------------------------------------------------------------------------------------------------
+45.How to determine whether a user is logged in or not?
+-> To check if a user is logged in, follow these steps:
+Check if the token exists in local storage or session storage.
+Check if the token is valid and not expired (using expiry time or JWT decode logic).
+If the token exists and is not expired, the user is considered logged in.
+------------------------------------------------------------------------------------------------------
+46.What is used of --force while installing packages?
+->Sometimes, when you install a package using npm i package-name, it may show errors during installation.
+To ignore these errors and still install the package, we can use the --force flag.
+This flag forces the installation by skipping the errors and adds the dependency to our Angular application.
+------------------------------------------------------------------------------------------------------
+
+---->47.What is difference between --force and --legacy-peer-deps too.
+
+--force: Even if there are errors or conflicts, ignore everything and forcefully install the package.
+
+--legacy-peer-deps: Only skip peer dependency errors and install the package without breaking like in old npm versions.
+
+so , i will recomeded first is used the lagacy-peer-deps they are skip the peer dependency erros .
+In case they are also occured the errors or conflits so we can used the --force flag.
+
+⚠️ When to use?
+Use --legacy-peer-deps when you see peer dependency warnings.
+
+Use --force only as a last option, if nothing else works — it may break things.
+
+Peer dependencies avoid version conflicts
+
+------------------------------------------------------------------------------------------------------
+47.What is the used of @viewChild?
+
+-> @ViewChild is used inside a parent component to access a child component, directive, DOM element, or HTML element from the template.
+
+With the help of @ViewChild, we can:
+Call child component methods or access its properties.
+
+Access DOM elements directly
+
+@ViewChild references are usually accessed in the ngAfterViewInit() lifecycle hook, not in ngOnInit().
+This is because ngOnInit() runs before the child components or DOM elements are fully initialized, so the @ViewChild value will be undefined.
+
+But in ngAfterViewInit(), all child components and DOM elements are ready, so we can safely use @ViewChild there.
+🔁 In short: Use @ViewChild inside ngAfterViewInit() to avoid undefined values.
+------------------------------------------------------------------------------------------------------
+
+48.Give me example where you have invoked manual change detection and how?
+-> By default, Angular automatically detects changes and re-renders the application.
+But in some cases — like when using sockets, timers, or external libraries — Angular does not detect the changes.
+In such cases, we can use ChangeDetectorRef to manually trigger change detection.
+------------------------------------------------------------------------------------------------------
+48.Differance between the markForkCheck() and detectChange()?
+-> markForCheck() triggers change detection, but it does not immediately update the application.
+The data is updated in the next Angular execution cycle — for example, when you go to another tab and come back, the changes will appear.
+But in the case of detectChanges(), the changes are updated immediately in the view at that moment.
+
+✅ In short:
+markForCheck() → updates view in next cycle
+detectChanges() → updates view immediately
+------------------------------------------------------------------------------------------------------
+49.How to add Bootstrap in Angular Application?
+-> There are two ways to add Bootstrap in an Angular application:
+
+Using CDN
+We can directly use the Bootstrap CDN link by adding it inside the <head> tag of the index.html file.
+
+<!-- index.html -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+
+Using npm install
+We can also install Bootstrap using the following command:
+
+npm install bootstrap
+After installation, we need to configure it in angular.json.
+Go to the angular.json file and set the Bootstrap path in the "styles" array like this:
+
+"styles": [
+  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "src/styles.css"
+]
+------------------------------------------------------------------------------------------------------
+50.How to Use NG-ZORRO in an Angular Application?
+-> NG-ZORRO is an Angular UI library, and it contains many inbuilt components.
+
+If we want to install NG-ZORRO in our Angular application, we can use the following command:
+
+ng add ng-zorro-antd
+
+This will automatically configure everything, including adding styles in the angular.json file.
+------------------------------------------------------------------------------------------------------
+51.If we want to used both NG-ZORRO and bootstrap so it's possible?
+->Yes, it's possible to use both NG-ZORRO and Bootstrap, but their styles may conflict, so we have to manage the design carefully.
+
+52.What is pipes?
+->Pipes basically used to transform data using the pipe operator.
+->timer,toLowecase,UpperCase like that pipes are used 
+------------------------------------------------------------------------------------------------------
+
+--->52.What is async pipe?
+------------------------------------------------------------------------------------------------------
+--->53.How can we say Asyn Pipe it type of the pure pipe?
+
+
+------------------------------------------------------------------------------------------------------
+
+54.How to apply background colors to rows in a table based on the age condition (age>18 blue else green)?
+->
+------------------------------------------------------------------------------------------------------
+
+55.What is CORS Origin error, how can we handle it?
+-> CORS stands for Cross-Origin Resource Sharing.
+
+This error occurs in Angular applications when we try to send a request to a different domain/server without proper permission.
+By default, browsers block these requests for security reasons.
+
+✅ How to handle it?
+There are two ways to handle the CORS origin error:
+
+Backend side – (✅ Recommended)
+Frontend side – using proxy.config.json in Angular
+
+✅ My current application setup:
+In my current application, we handle the CORS error on the Node.js server side.
+We install the cors package and use it as middleware.
+
+npm install cors
+const cors = require('cors');
+app.use(cors());
+
+✅ In short 
+CORS error occurs when the request is blocked due to cross-origin policy.
+We can fix it using backend changes (recommended), or by setting a proxy file in frontend.
+In my app, we handled it on the backend side using the cors module in Node.js.
+------------------------------------------------------------------------------------------------------
+
+56.What is Angular Proxy or Server-Side proxy?
+-> In Angular, a proxy is used to bypass CORS errors during development.
+It allows the Angular app to send requests to the backend server without getting blocked by the browser.
+Basically, it contains some lines of code (proxy rules) that tell the browser to allow and forward requests to the backend server.
+
+------------------------------------------------------------------------------------------------------
+57.What is <ng-container>?
+-><ng-container> is used instead of <div> for conditions,
+->so the layout doesn't change, and it doesn’t add extra HTML.
+------------------------------------------------------------------------------------------------------
+58.In Same div can we used two structural directive? why? and how to fixed it? 
+-> No, it's not possible to use two structural directives (like *ngIf and *ngFor) on the same HTML element.
+This is because Angular transforms structural directives into HTML templates internally, and having more than one on the same element causes a conflict.
+
+✅How to fix it?
+We can fix this by using an <ng-container>, which doesn't create extra DOM elements.
+------------------------------------------------------------------------------------------------------
+59.What is ng-template?
+ng-template is used when we want to write an else condition.
+👉 For example: If a condition like *ngIf is false, then the else block is shown using ng-template.
+Consider a case:
+We are fetching multiple data from the backend.
+If data is available, we show the list on the UI.
+But if no data is found (0 records), then we want to show a message like "No Data Available".
+In that case, we write the else block using ng-template.
+
+✅ Key Points:
+ng-template is not directly rendered in the DOM by default.
+When the if condition is false, Angular renders the ng-template block.
+It is very useful to handle empty state or alternative content.
+------------------------------------------------------------------------------------------------------
+60.What is content project (ng-content)?
+->transfter the data bwtween the parent to child.
+->ng-content is used to send HTML content from parent to child,
+->ng-content is used to transfter the data or content form parant to child compenent.
+------------------------------------------------------------------------------------------------------
+61.What is the Universal Language of API's?
+->JSON
+------------------------------------------------------------------------------------------------------
+62.What is Differance Between @ViewChild and @ViewChildren?
+-> @ViewChild is used in the parent component to access one element, directive, or component from the child or DOM.
+But in the case of @ViewChildren, we use it to access multiple elements, directives, or components from the DOM.
+
+✅ In short:
+@ViewChild → used to access single element or directive.
+
+@ViewChildren → used to access multiple elements or directives.
+------------------------------------------------------------------------------------------------------
+----> 63.What is the Role of ng Module?
+-> NgModule is a core part of Angular that helps to organize the application.
+
+It is used to group related things like:
+components
+directives
+pipes
+services
+and other modules into a single unit.
+
+------------------------------------------------------------------------------------------------------
+
+✅ 64. What is NgModule in Angular? Why was it used before Angular 14?
+NgModule is a core part of Angular that helps to organize the application structure.
+It groups components, directives, pipes, and services into one unit.
+Before Angular 14, it was mandatory to define all components inside a module using @NgModule.
+Without it, Angular didn’t know how to load or use the components.
+
+✅ After Angular 14:
+Angular introduced Standalone Components, so now we can create components without @NgModule.
+So, from Angular 14 onwards, NgModule is not mandatory.
+
+------------------------------------------------------------------------------------------------------
+65.What are Standalone Component in Angular?
+->Standalone components are Angular components that do not need to be declared inside an NgModule.
+->They are independent and can be used or executed directly without using any module.
+->Standalone components are mainly used to reuse the component easily and optimize the code structure.
+------------------------------------------------------------------------------------------------------
+66.Is NgModule required in Angular 16+?Why or why not?
+-> No, NgModule is not required in Angular 16+.
+Because after Angular 14, Angular introduced Standalone Components.
+So in Angular 16+, you can use standalone: true in the component decorator, and the component will work independently.
+That means, you don’t need to declare the component inside any NgModule.
+------------------------------------------------------------------------------------------------------
+67.What are the Benifites of using Standalone Component insted of ngModule?
+-> No need to declare inside NgModule
+-> Clean and simple structure
+-> Easy to reuse
+-> Easy to test and maintain
+-> Better performance with lazy loading.(they are best for lazy loading).
+------------------------------------------------------------------------------------------------------
+68.Can we mix ngModule and Standalone Component in the same projects?
+-> Yes, we can use both NgModule and standalone components in one project.
+-> First, we create a standalone component, and if needed, we can import that into a module or use it directly.
+------------------------------------------------------------------------------------------------------
+69.How do you declare dependencies in a standalone compoent?
+-> We use the imports array to declare dependencies of a standalone component.
+------------------------------------------------------------------------------------------------------
+
+
+70.What is used of Angular.json?
+-> angular.json is the main configuration file for an Angular project.
+It controls how the Angular CLI builds, serves, tests, and configures the application.
+
+-> we can install any decpenceis in angular application so they are need to the configuration to the angular.json file example like they are install the bootstrap and they are configuration to the angular.json file they are set the bootstrap path to the styles.
+------------------------------------------------------------------------------------------------------
+71.What is CLI in Angular?
+->CLI is the command line interface with the help of this we can write a command like a ng serve,ng build ng test  also with the help of this we can create a compoent there command is ng g c componentName
+------------------------------------------------------------------------------------------------------
+72.How to Change the dist or Build path in Angular?
+-> If you want to change the dist or build path in Angular,
+then you need to go to the angular.json file,
+find the build options, and change the outputPath value.
+After that, restart the Angular app, and the build files will be created in the new folder.
+------------------------------------------------------------------------------------------------------
+73.What is Lazy-Loading in Angular?
+-> Lazy loading is a concept where modules are loaded only when needed, instead of loading all modules at the start of the application.
+
+-> Lazy loading is basically used when we only want to load a module when it is needed.
+-> That means, when the user navigates to a specific route, then only that module is loaded.
+-> This helps to improve the performance and reduce the initial loading time of the Angular app.
+------------------------------------------------------------------------------------------------------
+74.Why use Lazy Loading?
+->	Lazy Loading in Angular means loading components or modules only when they are needed — not at the start of the app.
+	It helps to speed up the initial load time and makes the app faster and optimized.
+	That means lazy loading is used for optimization. Some components are not needed at the beginning, so they should not be loaded immediately.
+	Lazy loading loads the component only when it is required, which helps in avoiding full application reload and keeps the app faster.
+------------------------------------------------------------------------------------------------------
+74.What is differanance between the Lazy Loading and Eger Loading?
+
+-> Lazy loading means if I want to load a specific module only when I need it, then that module will load at that time only.
+-> In this case, Angular does not load the module at the start of the application.
+
+-> But in eager loading, all modules (even if they are not needed) are loaded at the same time when the app starts.
+-> So lazy loading helps in improving performance by loading modules only when required.
+------------------------------------------------------------------------------------------------------
+75.What is pre-loading?
+->prealoading case lazy module are already load and navigation timing they are queickly navigated one component to the another compoent.
+------------------------------------------------------------------------------------------------------
+76.why used preloading?
+------------------------------------------------------------------------------------------------------
+77.What is Circular depedency in Angular?
+
+-> Circular dependency happens when one service is injected into another service,
+and that second service also injects the first one back using Angular's Dependency Injection system.
+
+-> This creates a loop between the services, and it can cause runtime errors or unexpected behavior.
+
+------------------------------------------------------------------------------------------------------
+78.HOw to Fix Circular Dependency?
+-> To fix circular dependency, we can remove direct injection between two services.
+-> We can use Injector, create a common service, or use interfaces to break the loop.
+-> This helps to avoid runtime errors and keep our code clean and optimized.
+->we also used the interfaces or abstract class they are add the similar module to this classes.
+------------------------------------------------------------------------------------------------------
+79.What is Dependency Injection in Angular?
+->
+
+------------------------------------------------------------------------------------------------------
+80.Differance Between private and public when Injecting Services in Angular?
+-> When we inject a service with public, that service reference can be used in both the HTML template and the TypeScript file.
+
+-> But if we inject a service using private, then we can use it only inside the TypeScript file, not in the HTML template.
+
+✅ In Simple Terms:
+-> public service: we can access it in TS file and HTML template
+-> private service: we can access it only in TS file, not in HTML
+------------------------------------------------------------------------------------------------------
+81.Differance Between Injecting a Service using inject() vs Constrcutor in Angular?
+-> The main way to inject a service in a component is by using the constructor.
+-> But inject() is another way to inject a service into a component or service.
+-> inject() is used when we don’t create a constructor, like in some services or files where a constructor is not available.
+-> If we want to inject another service in that case, we can use inject().
+------------------------------------------------------------------------------------------------------
+82.Differance between constructor and ngOnInit?
+-> Constructor is the first method that gets executed when the component is created.
+-> ngOnInit() runs after the constructor, once Angular finishes initializing the component.
+-> We use the constructor to inject services.
+-> We use ngOnInit() to call APIs, write conditions, or execute initial logic after component setup.
+
+✅ Simple Flow:
+Constructor runs first → Injects dependencies
+Then ngOnInit() runs → Used for API calls or any logic
+------------------------------------------------------------------------------------------------------
+
+✅ 83. What is AOT Compiler in Angular?
+-> AOT stands for Ahead of Time Compiler.
+-> It is used to optimize the Angular build by compiling Angular HTML and TypeScript code into JavaScript at build time, before the browser loads it.
+-> This helps in faster rendering, better performance, and early error detection.
+
+✅ In Simple Words:
+-> AOT compiles your Angular code before the app runs, so the browser doesn't need to compile it. 
+-> It improves load speed and performance.
+------------------------------------------------------------------------------------------------------
+✅ 84. What is JIT Compiler in Angular?
+-> JIT stands for Just-in-Time Compiler.
+-> It compiles TypeScript into JavaScript at runtime, when the app is running in the browser.
+-> It is mainly used in development mode for faster builds during development.
+
+✅ In Simple Words:
+-> JIT converts Angular code to JavaScript when the application runs, not before like AOT.
+-> So, it is slower to load compared to AOT but faster to build during development.
+------------------------------------------------------------------------------------------------------
+85.How many types of compiler are there in Angular?
+->JIT and AOT
+------------------------------------------------------------------------------------------------------
+86.Differance between JIT and AOT in Angular?
+->	JIT is Just in Time Compiler and they are used to typescript are converted to the JavaScript at runtime
+->  AOT is the ahead of time comiler they are used to the production build are optimization case used.
+   and they are also the typescript are converted to the javsacript for the browser exection timing.
+------------------------------------------------------------------------------------------------------
+
+87.How to get params from route?
+-> Use ActivatedRoute and snapshot or paramMap.
+
+------------------------------------------------------------------------------------------------------
+✅ 88. Tell me some Route Guard service methods in Angular
+Angular provides 5 main route guard methods to secure and control navigation:
+
+canActivate – Checks if the route can be activated (e.g., user logged in or not).
+canActivateChild – Checks if child routes can be activated.
+canDeactivate – Checks if you can leave the current route (e.g., unsaved changes warning).
+canLoad – Checks if a module can be lazy-loaded.
+resolve – Used to fetch data before navigating to a route.
+------------------------------------------------------------------------------------------------------
+89.What is the differance attributes in Angular?
+->structural attributes. ->*ngIf *ngFor  
+->binding attributes. -> property binding, event binding
+->custom attributes are also there.
+------------------------------------------------------------------------------------------------------
+✅ 90. What is the use of environment.ts file in Angular?
+-> The environment.ts file is used to store configuration values for different environments like local, staging, and production.
+-> It helps to manage API URLs, feature flags, and other environment-specific settings without changing the actual code.
+
+✅ Example:
+// environment.ts (for development)
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:3000'
+};
+
+// environment.prod.ts (for production)
+export const environment = {
+  production: true,
+  apiUrl: 'https://api.production.com'
+};
+------------------------------------------------------------------------------------------------------
+91.What is Event Propagation?
+Event propagation means when both an outer and an inner div have event listeners, clicking the inner div may also trigger the outer div event due to bubbling. If we want to stop this, we can use event.stopPropagation() inside the inner div handler. This prevents the event from bubbling up to the outer div.
+------------------------------------------------------------------------------------------------------
+92.What is router-outlet?
+->When you navigate to a specific route (URL path), Angular checks the route configuration and loads the matched component into the <router-outlet>.
+------------------------------------------------------------------------------------------------------
+93.How to create Multiple router-outlet?
+->basicacally
+->Yes, Angular allows you to create multiple router-outlets using named outlets.
+
+This is useful when your layout has multiple areas that change independently, like in a dashboard where:
+Header and Sidebar stay the same.
+Main content changes based on routing.
+
+In such cases, you can use:
+One primary <router-outlet> for the main content.
+One or more named outlets for secondary content (like a popup, right panel, etc.).
+
+🧠 Real-Life Scenario:
+Imagine a dashboard with a sidebar, header, and main content area. The sidebar and header remain constant. Only the main content changes when you navigate. To handle this cleanly, we can use multiple router-outlet.
+------------------------------------------------------------------------------------------------------
+
+94.What is Tree Shaking?
+->Tree Shaking is the build optimization technique basically used in the production build timing.
+->Tree shaking means removing dead (unused) code from your project during the build process, so the final bundle is smaller and faster to load.
+
+------------------------------------------------------------------------------------------------------
+95.I want to fetch data before a compoent is called?
+
+->If we want to fetch data before a component loads, we can use a Resolver in Angular.
+
+A Resolver is a special Angular service that runs before a route is activated. When a user navigates to a route, the resolver is called first, it fetches the required data (like from an API), and only after that, the component is loaded.
+
+This way:
+The data is already available when the component loads.
+There's no need to show a loading spinner inside the component.
+It helps in scenarios where the component contains tables, lists, or important dynamic data.
+
+✅ Summary in Simple Words:
+Resolver is used to load data before the component opens. When a route is activated, resolver runs first → fetches data → passes it to the component. This is useful when we want to show things like a table with multiple rows immediately when the component is displayed.
+------------------------------------------------------------------------------------------------------
+96.Benifites of Using a Resolver?
+->fast data are occured and show the UI 
+->they are not a need of the loader 
+->and most import is they are not show the empty data in the tables
+------------------------------------------------------------------------------------------------------
+97.What is Angular Resolver?
+->fetch the data before the compoent are called Resolver.
+->they are helpful for our compoent are contain to the tables and this table contain two the multiple data.
+------------------------------------------------------------------------------------------------------
+98.Give me Real-Time Senario of Angular Resolver?
+
+->Imagine you have a dashboard page that shows a table with 100+ records from the backend (like orders, users, or shipments).
+
+If you load the component before the data arrives, the table shows as empty first, then fills later. This gives a poor user experience and may need a loading spinner.
+
+👉 To solve this, we use a Resolver.
+When the user clicks to open the Dashboard page,
+The Resolver runs first, calls the API and fetches all data,
+Once the data is received, the component loads with full data ready,
+No need for loading spinners or empty states.
+
+->Resolver helps in cases where we want to show large or important data (like tables) immediately when the component opens, without waiting or showing empty UI. It makes the app feel faster and smoother.
+------------------------------------------------------------------------------------------------------
+99.Differance between Local Storage and Session Storage.
+->local storage data is permanent stored and they are need to be clear
+->session storage case close our applciation so the session data automatically clear 
+
+->local storage also used for stored in sensetive data 
+->session are stored the login token and aonther data is stored.
+------------------------------------------------------------------------------------------------------
+100.There are several types of storage mechanisms available in browsers to manage and stored data?
+------------------------------------------------------------------------------------------------------
+101.Why Do Websities ask for 'Accept all Cookies'?
+------------------------------------------------------------------------------------------------------
+102.Encapsulation in Angular?
+->In Angular, Encapsulation is used to isolate the CSS styles of a component, so that:
+One component’s styles do not affect other components.
+Other components’ styles do not apply to the current component.
+->Emulated(By default) -> by default set (we can used or not they are directly apply to the components css styles).
+->ShowdoDom -> fully isolated
+->None -> No encaspulaltion
+------------------------------------------------------------------------------------------------------
+103.What is forRoot() and forChild()?
+->forRoot() is used for initializing configurations in the main module (AppModule).
+In our project, we have created multiple feature modules, and their routes or configurations are loaded using forChild().
+------------------------------------------------------------------------------------------------------
+104.What is used of Constrcutor in Angular?
+->Constructor is used for injecting the service, so we use the constructor in Angular to access and use that service inside the component.
+------------------------------------------------------------------------------------------------------
+107.What is ChangeDetectorRef in Angular?
+->ChangeDetectorRef in angular basicaclly used for manually changes to the angular applicaion
+------------------------------------------------------------------------------------------------------
+108.What is NgZone in Angular?
+->NgZone is a service in Angular that helps detect changes and update the UI, even if those changes happen outside of Angular’s control, like with setTimeout, setInterval, or third-party libraries.
+------------------------------------------------------------------------------------------------------
+
+109.What is zone.js?
+->zone.js is a library used in Angular that helps to detect changes automatically when any asynchronous operations (like API calls, timers, or events) happen.
+->It tells Angular when something has changed, so Angular can update the UI without manual effort.
+
+------------------------------------------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+-------------------------Core Concept--------------------------------
+154.What is a Shared Module in Angular?
+->Shared Module contains common code that we can reuse in other modules by importing it. It helps to avoid writing the same code again and again.
+------------------------------------------------------------------------------------------------------
+155.What is Interface in Angular?
+->Interface in Angular is used to define the structure of an object.
+------------------------------------------------------------------------------------------------------
+✅ 156. What is the use of app.module.ts?
+
+app.module.ts is the main file of an Angular application.
+
+It contains the declarations of all components, and it also manages imports, providers, and bootstrap components for the whole app.
+
+✅ In your wording :
+
+app.module.ts is the main file of the Angular application. It contains the declaration of components and is used to organize the whole application.
+------------------------------------------------------------------------------------------------------
+✅ 157. How can we unsubscribe from an Observable when moving to the next page?
+We unsubscribe from an Observable using the ngOnDestroy lifecycle hook in Angular.
+This helps to prevent memory leaks when the component is destroyed or when navigating to another page.
+
+✅ In your wording:
+We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks.
+------------------------------------------------------------------------------------------------------
+158.What are standalone compoents in Angular?
+->they are self dependent compoennt and they are not a need of the ngModule.
+------------------------------------------------------------------------------------------------------
+159.What are the key benefits of using Standalone Components?
+->no need of the ng module 
+->self dependent component 
+->optimize and faster as compare to the ngModule case 
+------------------------------------------------------------------------------------------------------
+160.What Angular version introduced Standalone Component?
+->After the Angular 14 they are introduced the standalone component.
+------------------------------------------------------------------------------------------------------
+161.How do you import and use other compoents inside a standalone compoents?
+->we can used the imports array to import the compenent dependencies
+------------------------------------------------------------------------------------------------------
+162.How do you bootstrap an angular application using only a standalone compoents?
+->In Angular, we can bootstrap the app using a standalone component by using the bootstrapApplication() method instead of NgModule.
+------------------------------------------------------------------------------------------------------
+178.How to Security provided our angular application?
+->Angular provides security using features like sanitization, route guards, JWT token handling, and strict content policies.
+------------------------------------------------------------------------------------------------------
+179.What is differanance between the template driven forms and reactive forms ?
+->template driven froms are used when the small forms or static forms are there in our applicaion
+->reactive forsm are used when the complex and large forms or dynamic forms are there so we can used the reactive forms 
+
+->template driven forms case used the two way data binding concept and used the ngModule 
+->and reactive is also the two way data bainding concept and used the FormGroup and formControl
+------------------------------------------------------------------------------------------------------
+
+182.Types of Decorators in Angular?
+->Common decorators are: @Component, @Directive, @Pipe, @Injectable, and @NgModule, @Input
+-------------------------------------------------------------------------------------------------------------
+183.What is Selectors in Angular?
+->✅ Selector means the name of the custom tag, which is defined in the selector property inside the .ts (component) file.
+-------------------------------------------------------------------------------------------------------------
+184.What is Anotation in Angular?
+->Annotation means the @symbol line (like @Component) that tells Angular this is a component or service.
+-------------------------------------------------------------------------------------------------------------
+185.What is differanance between JavaScript and TypeScript.
+->JavaScript is dynamic and loosely typed; TypeScript is a superset of JavaScript with static typing.
+-------------------------------------------------------------------------------------------------------------
+
+
+
+
+		163.Can Standalone Components Work alongside Tranditional NgModules?
+		164.How do Standalone Components Handle dependencies such as FormsModule and HttpClientModule?
+		165.Can you create standalone directive and pipes in Angular?
+		166.How do you Lazy load a Standalone Components dynamically?
+		167.How do you mamage routing with standalone compoents in Angular?
+		168.How do you configure Providers inside a standalone compoents?
+		169.How do you migrate an existing Angular application to standalone compoents?
+
+
+->  FormsModule is used for template-driven forms.
+->  ReactiveFormsModule is used for reactive forms.
+
+170.What is used of ngForm in Angular?
+->ngForm is used to handle and manage template-driven forms in Angular.
+
+171.Explain state management of Form?
+172.What are FormControl,FormGroup and FormArray?
+173.How do you perform validation in Angular forms?
+174.What is the role of FormBuilders in Angular?
+175.How do you used patchValue() and setValue() in Reactive forms?
+176.How do you track form state changes in angular?
+177.How do you display error message for form validation in Angular?
+
+
+
+179.How to implement security measures for Angular?
+180.What is differance between bootstrapApplication() and bootstrapModule().
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-------------------------------------------------------------------------------------------------------------
+
+185.What is used of Angular.json?
+->  🔧Why deleting angular.json causes problems:
+	Yes, problems will happen if we delete the angular.json file, because:
+	It configures important things like:
+	Bootstrap settings (which component or module to load first)
+	Production and staging environments
+	Output folder (like dist/ or public/)
+	Without this file, Angular won’t know how to:
+	Build the project (ng build)
+	Serve the app (ng serve)
+	Run tests (ng test)
+	So, if angular.json is deleted, the Angular CLI will not work properly, and your whole application may stop working.
+	✅ Final Line (Your version, improved):
+	Yes, problems are created if we delete the angular.json file because it configures important things like bootstrap, production/staging environments, and the output folder (dist/public). Without it, Angular commands like ng serve, ng build, and ng test will not work, and the application will not run properly.
+------------------------------------------------------------------------------------------------------------
+186.What is used of package.json?
+->	The package.json file is automatically created when we create a new Angular project using the Angular CLI.
+	It configures the project by storing important information like:
+	Project name and version
+	Scripts (like ng serve, ng build)
+	Dependencies (libraries and modules used in the project)
+	The package.json helps in managing all the main packages (like @angular/core, rxjs, etc.) needed to run the project.
+	
+	File			Purpose
+	package.json	Lists main dependencies and scripts
+------------------------------------------------------------------------------------------------------------
+187.What is used of the package-lock.json?
+->	📌 What about package-lock.json?
+	package-lock.json is also automatically created.
+	It stores sub-dependencies (the inner dependencies of main packages) and their exact versions.
+	This file ensures that:
+	The same package versions are installed every time — even on different systems or teams.
+	
+	File				Purpose
+	package-lock.json	Locks the exact version of each dependency and sub-dependency
+------------------------------------------------------------------------------------------------------------
+188.What is differance between the Angular.json,package.json and package-lock.json?
+->  package.json: Defines the main dependencies and scripts of the project.
+
+	package-lock.json: Stores the exact versions of all dependencies (including sub-dependencies) for consistency.
+
+	angular.json: Handles Angular-specific settings like build/serve config, environments, output folder, assets, and styles.
+------------------------------------------------------------------------------------------------------------
+189.What can problem are occured when ever i can delete the file like a angular.json,package.json and package-lock.json ?
+->	🔹 If you delete angular.json:
+	ng serve, ng build, ng test will not work.
+	App settings like styles, assets, and environments are lost.
+	Angular CLI shows error: "angular.json not found".
+
+	🔹 If you delete package.json:
+	You cannot install packages.
+	npm start, ng serve won’t work.
+	Project won’t run at all.
+
+	🔹 If you delete package-lock.json:
+	App may still work, but versions may change.
+	You may get bugs due to version mismatch.
+	It is auto-created again with npm install.
+
+	✅ Summary:
+	
+	File				Problem if Deleted
+	angular.json		CLI commands stop working
+	package.json		Project can’t run or install packages
+	package-lock.json	Version mismatch, possible bugs
+------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------
+
+1.routing
+->they are navigate to the one page to the another page that is the concept of the routing
+->basically if you want to create the route so in the anuglar contain the app-routing.module.ts file that is contain the Routes array
+->and they are declare the path of the route and there componentName which component are route 
+---------------------------------------------------------------------------------------
+
+2.auth gaurd 
+->auth gaurd is the type of the route gaurd.
+->auth gaurd basically secure the routes and in that case only the authorized person naviagate routes 
+->so in that case if you want secure our routes so in that angular application write create th gaurd for securing the routes 
+->they are used ng g gaurd auth that command are create the auth servie in our angular application and in that service write the routes secure reagrading logic
+
+---------------------------------------------------------------------------------------
+
+3.route gaurd
+->Route Guard is basically used in RBAC (Role-Based Access Control) cases to control which user can access which route.
+---------------------------------------------------------------------------------------
+
+4.multiple form editing 
+
+->In Angular, you can manage multiple forms using Reactive Forms. There are two main ways:
+
+-->Using Multiple FormGroup (Separate Forms)
+
+	Use when you have independent forms (e.g., login form & registration form).
+Each form has its own FormGroup.
+	Example
+	
+	form1 = new FormGroup({
+	  name: new FormControl(''),
+	  email: new FormControl('')
+	});
+	
+	form2 = new FormGroup({
+	  username: new FormControl(''),
+	  password: new FormControl('')
+	});
+	
+👉 Each form works separately.
+
+-->Using FormArray (Dynamic Forms)
+
+Use when you have a list of similar forms (e.g., multiple users).
+Allows adding/removing forms dynamically.
+
+	Example :- 
+
+	form = new FormGroup({
+	  users: new FormArray([])
+	});
+
+	addUser() {
+	  this.users.push(new FormGroup({
+		name: new FormControl(''),
+		email: new FormControl('')
+	  }));
+	}
+
+👉 Useful for forms where users can add multiple entries dynamically.
+Which One to Use?
+
+✅ Use FormGroup for separate forms.
+✅ Use FormArray for dynamic, repeatable forms.
+
+Let me know if you need more details! 🚀
+---------------------------------------------------------------------------------------
+
+5.auth interceptor 
+
+->auth interceptor is a service in angular they are created using the ng g s auth so auth service are direclty create and they are user authorization and authencatution code for the every request before reach the server they are check perticular user they are accessing the data and perticular user are request to the server using the JWT token .
+
+-->Auth Interceptor is the service in your angular app so that case they are automatically add the jwt token for the every HTTP request 
+
+-->An Auth Interceptor is a special service in Angular that automatically adds authentication tokens (like JWT) to outgoing HTTP requests. It helps ensure that all API calls include the necessary authorization credentials without needing to manually add tokens in every request.
+
+->How Does an Auth Interceptor Work?
+ ️⃣ Intercepts HTTP requests before they are sent to the server.
+ ️⃣ Modifies the request (e.g., adds an Authorization header with a token).
+ ️⃣ Forwards the modified request to the next step in the HTTP pipeline.
+ ️⃣ Can also handle errors (e.g., redirect to login if the token is invalid).
+ 
+--------------------------------------------------------------------------------------
+
+6.Custom css 
+
+->In Angular, you can apply custom CSS in different ways to style your application.
+
+ ️⃣ Global Styles (styles.css or styles.scss)
+👉 Best for: General styling like fonts, background, and common UI components.
+
+ ️⃣ Component-Specific Styles (.component.css or .component.scss)
+👉 Best for: Component-level styles without affecting other components.
+
+ ⃣ Inline Styles (Directly in Components)
+👉 Best for: Small, quick styles without creating a separate CSS file.
+
+ ️⃣ Using External CSS Files
+👉 You can include external CSS libraries like Bootstrap in angular.json.
+---------------------------------------------------------------------------------------
+
+6.polly filling, throttling, bubbling 
+
+ ️⃣ Polyfilling :- 
+📌 Definition: A polyfill is a piece of code that adds support for modern JavaScript features in old browsers.
+
+✅ Example: Older browsers don’t support fetch(), so we use a polyfill to make it work.
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+👉 Use Case: Helps older browsers run modern JavaScript smoothly.
+---------------------------------------------------------
+
+ ️⃣ Throttling (Simple Example & Explanation)
+📌 Definition:
+Throttling controls how many times a function runs in a given time. Even if an event happens many times, the function runs at fixed intervals only.
+
+Example 1: Button Click (Without Throttling)
+👉 Suppose you have a button, and clicking it many times quickly calls a function every time.
+
+document.getElementById("myButton").addEventListener("click", () => {
+  console.log("Button clicked!");
+});
+
+❌ If you click 10 times in 1 second, it logs 10 times.
+
+
+Example 2: Button Click (With Throttling)
+👉 Now, let's apply throttling to allow clicking only once every 2 seconds (2000ms).
+
+function throttle(func, delay) {
+  let lastTime = 0;
+  return function () {
+    let now = Date.now();
+    if (now - lastTime >= delay) {
+      func();
+      lastTime = now;
+    }
+  };
+}
+
+const handleClick = throttle(() => {
+  console.log("Button clicked!");
+}, 2000);
+
+document.getElementById("myButton").addEventListener("click", handleClick);
+✅ Now, even if you click 10 times in 1 second, it will only log once every 2 seconds.
+
+Real-Life Use Cases:
+✔ Scrolling: Prevents running code too many times when scrolling.
+✔ Resizing: Limits function calls when resizing the browser window.
+✔ Button Clicks: Stops multiple clicks at the same time.
+✔ API Requests: Prevents overloading the server with too many requests.
+
+Summary:
+✅ Throttling limits function execution.
+✅ Runs at fixed time intervals.
+✅ Improves performance and prevents excessive calls.
+
+Let me know if you need a clearer explanation! 🚀 
+
+------------------------------------------------------------------------------------------
+ ️⃣  bubbling:- 
+ 
+-> In the bubbling case consider the parent div and child button same event or other event are called so that timing if you want to the only click the button but at that same timing there parent div also called so that concept is called as the bubbling.
+
+and if you want to the handle this concpet so we can used the stop.progation so that timing if want to the only click the button so issue solved using the stop.propagation
+
+
+📌 Event Bubbling (Simple Explanation)
+🔹 Event bubbling happens when an event on a child element also triggers the same event on its parent elements.
+🔹 Example: If you click a button inside a div, the click event first happens on the button, then moves up to the div.
+
+✅ Example of Event Bubbling:
+
+<div onclick="alert('Div Clicked!')">
+  <button onclick="alert('Button Clicked!')">Click Me</button>
+</div>
+
+👉 When you click the button:
+
+ ️⃣ "Button Clicked!" appears.
+ ️⃣ "Div Clicked!" appears next (because of bubbling).
+
+🛑 How to Stop Bubbling?
+👉 If you only want to trigger the button click (not the div), use event.stopPropagation().
+
+<div onclick="alert('Div Clicked!')">
+  <button id="myButton">Click Me</button>
+</div>
+
+<script>
+document.getElementById("myButton").addEventListener("click", function(event) {
+  event.stopPropagation(); // Stops bubbling
+  alert("Button Clicked!");
+});
+</script>
+
+✅ Now, only "Button Clicked!" appears when you click the button.
+
+🔹 Key Points:
+✔ Event bubbling → Events move up from child to parent.
+✔ Stops bubbling → Use event.stopPropagation().
+✔ Useful for preventing unwanted event triggers.
+
+---------------------------------------------------------------------------------------
+
+7. lazy loading 
+Lazy loading in Angular loads modules only when needed, making the app faster.
+
+ ️⃣ Create a Module for Lazy Loading
+ 
+   ng generate module products --route products --module app.module
+   
+🔹 This creates a products module and sets up lazy loading.
+
+ ️⃣ Set Up Lazy Loading in app-routing.module.ts
+
+const routes: Routes = [
+  { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) }
+];
+
+🔹 This tells Angular to load ProductsModule only when /products is visited.
+
+🔹 Why Use Lazy Loading?
+✔ Faster App – Loads only what is needed.
+✔ Better Performance – Reduces initial load time.
+✔ Efficient – Saves bandwidth.
+
+---------------------------------------------------------------------------------------
+
+8. ngrx 
+
+What is NgRx? (Simple Explanation)
+
+📌 NgRx is a state management library for Angular. It helps store and manage data in one place so different components can easily access and update it.
+
+✔ NgRx stores and manages app data efficiently.
+✔ It follows a pattern using Store, Actions, Reducers, Selectors, and Effects.
+✔ Useful for large apps where many components share the same data.
+
+✔ RxJS → Handles real-time data and events (like API calls, user input, etc.).
+✔ NgRx → Stores and manages application data in one place for all components.
+
+👉 RxJS is used inside NgRx to handle asynchronous operations like API calls.
+
+---------------------------------------------------------------------------------------
+
+9.code coverage
+
+📌 What is Code Coverage?
+Code coverage tells you how much of your code is tested by unit tests. If some parts of your code are not tested, they might have bugs.
+
+📌 What is Code Coverage?
+👉 Code coverage means checking how much of your code is tested using unit tests.
+
+🔹 How Does It Work?
+ ️⃣ When you create a component in Angular, a test file (component.spec.ts) is automatically created.
+ ️⃣ You write test cases in the .spec.ts file to check if your code works correctly.
+
+ ️⃣ To check how much of your code is tested, you run:
+
+ng test --code-coverage
+
+ ️⃣ This command runs all test cases and stores the results in the /coverage folder.
+ ️⃣ You can open the coverage/index.html file to see which parts of your code are tested and which are missing tests.
+
+🔹 Example
+If you have a function in a service:
+
+export class MathService {
+  add(a: number, b: number): number {
+    return a + b;
+  }
+}
+
+And a test case in math.service.spec.ts:
+
+import { MathService } from './math.service';
+
+describe('MathService', () => {
+  let service: MathService;
+
+  beforeEach(() => {
+    service = new MathService();
+  });
+
+  it('should add two numbers', () => {
+    expect(service.add(2, 3)).toBe(5);
+  });
+});
+
+👉 If you run ng test --code-coverage, it will check if this function is covered in tests.
+
+✅ If tested → It will show a high coverage percentage.
+❌ If not tested → It will show lower coverage, meaning you need to write more tests.
+
+🔹 Summary
+✔ Code coverage checks if your code is tested properly.
+✔ Write tests in .spec.ts files to verify your code.
+✔ Run ng test --code-coverage to check coverage.
+✔ Higher coverage = Fewer bugs! 🚀
+
+---------------------------------------------------------------------------------------
+
+10.local storage and session storage 
+
+->In the localstorage case they are stored the permant data to there domain and they are access to the every tab of our application 
+
+->basically localstorage are used to stored the user login token
+ 
+->and the localstorage are clean so user are logout
+
+->session storage is also used to the stored the data our application but in this case they are not stored the permant data user are logout close the web app so they are lose the data and session storage stpored the secure data of our application they are after the closing the web app so that timing storeage are clear 
+
+->local storage and session storeage both are 5mb storage 
+
+Local Storage vs. Session Storage (Simple Explanation)
+
+✅ Local Storage
+
+Stores permanent data (until manually cleared).
+Data is accessible in all tabs/windows of the same browser.
+Common use: Storing login tokens, user preferences, themes, etc.
+If you clear local storage, the user gets logged out.
+
+✅ Session Storage
+
+Stores temporary data (deleted when the tab/browser is closed).
+Data is only accessible in the current tab.
+Common use: Storing temporary session data like form inputs, session tokens, etc.
+More secure than local storage because data is cleared automatically when the session ends.
+
+✅ Common Features
+
+Both store up to 5MB of data.
+
+Both are used to store key-value pairs in the browser.
+
+🔹 Corrected Example Sentences
+❌ "Local storage stores permanent data to the domain and is accessible in every tab of our application."
+✔ "Local storage keeps data even after closing the browser and can be accessed across multiple tabs."
+
+❌ "Session storage stores secure data of our application."
+✔ "Session storage holds temporary data and gets cleared when the tab is closed."
+
+--------------------------------------------------------------------------------
+11.Ways to transfer data between components if not parent and child
+
+ ⃣ Service with BehaviorSubject (Best Practice ✅)
+ -------------
+Create a shared service with BehaviorSubject or Subject to store and update data.
+Any component can subscribe to receive updates.
+
+ ️⃣ Using Angular Router (Passing Data via Query Params)
+
+ ️⃣ Using Local Storage / Session Storage
+-----------------------------------------------------------------------------------------------
+
+*] decorator
+->A Decorator is a special kind of TypeScript features they are add metaData to the classes
+->example @viewChild and @viewChildren
+------------------------------------------------------------------------------------------
+
+*] Selectors 
+-> selectors basically used to call the specific component using this selector they are write a app.component.ts file and used of this selector to calling a component.
+->router outlet is the placeholder of the angular and that case this selector are reload to this router-outlet and this specific selector using the route. 
+------------------------------------------------------------------------------------------
+
+*] Anotation
+->Anotation are similar to the Decorators but they are used internally by Angular 
+->@viewChild and @viewChildren
+------------------------------------------------------------------------------------------
+
+*]Template 
+->Template in angular they are structure of the HTML Body and every component are create so the compoennt.html file are created so that file are also the template 
+------------------------------------------------------------------------------------------
+
+*]Angular 10 version and your are currently version differanance.
+->
+------------------------------------------------------------------------------------------
+
+type of decorator
+data binding
+Lazy Loading in Angular
+
+----------------------------------------------RxJS----------------------------------------------------
+
+110.What is Latest Version of RxJS?->7th veriosn
+->The latest stable version of RxJS (Reactive Extensions for JavaScript) is v7.8.2, released in February 2025.
+->With the help of this command "npm install rxjs" you will download the RxJs.
+
+------------------------------------------------------------------------------------------------------
+111.What is RxJS and why is it used in Angular?
+->RxJs is Reactive Extensions for JavaScript Library, they are handle the asynchronous operation or api's calls and there responce and request.
+->Rxjs provided the Observable and Observer for the handling the responce and request.
+------------------------------------------------------------------------------------------------------
+112.What is Observable?
+->Observable is a way to handling asyc data,and they are more powerfull and flexible as compare to the promises.
+------------------------------------------------------------------------------------------------------
+113.What is differance between the Observable and Promises?
+	Observable is a feature of RxJS library, while Promise is a core JavaScript object.
+	Both are used to handle asynchronous operations in Angular apps.
+	Promise handles one value and cannot be cancelled/unsubscribed once started.
+	Observable can handle multiple values over time and can be unsubscribed to stop the data stream.
+	Promise has 3 states: Pending, Resolved, Rejected.
+------------------------------------------------------------------------------------------------------
+114.What is Promises?
+->promises is the object in the javascript they are contain the three main status 
+->pending,rejected and resolve
+------------------------------------------------------------------------------------------------------
+115.Explain About Observable?
+-> Observable are used in handling the asynchronous operation in our anuglar applicaion.
+------------------------------------------------------------------------------------------------------
+116.Explain Map Operator?
+The map operator in RxJS is similar to JavaScript's map().
+It is used to transform the data emitted by an Observable (like modifying an API response).
+------------------------------------------------------------------------------------------------------
+117.Explain Filter Operator?
+The filter operator is used to filter the values from an Observable based on a condition, just like JavaScript's filter().
+------------------------------------------------------------------------------------------------------
+118.Explain Tap Operator?
+-> they are used for logs and sideeffects also logs like a error.
+-> The tap operator is used to perform side operations, like logging or debugging, without changing the data
+------------------------------------------------------------------------------------------------------
+120.What are Operator?
+->Operator measn function they are contain to the Rxjs Library.
+------------------------------------------------------------------------------------------------------
+
+127.What is a Subscription in RxJS?
+->A Subscription in RxJS is the connection between the Observable and the Observer.
+
+Observable =>   A YouTube channel that keeps uploading videos (data stream)
+Observer   => You, the viewer who watches the videos
+Subscription = When you click the Subscribe button — you start receiving video updates (data)
+Unsubscribe = When you click the Unsubscribe button — you stop receiving notifications or data
+------------------------------------------------------------------------------------------------------
+
+119.Explain fromEvent Operator?
+------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------
+121.explain ajax Operator?
+->ajax is used in RxJS to make HTTP requests like GET or POST, and it works with Observables to manage timing and responses.
+->ajax is an operator in RxJS used to make HTTP requests and handle the timing of those requests. However, it's not commonly used in Angular applications because Angular provides HttpClient for making HTTP calls. ajax is mostly used in non-Angular applications where HttpClient is not available
+------------------------------------------------------------------------------------------------------
+122.Differance between Map and SwitchMap Operator?
+->The map operator in RxJS works like the core JavaScript map function. It takes the input value and returns a modified value.
+->The switchMap operator in RxJS is used to switch to a new Observable. When a new Observable starts, the previous one is canceled, and only the latest Observable continues.
+->The map operator does not stop the previous request; it just transforms the value. But the switchMap operator cancels the previous request and switches to the new one.
+------------------------------------------------------------------------------------------------------
+123.Explain SwitchMap Operator?
+->switchMap is mainly used when a new request occurs before the previous request finishes. In such cases, switchMap cancels the previous request and only continues processing the latest one. That is the main working of switchMap.
+->SwitchMap is Best for the API calls(they are avoiding multiple request)
+------------------------------------------------------------------------------------------------------
+124.What is Operator in RxJS?
+->In RxJS, an operator is a function that helps work with Observables. Operators are used to transform, filter, or handle the data or responses from an Observable.
+->If we want to use an operator in RxJS, we need to use it inside the pipe() method.
+->and, The pipe() method allows you to use one or more operators to transform or handle the data from an Observable.
+------------------------------------------------------------------------------------------------------
+126.What is Observable?
+->An Observable continuously emits data, and if we want to use that data, we need to subscribe to the Observable. Once we subscribe, we can receive and use the emitted data.
+
+-> Observable = creates a data stream
+
+-> Subscribe = start listening to the stream
+------------------------------------------------------------------------------------------------------
+126.What is Observer?
+
+->An Observer is an object that receives data from an Observable. It contains three main methods: next(), error(), and complete().
+
+->next() — handles each data value emitted
+->error() — handles any error emitted
+->complete() — handles when the Observable finishes
+------------------------------------------------------------------------------------------------------
+127.What is a Subscription in RxJS?
+->A Subscription in RxJS is the connection between the Observable and the Observer.
+
+Observable =>   A YouTube channel that keeps uploading videos (data stream)
+Observer   => You, the viewer who watches the videos
+Subscription = When you click the Subscribe button — you start receiving video updates (data)
+Unsubscribe = When you click the Unsubscribe button — you stop receiving notifications or data
+------------------------------------------------------------------------------------------------------
+128.What is Unsubscribe() Important?
+->The unsubscribe() method is used to stop an Observable from sending more data.
+->It is important to free up memory, avoid memory leaks, and prevent unwanted background tasks.
+------------------------------------------------------------------------------------------------------
+129.What is a Subject in RxJS?
+->A Subject is a special type of Observable in RxJS.
+->It helps in emitting data and sending it to multiple subscribers at the same time.
+->and ,with The Help subject.next() method is used to pass data to all the subscribers.
+
+import {Subject} from 'rxjs';
+
+const subject = new Subject<number>();
+
+subject.subscribe(value => {
+	console.log('Subscriber 1: ',value);
+});
+subject.subscribe(value => {
+	console.log('Subscriber 2: ',value);
+});
+
+subject.next(1);
+subject.next(2);
+------------------------------------------------------------------------------------------------------
+130.What is Event Driven Architecture?
+->Event-driven architecture means two or more components (or parts of a system) communicate with each 
+other by sending and receiving events, without being directly connected.
+------------------------------------------------------------------------------------------------------
+131.What is Shedulers?
+
+->In RxJS, a Scheduler is a tool that controls when and how an Observable's tasks are executed.
+
+->It helps manage timing, asynchronous execution, and performance.
+
+------------------------------------------------------------------------------------------------------
+132.Why use a Schedulers?
+
+->Control when a subscription happens
+->Decide when values are emitted
+->Change execution context (like sync, async, or animation frame)
+
+------------------------------------------------------------------------------------------------------
+134.Why use debounceTime()?
+->Reduces unnecessary API calls 
+->Improves performance (avoids too many requests).
+->prevents server overloading
+->Best for search functionality.
+------------------------------------------------------------------------------------------------------
+135.Cold(Unicast) vs Hot(Multicast) Observable in RxJS?
+
+In Cold Observable:
+
+	Every subscriber gets data independently and the stream starts fresh for each one.
+
+	It’s like watching a movie on Netflix —
+	If 2 or more people watch the same movie,
+	each person watches it from the beginning at different times.
+
+ ngOnInit(): void {
+
+    const cold$ = new Observable(observer => {
+      observer.next(Math.random());
+    });
+
+    cold$.subscribe(val => console.log('Subscriber 1:', val));
+    cold$.subscribe(val => console.log('Subscriber 2:', val));
+
+}
+
+In Hot Observable:
+
+	All subscribers receive the same data at the same time.
+
+	It’s like watching a live cricket match —
+	Whoever joins will see the current live view,
+	and all users see the same moment together.
+
+ngOnInit(): void {
+    const subject = new Subject<number>();
+
+    // Both subscribers subscribe before any data is emitted
+    subject.subscribe(val => console.log('Subscriber 1:', val));
+    subject.subscribe(val => console.log('Subscriber 2:', val));
+    subject.subscribe(val => console.log('Subscriber 3:', val));
+    subject.subscribe(val => console.log('Subscriber 4:', val));
+
+    // Emit one value
+    subject.next(Math.random());
+}
+
+------------------------------------------------------------------------------------------------------
+136.how to converted cold to hot observable?
+To convert a Cold Observable to a Hot Observable, we can use:
+	Subject
+	share() or shareReplay() operator
+
+
+
+
+
+
+
+
+
+++++++++++++++++------------------==================+++++++++++++++
+------------------------------------------------------------------------------------------------------
+✅ What is API Polling?
+API Polling is a technique where your application repeatedly calls an API at regular intervals to check for new or updated data.
+
+✅ When to Use:
+Real-time tracking (orders, shipments)
+Chat applications (check for new messages)
+Dashboard data updates
+When WebSocket or Server-Sent Events are not available
+------------------------------------------------------------------------------------------------------
+
+
+142.Differance between SetTimeout and SetInterval?
+->SetTimeout : They are basically used to 
+------------------------------------------------------------------------------------------------------
+143.Explain Subject,BehaviorSubject,ReplaySubject and AsynSubject?
+------------------------------------------------------------------------------------------------------
+144.Differance between Subject,BehaviorSubject,ReplaySubject and AsynSubject?
+145.Differance between Observable and Subject?
+146.What is the use of throttleTime() in RxJs?
+147.Differance between forkJoin() & combineLatest()?
+148.How do you manage state management using RxJS in Angular application?
+149.How can you cancel an HTTP request in Angular using RxJS?
+150.How do you use RxJS with Angular Forms?
+151.How do you Handle Real-Time data stream in Angular using RxJS?
+152.What is API Polling?
+153.How do you create a custom RxJS Operator?
+------------------------------------------------------------------------------------------------------
+105.What is differance between promise and observable?
+------------------------------------------------------------------------------------------------------
+106.Differance between promise/fetch API and Observable/Subscribe?
+------------------------------------------------------------------------------------------------------
+107.Used of of Operator?
+->The **of** operator is used to create an Observable from static values. It is mostly used when you want to manually emit values and see how Observables or operators behave.
+->If you have constant values like a number, string, array, or object, and you want to convert them into an Observable, then you can use the of operator.
+->It will emit those values just like any other Observable would, and you can subscribe to them.
+
+import {of} from 'rxjs';
+
+of(1,2,3).subscribe(value => {
+	console.log('Value : ',value);
+});
+------------------------------------------------------------------------------------------------------
+108.used form Operator?
+->The from operator creates an Observable from different types of data sources like:
+	Arrays
+	Promises
+	Iterables (like strings, Sets, Maps)
+	Async generators
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+=========================================== NgRx ==============================================
+
+*] What is NgRx?
+	NgRx is Similar concept to the react redux library they are stored and statmenagement of the data 
+
+	NgRx is a state management library for Angular that follows the Redux pattern.
+
+*] Why do we use NgRx?
+	It helps manage state centrally, makes data flow predictable, and improves performance.
+
+*] What are the main parts of NgRx?
+	Store: Holds the state.
+	Actions: Describe what to do.
+	Reducers: Update the state.
+	Selectors: Get data from the state.
+	Effects: Handle async tasks like API calls.
+
+*] What is NgRx Store?
+	A global storage that holds and manages application data.
+
+*] What is an Action in NgRx?
+	An Action is an event that tells NgRx what change should happen.
+
+*] What is a Reducer in NgRx?
+	A function that takes the current state and an action, then returns a new state.
+
+*] What is a Selector in NgRx?
+	A function that helps extract specific data from the store.
+
+*] What are Effects in NgRx?
+	Effects handle side effects, like API calls, without blocking the UI.
+
+*] What is the difference between Store and BehaviorSubject?
+	Store is immutable and follows Redux.
+	BehaviorSubject allows direct updates and does not track history.
+	
+*] How does NgRx improve performance?
+	Uses Selectors to optimize data fetching.
+	Uses Immutable State, avoiding direct mutations.
+	
+What happens if we mutate the state in a reducer?
+It breaks the Redux pattern, causing unexpected behavior.
+
+What is the purpose of createSelector()?
+It helps get specific data efficiently from the store.
+
+What is the role of Effects in API calls?
+Effects listen for actions, call APIs, and dispatch new actions with the results.
+
+What is the benefit of using NgRx Facades?
+Facades simplify store interaction, making components easier to manage.
+
+What is an Entity Adapter in NgRx?
+It helps manage collections of data efficiently with sorting and filtering.

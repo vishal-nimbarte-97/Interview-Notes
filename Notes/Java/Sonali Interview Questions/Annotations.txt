@@ -1,0 +1,33 @@
+Annotations
+
+@Component: Indicates that the class is a component bean and should be automatically detected and registered by the Spring container.
+
+@EnableDiscoveryClient: Allows microservices to register themselves with the service registry and discover other services by their logical names.
+
+@FeignClient: Used to create a client for communicating with other microservices in a declarative manner.(Like Remote Url)
+
+// @HystrixCommand: Used to annotate methods to enable fault tolerance and circuit breaker patterns with Hystrix.
+
+@EnableCircuitBreaker: Enables the use of circuit breaker patterns with libraries like Hystrix to improve resilience and fault tolerance in microservices.
+
+(Resilience refers to a system's ability to withstand and recover from failures while maintaining functionality and performance.)
+
+circuit breaker : It temporarily interrupts the flow of requests to a failing service, providing a fallback mechanism to handle failures gracefully and prevent cascading failures.
+
+Distributed tracing: It is a method of monitoring and debugging microservices-based systems by tracking and visualizing requests as they travel across multiple services.
+
+
+conventional over configuration: Conventional over configuration is a software design approach that favors default behaviors and conventions, reducing the need for explicit configuration and minimizing boilerplate code.
+
+
+
+identity of the user- Authentication
+authority- Authorization
+
+
+
+
+
+
+
+

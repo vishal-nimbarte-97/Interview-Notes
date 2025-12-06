@@ -1,0 +1,441 @@
+🔹 Basic Database Questions (1–25)
+
+1.What is a database?
+->	A database is a collection of data that is stored and organized, often in tabular format (rows and columns).
+	There are two main types of databases:
+	Relational Database – Stores data in tables with rows and columns.
+	Non-Relational (NoSQL) Database – Stores data in other formats like documents, key-value pairs, or graphs.
+-----------------------------------------------------------------------------------------------------------------
+2.What is a table?
+->  A table is a structure in a database that stores data in rows and columns.
+-----------------------------------------------------------------------------------------------------------------
+3.What is a field and a record?
+->Field: A column in a table (e.g., Name, Age).
+  Record: A row in a table (e.g., John, 25).
+-----------------------------------------------------------------------------------------------------------------
+4.What is SQL?
+->SQL (Structured Query Language) is a language used to store, manage, and retrieve data from a relational database.
+-----------------------------------------------------------------------------------------------------------------
+5.What is a primary key?
+->Primary key is the combination of the unique key and NOT NULL 
+-----------------------------------------------------------------------------------------------------------------
+6.What is a foreign key?
+->A foreign key is another table’s primary key used to create a connection between two tables.
+-----------------------------------------------------------------------------------------------------------------
+7.What is a unique key?
+->A unique key is a column that ensures all its values are different, but it can have one null value.
+-----------------------------------------------------------------------------------------------------------------
+8.What is the difference between PRIMARY KEY and UNIQUE?
+->PRIMARY KEY: Uniquely identifies each record and cannot be null (only one per table).
+  UNIQUE: Also ensures unique values, but can have one null and multiple unique keys are allowed in a table.
+-----------------------------------------------------------------------------------------------------------------
+9.What is a NULL value?
+->A NULL value means no data or unknown value in a table cell.
+  It is not zero or empty string — it simply means "nothing is stored."
+-----------------------------------------------------------------------------------------------------------------
+10.What is a NOT NULL constraint?
+->A NOT NULL constraint makes sure that a column cannot have a NULL value — the field must always have data.
+-----------------------------------------------------------------------------------------------------------------
+11.What are the different types of SQL statements?
+->The different types of SQL statements are:
+
+	DDL (Data Definition Language): Defines the structure of the database.
+	CREATE, ALTER, DROP, TRUNCATE
+
+	DML (Data Manipulation Language): Manages data within tables.
+	SELECT, INSERT, UPDATE, DELETE
+
+	DCL (Data Control Language): Manages permissions and access control.
+	GRANT, REVOKE
+
+	TCL (Transaction Control Language): Controls transaction behavior.
+	COMMIT, ROLLBACK, SAVEPOINT
+-----------------------------------------------------------------------------------------------------------------
+12.What are DDL, DML, DCL, and TCL?
+->	DDL (Data Definition Language): Defines the structure of the database.
+	CREATE, ALTER, DROP, TRUNCATE
+
+	DML (Data Manipulation Language): Manages data within tables.
+	SELECT, INSERT, UPDATE, DELETE
+
+	DCL (Data Control Language): Manages permissions and access control.
+	GRANT, REVOKE
+
+	TCL (Transaction Control Language): Controls transaction behavior.
+	COMMIT, ROLLBACK, SAVEPOINT
+-----------------------------------------------------------------------------------------------------------------
+13.What is the difference between DELETE, TRUNCATE, and DROP?
+-> DELETE :- delete the perticular row in the table.
+-> TRUNCATE :- delete the overall table data.
+-> DROP :- drop the table in the database.
+-----------------------------------------------------------------------------------------------------------------
+14.What is normalization?
+->Normalization is the process of storing data in a database in a proper way to ensure uniqueness, maintain data integrity, and avoid duplication.
+-----------------------------------------------------------------------------------------------------------------
+15.What are the types of normalization?
+->The main normal forms used in database normalization are:
+
+	1st Normal Form (1NF) – Ensures each column contains atomic values (no multiple values in one column) and each record is unique.
+
+	2nd Normal Form (2NF) – Achieves 1NF and removes partial dependency (non-key attributes depend on the whole primary key).
+
+	3rd Normal Form (3NF) – Achieves 2NF and removes transitive dependency (non-key attributes shouldn’t depend on other non-key attributes).
+-----------------------------------------------------------------------------------------------------------------
+16.What is denormalization?
+->Denormalization is the opposite of normalization. It allows duplication of data and doesn't focus on maintaining strict data integrity, but it is used to improve performance by reducing the complexity of joins and speeding up query retrieval times.
+-----------------------------------------------------------------------------------------------------------------
+17.What is an index?
+->An index helps to quickly access data in a table. It improves the performance of queries like SELECT, and allows faster searching, filtering, and sorting.
+-----------------------------------------------------------------------------------------------------------------
+18.What is indexing?
+->Indexing is the process of creating indexes on database tables to improve the speed and performance of data retrieval operations like SELECT, JOIN, ORDER BY, etc.
+->Indexing is the process of creating indexes on database tables to make it easier and faster to identify and access data. It improves the performance of operations like searching, filtering, and sorting by allowing the database to quickly locate the needed rows without scanning the entire table.
+-----------------------------------------------------------------------------------------------------------------
+18.What is a view?
+->A view is a virtual table in a database that contains a result of a query. It doesn't store data itself but displays data from one or more tables. Views are used to simplify complex queries or hide sensitive data.
+-----------------------------------------------------------------------------------------------------------------
+19.What is a stored procedure?
+->A stored procedure is similar to a function: it's reusable and can be called to execute a set of SQL queries. It helps reduce code repetition and improves efficiency.
+->A stored procedure (SP) is a collection of one or more SQL queries grouped together and stored in the database.
+It allows you to perform operations like insert, update, delete, or select, and you can reuse these queries whenever needed.
+
+CREATE PROCEDURE procedure_name()
+BEGIN
+    SELECT 'Hello, world!';
+END;
+
+-----------------------------------------------------------------------------------------------------------------
+19.I will create a same stored procedure name but two differnt tables so the sp are overide or not?
+->Yes, in PostgreSQL, if you create a stored procedure with the same name and the same parameter types, it will override (replace) the existing one when you use:
+
+	CREATE TABLE IF NOT EXISTS employees (
+		id SERIAL PRIMARY KEY,
+		name VARCHAR(100),
+		salary DECIMAL
+	);
+
+	CREATE OR REPLACE PROCEDURE add_employee(name VARCHAR, salary DECIMAL)
+	LANGUAGE plpgsql
+	AS $$
+	BEGIN
+		INSERT INTO employees (name, salary) VALUES (name, salary);
+	END;
+	$$;
+	
+	CALL add_employee('John Doe', 50000);
+	
+-----------------------------------------------------------------------------------------------------------------
+20.What is a trigger?
+->A trigger is a predefined set of SQL statements that automatically executes when changes like insert, update, or delete happen in a table.
+Triggers are often used to log changes (e.g., user login, data deletion) to keep a history or audit trail.
+Backend developers use triggers to automatically store logs without writing extra code in the application.
+✅ Example Use Case:
+When a user is deleted, a trigger can insert a log entry into a user_logs table showing who was deleted and when.
+Useful for audit, monitoring, and security.
+->	A trigger is a set of SQL actions that automatically runs when a specific event (like INSERT, UPDATE, or DELETE) happens on a table.
+Simple definition:
+A trigger is automatic code that runs when table data changes.
+->real time senario is user login and performing the operation that logs are trigger using the trigger command.
+-----------------------------------------------------------------------------------------------------------------
+21.What is a constraint in SQL?
+A constraint is a set of rules applied to column headings.
+Constraints like NOT NULL, UNIQUE, and DEFAULT are used to control the column data, make sure it's valid, and keep the data clean and correct.
+
+	Simple example constraints:
+	PRIMARY KEY – Uniquely identifies each row.
+	FOREIGN KEY – Links to a primary key in another table.
+	UNIQUE – Ensures all values in a column are different.
+	NOT NULL – Prevents null (empty) values.
+	CHECK – Ensures values meet a condition.
+	DEFAULT – Sets a default value if none is provided.
+
+-----------------------------------------------------------------------------------------------------------------
+22.What is the difference between WHERE and HAVING?
+->  WHERE is used to filter normal (individual) data in a table. 
+	But when we use GROUP BY to group data, WHERE doesn't work for grouped results. 
+	In that case, we use HAVING to filter the grouped data.
+-----------------------------------------------------------------------------------------------------------------
+23.What are aliases in SQL?
+-> Aliases is a temporary name used to make selected data more readable in SQL queries.
+-----------------------------------------------------------------------------------------------------------------
+24.What is the use of DISTINCT?
+-> DISTINCT is used in SQL to find unique records in a table by removing duplicates.
+
+	SELECT DISTINCT column_name
+	FROM table_name;
+-----------------------------------------------------------------------------------------------------------------
+25.What is the difference between CHAR and VARCHAR?
+-> CHAR: Fixed length, uses extra space for shorter data.
+   VARCHAR: Variable length, more space-efficient.
+-----------------------------------------------------------------------------------------------------------------
+
+🔹 Intermediate Database Questions (26–60)
+
+26.What are joins in SQL?
+-> Joins in SQL are used to combine data from two or more tables based on a related column.
+   Joins are basically used to combine data from multiple tables at the time of selecting data.
+-----------------------------------------------------------------------------------------------------------------
+27.Explain different types of joins.
+-> 	INNER JOIN – Returns only matching rows from both tables.
+	LEFT JOIN – Returns all rows from the left table, and matched rows from the right table.
+	RIGHT JOIN – Returns all rows from the right table, and matched rows from the left table.
+	FULL JOIN – Returns all rows when there is a match in either table.
+	CROSS JOIN – Returns all possible combinations of rows from both tables.
+
+In the case of LEFT JOIN, it returns all the data from the left table and the matching rows from the right table.
+In the case of RIGHT JOIN, it returns all the data from the right table and the matching rows from the left table.
+
+-----------------------------------------------------------------------------------------------------------------
+28.What is a self join?
+->  A self join is a type of join where a table is joined with itself.
+-----------------------------------------------------------------------------------------------------------------
+29.What is a cross join?
+->  A CROSS JOIN is a type of SQL join that returns the Cartesian product of two tables — meaning it combines every row from the first table with every row from the second table.
+-----------------------------------------------------------------------------------------------------------------
+30.What is a subquery?
+->  A subquery (also called an inner query or nested query) is a query inside another SQL query.
+->  A subquery is a nested query, meaning a query inside another query.
+This inner query is called a subquery and is used to provide data for the outer query.
+-----------------------------------------------------------------------------------------------------------------
+31.What is a correlated subquery?
+-> A correlated subquery is a type of subquery that depends on the outer query for its values.
+-----------------------------------------------------------------------------------------------------------------
+32.What is a temporary table?
+->  A temporary table is a table that stores data only for a short time, usually during a session or a query. It gets automatically deleted when the session ends.
+->  You can create a temporary table using a SELECT statement.
+-> 	Temporary tables are automatically deleted when:
+	Your database session ends, or
+	You close the connection to the database.
+-----------------------------------------------------------------------------------------------------------------
+33.What is a composite key?
+->A composite key is a combination of two or more columns in a table that together uniquely identify each row.
+A single column alone is not enough, so multiple columns are used as the primary key.
+-----------------------------------------------------------------------------------------------------------------
+34.What are aggregate functions?
+->aggregate function is funnction they are perform operation on the group of the data and return the single value.
+
+	Function	Description
+	SUM()		Adds up all the values in a column
+	AVG()		Calculates the average value
+	COUNT()		Counts the number of rows
+	MAX()		Returns the highest value
+	MIN()		Returns the lowest value
+-----------------------------------------------------------------------------------------------------------------
+35.What is the GROUP BY clause?
+->	GROUP BY is basically used in the case of aggregate functions.
+It creates a group of the data based on one or more columns, and then it performs the aggregate function like SUM(), AVG(), MIN(), MAX() on each group.
+-----------------------------------------------------------------------------------------------------------------
+36.What is the ORDER BY clause?
+->	The ORDER BY clause is used to sort the result of an SQL query by one or more columns.
+	It helps you show data in order, like:
+	A to Z (ascending)
+	Z to A (descending)
+	Smallest to largest number
+	Largest to smallest number
+-----------------------------------------------------------------------------------------------------------------
+37.What is the LIMIT clause?
+->The LIMIT clause in SQL is used to restrict the number of rows returned by a query. It helps you get only a certain number of results, even if there are many rows in the table.
+-----------------------------------------------------------------------------------------------------------------
+38.What is a UNION?
+->	The UNION operator in SQL is used to combine the results of two or more SELECT queries into a single result set.
+	It removes duplicate rows by default (like DISTINCT).
+	All SELECT queries in the UNION must have the same number of columns, and the columns must have compatible data types.
+->  UNION keyword is basically used to combine two or more SELECT queries, and it returns only unique data.
+->  ✅ The number and type of columns must match in all queries.
+
+->	Query:- 
+	SELECT Name, Age
+	FROM students_2024
+	UNION
+	SELECT Name, Ages
+	FROM students_2025;
+	
+->When two different tables have the same column name and type, you can use the UNION to combine their results using that column.
+-----------------------------------------------------------------------------------------------------------------
+39.What is the difference between UNION and UNION ALL?
+->UNION means combine and remove the duplicate records,
+->but UNION ALL means combine and allow duplicate records.
+-----------------------------------------------------------------------------------------------------------------
+40.What is an INNER QUERY?
+->	An inner query (or subquery) is a query written inside another query. It returns some value(s), and those values are used by the outer query to perform operations.
+-----------------------------------------------------------------------------------------------------------------
+41.What is the difference between EXISTS and IN?
+->Both EXISTS and IN are used in subqueries to filter records, but they work differently.
+->IN is used in subqueries to check whether a value exists in a list of values returned by the subquery.
+->EXISTS is also used in subqueries. It checks whether data exists or not in the subquery and returns a boolean value (TRUE or FALSE).
+-----------------------------------------------------------------------------------------------------------------
+45.What is the BETWEEN operator?
+->BETWEEN works for numbers, dates, and text (alphabetical range).
+It is used to check if a value lies between a given range.
+For example, if we write 100 BETWEEN 50 AND 900, it means the value 100 is checked to see if it lies between 50 and 900.
+This operator helps to perform operations based on range conditions.
+-----------------------------------------------------------------------------------------------------------------
+46.What is the LIKE operator?
+->LIKE is used to search data in a table.
+It mainly uses the % symbol to match patterns.
+We can place % on the right, left, or both sides of the search string to find data that starts with, ends with, or contains certain characters.
+-----------------------------------------------------------------------------------------------------------------
+47.What is the IN operator?
+->The IN operator is used to check if a value exists in a given list or subquery result.
+Internally, it returns TRUE if the value is found, otherwise it returns FALSE.
+-----------------------------------------------------------------------------------------------------------------
+48.What is a schema in SQL?
+->A schema is the structure of a database.
+It defines how data is organized using tables, views, procedures, and other objects.
+You can think of it as a blueprint or layout of the database.
+-----------------------------------------------------------------------------------------------------------------
+49.How do you rename a table?
+->You can rename a table using the ALTER TABLE statement with the RENAME TO clause.
+-----------------------------------------------------------------------------------------------------------------
+50.How do you rename a column?
+->You can rename a column using the ALTER TABLE statement along with RENAME COLUMN.
+-----------------------------------------------------------------------------------------------------------------
+52.What are transactions?
+->A transaction is a group of queries (like INSERT, UPDATE, DELETE) that perform operations together.
+If all queries run successfully, the changes are saved.
+If any query fails, the entire transaction can be rolled back to keep the database safe and correct.
+->and Transaction case used the begin, rollback and commit command for perfroming the group of the sql opration.
+
+BEGIN → Start the transactions
+COMMIT → Save changes if all queries succeed
+ROLLBACK → Undo all changes if any query fails
+-----------------------------------------------------------------------------------------------------------------
+53.What are the ACID properties?
+
+->✅ Real-Time ACID Properties (Using Your Words, Improved):
+
+Atomicity :- 
+When data is transferred from User A to User B, the full process must complete.
+If any step fails, the entire transaction is cancelled — no partial changes happen.
+
+Consistency :- 
+After the transaction, the data must stay in a valid state.
+There should be no data loss or mismatch during the operation, even if it takes time.
+
+Isolation :- 
+Each user's transaction is separate and isolated.
+One user’s request should not affect another user’s request, even if they run at the same time.
+
+Durability :- 
+Once the entire process is successfully completed, the data is saved permanently in the database — even if the system crashes after that.
+-----------------------------------------------------------------------------------------------------------------
+54.What is data integrity?
+-> Data integrity means the data in the database must be correct, consistent, and valid.
+-> It helps prevent wrong data, broken links, or missing values by using rules like primary key, foreign key, and constraints.
+-----------------------------------------------------------------------------------------------------------------
+56.How do you prevent SQL injection?
+-> If you want to prevent the SQL injection so we can used the stored procefure and parameterized query.
+-----------------------------------------------------------------------------------------------------------------
+
+<IMPORTANT>
+
+57.What is the difference between clustered and non-clustered indexes?
+->Clustered Index means the data is physically stored in sorted order in the database, based on the indexed column — like a dictionary, where words are stored in alphabetical order.
+->Non-Clustered Index means the data is not stored in sorted order, but the index stores sorted references (pointers) to the actual data — like the index page of a book, which helps you find the exact page quickly.
+-----------------------------------------------------------------------------------------------------------------
+58.How can you copy data from one table to another?
+->To copy data from one table to another, we use the INSERT INTO + SELECT command.
+The process is:
+First, we write the INSERT query for the target (new) table.
+Inside it, we write a SELECT subquery from the source table.
+The SELECT query runs first, and its output is inserted into the other table.
+
+INSERT INTO new_table (column1, column2, ...)
+SELECT column1, column2, ...
+FROM old_table;
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+🔹 Advanced Database Questions (61–100)
+
+What is a CTE (Common Table Expression)?
+-----------------------------------------------------------------------------------------------------------------
+What is a materialized view?
+-----------------------------------------------------------------------------------------------------------------
+What is the difference between a view and a materialized view?
+-----------------------------------------------------------------------------------------------------------------
+How do you analyze and optimize a slow query?
+-----------------------------------------------------------------------------------------------------------------
+What is the EXPLAIN keyword used for?
+-----------------------------------------------------------------------------------------------------------------
+What are window functions?
+-----------------------------------------------------------------------------------------------------------------
+What is partitioning in SQL?
+-----------------------------------------------------------------------------------------------------------------
+What is sharding?
+-----------------------------------------------------------------------------------------------------------------
+What is database replication?
+-----------------------------------------------------------------------------------------------------------------
+What is data warehousing?
+-----------------------------------------------------------------------------------------------------------------
+What is a fact and a dimension table?
+-----------------------------------------------------------------------------------------------------------------
+What is indexing and how does it work?
+-----------------------------------------------------------------------------------------------------------------
+What is a deadlock in DB?
+-----------------------------------------------------------------------------------------------------------------
+What is concurrency control?
+-----------------------------------------------------------------------------------------------------------------
+What is optimistic vs pessimistic locking?
+-----------------------------------------------------------------------------------------------------------------
+What is a savepoint in SQL?
+-----------------------------------------------------------------------------------------------------------------
+What is a cursor?
+-----------------------------------------------------------------------------------------------------------------
+What is the difference between a function and a stored procedure?
+-----------------------------------------------------------------------------------------------------------------
+What is the difference between scalar and table-valued functions?
+-----------------------------------------------------------------------------------------------------------------
+What are set operators in SQL?
+-----------------------------------------------------------------------------------------------------------------
+How do you implement pagination in SQL?
+-----------------------------------------------------------------------------------------------------------------
+How do you enforce referential integrity?
+-----------------------------------------------------------------------------------------------------------------
+What are the differences between OLTP and OLAP systems?
+-----------------------------------------------------------------------------------------------------------------
+How do you handle database versioning?
+-----------------------------------------------------------------------------------------------------------------
+What is database migration?
+-----------------------------------------------------------------------------------------------------------------
+What is rollback and commit?
+-----------------------------------------------------------------------------------------------------------------
+What is isolation level in transactions?
+-----------------------------------------------------------------------------------------------------------------
+What are the types of isolation levels?
+-----------------------------------------------------------------------------------------------------------------
+How do you manage database backups?
+-----------------------------------------------------------------------------------------------------------------
+What are dirty reads and phantom reads?
+-----------------------------------------------------------------------------------------------------------------
+How does Sequelize handle associations?
+-----------------------------------------------------------------------------------------------------------------
+What are Sequelize migrations?
+-----------------------------------------------------------------------------------------------------------------
+How do you create a transaction in Sequelize?
+-----------------------------------------------------------------------------------------------------------------
+How do you implement soft deletes in Sequelize?
+-----------------------------------------------------------------------------------------------------------------
+What is the purpose of scopes in Sequelize?
+-----------------------------------------------------------------------------------------------------------------
+What is eager vs lazy loading in Sequelize?
+-----------------------------------------------------------------------------------------------------------------
+What is the difference between findAll and findOne in Sequelize?
+-----------------------------------------------------------------------------------------------------------------
+How do you define validations in Sequelize models?
+-----------------------------------------------------------------------------------------------------------------
+How do you use raw queries in Sequelize?
+-----------------------------------------------------------------------------------------------------------------
+What is a connection pool in Sequelize?
+-----------------------------------------------------------------------------------------------------------------
+How do you handle database connection errors in Node.js?
+-----------------------------------------------------------------------------------------------------------------
+

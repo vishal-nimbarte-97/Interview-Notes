@@ -1,0 +1,48 @@
+what is asynchronus and synchronus in microservices spring boot
+
+How to deploy an application’s services?
+
+what is load balencing ? explain with example
+
+distributed tracing in microservices , explain me in short and simple term
+
+what is circuit breaker , explain in 2-3 sentences
+
+diffrence between REST template and Web Client
+
+use of Fin Clinet
+
+difference between mockbean and Bean Annotation
+
+difference bet @Configuration and @Bean Annotation
+
+@springbootapplication it is combination of
+
+difference between restcontroller and controller
+
+differnce between Data JPA and Spring JDBC
+
+how to use spring JDBC
+
+what is conventinal overconfiguration
+
+Service Discovery in context at micoroservices
+
+What is junit and mockito
+
+explain conventional overconfiguration in simple term
+
+cascade type while declaring an entity, give some example
+
+microservices annotation with explanation
+
+what is resilience
+
+tell some jwt steps but while explaining prefer easy term
+
+tell me spring security with UPI integration
+
+now tell me ways to implement spring security
+
+
+

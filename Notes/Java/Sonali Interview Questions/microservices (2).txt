@@ -1,0 +1,71 @@
+What are Microservices?
+it is an architectural style that structures an application as a collection of services  It is used by create a  distributed , Loosely coupled and Independently deployable software.
+Advantages:-Scalability,Fault isolation,Faster development and deployment,Flexibility,easier maintenance,Better data security
+
+What are the main differences between Microservices and Monolithic Architecture?
+Microservices-fast,loosely coupled,make changes easy,It mainly focuses on products, not projects.
+
+What are the main components of Microservices?
+Containers, Clustering, and Orchestration,IaC (Infrastructure as Code Conception),Cloud Infrastructure,API Gateway,Enterprise Service Bus,Service Delivery.
+
+What are the biggest challenges in Microservice deployment?
+business point of view:
+Microservices require a heavy investment,infrastructure,excessive planning for managing operations,cost a lot in staff selection and maintenance
+technical point of view:
+The components in microservices always rely on each other, so; it requires communication between them in the application,Testing and Debugging are very challenging,automation requires
+
+How to maintain data consistency and implement queries (Data management)?
+Saga - use sagas, which a sequences of local transactions, to maintain data consistency across services
+Implement each business transaction that spans multiple services as a saga. A saga is a sequence of local transactions. Each local transaction updates the database and publishes a message or event to trigger the next local transaction in the saga. If a local transaction fails because it violates a business rule then the saga executes a series of compensating transactions that undo the changes that were made by the preceding local transactions.
+There are two ways of coordination sagas:
+Choreography - each local transaction publishes domain events that trigger local transactions in other services
+Orchestration - an orchestrator (object) tells the participants what local transactions to execute
+
+How to deploy an application’s services?
+Service instance per Container - deploy each service instance in its container.Docker is becoming an extremely popular way of packaging and deploying services. Each service is packaged as a Docker image and each service instance is a Docker container.we use  Docker clustering frameworks Amazon EC2 Container Service
+
+how to Communication Between Spring Microservices
+There are two way 1.Synchronous Way:REST Template,Feign 2.Asynchronous Way: ActiveMQ, RabbitMQ
+
+Type of Communication patterns
+Style:-This mechanisms is used to communication with each other and their external clients.there are differnet style type like Remote Procedure Invocation,Messaging,Domain-specific protocol,Idempotent Consumer
+External API:-This mechanisms is used to communication between external clients communicate with the services.types like API gateway,Backend for front-end 
+Service discovery:RPI(Remote Procedure Invocation)-based service discover the network location of a service instance.Client-side discovery,Server-side discovery,Service registry
+
+Which communication mechanisms do you use for Communication between two api
+In Communication Style Patterns we use 1.Synchronous Way:REST Template,Feign 2.Asynchronous Way: ActiveMQ, RabbitMQ
+In Communicaton External API Patterns we use API gateway (Netflix API gateway)
+In Communication RPI(Remote Procedure Invocation) Pattern- we use Eureka discovery (Client-side discovery,Server-side discovery)
+
+API gateway - a service that provides each client with unified interface to services
+Implement an API gateway that is the single entry point for all clients. The API gateway handles requests in one of two ways. Some requests are simply routed to the appropriate service. It handles other requests by fanning out to multiple services.Rather than provide a one-size-fits-all style API, the API gateway can expose a different API for each client. For example, the Netflix API gateway runs client-specific adapter code that provides each client with an API that’s best suited to its requirements.
+The API gateway might also implement security, e.g. verify that the client is authorized to perform the request
+
+How to prevent a network or service failure from cascading to other service?
+Circuit Breaker - A circuit breaker is a pattern that helps microservices handle failure. It can be used as a library or embedded in service and client modules.there are three state
+Close,Open,Half-Open . we use Resilience4j is a fault tolerance library for Java 8 and functional programming. It's designed for lightweight functional programming.
+how to use-Add DI,Set Properties,Write Controller(Circuit Breaker name=failBackMethod) also add re-try,Rate Limiter
+
+Resilience4j uses real-world application:-
+A client application makes a request to a remote service.
+The request passes through the Resilience4j Circuit Breaker.
+If the circuit breaker is in the Closed state, the request is allowed to flow through to the remote service.
+If the circuit breaker is in the Open state, the request is immediately failed without being sent to the remote service.
+If the circuit breaker is in the Half-Open state, the request is allowed to pass through to the remote service.
+If the request is successful, the circuit breaker will transition back to the Closed state.
+If the request fails, the circuit breaker will transition back to the Open state.
+
+What is rate limiting in springboot?
+Rate limiting is a technique to control the amount of requests that a client can send to a server within a given time window. It is useful to prevent abuse, overload, or denial-of-service attacks on your RESTful API. it is used by Security and Performans.
+In this use write timeOutDuration,limitRefershPeriod,Limitforperiod
+
+How to FindOut Error With out using log 
+by using printStackTrace()
+
+How to understand the behavior of an application and troubleshoot problems?
+Health check API-Spring boot actuator
+Log aggregation(aggregate application logs):-AWS Cloud Watch
+f
+Audit logging - record user activity in a database:-There are a number of ways to implement audit logging in Spring Boot. One common approach is to use the @EnableJpaAuditing annotation. This annotation enables auditing for all JPA entities in your application. 
+Distributed tracing - instrument services with code that assigns each external request an unique identifier that is passed between services. Record information (e.g. start time, end time) about the work (e.g. service requests) performed when handling the external request in a centralized service:- we use Open Tracing - standardized API for distributed tracing
+

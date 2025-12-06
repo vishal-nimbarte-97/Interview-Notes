@@ -1,0 +1,243 @@
+\	
+1. What is the difference between shift and unshift?
+
+shift() :
+. removes the first element.
+. returns the element that was removed.
+ 
+unshift() :
+. adds one or more elements to the start.
+. returns the new length of the array after the addition
+
+2. What is the difference between splice and slice?		
+
+splice():  Modify the original array (add, remove, replace elements).
+
+slice() :Create a new array by copying a portion of the original array.
+
+
+2 . What is the event loop in JavaScript? 
+	
+The event loop in JavaScript is a fundamental concept for managing asynchronous operations and handling events in a non-blocking manner. 
+It allows JavaScript to execute code, handle events, and perform tasks in an efficient and responsive way, despite the single-threaded nature of the language.
+
+3. What is the difference between microtask and macrotask in JavaScript?
+Microtasks: 	
+1. Small, immediate tasks scheduled by promises or other APIs.
+2. Executed immediately after the current script and before the next macrotask.
+3.Microtasks run to completion before moving on to the next macrotask.
+4.Microtask queue (or job queue)	
+
+Macrotasks:
+1. Larger tasks scheduled by APIs like setTimeout, setInterval, and I/O operations.
+2. Executed after all microtasks have been processed.
+3.Macrotasks are executed one at a time after all microtasks are processed. 
+4.Macrotask queue (or task queue)
+
+
+4. What is a promise and why do we use it?
+
+Promises are used in JavaScript to handle asynchronous operations more effectively. 
+They provide a cleaner and more manageable way to deal with tasks that take time to complete, such as fetching data from a server.
+ By using promises, you can write asynchronous code that is easier to read, maintain, and debug, avoiding complex nesated callbacks.
+
+
+5. What is prototype inheritance?
+
+Prototype inheritance is a fundamental feature in JavaScript that allows objects to inherit properties and methods from other objects. 
+This mechanism is based on the concept of prototypes, enabling an object to access the properties and methods of another object, which is its prototype.
+
+6. What is the difference between arrow functions and normal functions?	
+Arrow :
+ i.  Arrow Functions Do not have their own this context.
+ii .Arrow Functions Cannot be used as constructors. They cannot be called with the new keyword.
+iii. Arrow Functions: Do not have their own arguments object. 
+iv. Arrow Functions: Cannot be used with the super keyword.
+
+
+Normal : 
+i. Normal Functions: Have their own this context, 
+ii. Normal Functions: Can be used as constructors with the new keyword.
+iii . Normal Functions: Have their own arguments object,
+iv. Normal Functions: Can be used with the super keyword in c
+lass methods to call methods on a superclass.
+
+
+7. What is JSON.stringify?
+
+JSON.stringify is a method in JavaScript used to convert a JavaScript object or value into a JSON (JavaScript Object Notation) string. 
+This method is particularly useful for serializing data so it can be easily stored, transmitted, or manipulated as a string format.
+
+8.What is the virtual DOM?
+
+The virtual DOM is a concept used in modern web frameworks, such as React, to optimize and manage the process of updating the user interface efficiently. 
+The virtual DOM is a lightweight, in-memory representation of the actual DOM (Document Object Model). 
+It serves as an intermediary between the application's state and the real DOM.
+
+9. What is the difference between synchronous and asynchronous programming in JavaScript?
+
+Synchronous Programming:
+In synchronous programming, code is executed line by line, one statement at a time. 
+Each operation must complete before the next one begins
+
+Asynchronous Programming:
+Asynchronous programming allows code to be executed in a non-blocking manner. 
+Tasks that take time can run in the background, allowing other code to execute while waiting for those tasks to complete.
+
+10. How does JavaScript handle closures and what are their use cases?
+JavaScript handles closures by allowing functions to retain access to variables from their outer scope even after the outer function has finished executing.
+ A closure is created when a function is defined inside another function, giving the inner function access to the outer function's variables.
+
+Use Cases:
+i.Data Encapsulation
+ii.Factory Functions 
+iii.Function Currying
+iv.Event Handlers
+
+
+11.What is the role of promises in asynchronous JavaScript?
+
+Promises in JavaScript represent the outcome of an asynchronous operation and provide a structured way to handle results and errors.
+ They allow you to attach callbacks for success (.then()) and failure (.catch()), making it easier to manage sequential and conditional operations.
+ Promises help avoid callback hell by enabling chaining of asynchronous tasks and improving code readability and maintainability. 
+
+
+12.How does async/await simplify asynchronous code in JavaScript?
+
+async/await simplifies asynchronous code in JavaScript by allowing you to write asynchronous operations in a synchronous-like manner.
+ The async keyword is used to declare a function that returns a promise, while the await keyword pauses the execution of the async function until the promise is resolved.
+ This approach eliminates the need for chaining .then() and .catch() methods, making the code more readable and easier to understand. 
+
+13. What are modules in JavaScript and how do they differ from namespaces?
+In JavaScript, modules and namespaces are both mechanisms for organizing and managing code, but they serve different purposes 
+Module :
+
+i.Modules are a way to encapsulate code into reusable units. They allow you to export functions, objects, or values from one file and import them into another.
+
+ii.Syntax: JavaScript modules use import and export statements.
+
+
+NameSpace:
+i. Namespaces are a way to group related code together to avoid naming conflicts and organize code within a single global context.
+ii. Syntax: Namespaces are typically created using objects to group related functions and variables.
+
+
+14. difference between map,reduce and filter?
+
+map: Transforms each element in an array; returns a new array.
+reduce: Reduces an array to a single value; returns that value.
+filter: Selects elements that pass a condition; returns a new array.
+
+15. Is javascript a statically typed or a dynamically typed language?
+
+JavaScript is a dynamically typed language. In a dynamically typed language, the type of a variable is checked during run-time 
+
+16.Explain passed by value and passed by reference.
+Pass by Value: Works with primitives. Changes in the function do not affect the original variable.
+Pass by Reference: Works with objects. Changes in the function affect the original object.
+
+17. What is the difference between exec () and test () methods in javascript?
+
+test () and exec () are RegExp expression methods used in javascript. 
+We'll use exec () to search a string for a specific pattern, and if it finds it, it'll return the pattern directly; else, it'll return an 'empty' result.
+use a test () to find a string for a specific pattern. It will return the Boolean value 'true' on finding the given text otherwise, it will return 'false'.
+
+18. 25. What is memoization?
+Memoization is a form of caching where the return value of a function is cached based on its parameters. 
+If the parameter of that function is not changed, then  cached version of the function is returned.
+
+19.  What is recursion in a programming language?
+Recursion is a technique to iterate over an operation by having a function call itself repeatedly until it arrives at a result.
+j many different methods can you make an object?
+In JavaScript, there are several ways to declare or construct an object.
+
+Object.
+using Class.
+create Method.
+Object Literals.
+using Function.
+Object Constructor
+
+21.  What is Object Destructuring?
+Object destructuring is a new way to extract elements from an object or an array.
+
+
+22. 14. What is a Temporal Dead Zone?
+Temporal Dead Zone is a behaviour that occurs with variables declared using let and const keywords. 
+It is a behaviour where we try to access a variable before it is initialized. 
+
+23. What are the primitive data types in JavaScript?
+Boolean
+Undefined
+Null
+Number
+String
+
+
+24. catchError in javascript?
+In JavaScript, you can catch errors using try...catch blocks.
+ The code inside the try block is executed, and if any error occurs, the catch block handles it.
+
+25. Explain event delegation in JavaScript.
+
+Event delegation is a technique in JavaScript where a single event listener is added to a parent element instead of adding multiple listeners to individual child elements. 
+When an event occurs on a child element, it bubbles up to the parent, which handles the event.
+
+26. Shallow Copy:
+Copies only the top-level properties of an object. 
+If the object contains nested objects, only references to those objects are copied.
+
+27 Deep Copy:
+ Creates an entirely new copy of an object, including all nested objects, so no references to the original remain.
+
+
+28.call(),apply(),bind()
+call():
+Calls a function with a given this value and arguments passed individually.
+apply():
+ Similar to call(), but takes arguments as an array or array-like object.
+bind():
+Returns a new function with a permanently bound this value and optional pre-set arguments. It does not invoke the function immediately.
+
+29.How promises does it differ from a callback?
+Difference: Promises avoid callback hell, making chaining easier via .then() and handling errors with .catch().
+
+30.What are generators in JavaScript?
+Generators are functions that can be paused and resumed using the yield keyword. They allow you to control the flow of function execution.
+
+31.What is the difference between function declaration and function expression?
+Function Declaration: Defined with the function keyword and hoisted to the top, meaning it can be used before it's declared.
+Function Expression: Assigned to a variable and not hoisted. It can’t be used before its declared.
+// Function declaration
+function greet() { console.log("Hello"); }
+
+// Function expression
+const greet = function() { console.log("Hello"); };
+
+
+32. What is Object.create() in JavaScript?
+Object.create() is used to create a new object with a specified prototype object and optional properties.
+
+33. What is the module pattern in JavaScript?
+The module pattern is used to encapsulate private and public variables and methods, typically using an immediately invoked function expression (IIFE).
+
+34. What are service workers in JavaScript?
+Service workers are scripts that run in the background, separate from the main browser thread.
+ They enable features like push notifications and background sync, and can intercept and cache network requests to enable offline functionality.
+
+35. What is the difference between Object.freeze() and Object.seal()?
+Object.freeze(): Makes an object immutable. Properties cannot be added, modified, or deleted.
+Object.seal(): Prevents adding or deleting properties, but existing properties can still be modified.
+
+36.What is throttling and debouncing in JavaScript?
+Throttling: Ensures a function is called at most once every X milliseconds, useful for actions like window resizing or scrolling.
+Debouncing: Ensures a function is called only after a certain period of inactivity, useful for search bars.
+
+37.What is the Symbol type in JavaScript?
+Symbols are a unique and immutable primitive data type, often used to create object keys that are guaranteed to be unique.
+
+38. What is the difference between event bubbling and event capturing?
+Event Bubbling: The event is first captured and handled by the innermost element, then propagated to outer elements.
+Event Capturing: The event is captured from the outermost element and propagated to the innermost element (use capture: true in event listeners).
+
+

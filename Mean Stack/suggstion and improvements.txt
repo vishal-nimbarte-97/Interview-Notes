@@ -1,0 +1,17 @@
+what is pagination
+what html type are used for the pagination
+
+what is jwt 
+headers payload singture
+jwt token
+
+let var and const which location they are stored?
+garbage collector in javascript and node.js 
+javascript all version and what's differences
+oop's concept inheritance in javascript and object how to create in hjavaccript
+Method overload and method overrding in javascript 
+and what is purpose of the method overiding
+and what is purpose of the method overloading
+and real time senario of the method overiding and method overloading
+
+how to reduce cache?

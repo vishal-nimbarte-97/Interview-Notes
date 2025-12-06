@@ -1,0 +1,21 @@
+OpenID Connect (OIDC) is an authentication layer built on top of the OAuth 2.0 framework. It adds an identity layer to OAuth, allowing clients to verify the identity of end-users based on authentication performed by an authorization server, as well as to obtain basic profile information about the end-user.
+
+Here's an overview of the key components and concepts of OpenID Connect:
+
+Client: The application or service that wants to authenticate users. It interacts with the OpenID Connect Provider (OP) to perform authentication and obtain user information.
+
+OpenID Connect Provider (OP): The entity responsible for authenticating users and providing identity information to clients. It typically acts as an OAuth 2.0 Authorization Server as well. Common OPs include Google, Facebook, and Okta.
+
+Resource Owner: The end-user who owns the identity being authenticated. This could be an individual user of a web application, for example.
+
+ID Token: The primary artifact of OIDC authentication. It is a JSON Web Token (JWT) containing claims about the authentication of the user, such as the user's identity and any additional information requested during authentication.
+
+Authorization Code Flow: The most secure and recommended flow for server-side applications. In this flow, the client application redirects the user to the OP's authorization endpoint, where the user authenticates. After successful authentication, the OP redirects the user back to the client application with an authorization code. The client then exchanges this code for an ID token and an access token.
+
+Implicit Flow: A simplified flow primarily used by single-page applications (SPAs). In this flow, the ID token is returned directly to the client from the authorization endpoint after successful authentication. However, this flow is considered less secure compared to the Authorization Code Flow due to the possibility of token leakage in the browser.
+
+Hybrid Flow: A combination of the Authorization Code Flow and the Implicit Flow. It provides the benefits of both flows, allowing the client to receive tokens securely while also receiving immediate feedback on the authentication status.
+
+UserInfo Endpoint: An endpoint provided by the OP where additional user information can be obtained by presenting an access token. This endpoint allows clients to retrieve user attributes beyond what is included in the ID token.
+
+In Simple Terms = OpenID Connect provides a standardized way for applications to authenticate users and obtain their basic profile information in a secure and interoperable manner. It is widely used for single sign-on (SSO) solutions, allowing users to authenticate once and access multiple applications seamlessly.

@@ -1,0 +1,141 @@
+Java8:- It is introduced in 2014. It was a revolutionary release of the Java for software development platform.3 intentions For Java 8
+1.concise and minimal code
+2.We were missing functional programming benefits in oops nature . so utilize functional programing benefits in java , java 8 come.but still it is oop language
+3.To enable parallel programming more compatible code for multi core processors
+Functional programming:-it use functions and expressions. It's a declarative programming style that involves applying pure functions in sequence to solve complex problems
+-------------
+Lambda Expressions-it is anonymous function i.e Not having any name,return type,modifier
+Steps to make any function lambda expression:-Remove modifier,return type,method name,place arrow
+
+Eg-1
+private void add(int a, int b){System.out.println(a+b);}
+convert-
+(int a ,int b)->{System.out.pritnln(a+b);}
+OR
+(a,b)->System.out.println(a+b);
+
+Eg-2
+private int getStringLength(String str)
+{
+ return str.length();
+}
+convert-
+(String str)->{return str.length();}
+OR
+(str)->str.length();
+OR
+str->str.length();
+
+Benefits of Lambda expression
+1.To enable functional programming in java
+2.To make code more readable ,maintainable and concise code
+3.To enable parallel processing
+4.JAR file size reduction
+5.Elimination of shadow variables
+
+Chracterstics/properties
+1.If body has just one statement then we can remove curly brackets.
+2.Use type inference compiler guess the situation or context.
+3.No return keyword
+4.If only one param remove small brackets
+
+Lambda Expressions
+Advantages:-Conciseness,Readability,Modularity,Reusability,Flexibility
+Disadvantages:-Complexity,Performance,Debuggability,Maintainability
+---------------
+What Are Streams?
+Streams can be defined as a sequences of elements from a source which support data processing operations. You can treat streams as operations on data. 
+
+Why Streams?
+Almost every Java application use Collections API to store and process the data.but it not easy task to write the code for perform some common data processing opertions like filtering, finding, matching, sorting, mapping etc using Collections API. So, there needed Next-Gen API to process the data.so Stream api is next-gen api.
+
+Characteristics:-
+Streams are not the data structures,Stream Consumes a data source,Intermediate And Terminal Operations,Pipeline Of Operations,Internal Iteration,Parallel Execution,Streams are lazily populated,Streams are traversable only once
+
+Stream Operations
+empty(),of(T… values),of(T t) 
+
+Selection Operations
+filter(),distinct(),skip() 
+
+Mapping Operations
+map()
+
+Sorting Operations
+sorted() 
+sorted(Comparator) 
+
+Reducing Operations
+reduce(),min(),max(),count(),collect() 
+
+Finding And Matching Operations
+anyMatch(),allMatch(),noneMatch() 
+
+Streams API
+Advantages:-performance, parallel processing,functional programming
+Disadvantages:-learning curve, debugging challenges, and side effect limitations.
+-----------------
+Functional Interfaces:-
+Functional interfaces are the interfaces which has exactly one abstract method. They may have any number of default methods but must have only one abstract method. Functional interfaces provide only one functionality to implement.There were functional interfaces exist before Java 8. It is not like that they are the whole new concept introduced only in Java 8. Runnable, ActionListener, Callable and Comaprator are some old functional interfaces which exist even before Java 8.@FunctionalInterface.Functional Interfaces Supporting Primitive Type
+@FunctionalInterface  
+interface sayable{  
+    void say(String msg);  
+}  
+--------------------
+Method References
+method references can be defined as shortened versions of lambda expressions calling a specific method. Method references are the easiest way to refer a method than the lambdas calling a specific method. Method references will enhance the readability of your code.Syntax-ClassName::MethodName
+ 
+public class Java8MethodReferences
+{
+    public static void main(String[] args) 
+    {
+        //Calling parseInt() method using lambda
+         
+        Function<String, Integer> lambdaFunction = (String s) -> Integer.parseInt(s);
+        System.out.println(lambdaFunction.apply("12"));
+         
+        //Calling parseInt() method using method reference
+         
+        Function<String, Integer> referenceFunction = Integer::parseInt;
+        System.out.println(referenceFunction.apply("12"));
+    }
+}
+----------------------
+Optional Class
+it provide a type-level solution for representing optional values instead of null references. It is a container object which may or may not contain a non-null value. If a value is present, the Optional instance contains it. If no value is present, the Optional instance is considered empty.
+methods-isPresent(),ifPresent(),orElse()
+
+Before java 8 Null Handling:
+class Person
+{
+    House house;
+    public House getHouse() 
+    {
+        return house;
+    }
+}
+Person person = new Person();      
+        if (person != null)
+        {
+            House house = person.getHouse();
+         }
+
+After 8:
+class Person
+{
+    //house declared as an Optional 
+    Optional<House> house;     
+    public Optional<House> getHouse() 
+    {
+        return house;
+    }
+}
+-------------------------
+collect() Method:-
+it is terminal operation in Stream interface. It is a special case of reduction operation called mutable reduction operation because it returns mutable result container such as List, Set or Map according to supplied Collector
+
+StringJoiner, String.join() And Collectors.joining():-
+Java 8, there are three ways to join strings:
+StringJoiner: Think of it as a tool for putting strings together like building blocks. You can add strings one by one, and it also lets you specify things like what should come before and after the final string, as well as what should separate each string.
+String.join(): This is like putting a bunch of strings in a line and joining them together with a glue. You give it a glue (delimiter) and a bunch of strings, and it sticks them all together with the glue in between.
+Collectors.joining(): Imagine you have a collection of strings and you want to join them together in a specific way. This method is like having a magic machine that takes all your strings, applies a specific rule (specified by a collector), and joins them together with a specified delimiter.

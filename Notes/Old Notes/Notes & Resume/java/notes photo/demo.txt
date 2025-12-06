@@ -1,0 +1,9 @@
+///vishal
+https://api.openweathermap.org/data/2.5/weather?q=Pune&appid=af4d33ee192a431faa45fc9b3f9616af
+
+
+///deault 
+https://api.openweathermap.org/data/2.5/weather?q=Pune&unit=metric&appid=a42c3eeb22fd7be8022ecd4dd8083edd
+
+
+https://api.openweathermap.org/data/2.5/weather?q=Mumbai&units=metric&appid=af4d33ee192a431faa45fc9b3f9616af

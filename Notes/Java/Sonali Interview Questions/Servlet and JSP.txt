@@ -1,0 +1,51 @@
+What is a Servlet, and how does it work?
+What are the different types of Servlets?
+Explain the Servlet lifecycle with all phases.
+What is the difference between GenericServlet and HttpServlet?
+How does a Servlet handle multiple requests?
+What is the difference between doGet() and doPost()?
+How can you make a Servlet thread-safe?
+What is RequestDispatcher, and how is it different from sendRedirect()?
+What is the difference between forward() and include() methods in a RequestDispatcher?
+What are ServletConfig and ServletContext? How are they different?
+How can you share data between Servlets?
+What is a Filter in a Servlet, and how is it used?
+What is a Listener in a Servlet?
+What is the purpose of the web.xml file in Servlets?
+What are annotations in Servlets, and how do they replace web.xml configuration?
+How does session management work in Servlets?
+What are the different ways to maintain a user session in Servlets?
+What is the difference between Cookies and HttpSession?
+What is URL Rewriting in Servlets?
+How does Servlet communicate with JSP?
+What is the difference between SingleThreadModel and a regular Servlet?
+How do you handle exceptions in Servlets?
+What is the role of HttpServletRequest and HttpServletResponse?
+What is an init parameter in Servlets?
+Can a Servlet have multiple init parameters? How are they retrieved?
+JSP Interview Questions
+What is JSP, and how is it different from Servlets?
+Explain the JSP lifecycle.
+What are the different types of JSP tags?
+What is the difference between include directive and include action in JSP?
+What are JSP implicit objects?
+What is the purpose of the page directive in JSP?
+What are the different types of JSP scripting elements?
+What is the difference between a declaration, scriptlet, and expression in JSP?
+What is JSP EL (Expression Language), and why is it used?
+How does JSP handle exceptions?
+What are JSP Custom Tags?
+What is the difference between JSTL and JSP scriptlets?
+How do you handle session management in JSP?
+What is a JSP action element?
+How does JSP support MVC architecture?
+What is the difference between JSP and Thymeleaf?
+How does JSP communicate with JavaBeans?
+What is the use of jsp:useBean, jsp:setProperty, and jsp:getProperty?
+What are the different scopes of JSP objects?
+What is the difference between request and session scope?
+What is the purpose of jsp:forward and jsp:include tags?
+How do you disable the session in JSP?
+What is a JSP fragment?
+What are the performance optimization techniques in JSP?
+How does JSP prevent code duplication?

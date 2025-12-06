@@ -1,0 +1,33 @@
+Basic Intro About Spring Security=
+Spring Security is a powerful and customizable authentication and access control framework for Java applications built on the Spring Framework. It provides comprehensive security services for Java EE-based enterprise software applications. Spring Security aims to address authentication, authorization, cryptographic techniques, session management, and other security aspects in a web application.
+
+
+Some Feautures of Spring Security=
+Authentication: Spring Security provides support for various authentication mechanisms such as HTTP Basic, HTTP Digest, form-based, and more. It also supports integration with external authentication providers like LDAP, Active Directory, OAuth, etc.
+
+Authorization: It enables fine-grained access control based on roles, permissions, expressions, and annotations. Developers can easily define access rules using declarative configuration or annotations.
+
+CSRF Protection: Cross-Site Request Forgery (CSRF) protection is built into Spring Security to prevent unauthorized requests initiated by malicious sites.
+
+Session Management: Spring Security offers robust session management features including session fixation protection, concurrent session control, and session timeout configuration.
+
+Method-Level Security: Developers can secure individual methods or classes using Spring Security annotations, allowing for fine-grained access control at the method level.
+
+Integration with Spring Boot: Spring Security seamlessly integrates with Spring Boot, making it easy to set up security configurations for Spring Boot applications with minimal effort.
+
+Extensibility: Spring Security is highly customizable and extensible. Developers can extend its functionality by implementing custom authentication providers, access decision voters, and other extension points.
+
+
+Steps Which Understands
+1- first request comes to Authentication Filter
+2- create username, password object
+3- this request goes to Authentication Manager
+4- In this have one method like authenticate()
+5- So, It uses Provider Manager Class \\ which provider It will use .example like Dao Provider
+6- So with help of Authentication Provider
+   - cheks encoded password
+   - User Detail Service - like check username, password
+   - create new object and send to security context
+7- security context check principle and authority
+   - like token type
+   - Role type

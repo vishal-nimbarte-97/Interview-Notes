@@ -1,0 +1,95 @@
+
+1) What is RxJS? / What do you understand by RxJS?
+RxJS is an stand for Reactive Extension for Javascript. 
+it is a JavaScript library that uses observables to work with reactive programming and deals with asynchronous data calls, callbacks and event-based programs.
+RxJS has introduced the concept of "reactive programming" to the web. 
+It implements a reactive extension for TypeScript and JavaScript.
+
+2. What is Reactive Programming?
+Reactive programming is a declarative programming paradigm which deals with asynchronous data streams. 
+Glenn Wadden first developed reactive programming in 1986 as a programming language in the Supervisory Control.
+Reactive programming facilitates us to create data streams of anything, not just from click and hover events.
+	
+
+3. What are the most outstanding features of RxJS?
+
+i. Observer
+The Observer is an object with next(), error(), and complete() methods, which are called when we have to interact with the observable, 
+example: button click, Http request, etc. 
+
+ii.Observable
+iii.Subscription
+The role of subscription comes in the scene when the observable is created. To execute the observable, we need to subscribe to it. 
+It can also be used to cancel the execution.
+iv.Operators:An operator is a pure function that takes observable input and emits the result in the output form. Input and output both are observable.
+v. Subject
+vi.Schedulers :
+A scheduler controls the execution when the subscription has to start and be notified.
+
+4. What is Redux?
+	
+Redux is an open-source JavaScript library which is used to manage the application state. 
+It is most commonly used with libraries such as React, Angular, or RxJS for building user interfaces.
+ Redux is inspired by Facebook's Flux architecture and also very similar to it. It was created by Dan Abramov and Andrew Clark.
+
+5. What do you understand by RxJS Stream?
+
+stream is a sequence of data elements made available over time. 
+A stream can as items on a conveyor belt being processed one at a time rather than in large batches. 
+It is called stream because it acts as a data that is continuous and not really having an end, unless you explicitly define an end.
+
+6. What do you understand by the Reactive Manifesto document?
+A document was introduced to define the core principles of reactive programming. 
+That document is known as the Reactive Manifesto. 
+The Reactive Manifesto document was first released in 2013 by a group of developers led by a man called Jonas Boner.
+ The Reactive Manifesto underpins the principles of reactive programming.	
+
+7.Is there any similarity between Redux and RxJS?
+
+redux:
+i.Redux is a tool used to manage state throughout the application. It is usually used as architecture for UI.	
+ii.Redux uses the Reactive paradigm little bit because the Store is reactive. The Store observes actions from a distance, and changes itself.
+
+rxjs:
+i.RxJS is a reactive programming library. It is usually used as a tool to accomplish asynchronous tasks in JavaScript. 
+ii.RxJS also uses the Reactive paradigm, but instead of being architecture, it gives you basic building blocks, Observables.
+
+8.What is the difference between BehaviorSubject and Observable in RxJS?
+
+observable:
+i.In RxJS, observable is stateless.	
+ii.Observable creates copy of data.	
+iii.Observable is unidirectional in nature.	
+
+BehaviourSubject:
+i.In RxJS, BehaviourSubject is stateful.
+ii.BehaviourSubject shares data.
+iii.BehaviourSubject is bidirectional in nature.
+
+9. What do you understand by the term Non-Blocking in RxJS?
+In RxJS, non-blocking refers to the fact that asynchronous operations don't block the execution of other code.
+ When an observable emits values, without waiting for the current task to complete. 
+This allows other tasks or operations run in parallel.
+
+10. What do you understand by the Actor Model in RxJS?
+An Actor model specifies that your concurrency primitives are actors.
+It can send messages to any actors they know about.
+It can receive a message and decide what to do next depending on the content of the message.
+
+11.replay subject in rxjs?
+In RxJS, a ReplaySubject is a variant of Subject that replays a specified number of past values to new subscribers.
+ It stores the last emitted values in a buffer and sends them to any new subscribers, ensuring they catch up with the history of emitted values. 
+
+12. What is Back-Pressure in Reactive Programming? 
+Back-pressure in reactive programming refers to the mechanism of controlling data flow between a producer (source) and a consumer (subscriber) to prevent overwhelming the consumer with data. 
+When the producer emits data faster than the consumer back-pressure helps manage the rate, system remains stable and avoids memory overload.
+
+In RxJS, back-pressure strategies include:
+Buffering: Temporarily storing data until the consumer can process it.
+Dropping: Skipping excess data when the consumer is overwhelmed.
+Throttling/Debouncing: Slowing down the emission rate.
+
+13. What do you understand by to be Resilient for a Reactive System?
+Resilient for a Reactive System means the system will stay responsive if it gets any chance of failure. 
+Any system that is not resilient will be unresponsive after a failure.
+Resilience is achieved by using replication, containment, isolation and delegation.	

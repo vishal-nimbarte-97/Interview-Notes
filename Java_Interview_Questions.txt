@@ -1,0 +1,1770 @@
+1. What is Java?
+Java is a high-level, object-oriented programming language. It is primarily used for developing enterprise applications.
+------------------------------------------------------------------------------------------------------------
+2.Java is Plateform Indepedent language or not?
+->Java is Plateform Indepedent language, that means they are run any operating system, because java code can compile and then converted to the byte code and this byte code can run any operating system , with the help of the jvm and jvm are Plateform dependent.
+------------------------------------------------------------------------------------------------------------
+3.Java is Plateform Indepedent and JVM is Plateform dependent?
+->Java is a platform-independent language, but the JVM is platform-dependent.
+
+Explanation:
+Java Code → Compiled into Bytecode
+Bytecode → Runs on JVM
+JVM → Is different for each operating system (platform-dependent)
+But since bytecode can run on any JVM, Java becomes platform-independent.
+This is why we say: "Write Once, Run Anywhere."
+------------------------------------------------------------------------------------------------------------
+4.Edition of Java? 
+->A.J2SE : java 2 standard Edition(Core java)
+->B.J2EE : java 2 enterprise Edition(Advanced Java)
+->C.J2ME : Java 2 Micro Edition(Mobile Based Application old timing)
+------------------------------------------------------------------------------------------------------------
+5. Java History?
+
+    Company: Sun Microsystems
+    Designed by: James Gosling and his team
+    Initial Name: Oak
+    Year of Creation: 1991
+    Released to Public: 1995
+    Why Created: To develop software for electronic devices like set-top boxes and TVs.
+    Symbol: A coffee cup (Java is named after a type of coffee)
+    Originally Developed By: Sun Microsystems (1991)
+    Acquired By: Oracle Corporation in 2010
+    Now, Oracle is the official owner and maintainer of Java.
+------------------------------------------------------------------------------------------------------------
+6.What is static or dynamic programming language?
+→ A static programming language is one where type checking and memory allocation for variables (including primitive types) happens at compile time.
+-> Example :- c and C++
+→ A dynamic programming language is one where type checking and memory allocation happens at runtime.
+-> Example : python and javascript
+------------------------------------------------------------------------------------------------------------
+7.How java is dynamic programming language?
+->  Basically, Java is a statically typed language
+    But it has dynamic features like:
+    Reflection
+    Dynamic class loading
+    Runtime method dispatch (polymorphism)
+------------------------------------------------------------------------------------------------------------
+8.Why java does not require pre-processor?
+->Java does not require a preprocessor because it uses a package-based system instead of header files like in C or   C++.
+->In Java, we use the import keyword to include built-in or user-defined classes from packages, and there is no need for macro definitions or conditional compilation, which are handled by preprocessors in C/C++.
+------------------------------------------------------------------------------------------------------------
+9.why java does not support pointers?
+→ Java does not support pointers to keep the language secure, simple, and platform-independent.
+→ In C/C++, pointers access memory addresses directly, but this can cause memory issues and security risks.
+→ Java uses references, and the JVM handles memory, so we don’t need raw addresses.
+→ Java is platform-independent – the same memory address (like 1001) can hold different values on different systems, causing conflicts. That’s another reason Java avoids pointers.
+------------------------------------------------------------------------------------------------------------
+10.what is call by values and call by references?
+
+🔸 Call by Value:
+The value of the variable is passed to the function.
+Changes inside the function do not affect the original variable.
+
+🔸 Call by Reference:
+The address (reference) of the variable is passed to the function.
+Changes inside the function affect the original variable.
+
+📝 Java Note:
+Java uses call by value only. For objects, the reference value is passed, so changes affect the original object.
+------------------------------------------------------------------------------------------------------------
+11.Why java has good memory management as compared to c and c++?
+→ Java uses a Garbage Collector that automatically removes unused or unwanted objects from memory.
+→ C and C++ do not have a built-in garbage collector, so programmers must manually manage memory.
+→ Because of this, Java reduces memory leaks and errors, giving it better memory management than C and C++.
+------------------------------------------------------------------------------------------------------------
+12.features of Java?
+
+Simple: Syntax is easy and similar to C and C++
+
+Platform Independent: Write once, run anywhere on any operating system
+
+Portable: Can run on different hardware without changes
+
+Object-Oriented: Supports OOP concepts like inheritance, polymorphism, encapsulation, and abstraction
+
+Secure: Provides strong security features compared to many other languages
+
+Multithreaded: Supports multiple threads running simultaneously for better performance
+
+Robust: Uses strong exception handling and error checking to create reliable programs.
+------------------------------------------------------------------------------------------------------------
+13.What do you mean by platform independent?
+→ In Java, platform independent means:
+
+Write code once and run it on any operating system.
+
+🔹 When we compile a Java file, it creates a .class file (called bytecode).
+🔹 This bytecode can run on any OS (Windows, Linux, Mac, etc.) using the JVM (Java Virtual Machine).
+🔹 So, Java is platform independent, but JVM is platform dependent.
+------------------------------------------------------------------------------------------------------------
+14.JVM is Plateform dependent or independent?
+->JVM is the Plateform dependent because every operating system JVM are different but the java is the Plateform independent language because the byte code are executed to the any operating system.
+------------------------------------------------------------------------------------------------------------
+15.What is Packages?
+->A package is a collection of classes and interfaces in Java.
+
+    There are two types of packages:
+    Pre-defined packages – Provided by Java (like java.util, java.io, etc.)
+    User-defined packages – Created by the programmer to organize custom classes.
+
+------------------------------------------------------------------------------------------------------------
+16.What is Role of Compiler?
+->The compiler in Java converts human-readable source code (written in .java file) into byte code (stored in .class file).
+This byte code is not platform-specific and can run on any operating system using the Java Virtual Machine (JVM).
+------------------------------------------------------------------------------------------------------------
+17.What is Interpretor?
+->The Interpreter in Java is a part of the JVM, and its main role is to execute the byte code line by line at runtime.
+->Java code → compiled by javac → creates .class (byte code)
+->JVM uses Interpreter to read and run the byte code line by line
+------------------------------------------------------------------------------------------------------------
+18.What is JDK?
+->JDK stands for Java Development Kit.
+It is a complete software package used to develop Java applications.
+
+📦 JDK Includes:
+JRE (Java Runtime Environment) – to run Java programs
+
+JVM (Java Virtual Machine) – to execute bytecode
+
+Development tools – like javac (compiler), java (launcher), debugger, etc.
+
+🧠 In Simple Words:
+JDK = JRE + JVM + Development Tools
+------------------------------------------------------------------------------------------------------------
+19.What is JRE?
+->JRE stands for Java Runtime Environment.
+It provides the environment needed to run Java applications.
+
+📦 JRE Includes:
+JVM – Executes the Java byte code
+
+Libraries – Predefined class files (like java.lang, java.util, etc.)
+
+Supporting files – Required to run Java programs
+
+🧠 In Simple Words:
+JRE = JVM + Java Libraries
+It is used to run Java programs, not to develop them.
+------------------------------------------------------------------------------------------------------------
+20.What is JVM?
+->JVM stands for Java Virtual Machine.
+It is a part of JRE and is responsible for executing Java byte code.
+
+🧠 JVM Key Roles:
+Reads .class files (byte code)
+
+Uses Interpreter to execute byte code line by line
+
+Uses Execution Engine to convert byte code into machine code
+
+Handles memory management, garbage collection, and security
+
+🔄 In Simple Words:
+JVM makes Java platform independent by running the same byte code on different OS.
+------------------------------------------------------------------------------------------------------------
+21.What is JIT Compiler?
+->JIT stands for Just-In-Time compiler.
+
+It is a part of the JVM that improves performance by compiling byte code into machine code at runtime, just before execution.
+
+Instead of interpreting byte code line by line every time, JIT compiles blocks or methods of code into native machine code, making the program run faster.
+
+It combines the benefits of interpretation (platform independence) and compilation (speed).
+------------------------------------------------------------------------------------------------------------
+22.What is differences between the JIT and Interpreter?
+->JIT compiler and interpreter are both parts of the JVM, but they are different components.
+The interpreter executes byte code line by line.
+The JIT compiler compiles byte code into machine code in chunks or methods at runtime for better performance.
+The JVM first uses the interpreter to start running the program quickly. Then, frequently used parts (hot spots) are compiled by the JIT for faster execution.
+------------------------------------------------------------------------------------------------------------
+23.What is Virtual Machine?
+->A Virtual Machine (VM) is a software-based simulation of a physical computer.
+It behaves like a real computer but runs inside another physical machine.
+
+Key Points:
+VM does not physically exist — it’s created by software.
+It allows running multiple operating systems or environments on a single physical machine.
+It provides isolation and security between different VMs.
+In Java, JVM (Java Virtual Machine) is a type of virtual machine that runs Java byte code.
+------------------------------------------------------------------------------------------------------------
+24.how many memory areas in java?
+->Java has five main memory areas managed by the JVM:
+
+Heap – Stores all Java objects and arrays.
+Method Area – Stores class-level data like class structures, constants, and static variables.
+Stack – Stores local variables and method call information for each thread.
+Program Counter (PC) Register – Keeps track of the current instruction being executed in a thread.
+Native Method Stack – Used for native (non-Java) method calls.
+------------------------------------------------------------------------------------------------------------
+25.Main 3 Memory Areas in Java:
+
+Heap :- instance variable and objects,arrays are stored in the Heap memory areas.
+
+Stack :- stack contain the local variable and local methods
+
+Method Area :- static variables and static methods are stored in method area.
+------------------------------------------------------------------------------------------------------------
+26.Explain Heap Memory Area?
+->heap memory also contain the String Constance Pool and String Litral pool 
+------------------------------------------------------------------------------------------------------------
+27.Explain Deep architecure of class loader?
+->
+         [ Bootstrap ClassLoader ]
+                ↓
+         [ Extension ClassLoader ]
+                ↓
+         [ Application ClassLoader ]
+                ↓
+         [ Custom ClassLoader (Optional) ]
+
+✅ Summary Points:
+Java has 3 main ClassLoaders: Bootstrap, Extension, Application.
+Follows parent delegation model.
+Loads .class files dynamically at runtime.
+Used heavily in frameworks like Spring, Tomcat, etc.
+
+JVM uses Application ClassLoader to load your classes.
+It asks Extension → Bootstrap, then finally loads if not found by parents.
+------------------------------------------------------------------------------------------------------------
+28.What data is stored in method area?
+->.class file information
+->static variable
+------------------------------------------------------------------------------------------------------------
+29.What data is stored in Heap Area?
+->object
+->arrays
+->instance variable
+------------------------------------------------------------------------------------------------------------
+30.what data is stored in stack Area?
+->current running methods 
+->lacal variables
+------------------------------------------------------------------------------------------------------------
+31.Data Types In Java?
+->There is two types of the Data Types in Java.
+->premitive data types 
+    int,float,double,long,byte,boolean,short,char
+->non-premitive data types 
+    String,Arrays,Object etc.
+------------------------------------------------------------------------------------------------------------
+32.what is differences between the primitve and non-primitive data types?
+
+✅ Primitive Data Types
+Built-in/basic data types provided by Java.
+Examples: int, float, char, boolean, byte, short, long, double.
+Memory is allocated at compile-time.
+Stored in stack memory.
+Has a fixed size (e.g., int = 4 bytes).
+Cannot be null.
+Does not support inheritance or methods.
+Default values: 0, 0.0, false, etc.
+Directly supports arithmetic operations like +, -, *, /.
+
+✅ Non-Primitive Data Types
+Also called reference types.
+Examples: String, Array, Class, Interface, Object.
+Memory is allocated at runtime.
+Stored in heap memory.
+Size is not fixed, depends on object content.
+Can be null.
+Supports inheritance, polymorphism, and methods.
+Default value is null.
+Operations are done using methods (e.g., str.length(), arr.length).
+
+------------------------------------------------------------------------------------------------------------
+33.What is Wrapper Classes.
+->The primitive data types converted into non-primitive data types and non-primitive data types converted into the primitive data types that process is called as the Wrapper Classes.
+
+Primitive Type	Wrapper Class
+byte	        Byte
+short	        Short
+int	            Integer
+long        	Long
+float	        Float
+double	        Double
+char	        Character
+boolean	        Boolean
+
+there is total 8 wrapper classes in java for there corresponding data types.
+------------------------------------------------------------------------------------------------------------
+34.What is Autoboxing and Unboxing?
+->Autoboxing means automatic conversion of primitive data types to non-primitive (wrapper) types, and
+Unboxing means automatic conversion of non-primitive (wrapper) types to primitive data types.t
+
+✅ Final Definition (Simple and Correct):
+Autoboxing:
+➤ Automatic conversion of primitive data types into their corresponding wrapper class (non-primitive/object).
+👉 Example: int → Integer
+
+Unboxing:
+➤ Automatic conversion of wrapper class (non-primitive/object) into its corresponding primitive data type.
+👉 Example: Integer → int
+------------------------------------------------------------------------------------------------------------
+35.What is ADT?
+->An ADT (Abstract Data Type) defines a set of operations (like push, pop, peek for a stack) that you can perform on a data type.
+These operations are performed through a single class or interface (the ADT), which hides the internal details of how the data is stored or managed.
+
+So:
+The ADT groups all related operations together in one place (a class or interface).
+You interact with the data only through those operations, without worrying about the inner implementation.
+
+Code :- 
+public interface StackADT<T> {
+    void push(T item);     // Add item on top
+    T pop();               // Remove and return top item
+    T peek();              // Return top item without removing
+    boolean isEmpty();     // Check if stack is empty
+}
+
+------------------------------------------------------------------------------------------------------------
+36.Why java is not Purely OOP's language?
+->Because Java supports primitive data types (int, char, boolean, etc.) that are not objects.
+In a pure OOP language, everything should be an object.
+Since primitives are not objects, Java is called a hybrid OOP language (it mixes objects and primitives).
+------------------------------------------------------------------------------------------------------------
+37.How primitive variable passed to method -by value or by reference?
+->java supports only pass by values.
+------------------------------------------------------------------------------------------------------------
+38.What is Type Casting?
+->one data type converted into the another data types that is called as the type casting.
+------------------------------------------------------------------------------------------------------------
+39.what are different types of types-casting in java?
+->there are 2 types of types-casting in java.
+->A.primitive data types - type casting 
+
+    1]Widening Type Casting(Implicit Type Casting)
+    2]Narrowing Type Casting(Explicite Type Casting)
+
+One data type converted to the another data types casting and and there is the two way of the type casting implicit and explicit type casting.
+
+Type Casting means converting one data type into another.   
+
+It is used when you want to assign a value of one type to a variable of another type.
+
+🔁 Two Types of Type Casting in Java
+
+1. Implicit Type Casting (Widening Conversion)
+➡️ Happens automatically
+➡️ Converts smaller type → larger type
+
+✅ Example:
+int a = 10;
+double b = a; // int to double (done automatically)
+System.out.println(b); // Output: 10.0
+
+From	To
+byte	short
+short	int
+int 	long
+long	float
+float	double
+
+2. Explicit Type Casting (Narrowing Conversion)
+➡️ Done manually using cast operator (type)
+➡️ Converts larger type → smaller type
+
+✅ Example:
+double a = 10.5;
+int b = (int) a; // double to int (manual)
+System.out.println(b); // Output: 10 (decimal part removed)
+From	To
+double	float
+float	long
+long	int
+int 	short
+short	byte
+
+❗Important Notes:
+Implicit casting is safe, no data loss.
+Explicit casting may lose data (like decimals or overflow).
+Casting between non-compatible types (e.g., String to int) requires conversion functions, not just casting.
+
+->B.User defined data types - type casting
+    parant to child and child to parant data types convertion is called as user defined data type - type casting 
+    1. ✅ Child → Parent (Upcasting)
+    This is automatic (implicit casting)
+    Always safe
+    2. 🔶 Parent → Child (Downcasting)
+    This is manual (explicit casting using (ChildClass))
+    Can be risky: must ensure object is actually of child class
+
+Direction	    Type	    Syntax	                    Notes
+Child → Parent	Upcasting	Parent p = new Child();	    ✅ Safe, automatic
+Parent → Child	Downcasting	Child c = (Child) parent;	⚠️ Manual, risky
+------------------------------------------------------------------------------------------------------------
+40.What is differences between the local,static and instance variable in java?
+
+👉 Local Variable
+Local variables are declared inside methods or blocks, stored in stack memory, and must be initialized before use. They are only accessible inside the method.
+
+👉 Static Variable
+Static variables are declared with the static keyword inside the class, stored in the method area, and can be accessed in static methods, non-static methods, and blocks. They are shared across all objects.
+
+👉 Instance Variable
+Instance variables are declared inside the class but outside methods (without static), stored in heap memory, and can be accessed in non-static methods, constructors, and blocks. Each object has its own copy.
+------------------------------------------------------------------------------------------------------------
+41.What is Access Modifires in Java?
+✅ Access Modifiers are keywords in Java used to control the visibility of classes, methods, and variables.
+->Access Modifiers define which class, constructor, method, or variable can be accessed from where.
+They use keywords like public, private, protected, and default (no keyword) to control the access level.
+    public: Accessible everywhere
+    private: Accessible only within the same class
+    protected: Accessible within package and subclasses
+    default (no keyword): Accessible within the same package only
+------------------------------------------------------------------------------------------------------------
+42.What is Oop's?
+->Writing code using classes and objects to make it more organized, reusable, and easier to maintain is called OOPs (Object-Oriented Programming System).
+->It is the most popular programming paradign used b the programmers.
+example:Java,python
+------------------------------------------------------------------------------------------------------------
+43.What is feature of Java?
+->simple :- easy to used because of the most of the Syntax they are derived from the c and c++.
+->oop's concept 
+->multi-threading
+->inheritance
+->polymorphism
+->encapsulation
+->abstraction
+------------------------------------------------------------------------------------------------------------
+44.What is class?
+->class is the collection of the data members and members function and class is a blue print with the help of this blue print they are creating the object of the class
+->A class is a blueprint or template that defines data members (variables) and member functions (methods).
+With the help of a class, we can create objects.
+------------------------------------------------------------------------------------------------------------
+45.What is Object?
+->object is the instance of the class.
+------------------------------------------------------------------------------------------------------------
+46.what is method?
+->A method is a set of instructions or a block of code that performs a specific task.
+->method is the set of the code and instruction.
+------------------------------------------------------------------------------------------------------------
+47.What is constructor?
+->Constructor is the Predefined class they are present in the java.lang.reflect package.
+->A constructor is a special method in a class because the method name and the class name are the same, and it does not have any return type. It is used to initialize objects of the class.
+->there is three types of the constructor
+->A.default constructor :- whenever we can not create a any constructor in the class so that timing compiler are add automatically constructor that is called as the default constructor.
+    Note:- The programer are create a constructor in the class so that timing compiler will not add any constructor in by default.
+->B.parameterized constructor :- This constructor are create by programer for initialize the object of the classes.
+->C.0-Argument constructor(No Argument Constructors) :- This constructor also created by the programer because they are used the parameterized constructor so that timinng by default values are passed so that timing they are need to the 0-Argument constructor.
+------------------------------------------------------------------------------------------------------------
+48.What is differences between constructor and method.
+->constructor:constructor does not have a any return type.
+->method:method Always have return type.
+
+->constructor:constructor name and class name are same 
+->method:method can have any valid name
+
+->constructor:they are used inilized the oject of the class.
+->method: they are used to perfrom the set of task or set of instruction
+
+->constructor:in constructors case we can not create any constructors so that timing compiler add default constructor 
+->method:they are not possible in the method case.
+------------------------------------------------------------------------------------------------------------
+49.Constructors with inheritance?
+->By default, the parent class constructor is automatically called when the child class constructor runs.
+
+class A 
+{
+    A()
+    {
+        System.out.println("class A");
+    }
+}
+
+class B extends A
+{
+    B()
+    {
+        System.out.println("class B");
+    }
+}
+
+class Demo 
+{
+    public static void main(String[] args)
+    {
+        B obj = new B();
+    }
+}
+
+------------------------------------------------------------------------------------------------------------
+50.constructor overloading and overriding?
+-> Constructor Overloading is possible in Java.
+-> Constructor Overriding is not possible in Java.
+-> Constructor overloading means a single class contains multiple constructors with the same name but different numbers or types of arguments.
+-> This allows creating objects in different ways by passing different arguments to the constructor.
+------------------------------------------------------------------------------------------------------------
+51.constructors chaining(using this keyword)? 
+->Constructor chaining means one constructor calls another constructor in the same class using the this keyword.
+
+class Demo 
+{
+    Demo()
+    {
+        System.out.println("Ok");
+    }
+
+    Demo(int a)
+    {
+        this();
+        System.out.println(a);
+    }
+
+    public static void main(String[] args)
+    {
+        Demo d = new Demo(90);
+    }
+}
+
+------------------------------------------------------------------------------------------------------------
+52.constructor with Abstract class and interface?
+->Abstract class have a constructor
+->Interface cannot have a constructor, because interface cannot be used to create objects.
+------------------------------------------------------------------------------------------------------------
+53.constructor with exception handling?
+->Yes, you can handle exceptions inside a constructor just like in any other method. You can use try-catch blocks inside the constructor body, or declare that the constructor throws an exception.
+------------------------------------------------------------------------------------------------------------
+54.copy constructor?
+->✅ A copy constructor is used to create a copy of one object for another object in the same class.
+->✅ It copies the values of one object into another object of the same class.
+
+class Student
+{
+    String name;
+    int age;
+
+    Student(String name,int age)
+    {
+        this.name = name;
+        this.age = age;
+    }
+
+    Student(Student s1)
+    {
+        this.name = s1.name;
+        this.age = s1.age;
+    }
+
+    public void show()
+    {
+        System.out.println("Name : "+name);
+        System.out.println("Age : "+age);
+    }
+}
+
+class Main
+{
+    public static void main(String[] args)
+    {
+        Student s1 = new Student("Vishal",24);
+        Student s2 = new Student(s1);
+
+        s1.show();
+        s2.show();
+    }
+}
+
+✅ In Java, one object is copied to another using a copy constructor.
+
+------------------------------------------------------------------------------------------------------------
+55.How Object are crated?
+->using the new keyword they are creating the object of the class.
+------------------------------------------------------------------------------------------------------------
+56.What is HashCode?
+->✅ HashCode is a numeric (integer) value assigned to an object to help identify it, especially in hash-based collections.
+------------------------------------------------------------------------------------------------------------
+59.What is inheritance?
+->Inheritance is a concept of object-oriented programming where the child class can access the properties and methods of the parent class. It helps in reusing code and building a relationship between classes.
+->Inheritance means a child class can access some properties and methods of its parent class. It is useful for reusing code and avoiding duplication.
+------------------------------------------------------------------------------------------------------------
+60.Types of Inheritance?
+-> Basically, there are five types of inheritance:
+
+    Single Inheritance:
+    -> Single child and single parent class.
+
+    Multi-level Inheritance:
+    -> Parent class properties are accessed by the child class, and this child class’s properties are accessed by the sub-child class.
+
+    Multiple Inheritance:
+    -> Two or more parent class properties are accessed by a single child class, but this is not possible in Java because of ambiguity error.
+
+    Hierarchical Inheritance:
+    -> Two or more child classes are accessing the single parent class's properties.
+
+    Hybrid Inheritance:
+    -> Combination of two or more inheritance types is called hybrid inheritance.
+------------------------------------------------------------------------------------------------------------
+61.What is used of relationship between java classes?
+->code reused.
+->less execution.
+->less memory.
+------------------------------------------------------------------------------------------------------------
+62. Types of Relationship in Java
+
+👉 A. Is-A Relationship (Inheritance)
+This is when one class inherits from another.
+It represents a parent-child relationship.
+Achieved using the extends keyword.
+
+Example:
+
+class Animal {
+    void eat() { }
+}
+
+class Dog extends Animal {
+    void bark() { }
+}
+
+Here, Dog Is-A type of Animal.
+
+👉 B. Has-A Relationship (Association)
+
+This means one class has a reference to another class.
+It is used for code reusability.
+Implemented by creating an object of one class inside another.
+
+Example:
+class Engine { }
+
+class Car {
+    Engine engine = new Engine(); // Has-A relationship
+}
+
+Here, Car Has-A Engine.
+
+👉 C. Uses-A Relationship (Dependency)
+
+This means one class uses the functionality of another class.
+It is temporary and method-level interaction.
+Happens when one class calls a method of another class.
+
+Example:
+
+class Printer {
+    void print(String message) {
+        System.out.println(message);
+    }
+}
+
+class Document {
+    void show(Printer p) {
+        p.print("Showing document");
+    }
+}
+Here, Document Uses-A Printer.
+------------------------------------------------------------------------------------------------------------
+62.Why Multiple Inheritance are not supported in Java?
+->Multiple Inheritance are not supported in java because they are occured the ambiguity error.
+->there is two differences parant class properties not access the single child class.
+->so, in this case we need achiving the multiple inheritance so we can used interface
+->with the help of the interface we can handled the multiple inheritance concept in java.
+------------------------------------------------------------------------------------------------------------
+63.What is Encaspulation?
+->Encapsulation means data members and member functions are wrapped in a single unit, which is called encapsulation.
+We access and store the information using public getter and setter methods.
+------------------------------------------------------------------------------------------------------------
+64.What is Bean Class?
+->A bean class in Java is a simple class used to store data.
+
+Key points:
+Private variables – Data is stored in private fields.
+Getter and Setter methods – Used to get and set values.
+No-argument constructor – A constructor with no parameters.
+------------------------------------------------------------------------------------------------------------
+65. What is a POJO class in Java?
+->POJO stands for Plain Old Java Object.
+A POJO class is a simple Java class that:
+Does not extend or implement any special Java frameworks or libraries.
+Has private fields (variables).
+Provides public getters and setters to access those fields.
+May include a no-argument constructor.
+Is used to represent and store data (like a model or data object).
+
+->A POJO class is just a normal Java class used to hold data, without depending on any special Java framework or rules.
+------------------------------------------------------------------------------------------------------------
+66.What is Polymorphism?
+
+->polymorphism means many forms of the one task.
+
+->👉 In Java, polymorphism means one object can perform multiple actions depending on how it is used. It is an important part of Object-Oriented Programming (OOP).
+
+Types of Polymorphism in Java:
+
+1. Compile-Time Polymorphism
+Also known as Static Polymorphism or Method Overloading.
+It is resolved during compilation.
+
+There are two ways to achieve Compile-Time Polymorphism:
+
+A. Method Overloading – Same method name with different parameters.
+    ->Same Method Name
+    ->Within the Same Class
+    ->different parameters
+
+B. Operator Overloading – Java supports this only in limited form (like + for numbers and strings).
+    ->Same Method name
+    ->Within different class
+    ->same parameters
+    ->Is-A Realationship
+
+2. Runtime Polymorphism
+Also known as Dynamic Polymorphism or Method Overriding.
+It is resolved during runtime.
+
+There is one main way to achieve Runtime Polymorphism:
+A. Method Overriding – A subclass provides a specific implementation of a method that is already defined in its superclass.
+
+------------------------------------------------------------------------------------------------------------
+67.What is the differences between the method overloading and method overriding?
+→ Method Overloading means a single class contains two or more methods with the same name, but they have different parameters (either in number, type, or order).
+It is also called compile-time polymorphism.
+→ Method Overriding means two different classes (parent and child) have the same method name with the same number and type of parameters.
+It is used in Is-A relationship (Inheritance) and is called runtime polymorphism.
+------------------------------------------------------------------------------------------------------------
+68.Operator Overloading is Posible in java?
+->In Java Operator is not possible but the + Operator only one operator they are overloading in java 
+->with the + operator they are add the integer data and two string are concat
+------------------------------------------------------------------------------------------------------------
+69.What is Compile Time Polymorphism and Runtime Polymorphism?
+->method overloading and method overriding explain
+->compile time polymorphism occured in compile time and it is also called as static polymorphism or early binding.
+->runtime polymorphism occured in runtime and it is also called as dynamic polymorphism or late binding.
+------------------------------------------------------------------------------------------------------------
+70.What is Varargs?
+->Varargs (variable arguments) allow a method to accept multiple values of the same type using a single parameter.
+------------------------------------------------------------------------------------------------------------
+71.Which Methods cannot Override?
+->private methods cannot be override.
+->final methods cannot be override.
+->static methods cannot be override
+------------------------------------------------------------------------------------------------------------
+72.What is abstraction?
+->abstraction is hiding the implementation part and highlighted the main services.like a car engine are hiding but the car handle and break are show there main services.
+->Abstract class contain the Abstract method and concreat method.
+->Abstract does not create a object of the class but they are created the reference of the class.
+->An abstract class is mainly used to share common behavior (methods or data) with other classes, and we do not create an object of an abstract class.
+->if any class inheritance abstract class then it should implement all the abstract methods or that class should also be declared as abstract.
+->abstract class have a constructor.
+->abstract class supports both method overriding and method overloading
+------------------------------------------------------------------------------------------------------------
+73.Abstract class have a constructor so what is used of this constructor?
+->Yes, an abstract class can have a constructor. Even though we cannot create an object of an abstract class directly, the constructor is used to initialize some fields or write logic. When a child class extends the abstract class, it automatically calls the abstract class constructor using super().
+------------------------------------------------------------------------------------------------------------
+74.What is differences between the abstract method and concreat method?
+->abstract method and concreat method both are part of the class and they are used to the abstraction provided by the class 
+->abstract method does not have a body 
+->but the concreate method have a body 
+->if you create a abstract method so that time need to the abstract keyword
+->but the concreat method case they are not need of the  abstract keyword
+------------------------------------------------------------------------------------------------------------
+75.what is differences between the abstract class and concreat class in java?
+->abstract class contain the abstract method as will as concreat class.
+->concreat class contain only the concreat method does not contain the abstract methods.
+->when ever we can create the abstract class that timing need to the abstract class.
+->but the concreat class creating timing they are not need to the abstract keyword.
+------------------------------------------------------------------------------------------------------------
+76.What is interface.
+->interface provided fully abstraction as compared to the abstract class because abstract class provided only the partial abstraction. because of they are contain to the concreate and abstract methods.
+->but the interface contain only abstract methods. they are not contain the concreate methods.
+->and interface contain all method variable are by default public static and final and methods are also by default public and abstract.
+->and with the help of the interface they are achieve multiple inheritance.
+------------------------------------------------------------------------------------------------------------
+77.what is differences between the abstract class and interface?
+->abstract class provided the partial abstract they are deppend upon our requirement 0 to 100% abstraction 
+->but the interface case they are provided the fully abstraction of the class or 100% abstraction they are provided.
+->abstract class creating timing they are need to the abstract class and they are contain to the abscract class as well as concreat methods 
+->but the interface contain only the abscract methods 
+->interface does not contain the constructor 
+->but the abscract class have a constructor of the class
+------------------------------------------------------------------------------------------------------------
+->interface cannot be private or protected they are only default or public.
+->but the inner interface can be anything like a public, private, default and protected
+->interface represent Is-A Realationship.
+->interface new feature(Update Java) :- 
+     ✅ Default methods (Java 8): default methods -> Allow method body in interface and can be overridden by implementing classes.
+
+     ✅ Static methods (Java 8): static methods ->  Belong to the interface, not to instances or implementing classes.
+
+     ✅ Private methods (Java 9): private methods -> Used for code reuse inside the interface (not accessible outside).
+------------------------------------------------------------------------------------------------------------
+78.What is differences between abstraction and Encapsulation?
+->✅ Abstraction means hiding the implementation details and showing only the main features of a service to the user.
+Example: When you use a mobile phone, you just press buttons to make a call—you don’t know the internal process happening in the background.
+
+->✅ Encapsulation means securing the data by restricting direct access to it.
+The actual variables are declared as private, and data is accessed or modified through public getter and setter methods.
+Example: In a class, you make the name field private and use getName() and setName() to access or update it.
+------------------------------------------------------------------------------------------------------------
+79.Which are 6 main pillers in OOP's?
+->Classes
+->Object and Methods 
+->Inheritance
+->Polymorphism
+->Abstraction
+->Encapsulation
+------------------------------------------------------------------------------------------------------------
+80.What is used of "this" keyword?
+->"this" is the reference of current class object.
+------------------------------------------------------------------------------------------------------------
+81.Write a Prove that this keyword also referce to current object?
+->
+class Demo
+{
+    void show()
+    {
+        System.out.println(this);
+    }
+    public static void main(String[] args) 
+    {
+        Demo d = new Demo();
+        System.out.println(d); 
+        d.show();  
+    }
+}
+------------------------------------------------------------------------------------------------------------
+82.What is Constructor chaining?
+->✅ Constructor Chaining means calling one constructor from another constructor within the same class using the this keyword.
+
+It is used when a class has multiple constructors, and you want to avoid code duplication by reusing one constructor inside another.
+------------------------------------------------------------------------------------------------------------
+83.What is used of "super" keyword?
+-> "super" keywords is the referce variable of the parant class object.
+->if you want to the parant class constructor , method and data member so we can used the super keyword.
+------------------------------------------------------------------------------------------------------------
+84.What is used of "final" keyword?
+→ In Java, the final keyword is used with variables, methods, and classes.
+→ If we use final with a variable, it becomes a constant, and it must be initialized.
+→ If we use final with a class, it cannot be inherited by another class.
+→ If we use final with a method, it cannot be overridden in the subclass.
+------------------------------------------------------------------------------------------------------------
+85.What is differences between the this and this()?
+→ this is a keyword that refers to the current class object or instance.
+→ this() is used to call another constructor of the same class (constructor chaining).
+->and this() is used to constructor chaining concept.
+------------------------------------------------------------------------------------------------------------
+86.What is differences between the super and super()?
+-> super is a keyword that referce to the parant class referce variable.
+-> super() is used to call the parant class constructor or they are inherited the parant class constructor.
+------------------------------------------------------------------------------------------------------------
+87.What is differences between the final , finally annd finalized?
+→ final is a keyword used with variables (to make them constants), methods (to prevent overriding), and classes (to prevent inheritance).
+→ finally is a block that is always executed after try-catch, whether an exception occurs or not.
+→ finalize() is a method called by the Garbage Collector before destroying an unused object to perform cleanup operations.
+------------------------------------------------------------------------------------------------------------
+->Static methods can access only the static data member 
+->Non-Static methods can access the static and non-static data members.
+------------------------------------------------------------------------------------------------------------
+88.What is exception?
+->unwanted or unexpeted event occured in the normal flow of the program and they are distured the normal flow of the program that is called as exception.
+------------------------------------------------------------------------------------------------------------
+89.What is error and exception?
+✅ Exception occurs at compile-time or runtime, and it can be handled by the program using try-catch blocks.
+✅ Error is a serious issue related to software or hardware failure, and it cannot be handled by the program.
+------------------------------------------------------------------------------------------------------------
+90.There is the Two Types of Exception?
+A. Predefined Exception – Built-in exceptions provided by Java (e.g., NullPointerException, IOException)
+B. User-Defined Exception – Custom exceptions created by the programmer using extends Exception or RuntimeException.
+
+✅ Both predefined and user-defined exceptions can be classified into two categories:
+🔹 Compile-time Exception – Also called Checked Exception (e.g., IOException, SQLException)
+🔹 Runtime Exception – Also called Unchecked Exception (e.g., NullPointerException, ArrayIndexOutOfBoundsException)
+------------------------------------------------------------------------------------------------------------
+91.What is checked and Unchecked exeception?
+✅ Checked Exception:
+It occurs at compile-time and must be handled by the programmer using try-catch or throws.
+Example: IOException, SQLException
+✅ Unchecked Exception:
+It occurs at runtime and handling it is optional for the programmer.
+Example: ArithmeticException, NullPointerException
+------------------------------------------------------------------------------------------------------------
+92.How to work of Exception?
+✅ If an exception is not handled, the program will terminate abnormally, which can lead to server crashes or backend failure—so exception handling is important.
+✅ When an exception occurs and is not handled inside a method, the JVM creates an exception object and passes it up the call stack. If no method handles it, the main() method becomes responsible for handling it. If even main() doesn’t handle it, the program crashes.
+------------------------------------------------------------------------------------------------------------
+93.How to used of try and catch block?
+->try and catch block Basically used to handling exeception and try block can write risky code and catch block contain exception handling code.
+------------------------------------------------------------------------------------------------------------
+94.What is used "throw" keyword?
+->throw keyword Basically used to create an exception object manually.
+->and throw most of the used in to create a user-defined exeception
+->they are throws exception for there handle methods.
+
+    class Demo
+    {
+        public static void main(String[] args)
+        {
+            int age = 16;
+            if(age>18)
+            {
+                System.out.println("Your are Eligible for Voating..!");
+            }
+            else 
+            {
+                throw new RuntimeException("Your not Eligible for Voating..!");
+            }
+        }
+    }
+
+------------------------------------------------------------------------------------------------------------
+95.What is used of "throws" keyword?
+->throws is used in method declarations.
+->It tells the caller that the method may throw certain exceptions.
+->Helps in exception propagation (letting the calling method handle it).
+
+    class Demo
+    {
+        public static void show(int age) throws RuntimeException
+        {
+            if(age>18)
+            {
+                System.out.println("Your are Eligible for Voating..!");
+            }
+            else 
+            {
+                throw new RuntimeException("Your are not Eligible for Voating..!");
+            }
+        }
+        public static void main(String[] args)
+        {
+            try
+            {
+                show(16);
+            }
+            catch(RuntimeException e)
+            {
+                System.err.println(e);
+            }
+        }
+    }
+
+------------------------------------------------------------------------------------------------------------
+96.what is differences between the throw and throws?
+✅ Corrected Simple Explanation:
+throw is used to create and throw an exception manually, including user-defined exceptions.
+
+This exception is usually handled by the caller method using a try-catch block.
+
+throws is used to declare that a method might throw an exception.
+It does not handle the exception—it just passes it to the caller method to handle.
+
+🔹 Final Simple Meaning:
+throw → creates and throws the exception.
+
+throws → passes the exception responsibility to the next method.
+------------------------------------------------------------------------------------------------------------
+97. What is the use of try, catch, and finally blocks in Java?
+✅ try block
+Used to write risky code (code that may cause an exception).
+
+✅ catch block
+Used to handle the exception thrown by the try block.
+
+✅ finally block
+Used to close resources (like files, database connections, etc.).
+It always runs, whether an exception occurs or not.
+------------------------------------------------------------------------------------------------------------
+--------------------------------------------String Manipulation---------------------------------------------
+------------------------------------------------------------------------------------------------------------
+98.What is String?
+->String is collection of Character and in the java String is a class they are present to the java.lang package.
+->String is the non-primite data types.
+->and String are created Immutable oject.
+------------------------------------------------------------------------------------------------------------
+99.How many classes are there in java to craeating the String?
+->1.String 
+->2.StringBuilder
+->3.StringBuffer
+------------------------------------------------------------------------------------------------------------
+✅ 100. What is StringBuffer?
+StringBuffer was introduced because String is immutable (cannot be changed).
+StringBuffer provides a mutable object, meaning you can change the content.
+All its methods are synchronized, so it is thread-safe (safe to use in multi-threaded programs).
+
+Example:
+StringBuffer sb = new StringBuffer("Hello");
+sb.append(" World");
+System.out.println(sb); // Output: Hello World
+------------------------------------------------------------------------------------------------------------
+✅ 101. What is StringBuilder?
+StringBuilder is also introduced for mutable string operations, like StringBuffer.
+But unlike StringBuffer, its methods are not synchronized, so it is not thread-safe.
+It is faster than StringBuffer and preferred in single-threaded environments.
+
+Example:
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" Java");
+System.out.println(sb); // Output: Hello Java
+------------------------------------------------------------------------------------------------------------
+✅ 102. What is the difference between String, StringBuffer, and StringBuilder?
+🔹 String
+Immutable: Once created, it cannot be changed.
+Created in two ways:
+String Literal – stored in String Constant Pool (SCP).
+Using new keyword – stored in heap memory.
+If you modify a string, a new object is created.
+
+🔹 StringBuffer
+Mutable: You can modify the object.
+All methods are synchronized.
+Thread-safe: Safe to use in multi-threaded environments.
+Slightly slower because of synchronization.
+
+🔹 StringBuilder
+Also mutable, like StringBuffer.
+Methods are not synchronized.
+Not thread-safe, but faster than StringBuffer.
+Best used in single-threaded environments.
+------------------------------------------------------------------------------------------------------------
+103.What is difference between creating String by new keyword and by using the string Literal?
+🔹 Using String Literal
+Only one object is created.
+Stored in the String Constant Pool (SCP).
+If the same literal is used again, Java reuses the existing object (memory efficient).
+
+🔹 Using new keyword
+Two Object is created.
+Stored in the Heap and SCP.
+Even if the same value exists, a new object is created in heap.
+------------------------------------------------------------------------------------------------------------
+✅ 104. When using new keyword to create a String, two objects are created. Who references them?
+Example:
+String str = new String("Vishal");
+🔹 What happens here:
+"Vishal" (String literal) is stored in the String Constant Pool (SCP).
+JVM checks if it already exists in the SCP.
+If not, it creates it.
+This object has no explicit reference in your code, but the JVM internally manages it.
+The new String("Vishal") creates a new object in the heap memory.
+This new object is explicitly referenced by str.
+------------------------------------------------------------------------------------------------------------
+✅ 105. Why is SCP (String Constant Pool) called the "GOD of Java"?
+
+🔹 SCP = String Constant Pool
+It is a special memory area inside the Java method area (part of JVM) where String literals are stored.
+
+🔥 Reasons why SCP is considered the “GOD” in Java:
+✅ Memory Optimization
+Avoids creating duplicate string objects.
+Reuses existing literals, saving memory.
+
+✅ Performance Boost
+Comparing strings is faster using == because literals in SCP point to the same reference.
+
+✅ Automatic Management by JVM
+JVM internally manages the SCP.
+Developers don’t need to handle it manually.
+
+✅ Immutable Nature of Strings
+Strings in the SCP are immutable and safe to share across code without risk of modification.
+
+✅ Used Everywhere
+Strings are used heavily in Java (class names, method names, messages, etc.), and SCP ensures efficient usage.
+
+📌 Example:
+String a = "Java";
+String b = "Java";
+System.out.println(a == b);  // true → both point to same SCP object
+
+🎯 In Short:
+SCP saves memory, improves speed, avoids duplication, and is always working in the background—
+That’s why it’s called the “GOD of Java”! 🙌
+------------------------------------------------------------------------------------------------------------
+✅ 106.Is SCP (String Constant Pool) supported by Java Garbage Collection?
+->In older versions of Java (before Java 7), Garbage Collector did not work in the SCP because it was in PermGen memory.
+->In latest versions of Java (Java 7 and above), SCP moved to heap/metaspace, so Garbage Collector can now clean unused strings from the String Constant Pool (if they are no longer referenced).
+------------------------------------------------------------------------------------------------------------
+107.String Class Methods and Constructor?
+
+->A.Validating User Input?
+length() : length of string and return integer value.
+isEmpty() : checks whether string is empty or not.
+trim() : removing space left and write side of the string.
+
+->B.Comparing two String?
+equals() : it compared the two string and return the boolean values.
+equalsIngnoreCase() : it compared the 2 string but they are ingnore upppercase and lowercase Character.
+compareTo() : It compare the two string lexicographically.
+
+->C.Get Sub-String from String :- 
+subString() : it will be return substring and they are provided the two parameter starting and ending index position
+subSequence() : It will return the CharSequence and they are provided the two parameter starting and ending index position.
+
+->Replacing Or Removing Characters:-
+replace() : It will replace the string according to provided another string.
+replaceFirst() : It will replace the first string.
+
+->searching Character in string:- 
+indexOf() :- it will return the index position of provided Character.
+lastIndexOf() :- it will return the last index position of provided Character.
+charAt() :- It will return the Character they are need to provided the index position of needed Character.
+starstWith() :- it will return the boolean value if string is matched from starting.
+
+->Case Conversion Methods :-
+toLowerCase() :- It will converted the string into lowercase.
+toUpperCase() :- it will converted the string into uppercase.
+
+->Type Conversion Methods :-
+valueOf() :- it will convert other data type into string(it is static methods).
+toCharArray() :- it will convert the string into Character arrays.
+
+->Other Method :- 
+split() :- It will split the String according to provided regex.
+
+------------------------------------------------------------------------------------------------------------
+108.difference between equals() and ==?
+->equals() method checks the containing part of the value only, but the == operator checks the address of the value.
+->equals() method checks the actual value inside the object, but == operator checks the memory address (reference) of the object.
+------------------------------------------------------------------------------------------------------------
+109.What is StringTokenizer?
+->StringTokenizer is the class which is used to divide the strings into tokens.
+->Some Methods of StringTokenizer.
+A.hasMoreTokens()
+B.nextTokens()
+C.countTokens()
+D.hasMoreElements()
+E.nextElement()
+
+------------------------------------------------------------------------------------------------------------
+------------------------------------------Collection Frameworks---------------------------------------------
+------------------------------------------------------------------------------------------------------------
+
+                                                   java.util.*
+                                        +----------------------------------------+
+                                        |      Java Collection Framework         |
+                                        +----------------------------------------+
+                                                        |
+                                    +------------------+------------------+
+                                    |                                     |
+                            +-----+-----+                         +-----+-----+
+                            | Collection|                         |    Map    |
+                            +-----+-----+                         +-----+-----+
+                                    |                                     |
+                    +---------------+---------------+        +-------------+-------------+
+                    |               |               |        |             |             |
+                List             Set            Queue   HashMap       TreeMap   LinkedHashMap
+                    |               |               |        |                           |
+                +----+----+   +------+------+   +----+----+   |                     +----+------+
+                |ArrayList|   | HashSet     |   |PriorityQ|   |                     |Hashtable  |
+                |LinkedList|  | LinkedHashSet|  |ArrayDeque|  |                     |WeakHashMap|
+                |Vector    |  | TreeSet      |  |LinkedList|  |
+                |Stack     |  +--------------+  +----------+  |
+                +----------+                                  |
+                                                            |
+                                                    +-------------+
+                                                    |HashMap (base)|
+                                                    +-------------+
+
+->"The Java Collection Framework includes two main parts: the Collection interface and the Map interface. Both are part of the framework, but Map is not a child of Collection.
+->"Collection interface contains List, Set, and Queue as its subinterfaces."
+->"Map interface contains HashMap,TreeMap,LinkedHashMap".
+
+------------------------------------------------------------------------------------------------------------
+110.What is Collection?
+->"Collection in Java is a framework that provides a set of classes and interfaces to store and manage a group of objects."
+------------------------------------------------------------------------------------------------------------
+110.What is the Java Collections Framework?
+->The Java Collections Framework is a collection of classes and interfaces that helps us easily perform operations like insertion, deletion, searching, sorting, and more on groups of objects (collections).
+
+🔧 Explanation:
+It is available in the java.util package.
+It includes interfaces like List, Set, Map, and classes like ArrayList, HashSet, HashMap, etc.
+These classes and interfaces make it easy to handle data in different ways without writing complex logic.
+------------------------------------------------------------------------------------------------------------
+111.How is the Java Collections Framework different from Arrays?
+->Arrays are simple, fast, and best when we know the fixed size of the data.
+But when the data is dynamic (changes in size), it is better to use ArrayList or other Collections from the Java Collections Framework.
+------------------------------------------------------------------------------------------------------------
+112.What are the main interfaces in the Java Collections Framework?
+→ The Java Collections Framework provides several core interfaces that define common behaviors for different types of collections.
+->Collection Framework contain Collection and Map interface they are two main interfaces 
+->and that contain the difference type of the interface are there
+->like a collection interfaces contain the List,Set and Queue 
+->and Map Interface contain the HashMap,TreeMap and LinkedHashMap
+------------------------------------------------------------------------------------------------------------
+
+                                            Collection (interface)
+                                                    |
+                            +-------------------------+-------------------------+
+                            |                         |                         |
+                           List                      Set                      Queue
+                            |                         |                         |
+                    +---------------+      +--------------------+     +--------------------+
+                    | ArrayList     |      | HashSet            |     | PriorityQueue      |
+                    | LinkedList    |      | LinkedHashSet      |     | ArrayDeque         |
+                    | Vector        |      | TreeSet            |     | LinkedList         |
+                    | Stack         |      +--------------------+     +--------------------+
+                    +---------------+
+
+
+List :- List is the part of the Collection interface and they are contain the ArrayList,LinkedList and Vector and Stack .
+
+✅ Key Features of List:
+1.Maintains insertion order
+2.Allows duplicate elements
+3.Provides index-based access (starting from 0)
+4.Supports methods like add(), get(), set(), remove(), size()
+
+                                                List (interface)
+                                                    |
+                                +-------------------+-------------------+
+                                |                   |                   |
+                            ArrayList(class)    LinkedList(class)     Vector(class)
+                                                                        |
+                                                                      Stack(class)
+
+✅ Types of List Implementations
+
+📦 1. ArrayList
+Backed by a dynamic array
+Fast in read/access
+Slower in insertion/deletion (especially in the middle)
+
+📦 2. LinkedList
+Uses doubly linked list
+Fast in insertion/deletion
+Slower in access (compared to ArrayList)
+
+📦 3. Vector (Legacy)
+Similar to ArrayList but synchronized (thread-safe)
+Slower than ArrayList due to synchronization
+
+📦 4. Stack (LIFO - Last In First Out)
+Subclass of Vector
+Provides push() and pop() methods
+
+difference between :- 
+
+📌 ArrayList – Fast access, slow insert/delete (uses dynamic array)
+
+List<String> list = new ArrayList<>();
+list.add("Apple");
+list.get(0);  // Fast access
+
+📌 LinkedList – Fast insert/delete, slow access (uses doubly linked list)
+
+List<String> list = new LinkedList<>();
+list.add("Banana");
+list.remove(0);  // Fast deletion
+
+📌 Vector – Thread-safe ArrayList, but slower due to synchronization
+
+Vector<String> vector = new Vector<>();
+vector.add("Orange");
+vector.get(0);  // Thread-safe access
+
+📌 Stack – LIFO structure, adds push() and pop() to Vector
+
+Stack<String> stack = new Stack<>();
+stack.push("Mango");
+stack.pop();  // LIFO operation
+
+
+Set :- Does not allow duplicate elements and Implementations: HashSet, LinkedHashSet, TreeSet
+
+                                            Set (interface)
+                                                   |
+                                +------------------+------------------+
+                                |                  |                  |
+                            HashSet(class)    LinkedHashSet(class) TreeSet(class)
+
+📦 1.HashSet
+    No order
+    Very fast
+    Uses hash table
+
+Set<String> set = new HashSet<>();
+set.add("Apple");
+set.add("Banana");
+
+📦 2.LinkedHashSet
+    Keeps the order you add
+    A bit slower than HashSet
+    Uses linked list + hash table
+
+Set<String> set = new LinkedHashSet<>();
+set.add("Apple");
+set.add("Banana");
+
+📦 3.TreeSet
+    Sorted order (A to Z)
+    Slower than others
+    Uses tree
+
+Set<String> set = new TreeSet<>();
+set.add("Banana");
+set.add("Apple");  // Stored as: Apple, Banana
+
+Queue :- Follows FIFO (First In, First Out),Used to store elements in order of processing and Common methods: add(), offer(), poll(), peek()
+
+                                            Queue (interface)
+                                                 |
+                                +----------------+----------------+
+                                |                                 |
+                            PriorityQueue(class)              LinkedList(class)
+                                                                  |
+                                                              ArrayDeque(class)
+
+🔸 PriorityQueue (class)
+    Elements are sorted by priority, not by insertion order
+    No null allowed
+    Not thread-safe
+
+Queue<Integer> pq = new PriorityQueue<>();
+pq.add(30);
+pq.add(10);
+pq.add(20);
+// Output: 10, 20, 30 (sorted by default order)
+
+🔸 LinkedList (class)
+    Can be used as Queue or Deque
+    Maintains insertion order
+    Allows null values
+
+Queue<String> queue = new LinkedList<>();
+queue.add("A");
+queue.add("B");
+// Output: A, B (FIFO)
+
+🔸 ArrayDeque (class)
+    Faster than LinkedList for queue operations
+    Can be used as Queue or Stack
+    Doesn’t allow null
+
+Deque<String> deque = new ArrayDeque<>();
+deque.add("X");
+deque.add("Y");
+// Output: X, Y (FIFO by default)
+
+
+🧭 What is Map?
+->  A Map stores key-value pairs
+    Keys must be unique, but values can repeat
+    It does not extend the Collection interface
+    Used when you want to map one thing to another, like id → name
+
+                            java.util.*
+                            |
+                            +-----------------------------------------+
+                            |      Java Collections Framework         |
+                            +-----------------------------------------+
+                                                     |
+                                                +-----------+
+                                                |   Map     |  <-- Interface (Key-Value pairs)
+                                                +-----------+
+                                                     |
+                                    +----------------+----------------+----------------+
+                                    |                |                |                |
+                                HashMap         TreeMap        LinkedHashMap      Hashtable (Legacy)
+                                    |                                 |
+                            +------------+                            |
+                            |WeakHashMap |                            |
+                            +------------+                            |
+                                                                      |
+                                                                +--------------+
+                                                                |  Properties  |  <-- Subclass of Hashtable
+                                                                +--------------+
+
+🔸 HashMap
+    ✅ Stores data in random order
+    ✅ Allows one null key, multiple null values
+    ❌ Not synchronized (not thread-safe)
+    ✅ Fast for most use cases
+    ✅ Allow duplicate values
+
+    Map<Integer, String> map = new HashMap<>();
+    map.put(1, "Apple");
+    map.put(2, "Banana");
+    map.put(3, "Apple");  // duplicate value is allowed
+
+🔸 LinkedHashMap
+    ✅ Keeps insertion order
+    ✅ Allows one null key
+    ❌ Not synchronized
+    Slightly slower than HashMap
+
+    Map<Integer, String> map = new LinkedHashMap<>();
+    map.put(10, "Cat");
+    map.put(20, "Dog");
+    // Output: Cat, Dog (in order added)
+
+🔸 TreeMap
+    ✅ Stores in sorted (ascending) key order
+    ❌ Doesn’t allow null keys
+    ✅ Uses Red-Black Tree
+    Slower than HashMap but sorted
+
+    Map<Integer, String> map = new TreeMap<>();
+    map.put(3, "Zebra");
+    map.put(1, "Lion");
+    map.put(2, "Tiger");
+    // Output: 1-Lion, 2-Tiger, 3-Zebra
+
+🔸 Hashtable (Legacy)
+    ✅ Thread-safe (synchronized)
+    ❌ Slower than HashMap
+    ❌ No null keys or null values allowed
+
+    Map<String, String> table = new Hashtable<>();
+    table.put("A", "Alpha");
+    table.put("B", "Beta");
+
+🔸 WeakHashMap
+    ✅ Entries are removed when key is no longer in use (GC removes them)
+    ✅ Used for memory-sensitive caching
+    ❌ Not commonly used unless advanced GC-based use case
+
+    Map<Object, String> map = new WeakHashMap<>();
+    Object key = new String("key");
+    map.put(key, "value");
+    key = null; // now eligible for GC
+
+------------------------------------------------------------------------------------------------------------
+
+What is the difference between Collection and Collections in Java?
+What is the hierarchy of the Java Collections Framework?
+What is the difference between ArrayList and LinkedList?
+What is the internal implementation of ArrayList?
+What happens when an ArrayList reaches its capacity?
+How does LinkedList store its elements internally?
+How to improve the performance of ArrayList while adding elements?
+What are the key differences between ArrayList, Vector, and CopyOnWriteArrayList?
+
+
+What are the differences between HashSet, LinkedHashSet, and TreeSet?
+How does HashSet work internally?
+Why does HashSet allow only one null value?
+How does TreeSet maintain sorting?
+Can we store heterogeneous objects in a TreeSet?
+Why should we override equals() and hashCode() for HashSet?
+
+
+What is the difference between HashMap, LinkedHashMap, and TreeMap?
+How does HashMap work internally?
+How does LinkedHashMap maintain insertion order?
+How does TreeMap maintain sorting?
+Why is Hashtable considered thread-safe?
+How does ConcurrentHashMap achieve thread safety?
+Can we store null keys and values in HashMap and TreeMap?
+What is the initial capacity and load factor in HashMap?
+What is the difference between IdentityHashMap and WeakHashMap?
+
+
+What is the difference between Queue and Deque?
+How does PriorityQueue work internally?
+What is the difference between ArrayDeque and LinkedList?
+What is the difference between BlockingQueue and ConcurrentLinkedQueue?
+
+
+How does CopyOnWriteArrayList work internally?
+What is the difference between ConcurrentHashMap and Collections.synchronizedMap()?
+What are the advantages of ConcurrentSkipListMap over ConcurrentHashMap?
+
+Why should we not use Vector and Hashtable in modern Java applications?
+How does EnumSet work internally?
+What is the difference between fail-fast and fail-safe iterators?
+How does WeakHashMap handle garbage collection?
+What is the difference between modCount and fail-fast behavior?
+What is the difference between peek(), poll(), and remove() in Queue?
+What is the difference between synchronizedList() and CopyOnWriteArrayList
+
+What is a functional interface? Give some examples.
+Explain @FunctionalInterface annotation.
+What is the difference between Predicate, Consumer, and Function interfaces?
+How do you use lambda expressions in Java 8?
+Can a functional interface have multiple default methods?
+
+What is the Streams API in Java 8?
+How is map() different from flatMap() in Streams?
+What is the difference between filter() and map()?
+What is the difference between sequential and parallel streams?
+How do you sort a list using Streams API?
+What is the difference between reduce() and collect()?
+What is the use of Collectors.groupingBy()?
+What is Collectors.joining() and how is it used?
+What are terminal and intermediate operations in Streams?
+What is the difference between findFirst() and findAny()?
+
+What is Optional in Java 8?
+How does Optional.of(), Optional.empty(), and Optional.ofNullable() work?
+How do you use orElse(), orElseGet(), and orElseThrow()?
+How to check if a value is present in Optional?
+What are the advantages of using Optional?
+
+What are default methods in Java 8 interfaces?
+Can we override default methods in Java 8?
+What is the difference between default and static methods in interfaces?
+Why were default methods introduced in Java 8?
+
+What is CompletableFuture in Java 8?
+What is the difference between CompletableFuture.supplyAsync() and runAsync()?
+How do you combine multiple CompletableFuture instances?
+What is the difference between thenApply() and thenCompose()?
+
+How does forEach() work in Java 8?
+How does Java 8 improve performance using Stream.parallel()?
+What is the difference between Collectors.toList() and Stream.toList() (Java 16)?
+Can we use Stream multiple times? Why or why not?
+How do you convert a Stream to an array?
+
+--------------------------------------------ADVANCED--------------------------------------------------------
+
+Thread Safety in Collections
+What is the difference between synchronizedMap() and ConcurrentHashMap?
+
+How do they handle concurrent modifications?
+Which one performs better in a multi-threaded environment and why?
+How does ConcurrentHashMap internally manage concurrency?
+How does ConcurrentHashMap achieve thread safety without using synchronized on the entire map?
+
+What is the role of segment locks in Java 7 and CAS (Compare-And-Swap) in Java 8?
+What is the role of computeIfAbsent() and putIfAbsent() methods in ConcurrentHashMap?
+Why should we avoid using synchronized HashMap in multi-threaded applications?
+
+What happens if multiple threads access a synchronized HashMap simultaneously?
+How does it impact performance?
+How does CopyOnWriteArrayList work, and when should we use it instead of ArrayList?
+
+What are its advantages and disadvantages in a multi-threaded environment?
+What is the difference between ConcurrentSkipListMap and ConcurrentHashMap?
+
+When should we prefer ConcurrentSkipListMap over ConcurrentHashMap?
+What is the difference between BlockingQueue and ConcurrentLinkedQueue?
+
+What are their use cases in concurrent programming?
+What is the difference between WeakHashMap and HashMap?
+
+How does garbage collection affect a WeakHashMap?
+How does IdentityHashMap work, and how is it different from HashMap?
+
+Why does IdentityHashMap use reference equality (==) instead of equals()?
+Deep-Dive Java 8 Interview Questions
+1. Functional Interfaces & Lambdas
+What is the difference between Predicate, Consumer, Function, and Supplier?
+
+What are some real-world use cases for each functional interface?
+How does BiFunction work, and how is it different from Function?
+
+What is the difference between map() and flatMap() in Streams?
+
+How do they behave when dealing with nested collections?
+What is the difference between findFirst() and findAny() in Java Streams?
+
+Which one should be used in parallel streams?
+How does short-circuiting work in Java 8 Streams (limit(), findFirst(), etc.)?
+
+How does it impact performance?
+2. Performance Optimization in Streams
+What is the difference between sequential and parallel streams?
+
+When should you use parallel streams, and when should you avoid them?
+How does Collectors.groupingByConcurrent() improve performance over Collectors.groupingBy()?
+
+What is Spliterator, and how does it improve parallel stream performance?
+
+3. Optional API
+Why was Optional introduced in Java 8?
+
+How does it help avoid NullPointerException?
+What is the difference between Optional.of(), Optional.empty(), and Optional.ofNullable()?
+
+What is the difference between orElse(), orElseGet(), and orElseThrow()?
+
+Which one is the most efficient?
+4. Method References & Default Methods
+What are the four types of method references in Java 8?
+
+When should we use each type?
+Why were default methods introduced in interfaces in Java 8?
+
+How do they solve the diamond problem?
+Can an interface have multiple default methods with the same name? What happens?
+
+5. CompletableFuture and Asynchronous Programming
+What is the difference between CompletableFuture.supplyAsync() and CompletableFuture.runAsync()?
+
+What is the difference between thenApply(), thenAccept(), and thenRun() in CompletableFuture?
+
+How does CompletableFuture.thenCompose() differ from thenApply()?
+
+What is allOf() and anyOf() in CompletableFuture?
+
+How do they help in parallel execution?
+6. Performance and Memory Optimization in Java 8
+How does Java 8 improve memory management with the removal of PermGen space?
+
+What is the difference between Collectors.toList() and Stream.toList() in Java 16?
+
+What is the difference between eager and lazy evaluation in Java Streams?
+
+Which operations are lazy and which are eager?
+
+
+How would you efficiently remove duplicates from a list using Java 8?
+
+Can it be done without modifying the original list?
+How would you merge two lists and remove duplicates using Streams?
+
+How would you filter out all even numbers from a list and sum only the remaining numbers using Java 8 Streams?
+
+If you have a list of objects, how would you sort them by multiple fields using Java 8?
+
+For example, sorting employees by department, then by salary.
+How do you find the second highest number in a list using Java 8?
+
+How do you count the occurrences of each element in a list using Java 8 Streams?
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+---------------------------------------------JAVA VERSIONING QUESTIONS--------------------------------------
+------------------------------------------------------------------------------------------------------------
+
+🔹 1. General Version Awareness
+
+Q1: What are the key features introduced in Java 17?
+
+Q2: Why is Java 17 considered an LTS version? What does LTS mean for developers and businesses?
+
+Q3: What were the differences between Java 8, 11, and Java 17?
+
+🔹 2. Java 17 New Features & Enhancements
+
+➤ Sealed Classes (JEP 409)
+Q4: What are sealed classes in Java 17? How do they help in designing class hierarchies?
+
+Q5: Can you give an example of how you used sealed classes in your project?
+
+➤ Pattern Matching for instanceof (JEP 394)
+Q6: How has instanceof improved in Java 17? What’s the benefit of pattern matching?
+
+➤ Switch Expressions Enhancements (from previous versions but used in 17)
+Q7: What are the new switch expression features? How do they make your code cleaner?
+
+➤ Records (finalized in Java 16, but used in Java 17)
+Q8: What are records in Java? How are they different from regular POJOs?
+
+➤ Text Blocks (from Java 15, but used in 17)
+Q9: What are text blocks and how do they improve working with multiline strings?
+
+➤ Helpful NullPointerExceptions (JEP 358)
+Q10: How does Java 17 make debugging NPEs easier?
+
+🔹 3. Practical Usage
+
+Q11: In your project, which Java 17 features did you use most, and why?
+
+Q12: Did you face any challenges migrating from older Java versions to Java 17?
+
+Q13: How do you manage compatibility and library support while using Java 17 in enterprise applications?
+
+🔹 4. Performance & Security
+
+Q14: What are some of the JVM or performance improvements introduced in Java 17?
+
+Q15: Are there any new security features in Java 17 that you are aware of?
+
+🔹 5. Licensing Awareness
+
+Q16: Are there any licensing concerns or changes in Java 17 that you had to consider for your project?
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+
+

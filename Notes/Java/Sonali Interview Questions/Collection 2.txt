@@ -1,0 +1,77 @@
+Arraylist - internally uses dynamic array for store and manipulate data
+		mostly used for storing realted task
+		it is not synchronized or thread safe
+		it allows duplicates, and null as well
+		follows insertion order
+
+Linked list - internally used doubly linked list for operating data
+		uses node which work as a reference of privious element, current element and next element
+		not synchronized or thread safe
+		it allows duplicates as well null also
+		follows insertion order
+
+vector	- same like Arraylist
+		but it is synchronized
+		thread safe
+		follows insertion order
+		allow duplicate as well null
+
+Priority Queue - it uses internal array for performing data operation
+		uses FIFO Approach  ..using comparable method set priority
+		allow duplicate, as well null
+		not synchronized not thread safe
+
+Array deque - uses FIFO and LIFO Approch
+		you can insert and remove data from anywhere
+		allow duplicate, as well null
+		not synchronized not thread safe
+		
+Linked list - same
+
+
+Hash Set - internally uses hashmap for storing key as a object , and value will be same like PRESENT
+		not duplicate , 1 null key formula
+		not synchronized and not thread safe
+		no insertion order
+
+Linked HashSet - internally uses the linked hash map 
+		not duplicates, 1 null key formula
+		not synchronized and not thread safe
+		unique data with insertion order
+
+Treeset - internally uses the tree map
+		not duplicates as well null key
+		not synchronized and not thread safe
+		unique data with custom order like alphabet wise
+
+		
+HashMap - the map object store data in bucket in hashtable - size 16
+		each bucket used likned list and list follows node approch
+		so if hasing colign fails then cant add the data in hashmap
+		not synchronized and not thread safe
+		unique data with no order 
+		
+Linked Hash Map - same like hashmap but uses doubly linked list
+		not synchronized and not thread safe
+		unique data with insertion order
+		
+treemap - not synch not thread safe
+	  	unique data with specified order
+
+iterator - having only one method which are iterate() method which used for iterate the data
+
+hasing - approch to store data in int-value approch
+
+collign - when 2 or more keys with same name collign happens
+
+comaprable - default sorting
+		only 1 method .compare()
+
+comparator - customized sorting facilate 
+		compare(), .equals() method
+
+Marker Interface - no method , 
+		random access, clonable method
+		
+		
+			

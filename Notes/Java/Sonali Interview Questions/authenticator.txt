@@ -1,0 +1,4 @@
+otpauth://totp/ls-savvas:sakshi.kansal%40aptaracorp.com?secret=NMZHIYSGGJBGYJSLPBFCKJB7OF5VGLRZ&issuer=ls-savvas
+otpauth://totp/ls-savvas:Manish.Sharma%40savvas.com?secret=IB4SI32UJRUDEWR2IJADM2L2IRXVI5CK&issuer=ls-savvas
+otpauth://totp/ls-savvas:nilam.sawant%40aptaracorp.com?secret=GV2EIYTZO5CEQPSSKRWHEKJBMJMEYKBS&issuer=ls-savvas
+otpauth://totp/ls-savvas:rachna.arora_sc%40aptaracorp.com?secret=FA7XOZDRKNIXQZDYNZQTOVDHHZ5UU63I&issuer=ls-savvas

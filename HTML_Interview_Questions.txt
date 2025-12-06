@@ -1,0 +1,215 @@
+🔹 Basic HTML Interview Questions
+
+0.What is HTML5?
+->HTML5 is the latest version of HTML. It includes new semantic tags and supports features like audio, video, calendar, date, and time inputs, making web pages more powerful and interactive.
+--------------------------------------------------------------------------------------------------------------
+1.What is HTML?
+->HTML stands for HyperText Markup Language. It is basically used to create the structure or body of a webpage.
+--------------------------------------------------------------------------------------------------------------
+2.What are tags in HTML?
+->Tags in HTML are special keywords used to define elements on a webpage.
+->There is two types of tags,
+    Container Tags -> <h1></h1> -> container tag means there two tags for this tags are open and close 
+    Empty Tags     -> <br> -> empty tag there are no need of the closing.
+--------------------------------------------------------------------------------------------------------------
+3.What is the difference between HTML and HTML5?
+->HTML is the old version used for creating web pages.
+->HTML5 is the newer version with more powerful features like built-in video, audio, new form elements, and better structure.
+--------------------------------------------------------------------------------------------------------------
+4.What are semantic and non-semantic elements in HTML?
+->Semantic tags have a meaning. They tell what kind of content is inside them.
+  For example, <header> means it’s the header part, <section> means a section of the page.
+
+->Non-semantic tags don’t have any meaning. They are just used to group or hold content.
+  For example, <div> just groups things but doesn’t say what they are.
+--------------------------------------------------------------------------------------------------------------
+5.What is the difference between <div> and <span>?
+
+-><div> is used to contain many tags or bigger sections. It can hold multiple elements inside it, including other <div>s.
+
+-><span> is used for styling or applying operations to just a few words or small parts inside text.
+
+-><div> = groups blocks of content
+
+-><span> = groups small inline content like words or phrases
+--------------------------------------------------------------------------------------------------------------
+6.What is the difference between <div> and <section>?
+-><div> is a generic box to group things with no special meaning.
+-><section> is a meaningful part of the page, like a chapter or topic section.
+--------------------------------------------------------------------------------------------------------------
+7.What is the purpose of the <!DOCTYPE html> declaration?
+->"<!DOCTYPE html> is used to tell the browser which type of document and which version of HTML is being used."
+--------------------------------------------------------------------------------------------------------------
+8.What is the difference between block-level and inline elements?
+
+✅ Block-Level Elements
+
+Start on a new line.
+Take up the full width of the container.
+You can set width and height.
+Used for structuring content.
+
+Examples:
+<div>, <p>, <h1> to <h6>, <section>, <article>
+
+✅ Inline Elements
+
+Do not start on a new line.
+Take up only as much width as needed.
+Cannot set width or height (usually ignored).
+Used for styling small parts inside block elements.
+
+Examples:
+<span>, <a>, <strong>, <em>, <img>
+--------------------------------------------------------------------------------------------------------------
+9.What are the common semantic tags in HTML5?
+-> <header>, <footer>, <article>, <section>, <nav>
+--------------------------------------------------------------------------------------------------------------
+10.What is the use of the <meta> tag?
+-> The <meta> tag is used to provide extra information about a webpage to the browser and search engines.
+->This extra information helps with things like SEO, page settings, and how the content is displayed.
+--------------------------------------------------------------------------------------------------------------
+🔹 Forms and Input
+
+11.What are different input types in HTML?
+
+Input Type	    Description	                                    Example
+
+text	        Single-line text input          	            <input type="text">
+password	    Hides characters (for passwords)	            <input type="password">
+email	        Input for email addresses	                    <input type="email">
+number	        Only allows numbers             	            <input type="number">
+tel	            For telephone numbers	                        <input type="tel">
+url	            For website URLs	                            <input type="url">
+search	        Search field	                                <input type="search">
+date	        Select a date	                                <input type="date">
+time	        Select a time	                                <input type="time">
+datetime-local	Select date and time	                        <input type="datetime-local">
+checkbox	    Select one or more options	                    <input type="checkbox">
+radio	        Select one option from a group	                <input type="radio">
+range	        Slider to select a value	                    <input type="range">
+file	        Upload a file	                                <input type="file">
+submit	        Submit form data	                            <input type="submit">
+reset	        Reset form fields to default	                <input type="reset">
+hidden	        Stores hidden data (not visible to user)	    <input type="hidden">
+color	        Pick a color from color picker	                <input type="color">
+button	        A simple clickable button	                    <input type="button" value="Click">
+
+--------------------------------------------------------------------------------------------------------------
+12.What is the difference between id and name attributes in form elements?
+->id is a unique identifier for an element used by CSS and JavaScript.
+->name is used to send the form data to the server.
+--------------------------------------------------------------------------------------------------------------
+13.What is the purpose of the action and method attributes in a <form>?
+->action is used to specify the URL or server where the form data will be sent and what action will be performed. method specifies how the data is sent, like GET or POST.
+--------------------------------------------------------------------------------------------------------------
+14.What are new input types introduced in HTML5?
+->date
+->email
+->range
+->color
+->number
+--------------------------------------------------------------------------------------------------------------
+15.What is the use of required, readonly, and disabled attributes?
+
+->required : Makes the input mandatory to fill before submitting the form.
+->readonly : Makes the input non-editable but the value can be submitted.
+->disabled : Disables the input so it’s not editable and not submitted.
+--------------------------------------------------------------------------------------------------------------
+
+🔹 Links and Media
+
+16.What is the difference between absolute and relative URLs?
+->absolute URLs means full address of the link or file path 
+->relative URLs means short addres of the link or file path
+--------------------------------------------------------------------------------------------------------------
+17.How do you open a link in a new tab in HTML?
+->we can used the targer='_blank' are used to the <a> tag.
+--------------------------------------------------------------------------------------------------------------
+18.How do you embed an image in HTML? What are required attributes?
+
+->You can embed an image using the <img> tag.
+->src — The source (URL or path) of the image
+->alt — The alternative text, shown if image doesn't load or for screen readers.
+
+--------------------------------------------------------------------------------------------------------------
+19.How do you embed video or audio in HTML5?
+->Use video tag for embed video or audio in HTML5.
+->Always include the controls attribute to give users playback controls.
+->You can use multiple <source> tags for different formats to ensure browser compatibility.
+
+--------------------------------------------------------------------------------------------------------------
+20.What is the use of the alt attribute in the <img> tag?
+->When the image path is incorrect or the image is missing, the alt text is shown in its place.
+--------------------------------------------------------------------------------------------------------------
+
+🔹 HTML Attributes and Structure
+
+21.What are global attributes in HTML?
+->Global attributes can be used in any HTML tag. Some common global attributes are:
+->id, class, style, title, hidden, data-*, etc.
+--------------------------------------------------------------------------------------------------------------
+22.What is the difference between class and id attributes?
+->id is unique — it should be used for only one element in an HTML page.
+->class can be reused — it can be used for many elements to group them together.
+--------------------------------------------------------------------------------------------------------------
+23.What is the purpose of the lang attribute in the <html> tag?
+->The lang attribute specifies the language used in the HTML document. It also helps with SEO and makes the page more accessible for screen readers and translation tools.
+--------------------------------------------------------------------------------------------------------------
+24.What is the use of the title attribute?
+->The title attribute is used to show a message when you hover over an element like a tag or icon. This is useful in real-world apps where you have icons without labels. The title helps users understand what action the icon will perform by showing a tooltip on hover.
+
+For example, if your app has three icons for edit, delete, and save, but no text labels, the title attribute can show messages like "Edit this item", "Delete this item", or "Save changes" when users hover on each icon.
+--------------------------------------------------------------------------------------------------------------
+
+🔹 Miscellaneous
+
+25.What are empty elements in HTML?
+(e.g., <br>, <img>, <hr>, <input>)
+->Empty elements are tags that do not have a closing tag because they don’t contain any content inside. They are self-closing.
+--------------------------------------------------------------------------------------------------------------
+26.What is the difference between <script> tag placed in <head> vs <body>?
+->If a <script> tag is written inside the <head>, the browser loads and runs the script before the HTML content is fully loaded. This can delay the page content from appearing.
+
+->If a <script> tag is written inside the <body> (especially at the end), the browser loads the HTML content first, and then it runs the script. This makes the page load faster and ensures that the script can access all the HTML elements (DOM).
+--------------------------------------------------------------------------------------------------------------
+27.How can you create a table in HTML?
+->You can create a table in HTML using the <table> tag along with other tags like:
+
+  <tr> – Table row
+  <th> – Table header (bold by default)
+  <td> – Table data (cell)
+--------------------------------------------------------------------------------------------------------------
+28.How do you create a list in HTML?
+->In the HTML you can create the three types of the list 
+
+1. Ordered List (<ol>) – Numbered list
+<ol>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+</ol>
+
+2. Unordered List (<ul>) – Bulleted list
+<ul>
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Mango</li>
+</ul>
+
+3. Description List (<dl>) – Term and description
+<dl>
+  <dt>HTML</dt>
+  <dd>A markup language for creating web pages.</dd>
+
+  <dt>CSS</dt>
+  <dd>Used for styling HTML elements.</dd>
+</dl>
+--------------------------------------------------------------------------------------------------------------
+29.What is the difference between <strong> and <b>, <em> and <i>?
+Tag	      Style	    Semantic Meaning
+<b>	      Bold	    ❌ No
+<strong>	Bold	    ✅ Yes (important)
+<i>	      Italic  	❌ No
+<em>    	Italic  	✅ Yes (emphasis)
+--------------------------------------------------------------------------------------------------------------

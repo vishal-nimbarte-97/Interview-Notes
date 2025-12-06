@@ -1,0 +1,70 @@
+Multitasking:it is a process of executing multiple tasks simultaneously.There are two types Multithreading and multiprocessing both techniques that can be used to improve the performance of Java applications.
+
+Multiprocessing: is the ability of a system to run multiple processors in parallel. Each processor can run one or more threads
+Multithreading: is the ability of a single processor to execute multiple threads simultaneously. A thread is a lightweight subprocess that can run independently of other threads. 
+it is used in-Request handling,Background processing,Asynchronous communication(Messaging systems) etc.
+
+There are two main ways to create threads: by extending the Thread class or by implementing the Runnable interface.
+Thread class:
+The Thread class is the most basic way to create a thread. It provides a number of methods for controlling the thread's execution, such as start(), run(), and stop().
+Runnable interface:
+The Runnable interface is a functional interface that defines a single method, run(). This method contains the code that will be executed by the thread.
+
+When to use Thread class:
+When you need to customize the behavior of the thread.access the methods and attributes of the thread directly.create a new thread for each task.
+
+When to use Runnable interface:
+When you want to separate the logic of the thread from its execution.share the same task among multiple threads.
+
+Daemon:-A daemon thread is a low-priority thread that runs in the background to perform tasks such as garbage collection or provide services to user threads. Daemon threads are terminated when the main program exits, examples -Garbage collection,Finalization
+
+Synchronous and asynchronous - it is ways of executing tasks in Java. Eg.Handling simultaneously Requests,Batch Processing (Data import/export, report generation)
+Synchronous execution means that the program will wait for a task to finish before moving on to the next one. 
+Asynchronous execution means that the program will start a task and then move on to the next one, without waiting for the first task to finish.
+
+Thread lifecycle:-Thread lifecycle refers to the various stages a thread goes through during its execution
+New:-A thread is in the "New" state when it has been created but has not yet started.
+Runnable:-A thread enters the "Runnable" state after calling its start() method. It means that the thread is ready to run.
+Running:-A thread transitions to the "Running" state when the JVM selects it from the pool of runnable threads and begins executing its run() method.
+Blocked/Waiting:A thread enters the "Blocked" or "Waiting" state when it is temporarily suspended from execution. This can happen for various reasons, such as waiting for I/O operations
+Timed Waiting:A thread enters the "Timed Waiting" state when it is temporarily suspended for a specified period of time. This occurs when the thread calls methods like sleep() or wait() with a timeout parameter.
+Terminated:A thread enters the "Terminated" state when its run() method completes, or when the thread is explicitly stopped using methods like stop() or interrupt(). Once terminated, a thread cannot be restarted.
+
+Deadlock:A deadlock in Java is a situation where two or more threads are blocked forever, waiting for each other.This can happen when each thread is holding a lock on a resource that the other thread needs. For example, imagine two threads, A and B, that are both trying to access a shared database. 
+
+Tips for avoiding deadlocks in Java:
+Avoid holding locks for longer than necessary.
+Avoid nested locks.
+Use lock hierarchies to avoid circular wait conditions.
+Use timeouts to avoid threads waiting forever for a lock.
+Use lock-free data structures if possible.
+
+What is thread pool?
+A thread pool is a group of threads that are managed by the Java Virtual Machine (JVM). It is used to improve the performance of applications that need to execute multiple tasks concurrently.
+There are a number of different ways to create and manage thread pools in Java. The most common way is to use the java.util.concurrent.Executors 
+------------
+wait() and sleep() methods?
+both are used to temporarily pause the execution of a thread.The Wait() method is related to the Object class.Sleep () method is related to the Thread class.It is not a static method.It is a static method.At the time of the Synchronization, the Wait() method releases obj.At the time of the Synchronization, the Sleep() method doesn't release the obj, i.e., lock.
+
+Difference between notify() and notifyAll()?
+notify() method sends the notification to only one thread among the multiple waiting threads which are waiting for lock.
+notifyAll() methods in the same context sends the notification to all waiting threads instead of single one thread.
+In case of notify() method the risk of thread missing is high as notification is sent only single thread and if it misses that than no other thread would get notification and.but in notifyAll as notification is to all the waiting threads and hence if any thread misses the notification, there are other threads to do the job.risk is less.
+
+Difference between  Runnable and Callable Interface?
+Runnable and Callable are both interfaces in Java that are used to create threads. The main difference between them is that Runnable does not return a result and cannot throw a checked exception, while Callable can return a result and can throw a checked exception.
+
+difference between start() and run() in java?
+The main difference between the start() and run() methods is that the start() method creates a new thread of execution, while the run() method does not. When the start() method is called, a new thread is created and the run() method of the thread is invoked in a separate thread of execution. When the run() method is called directly, the code in the run() method is executed on the current thread.
+
+What’s the purpose of the join() method?
+The join() method can be used to ensure that a thread has been terminated. It can also be useful when you want to wait for a specific thread to complete before continuing the execution of the current thread.The join method allows one thread to wait for the completion of another
+
+How do threads communicate with each other?
+Threads communicate with each other through shared memory. Threads can access the same data structures and variables in memory, and they can also communicate by sending messages to each other.There are a number of different ways to implement thread communication. One common approach is to use shared memory. Shared memory is a region of memory that is accessible to all threads in a process. Threads can communicate with each other by reading and writing to shared memory.
+Another approach to thread communication is to use message passing. Message passing is a technique where threads send messages to each other. Messages can be simple data structures, or they can be more complex objects.
+-------------
+Serialization:It is the process of converting an object into a stream of bytes so that it can be stored or transmitted.it is used to store objects in a database
+ObjectOutputStream.writeObject();
+Deserialization:It is the process of converting a stream of bytes back into an object.it is used to read objects from a database.
+ObjectInputStream.readObject();

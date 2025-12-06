@@ -1,0 +1,544 @@
+
+
+What is Kubernetes?
+->"Kubernetes is an open-source container orchestration platform. It manages and coordinates multiple tasks, services, or systems, ensuring they run together smoothly and efficiently."
+--------------------------------------------------------------------------------------------------
+
+Docker Command :- 
+------------------------------------------------------------------------------------
+| Command                                | Description                             |
+| -------------------------------------- | --------------------------------------- |
+| `docker --version`                     | Check Docker version                    |
+| `docker build -t <image-name> .`       | Build an image from a Dockerfile        |
+| `docker images`                        | List all local Docker images            |
+| `docker ps`                            | Show running containers                 |
+| `docker ps -a`                         | Show all containers (running + stopped) |
+| `docker run <image-name>`              | Run a container from an image           |
+| `docker run -p 3000:3000 <image-name>` | Run container and map port 3000         |
+| `docker stop <container-id>`           | Stop a running container                |
+| `docker start <container-id>`          | Start a stopped container               |
+| `docker rm <container-id>`             | Remove a container                      |
+| `docker rmi <image-id>`                | Remove an image                         |
+| `docker exec -it <container-id> bash`  | Open terminal inside running container  |
+| `docker logs <container-id>`           | View container logs                     |
+------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------
+
+Kafka :- ✅ "Kafka allows two different services to communicate by sending and receiving messages through a topic."
+         📦 Kafka acts like a middleman that helps services talk without being directly connected.  
+
+Yes, I have used Kafka for message brokering. In a microservices architecture, each service often has its own database. So, direct joins between services are not possible.
+
+To handle communication or share data between services, we use Kafka as a message broker. One service sends a message (event), and the other service listens and processes it. This helps decouple services and improves scalability and flexibility.
+
+------------------------------------------------------------------------------------------------------
+
+radis :- "Redis is used for handling cache in our application. It is an open-source platform that helps store and manage cached data efficiently."
+
+------------------------------------------------------------------------------------------------------
+1.REST :- Representational State Transfer.
+------------------------------------------------------------------------------------------------------
+34.What is vertical scaling and horizontal scaling?
+-> Vertical Scaling means increasing the power (CPU, RAM, etc.) of a single server to handle more load.
+-> Horizontal Scaling means adding more servers to handle more traffic. The load is divided among multiple machines.
+------------------------------------------------------------------------------------------------------
+
+35.How do you use the cluster module to scale a Node.js application?
+->cluster module in the node.js application they are increase the number of the worker process.
+
+------------------------------------------------------------------------------------------------------
+28.What is load balancing, and how would you implement it in a Node.js environment?
+-> In the node.js load are balancing so we can used the cluster module in the node.js they are increase the CPU cores in the node.js.
+-> we can also used the ngInix to handling the load balancing
+-> docker also used 
+
+✅ What is Load Balancing, and how to implement it in Node.js?
+->"In Node.js, load balancing distributes traffic using the cluster module, NGINX, or Docker containers to handle high request loads efficiently."
+
+->Load balancing is the process of distributing incoming traffic across multiple servers or processes to ensure no single server is overloaded.
+
+👉 In Node.js, we can implement load balancing using:
+Cluster Module – It allows Node.js to use multiple CPU cores by creating worker processes.
+
+NGINX – Acts as a reverse proxy to distribute requests across multiple Node.js instances.
+
+Docker + Load Balancer – You can run multiple Node.js containers and manage traffic using a load balancer (like NGINX or Kubernetes).
+
+micro task queue -> they are containing the nextTick queue and promise queue 
+macro task queue -> event loop phases 
+
+HANDLE DEVOPS QUESTIONS
+---------------------------------------
+what is docker.
+why do you need docker .
+how is docker differnt from the VM.
+*] do you kown DOCKER deployement process. 
+
+"I have a good idea about the Docker deployment process. I know how to create a Dockerfile, add versioning in the image, build the image, and run containers on the local system. But in my organization, we have a special DevOps team that handles the complete deployment process. So I only have knowledge of how Docker deployment works, but I haven't implemented it myself.
+
+---------------------------------------
+GIT :- 
+
+✅ "Origin means our remote repository, and upstream means the original repository from which we forked."
+
+GTI FETCH GIT PULL 
+
+🔹 git fetch
+It downloads the latest changes from the remote repo (like GitHub) to your local copy, but it does not merge them into your working branch.
+
+🔹 git merge
+It merges changes from one branch into your current branch.
+
+🔹 git pull
+It’s a shortcut for two commands: git fetch + git merge 
+
+🎯 Summary in Simple Words:
+git fetch: Get latest code from GitHub, but don’t apply it yet.
+
+git merge: Combine changes from another branch into your current one.
+
+git pull: Do both fetch and merge together.
+
+✅ Corrected Understanding:
+upstream means the original repository (not just the branch), from where you forked the project.
+
+origin is your own remote repo (your fork), where you push your work.
+
+You work on your local copy, push to origin, and finally create a Pull Request to merge into the upstream repo's main branch.
+
+✅ Final One-Line Concept:
+
+🔹 origin = your remote copy
+🔹 upstream = original source repo
+🔹 You push to origin, and merge to upstream via Pull Request
+
+💡how to create a Pull Request (PR) :-
+
+✅ Clean and Correct PR Merge Process Explanation:
+
+Create a feature branch from the latest main (or master) branch of the upstream repo.
+
+(Usually synced with upstream using git fetch upstream and git merge upstream/main)
+
+Write your code or make changes in the feature branch.
+
+Push the feature branch to your origin (your fork):
+
+git push origin feature/your-feature-name
+
+Open a Pull Request (PR) using GitHub or Bitbucket GUI:
+
+From your feature branch (origin)
+
+Into the main branch of upstream
+
+The senior engineer or reviewer will:
+
+Review your code.
+
+Suggest changes (if any).
+
+Approve the PR if everything looks good.
+
+Once approved, the PR is merged into the upstream's main branch.
+
+✅ Final Summary (In Simple Line):
+🔸 Code → feature branch → push to origin → create PR → review → merge to upstream
+--------------------------------------------------
+monolithic and micro-service differance 
+->
+
+✅ Monolithic Architecture:
+All code (frontend + backend) is in one single project.
+Everything is deployed together as one unit.
+If there is an error or problem, the whole application may stop working.
+Hard to scale and maintain as the project grows.
+
+✅ Microservices Architecture:
+Code is divided into separate services (one service per module).
+Each service is developed, deployed, and maintained independently.
+If one service fails, only that service stops, not the entire application.
+Easier to scale and manage each service separately.
+
+--------------------------------------------------
+✅ What is Orchestration?
+🔹 Simple Definition:
+-> multiple task,services or system work together so that is called as the Orchestration.
+-> Orchestration means coordinating and managing multiple tasks, services, or systems to work together automatically in a smooth and organized way.
+--------------------------------------------------
+
+*]ngInix :- 
+
+✅ "NGINX works as a reverse proxy. It is a server that forwards client requests to the backend server."
+
+What is reverse proxy?
+✅ "Reverse proxy means a server forwards the client request to the backend server, and the backend server returns the response."
+
+--------------------------------------------------
+
+1.ngrx:-
+
+->NgRx is a state management library for Angular that follows the Redux pattern.
+->It helps manage state centrally, makes data flow predictable, and improves performance.
+->As your Angular app grows, sharing and managing data between components becomes complex.
+
+NgRx solves this by storing all application state in a single global store, like a database in memory.
+
+->NgRx is a reactive extension library for Angular used for state management.
+->It creates a central store (state) and allows you to share and manage data across the entire application.
+
+    Centralized state for all components
+    Based on Redux pattern and uses RxJS
+    Works with Actions, Reducers, Effects, Selectors
+
+2. difference between constructor and ngOnInit in Angular.
+->Constructor :- 
+    Runs first when the component is created.
+    Used to inject dependencies (like services).
+
+->ngOnInit :- 
+    It is an Angular lifecycle hook.
+    and they are used calling the API's
+    and also write a logical part and they are exectued after the Constructor
+
+3. how to transfter the data component to component .
+->✅ 1. Parent to Child → @Input()
+->✅ 2. Child to Parent → @Output()
+->✅ 3. Sibling Components → Shared Service + BehaviorSubject
+->✅ 4. Using Router Navigation State
+->✅ 5. Using Local Storage / Session Storage
+->✅ 6. NgRx / State Management (For large apps)
+->✅ 7. Suject / BehaviorSubject also used.
+
+4. 500 502 and 503 , 200, 201, 404,403
+->
+    200 OK – Request successful.
+    201 Created – New resource created successfully.
+    400 Bad Request – Invalid request sent by the client.
+    403 Forbidden – Access denied (no permission).
+    404 Not Found – Resource not found on server.
+    500 Internal Server Error – Server error occurred.
+    502 Bad Gateway – Invalid response from upstream server.
+    503 Service Unavailable – Server is down or overloaded.
+
+----------------------------------------------------------------------------------------------------------
+| Status Code | Name                  | Meaning                                                           |
+| ----------- | --------------------- | ------------------------------------------------------------------|
+| **200**     | OK                    | Request was successful                                            |
+| **201**     | Created               | Resource was successfully created                                 |
+| **204**     | No Content            | Request successful, but no response body                          |
+| **400**     | Bad Request           | Client sent an invalid request                                    |
+| **401**     | Unauthorized          | Authentication required or failed                                 |
+| **403**     | Forbidden             | Client is not allowed to access the resource                      |
+| **404**     | Not Found             | Resource not found                                                |
+| **409**     | Conflict              | Request conflicts with current state of the server                |
+| **422**     | Unprocessable Entity  | Server understands request but can't process it (e.g. validation) |
+| **500**     | Internal Server Error | General server error                                              |
+| **502**     | Bad Gateway           | Invalid response from upstream server                             |
+| **503**     | Service Unavailable   | Server is down or overloaded                                      |
+| **504**     | Gateway Timeout       | Server didn’t get a response in time from another server          |
+----------------------------------------------------------------------------------------------------------
+
+5. observable and promises 
+-> 
+    Promise – Handles a single async value.
+    Observable – Handles multiple async values over time.
+
+    Promise – Eager, runs immediately when created.
+    Observable – Lazy, runs only when subscribed.
+
+    Promise – Cannot be cancelled once started.
+    Observable – Can be cancelled using unsubscribe().
+
+    Promise – Uses .then(), .catch() for chaining.
+    Observable – Uses .subscribe(), and supports operators like map, filter.
+
+6. Architecture of Node.
+
+->Node.js follows the Single-Threaded Event Loop Architecture.
+->It uses a single thread to handle multiple client requests asynchronously using non-blocking I/O operations.
+->node js is used the javascript so the javascript is the single thread programing language but node are also used the libuv package and this libuv package are created using the c language and c language support to the system kernal and used the system cores. so libuv contain the threads pools and event loop for used to handling asychouse operation in node.js 
+
+    -> 1. Single Threaded
+    -> 2. Event Loop
+    -> 3. Non-Blocking I/O
+    -> 4. Callback Queue
+    -> 5. Libuv Library
+    -> 6. Worker Thread Pool
+    -> 7. V8 Engine
+    
+7. Architecture angular 
+    -> 1. Component-Based
+    -> 5. Services + Dependency Injection (DI)
+    -> 3. Templates + Data Binding
+    -> 4. Directives
+    -> 5. Pipes
+    -> 6. Routing 
+    -> 7. RxJs 
+    -> 8. NgRx 
+
+9. Explain Angular lifecycle of hooks?
+-> 
+    ngOnChanges()
+    ngOnInit()
+    ngDoCheck()
+    ngAfterContentInit()
+    ngAfterContentChecked()
+    ngAfterViewInit()
+    ngAfterViewChecked()
+    ngOnDestroy()
+
+10.load balancing Node.Js Server?
+->
+    It means sharing user requests between multiple Node.js servers.
+    Helps handle more users and avoids server overload.
+🔧 Simple Ways:
+    Use Nginx to send requests to many Node.js apps.
+    Use Node.js cluster to run the same app on all CPU cores.
+    Use Docker + Kubernetes to scale easily.
+
+11.Load balancing Angular?
+-> 
+    Angular is a frontend app (HTML, CSS, JS).
+    Load balancing means serving it from many servers to make it faster and reliable.
+
+    🔧 Simple Ways:
+    Use Nginx or cloud load balancer (like AWS/GCP).
+    Use Docker + Kubernetes for scaling frontend containers.
+
+
+// let str = "Hello";
+// str[0] = 'h'; 
+// str.charAt(0) = 'h';
+// console.log(str);reference error 
+
+// let arr = [1,2,3];
+// arr[10] = 4;
+// console.log(arr.length);
+
+@Input() is used to transfer data from a parent component to its child component in Angular.
+@Output() is used to send data from a child component to its parent component using EventEmitter.
+--------------------------------------------------------------------------------
+181.What is Decorators in Angular?
+✅ "Decorators are a TypeScript feature that let you add metadata to classes, methods, and properties."
+->Decorators are functions in Angular used to add metadata to classes, methods, or properties.
+--------------------------------------------------------------------------------
+copy:- Lazy Loading Pratical 
+
+const routes: Routes = [
+  { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) }
+];
+
+--------------------------------------------------------------------------------
+11.Ways to transfer data between components if not parent and child?
+
+ ⃣ Service with BehaviorSubject (Best Practice ✅)
+
+Create a shared service with BehaviorSubject or Subject to store and update data.
+Any component can subscribe to receive updates.
+
+ ️⃣ Using Angular Router (Passing Data via Query Params)
+
+ ️⃣ Using Local Storage / Session Storage
+-----------------------------------------------------------------------------------------------
+113.What is differance between the Observable and Promises?
+------------------------------------------------------------------------------------------------------
+133.What is DebounceTime()?
+
+->debounceTime() is an operator in RxJS.
+
+->It is mostly used in search functionality.
+
+->Let me explain with a scenario:
+
+->🔍 Suppose I have a search box in my application.
+
+->Whenever the user types something, we call an API based on the input.
+
+->But when the user types fast (like typing "google"), every letter (g, go, goo, ...) triggers an API call.
+
+->This means multiple API calls are sent for a single search — which is not a good practice. It wastes network and slows down performance.
+
+->✅ To solve this, RxJS provides debounceTime().
+
+->With the help of debounceTime(500), the app waits 500ms after the user stops typing, and then calls the API only once.
+
+->This improves performance and gives a smooth user experience.
+
+🔚 Summary:
+
+debounceTime() helps to optimize search by reducing unnecessary API calls during fast typing.
+
+<input type="text" [formControl]="search" placeholder="Search Here...">
+
+export class AppComponent {
+
+  search = new FormControl('');
+
+  ngOnInit(): void {
+
+    this.search.valueChanges
+    .pipe(debounceTime(1000))
+    .subscribe(value => {
+      console.log('search value : ',value);
+    })
+  }
+}
+
+137.Explain catchError?
+->catchError is an RxJS operator used to catch and handle errors in an observable stream — like API call failures or unexpected issues.
+
+138.Explain combineLatest?
+->If you want to call two or more APIs (or observables) and you need to combine their latest responses, then combineLatest is used.
+
+->It gives you the latest values from all observables whenever any one of them changes, but only after all observables have emitted at least once.
+
+combineLatest([apiCall1$, apiCall2$]).subscribe(([data1, data2]) => {
+  console.log('API 1 data:', data1);
+  console.log('API 2 data:', data2);
+});
+
+Operator				Use When You Want To...
+combineLatest	-> 		Combine latest values from multiple observables
+forkJoin		->		Wait for all observables to complete once, then combine
+zip				->		Combine observables value by value (1st with 1st, 2nd with 2nd)
+
+	combineLatest does wait for all observables to emit at least once before emitting the first combined value.
+
+	After that, it does not wait. Whenever any observable emits, it gives the latest value from all.
+
+
+------------------------------------------------------------------------------------------------------
+
+139.Explain forkJoin?
+->forkJoin is used to run multiple observables in parallel, and then it waits until all of them are completed, and finally gives the combined last values from each observable.
+->"forkJoin is similar to combineLatest, both are used to combine multiple responses. But forkJoin waits for all observables (or API calls) to complete, then gives the final combined response."
+
+ngOnInit(): void {
+
+    const api1$ = of('Data from API 1').pipe(delay(2000)); // emits after 2s
+    const api2$ = of('Data from API 2').pipe(delay(9000)); // emits after 3s
+
+    forkJoin([api1$, api2$]).subscribe(([res1, res2]) => {
+      console.log('API 1 Response:', res1);
+      console.log('API 2 Response:', res2);
+    });
+
+}
+
+	combineLatest is for live reactive updates.
+
+	forkJoin is for final results after all API calls are done.
+------------------------------------------------------------------------------------------------------
+140.Explain retry Operators?
+->The retry operators in RxJS are used when you want to automatically re-subscribe to a failed observable—that is, retry the operation if it fails.
+
+->They are useful when the error is temporary (like a failed network request) and might succeed if tried again.
+
+🔁 Types of Retry Operators
+
+1. retry()
+They are Passed the Numbers how many time they are Retry , occuring the errors case , 
+so that timing they are automatically retry base passing numbers.
+
+2. retryWhen()
+->This is the advancedment of retry because when the retry are executed that is the working of the retryWhen.
+------------------------------------------------------------------------------------------------------
+141.Explain takeUntil Operators?
+->To automatically unsubscribe from observables when a component is destroyed – to prevent memory leaks.
+
+🏏 Real-World Scenario: Cricket Live Score App
+Imagine you're using an app that shows live cricket scores. The app fetches the score every few seconds using an observable (like interval() or API polling).
+
+But now, you log out of the app.
+
+At that moment, you want to stop fetching the live scores. Why?
+Because you're no longer interested, and you want to avoid unnecessary API calls.
+
+✅ This is where takeUntil helps!
+You can use takeUntil(logout$) to automatically stop the data stream when the logout event occurs.
+
+
+
+Copy...
+------------------------------------------------------------------------------------------------------
+1. What is a Git repository?
+2. How does Git work?
+    A Git repository is basically used to track your project. It helps you:
+    See what new changes are made
+    Check old changes
+    Go back to any previous version
+    Work with a team without confusion.
+------------------------------------------------------------------------------------------------------
+3.what is used of git add?
+  git add
+  → Adds your changes to a staging area (temporary holding place).
+  → Means: “I want to include these changes in the next commit.”
+
+  git commit -m "your message"
+  → Saves those added changes with a message.
+  → The message should describe what you changed. 
+------------------------------------------------------------------------------------------------------
+4. What is git push?
+-> git push is used push changes in our curent repo, 
+-> that means changes are our local repo so using the git push command they are stage in the our remote repo that is process of the git push command 
+------------------------------------------------------------------------------------------------------
+
+5. What is git status?
+-> git status is used to check the current status of the local repository. It shows the current branch, and which files are tracked, untracked, modified, or staged for commit.
+
+------------------------------------------------------------------------------------------------------
+6. What is a commit in Git?
+->git commit is used to commit the changes in our current repository.
+We write a message to explain what we have changed, and then commit it.
+After commit, we can sync the data by pushing it to the remote repository using git push.
+------------------------------------------------------------------------------------------------------
+7. What is branching in Git?
+-> Branching means our current code is not affected.
+We create a new branch and write code for new features or bug fixes separately.
+Once everything is working perfectly, we raise a pull request (PR).
+The reviewer checks the code, and if it's good, then the code is merged into the upstream branch.
+------------------------------------------------------------------------------------------------------
+8. What is a conflict in Git?
+->Git conflict most of the time occurs when two developers work on the same module.
+For example, Developer 1 uses variable a and performs some operation, and Developer 2 uses same variable a and performs the same operation differently.
+So when both try to merge their code into the main branch, Git gets confused — which changes should it take — and at that time conflict is created.
+
+To solve this, we need to manually handle the conflict.
+We check the code and decide whether to keep the current changes, the incoming changes, or both.
+After fixing, we save the file, then run git add and git commit to finish resolving the conflict.
+------------------------------------------------------------------------------------------------------
+9. What is merge in Git?
+-> Merge in Git means we are combining the code from one branch to another.
+For example, if we created a new branch to work on a feature or bug fix, and once the work is complete and tested, we merge that branch into the main branch.
+It helps to combine all changes together.
+Sometimes, while merging, conflicts may occur, and we need to resolve them manually.
+------------------------------------------------------------------------------------------------------
+10. What is a remote in Git?
+-> Remote Git means it is a location or URL where our code is stored online (like git, bitbucket, etc.).
+It is used to manage all code changes, including code that we push or commit from our local system.
+We use remote Git to collaborate with other developers and to keep our code safe and updated in a central place.
+------------------------------------------------------------------------------------------------------
+11. What is the difference between git fetch and git pull?
+-> git fetch is used downloads the latest changes in our remote repository and is there any branch are create and which features branch push the code so using this command downloads all the changes in our remote branchs.
+-> git pull is combination of the git pull and git merge command
+------------------------------------------------------------------------------------------------------
+12. How do you revert a commit that has already been pushed and made public?
+-> If by mistake we push something wrong to the remote branch, then we use
+git revert <commit-hash> command.
+In this case, wrong code is already pushed, so we use revert to undo that commit safely.
+This command will not delete the commit, but it will create a new commit that reverses the changes.
+So it's the safe way to fix issues in remote or public branches.
+------------------------------------------------------------------------------------------------------
+13. What does git reset do?
+->git reset is used to reset or undo local changes or go back to a previous commit.
+->and they are three main modes of git reset : --soft,--mixed,--hard.
+------------------------------------------------------------------------------------------------------
+14. What is git stash?
+->git stash is used to temporarily save the changes in our current branch.
+When we are working on something but need to switch to another branch, we use git stash to store the changes safely without committing.
+------------------------------------------------------------------------------------------------------
+15.git origin and ?
+-> git origin means our remote repository
+-> git upstream means our original repository 

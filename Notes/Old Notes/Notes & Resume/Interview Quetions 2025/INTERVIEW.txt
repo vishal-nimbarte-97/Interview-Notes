@@ -1,0 +1,22 @@
+Good morning, sir.
+My name is Vishal Nimbarte, and I am currently working as a Software Developer at Technogrowth Software Solutions. I have one year of experience in both frontend and backend technologies, specializing in Angular and Node.js.
+
+During my one year of experience, I have worked on two to three projects.
+
+Engineering College Website:
+
+Role: Frontend Developer
+Technologies Used: Angular
+In this project, I focused on building the user interface and implementing responsive designs.
+Wellington Parcel Service (WPS):
+
+Role: Full Stack Developer
+Description: This is a Canada-based courier and parcel service project.
+Technologies Used:
+Frontend: Angular
+Backend: Node.js
+Database: PostgreSQL
+These experiences have helped me grow as a developer and improved my skills in designing, developing, and maintaining both frontend and backend systems.
+
+-----------------------------------------------------------------------------------------------
+

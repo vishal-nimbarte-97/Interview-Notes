@@ -1,0 +1,658 @@
+Here's a comprehensive breakdown of **Data Structures and Algorithms (DSA)** topics, organized by category and difficulty level. This roadmap is ideal for students, developers, and anyone preparing for coding interviews or competitive programming.
+
+## 📚 Data Structures
+
+### 🔹 Linear Data Structures
+- **Arrays** :- 
+  1.Arrays are indeed a linear data structure, meaning elements are stored sequentially in memory.
+  2.In JavaScript, arrays are heterogeneous — they can store elements of different types (e.g., strings, numbers, booleans, objects,       even other arrays).
+
+- **Linked Lists** (Singly, Doubly, Circular)
+- **Stacks**
+- **Queues** (Simple, Circular, Priority Queue, Deque)
+
+### 🔹 Non-Linear Data Structures
+- **Trees**
+  - Binary Tree
+  - Binary Search Tree (BST)
+  - AVL Tree
+  - Segment Tree
+  - Fenwick Tree (Binary Indexed Tree)
+  - Trie (Prefix Tree)
+  - N-ary Tree
+- **Graphs**
+  - Directed & Undirected
+  - Weighted & Unweighted
+  - Representations: Adjacency Matrix/List
+
+### 🔹 Hashing
+- Hash Tables / Hash Maps
+- Collision Resolution Techniques (Chaining, Open Addressing)
+
+### 🔹 Heaps
+- Min Heap / Max Heap
+- Heapify and Priority Queues
+
+### 🔹 Disjoint Set (Union-Find)
+- Union by Rank
+- Path Compression
+
+---
+
+## ⚙️ Algorithms
+
+### 🔸 Sorting Algorithms
+- Bubble Sort
+- Selection Sort
+- Insertion Sort
+- Merge Sort
+- Quick Sort
+- Heap Sort
+- Counting Sort
+- Radix Sort
+- Bucket Sort
+
+### 🔸 Searching Algorithms
+- Linear Search
+- Binary Search
+- Ternary Search
+- Exponential Search
+- Interpolation Search
+
+### 🔸 Recursion & Backtracking
+- Tower of Hanoi
+- N-Queens Problem
+- Sudoku Solver
+- Subset/Permutation Generation
+
+### 🔸 Divide and Conquer
+- Merge Sort
+- Quick Sort
+- Binary Search
+- Closest Pair of Points
+
+### 🔸 Dynamic Programming (DP)
+- Memoization vs Tabulation
+- Longest Common Subsequence (LCS)
+- Longest Increasing Subsequence (LIS)
+- 0/1 Knapsack
+- Matrix Chain Multiplication
+- Coin Change
+- Edit Distance
+
+### 🔸 Greedy Algorithms
+- Activity Selection
+- Huffman Coding
+- Fractional Knapsack
+- Kruskal’s and Prim’s Algorithms
+
+### 🔸 Graph Algorithms
+- Depth-First Search (DFS)
+- Breadth-First Search (BFS)
+- Dijkstra’s Algorithm
+- Bellman-Ford Algorithm
+- Floyd-Warshall Algorithm
+- Topological Sort
+- Minimum Spanning Tree (MST)
+- Tarjan’s and Kosaraju’s Algorithms (SCC)
+- Union-Find Applications
+
+### 🔸 String Algorithms
+- Pattern Matching (KMP, Rabin-Karp)
+- Z-Algorithm
+- Trie Operations
+- Suffix Arrays and Trees
+- Longest Palindromic Substring
+
+### 🔸 Bit Manipulation
+- Bitwise Operators
+- Bitmasking
+- Counting Set Bits
+- XOR Tricks
+
+### 🔸 Mathematical Algorithms
+- GCD, LCM (Euclidean Algorithm)
+- Sieve of Eratosthenes
+- Modular Arithmetic
+- Fast Exponentiation
+- Prime Factorization
+
+---
+
+## 🧠 Advanced Topics
+- Segment Trees with Lazy Propagation
+- Binary Lifting (LCA)
+- Heavy-Light Decomposition
+- Mo’s Algorithm
+- Persistent Data Structures
+- Suffix Automaton
+- Convex Hull
+- Number Theoretic Transform (NTT)
+- Dynamic Connectivity
+
+---
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Here’s a **complete topic-wise breakdown of 25+ interview questions per Data Structures and Algorithms (DSA) topic**, organized from **simple to advanced**. This is perfect for mastering DSA for interviews and competitive programming.
+
+---
+
+## 📌 Arrays (25+ Questions)
+- Reverse an array
+
+  // Reverse Number without using the .reverse() method
+  const arr = [12,23,34,45,56,76];
+  console.log("Before Array Reversing :- ",arr);
+  let i = 0;
+  let j = arr.length - 1;
+  while(i<j){
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+    i++;
+    j--;
+  }
+  console.log('After Array Reversing :- ',arr);
+------------------------------------------------------------------
+- Find max/min element
+
+  // Find max/min element
+  const arr = [12,42,89,56,43,90,32,2];
+  let max = arr[0];
+  for(let i=1;i<arr.length;i++){
+    if(max>arr[i]){
+      max = arr[i];
+    }
+  }
+  console.log('Maximum Number in Array :- ',max);
+------------------------------------------------------------------
+- Remove duplicates
+
+  const arr = [12,12,23,78,90,56,23];
+  const uniqueArr = [];
+  console.log('Before Array :- ',arr);
+  for(let i=0;i<arr.length;i++){
+      let isDuplicate = false;
+      for(let j=0;j<uniqueArr.length;j++){
+          if(arr[i]===uniqueArr[j]){
+              isDuplicate = true;
+              break;
+          }
+      }
+      if(!isDuplicate){
+          uniqueArr[uniqueArr.length] = arr[i];
+      }
+  }
+  console.log('After Array  :- ',uniqueArr);
+------------------------------------------------------------------
+- Merge two sorted arrays
+  
+  const arr1 = [34,23,89,90,54,32];
+  const arr2 = [908,342,897,903,675,432];
+  const newArray = [...arr1,...arr2];
+  newArray.sort((a,b)=>{
+      return a - b;
+  });
+  console.log('Merge Two Sorted Arrays :- ',newArray);
+------------------------------------------------------------------
+- Rotate array by K steps
+
+  const arr = [23,34,45,56,67];
+  const rotatedArray = [];
+  let k = 2;
+  let n = arr.length-1;
+  for(let i=k;i<=n;i++){
+      rotatedArray[rotatedArray.length] = arr[i];
+  }
+  for(let i=0;i<k;i++){
+      rotatedArray[rotatedArray.length] = arr[i];
+  }
+  console.log(rotatedArray);
+------------------------------------------------------------------
+- Find missing number
+
+  const arr = [1,2,3,4,5,6,7,9];
+  console.log('Find Missing Value in Array :- ',arr);
+  const n = arr.length + 1;
+  const totalValue = [n * (n+1)]/2;
+  let sumArray = 0;
+  for(let a of arr){
+      sumArray = sumArray + a;
+  }
+  console.log('Missing Value in Array :- ',(totalValue-sumArray));
+------------------------------------------------------------------
+- Find duplicate number
+
+  const arr = [23,12,23,42,78,90,42];
+  for(let i=0;i<arr.length;i++){
+      let duplicate = arr[i];
+      for(let j=i+1;j<arr.length;j++){
+          if(duplicate === arr[j]){
+              console.log('Duplicate Element :- ',duplicate);
+          }
+      }
+  }
+------------------------------------------------------------------
+- Move zeros to end
+  const arr = [23,0,34,0,45,0,89,0,90];
+  console.log('Before :- ',arr);
+  const arrZero = [];
+  const arrValue = [];
+  for(let i=0;i<arr.length;i++){
+      if(arr[i]===0){
+          arrZero.push(arr[i]);
+      }else{
+          arrValue.push(arr[i]);
+      }
+  }
+  console.log('After :- ',[...arrValue,...arrZero]);
+------------------------------------------------------------------
+- Two sum problem
+  const arr = [2,7,0,11,7,4];
+  const target = 9;
+  for(let i=0;i<arr.length;i++){
+      for(let j=i+1;j<arr.length;j++){
+          if(target == arr[i] + arr[j]){
+              console.log(`Index :- [${i},${j}]`);
+          }
+      }
+  }
+------------------------------------------------------------------
+- Best time to buy and sell stock
+
+  // // Function to calculate maximum profit with ONE buy and ONE sell
+  // function maxProfit(prices) {
+  //   let minPrice = Infinity;  // lowest price seen so far
+  //   let maxProfit = 0;        // best profit found so far
+  
+  //   for (let price of prices) {
+  //     // update minimum price if current price is lower
+  //     if (price < minPrice) {
+  //       minPrice = price;
+  //     }
+  //     // calculate profit if sold today, update maxProfit if better
+  //     maxProfit = Math.max(maxProfit, price - minPrice);
+  //   }
+  
+  //   return maxProfit;
+  // }
+  
+  // // Example usage:
+  // console.log(maxProfit([7, 1, 5, 3, 6, 4])); // Output: 5 (buy at 1, sell at 6)
+  // console.log(maxProfit([7, 6, 4, 3, 1]));    // Output: 0 (no profit possible)
+  
+  // Best time to buy and sell stock
+  
+  function maxProfit(prices){
+      // min = infinity;
+      // profit = 0;
+      // profit = max(profit,price-min);
+      let minPrice = Infinity;
+      let maxProfit = 0;
+      
+      for(let price of prices){
+          //update mininum price
+          if(price<minPrice){
+              minPrice = price;
+          }
+          
+          // calculated the maxProfit
+          // profit = max(profit,price-min);
+          
+          maxProfit = Math.max(maxProfit,(price-minPrice));
+      }
+      return maxProfit;
+  }
+  
+  console.log('Max Profit :- ',maxProfit([7,1,5,3,6,4]));
+  console.log('Max Profit :- ',maxProfit([7,2,3,9,8,3,1]));
+  
+  // min = infinity;
+  // profit = 0;
+  // profit = max(profit,(price-min));
+  
+  // Day First : 7
+  // price = 7;
+  // min = 7;
+  // profit = max(0,(7-7)) = 0
+  
+  // Day Second : 2
+  // min = 2
+  // profit = max(0,(2-2)) = 0
+  
+  // Day Third : 3
+  // min = 2
+  // profit = max(0,(3-2)) = 1
+  
+  // Day Four : 9
+  // min = 2 
+  // profit = max(1,(9-2)) = 7
+  
+  // Day Five : 8 
+  // min = 2
+  // profit = max(7,(8-2)) = 7
+  
+  // Day Six : 3 
+  // min = 2
+  // profit = max(7,(3-2)) = 7
+  
+  // Day Seven : 1
+  // min = 1
+  // profit = max(7,(1-1)) = 7
+  
+  // Day Eight : 9
+  // min = 1
+  // profit = max(7,(9-1)) = 8
+------------------------------------------------------------------
+
+  - Product of array except self
+  // Product of array except self
+  // [1, 2, 3, 4]
+  // [24, 12, 8, 6]
+  
+  function multiplicationOfItSelf(arr){
+      let newArray = [];
+      for(let i=0;i<arr.length;i++){
+          let s = arr[i];
+          let result = 1;
+          for(let j=0;j<arr.length;j++){
+              if(s!==arr[j]){
+                  result = result * arr[j];
+              }
+          }
+          newArray.push(result);
+      }
+      return newArray;
+  }
+  
+  console.log(multiplicationOfItSelf([1,2,3,4]));
+------------------------------------------------------------------
+- Combine two or more array
+const arr = [[12,23,90,78,4,89],[45,99,1,8,87],[21,32,2]];
+
+const newArray = [];
+
+for(let i=0;i<arr.length;i++){
+    for(let j=0;j<arr[i].length;j++){
+        newArray.push(arr[i][j]);
+    }
+}
+
+newArray.sort((a,b)=>a-b);
+console.log(newArray);
+------------------------------------------------------------------
+const statement = "Hello Everyone My Name is Vishal Nimbarte From Pune";
+
+// find the length of Vishal word without using the inbuild function
+
+const arr = [];
+let char = '';
+for(let i=0;i<statement.length;i++){
+    if(statement.charAt(i)!==' '){
+        char = char + statement.charAt(i);
+    }
+    else {
+        arr.push(char);
+        char = '';
+    }
+}
+
+for(let i=0;i<arr.length;i++){
+   if(arr[i]==='Vishal'){
+       console.log(`${arr[i]} -> ${arr[i].length}`);
+   }
+}
+------------------------------------------------------------------
+
+- Set matrix zeroes
+- Search in rotated sorted array
+- Find peak element
+- Majority element
+- Longest consecutive sequence
+- Sliding window maximum
+- Subarray sum equals K
+- Minimum size subarray sum
+- Jump game
+- Trapping rain water
+- Maximum subarray (Kadane’s)
+- Sort colors (Dutch flag)
+- Merge intervals
+- Insert interval
+- Spiral matrix
+
+---
+
+## 🔗 Linked Lists (25+ Questions)
+- Reverse a linked list
+- Detect cycle
+- Find middle node
+- Merge two sorted lists
+- Remove N-th node from end
+- Intersection of two lists
+- Palindrome linked list
+- Flatten multilevel list
+- Copy list with random pointer
+- Add two numbers
+- Rotate list
+- Partition list
+- Reorder list
+- Swap nodes in pairs
+- Delete node in constant time
+- Sort linked list
+- Merge K sorted lists
+- LRU cache
+- Linked list cycle II
+- Odd-even linked list
+- Remove duplicates
+- Convert binary number to integer
+- Split linked list in parts
+- Reverse nodes in k-group
+- Intersection of cycle lists
+
+---
+
+## 🧱 Stacks & Queues (25+ Questions)
+- Implement stack
+- Implement queue
+- Min stack
+- Valid parentheses
+- Next greater element
+- Evaluate postfix
+- Infix to postfix
+- Daily temperatures
+- Largest rectangle in histogram
+- Sliding window maximum
+- Implement circular queue
+- Stack using queues
+- Queue using stacks
+- Design browser history
+- Decode string
+- Remove adjacent duplicates
+- Simplify path
+- Asteroid collision
+- Implement monotonic stack
+- Implement deque
+- Implement LRU cache
+- Implement LFU cache
+- Design hit counter
+- Implement bounded blocking queue
+- Implement priority queue
+
+---
+
+## 🌳 Trees & BSTs (25+ Questions)
+- Inorder traversal
+- Preorder traversal
+- Postorder traversal
+- Level order traversal
+- Height of tree
+- Diameter of tree
+- Check if symmetric
+- Check if balanced
+- Lowest common ancestor
+- Validate BST
+- Search in BST
+- Insert/delete in BST
+- Convert sorted array to BST
+- Flatten binary tree
+- Tree to doubly linked list
+- Path sum
+- Maximum path sum
+- Zigzag level order
+- Vertical order traversal
+- Serialize/deserialize tree
+- Construct tree from preorder/inorder
+- Construct tree from postorder/inorder
+- Count nodes in complete tree
+- Kth smallest in BST
+- Recover BST
+
+---
+
+## 🔗 Graphs (25+ Questions)
+- DFS traversal
+- BFS traversal
+- Detect cycle in undirected graph
+- Detect cycle in directed graph
+- Topological sort
+- Clone graph
+- Number of islands
+- Surrounded regions
+- Pacific Atlantic water flow
+- Shortest path in binary matrix
+- Dijkstra’s algorithm
+- Bellman-Ford algorithm
+- Floyd-Warshall algorithm
+- Kruskal’s MST
+- Prim’s MST
+- Tarjan’s algorithm
+- Kosaraju’s algorithm
+- Word ladder
+- Course schedule
+- Minimum spanning tree
+- Bipartite graph check
+- Bridges in graph
+- Articulation points
+- Graph coloring
+- Network delay time
+
+---
+
+## 🔐 Heaps & Hashing (25+ Questions)
+- Implement min/max heap
+- Heapify array
+- Kth largest element
+- Kth smallest element
+- Merge K sorted lists
+- Top K frequent elements
+- Median in data stream
+- Sliding window maximum
+- Frequency sort
+- Reorganize string
+- Sort characters by frequency
+- Design Twitter
+- Design search autocomplete
+- Two sum
+- Group anagrams
+- Longest consecutive sequence
+- Subarray sum equals K
+- Count distinct elements
+- Find duplicates
+- LRU cache
+- LFU cache
+- Randomized set
+- Insert/delete/getRandom
+- Longest substring with K distinct
+- Longest repeating character replacement
+
+---
+
+## 🧠 Dynamic Programming (25+ Questions)
+- Fibonacci numbers
+- Climbing stairs
+- House robber
+- House robber II
+- Longest common subsequence
+- Longest increasing subsequence
+- Edit distance
+- 0/1 Knapsack
+- Coin change
+- Partition equal subset sum
+- Palindromic substrings
+- Longest palindromic substring
+- Decode ways
+- Jump game
+- Minimum path sum
+- Unique paths
+- Interleaving string
+- Matrix chain multiplication
+- Maximum product subarray
+- Subset sum
+- Rod cutting
+- Egg dropping puzzle
+- Wildcard matching
+- Regular expression matching
+- Cherry pickup
+
+---
+
+## 🔤 Strings (25+ Questions)
+- Reverse string
+- Palindrome check
+- Longest palindromic substring
+- Longest common prefix
+- Group anagrams
+- Valid anagram
+- Implement strstr
+- Count and say
+- String compression
+- Remove adjacent duplicates
+- Decode string
+- Multiply strings
+- Add binary
+- Longest substring without repeating
+- Minimum window substring
+- Check permutation in string
+- Word break
+- Regular expression matching
+- Wildcard matching
+- Z-algorithm
+- KMP algorithm
+- Rabin-Karp algorithm
+- Suffix array
+- Trie insert/search
+- Auto-complete system
+
+---
+
+## 🧮 Bit Manipulation & Math (25+ Questions)
+- Count set bits
+- Power of two
+- XOR of all elements
+- Find missing number
+- Single number
+- Single number II
+- Sum of two integers
+- Reverse bits
+- Number of 1 bits
+- Bitwise AND of numbers range
+- Divide two integers
+- Excel sheet column number
+- GCD and LCM
+- Sieve of Eratosthenes
+- Fast exponentiation
+- Modular inverse
+- Prime factorization
+- Check if number is power of 4
+- Add without arithmetic operators
+- Find two non-repeating elements
+- Bitmasking for subsets
+- Count bits from 1 to N
+- Gray code
+- Binary representation of decimal
+- XOR swap trick
+
+---
+
+Let me know if you’d like this as a printable sheet, flashcards, or a quiz to test your knowledge!

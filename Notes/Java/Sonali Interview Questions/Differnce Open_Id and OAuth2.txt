@@ -1,0 +1,17 @@
+OAuth2 and OpenID Connect (OIDC) serve different purposes but are often used together in modern authentication and authorization systems. Here's a comparison to help you decide which one to use when integrating with existing accounts:
+
+OAuth2:
+
+Purpose: OAuth2 is primarily an authorization framework that allows third-party applications to access a user's resources on another server without exposing the user's credentials.
+Use Case: It's commonly used when an application needs to access a user's resources on a different service, such as accessing their photos on a social media platform or fetching data from an external API.
+Example: A mobile application that wants to post tweets on behalf of a user without storing the user's Twitter credentials would use OAuth2.
+Scope: OAuth2 does not provide identity information about the user. It only provides access to protected resources.
+OpenID Connect (OIDC):
+
+Purpose: OIDC is an identity layer built on top of OAuth2, providing authentication and basic user information in addition to authorization capabilities.
+Use Case: It's used when an application needs to authenticate users and obtain basic profile information about them, such as their username, email, and profile picture.
+Example: A web application that allows users to sign in using their Google or Facebook accounts would use OIDC to authenticate users and obtain their basic profile information.
+Scope: OIDC provides identity information about the user in addition to access to protected resources.
+If your goal is to integrate with existing user accounts for authentication purposes (sign-in), and you also need to obtain basic profile information about the users, then OpenID Connect is the appropriate choice. It builds on top of OAuth2, providing authentication capabilities (ID tokens) along with the authorization capabilities (access tokens) provided by OAuth2.
+
+In summary, if you only need to access protected resources without needing identity information, OAuth2 is sufficient. However, if you need to authenticate users and obtain their basic profile information, then OpenID Connect is the way to go. In many cases, you may end up implementing both OAuth2 and OIDC together to cover both authorization and authentication aspects of your application.

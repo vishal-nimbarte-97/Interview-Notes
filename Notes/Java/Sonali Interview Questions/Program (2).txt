@@ -1,0 +1,98 @@
+ReverseString
+-------
+public class Main {
+  public static void main(String[] args) {
+    String originalStr = "Hello";
+    String reversedStr = "";
+    System.out.println("Original string: " + originalStr);
+        
+    for (int i = 0; i < originalStr.length(); i++) {
+      reversedStr = originalStr.charAt(i) + reversedStr;
+    }
+    
+    System.out.println("Reversed string: "+ reversedStr);
+  }
+}
+
+--------
+Reverse a Number
+--------
+class Main {
+  public static void main(String[] args) {
+    
+    int num = 1234567, reversed = 0;
+
+    for(;num != 0; num /= 10) {
+      int digit = num % 10;
+      reversed = reversed * 10 + digit;
+    }
+
+    System.out.println("Reversed Number: " + reversed);
+  }
+}
+
+
+or using java 8  
+
+class Main {
+  public static void main(String[] args) {
+    int num = 1234567;
+
+    String reversed = new StringBuilder(String.valueOf(num))
+                          .reverse()
+                          .toString();
+
+    System.out.println("Reversed Number: " + reversed);
+  }
+}
+
+----------
+Sorting
+----------
+import java.util.*;
+
+public class ListSorting {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(5);
+        numbers.add(2);
+        numbers.add(8);
+        numbers.add(1);
+        numbers.add(9);
+        System.out.println("Original list: " + numbers);
+        Collections.sort(numbers);
+        System.out.println("Sorted list (ascending): " + numbers);
+        Collections.sort(numbers, Collections.reverseOrder());
+        System.out.println("Sorted list (descending): " + numbers);
+    }
+}
+------------
+searching 
+------------
+import java.util.*;
+public class ListElementSearch {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(5); numbers.add(10);
+        numbers.add(15);numbers.add(20);
+        int target = 15;
+        if (numbers.contains(target)) {
+            System.out.println(target + " is found in the list.");
+        } else {
+            System.out.println(target + " is not found in the list.");
+        }
+    }
+}
+
+-----
+For each loop->>>
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        List<String> names = new ArrayList<>();
+        names.add("Alice");
+        names.add("Bob");
+        names.add("Charlie");
+        names.forEach(name -> System.out.println(name));
+    }
+}

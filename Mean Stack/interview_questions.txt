@@ -1,0 +1,514 @@
+What is Web API?
+-> Web API is a set of rules that allows communication between client and server using HTTP or HTTPS for sending requests and receiving responses.
+-> they are some operation like a PUT,POST,GET,DELETE like  that operation are perform using the Web API?
+
+Explain Web API fundamentals?
+->
+Client-Server Communication – Web API connects frontend (client) and backend (server).
+Uses HTTP/HTTPS – Communication happens using standard web protocols.
+Endpoints (URLs) – Specific paths like /api/users used to access data.
+
+HTTP Methods –
+GET → Read data
+POST → Create data
+PUT → Update data
+DELETE → Remove data
+
+Request & Response – Client sends request, server sends back response (usually in JSON).
+Stateless – Each request is independent; server doesn’t remember past requests.
+Status Codes – Shows result of the request (e.g., 200 OK, 404 Not Found).
+Authentication – Secures API using tokens or keys.
+
+✅ HTTP Status Code Ranges:
+200–299 → Success
+→ The request was successful (e.g., data fetched, created, updated).
+
+300–399 → Redirection
+→ The resource has moved or requires redirection.
+
+400–499 → Client Error
+→ The request is incorrect or unauthorized (e.g., 404 Not Found, 401 Unauthorized).
+
+500–599 → Server Error
+→ The server failed to process the request (e.g., 500 Internal Server Error).
+-------------------------------------------------------------------------------
+| Code    | Meaning               | Description                               |
+| ------- | --------------------- | ----------------------------------------- |
+| **200** | OK                    | Request successful                        |
+| **201** | Created               | New resource successfully created         |
+| **204** | No Content            | Success, but no data to return            |
+| **400** | Bad Request           | Invalid request from client               |
+| **401** | Unauthorized          | Authentication required                   |
+| **403** | Forbidden             | Access denied                             |
+| **404** | Not Found             | Resource not found                        |
+| **409** | Conflict              | Conflict in the request (e.g., duplicate) |
+| **500** | Internal Server Error | Server error while processing request     |
+| **503** | Service Unavailable   | Server is down or overloaded              |
+-------------------------------------------------------------------------------
+502 -> bad Gateways
+
+What is REST API & There Principal?
+->REST API (Representational State Transfer API) is a way of communication between client and server using HTTP or HTTPS, where operations like GET, POST, PUT, and DELETE are used to perform actions on resources.
+
+And There  Principal:-
+
+Sure! Here are the **REST API principles in one line each**:
+
+1. **Stateless** – Each request is independent; no data stored on the server.
+2. **Client-Server** – Client and server are separate and communicate via API.
+3. **Uniform Interface** – Use a consistent structure for API requests and responses.
+4. **Resource-Based** – Everything is treated as a resource accessed via URL.
+5. **HTTP Methods** – Use standard methods like GET, POST, PUT, DELETE.
+6. **Cacheable** – Responses can be cached to improve performance.
+
+
+->provided by Amol Sir:- 
+
+JavaScript Interview Questions 
+
+Explain event delegation and its benefits.
+->Event delegation means using a parent element to manage events of its child elements.
+
+What are closures in JavaScript? Provide an example.
+->Outer function can return the inner function, but in this case, they need a parent-child relationship — this is called a closure in JavaScript.
+
+Difference between var, let, and const.
+What is a promise? How does it differ from a callback?
+Explain the Event Loop in JavaScript.
+What are arrow functions and how are they different from regular functions?
+What is hoisting in JavaScript?
+What is the difference between == and ===?
+Explain async/await with an example.
+
+How does this keyword behave in different contexts?
+->this is a reference to the current object scope
+->If no object is found, and it’s not in strict mode, it goes to the global object (window).
+
+What is a higher-order function?
+->A higher-order function is a function that takes another function as a parameter or returns a function. This allows us to reuse logic, build dynamic behavior, and write cleaner code.
+
+What is a callback function?
+
+What is differance between the callback function and higher-order function?
+
+Explain the concept of prototypal inheritance.
+->Prototypal Inheritance is a feature in JavaScript where objects can inherit properties and methods from another object using the internal [[Prototype]] or __proto__ link.
+
+What are JavaScript modules? How do you export and import them?
+->javascript module means a folder they are contain set of the javascript file and another files.
+->in the javsacript contain the thrree types of the modules custom module,core modules and inbuild modules 
+->if you want to the accessing the createing this so we can used the export and import keyword.
+
+Explain the concept of debounce and throttle. When would you use them?
+->
+🔸 Debounce is used to delay the function call until the user stops typing. For example, in a search input, it will wait 1 second after the user stops typing and then send only one API request.
+
+🔸 Throttle is used when you want to limit how many times a function is called. For example, if a user clicks the login button many times, throttle ensures that the API is only called once in a few seconds, avoiding server overload.
+
+What is the difference between shallow copy and deep copy?
+🔹 A shallow copy copies only the top-level data. If the object has nested objects, those are still linked (reference).
+🔹 A deep copy means it copies everything — even the nested objects — so changes in the copied object do not affect the original.
+
+Angular (v10+) Interview Questions
+
+What is the difference between components and directives?
+Explain the Angular lifecycle hooks in order.
+What is dependency injection in Angular?
+
+How do services work in Angular? How do you make them singleton?
+->A service in Angular is a TypeScript class that contains business logic, data access, or common reusable functions.
+It is used to share code and data between components.
+->A singleton service means Angular creates only one instance of that service across the whole app.
+
+Syntax :- 
+
+@Injectable({
+  providedIn: 'root'  // ✅ makes it a singleton
+})
+
+export class MyService { }
+
+What is RxJS and how is it used in Angular?
+->Reactive Extensions for JavaScript (RxJS) is a library used to handle asynchronous operations and event-based data using Observables.
+
+It allows you to work with data that changes over time, such as:
+API responses
+User input events
+Timers or intervals
+WebSockets, etc.
+
+Explain the use of ngOnInit() vs constructor.
+
+What is the difference between @Input(), @Output(), and EventEmitter?
+
+    @Input() is used to receive data from parent to child.
+    @Output() is used to send data or event from child to parent.
+    EventEmitter is used with @Output() to emit events or values to the parent component.
+
+How do you create a reactive form in Angular?
+
+What are guards in Angular? Name the types and use cases.
+->Guards in Angular are used to secure routes and control navigation based on some conditions.
+There are 5 types of guards:
+canActivate
+canActivateChild
+canDeactivate
+canLoad
+resolve
+
+How does Angular handle HTTP requests and error handling?
+->Angular uses the HttpClient service to make HTTP requests (GET, POST, PUT, DELETE).
+It returns Observables, which we can subscribe to and handle data and errors.
+
+What is a module in Angular? 
+->A module in Angular is a container for a group of related components, services, directives, and pipes.
+
+What is lazy loading?
+->Lazy loading means loading a module or route only when it is needed, not at the app’s initial load.
+This helps improve performance by reducing the initial bundle size.
+
+What is Ahead-of-Time (AOT) compilation?
+
+What is a pipe in Angular? Create a custom pipe example.
+->A pipe in angular they are used transform the data from the template.
+->and angular provided the some pipes are provided date, time and uppercase and lowercase
+-><h1>{{"Vishal" | lowercase}}</h1>
+
+How does Angular detect changes (Change Detection Strategy)?
+->Change Detection in Angular means automatically updating the view (HTML) when the data changes in the component.
+Angular provides two change detection strategies:
+Default – Checks all components for every change.
+OnPush – Checks only when input properties change or an event occurs.
+
+Explain route resolvers and their use case.
+->A resolver in Angular is used to load data before navigating to a route.
+It's useful for preloading API data so that the component has everything ready when it opens.
+
+-------------------------------------------------------------------------------------------------
+Node.js Interview
+-------------------------------------------------------------------------------------------------
+0.What is V8 Engine?
+1.What is Node.js?
+1.HOW TO NODE JS WORK?
+2.What is event-driven programming in Node.js?
+3.How does Node.js handle asynchronous I/O operations?
+4.What is Non-Blocking I/O  IN Node.JS?
+5.Node js is single threaded language or multithreaded language?
+6.HTTP Module & Create a Server In Node JS?
+7.What is URL MODULE IN NODE JS.
+8.WHAT IS ROUTING IN NODE JS?
+9.Types of Routes in Node.js (Using the Express JS).
+10.PATH MODULE IN NODE JS?
+11.Module Scope & Module Wrapper Function In Node JS?
+12.What is Module Wrapper Function in Node.js
+13.What is CallBack Function?
+14.Why Used CallBack Function?
+15.What is Callback Hell (Pyramid of Doom):
+16.What is the purpose of the EventEmitter in Node.js, and how do you use it?
+17.What is Libuv & Thread Pool In Node Js?
+18.What is Network I/O in Node Js?.
+19.How does the Node.js event loop work, and why is it important?
+20.What do you mean by event loop in Node.js?
+21.Explain about the Event Loop Phases in Node.JS?
+22.How to Asynchronouse Code are Executed?
+23.What is the Micro-Task Queue?
+24.What is Macro Task Queue?
+25.Can you explain the differences between process.nextTick() and setImmediate()?
+26.What are streams in Node.js, and what are their different types?
+27.How do you implement caching in a Node.js application?
+28.What is load balancing, and how would you implement it in a Node.js environment?
+29.what is cluster module?
+29.What security concerns should you be aware of when developing a Node.js application?
+30.How do you handle versioning in a Node.js API?
+31.What is the difference between Buffer and Stream in Node.js?
+32.what are state in promise?
+33.what are used promise.all()?
+34.What is vertical scaling and horizontal scaling?
+35.How do you use the cluster module to scale a Node.js application?
+36.What difference between monolithic archestructure and microservice?
+37.How to share data between two services?
+38.What is the Synchronous and Asynchronous Programing Languages ?.
+38.Differance bwtween the require and import?
+39.Explain the concept of middleware in Node.js.
+40.How do you optimize the performance of a Node.js application?
+41.What is Web Socket ? 
+42.How do you handle non blocking operations in Node.js?
+43.How can you prevent SQL injection in a Node.js application?
+44.How would you handle data encryption in a Node.js project?
+45.How would you connect to a PostgreSQL database in a Node.js app?
+46.What are the differences between using an ORM and raw SQL queries in Node.js?
+47.How would you handle database connection pooling in a Node.js application?
+49.How would you implement rate limiting in a Node.js API?
+50.what is redis?
+50.What is JWT?
+51.How JWT Works?
+52.Explain the structure of a JWT.?
+53.What are the three parts of a JWT?
+54.How do you create a JWT in Node.js?
+55.What is the purpose of the header in a JWT?
+56.What's config in Node.js ?
+57.What's optional in TypeScript?
+58.What are nullables in TypeScript?
+59.What is an interface?(if there is 2 inteface like user and user address how will you map)?
+60.Could you explain package.json?
+61.Could you explain the packages used for file uploading in Node.js?
+62.Current nodejs version ?
+63.Rest api in node (explain flow)?
+64.Difference between import and require?
+65.Difference between find and filter?
+66.Any encryption algorithm you have used?
+66.Any encryption algorithm you have used? 
+68.How to optimized query performance ?
+69.Difference between async await and promise ?
+70.Have you worked on transactional queries ?
+71.Do you know about scheduling in Node Js ?
+72.Have you used typescript in node JS?
+73.how do you validate the request body in  node js? Any  package for that?
+74.have you created swagger in node js?
+75.Fat arrow function of JavaScript?
+76.How to achieve Concurrency  in Node JS.?
+77.What is used of reduce method.
+78.What are some ways to handle errors in a Node.js application?
+79.How can you prevent SQL injection in a Node.js application?
+80.What is SQL Injection?
+81.How do you handle authentication and authorization securely in a Node.js app?
+82.What are some common security best practices for securing an Express.js application?
+83.How would you handle data encryption in a Node.js project?
+84.What is the difference between the package.json and package-lock.json?
+85.How do you create a custom Node.js module, and how would you share it across projects?
+86.Types of module in Node.js ?
+87.Alternative Way of Nodemon in Node.js ?
+88.How to Improving the performance of a Node.js server 
+89.What is the promises?
+90.What is the asyn/await?
+91.Difference between the promise and asyc/await?
+92.what is difference between the https and http module?
+93.Without using the express server we can create the node.js server it's possible to creating the server in the node.js 
+94.What is Higher Order Function?
+
+-------------------------------------------------------------------------------------------------
+Angular
+-------------------------------------------------------------------------------------------------
+1.What is Angular?
+2.What are the key features of Angular?
+3.What is a Component in Angular?
+4.What is the differance between Angular & Angular.JS ?
+5.What is Directives  in Angular?
+6.Types of Directives in Angular?
+7.What is Data Binding?
+8.Real Time Senario of the Two way Data Binding?
+9.What is Differance Between the ngIf and ngSwitch?
+10.What are Services in Angular?
+11.What is the Dependency Injection in Angular?
+12.What is Routing in Angular?
+13.Explain Angular Lifecycle of Hooks?
+14.Explain Memory Leakage in Angular?
+15.Why Memory Leaks Happens in Angular?
+16.How to Detect Memory Leaks in Angular?
+17.How to Avoid Memory Leaks in Angular?
+18.How to Handle Large-Scale Data in Angular Tables?
+19.What is OnPush in Angular?
+20.Explain Real Time Senario of OnPush Used?
+21.What is DOM Sanitization?
+22.What is One & Two Way Data Binding and There Types ?
+23.Explain About Dependency Injection?
+24.How to Check a third-party Library for vulnerabilities?
+25.What is Standalone Component?
+26.How is it Different from Normal Component?
+27.When to Use Standalone Component?
+28.Key Features of Standalone Component?
+29.What is <router-outlet>?
+30.What is @HostLinsterner & @HostBinding?
+31.What is an Interceptor in Angular?
+32.Why use are Interceptor?
+33.I have totoal 10 API , I want to used the interceptor only for 7 API and skip for 3 API , so How can I do this. 
+34.How can you catch error get from backend?
+35.What is used of (ng-model)?
+36.Differance between Template driven from and Reactive form?
+37.What is track by ?
+🔍 Why use trackBy?
+38.What is differance between ng build and ng serve?
+39.I want to load some config before starting angular app, How can I do?
+40.Explain APP_INITIALIZER?
+41.What is AuthGaurd in Angular?
+42.How to Use AuthGaurd?
+43.What is Route Gaurd in Angular?
+44.Dirreance Between AuthGaurd and Route Gaurd?
+45.How to determine whether a user is logged in or not?
+46.What is used of --force while installing packages?
+47.What is difference between --force and --legacy-peer-deps too.
+47.What is the used of @viewChild?
+48.Give me example where you have invoked manual change detection and how?
+48.Differance between the markForkCheck() and detectChange()?
+49.How to add Bootstrap in Angular Application?
+50.How to Use NG-ZORRO in an Angular Application?
+51.If we want to used both NG-ZORRO and bootstrap so it's possible?
+52.What is async pipe?
+53.How can we say Asyn Pipe it type of the pure pipe?
+54.How to apply background colors to rows in a table based on the age condition (age>18 blue else green)?
+55.What is CORS Origin error, how can we handle it?
+56.What is Angular Proxy or Server-Side proxy?
+57.What is <ng-container>?
+58.In Same div can we used two structural directive? why? and how to fixed it? 
+59.What is ng-template?
+60.What is content project (ng-content)?
+61.What is the Universal Language of API's?
+62.What is Differance Between @ViewChild and @ViewChildren?
+64. What is NgModule in Angular? Why was it used before Angular 14?
+65.What are Standalone Component in Angular?
+66.Is NgModule required in Angular 16+?Why or why not?
+67.What are the Benifites of using Standalone Component insted of ngModule?
+68.Can we mix ngModule and Standalone Component in the same projects?
+69.How do you declare dependencies in a standalone compoent?
+70.What is used of Angular.json?
+71.What is CLI in Angular?
+72.How to Change the dist or Build path in Angular?
+73.What is Lazy-Loading in Angular?
+74.Why use Lazy Loading?
+74.What is differanance between the Lazy Loading and Eger Loading?
+75.What is pre-loading?
+76.why used preloading?
+77.What is Circular depedency in Angular?
+78.HOw to Fix Circular Dependency?
+79.What is Dependency Injection in Angular?
+80.Differance Between private and public when Injecting Services in Angular?
+81.Differance Between Injecting a Service using inject() vs Constrcutor in Angular?
+82.Differance between constructor and ngOnInit?
+83. What is AOT Compiler in Angular?
+84. What is JIT Compiler in Angular?
+85.How many types of compiler are there in Angular?
+86.Differance between JIT and AOT in Angular?
+87.How to get params from route?
+88. Tell me some Route Guard service methods in Angular
+89.What is the differance attributes in Angular?
+90. What is the use of environment.ts file in Angular?
+91.What is Event Propagation?
+92.What is router-outlet?
+93.How to create Multiple router-outlet?
+94.What is Tree Shaking?
+95.I want to fetch data before a compoent is called?
+96.Benifites of Using a Resolver?
+97.What is Angular Resolver?
+98.Give me Real-Time Senario of Angular Resolver?
+99.Differance between Local Storage and Session Storage.
+100.There are several types of storage mechanisms available in browsers to manage and stored data?
+101.Why Do Websities ask for 'Accept all Cookies'?
+102.Encapsulation in Angular?
+103.What is forRoot() and forChild()?
+104.What is used of Constrcutor in Angular?
+107.What is ChangeDetectorRef in Angular?
+108.What is NgZone in Angular?
+109.What is zone.js?
+154.What is a Shared Module in Angular?
+155.What is Interface in Angular?
+156. What is the use of app.module.ts?
+157. How can we unsubscribe from an Observable when moving to the next page?
+158.What are standalone compoents in Angular?
+159.What are the key benefits of using Standalone Components?
+160.What Angular version introduced Standalone Component?
+161.How do you import and use other compoents inside a standalone compoents?
+162.How do you bootstrap an angular application using only a standalone compoents?
+163.Can Standalone Components Work alongside Tranditional NgModules?
+164.How do Standalone Components Handle dependencies such as FormsModule and HttpClientModule?
+165.Can you create standalone directive and pipes in Angular?
+166.How do you Lazy load a Standalone Components dynamically?
+167.How do you mamage routing with standalone compoents in Angular?
+168.How do you configure Providers inside a standalone compoents?
+169.How do you migrate an existing Angular application to standalone compoents?
+170.What is used of ngForm in Angular?
+171.Explain state management of Form?
+172.What are FormControl,FormGroup and FormArray?
+173.How do you perform validation in Angular forms?
+174.What is the role of FormBuilders in Angular?
+175.How do you used patchValue() and setValue() in Reactive forms?
+176.How do you track form state changes in angular?
+177.How do you display error message for form validation in Angular?
+178.How to Security provided our angular application?
+179.How to implement security measures for Angular?
+180.What is differance between bootstrapApplication() and bootstrapModule().
+181.What is Decorators in Angular?
+182.Types of Decorators in Angular?
+183.What is Selectors in Angular?
+184.What is Anotation in Angular?
+185.What is differanance between JavaScript and TypeScript. 
+185.What is used of Angular.json?
+186.What is used of package.json?
+187.What is used of the package-lock.json?
+188.What is differance between the Angular.json,package.json and package-lock.json?
+189.What can problem are occured when ever i can delete the file like a angular.json,package.json and package-lock.json ?
+
+-------------------------------------------------------------------------------------------------
+Commanaly Asking Questions in Interview(Vishal Rokade)
+-------------------------------------------------------------------------------------------------
+1.routing
+2.auth gaurd 
+3.route gaurd
+4.multiple form editing
+5.auth interceptor
+6.Custom css 
+6.polly filling, throttling, bubbling
+7. lazy loading
+8. ngrx 
+9.code coverage
+10.local storage and session storage 
+11.Ways to transfer data between components if not parent and child
+12.decorator
+13.Selectors
+14.Anotation
+15.Template
+16.type of decorator
+17.data binding
+18.Lazy Loading in Angular
+
+-------------------------------------------------------------------------------------------------
+RXJS :- 
+-------------------------------------------------------------------------------------------------
+110.What is Latest Version of RxJS?
+111.What is RxJS and why is it used in Angular?
+112.What is Observable?
+113.What is differance between the Observable and Promises?
+114.What is Promises?
+115.Explain About Observable?
+116.Explain Map Operator?
+117.Explain Filter Operator?
+118.Explain Tap Operator?
+119.Explain fromEvent Operator?
+120.What are Operator?
+121.explain ajax Operator?
+122.Differance between Map and SwitchMap Operator?
+123.Explain SwitchMap Operator?
+124.What is Operator in RxJS?
+126.What is Observable?
+126.What is Observer?
+127.What is a Subscription in RxJS?
+128.What is Unsubscribe() Important?
+129.What is a Subject in RxJS?
+130.What is Event Driven Architecture?
+131.What is Shedulers?
+132.Why use a Schedulers?
+133.What is DebounceTime()?
+134.Why use debounceTime()?
+135.Cold(Unicast) vs Hot(Multicast) Observable in RxJS?
+136.how to converted cold to hot observable?
+137.Explain catchError?
+138.Explain combineLatest?  
+139.Explain forkJoin?
+140.Explain retry Operators?
+141.Explain takeUntil Operators?
+142.What is API Polling?
+143.Explain Subject,BehaviorSubject,ReplaySubject and AsynSubject?
+142.Differance between SetTimeout and SetInterval?
+144.Differance between Subject,BehaviorSubject,ReplaySubject and AsynSubject?
+145.Differance between Observable and Subject?
+146.What is the use of throttleTime() in RxJs?
+147.Differance between forkJoin() & combineLatest()?
+148.How do you manage state management using RxJS in Angular application?
+149.How can you cancel an HTTP request in Angular using RxJS?
+150.How do you use RxJS with Angular Forms?
+151.How do you Handle Real-Time data stream in Angular using RxJS?
+152.What is API Polling?
+153.How do you create a custom RxJS Operator?
+105.What is differance between promise and observable?
+106.Differance between promise/fetch API and Observable/Subscribe?
+107.Used of of Operator?
+108.used form Operator?

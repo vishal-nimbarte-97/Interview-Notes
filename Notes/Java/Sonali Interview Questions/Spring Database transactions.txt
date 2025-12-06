@@ -1,0 +1,50 @@
+How does the @Transactional annotation work internally?
+Can we use @Transactional at the method and class level?
+What are the default transaction settings in Spring Boot?
+
+What is the default rollback policy?
+
+Can we use @Transactional in a Controller class? ->  yes
+
+Why is it not recommended?
+What are some best practices for transaction management in a microservices architecture?
+
+How do you handle distributed transactions?
+What is the Saga pattern?
+How do you test transactions in a Spring Boot application?
+
+How do you ensure rollback during unit tests?
+How does Spring Boot handle multiple transaction managers?
+
+Can we use multiple databases in a single transaction (@Transactional) in Spring Boot?
+What is the role of ChainedTransactionManager?
+What are common pitfalls in Spring Boot transaction management, and how can we avoid them?
+
+Issues with Lazy Loading inside transactions
+@Transactional not working due to self-invocation
+Scenario-Based Questions
+You have a Spring Boot application where a method calls two repository methods inside a transaction, and the second method throws an exception. What happens to the first operation?
+
+You have a @Transactional service method calling a @Transactional(propagation = Propagation.REQUIRES_NEW) method. If the outer transaction rolls back, what happens to the inner transaction?
+
+How do you handle a scenario where a batch process needs to process multiple records, but if one fails, others should continue processing?
+
+What transaction propagation strategy should be used?
+Your application writes to two different databases. If one write operation fails, how do you ensure consistency between them?
+
+How can we achieve two-phase commit (2PC) in Spring Boot?
+
+
+How do you handle transaction rollbacks in an event-driven architecture using Kafka or RabbitMQ?
+You have a Spring Boot application where a method calls two repository methods inside a transaction, and the second method throws an exception. What happens to the first operation?
+
+You have a @Transactional service method calling a @Transactional(propagation = Propagation.REQUIRES_NEW) method. If the outer transaction rolls back, what happens to the inner transaction?
+
+How do you handle a scenario where a batch process needs to process multiple records, but if one fails, others should continue processing?
+
+What transaction propagation strategy should be used?
+Your application writes to two different databases. If one write operation fails, how do you ensure consistency between them?
+
+How can we achieve two-phase commit (2PC) in Spring Boot?
+How do you handle transaction rollbacks in an event-driven architecture using Kafka or RabbitMQ?
+

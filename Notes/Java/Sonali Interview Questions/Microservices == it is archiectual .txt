@@ -1,0 +1,36 @@
+Microservices == it is archiectual style, that structure application in collection of services
+		scalable, fast development, easier maintenance
+		Microservice -- mainly focused on products not projects
+
+biggest challenge on microservice deployement ==
+buisness point of view {lot of staff for maintain}
+
+Asynchronus and Synchronus
+ 
+Asynchronus == ActiveMQ, Rabit MQ, Kafka 
+Synchronus == Rest Template	  
+Communication Pattern RPI == Eureka (Client - Server Both side)
+External API calling == API gateway
+
+API Gateway 
+single entry point for all clients
+handle request one / two way
+also implement security - might client is authorized or not like security key	
+
+
+network faliure while cascading to other service?
+circuit breker it is pattern helps to handle failure
+it used as a library
+there are three states == close, open, half open
+we uses Resilence4j  (designed for lightweight functinal programming)
+  - archived via add DI, set Properties, write Controller
+
+Resilence4j == client request pass through this cuircuit breaker
+	       (closed, open, half) states ==
+		closed - allowed flow to the remote service
+
+Rate Limiting ==
+h
+
+Bean - Functional
+Configuration - class level

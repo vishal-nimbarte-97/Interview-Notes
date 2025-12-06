@@ -1,0 +1,47 @@
+1) difference Array and ArrayList
+	Array is Static, Size check whith length() method, holds premetives as well non premitives
+	Arraylist is Dynamic, Size check with size() method , holds only objects
+
+2) Arraylist and Vector 
+	vector is thread safe, synchrozied
+	Arraylist it is not thread safe, not synchronized
+
+3) Queue
+	NUll not Allow, Dup allow
+	FIFO approach
+	Queue is Random access, But list it is not Random Access
+
+4) Linked list
+	No need to shift data for adding and removing 
+	only refernce from prev and next elements refers
+
+	each node consists of three things – Reference to previous element, Actual value of the element and Reference to next element
+
+5) Arraylist Linked list
+
+	ArrayList requires less memory compared to LinkedList. Because ArrayList holds only actual data and it’s index.
+	insert, delete       time complexity - O(n).
+	LinkedList requires more memory compared to ArrayList. Because, each node in LinkedList holds data and reference to next and 	previous elements.
+	Retrive Data	     time complexity - O(1).
+
+6) Priority Queue -
+	need to specify Comparator
+
+7) Deque
+	Deque uses both Queue(FIFO) and Stack(LIFO)
+	It supports insertion and deletetion from both ends
+
+8) Set 
+	only unique, not duplicate , only one null key
+	impl - HashSet, Linked Hashset, Treeset
+
+9) HashSet
+	HashSet internally use HashMap to store elements
+	Not synchronized
+
+	the HashSet Stored as a Key and Value will be constant (PRESENT)
+
+10) LinkedHashSet
+	LinkedHashSet internally uses LinkedHashMap
+	LinkedHashSet maintains insertion order
+	

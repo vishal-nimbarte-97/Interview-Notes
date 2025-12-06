@@ -1,0 +1,607 @@
+📦 Where are let, var, and const stored in memory?
+->let, var, and const are used to declare the variables. These variables can store both primitive and non-primitive (object) data types.
+
+When we use let, var, or const to store primitive values like numbers, strings, or booleans — that time the value is stored in stack memory because it's small and simple data.
+  
+But when we use let, var, or const to store objects, arrays, or functions, then the reference is stored in stack, and the actual data is stored in heap memory, because it's complex and takes more space.
+-------------------------------------------------------------------------------------------------
+♻️ What is Garbage Collector?
+->Garbage collector in JavaScript and Node.js is used to clean the memory automatically. When variable or object is no longer used, it is removed from memory in the backend. This helps to manage memory properly and make the app faster and optimized.
+->We don’t need to write any method or service for garbage collection. It automatically runs in the background and removes the unused or unreferenced variables or objects from memory.
+-------------------------------------------------------------------------------------------------
+📜 javascript all version and what's differences?
+->current version :- ECMAScript (ES15) 2024
+->The current JavaScript version is ES15 (2024). It includes new methods to work with sets, arrays, and strings more easily. 
+->JavaScript comes with different versions like ES5, ES6, ES7, etc. In each version, some new features are added to improve coding. ES6 is the major version where let, const, arrow function, and promise were introduced. After that, small features come every year to make JavaScript more powerful and easy.
+-------------------------------------------------------------------------------------------------
+🧠 What is Inheritance in JavaScript?
+->Inheritance is the process where a child class can access the properties (data members) and methods (member functions) of a parent class. The child class reuses the parent class code — this is called inheritance in object-oriented programming.
+->they are used prototypal __proto__ .
+-------------------------------------------------------------------------------------------------
+🧠 Real time senario of the method overiding and method overloading
+-> Application: Amazon / Flipkart
+
+In Amazon, different users (Customer, Seller, Admin) all have a login() method, but each type overrides it to handle login in different ways — like password, OTP, or secure token.
+
+-> Application: Swiggy / Zomato
+
+In Zomato, placeOrder() function handles order with promo code, without promo code, or with extra instructions — the function adjusts logic based on the number of arguments.
+
+->In JavaScript, method overriding is fully supported — we can define the same method name in child class and give different logic from the parent class.
+But method overloading is not directly supported like in Java or C++. JavaScript allows only one function with the same name, so we handle overloading by using default parameters, arguments object, or if-else conditions inside the function.
+-------------------------------------------------------------------------------------------------
+0.what is prototypal inheritance in javascript?
+-> Prototypal Inheritance is a feature in JavaScript where an object can inherit properties and methods from another object using the __proto__ or Object.create().
+-------------------------------------------------------------------------------------------------
+1.Current Version of JavaScript?
+->ECMAScript 2024 (ES15).
+->✅ECMAScript 2024 (ES15) is the current official version of JavaScript as of June 2025.
+-------------------------------------------------------------------------------------------------
+1.What is javascript?
+->JavaScript is a scripting language used to make web pages interactive.
+->It can run on both client-side and server-side.
+-------------------------------------------------------------------------------------------------
+2.What is the difference between var, let, and const?
+->var: Reassignment and redeclaration are allowed within the same scope.
+->let: Reassignment is allowed, but redeclaration is not allowed in the same scope.
+->const: Neither reassignment nor redeclaration is allowed in the same scope.
+
+1️⃣ var
+Redeclaration: ✅ Allowed in the same scope.
+Reassignment: ✅ Allowed.
+Scope: Function-scoped (not block-scoped).
+Hoisting: ✅ Variables are hoisted and initialized with undefined.
+
+var x = 10;
+var x = 20; // redeclaration allowed
+x = 30;     // reassignment allowed
+console.log(x); // 30
+
+2️⃣ let
+Redeclaration: ❌ Not allowed in the same scope.
+Reassignment: ✅ Allowed.
+Scope: Block-scoped.
+Hoisting: ✅ Hoisted but not initialized (temporal dead zone).
+
+let y = 10;
+// let y = 20; // ❌ Error: already declared in the same block
+y = 30;      // reassignment allowed
+console.log(y); // 30
+
+3️⃣ const
+Redeclaration: ❌ Not allowed.
+Reassignment: ❌ Not allowed (but objects/arrays can have their contents changed).
+Scope: Block-scoped.
+Hoisting: ✅ Hoisted but not initialized (temporal dead zone).
+
+const z = 10;
+// z = 20; // ❌ Error: assignment to constant variable
+// const z = 30; // ❌ Error: redeclaration not allowed
+
+const arr = [1,2];
+arr.push(3); // ✅ allowed, contents can change
+console.log(arr); // [1,2,3]
+
+------------------------------------------------------------------
+| Keyword | Redeclare | Reassign | Scope    | Hoisting           |
+| ------- | --------- | -------- | -------- | ------------------ |
+| var     | Yes       | Yes      | Function | Initialized        |
+| let     | No        | Yes      | Block    | Temporal Dead Zone |
+| const   | No        | No       | Block    | Temporal Dead Zone |
+------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------
+3.What is a closure?
+-> The outer function can return the inner function, and the inner function can still use the outer function’s variables.
+
+
+function outerFunction()
+{
+    let a = 100;
+    function innerFunction(){
+        a = a + 100;
+        console.log('A :- ',a);
+    }
+    return innerFunction;
+}
+
+const callFunction = outerFunction();
+
+callFunction();
+callFunction();
+-------------------------------------------------------------------------------------------------
+
+4.What are promises and how are they better than callbacks?
+
+→ A Promise is an object in JavaScript that has three states: resolved, rejected, and pending.
+→ Promises are better compared to callbacks because:
+They avoid callback hell (deeply nested callbacks).
+They provide better error handling using .catch().
+They support chaining of multiple asynchronous operations using .then().
+
+-------------------------------------------------------------------------------------------------
+5.what are state in promise?
+->There are three state of promises resolved,rejected and pending.
+-------------------------------------------------------------------------------------------------
+6.What is the difference between == and === ?
+→ == they check only value, but === they check value as well as they also check their type.
+-------------------------------------------------------------------------------------------------
+7.Explain the event loop in JS.
+→ Event loop is basically used for handling asynchronous operations in JavaScript.
+→ It continuously checks the call stack for method execution.
+→ When the call stack is free, then one by one, events are passed to the call stack for asynchronous method execution.
+-------------------------------------------------------------------------------------------------
+8.What is hoisting?
+->JavaScript moves variable and function declarations to the top before executing the code.
+→ Hoisting means you can declare a variable at the bottom, and still use it before declaring it.
+→ During compilation time, the variable declarations are moved to the top of their scope (this is called hoisting)
+-------------------------------------------------------------------------------------------------
+9. Difference between Arrow Functions and Regular Functions?
+→ Arrow functions have shorter syntax as compared to the Regular funtion.
+→ Arrow functions use the => arrow operator, but regular functions do not use any operator.
+→ Arrow functions do not have their own this, but regular functions have their own this.
+    they do not create their own this reference.
+    they create their own this reference depending on how the function is called.
+-------------------------------------------------------------------------------------------------
+10.what is spread operator(...)?
+->The spread operator (...) is used to expand elements of an array or object into individual items.
+→ It is also used to copy an object or array.
+-------------------------------------------------------------------------------------------------
+11.What is Asyn/Wait?
+→ async is basically used to handle asynchronous operations, and it always returns a Promise.
+→ await is used to pause the execution of the code until the Promise is resolved, and it is always written inside an async function.
+-------------------------------------------------------------------------------------------------
+12.What is a higher-order function?
+->Higher-order function means they are passing another function as an argument or return a function, that is called a higher-order function.
+-------------------------------------------------------------------------------------------------
+13.What is javascript?
+->JavaScript is a scripting language, and currently it is used on both the client side and server side.
+-------------------------------------------------------------------------------------------------
+14.What is the purpose of the this keyword? Provide examples?
+->"this" keyword is the reference of the current class object.
+-------------------------------------------------------------------------------------------------
+15.What is the difference between null and undefined?
+->null means the variable has no value (you manually set it to nothing).
+->undefined means the variable is declared but not initialized, so JavaScript automatically assigns it the value undefined
+
+✅ Refined Understanding
+- undefined is the default value automatically assigned by JavaScript when:
+- A variable is declared but not initialized.
+- A function doesn't return anything explicitly.
+- An object property doesn't exist.
+- null is a value that you assign to a variable to indicate that it has no value or is intentionally empty.
+-------------------------------------------------------------------------------------------------
+16.How do setTimeout and setInterval work?
+->setTimeout() and setInterval() are both asynchronous functions in JavaScript, used to schedule code execution.
+->setTimeout() is used to execute a function only one time after a specific delay.
+->setInterval() is used to execute a function continuously at a fixed time interval.
+->In case we use setInterval(), we need to handle the timing of execution, and if we want to stop it, we can use clearInterval().
+-------------------------------------------------------------------------------------------------
+17.What is IIFE (Immediately Invoked Function Expression)?
+->An IIFE is a function in JavaScript that runs immediately after it is defined.
+
+(function () {
+  // your code
+})();
+
+📝 It is used to create a private scope and avoid polluting the global variables.
+
+📝 Simple Explanation:
+If you have multiple variables with the same name or same data type, you can wrap them inside separate IIFEs to avoid naming conflicts because each IIFE has its own scope.
+-------------------------------------------------------------------------------------------------
+18.what is Objects?
+->object is the istance of the class 
+
+const student = {
+    name:"Vishal",
+    age:23
+};
+
+console.log(student);
+-------------------------------------------------------------------------------------------------
+19.What is the difference between Object.keys() and Object.values()?
+
+const student = {
+    name:"Vishal",
+    age:23
+};
+
+console.log(Object.keys(student));
+console.log(Object.values(student));
+-------------------------------------------------------------------------------------------------
+20.Explain how to clone an object. What is the difference between shallow copy and deep copy?
+->In cloning object means they are ways of copy the object and they are copy one object to the another object and exsisting object they are not any effect normally they are used to our main object does not perform any object and there copy object perform some operation so that reason was our old object do not changes.
+
+1.Shallow Copy → Only top-level properties are copied.
+2.Deep Copy → Nested objects are also fully copied.
+
+->✅So, shallow copy basically copies only the top-level properties, and deep copy copies everything, including nested objects, making both fully independent.
+-------------------------------------------------------------------------------------------------
+21.How can you merge two objects?
+->Using the spread operator they are two or more object are merge. and similar to the arrays case.
+
+const obj_1 = {
+    name:"Vishal Nimbarte",
+    age:23
+};
+
+const obj_2 = {
+    mobileNumber : "9284495360",
+    position : "Software Developer"
+}
+
+const obj_3 = {...obj_1,...obj_2};
+
+console.log(obj_3); 
+-------------------------------------------------------------------------------------------------
+
+22.✅ Difference between Object.freeze() and Object.seal()?
+
+->Object.freeze() → ❌ Cannot add, remove, or modify any property. Object becomes fully immutable.
+->Object.seal() → ❌ Cannot add or remove properties, but ✅ can modify existing properties.
+-------------------------------------------------------------------------------------------------
+23.What is the DOM? How do you manipulate it in JavaScript?
+->DOM stands for Document Object Model and with the help of the DOM we can change the HTML 
+->there is the some method to manipulate it in the javascript to manipulate DOM 
+->getElementById()
+->getElementsByClassName()	
+->getElementsByTagName()
+-------------------------------------------------------------------------------------------------
+24.How do you select elements in the DOM?
+->getElementById()
+->getElementsByClassName()	
+->getElementsByTagName()
+-------------------------------------------------------------------------------------------------
+25.what is differanance between the setInterval and setTimeout?
+->setTimeout they are execute in one time 
+->but setInterval they are continously executing and they are manange using the clearInterval
+-------------------------------------------------------------------------------------------------
+26.What is Promises?
+->promises is the javascript object.
+->The promise is used in javascript to handle the asynchronous operation.
+->and promise contain the three main state resolved,rejected and pending.
+-------------------------------------------------------------------------------------------------
+27.What is asyc?
+->In the javsacript asyc is the keyword they are used to created the asynchronous function 
+->and, they are always return the promise and that containing the three main states resolved,rejected and pending.
+-------------------------------------------------------------------------------------------------
+28.What is await?
+->await is used inside the asychronouse functin and they are pause the exection of the code and they are something wait for the execution process.
+-------------------------------------------------------------------------------------------------
+29.Explain event delegation and why it's useful?
+->Event delegation means the child element event is accessed by the parent element.
+It is useful for handling multiple child elements with one parent event.
+-------------------------------------------------------------------------------------------------
+30.What is the difference between addEventListener() and onclick?
+->✅ onclick:
+onclick is a property used to handle a click event on an element.
+You can assign only one function to it at a time.
+
+->✅ addEventListener():
+addEventListener() is a method that allows you to add multiple event handlers on the same event without replacing the old ones.
+-------------------------------------------------------------------------------------------------
+31.How do you stop event propagation in JavaScript?
+->Event propagation means when outer and inner elements have events, and if we click the inner one, both events run.
+This is not a good process always, so we use stopPropagation() to stop the outer event.
+
+Event propagation has two phases:
+- Capturing phase – the event goes from the top of the DOM down to the target element.
+- Bubbling phase – the event goes from the target element back up to the top.
+
+For example, if you have a parent <div> and a child <div>, and both have click events:
+- When you click the child, both the child's an
+
+To stop the event from reaching the parent, you can use event.stopPropagation() inside the child’s event handler.
+-------------------------------------------------------------------------------------------------
+✅ 32. How can you debounce or throttle an event?
+🔹 Debounce:
+Debounce is used in search cases, where the API is called after a delay (e.g. 500ms) after the user stops typing.
+It helps to reduce unnecessary API calls.
+✅ Example:
+In search input, when the user types, API is hit after a pause, not on every keystroke.
+
+🔹 Throttle:
+Throttle is used to limit the number of times an event (like click or scroll) triggers in a time gap.
+It’s useful to prevent multiple rapid clicks or multiple API calls.
+✅ Your Scenario (corrected):
+Imagine a login button where the user clicks many times.
+Each click sends a request to the server, which is not good and increases server load.
+So, we use Throttle to allow only one request per few seconds.
+
+✅ In Angular:
+We can use RxJS operators:
+debounceTime() → For search box
+throttleTime() → For button click or scroll events
+-------------------------------------------------------------------------------------------------
+33.What is the purpose of Promise.all() and Promise.race()?
+
+🔹 Promise.all()
+The purpose of Promise.all() is to run multiple promises together, and wait until all promises are resolved.
+But if one promise is rejected, then the whole result is rejected.
+
+✅ In your wording (corrected):
+Promise.all() is used when all promises must run, but if one fails, the overall result is rejected.
+
+
+const task_1 = new Promise((resolve,rejecte)=>{
+    setTimeout(()=>{
+        resolve('Task First Executed..!');
+    },2000);
+});
+
+const task_2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve('Task Two Executed..!');
+    },3000);
+});
+
+const task_3 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve('Task Three Executed..!');
+    },1000);
+});
+
+Promise.all([task_1,task_2,task_3])
+    .then((result)=>{
+        console.log(result);
+    })
+    .catch((error)=>{
+        console.log(error);
+    });
+
+🔹 Promise.race()
+The purpose of Promise.race() is to return the first promise that resolves or rejects — it ignores the rest.
+
+✅ In your wording (corrected):
+Promise.race() checks the first promise (resolve or reject), and ignores the other ones.
+const task_1 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve('Task First Executed..!');
+    },2000);
+});
+
+const task_2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve('Task Two Executed..!');
+    },3000);
+});
+
+const task_3 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve('Task Three Executed..!');
+    },1000);
+});
+
+Promise.race([task_1,task_2,task_3])
+    .then((result)=>{
+        console.log(result);
+    }).catch((error)=>{
+        console.log(error);
+    });
+-------------------------------------------------------------------------------------------------
+34.Explain callback functions with an example.
+->A callback function is a function that is passed as an argument to the another function and they are exected later.
+->and one of the most important thing is they are handling asychronouse function 
+-------------------------------------------------------------------------------------------------
+35.what is callback hell?
+->callback hell means they are callback function inside one more callback and this callback also contian the one more callback that means nested callback 
+->and to avoids callback hell we used the promise and async/wait 
+-------------------------------------------------------------------------------------------------
+36.How do you handle errors and exection in JavaScript?
+->they are used the try and catch block to handle the errors and exception 
+->so in that case risky code write inside the try block and catch are using to handling exception
+-------------------------------------------------------------------------------------------------
+
+
+
+37.What is the difference between try...catch and throw?
+Try and catch block basically used to handle exception but the throw case they are create the manually exception and they are throw and this exception can handle using the try and catch block.
+-------------------------------------------------------------------------------------------------
+38.we can not handle the exception so what?
+->In our application they are not handle the exception so they are chances to crash our application and server.
+->so exception handling is most import.
+-------------------------------------------------------------------------------------------------
+39.What is Exception?
+->Unwanted or unexpected event occcured in the normal flow of the program that is called as the exception.
+-------------------------------------------------------------------------------------------------
+40.what is ES6 and latest version of javsacript?
+->ES6 stands for ECMAScript 6, also known as ECMAScript 2015.
+->The latest JavaScript version as of 2024 is ECMAScript 2024 (also called ES15). This version added several new and useful methods, especially for arrays and sets.
+->Here are the main features (including the one you mentioned like toReversed()):
+-------------------------------------------------------------------------------------------------
+41.what is differanance bwtween the splice and slice?
+->✅ slice() – copies part of array (no change to original)
+
+let fruits = ["apple", "banana", "cherry"];
+let result = fruits.slice(1, 3);
+console.log(result); // ["banana", "cherry"]
+console.log(fruits); // ["apple", "banana", "cherry"]
+
+->✅ splice() – removes or adds (changes original)
+
+let fruits = ["apple", "banana", "cherry"];
+fruits.splice(1, 1); // remove 1 item at index 1
+console.log(fruits); // ["apple", "cherry"]
+
+
+1. Creating Arrays
+
+Array.of(): Creates an array with the provided values.
+const arr = Array.of(1, 2, 3);
+console.log(arr); // [1, 2, 3];
+
+-------------------------------------------------------------------------------------------------
+Array.from(): Converts a string, array-like, or iterable object into an array.
+const arr = Array.from('123');
+console.log(arr); // ['1', '2', '3']
+
+new Array(): Creates an array of specified size or elements.
+const arr = new Array(3);
+console.log(arr); // [undefined, undefined, undefined]
+-----------------------------------------------------------------------------------------------------------------
+2. Adding/Removing Elements
+Mutative Methods (change the original array):
+push(): Adds an element to the end.
+const arr = [1];
+arr.push(2);
+console.log(arr); // [1, 2]
+
+pop(): Removes the last element.
+const arr = [1, 2];
+arr.pop();
+console.log(arr); // [1]
+
+unshift(): Adds an element to the start.
+const arr = [2];
+arr.unshift(1);
+console.log(arr); // [1, 2]
+
+shift(): Removes the first element.
+const arr = [1, 2];
+arr.shift();
+console.log(arr); // [2]
+The splice() method in JavaScript is used to add or remove elements from an array. Here's how it works with the syntax:
+array.splice(startIndex, deleteCount, ...itemsToAdd);
+startIndex: The index at which to start modifying the array.
+deleteCount: The number of elements to remove starting from startIndex.
+itemsToAdd (optional): Elements to add at the startIndex. If omitted, no elements are added.
+
+-----------------------------------------------------------------------------------------------------------------
+Non-Mutative Methods (don’t change the original array):
+concat(): Combines arrays into a new array.
+const arr1 = [1];
+const arr2 = [2, 3];
+const result = arr1.concat(arr2);
+console.log(result); // [1, 2, 3]
+
+-----------------------------------------------------------------------------------------------------------------
+slice(): Extracts part of an array into a new one.
+const arr = [1, 2, 3];
+const result = arr.slice(0, 2);
+console.log(result); // [1, 2]
+
+
+-----------------------------------------------------------------------------------------------------------------
+Why Use the Spread Operator?
+Avoid Unintended Changes (Side Effects):
+If you copy an array using the spread operator, you create a new array.
+Changes to the new array won't affect the original array.
+Example:
+const arr = [1, 2, 3];
+const copy = [...arr]; // New array
+copy.push(4);
+
+console.log(arr);  // [1, 2, 3] (unchanged)
+console.log(copy); // [1, 2, 3, 4]
+Immutability:
+In programming, immutability means keeping the original data unchanged.
+The spread operator helps follow this practice by creating a copy instead of modifying the original data.
+Example:
+const numbers = [10, 20, 30];
+const newNumbers = [...numbers, 40]; // Original array stays intact
+
+console.log(numbers);     // [10, 20, 30] (unchanged)
+console.log(newNumbers);  // [10, 20, 30, 40]
+Simple Summary:
+Spread operator ensures changes are made to a new copy and not the original data.
+It helps prevent bugs caused by accidental modifications and makes your code cleaner and safer.
+-----------------------------------------------------------------------------------------------------------------
+3. Iterating over Arrays
+forEach(): Loops through each element. OR they are iterating all the data in the array
+[1, 2, 3].forEach(num => console.log(num)); 
+// Logs: 1, 2, 3
+
+map(): Creates a new array by modifying each element. OR creating a new array they are performing the operation and modification of the each data then return the array
+const doubled = [1, 2, 3].map(num => num * 2);
+console.log(doubled); // [2, 4, 6]
+
+filter(): Creates a new array with elements that pass a test. OR they are used the condition of the each data 
+const filtered = [1, 2, 3].filter(num => num > 1);
+console.log(filtered); // [2, 3]
+
+-----------------------------------------------------------------------------------------------------------------
+✅ reduce() Explanation (Simple):
+reduce() is used to calculate a single value (like total, average, etc.) from an array.
+It uses:
+acc → accumulator (stores the result)
+data → current value from the array
+We start with an initial value (e.g., 0 for sum).
+
+reduce(): Combines all elements of the array into a single value (e.g., sum, average, or other operations).
+const sum = [1, 2, 3].reduce((acc, num) => acc + num, 0);
+console.log(sum); // 6
+-----------------------------------------------------------------------------------------------------------------
+4. Searching and Finding
+
+Find single elements:   
+find(): Returns the first element that matches a condition.
+const found = [1, 2, 3].find(num => num > 1);
+console.log(found); // 2
+
+findIndex(): Returns the index of the first match.
+const index = [1, 2, 3].findIndex(num => num > 1);
+console.log(index); // 1
+
+Boolean checks:
+includes(): Checks if an element exists.
+const hasTwo = [1, 2, 3].includes(2);
+console.log(hasTwo); // true
+
+some(): Checks if any element satisfies a condition.
+const hasEven = [1, 2, 3].some(num => num % 2 === 0);
+console.log(hasEven); // true
+
+every(): Checks if all elements satisfy a condition.
+const allPositive = [1, 2, 3].every(num => num > 0);
+console.log(allPositive); // true
+
+important last day interview :- some() and every() methods 
+
+5. Sorting and Reversing
+sort(): Sorts elements (default is lexicographical order).
+Ascending order (numbers): numbers.sort((a, b) => a - b);
+Descending order (numbers): numbers.sort((a, b) => b - a);
+Ascending order (strings): array.sort();
+Descending order (strings): array.sort((a, b) => b.localeCompare(a));
+const arr = [3, 1, 2];
+arr.sort();
+console.log(arr); // [1, 2, 3]
+
+
+reverse(): Reverses the array.
+const arr = [1, 2, 3];
+arr.reverse();
+console.log(arr); // [3, 2, 1]
+-----------------------------------------------------------------------------------------------------------------
+6. Combining and Joining
+join(): Combines elements into a st  ring.
+const str = [1, 2, 3].join('-');
+console.log(str); // "1-2-3"
+toString(): Converts the array to a string.
+const str = [1, 2, 3].toString();
+console.log(str); // "1,2,3"
+-----------------------------------------------------------------------------------------------------------------
+7. Checking Properties
+Array.isArray(): Checks if a value is an array.
+console.log(Array.isArray([1, 2])); // true
+console.log(Array.isArray('123')); // false
+-----------------------------------------------------------------------------------------------------------------
+8. Array Construction and Filling
+fill(): Fills the array with a static value.
+const arr = [1, 2, 3].fill(0);
+console.log(arr); // [0, 0, 0]
+
+copyWithin(): Copies part of the array to another location.
+const arr = [1, 2, 3, 4];
+arr.copyWithin(1, 2);
+console.log(arr); // [1, 3, 4, 4]
+-----------------------------------------------------------------------------------------------------------------
+9. Keys, Values, and Entries
+keys(): Returns an iterator for indices.
+for (let key of [1, 2].keys()) console.log(key); // Logs: 0, 1
+values(): Returns an iterator for values.
+for (let value of [1, 2].values()) console.log(value); // Logs: 1, 2
+entries(): Returns an iterator for key-value pairs.
+for (let [key, value] of [1, 2].entries()) console.log(key, value);
+// Logs: 0 1, 1 2
+-----------------------------------------------------------------------------------------------------------------

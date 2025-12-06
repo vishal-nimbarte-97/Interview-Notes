@@ -1,0 +1,57 @@
+Design Pattern:- well proved solution of commonly occurring problem in software design
+Design patterns represent and idea.Types
+1.Creational Design Pattern:Factory , Builder , Singleton
+2.Structural Design Pattern:Proxy , Adaptor , etc
+3.Behavioral Design Pattern:Observer , State , Iterator
+
+Note:-
+Christopher Alexander was the first person who invented all the above Design Patterns in 1977.
+But later the Gang of Four - Design Patterns , elements of reusable object oriented softw
+are book was written by a group of four person named as Erish Gamma,Richard Helm,Ralph Johnson and John Vissides in 1995
+----
+1.Singleton: it is creational design pattern .it is used in database connection. create private Constructor, create object with the help of method , create field to store object is private. if you want to create Eager way you can create object in inititalion time
+but if you create object in ondemand that time you can use Lasy way . if you want to create thred safe code that time you can use synchronized block.
+
+Ways to break singleton pattern:-
+1.Reflection API .solution:-1.if object is there throw exception form inside construction . 2.use enum
+2.Deserialization.Solution:-override readResolve method
+3.Cloning:
+
+2.Factory:
+When there is superclass and multiple subclasses and we want to get object of subclasses based on input and requirement. then we create factory class which takes the responsibility of creating of class based on input.
+Advantages-focus on creating object for interface rather than implementation,loose coupling more robust code. it is used to create loosely coupled application. Eg.EmployeeFactory->EmployeeAbstractFactory->AndroidDevFactory,WebDevFactory
+
+
+3.Builder:
+While creating object when object contain many attributes there are many problem exists:
+1.we have to pass many arguments to create object
+2.some paramenters might be optional
+3.factory class takes all responsibility for creating object.if the object is heavy then all complexity is the part of factory class.
+So in builder pattern be create object step by step and finally return final object with desired values of attributes.
+
+
+4.Prototype:
+The concept is to copy an existing object rather than creating a new instance from scratch .because creating new object may be costly.This approach saves costly resources and time,especially when object creating is a heavy process.
+there is two types 1.Shallow Copy 2.Deep Copy
+1.Shallow Copy:-In this we copy normal variable and refernce of object . if we change is object that time automaticly update second variable
+2.Deep Copy:In this we copy All normal variable and object also.
+
+
+5.Observer:
+It is behavioural Design pattern.In this when subject changes the state all its dependent objects notified the changes. one to many relation.
+
+
+6.Iterator:
+It is iterator pattern a way to access the elements of an object without exposing its underlying implementation.
+
+7.Adapter:it is interface based pattern 
+
+
+SOLID principle
+
+
+
+
+
+
+

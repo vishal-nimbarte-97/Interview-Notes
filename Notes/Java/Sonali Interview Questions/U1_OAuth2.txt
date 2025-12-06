@@ -1,0 +1,27 @@
+OAuth2 is an industry-standard protocol for authorization, commonly used in the context of web applications, APIs, and mobile applications. It allows users to grant third-party access to their resources without sharing their credentials (such as passwords) directly.
+
+At its core, OAuth2 involves four key roles:
+
+Resource Owner: This is typically the end-user who owns the data being protected. For example, it could be a person with an account on a social media platform, a user of an online banking service, or any entity that controls access to a resource.
+
+Client: This is the application that seeks access to the user's resources. It could be a web application, a mobile app, or even a server-side application.
+
+Authorization Server: This server authenticates the user and issues access tokens after obtaining authorization. It verifies the identity of the resource owner and grants permissions to the client.
+
+Resource Server: This is the server hosting the protected resources. It verifies the access tokens presented by clients and serves the requested resources if the token is valid.
+
+The OAuth2 flow typically involves the following steps:
+
+Client Registration: The client application registers with the authorization server and obtains client credentials (such as a client ID and client secret).
+
+Authorization Request: The client requests authorization from the resource owner. This usually involves redirecting the user to the authorization server's authentication endpoint.
+
+User Authentication and Authorization: The resource owner authenticates themselves with the authorization server and grants the requested permissions to the client.
+
+Access Token Request: Upon successful authentication and authorization, the authorization server issues an access token to the client.
+
+Accessing Protected Resources: The client presents the access token to the resource server when requesting access to protected resources. The resource server verifies the token and serves the requested resources if the token is valid.
+
+Token Refresh (Optional): Access tokens may have a limited lifespan. If the token expires, the client can use a refresh token (if provided) to obtain a new access token without requiring the user to re-authenticate.
+
+In a Spring Boot application, OAuth2 can be implemented using Spring Security, which provides built-in support for OAuth2 authentication and authorization. By configuring Spring Security and the necessary dependencies, you can enable OAuth2-based authentication in your application, allowing users to securely access protected resources.

@@ -1,0 +1,99 @@
+Sonali Londhe
+
+Solapur India
++917972692377
+londhesonali34@gmail.com
+
+Professional Summary
+
+Dedicated and results-oriented Java Developer with 3 years of experience in designing, implementing, and maintaining complex software applications. Proficient in Java, the Spring Framework, and various software development methodologies. Skilled at collaborating with cross-functional teams to deliver high-quality, scalable solutions that meet client requirements.
+
+Skills
+
+Core Java
+
+Git Bash
+
+OOP's Concepts
+
+Postman
+
+Spring Boot
+
+Jira
+
+REST API
+
+Eclipse
+
+MySql
+
+MySql Workbench
+
+HTML
+
+Spring Tool Suite
+
+Cascading Style Sheets
+
+Work History
+
+February 2023 - November 2024
+
+Greentin Solution Private Limited
+Software Developer    
+
+Company Overview: product based company
+Developed web applications using Core Java, Spring & Rest APIs handling both new projects and troubleshooting existing ones
+Created and maintained RESTful APIs for data retrieval, ensuring efficient communication between frontend and backend components
+Conducted thorough testing and debugging to maintain the stability and reliability of backend services, participating in code reviews and unit testing
+Collaborated with cross-functional teams to translate business requirements into technical solutions, optimizing SQL queries and database operations, primarily with MySQL, for effective data management.
+
+July 2022 - December 2022
+
+NTTDATA Global Delivery Services Pvt Ltd
+Software Developer    
+
+Delivered client SMS notifications via mobile and integrated the same functionality into WhatsApp, ensuring a seamless and consistent user experience across different communication channels
+This integration allowed clients to receive real-time updates and engage more effectively with the platform
+
+March 2020 - July 2022
+
+EXL Private Limited
+Backend Developer    
+
+Developed RESTful APIs that facilitated seamless data exchange between clients and servers in a distributed environment.
+Defined and maintained databases to deliver responsiveness to data client requests.
+Participated in agile development processes, including daily stand-ups, sprint planning, and retrospectives.
+
+Education
+
+March 2019
+GFCCT Akluj India
+Bachelor of Science Computer Engineering
+GPA: 8.89
+
+Certifications
+
+Internship in Java, Maxgen Technology Pvt Ltd, 01/04/2019, 01/09/2019
+
+Languages
+
+English
+			
+
+Marathi
+			
+
+Hindi
+			
+
+Project
+
+myeNovation Product, As a backend developer for myeNovation, contributed to creating and maintaining robust features and efficient development practices across various modules. Developed and enhanced modules in myeNovation, an interactive platform designed for capturing and implementing ideas, suggestions, and Kaizens, facilitating better employee engagement and information exchange within organizations., Managed the horizontal deployment of ideas across multiple locations, generating comprehensive reports and informative dashboards to analyze statistics., Delivered client Proof of Concepts (POCs), showcasing the platform's capabilities and value.
+
+Hobbies and Interests
+
+Learning new technology
+Traveling
+Watching movies

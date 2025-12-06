@@ -1,0 +1,409 @@
+ 	 
+1.What are the building components of an Angular application?
+ 
+The main building components of an Angular application are modules,
+ components, templates, services, directives,
+ pipes, routing, forms, dependency injection (DI), data binding,
+ change detection, and life
+ cycle hooks.
+
+2.What is the purpose of using a selector?
+The purpose of using a selector in Angular is to define a  custom HTML tag that represents a component. 
+This allows the component to be inserted into the DOM at the desired location within an application's template, enabling modular and reusable UI elements.
+
+3.Type of directive ?
+1.Component Directives:
+These are directives with a template. A component is a directive with an HTML template and is the most commonly used directive type.
+
+2.Structural Directives:
+*ngIf: Conditionally includes a template based on the value of an expression.
+*ngFor: Repeats a node for each item in a list.
+*ngSwitch: A set of directives that switch between alternative views.
+
+
+3.Attribute Directives:
+ngClass: Adds or removes a set of CSS classes.
+ngStyle: Adds or removes a set of HTML styles.
+ngModel: Binds an input, select, textarea, or custom form control to a property on the scope.
+
+4.What are Angular pipes and how are they used?
+
+Angular pipes are  powerful feature that allows you to transform data directly within your templates.
+ They are often used to format data, such as dates, currencies, or numbers, and to perform other common tasks, like filtering or sorting arrays.
+ Pipes are similar to filters in other frameworks, but they are designed to be more efficient and versatile.
+	
+5.What is the difference between a template and a templateUrl in Angular components?
+
+In Angular components, template and templateUrl are two properties used to define the HTML template for a component. 
+Both properties serve the same purpose but are used in different ways. 
+
+*template*
+
+i. The template property allows you to define the HTML content directly within the component's TypeScript file. It is specified as a string.
+ii. This approach is suitable for small or simple templates where the HTML content is relatively short and manageable within the component file.
+
+*templateUrl*
+i. The templateUrl property allows you to define the HTML content in a separate external HTML file. It is specified as a file path string.
+ii.This approach is preferred for larger or more complex templates where keeping the HTML separate from the TypeScript code helps with organization, readability, and maintainability.
+
+6.What is an Angular module's metadata and how is it configured?
+
+An Angular module's metadata is a key part of configuring and organizing the structure of an Angular application.
+ This metadata is defined using the @NgModule decorator, which provides important information about how the module should behave and interact with other parts of the application.
+
+*how it is configured* =
+An Angular module is configured using the @NgModule decorator, which specifies metadata for organizing and managing the module's components, directives, and services. 
+The declarations array lists components, directives, and pipes that belong to the module. The imports array includes other modules that provide required functionalities. The exports array specifies which components or services should be accessible to other modules.
+ The providers array registers services for dependency injection, while the bootstrap property defines the root component to start the application. 
+
+7. What is the purpose of the AppModule?
+
+The AppModule is the root module in an Angular application that initializes and configures the application.
+ It specifies the root component (AppComponent) that Angular uses to bootstrap the app. 
+It declares and imports essential components and modules needed for the application to function.
+Essentially, AppModule serves as the central hub for configuring and launching the Angular application.
+
+8.  two-way data binding how to  implemented in Angular.
+Two-way data binding in Angular is implemented using the [(ngModel)] directive, which binds a form control to a component property. 
+Changes in the input field update the component property, and changes in the component  property update the input field. To use ngModel, you must import FormsModule in your Angular module.
+ This directive enables seamless synchronization between the component's data and the user interface, making it easy to handle user inputs and display dynamic data.
+
+
+9.What is change detection in Angular and how does it work?
+Change detection in Angular is a mechanism that checks and updates the view whenever the component’s data changes. 
+Angular uses a change detection strategy to determine when and how to update the DOM in response to data changes. 	
+It works by checking the component’s data-bound properties and comparing them with previous values. Angular’s change detection is triggered by various events, such as user interactions, HTTP responses, or timers.
+
+
+10. What are ChangeDetectionStrategy and how do they optimize performance?
+ChangeDetectionStrategy in Angular determines how and when Angular performs change detection for a component. 
+
+*there areThe two primary strategies are*
+
+Default: Angular checks all components in the component tree whenever a change is detected. This is the standard mode but can be less efficient for complex applications.
+
+OnPush: Angular only checks the component when its input properties change, or when an event occurs within the component. This strategy reduces the number of checks and improves performance by minimizing unnecessary change detection cycles.
+
+By using OnPush, developers can optimize performance, especially in large applications, by reducing the frequency of change detection checks.
+
+11. What is NgRx and why is it used?	
+NgRx is a state management library for Angular applications based on the Redux pattern.
+ It provides a predictable state container, making it easier to manage complex state and side effects in large applications. 
+NgRx uses actions, reducers, and effects to handle state changes and asynchronous operations in a consistent manner. By centralizing state management and enforcing unidirectional data flow,
+ NgRx helps maintain a clear and maintainable application structure, improves testability, and makes state transitions more predictable.
+	
+12. What is the difference between a subject and a behavior subject in RxJS?
+Subject: No initial value is required.
+Subject: Does not hold or replay the last emitted value.
+Subject: New subscribers only receive values emitted after they subscribe.
+Subject: Suitable for handling events or streams where the last value is not needed.
+Subject: Does not replay past values to new subscribers.
+
+BehaviorSubject: Requires an initial value.
+BehaviorSubject: Holds the current value and always replays it to new subscribers.
+BehaviorSubject: New subscribers receive the most recent value immediately upon subscription.
+BehaviorSubject: Ideal for managing state or scenarios .
+BehaviorSubject: Always provides the latest value to new subscribers.
+
+13. How can you manage large data in Angular?
+
+Pagination: Load data in chunks with pagination to improve performance and reduce initial load times. Use Angular Material’s <mat-paginator> or custom logic.
+
+Infinite Scrolling: Fetch additional data as users scroll, minimizing initial load and enhancing user experience. Libraries like ngx-infinite-scroll can help with this.
+
+Virtual Scrolling: Render only visible items in a list to improve performance using Angular’s cdk-virtual-scroll-viewport, which reduces the number of DOM elements.
+
+Lazy Loading: Load components or data only when needed to speed up initial load times. Use Angular’s lazy loading for routes and on-demand data fetching.
+
+Data Caching: Cache frequently accessed data to avoid redundant server requests. Use Angular services or HTTP interceptors for efficient caching.
+
+Server-Side Processing: Process and filter data on the server to reduce the amount sent to the client, minimizing client-side load and improving performance.
+
+Efficient Data Binding: Optimize change detection by using Angular’s OnPush strategy and  immutable data patterns to reduce unnecessary updates and improve performance.
+
+
+14. What is the Angular Universal?
+Angular Universal is a technology that enables server-side rendering (SSR) for Angular applications. 
+ Angular Universal allows the application to be rendered on the server before being sent to the client. 
+This means that when a user requests a page, the server generates the HTML content, which is then sent to the browser.
+
+This server-side rendering has several advantages. First, it improves the initial load time of the application because the server sends a fully rendered page to the browser,
+ allowing users to see content quickly while the Angular application continues to load in the background.
+Second, it enhances search engine optimization (SEO) . 
+
+15. What is server-side rendering?
+
+Server-side rendering (SSR) is a technique where web pages are generated on the server rath
+`er than in the browser.	
+ When a user requests a page, the server processes the request, generates the complete HTML content, and sends this pre-rendered HTML to the client.
+ The browser then displays this content to the user.
+
+
+16. How does Angular handle form validation?
+
+Angular handles form validation using two primary approaches: reactive forms and template-driven forms.
+
+Reactive Forms  uses FormControl and FormGroup to create and manage form controls programmatically.
+ Validators are added directly to form controls or groups to enforce rules such as required fields, minimum and maximum lengths, or patterns. 
+
+Template-Driven forms are defined in the template using directives like ngModel.
+ Validation rules are applied through HTML attributes, and Angular handles validation status and error messages directly within the template. 
+
+17. What are Angular zones and how do they help with asynchronous tasks?
+
+Angular Zones, powered by the zone.js library, are used to manage and detect asynchronous tasks within an Angular application. 
+They automatically track and handle changes caused by asynchronous operations, such as HTTP requests or timers.
+ By wrapping these operations in a zone, Angular can trigger change detection when tasks complete, ensuring that the UI is updated to reflect the latest application state.
+
+
+18. What is the difference between a stateful and stateless component?
+
+Stateful Components are designed to manage and maintain their own internal state.
+ They handle data that can change over time and respond to user interactions.
+
+Stateless Components, on the other hand, do not manage their own state.
+ They are primarily concerned with presenting data and rendering the user interface based on the data passed to them through inputs or props. 
+
+
+19.  How does Angular handle component communication?
+
+Angular handles component communication through several mechanisms, each suited to different scenarios:
+
+@Input(): Allows a parent component to pass data to a child component. The child component uses the @Input() decorator to define properties that can receive data from its parent.
+@Output(): Enables a child component to emit events to its parent component. The child component uses the @Output() decorator along with an EventEmitter to send data or notifications to the parent.
+
+@ViewChild(): Provides a way for a parent component to access a child component or directive instance directly. This is useful for interacting with child components' properties and methods.
+@ContentChild(): Allows a component to query and interact with projected content (i.e., content passed into the component's <ng-content>).
+Event Binding:
+Angular’s template syntax supports event binding, where parent components listen to events emitted by child components. This is typically done using the () syntax to bind to event handlers.
+State Management Libraries:
+
+
+20. What are standalone components in Angular and their features?
+
+Standalone components in Angular are self-contained components that do not require an Angular module for declaration. 
+ Standalone components manage their own dependencies and can be directly declared with the standalone: true property.
+ This approach enhances reusability, improves encapsulation, and facilitates easier imports and lazy loading.
+
+
+feature :
+No Module Require,
+Directly Declarable,
+Simplified Imports,
+Enhanced Reusability,
+Improved Tree Shaking,
+Better Encapsulation,
+Lazy Loading
+
+21.  How does routing work for standalone components?
+ Routing for standalone components is configured directly wiqthin the component itself, using RouterModule.forRoot() or RouterModule.forChild() to define routes.
+ This setup eliminates the need for a separate NgModule for routing. When a route is accessed,
+Angular's router activates the standalone component based on the defined route path. 
+This approach simplifies the routing structure and enhances modularity by allowing components to manage their own routing configurations.
+
+
+22.  What is an HTTP call in Angular and how is it implemented?
+
+In Angular, an HTTP call is a request to a server to fetch or send data, implemented using the HttpClient service from the @angular/common/http module. 
+To use it, you first import HttpClientModule in your module. Then, inject HttpClient into your service or component. 
+You can make HTTP requests using methods like get(), post(), put(), and delete(). 
+The HttpClient methods return observables that you can subscribe to in order to handle responses or errors. 
+
+23.What is an interceptor in Angular?
+
+In Angular, an interceptor is a service that intercepts and modifies HTTP requests and responses.
+ It is useful for tasks like adding authentication tokens,error handling, and modifying headers or parameters.
+ Interceptors implement the HttpInterceptor interface and are registered in the providers array using the HTTP_INTERCEPTORS token.
+ Multiple interceptors can be added, and they are executed in the order they are provided.
+
+24. What is error handling in Angular and how is it implemented?
+
+Error handling in Angular involves managing errors from HTTP requests or within components and services to provide better user feedback and ensure application stability.
+ It can be implemented using interceptors, where errors from HTTP requests are caught and processed, or by using Angular's ErrorHandler class to handle global errors.
+
+
+25. RxJS operators?
+
+Creation Operators:
+
+of(): Creates an observable from a set of values.
+from(): Converts an array, promise, or iterable into an observable.
+interval(): Emits a sequence of numbers at a specified interval.
+
+Transformation Operators: 
+
+map(): Applies a function to each value emitted by the source observable.
+mergeMap(): Maps each value to an observable, then flattens all these inner observables into one.
+switchMap(): Maps each value to an observable and cancels the previous observable.
+
+Filtering Operators:
+filter(): Emits only the  values that pass a specified condition.
+take(): Emits only the first n values.
+debounceTime(): Emits values after a specified time has passed since the last emission.
+
+Combination Operators: Combine multiple observables.
+merge(): Combines multiple observables into one.
+concat(): Emits all values from multiple observables sequentially.
+forkJoin():combine multiple observable and emit last value from each
+
+ Combines multiple observables and emits the last value from each.
+
+Error Handling Operators: 
+catchError(): Catches errors and returns a new observable or throws an error.
+retry(): Re-subscribes to the source observable on error for a specified number of
+
+
+26. Why use observables instead of promises?
+ i. Observables can emit multiple values over time, while Promises handle only a single value.
+ii. Observables are lazy; they do not execute until they are subscribed to, whereas Promises execute immediately upon creation.
+iii. Observables offer powerful operators (like map, filter, merge, etc.) for manipulating data streams.
+iv.  Observables have more versatile and comprehensive error handling capabilities compared to Promises.
+
+27. How to handle performance issues in an Angular application?
+
+i. Use OnPush change detection strategy to reduce the number of checks performed by Angular.This strategy checks only when input properties change or when events occur within the component.
+ii. Implement lazy loading to load modules only when needed, reducing the initial bundle size and improving load times for the main application.
+iii. Use trackBy with ngFor to improve performance by tracking changes to array elements more efficiently
+iv. Use  pure pipes over impure pipes for better performance, as pure pipes are called only when input values change, while impure pipes run on every change detection cycle.
+v.  Enable tree shaking and minification to remove unused code and reduce the final bundle size.
+
+28. What is a proxy in Angular?
+
+In Angular, a proxy is used to route API request
+s from the development server to a backend server.
+ It helps overcome issues with cross-origin requests during development.
+ By configuring a proxy, you can avoid CORS (Cross-Origin Resource Sharing) errors and ensure that your API requests are directed to the correct server, simplifying local development and testing.
+
+29. What is Angular's Ivy renderer and how does it improve performance?
+i. Angular's Ivy renderer is a modern rendering engine introduced in Angular 9 that enhances the performance and efficiency of Angular applications.
+ii. It generates more compact code, reducing the size of application bundles, which leads to faster load times.
+iii.vy uses an optimized change detection mechanism that minimizes the number of checks needed, improving runtime performance.
+
+30. How can you dynamically create components in Angular?
+ 
+
+i.Use <ng-template> in your template as a placeholder for the dynamic component.
+ii. In your host component, inject ComponentFactoryResolver and ViewContainerRef.
+iii.  Use ComponentFactoryResolver to create a component factory and ViewContainerRef to insert the component into the placeholder.
+iv. You can pass data to the dynamic component via its instance properties.
+
+
+31. What are Angular Elements and how do they integrate with other frameworks?
+i. Angular Elements are a way to package Angular components as custom HTML elements .
+ii. Convert Angular components into custom elements using @angular/elements package.
+
+32. What is the role of the TestBed in Angular 
+testing?
+i. TestBed is a utility that helps configure and initialize the environment for unit testing. 
+ii.It allows you to configure the testing module with components, services, and dependencies that you want to test.
+
+33. What is CDK (Component Dev Kit) in Angular Material?
+
+
+The Component Dev Kit (CDK) in Angular Material is a set of low-level, reusable tools that provide fundamental building blocks for creating custom components and libraries in Angular applications.
+ It focuses on functionality rather than visual appearance.
+
+34. use of action ,reducer and effect in angular ngrx
+Actions:
+Actions are payloads of information that send data from your application to the store. 
+They represent an event that triggers a state change. Actions are plain TypeScript objects with at least a type property.
+
+
+35.what is subscribe in angular?
+In Angular, subscribe is a method used to listen to an Observable, which is a data stream that can emit multiple values over time. 
+When you call subscribe, you define how to handle the data, errors, or completion events from the Observable.
+ It's commonly used for handling asynchronous operations like API calls, user input, or events.
+
+difference between map and mergemap?
+
+36. lifecycle hook in angular?
+
+ngOnChanges(): Called when any data-bound input property changes?
+ngOnInit(): Invoked once after the component’s first ngOnChanges(), ideal for initialization logic.
+ngDoCheck(): Runs during every change detection cycle, allowing custom change.
+ngAfterContentInit(): Triggered after Angular projects external content into the component’s view.
+ngAfterContentChecked(): Called after every check of the projected content.
+ngAfterViewInit(): Invoked after Angular initializes the component’s view and child views.
+ngAfterViewChecked(): Runs after every check of the component’s view and child views.
+ngOnDestroy(): Called just before the component is destroyed, used for cleanup.
+
+
+37.How do you optimize the SEO performance of an Angular application?
+
+SEO optimization in Angular involves techniques like prerendering using tools like Angular Universal, 
+setting up metadata tags using Angular Meta Service,
+ ensuring proper URL structure, and sitemaps for search engines to crawl and index content effectively.
+
+
+38.What are the properties inside @ngModule decorator?
+@NgModule({
+  declarations: [AppComponent, MyComponent],
+  imports: [BrowserModule, FormsModule],
+  providers: [MyService],
+  bootstrap: [AppComponent]
+})
+
+39. What is the difference between ng add and npm install ?
+
+ng add is a specialized command within the Angular CLI that automates the installation and configuration of packages specifically designed for Angular projects.
+On the other hand, npm install is a general command provided by npm to install packages from the npm registry into any JavaScript or Node.
+
+
+40. What is the difference between cold observables and hot observables ?
+
+Cold Observable: Starts emitting data when a subscriber subscribes. Each subscriber gets a new independent sequence. Example: HTTP request.
+
+Hot Observable: Emits data regardless  when a subscriber subscribes. Subscribers share the same emission stream. Example: WebSocket, events.
+
+41.Renderer2
+Renderer2 is a service that provides a way to manipulate the DOM without directly accessing it.
+ This approach is safer and more compatible with Angular’s rendering engine, making your application more secure and portable.
+
+42.what is template form in angular
+
+In Angular, a template-driven form is a type of form where most of the form logic and validation are written directly in the HTML template.
+ It uses directives like ngModel to bind input elements to model data, and the FormsModule is required to work with it. 
+This approach is typically simpler and suited for smaller forms or applications.
+
+43. reactive form in angular
+Reactive forms in Angular are used to manage the state of form inputs in a reactive way. 
+They are built around observable streams which represent the value and validation state of form controls.
+ Reactive forms offer more flexibility and scalability compared to template-driven forms, especially in complex scenarios.
+
+44. hiearachical dependancy:
+Hierarchical Dependency Injection means you can give services to different parts of your app.
+ At the root level, one instance is shared everywhere. At parent or child levels, each gets its own instance. 
+This way, parts of your app stay isolated and work efficiently. 🚀
+
+45.how can you differentiate normal user and admin in angular?
+To differentiate between normal users and admins in Angular, you can use role-based access control (RBAC).
+ Define roles in the user model, then use an authentication service to check the user’s role.
+ Use ngIf in templates to conditionally display content based on roles. 
+Protect admin routes with a route guard, ensuring only users with the admin role can access them. 
+This keeps user access organized and secure. 🚀
+
+
+46.differ between pacakage.json and packagelock.json in angular
+package.json lists the project's dependencies with version ranges, allowing flexibility during installation. 
+
+package-lock.json locks the exact versions of dependencies and sub-dependencies to ensure consistent installations across different environments.
+
+47. diffeent beween formgroup and formarray
+
+FormGroup is used to group form controls as a single unit, managing the state and validation  of controls. 
+
+FormArray is used to manage an array of form controls, allowing dynamic addition or removal of controls at runtime.
+
+48. what is hostlistener and hostbinding
+@HostListener listens to events on the host element and triggers methods in the component. 
+
+@HostBinding binds a property or attribute of the host element to a component property, allowing dynamic updates.
+
+
+49.Microfrontend architecture 
+Microfrontend architecture is an approach where a large web application is divided into smaller, independently deployable fragments, each responsible for a specific part of the UI
+ Each microfrontend can be developed, tested, and deployed by different teams, using different frameworks or technologies, while being composed into a cohesive application at runtime. 
+The control architecture involves orchestration, communication, and integration among these microfrontends using techniques like client-side composition, server-side composition, or edge-side includes.
+
+
+

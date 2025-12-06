@@ -1,0 +1,106 @@
+What is Spring boot
+it is spring project .it is open-source Java framework used to create a microService. It is developed by Pivotal Team, and it provides a faster way to set up and an easier, configure, and run both simple and web-based applications.features(Standalone applications(not need  external server),Embedded servers,DI,Auto-configuration)
+
+Difference between Spring and Spring Boot?
+Spring is an open-source lightweight framework widely used to develop enterprise applications.Spring Boot is project or module of spring framework, widely used to develop REST APIs.
+The most important feature of the Spring Framework is dependency injection.The most important feature of the Spring Boot is Autoconfiguration.
+It helps to create a loosely coupled application.It helps to create a stand-alone(runs locally on a device without needing an web browser) application.
+To run the Spring application, we need to set the server explicitly.Spring Boot provides embedded servers such as Tomcat and Jetty etc.
+To run the Spring application, a deployment descriptor is required.There is no requirement for a deployment descriptor.
+To create a Spring application, the developers write lots of code.It reduces the lines of code.
+It doesn’t provide support for the in-memory database.It provides support for the in-memory database such as H2.
+Developers need to write boilerplate code for smaller tasks.In Spring Boot, there is reduction in boilerplate code.
+Developers have to define dependencies manually in the pom.xml file.pom.xml file internally handles the required dependencies.
+
+Spring IoC:-It is Inversion of Control.it is container and it is responsible  for Instantiating,Configuring,Assembling,Managing the life cycle of objects.it is powerful tool that can help you to develop loosely coupled, maintainable, and testable applications. It is also a very flexible container that can be used with a variety of different frameworks and technologies.
+
+ApplicationContext:-
+It is Spring Container is an interface in spring which is used to manage beans,handle application events and access resources.this interface implemented classes is 
+1.ClassPathXmlApplicationContext(used for xml configurations)
+2.AnnotationConfigApplicationContext(used for java configurations)
+
+In Spring, the objects that form the backbone of your application and that are managed by the Spring IoC container are called beans. 
+Bean life cycle:-
+1.Loading Bean Definitions-Spring loads bean definitions from various sources , such as xml config files,java based config,component scanning .This bean conatain information about the bean class , dependencies and other configuration details
+2.Instantiation: At this stage, the Spring container instantiates the bean by calling its constructor. This is typically done using either a no-argument constructor or a constructor with arguments, depending on the configuration.
+3.Initialization: After instantiation, Spring performs initialization tasks on the bean. This can involve setting properties, invoking init methods, and performing any necessary configurations.
+4.Usage: The bean performs its tasks.
+5.Destruction: When the application context shuts down or explicitly destroys the bean, Spring performs destruction tasks on the bean. 
+
+Bean Scopes:-The scope of a bean defines the life cycle and visibility of that bean in the contexts we use it.Supported scopes singleton,prototype,request,session,application,websocket
+Singleton:-Only one instance is ever created and this same shared instance is injected into each collaborating object
+Prototype:-It creates a new instance of a bean each time the bean is requested. 
+
+DI:-
+it is process of injecting dependent bean objects into target bean objects is called dependency injection.
+Setter Injection: The IOC container will inject the dependent bean object into the target bean object by calling the setter method.
+Constructor Injection: The IOC container will inject the dependent bean object into the target bean object by calling the target bean constructor.
+Field Injection: The IOC container will inject the dependent bean object into the target bean object by Reflection API.
+
+What is the function of Spring AOP?
+AOP is used in the Spring Framework to: Provide declarative enterprise services.
+
+What is the use of Profiles in spring boot?
+While developing the application we deal with multiple environments such as dev, QA, Prod, and each environment requires a different configuration. For eg., we might be using an embedded H2 database for dev but for prod, we might have proprietary Oracle or DB2. Even if DBMS is the same across the environment, the URLs will be different.To make this easy and clean, Spring has the provision of Profiles to keep the separate configuration of environments.
+
+What is Spring Actuator? What are its advantages?
+An actuator is an additional feature of Spring that helps you to monitor and manage your application when you push it to production. These actuators include auditing, health, CPU usage, HTTP hits, and metric gathering, and many more that are automatically applied to your application
+How to enable Actuator in Spring boot application-dependency(spring-boot-starter-actuator)
+actuator-provided endpoints-Health,Info,Beans,Mappings,Shutdown ,env
+
+Spring Batch:- is a lightweight, comprehensive framework for building batch processing applications in Java. It provides reusable functions such as transaction management, chunk-based processing, and declarative I/O. Spring Batch helps developers efficiently develop, configure, and execute robust batch applications, handling large volumes of data reliably and efficiently. It's commonly used for tasks like ETL (Extract, Transform, Load), data migration, and scheduled batch processing jobs in enterprise applications.
+Add Dependencies,Create Batch Jobs,Configure Jobs,Run Jobs
+Key features of Spring Boot:-Auto-configuration,Standalone,Production-ready features,Embedded servers(Tomcat,Jetty,JBoss)
+
+How does Spring Boot works?
+Spring Boot automatically configures your application based on the dependencies you have added to the project by using annotation. The entry point of the spring boot application is the class that contains @SpringBootApplication annotation and the main method.Spring Boot automatically scans all the components included in the project by using @ComponentScan annotation.
+
+what is Interceptor?
+It is an additional component that will intercept every request and response dispatch and perform some operations on it. Interceptors in web applications play a major in performing initial or finalization work. Interceptors have one primary purpose – “To intercept an incoming or outgoing request”.use preHandle(),postHandle(),afterCompletion()
+
+Spring Stereotype Annotations-@Component,@Repository,@Service,@Controller
+
+Null-safety:Field can be null(@Nullable),field cannot be null.Field cannot be null(@NonNull). 
+--------------------------
+Annotation:-
+1. `@Bean`:This annotation signals to Spring that a method produces an object to be managed within the application context. It's a way to define custom objects and configurations 
+            for Spring's dependency injection.
+2. `@Qualifier`:When multiple beans of the same type exist, this annotation helps Spring find out which one to inject where. It adds clarity to the injection process by specifying 
+                the exact bean instance to be used.
+3. `@Profile`:With this annotation, you can designate beans to be active only under certain environment profiles. It's a means to conditionally load beans based on the environment
+               facilitating better configuration management.it is Useful for configuring different setups for development, testing, or production environments.
+4. `@Autowired`:This annotation enables automatic dependency injection, sparing developers from explicitly wiring dependencies. Spring scans for dependencies and injects the 
+                appropriate beans into the annotated fields, constructors, or methods.
+5. `@SpringBootApplication`:By combining configuration, auto-configuration, and component scanning, this annotation serves as the centerpiece of a Spring Boot application. It 
+                             streamlines application setup and configuration.
+6. `@RequestMapping`:At its core, this annotation maps HTTP requests to specific handler methods within Spring MVC controllers. It's pivotal for routing incoming requests to the 
+                      appropriate endpoints in your application.
+7. `@PathVariable`:When parts of a URL need to be extracted and used as parameters in controller methods, this annotation comes into play. It facilitates the extraction of dynamic 
+                    values from the URL path.
+8. `@Controller`: Marks a class as a Spring MVC controller. Handles HTTP requests and typically returns a view.
+9. `@RestController`:Combination of @Controller and @ResponseBody. Marks a class as a controller where every method returns a domain object instead of a view.it automatically converts 
+                     the  return value of your methods into JSON or XML
+10.`@ResponseBody`:Purpose is Handles outgoing response data.Methods(GET).it is used to Serializes the response body into JSON or XML
+11.`@RequestBody`:Purpose is Handles incoming request data.Methods(POST, PUT, PATCH).it is used to Deserializes the request body into a Java object
+12.`@Component`:Marks a Java class as a Spring component, allowing it to be automatically detected and registered by Spring's component scanning.
+13. @ControllerAdvice: if you want to handle exceptions globally
+---------
+@RestController
+@RequestMapping("/users")
+public class MyController {
+    private final UserService userService;
+    @Autowired
+    public MyController(UserService userService) {
+        this.userService = userService;
+    }
+    @PostMapping
+    public ResponseEntity<Void> createUser(@RequestBody User user) {
+        userService.createUser(user);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+    @GetMapping
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> users = userService.getAllUsers();
+        return ResponseEntity.ok(users);
+    }
+}

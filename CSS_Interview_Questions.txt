@@ -1,0 +1,149 @@
+1.What is CSS?
+->CSS stand for Cascading Style Sheet
+->and they are used to write a style to the html template file.
+----------------------------------------------------------------------------------------------------------
+2.What are the different types of CSS?
+3.What is the difference between inline, internal, and external CSS?
+->There is the Three Way to write a css.
+A.Inline CSS -> they are direclty used to the html tag.
+B.External CSS -> they are created the external file and this file link to the heading tag in html.
+C.Internal CSS -> and Inline css are write in the head tag and there syntax is write under the style tag.
+----------------------------------------------------------------------------------------------------------
+4.What is the Box Model in CSS?
+    In CSS, Box Model means we can control any part of a website's content — like content, padding, border, and margin.
+    These four parts help to arrange and style elements properly.
+    This whole process is called the CSS Box Model.
+->The Box Model in CSS is a way to describe how every HTML element is structured.
+->  Content – The actual text or image
+    Padding – Space around the content
+    Border – Line around the padding
+    Margin – Space outside the border
+----------------------------------------------------------------------------------------------------------
+5.What is the difference between id and class selectors?
+
+->id is unique — only one element in the entire HTML file can have that id.
+->class can be used on multiple elements in the same HTML file.
+->Use id when you want to style or access one specific element.
+->Use class when many elements share the same style or behavior but can also have differences.
+->If content is the same for many elements, use class.
+->If content is unique for an element, use id.
+
+----------------------------------------------------------------------------------------------------------
+6.What are different types of CSS selectors?
+->A CSS selector is a way to choose or select the HTML elements you want to style.
+->there is the number of the way of selectors in css.
+    Element Selector
+    Class Selector
+    ID Selector
+    Attribute Selector
+----------------------------------------------------------------------------------------------------------
+7.What is the difference between em, rem, px, and % units?
+->all these units (px, em, rem, %) can be used to set the size of content, like font size, width, padding, etc. But the difference is how they calculate that size:
+
+----------------------------------------------------------------------------------------------------------
+8.What is the difference between visibility: hidden and display: none?
+
+->✅ visibility: hidden
+Element is hidden, but still takes up space in the layout.
+
+Layout is not affected.
+
+It's like the element is invisible but still "there".
+
+Example:
+
+.hidden-element {
+  visibility: hidden;
+}
+
+👀 Result:
+You can't see the element.
+But the space it occupies remains.
+
+✅ display: none
+Element is completely removed from the layout.
+
+Layout is affected — it's like the element doesn't exist at all.
+
+Example:
+.none-element {
+  display: none;
+}
+
+👀 Result:
+The element disappears.
+No space is reserved for it.
+----------------------------------------------------------------------------------------------------------
+9.What are pseudo-classes in CSS? Give examples.
+->A pseudo-class is used in CSS to style an element based on its state or position.
+
+Pseudo-class	When it applies
+
+:hover      	Mouse is over element
+:focus      	Element is selected/focused
+:checked        Checkbox is checked
+:first-child	First child in a parent
+----------------------------------------------------------------------------------------------------------
+10.What are pseudo-elements in CSS? Give examples.
+->A pseudo-element is used to style part of an element, or to add something before or after it using CSS.
+
+Pseudo-element	    What it does
+::before	        Adds something before text
+::after	            Adds something after text
+::first-letter  	Styles the first letter
+::first-line	    Styles the first line
+::placeholder	    Styles input's placeholder text
+----------------------------------------------------------------------------------------------------------
+11.What is specificity in CSS?
+----------------------------------------------------------------------------------------------------------
+12.What is the difference between position: relative, absolute, fixed, and sticky?
+->In a web application, we often need to place content at specific positions on the page. To do this, we use the CSS position property. The position property has four commonly used values: relative, absolute, fixed, and sticky.
+----------------------------------------------------------------------------------------------------------
+13.What is the difference between margin and padding?
+->Padding = space inside the box
+->Margin = space outside the box
+----------------------------------------------------------------------------------------------------------
+What are media queries in CSS?
+----------------------------------------------------------------------------------------------------------
+How can you apply styles to specific elements based on their state (hover, focus, etc.)?
+----------------------------------------------------------------------------------------------------------
+How do you center a div horizontally and vertically?
+----------------------------------------------------------------------------------------------------------
+What is the difference between max-width and min-width?
+----------------------------------------------------------------------------------------------------------
+What is a z-index and how does it work?
+----------------------------------------------------------------------------------------------------------
+What is the difference between inherit, initial, and unset values in CSS?
+----------------------------------------------------------------------------------------------------------
+What are Flexbox and Grid in CSS? When do you use them?
+----------------------------------------------------------------------------------------------------------
+What is the use of calc() in CSS?
+----------------------------------------------------------------------------------------------------------
+What are the different combinators in CSS?
+----------------------------------------------------------------------------------------------------------
+What is a responsive design and how does CSS help in achieving it?
+----------------------------------------------------------------------------------------------------------
+What is the difference between inline, block, and inline-block elements?
+----------------------------------------------------------------------------------------------------------
+What are transitions and animations in CSS?
+----------------------------------------------------------------------------------------------------------
+What is a media query in CSS?
+----------------------------------------------------------------------------------------------------------
+Why do we use media queries?
+----------------------------------------------------------------------------------------------------------
+What is the basic syntax of a media query?
+----------------------------------------------------------------------------------------------------------
+How do you write a media query for screen width less than 600px?
+----------------------------------------------------------------------------------------------------------
+What is the difference between min-width and max-width?
+----------------------------------------------------------------------------------------------------------
+Can we use media queries in a separate CSS file?
+----------------------------------------------------------------------------------------------------------
+Can we use more than one condition in a media query?
+----------------------------------------------------------------------------------------------------------
+What are common screen sizes for mobile, tablet, and desktop?
+----------------------------------------------------------------------------------------------------------
+What does @media screen and (max-width: 768px) mean?
+----------------------------------------------------------------------------------------------------------
+How do media queries help in making a website mobile-friendly?
+----------------------------------------------------------------------------------------------------------

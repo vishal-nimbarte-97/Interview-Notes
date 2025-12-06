@@ -1,0 +1,31 @@
+Spring Security-	Authorization
+
+1) knowledgebased authentication - password, pin
+
+2) possession based authentication - access token, key-card
+
+3) knowledge + possession based - multifactor auth
+
+
+key concept 
+1) Authentication - who are you
+
+2) Authorization - person who allowed / not
+
+3) priciple - person is identified and currently logged in session
+
+4) granted authority - group of permission allowed to user
+
+5) Role - Group of Authority Assign to perform
+		like ex. Role_User -  allowed to login / search api
+		     ex. Role_Admin - allowed to perform CRUD operation
+
+
+Implementation
+
+1) Basic Auth = dependancy, .application properties file // mention .username .password
+
+2) Core Auth = CustomSecurityConfig extends Web Adapter
+		configure() .auth().inMemoryAuthentication().user.pass.role
+
+		configure .http().authorize.antmatcher("url--which want to secure").hasRole("ADMIN")

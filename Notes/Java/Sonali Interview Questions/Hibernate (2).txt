@@ -1,0 +1,207 @@
+What is ORM and Hibernate?
+ORM is the programming technique to map application domain model objects to the relational database tables. Hibernate is a Java-based ORM tool that provides a framework for mapping application domain objects to relational database tables and vice versa
+
+What is the Java Persistence API (JPA)?
+Java Persistence API (JPA) provides a specification for managing the relational data in applications.
+
+Benefits of using the Hibernate Framework?
+It is remove all the boilerplate code.?
+It is provides support for XML as well as JPA annotations, which makes our code implementation independent.
+It is provides a powerful query language (HQL) that is similar to SQL. However, HQL is fully object-oriented.
+It is an open-source project from Red Hat Community and is used worldwide.
+It is easy to integrate with other Java EE frameworks.
+It is supports lazy initialization using proxy objects and performs actual database queries only when it’s required.
+It is cache helps us in getting better performance.
+
+Advantages of Hibernate over JDBC?
+Hibernate removes a lot of boilerplate code that comes with JDBC API
+Hibernate supports inheritance, associations, and collections. 
+Hibernate implicitly provides transaction management, in fact, most of the queries can’t be executed outside a transaction.
+Hibernate  provide easily  configuration and it supports JPA annotations, so the code is independent of the implementation and easily replaceable with other ORM tools.
+------------------------
+Hibernate Object States:
+Transient:
+It is initial state.Once the instance of the entity class is created, then the object is said to have entered a transient state.
+In this state, the object is not linked to any session and database.
+Employee employee=new Employee(); //The object is in the transient state.  
+
+Persistent:
+This state is entered whenever the object is linked with the session.
+methods:session.save(record),session.persist(record),session.update(record),session.saveOrUpdate(record)
+
+Detached:
+The object enters this state whenever the session is closed or the cache is cleared.
+session.close(),session.clear(),session.detach(record),session.evict(record);
+--------------------------
+Hibernate Session Methods:Save,Persist,saveOrUpdate,get,load,byId,merge,Delete,Remove,load,evict,clear
+
+SessionFactory (org.hibernate.SessionFactory):
+SessionFactory is an interface that provides methods to create and manage Hibernate Session objects. It is a thread-safe and immutable object that provides a cache of immutable objects, which is used to create new Session objects.
+
+Session (org.hibernate.Session):
+The Session is an interface that represents a single unit of work with the database. It is responsible for managing the persistence of objects and providing transactional support for the persistence operations. The Session interface provides methods for querying, saving, updating, and deleting objects in the database.
+
+Transaction (org.hibernate.Transaction):
+A transaction simply represents a unit of work. Generally speaking, a transaction is a set of SQL operations that need to be either executed successfully or not at all. 
+A transaction is associated with Session and instantiated by calling session.beginTransaction()
+The methods of the Transaction interface are as follows:void begin(),void commit(),void rollback(),void setTimeout(int seconds),boolean isAlive(),void registerSynchronization(Synchronization s),boolean wasCommited(),boolean wasRolledBack()
+
+ACID Properties:
+A database needs to follow ACID rules (Atomicity, Consistency, Isolation, Durability) to ensure transactions work well.
+1.Atomicity:Every transaction must be completed fully.if one part of the transaction fails, then the whole transaction fails.
+2.Consistency: The database should be in a valid state before and after the performed transaction.
+3.Isolation: Each transaction should execute in complete isolation without knowing the existence of other transactions.
+4.Durability: Once the transaction is complete, the changes made by the transaction are permanent 
+
+Hibernate Inheritance Mapping
+Relational databases don’t have a straightforward way to map class hierarchies onto database tables.To address this, the JPA specification provides several strategies:
+MappedSuperclass,Single,Joined,Table per 
+
+All Hibernate Annotations : Mapping Annotations
+@AccessType,@Cascade,@Cache,@Columns,@ForeignKey,@Generated,@Table,@Entity,@Fetch,etc
+
+All JPA Annotations: Mapping Annotations
+@Access,@Column,@Entity,@Id,@Table,@PostUpdate,@JoinTable,@OneToMany etc
+
+------------------------------
+How many ways can an object be fetched from Hibernate’s database?
+Criteria API
+HQL
+The identifier
+Standard SQL
+
+What is Hibernate tuning?
+SQL Optimization
+Session Management
+Data Caching
+
+What design patterns does the Hibernate framework use?
+Data Mapper for database
+Domain Model Pattern for both behavior and data
+Proxy Pattern for lazy loading
+Factory pattern in SessionFactory
+-------------------------------
+save Method:Use this method when you want to save a new entity and may need the generated identifier immediately after the save. Returns the generated identifier.The insertion fails if the primary key already exists in the table Session.
+
+persist Method:Use this method when you want to save a new entity within the context of a transaction and do not need the identifier immediately.Returns void
+
+saveOrUpdate:Use this method when you want to either save a new entity or update an existing one, and you are not sure whether the object is already present in the database or not. 
+
+get() Method: Use this when you're not sure whether the object exists or not, as it won't throw an exception if the object is not found. If the object is not found, the get method returns null
+
+load() Method:Use this when you're certain the object exists, and you want to take advantage of lazy loading.If the object is not found, it will throw an ObjectNotFoundException.
+
+What are some of the important interfaces of Hibernate framework?
+Configuration,SessionFactory,Session,Criteria,Query,Transaction
+
+what is lazy loading in hibernate?
+Lazy loading is mainly used for improving the application performance by helping to load the child objects on demand.
+
+What is the difference between first level cache and second level cache?
+This is local to the Session object and cannot be shared between multiple sessions.
+This cache is maintained at the SessionFactory level and shared among all sessions in Hibernate.
+
+What can you tell about Hibernate Configuration File?
+Hibernate Configuration File or hibernate.cfg.xml is one of the most required configuration files in Hibernate. By default, this file is placed under the src/main/resource folder.
+The file contains database related configurations and session-related configurations.
+Hibernate facilitates providing the configuration either in an XML file (like hibernate.cfg.xml) or a properties file (like hibernate.properties).
+
+How do you create an immutable class in hibernate?
+If we are using the XML form of configuration, then a class can be made immutable by markingmutable=false. The default value is true there which indicating that the class was not created by default.
+
+Difference between getCurrentSession and openSession methods?
+getCurrentSession()-This method returns the session bound to the context.In a single-threaded environment, this method is faster than openSession().
+openSession()-This method always opens a new session.
+
+What does session.lock() method in hibernate do?
+session.lock() method is used to reattach a detached object to the session. 
+
+What is hibernate caching?
+Hibernate caching is the strategy for improving the application performance by pooling objects in the cache so that the queries are executed faster.
+Types of Hibernate Caching-First and Second Level Cache
+
+When is merge() method of the hibernate session useful?
+Merge() method can be used for updating existing values.
+
+What happens when the no-args constructor is absent in the Entity bean?
+Hibernate framework internally uses Reflection API for creating entity bean instances when get() or load() methods are called. The method Class.newInstance() is used which requires a no-args constructor to be present. When we don't have this constructor in the entity beans, then hibernate fails to instantiate the bean and hence it throws HibernateException.
+
+Can we declare the Entity class final?
+No, we should not define the entity class final because hibernate uses proxy classes and objects for lazy loading of data and hits the database only when it is absolutely needed. This is achieved by extending the entity bean. If the entity class (or bean) is made final, then it cant be extended and hence lazy loading can not be supported.
+
+what is Named SQL Query in hibernate?
+A named query is a statically defined query with a predefined unchangeable query string.
+Benefits:-Named queries store connection information besides the SQL for queries. if you need access to the results of a query very fast, consider saving that query as a Named Query
+
+-------------------------------------------
+1.Configuring Hibernate for Different Databases:
+Adjust Hibernate configuration properties such as `hibernate.dialect` and `hibernate.connection.url` to match the target database.
+
+2.Lazy Loading and Eager Loading:
+Lazy loading delays loading associated objects until they're accessed, while eager loading fetches them immediately. Implement using annotations like `@OneToMany(fetch = FetchType.LAZY)` or `@ManyToOne(fetch = FetchType.EAGER)`.
+
+3.Hibernate Criteria API:
+It's a programmatic way to build dynamic queries in Hibernate without using HQL or SQL directly, offering type-safety and object-oriented query construction.
+
+4.Pagination in Hibernate:
+Use the `setFirstResult()` and `setMaxResults()` methods on the `Criteria` or `Query` object to implement pagination.
+
+5.Fetching Strategies in Hibernate:
+Include options like `FETCH.LAZY`, `FETCH.EAGER`, and `FETCH.SELECT` to control how related objects are loaded.
+
+6.Handling Transactions:
+Hibernate supports transactions through the `Session` interface. Begin a transaction using `session.beginTransaction()` and commit or rollback using `transaction.commit()` or `transaction.rollback()`.
+
+7.Managing Associations:
+Associations can be managed using annotations like `@OneToMany`, `@ManyToOne`, `@OneToOne`, and `@ManyToMany`.
+
+8.CascadeType Options:
+Cascade options in Hibernate dictate how operations performed on one entity affect associated entities, such as `ALL`, `SAVE_UPDATE`, `DELETE`, etc.
+
+9.Concurrency Control:
+Hibernate supports optimistic locking through versioning with the `@Version` annotation, ensuring data integrity in concurrent transactions.
+
+10.Best Practices:
+Utilize caching, batch fetching, lazy loading, and appropriate fetching strategies to optimize Hibernate performance.
+
+11.Hibernate Interceptors:
+Interceptors allow you to intercept Hibernate events like entity loading, saving, or deleting. Implement them by implementing the `Interceptor` interface.
+
+12.Inheritance Strategies:
+Hibernate supports inheritance strategies such as `SINGLE_TABLE`, `TABLE_PER_CLASS`, and `JOINED`.
+
+13.Detached Objects:
+Detached objects are instances that are no longer associated with a session but can be reattached using methods like `session.update()`.
+
+14.@Version Annotation:
+Used for optimistic locking, it marks a field to be used as a version number to detect concurrent modifications.
+
+15.Optimistic Locking:
+Hibernate compares version numbers to detect concurrent modifications and throws an exception if conflicts occur.
+
+16.Custom Hibernate UserType:
+Implement the `UserType` interface to define custom mappings between Java objects and database columns.
+
+17.Long-Running Conversations:
+Use extended persistence contexts or conversation scopes to manage long-running conversations.
+
+18.Batch Processing:
+Utilize Hibernate's batch processing features such as `StatelessSession` or `multi-row INSERT` to improve performance when dealing with large datasets.
+
+19.Time Zone Conversions:
+Handle time zone conversions explicitly in your application code or utilize appropriate database functions for date/time manipulations.
+
+20.Multi-threaded Transactions:
+Use proper synchronization mechanisms or consider using different Hibernate sessions for each thread to handle transactions safely in a multi-threaded environment.
+
+21.Optimizing Hibernate Performance:
+Optimize performance by tuning fetch strategies, using second-level caching, minimizing database round trips, and tuning the Hibernate configuration.
+
+22.Database-Level Constraints:
+Define constraints directly in the database schema or using annotations like `@UniqueConstraint`, `@NotNull`, etc., in Hibernate entity mappings.
+
+23.Stateless vs. Stateful Session Beans:
+Stateless session beans are stateless and serve one request at a time, while stateful session beans maintain conversational state across multiple requests.
+
+24.Automatic Dirty Checking:
+Hibernate automatically detects changes to managed entities and flushes those changes to the database during transaction commit, ensuring data integrity.

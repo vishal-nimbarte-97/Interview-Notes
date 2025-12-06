@@ -1,0 +1,84 @@
+Collection: Collection is a interface present in java.util.package. It is used to represent a group of individual objects as a single unit.
+The List, Set, and Queue are the main sub-interfaces of the collection interface.The map interface is also part of the java collection framework, but it doesn’t inherit the collection of the interface.
+
+Collections: Collections is a utility class present in java.util.package. It defines several utility methods like sorting and searching which is used to operate on collection.
+
+List:-interface is an ordered collection that allows us to store and access elements sequentially.
+Set:-It is interface contains unique elements. 	
+Queue:-It is interface it work on FIFO principle.
+Map:-The Map interface in Java is a collection that stores elements in key-value pairs. It is a part of the Java Collections Framework and is present in the java.util package. The Map interface does not allow duplicate keys but can contain duplicate values.
+-----------------
+List-ArrayList,LinkedList,Vector
+Queue-PriorityQueue,LinkedList,ArrayDeque
+Set-HashSet,LinkedHashSet,TreeSet
+Map-HashMap,LinkedHashMap,TreeMap,Hashtable
+-----------------
+Difference between HashMap and HashTable?
+HashMap - non synchronized,allows one null key and multiple null values,fast, traversed by Iterator.
+Hashtable - synchronized , not allows null key or value,slow, traversed by Enumerator and Iterator.
+
+Difference between HashMap and ConcurrentHashMap?
+HashMap-Not Thread safe,better Performance,one null key and any number of null values.
+ConcurrentHashMap-Thread safe,low performance , not allow null keys or values .
+
+Difference between LinkedHashMap and TreeMap 
+LinkedHashMap:Maintains insertion order,Faster,combination of a hash table and a doubly-linked list,Does not allow null keys.
+TreeMap:Maintains elements in sorted order based on keys,Slower,Uses a Red-Black tree data structure,Does not allow null keys.
+
+HashSet:-stores unique elements using a hash table, offering fast operations, but it does not maintain any specific order and is not thread-safe.
+
+Difference between linkedhashset and treeset
+LinkedHashSet maintains the order in which elements are inserted. TreeSet sorts elements according to a Comparator.
+LinkedHashSet generally has better performance for CURD operations.TreeSet has slightly slower performance .
+Both LinkedHashSet and TreeSet do not allow null elements. 
+LinkedHashSet uses LinkedHashMap internally to store it's elements. TreeSet uses TreeMap internally to store it's elements.
+
+Difference between Priority Queue and ArrayDeque
+PriorityQueue: Orders elements by priority, removing the highest priority element first.
+ArrayDeque: Operates as a double-ended queue, allowing elements to be added or removed from both ends without any specific ordering.
+Priority Queue use Binary heap,Priority-based access,Not thread-safe,Null elements not allowed 
+ArrayDeque use Resizable array,FIFO base access,Not thread-safe,Null elements not allowed 
+
+Difference between ArrayList and LinkedList?
+ArrayList-resizable array implementation ,stored in contiguous Memory locations,fast random access ,slow at insertion and deletion of elements, use more memory than LinkedLists.
+LinkedList-doubly-linked list implementation,non-contiguous memory location,slow random access,fast insertion and deletion of elements,use more memory than LinkedLists.
+
+Difference between Vector and ArrayList?
+Vector is synchronized, while ArrayList is not,initial capacity of a Vector is 10, while the initial capacity of an ArrayList is 0,Vector is slower than ArrayList,Vector is a legacy class
+
+Difference between Iterator , Enumeration and ListIterator?
+Iterator:-It can be applied to any collection interface,Single direction,perform read and remove operation,By calling iterator() method present in any collection interface.
+Enumeration:-It can be applied only to the legacy classes,Single direction,only perform the read operation,By calling elements() method present in the vector class.
+ListIterator:-It can be applied to the only list interface,Bidirectional,perform read, remove, add, and replace operations,By calling listIterator() method present in the list interface.
+
+Difference between Fail-Fast and Fail-Safe
+Fail-Fast:
+Definition: A fail-fast system immediately reports any failure, such as concurrent modification, rather than allowing the operation to continue in an inconsistent state.
+Fail-fast behavior helps in detecting and debugging issues early
+Fail-Safe:
+Definition: A fail-safe system continues its operation despite the failure, avoiding immediate termination and ensuring that the operation does not fail due to concurrent modifications.
+It allows for more flexibility and resilience in handling concurrent modifications.
+
+Difference between Comparable and Comparator
+Comparable provides a single sorting sequence,affects the original class,provides compareTo() method,present in java.lang package.
+Comparator provides multiple sorting sequences,doesn't affect the original class,provides compare() method,present in the java.util package
+-----------
+Hashmap internal working:
+When you call put method that time hashcode() method is invoked for generate a hash code. This hash code is used to find out the index(buket) where the key-value pair will be stored .
+The hash code is converted to a valid index within the array of bukets. if two key are representing a same index that time collision is occure . so hash map is used separate chaining strategy for resolving this issue . in this strategy each bucket is essentially a linked list . if there no collision (bucket is empty) the key-value pair is added as the first node in the linked list at the index.if there is a collision the existing linked list at the index is traversed . When traversing the linked list, the equals() method of each key object is used to check if the incoming key is equal to any existing keys in the list. If an equal key is found, the corresponding value is updated with the new value, replacing the existing one. If no equal key is found, the new key-value pair is added as a new node in the linked list .Each node in the linked list contains four fields:Key,Value,Hash,Next
+
+Deque-supports element insertion and removal at both ends.This interface should be used in preference to the legacy Stack class. When a deque is used as a stack, elements are pushed and popped from the beginning of the deque
+
+What is BlockingQueue?
+A BlockingQueue is a Queue that additionally supports operations that wait for the queue to become non-empty when retrieving an element, and wait for space to become available in the queue when storing an element
+
+How to Convert from Array to List?
+String[] words = {"ace", "boom", "crew", "dog", "eon"};List wordList = Arrays.asList(words);
+
+Difference between Fail-fast and Fail-safe Iterators?
+The Java Collection supports two types of iterators; Fail Fast and Fail Safe. These iterators are very useful in exception handling. The Fail fast iterator aborts the operation as soon it exposes failures and stops the entire operation. Comparatively, Fail Safe iterator doesn't abort the operation in case of a failure.
+
+Difference between cohesion and coupling
+Cohesion represents the degree to which a part of a code base forms a logically single, atomic unit. Coupling represents the degree to which a single unit is independent from others.
+---------
+

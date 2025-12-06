@@ -1,0 +1,22 @@
+
+🔸 NgZorro Template Interview Questions (Angular + NgZorro)
+
+What is NgZorro and how does it differ from other UI libraries like Angular Material?
+
+How do you create a responsive grid layout using NgZorro's nz-row and nz-col?
+
+Explain how you use nz-table. How do you handle server-side pagination, filtering, and sorting?
+
+How do you use NgZorro form components like nz-form-control, nz-input, nz-select, etc., in a reactive form?
+
+How do you show validation messages using NgZorro template syntax?
+
+How do you handle modals (nz-modal) in NgZorro? Can you dynamically load components inside a modal?
+
+What is the role of nz-dropdown, and how do you bind a menu to it dynamically?
+
+How do you use nz-tooltip or nz-popconfirm in a button or icon element?
+
+How do you apply conditional styling or classes in NgZorro templates?
+
+Explain how you customize theme variables (like colors, spacing, font size) in NgZorro.

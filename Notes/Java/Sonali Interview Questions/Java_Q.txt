@@ -1,0 +1,295 @@
+Core Java
+1. What is the syntax of the main() method in Java?  
+2. Can we overload the main() method in Java?  
+3. Can we override the main() method? Why or why not?  
+4. What happens if we declare the main() method without static?  
+5. Can we change the name of the main() method?  
+6. What will happen if we remove public from the main() method?  
+7. Is it mandatory to have String[] args as an argument? Can we change it?    
+8. Can we execute a Java program without the main() method?  
+9. What is the role of String[] args in the main() method?  
+10. What happens if we declare multiple main() methods in a class?  
+11. Can we call the main() method of one class from another class? How?  
+12. How can you pass arguments to the main() method?  
+13. What is the execution order when we have static blocks and the main() method?  
+14. What happens if main() throws an exception?  
+
+Memory Management & JVM
+15. Explain the different memory areas allocated by JVM.  
+16. What is the difference between Stack and Heap memory?  
+17. What is the role of the Garbage Collector (GC) in Java?  
+18. What are different types of Garbage Collectors in Java?  
+19. How does the JVM handle memory leaks?  
+20. Explain strong, weak, soft, and phantom references.  
+21. What happens when the heap memory is full?  
+22. How does the Just-In-Time (JIT) Compiler optimize performance?  
+
+Java Keywords
+23. What is the difference between final, finally, and finalize?  
+24. What is the purpose of the volatile keyword?  
+25. How does the transient keyword work in serialization?  
+26. What is the use of the static keyword in Java?  
+27. Can we use the this keyword inside a static method? Why?  
+28. What is the super keyword used for?  
+29. How does synchronized work in Java?  
+
+Java 8
+30. What are functional interfaces in Java 8?  
+31. Explain the default and static methods in interfaces.  
+32. What is the use of Optional in Java 8?  
+33. How does Stream API work?  
+34. Difference between map() and flatMap() in Stream API.  
+35. What are the advantages of Lambda expressions?  
+36. Explain Method References in Java 8.  
+37. What is Parallel Stream, and when should we use it?  
+38. What is the difference between Collectors.toList() and Collectors.toMap()?  
+39. How does CompletableFuture improve asynchronous programming?  
+
+Object-Oriented Programming (OOPs)
+40. Explain the four main pillars of OOPs: Encapsulation, Inheritance, Abstraction, Polymorphism.  
+41. What is the difference between method overloading and method overriding?  
+42. What is constructor chaining, and how does it work?  
+43. What is the difference between composition and inheritance?  
+44. Can a class extend multiple classes in Java? Why or why not?  
+45. What is an abstract class, and how is it different from an interface?  
+46. How does upcasting and downcasting work in Java?  
+
+Exception Handling
+47. Difference between checked and unchecked exceptions.  
+48. What happens when an exception is thrown in a finally block?  
+49. Can we override a method that declares an exception without throwing it in the subclass?  
+50. How does try-with-resources improve exception handling?  
+51. What is the use of the throws and throw keywords?  
+52. Can we catch multiple exceptions in one catch block?  
+53. How does a custom exception work in Java?  
+54. What happens when an exception occurs in a multithreaded environment?  
+
+Collections Framework
+55. Difference between ArrayList and LinkedList.  
+56. What is the difference between HashMap and Hashtable?  
+57. Why is HashSet faster than TreeSet?  
+58. How does ConcurrentHashMap work?  
+59. What is the purpose of the equals() and hashCode() methods?  
+60. What is the difference between fail-fast and fail-safe iterators?  
+61. Explain the internal working of HashMap.  
+62. What is the difference between synchronizedList and CopyOnWriteArrayList?  
+
+Multithreading & Concurrency
+63. Difference between Thread and Runnable.  
+64. What is a Thread Pool, and how does it improve performance?  
+65. Difference between synchronized block and synchronized method.  
+66. What is deadlock, and how can you avoid it?  
+67. Explain volatile vs. synchronized.  
+68. What is Callable and Future in Java?  
+69. What is Fork/Join Framework?  
+70. What is the difference between CountDownLatch and CyclicBarrier?  
+71. How does ReentrantLock work?  
+
+------------------------------------------------------------------------------------------------
+
+JSP (Java Server Pages)  
+1. Write a JSP program to connect to a database and display records in an HTML table.  
+2. How do you implement a login system in JSP using session tracking?  
+3. Write a JSP page that demonstrates the use of JavaBeans to store user details.  
+4. How do you handle page redirection in JSP? Write an example using response.sendRedirect() and <jsp:forward>.  
+5. Write a JSP page that takes user input from a form and stores it in the database using a Servlet.  
+6. How do you upload a file using JSP and Servlet? Write the code for handling file uploads.  
+7. What are JSP implicit objects? Write an example using request, session, and application objects.  
+8. Write a JSP page to display dynamic content using JSP Expressions (<%= %>).  
+9. Create a JSP page that demonstrates error handling using isErrorPage and errorPage attributes.  
+10. How do you implement a shopping cart in JSP using session management?  
+
+Spring Framework  
+11. Write a Spring Boot REST API that fetches employee details from a database.  
+12. Implement Spring Security for a REST API with JWT authentication.  
+13. How do you handle CORS (Cross-Origin Resource Sharing) in a Spring Boot REST API? Write the configuration.  
+14. Write a Spring MVC Controller that handles file uploads and stores them on the server.  
+15. Create a Spring Boot application that connects to MongoDB using Spring Data.  
+16. How do you schedule a cron job in Spring Boot? Write an example using @Scheduled.  
+17. Write a Spring Boot program that integrates with Redis caching.  
+18. Implement a REST API versioning strategy in Spring Boot.  
+19. How do you create and consume a REST API using RestTemplate in Spring Boot? Write an example.  
+20. Write a Spring Boot REST API that uses Swagger for API documentation.  
+
+Hibernate  
+21. Write a Hibernate program to perform CRUD operations on an Employee table.  
+22. How do you implement Many-to-One mapping in Hibernate using annotations? Write an example.  
+23. Write a Hibernate program that fetches data lazily using @OneToMany(fetch = FetchType.LAZY).  
+24. Implement a native SQL query in Hibernate to fetch employee details.  
+25. Write an HQL query to delete records where salary is less than 30,000.  
+26. Implement Hibernate pagination using setFirstResult() and setMaxResults().  
+27. How do you handle optimistic locking in Hibernate? Write an example using @Version.  
+28. Write a Hibernate program to execute a stored procedure in a database.  
+29. Implement batch processing in Hibernate for inserting 1000 records efficiently.  
+30. How do you use Hibernate Criteria API to fetch records based on dynamic conditions?  
+
+HTTP Errors  
+31. How do you handle HTTP 500 Internal Server Error in a Spring Boot application?  
+32. What is the difference between HTTP 301 (Moved Permanently) and HTTP 302 (Found/Redirect)?  
+33. Write a Spring Boot Global Exception Handler to return a custom error message for HttpMessageNotReadableException.  
+34. How do you implement a custom error page for HTTP 403 Forbidden in Spring Boot?  
+35. Explain HTTP 429 (Too Many Requests) and how to handle rate limiting in Spring Boot.  
+36. Write a Spring Boot filter to handle CORS issues and return an appropriate HTTP error.  
+37. How do you force an HTTP 204 (No Content) response in a Spring Boot REST API?  
+38. What is the difference between HTTP 408 (Request Timeout) and HTTP 504 (Gateway Timeout)?  
+39. Write a Spring Boot program that returns a custom error response for ResourceNotFoundException.  
+40. How do you implement custom exception handling in Spring Boot using @ExceptionHandler?  
+
+Spring Boot  
+41. What are the advantages of using Spring Boot?  
+42. Explain Spring Boot starters.  
+43. What is the purpose of application.properties in Spring Boot?  
+44. What are actuators in Spring Boot?  
+45. Difference between @Component, @Service, and @Repository.  
+46. What is the difference between @RestController and @Controller?  
+47. What is Spring Boot Auto-Configuration?  
+48. How does Spring Boot handle exceptions?  
+
+Spring Batch  
+49. What is Spring Batch, and why is it used?  
+50. What are the main components of Spring Batch?  
+51. Explain the Job, Step, Tasklet in Spring Batch.  
+52. What is the role of ItemReader and ItemWriter?  
+53. How does Job Execution Listener work?  
+54. How to handle failures in Spring Batch?  
+55. What is the use of JobRepository in Spring Batch?  
+
+Microservices  
+56. What are Microservices, and how are they different from Monolithic architecture?  
+57. What are the advantages and disadvantages of Microservices?  
+58. What is Service Discovery in Microservices?  
+59. How does Spring Cloud Config work?  
+60. Explain the role of API Gateway in Microservices.  
+61. What is Circuit Breaker Pattern, and how does Hystrix help?  
+62. How does Inter-Service Communication work?  
+63. What is OAuth 2.0, and how is it used in Microservices?  
+
+Spring Security  
+64. How do you secure a Spring Boot REST API using Spring Security? Write an example.  
+65. Write a Spring Boot program that implements JWT (JSON Web Token) authentication.  
+66. How do you configure role-based authorization in Spring Security? Provide a code example.  
+67. Implement OAuth2 authentication in a Spring Boot application.  
+68. Write a Spring Boot program that secures APIs using Basic Authentication.  
+69. How do you disable CSRF (Cross-Site Request Forgery) protection in Spring Security? Write an example.  
+70. Configure Spring Security with a custom login page in a Spring Boot application.  
+71. How do you encrypt user passwords before storing them in a database using Spring Security?  
+72. Implement LDAP authentication in Spring Security.  
+73. Write a Spring Boot program that uses Method-Level Security (@PreAuthorize and @PostAuthorize).  
+
+Authentication & Authorization  
+74. What is the difference between authentication and authorization? Provide a real-world example.  
+75. Write a Spring Boot REST API that supports multi-factor authentication (MFA).  
+76. How do you integrate Google Sign-In with Spring Security? Provide the configuration.  
+77. Implement session management in Spring Security and restrict concurrent logins.  
+78. Write a Spring Boot program that restricts access to APIs based on user roles (e.g., ROLE_USER, ROLE_ADMIN).  
+79. How do you handle logout functionality in a Spring Boot application?  
+80. Write a Spring Security configuration to allow only whitelisted IP addresses to access APIs.  
+81. How do you secure API keys in a Spring Boot application?  
+82. Implement a custom UserDetailsService in Spring Security for authentication.  
+83. How do you secure microservices communication using OAuth2 and JWT?  
+
+Secure Coding Practices  
+84. How do you prevent SQL Injection in a Spring Boot application? Write a secure query example.  
+85. Implement input validation in Spring Boot using @Valid and @NotNull.  
+86. How do you protect against Cross-Site Scripting (XSS) attacks in a Java web application?  
+87. What is CORS (Cross-Origin Resource Sharing)? How do you configure it in Spring Boot?  
+88. How do you prevent Clickjacking attacks in a Spring Boot web application?  
+89. Write a Spring Boot security configuration that enforces HTTPS only for all API requests.  
+90. How do you securely store sensitive configuration properties in Spring Boot (e.g., database passwords)?  
+91. Implement rate limiting in a Spring Boot API to prevent DDoS attacks.  
+92. How do you log user login attempts securely in Spring Security?  
+93. How do you implement security headers in a Spring Boot application to protect against common web vulnerabilities?  
+
+SQL  
+94. What is the difference between WHERE and HAVING clauses?  
+95. How does JOIN work? Explain different types of joins.  
+96. What is Indexing, and how does it improve performance?  
+97. Difference between primary key and unique key.  
+98. What is Normalization, and why is it important?  
+99. How do you optimize a slow-running SQL query?  
+100. Explain ACID properties in a database.  
+101. What is partitioning in SQL?  
+102. What is the difference between OLTP and OLAP?  
+103. What is CTE (Common Table Expression) in SQL?  
+
+-----------------------------------------------------Code----------------------------------------------------
+1. Memory Management & JVM  
+1. Write a Java program to demonstrate a memory leak.  
+2. How do you programmatically trigger garbage collection in Java?  
+3. Implement a program to check the memory usage of your Java application.  
+4. Create a program that causes an OutOfMemoryError and handle it properly.  
+5. Write a program to demonstrate the difference between Strong, Weak, Soft, and Phantom References.  
+
+2. Java Keywords  
+6. Write a Java program to demonstrate the usage of the final keyword with variables, methods, and classes.  
+7. Implement a scenario where the volatile keyword ensures proper visibility of shared variables in a multithreaded environment.  
+8. Write a program that demonstrates the transient keyword in serialization.  
+9. Create a Java program to show the difference between this and super keywords.  
+10. Implement a scenario where the synchronized keyword prevents race conditions.  
+
+3. Java 8  
+11. Write a Java 8 program to filter a list of integers using Streams.  
+12. Implement a functional interface and use it with a lambda expression.  
+13. Write a program to demonstrate the use of Optional in Java 8.  
+14. Implement a parallel stream to process a list and measure its performance.  
+15. Write a program using CompletableFuture for asynchronous processing.  
+
+4. OOPs (Object-Oriented Programming)  
+16. Write a Java program demonstrating method overloading and method overriding.  
+17. Implement constructor chaining in Java.  
+18. Write a program to show the difference between abstract classes and interfaces.  
+19. Implement a real-world example of Encapsulation.  
+20. Write a program to demonstrate upcasting and downcasting in Java.  
+
+5. Exception Handling  
+21. Write a Java program that catches multiple exceptions in a single catch block.  
+22. Implement a custom exception in Java and handle it properly.  
+23. Write a program to demonstrate the try-with-resources feature in Java.  
+24. Handle exceptions in a multithreading environment to avoid crashes.  
+25. Write a program to force an ArithmeticException and handle it gracefully.  
+
+6. Collections Framework  
+26. Write a program to remove duplicates from an ArrayList without using a Set.  
+27. Implement a custom Comparator to sort a list of objects based on multiple fields.  
+28. Write a program to demonstrate the difference between HashMap and ConcurrentHashMap.  
+29. Implement a LRU (Least Recently Used) Cache using LinkedHashMap.  
+30. Write a program to iterate over a HashMap using different methods.  
+
+7. Multithreading & Concurrency  
+31. Write a Java program to create and run multiple threads using Thread and Runnable.  
+32. Implement a Thread Pool using ExecutorService.  
+33. Write a Java program to prevent deadlock between two threads.  
+34. Demonstrate ReentrantLock with multiple threads.  
+35. Write a program that correctly updates a shared variable using the volatile keyword.  
+
+8. Spring Boot  
+36. Write a simple Spring Boot REST API that returns a list of products.  
+37. Create a Spring Boot application that connects to a database using JPA.  
+38. Write a Spring Boot program that reads configuration values from application.properties.  
+39. Implement Global Exception Handling using @ControllerAdvice.  
+40. Write a Spring Boot REST API that uses Swagger for API documentation.  
+
+9. Spring Batch  
+41. Write a Spring Batch program to read data from a CSV file and store it in a database.  
+42. Implement a Job Listener in Spring Batch to execute logic before and after a job.  
+43. Write a Spring Batch program that supports step retries in case of failure.  
+44. Create a batch job that reads from a database, processes the data, and writes it back.  
+45. Implement a Tasklet-based batch job.  
+
+10. Microservices  
+46. Write a simple Spring Boot Microservice that exposes REST endpoints.  
+47. Implement Inter-Service Communication using Feign Client in Spring Boot.  
+48. Write a Spring Cloud Config Server and Client application.  
+49. Implement Circuit Breaker Pattern using Resilience4j in a microservice.  
+50. Write a Spring Boot microservice that integrates with Kafka for messaging.  
+
+11. SQL  
+51. Write an SQL query to find the second-highest salary from the Employees table.  
+52. Write an SQL query to get the departments with more than 10 employees.  
+53. Write an SQL query to find duplicate records in a table.  
+54. Write an SQL query to implement pagination using LIMIT and OFFSET.  
+55. Write an SQL query to get all employees who joined in the last 6 months.  
+
+
+
+
