@@ -677,12 +677,33 @@
 // what is callback function 
 // ->callback function is function that is passed as an argument to the another function.
 
-function firstFunction(callback){
-    callback();
-}
+// function firstFunction(callback){
+//     callback();
+// }
+
+// function demoFunction(){
+//     console.log('Hello World..!');
+// }
+
+// firstFunction(demoFunction);
+
+
+// function demoFunction(){
+//     setTimeout(()=>{
+//         console.log("Hello World..!");
+//     },2000);
+// }
+
+// demoFunction();
 
 function demoFunction(){
-    console.log('Hello World..!');
+    let count = 0;
+    let stop = setInterval(()=>{
+        count = count + 1;
+        console.log('Hello, World..!');
+        if(count===5){
+            setInterval(stop);
+        }
+    },1000);
 }
-
-firstFunction(demoFunction);
+demoFunction();
