@@ -223,9 +223,9 @@ Each role has different permissions and features based on their responsibilities
 ------------------------------------------------------------------------------------------------------
 6.Types of Directives in Angular?
 ->there is the three types of Directives in Angular 
-->structure directives 
-->attributes directive
-->custome diectives 
+->structure directives :- *ngFor, *ngSwitch and *ngIf
+->attributes directive :- ngStyle and ngClass
+->custome diectives :- if you want to create a custome directives so we used the ng generate directive directivesName command to provided the custom class of directives and write a custom code youre requirements wise.
 ------------------------------------------------------------------------------------------------------
 7.What is Data Binding?
 -> Data binding in Angular is the connection between the HTML template file and the component.ts file. It automatically syncs data between these two files. There are four main types of data binding in Angular:
@@ -242,7 +242,8 @@ D.two way data binding :- two way data binding means they are combination bwtwee
 ->searching functionality is real time senario of the two way data binding.
 ------------------------------------------------------------------------------------------------------
 9.What is Differance Between the ngIf and ngSwitch?
-->*ngIf and *ngSwitch both are used to handling condition in html temlate file 
+->*ngIf and *ngSwitch both are used to handling condition in html temlate file
+->But with the help of ngSwitch they are handlling multiple condition  
 ------------------------------------------------------------------------------------------------------
 10.What are Services in Angular?
 ->A Service in Angular is a class where we write business logic that can be shared across the entire application.
@@ -254,7 +255,7 @@ D.two way data binding :- two way data binding means they are combination bwtwee
 ->	We can write any service in the angular and this service if you want to used the our compoent so they are inject using the constructor and this process is called as the Dependency Injection. 
 ------------------------------------------------------------------------------------------------------
 12.What is Routing in Angular?
-->If you want to navigate one view to another view that is the concept of the routing 
+->If you want to navigate one view to another view that is the concept of the routing. 
 ------------------------------------------------------------------------------------------------------
 13.What is Route Gaurd and there types?
 ->A Route Guard is used in Angular to protect routes from unauthorized access.
@@ -287,7 +288,6 @@ There are five main types of route guards:
 17.How to Avoid Memory Leaks in Angular?
 ------------------------------------------------------------------------------------------------------
 18.How to Handle Large-Scale Data in Angular Tables?
-
 ------------------------------------------------------------------------------------------------------
 -->19.What is OnPush in Angular?
 ------------------------------------------------------------------------------------------------------
