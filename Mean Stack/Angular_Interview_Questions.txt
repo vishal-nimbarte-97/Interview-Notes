@@ -26,60 +26,200 @@ what is your expecetation ?
 ->Based on my skills and experience, I am expecting around 8 LPA.
 ------------------------------------------------------------------------------------------------------
 
-Kpay Project Description:
+## **WPS (Wellington Parcel Service) – Simple Description**
 
-Kpay is a platform that provides electronic and solar devices to end users on a monthly recharge-based model.
-Each device is assigned a unique activation code, and the device becomes active once the code is successfully recharged.
+Wellington Parcel Service (WPS) is a parcel delivery platform in Canada. It helps customers create orders and track their shipments. WPS connects customers, businesses, and many third-party carriers in one system.
 
-The system implements role-based access control, ensuring secure, permission-based access for various user roles such as:
+WPS has **two main portals**:
 
-Super Admin, Manufacturer, Owner, Distributor, Customer
+1. **Order Creation Portal** – Customers create parcel orders here.
+2. **Order Tracking Portal** – Customers track their shipments here using a tracking number.
 
-The platform supports real-time device recharging functionality.
+The system uses **role-based access**, so every user can only see the data that belongs to them.
 
-It is integrated with more than 6 payment gateways, including PayU, Pay Paisa, and others, tailored for different countries to support global transactions.
+## **Carriers Connected with WPS**
 
-IOT based applinces this device.
+WPS works with many big carriers like:
+
+* Midland
+* Obibox
+* Frontier
+* Roadrao
+* Canada Post
+* Corporate Courier
+
+All these carriers send order and tracking information to WPS.
+
+## **Big Businesses Using WPS**
+
+* DHL
+* Atlas
+* CanPrev
+* Supership
+* Funding Innovations
+
+These companies use WPS to manage and track thousands of parcels.
+
+## **Main Features**
+
+* Create and manage parcel orders
+* Track parcels in real time
+* Choose the best carrier automatically
+* Secure login with role-based access
+* Easy order management for customers and business users
+
+---
+
+## **How Order Tracking Works (Simple Logic)**
+
+When a parcel moves from one place to another, the carrier sends multiple events.
+Example carrier events:
+
+* Order Created
+* Picked Up
+* In Transit
+* Out for Delivery
+* Delivered
+* Exception (Delay or Issue)
+
+WPS converts these events into **8 main WPS events**, such as:
+
+1. Order Placed
+2. Label Created
+3. In Transit
+4. Out for Delivery
+5. Delivered
+6. Exception
+7. Order Transferred
+8. Customer Contacted
+
+### **Tracking Portal Flow**
+
+1. Customer enters tracking number.
+2. WPS checks the details from database and carrier API.
+3. Carrier events are matched with WPS events.
+4. WPS shows a clean timeline like:
+
+   * Order Created
+   * Parcel Picked Up
+   * In Transit
+   * Out for Delivery
+   * Delivered
+
+This way, customers can easily check the latest status of their parcel.
+
+---
+
+## **My Role in This Project**
+
+### **Backend**
+
+* Integrated third-party carrier APIs
+* Mapped their events to WPS event format
+* Created APIs for order creation and tracking
+* Added role-based authentication
+* Worked on cron jobs for auto-updating tracking status
+
+### **Frontend**
+
+* Developed UI pages for order creation and tracking
+* Created tracking timeline
+* Added search, filters, pagination
+* Integrated backend APIs with frontend
+* Built screens for admin and customers
+
 ------------------------------------------------------------------------------------------------------
 
-WPS Description :-
+## **Uniconnect Web Application**
 
-->Wellington Parcel Service (WPS) is a Canada-based logistics platform that manages parcel shipments between customers and carriers.
-->they are contain the two types of the portal order create portal and order tracking portal 
-->basicacally end customer are create order and this are order are track using the tracking portal 
-->The WPS system uses role-based access, so each user sees only their own data.
+Uniconnect is a web-based application developed for **Bajaj**. It is mainly used by **call centers and BPO agents** to call customers, provide loan information, and track loan details.
 
-WPS is connected with many third-party carriers like:
-Midland, Obibox, Frontier, Roadrao, Canada Post, Corporate Courier
+This application helps Bajaj teams manage all customer calling operations in one place.
+It supports **inbound calls, outbound calls**, and even **AI Voice-Bot calling** for automated messages.
 
-WPS works with big business customers like:
-DHL, Atlas, CanPrev, Supership, Funding Innovations
+## **Main Features of Uniconnect**
 
-Main features of the system:
-Create and manage orders, Track parcels in real-time, Choose the best carrier automatically, Safe and secure user login with role-based access.
+* Call customers for giving loan information
+* Track loan details of each customer
+* Make inbound & outbound calls
+* AI Voice-Bot automatically calls customers for loan reminders or promotions
+* Store and manage call logs, call duration, and call recordings
+* Dashboard for daily calling reports
+* Role-based access so each user sees only their data
 
-->And in this project my role is also to contribute to both frontend and backend Technology, and i also integrating to the third parties carriers api.
+---
 
-------------------------------------------------------------------------------------------------------
-0.What is HttpClientModule in Angular?
-->HttpClientModule is the Angular module that allows your app to communicate with backend APIs over HTTP or HTTPS.
+## **User Types in the System**
+
+The application has **five types of users**:
+
+1. **Super Admin (Root)** – Full access to entire system
+2. **Admin** – Manage users, reports, and calling setup
+3. **Supervisor** – Monitor team performance and agents
+4. **Team Leader (TL)** – Handle a small group of agents
+5. **Agent** – Makes calls and updates call details
+
+Each role has different permissions and features based on their responsibilities.
+
+---
+
+## **Technology & Your Role**
+
+### **Your Contribution**
+
+* Working on both **frontend and backend** modules
+* Fixing bugs, improving UI/UX, and writing clean API integrations
+* Working on call logs, filters, pagination, and dashboards
+* Helping integrate Voice-Bot calling and call recording modules
+* Managing role-based access and user permissions
+
+---
+
+## **Short 2–3 Line Version (for Resume)**
+
+> Working on Uniconnect, a Bajaj web application used by call center teams for customer calling and loan tracking.
+> The system supports inbound/outbound calls, AI Voice-Bot, call logs, and recordings.
+> Contributed to both frontend and backend with role-based access for Super Admin, Admin, Supervisor, TL, and Agents.
+
 ------------------------------------------------------------------------------------------------------
 1.What is Angular?
+->Angular is TypeScript Based Frontend Framework for developing single page web applicaion. and this Framework developed by google for creating single page web applicaion.
+->In a first version of angular used javascript, but all curent version is used typescript in angular.
+->so currently used typescript in angular and runtiming typescript converted to javascript using the compiler and javascript is easy to undestaing by browser. so that like that work by angular Framework.
 ------------------------------------------------------------------------------------------------------
 2.What are the key features of Angular?
+->Component Based Architecture
+->Data Binding Concept
+->dependency Injection
+->Data transfer
+->Constructor
+->Services
+->pipes 
+->Http Clients
+->RxJs 
+->NgRx 
+->Lazy Loading
+->Directives
+->Routing
 ------------------------------------------------------------------------------------------------------
 3.What is a Component in Angular?
+->Component is basic building block of an angular applicaion. and it's contain to the HTML Template,CSS file and TypeScript file and if you want to find the code coverage so you will be used the spec.ts file for finding the code coverage.
 ------------------------------------------------------------------------------------------------------
 4.What is the differance between Angular & Angular.JS ?
+->Features          		Angular                						Angular.Js
+1.Based On Architecture     TypeScript Component Based Architecture     TypeScript Component Based Architecture
+2.Data Binding              Two-Way & One Way                           Two Way Only 
+3.Mobile Support            Yes                                         No 
+4.Performance               Faster                                      Slower
 ------------------------------------------------------------------------------------------------------
 5.What is Directives  in Angular?
-A directive in Angular is a class that is used to change or control the behavior and appearance of DOM elements.
-There are three main types of directives:
-Structural Directives – These change the layout or structure of the DOM.
-👉 Example: *ngIf, *ngFor, *ngSwitch
-Attribute Directives – These change the appearance or behavior of an element.
-👉 Example: ngClass, ngStyle
-Custom Directives – These are user-defined directives created to perform specific tasks or custom behaviors.
+->A directive is a class in Angular it is used to change or control the behavior DOM(Document Object Model) of the elements.
+	There are three main types of directives:
+	Structural Directives – These change the layout or structure of the DOM.
+	👉 Example: *ngIf, *ngFor, *ngSwitch
+	Attribute Directives – These change the appearance or behavior of an element.
+	👉 Example: ngClass, ngStyle
+	Custom Directives – These are user-defined directives created to perform specific tasks or custom behaviors.
 ------------------------------------------------------------------------------------------------------
 6.Types of Directives in Angular?
 ->there is the three types of Directives in Angular 
@@ -362,6 +502,9 @@ This will automatically configure everything, including adding styles in the ang
 
 54.How to apply background colors to rows in a table based on the age condition (age>18 blue else green)?
 ->
+------------------------------------------------------------------------------------------------------
+0.What is HttpClientModule in Angular?
+->HttpClientModule is the Angular module that allows your app to communicate with backend APIs over HTTP or HTTPS.
 ------------------------------------------------------------------------------------------------------
 
 55.What is CORS Origin error, how can we handle it?
