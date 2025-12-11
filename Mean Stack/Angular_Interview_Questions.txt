@@ -273,7 +273,7 @@ There are five main types of route guards:
 -> ngOnchanges -> 
 -> ngOnInit 
 -> ngDoCheck
--> ngAfterCotentInit
+-> ngAfterCotentInit Vishal
 -> ngAfterContentCheck
 -> ngAfterViewInit
 -> ngAfterViewCheck
