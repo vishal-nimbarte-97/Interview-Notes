@@ -1,0 +1,190 @@
+1.How to Check your current location?
+->pwd
+
+2.How to Display name of current logged-in User?
+->whoami
+
+3.how to check system date and time?
+->date
+
+4.How to Display files and directory present in current location?
+->ls
+
+5.Find overall data in the folder and file which timing created how many size?
+->ls -lt
+
+6.How to clear the linux terminal?
+->clear
+
+7.How to Display Content of File on terminal?
+->cat file_name
+
+8.How to read file and search for word?
+->less file_name
+->used / for searching words in file top to bottom
+->using shift + G -> Go to END or Last Line 
+->using shift + P -> Go to TOP or First Line
+->used ? botton to top search
+->exist so used -> q
+
+9.How to view Content of a file page by page?
+->more file_name
+
+10.How to Create a File in Linux?
+->touch file_name
+
+11.Delete a file in Linux?
+->rm file_name
+
+12.Create a folder in Linux?
+->mkdir folder_name
+
+12.Delete a folder in Linux?
+->rmdir folder_name
+
+13.how to edit a file in Linux?
+->vi file_name
+->nano file_name
+
+14.Create a file and write a text?
+->echo "My Name is Vishal Nimbarte" > file_name 
+
+15.cat > filename.txt 
+->create file and write a text in this file 
+
+16.create a file and write a somthing so used cat - cat > file_name
+
+17.using cat command also read a file - cat
+
+18.cd command 
+
+19. cd / -> going to root folder
+
+20.how to copy and paste a file from one folder to another in linux?
+-> cp file_name path/dest/path
+
+21.how to copy Content of a file to another file on linux?
+-> cp file_nameA file_nameB
+
+22.how to cut-paste a file from one folder to another folder in linux?
+-> mv file_name path/dest/path
+
+23.create a file used cat command -> cat > file_name 
+
+24.edit a file used nano command -> nano file_name
+
+25.how to rename a file in a linux?
+->mv fileA newFileNamefileA
+
+26.how to read or Display top 5 lines from a file in linux?
+-> head -5 file_name
+
+27.how to read or Display latest or bottom lines form a file in linux?
+-> tail -5 file_name
+
+28.How to SORT the Content from a file in Linux?
+-> sort file_name
+-> sort -r file_name
+
+29.How to Display UNIQUE Content from a file in Linux?
+-> sort file_name | uniq 
+
+30.A file has 9 lines.
+   How to split this file in 3 differnt files in Linux?
+->split -l 3 file_name
+
+31.How to search a word and Display matching Content from a file in Linux?
+->grep "word" file_name 
+
+32.How to search a multiple words and Display matching Content from a file i linux?
+->egrep "word1|word2" file_name
+
+33.How to used WILDCARDS in linux * [] {}
+->ls file_name* -> find file name they starting word provided by user and then *
+->ls *.extention -> find .extention provided file_name
+
+34.Create a multiple files at a single timing?
+->touch file_name{1..5}
+
+35.How to SHUFFLE Content of file in Linux?
+->shuf file_name 
+
+36.How to COUNT no. of lines in file in linux?
+->wc -l file_name -> lines count in file_name 
+->wc -w file_name -> words count in file_name
+
+37.How to check if two files are identical or not in linux?
+->cmp fileA fileB 
+
+38.How to compare and Display differnace between two files in linux?
+->diff -u fileA fileB 
+
+39.How to find a file in linux?
+->find /path/ -name file_name
+
+40.How to find a file in linux?
+->updatedb
+->locate file_name
+
+==============================Utility Commands================================
+
+41.How to Display previously used commands in past?
+->history
+->history | grep sort 
+->ls --help
+
+42.how to check syntax and options available for a commands?
+->ls --help 
+->help
+
+43.How to read or get more info about a command?
+->man
+
+44.How to check which executable is using for a commands?
+->which 
+
+45.How to used calculator in linux?
+->bc
+
+46.How to check Calender of last year in Linux?
+->cal
+
+47.How to check how long server has been running in Linux?
+->uptime 
+
+48.How to record your activity on terminal in a file?
+->script
+
+49.How to create a short-cut of a long command in linux?
+->alias l="ls -ltr"
+
+50.How to compress a file in Linux?
+->gzip -k file 
+
+51.How to decompress a file in Linux?
+->gzip -d file_name 
+->gunzip file 
+
+52.How to compress a folder in Linux?
+->tar -czf myfiles.tar.gz myfiles/
+
+53.How to decompress a folder i Linux?
+->tar -xzf myfiles.tar.gz 
+
+54.Delete a folder forcefully?
+-> rm -rf folderName 
+
+55.How to compress multiple file in one zipped file in Linux?
+->zip myfiles.zip file1 file2 
+
+55.How to unzip a files in linux?
+->unzip myfiles.zip
+
+56.How to list files in zipped file?
+->zip -l myfiles.zip 
+
+=================Downloading Files from Internet==========================
+
+
+
+

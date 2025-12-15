@@ -259,39 +259,72 @@ D.two way data binding :- two way data binding means they are combination bwtwee
 ------------------------------------------------------------------------------------------------------
 13.What is Route Gaurd and there types?
 ->A Route Guard is used in Angular to protect routes from unauthorized access.
+->A route guard is used to protect the routes in our angular applicaion from unauthorized access.
 
 There are five main types of route guards:
-	canActivate
-	canDeactivate
-	canActivateChild
-	canLoad
-	resolve
+	canActivate :- protect a routes
+	--> A user tries to open the Dashboard page, but they are not logged in.
+
+	canDeactivate :- Prevent Leaving Without Saving
+	--> User is filling a form and clicks Back without saving → show confirmation popup.
+
+	canActivateChild :- Protect All Child Pages
+	--> Inside an Admin module, all child pages like Users, Reports, Logs require admin permission.
+
+	canLoad :- Stop Lazy Module Loading
+	--> Authorized users load the module.
+		Unauthorized users don’t access.
+
+	resolve :- Fetch Data Before Page Loads
+	-->Before opening a Profile page, app fetches user data.
+	   The page loads only when data is ready
 
 ------------------------------------------------------------------------------------------------------
 13.Explain Angular Lifecycle of Hooks?
 -> constructor -> The component is called so constructor is the first hooks of angular like cycle they are exexuted.
--> ngOnchanges -> 
--> ngOnInit 
--> ngDoCheck
--> ngAfterCotentInit
--> ngAfterContentCheck
--> ngAfterViewInit
--> ngAfterViewCheck
--> ngDestroy 
+-> ngOnchanges -> @input property change in parent side so they are called and every time exectued and they are executed before ngOnInit 
+-> ngOnInit -> ngOnInit is second phase of our angular life cycle of hooks and they are used basically calling the get APIs and this exectued only one timing overall angular life cycle.
+-> ngDoCheck -> ngDoCheck() runs every time Angular runs change detection. like a It is called only when an @Input() value changes from the parent component.
+-> ngAfterCotentInit -> ngAfterContentInit is executed when the <ng-content> is initialized.
+-> ngAfterContentCheck -> ngAfterContentChecked runs every time the <ng-content> projected content is checked or updated.
+-> ngAfterViewInit -> ngAfterViewInit is executed when the parent component’s view and all its child components’ views are fully initialized.
+-> ngAfterViewCheck -> ngAfterViewChecked is executed whenever the parent component’s view or its child components’ views are checked or updated by Angular’s change detection.
+-> ngDestroy -> ngDestroy is the last phase of our angular like cycle of hooks and this are also executed at a single timing in overall angular life cycle and they are used for closing the resources of our component. and you changes component so before change the component they are executed.
 ------------------------------------------------------------------------------------------------------
 14.Explain Memory Leakage in Angular?
+	Memory leakage in Angular means:
+	Unwanted or no-longer-needed objects are not removed from memory.
+	Because they stay in the component or service, Angular cannot free that memory.
+	So during application running, these unused objects keep taking space, and this situation is called a memory leak
 ------------------------------------------------------------------------------------------------------
 15.Why Memory Leaks Happens in Angular?
+	Memory leaks happen in Angular when unwanted or no-more-needed objects are not removed.
+	If subscriptions, events, timers, or data are still running or still stored even after the component is destroyed, then those objects stay in memory.
+	Because they are not cleared, they keep taking memory space, and this situation is called a memory leak.
 ------------------------------------------------------------------------------------------------------
 16.How to Detect Memory Leaks in Angular?
+	We can detect memory leaks in Angular by checking if the memory is continuously increasing and not getting released.
+	We use browser tools to see if unwanted objects, subscriptions, or events are still running even after the component is destroyed.
+	If memory keeps growing and old data is not removed, that means memory leak is happening.
 ------------------------------------------------------------------------------------------------------
 17.How to Avoid Memory Leaks in Angular?
+	Unwanted or no-longer-needed objects should be removed when they are not needed.
+	If we clean these objects properly, we can avoid memory leaks in Angular.
 ------------------------------------------------------------------------------------------------------
 18.How to Handle Large-Scale Data in Angular Tables?
+	We handle large data in tables by not showing all data at once.
+	We show data in small parts using pagination, virtual scrolling, and page-wise data loading and also used trackBy.
+
+
+
+
+
+	
 ------------------------------------------------------------------------------------------------------
--->19.What is OnPush in Angular?
+19.What is OnPush in Angular?
+-> 
 ------------------------------------------------------------------------------------------------------
--->20.Explain Real Time Senario of OnPush Used?
+20.Explain Real Time Senario of OnPush Used?
 ------------------------------------------------------------------------------------------------------
 21.What is DOM Sanitization?
 ------------------------------------------------------------------------------------------------------
@@ -484,6 +517,17 @@ If we want to install NG-ZORRO in our Angular application, we can use the follow
 ng add ng-zorro-antd
 
 This will automatically configure everything, including adding styles in the angular.json file.
+
+
+
+
+
+
+
+
+
+
+
 ------------------------------------------------------------------------------------------------------
 51.If we want to used both NG-ZORRO and bootstrap so it's possible?
 ->Yes, it's possible to use both NG-ZORRO and Bootstrap, but their styles may conflict, so we have to manage the design carefully.
@@ -949,17 +993,13 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 ->JavaScript is dynamic and loosely typed; TypeScript is a superset of JavaScript with static typing.
 -------------------------------------------------------------------------------------------------------------
 
-
-
-
-		163.Can Standalone Components Work alongside Tranditional NgModules?
-		164.How do Standalone Components Handle dependencies such as FormsModule and HttpClientModule?
-		165.Can you create standalone directive and pipes in Angular?
-		166.How do you Lazy load a Standalone Components dynamically?
-		167.How do you mamage routing with standalone compoents in Angular?
-		168.How do you configure Providers inside a standalone compoents?
-		169.How do you migrate an existing Angular application to standalone compoents?
-
+163.Can Standalone Components Work alongside Tranditional NgModules?
+164.How do Standalone Components Handle dependencies such as FormsModule and HttpClientModule?
+165.Can you create standalone directive and pipes in Angular?
+166.How do you Lazy load a Standalone Components dynamically?
+167.How do you mamage routing with standalone compoents in Angular?
+168.How do you configure Providers inside a standalone compoents?
+169.How do you migrate an existing Angular application to standalone compoents?
 
 ->  FormsModule is used for template-driven forms.
 ->  ReactiveFormsModule is used for reactive forms.
@@ -1441,7 +1481,10 @@ type of decorator
 data binding
 Lazy Loading in Angular
 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ----------------------------------------------RxJS----------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 110.What is Latest Version of RxJS?->7th veriosn
 ->The latest stable version of RxJS (Reactive Extensions for JavaScript) is v7.8.2, released in February 2025.
@@ -1634,13 +1677,6 @@ To convert a Cold Observable to a Hot Observable, we can use:
 	share() or shareReplay() operator
 
 
-
-
-
-
-
-
-
 ++++++++++++++++------------------==================+++++++++++++++
 ------------------------------------------------------------------------------------------------------
 ✅ What is API Polling?
@@ -1693,13 +1729,9 @@ of(1,2,3).subscribe(value => {
 	Async generators
 
 
-
-
-
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
 =========================================== NgRx ==============================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 *] What is NgRx?
 	NgRx is Similar concept to the react redux library they are stored and statmenagement of the data 
