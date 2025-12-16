@@ -314,23 +314,71 @@ There are five main types of route guards:
 18.How to Handle Large-Scale Data in Angular Tables?
 	We handle large data in tables by not showing all data at once.
 	We show data in small parts using pagination, virtual scrolling, and page-wise data loading and also used trackBy.
-
-
-
-
-
-	
 ------------------------------------------------------------------------------------------------------
 19.What is OnPush in Angular?
--> 
+->  OnPush is a change detection strategy in Angular.
+	Basically, Angular by default detects changes automatically and updates the UI.
+	But in this case, unwanted or not-needed changes are also detected, like hovering, clicking, or performing some other action.
+	Because of this, change detection runs for the overall application continuously.
+	With the help of OnPush, changes are detected only when we want or as per our need, and then the UI is re-rendered accordingly.
+
+Simple Real-Life Example 🌟
+🧍 You and Your Phone Notifications
+
+Default Change Detection
+
+Your phone checks notifications every second
+Even when no new message
+Battery drains faster ❌
+
+OnPush Change Detection
+
+Phone checks only when a new message arrives
+No unnecessary checks
+Battery lasts longer ✅
+
+👉 Same result, less work
 ------------------------------------------------------------------------------------------------------
 20.Explain Real Time Senario of OnPush Used?
+Simple Real-Life Example 🌟
+🧍 You and Your Phone Notifications
+
+Default Change Detection
+
+Your phone checks notifications every second
+Even when no new message
+Battery drains faster ❌
+
+OnPush Change Detection
+
+Phone checks only when a new message arrives
+No unnecessary checks
+Battery lasts longer ✅
+
+👉 Same result, less work
+------------------------------------------------------------------------------------------------------
+20.Why used onPush?
+->problem :- Even data does'nt change, Angular still runs changes detections on every actions like a clicks, mouse moves etc..
+->after used :- 
+Faster UI Updates -> Reduces Unneccesary change detection calls.
+Better Performance -> Especially useful for large applications.
+Prevent Unncessary Rendering -> Updates only when inputes change.
 ------------------------------------------------------------------------------------------------------
 21.What is DOM Sanitization?
+->DOM sanitization is a security process that ensures only safe and clean data is rendered on the UI, protecting the application from XSS attacks. [XSS (Cross-Site Scripting) Attack]
 ------------------------------------------------------------------------------------------------------
 22.What is One & Two Way Data Binding and There Types ?
 ------------------------------------------------------------------------------------------------------
 23.Explain About Dependency Injection?
+->	Dependency Injection is mostly used in Angular for code reusability and maintainable code.
+	In Angular, we create multiple services that contain the business logic.
+	This business logic is used by many components.
+	
+	If we want to use a service inside a component, we use Dependency Injection.
+	Normally, dependency injection means that with the help of the constructor, we call the service and Angular creates an instance of that service class.
+	
+	Using this instance of the service class, we can call the functions of the service inside the component.
+	This process is called Dependency Injection.
 ------------------------------------------------------------------------------------------------------
 24.How to Check a third-party Library for vulnerabilities?
 ------------------------------------------------------------------------------------------------------
