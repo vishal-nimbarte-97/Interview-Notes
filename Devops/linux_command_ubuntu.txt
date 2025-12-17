@@ -235,4 +235,92 @@
 70.How to replace a specific word within a file?
 ->sed -n 's/from/to/g' file.txt 
 
-71.1.45
+71.How to convert the content to UpperCase or Lowercase within a file?
+->tr [:lower] [:upper] < file.txt 
+->tr [:punct:] Z <file.txt 
+->tr [:digit:] Z <file.txt 
+
+72.Delete some data our requirements wise if you want to delete %, ^, @ like that so they will write in @ symbol like that
+->tr -d @ <file.txt
+->tr "%" "$" <file.txt (Also Replace % symbol to this $ symbol)
+
+73.How to extend or shrink size of a file?
+->truncate -s 100M file.txt 
+
+74.How to display following line in vertical line? ABCD 
+->echo "ABCD" | fold -w1
+
+75.How to change user or login as differnt user in linux?
+->normal user
+->sudo -i 
+->enter root password 
+->login root 
+->exit 
+->logout root 
+->normal user
+
+76.If you not root user, how to execute admin commands like installing new apps?
+->sudo apt install package_name
+->sudo apt install nginx
+
+==================Access Remote Servers=================
+
+77.How to access remote Linux server?
+->ssh user@hostname 
+
+78.If you want windows terminal open unbuntu vertual maching so used this command 
+->ssh vboxuser@190.168.102.189 -> access remote server 
+
+79.how to copy file to a remote Linux server?
+->scp file user@hostname:/tmp/
+
+=================Working with permissions===============
+
+80.How to check permission of a file?
+->ls -ltr 
+->rwx rw- r--
+
+user group other 
+
+81.How to modify permissions of a file?
+->chmod a+rwx file.txt 
+
+u - user , g - group , o - other 
+a - all 
+
+81.how to change owenership of a file?
+->chown root file.txt 
+
+82.How to change a group owenership of a file?
+->chgrp pual file.txt 
+
+===============memory info==============
+83.How to check free RAM space?
+->free
+->free -h
+->free -th
+
+84.How to check % Memory and CPU Utilization?
+->top
+
+85.How to check disk Utilization?
+->du 
+
+============System INFO==================
+86.How to check hostname of your linux server?
+->hostname
+
+87.How to check cpu/core/thread info of your linux server?
+->lscpu 
+
+88.How to check type of architecture of your linux server?
+->arch
+
+89.How to see list of storage devices,disk partition on your linux server?
+->lsblk 
+
+90.How to see OS name of Linux server?
+->uname -a 
+
+=================PROCESS MANGEMENT==================
+91. 2.16
