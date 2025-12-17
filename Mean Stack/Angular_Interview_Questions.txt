@@ -381,14 +381,81 @@ Prevent Unncessary Rendering -> Updates only when inputes change.
 	This process is called Dependency Injection.
 ------------------------------------------------------------------------------------------------------
 24.How to Check a third-party Library for vulnerabilities?
+-> To check third-party library vulnerabilities, we use npm audit. It scans all installed dependencies and shows known security issues.
+   To fix those vulnerabilities automatically, we use npm audit fix, which updates the packages to safe versions.
+
+-> We use npm audit to detect vulnerabilities in third-party libraries and npm audit fix to automatically fix them.
+------------------------------------------------------------------------------------------------------
+25.Why npm audit fix --force is risky
+-> npm audit fix --force is risky because it can force incompatible package versions, causing dependency mismatch and breaking the application.
 ------------------------------------------------------------------------------------------------------
 25.What is Standalone Component?
+->A standalone component is an Angular component that does not require an NgModule for dependency declaration.
+->It contains its own imports and dependencies, so it does not depend on any NgModule.
+->Standalone components were introduced in Angular 14.
+->In the current Angular versions, we can use both standalone components and NgModule-based components, depending on project requirements.
+->If we want to use a standalone component, we only need to mark it as standalone: true in the component’s TypeScript file and add required dependencies in the imports array. No NgModule is required.
+->If we want to use an NgModule-based component, then we must declare that component inside an NgModule file like app.module.ts.
 ------------------------------------------------------------------------------------------------------
 26.How is it Different from Normal Component?
+-------------------------------------------------------------------------------
+| Standalone Component               | Normal (NgModule) Component            |
+| ---------------------------------- | -------------------------------------- |
+| Introduced in Angular 14           | Available since early Angular versions |
+| Does **not** require NgModule      | **Must** be declared in an NgModule    |
+| Uses `standalone: true`            | No `standalone` property               |
+| Declares dependencies in `imports` | Dependencies come from NgModule        |
+| Easier lazy loading                | Lazy loading via modules               |
+| Less boilerplate code              | More boilerplate                       |
+-------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
 27.When to Use Standalone Component?
+
+->Creating a new Angular project
+  Angular now suggests using standalone components from the start because they make the project simpler.
+
+->You want less extra code
+  You don’t need to create NgModules, so the code is shorter and easier to manage.
+
+->Using lazy loading
+  Standalone components can be loaded directly using loadComponent, which improves performance.
+
+->Building reusable components
+  Each component handles its own dependencies, so it can be reused easily in different places.
+
+->Small or medium applications
+  Fewer files and a clean structure make the app easier to maintain.
+
+->Micro-frontend or feature-based apps
+  Each feature works independently, so standalone components fit well.
+
+->Short Note :- [Use standalone components when you want a simple, clean, and independent Angular component without NgModules.]
 ------------------------------------------------------------------------------------------------------
 28.Key Features of Standalone Component?
+
+->No NgModule Required
+  Standalone components work without being declared in any NgModule.
+
+->Self-Managed Dependencies
+  All required modules, directives, and pipes are added directly in the imports array.
+
+->Introduced in Angular 14
+  This feature was added to simplify Angular application structure.
+
+Easy Lazy Loading
+Can be lazy-loaded directly using loadComponent.
+
+Less Boilerplate Code
+Reduces extra files like app.module.ts.
+
+Better Reusability
+Components are independent and easy to reuse across the app.
+
+Improved Maintainability
+Cleaner structure makes code easier to understand and maintain.
+
+Works with Existing NgModules
+Can be used together with NgModule-based components.
 ------------------------------------------------------------------------------------------------------
 29.What is <router-outlet>?
 ------------------------------------------------------------------------------------------------------
