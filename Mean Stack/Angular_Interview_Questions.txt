@@ -442,20 +442,20 @@ Prevent Unncessary Rendering -> Updates only when inputes change.
 ->Introduced in Angular 14
   This feature was added to simplify Angular application structure.
 
-Easy Lazy Loading
-Can be lazy-loaded directly using loadComponent.
+->Easy Lazy Loading
+  Can be lazy-loaded directly using loadComponent.
 
-Less Boilerplate Code
-Reduces extra files like app.module.ts.
+->Less Boilerplate Code
+  Reduces extra files like app.module.ts.
 
-Better Reusability
-Components are independent and easy to reuse across the app.
+->Better Reusability
+  Components are independent and easy to reuse across the app.
 
-Improved Maintainability
-Cleaner structure makes code easier to understand and maintain.
+->Improved Maintainability
+  Cleaner structure makes code easier to understand and maintain.
 
-Works with Existing NgModules
-Can be used together with NgModule-based components.
+->Works with Existing NgModules
+  Can be used together with NgModule-based components.
 ------------------------------------------------------------------------------------------------------
 29.What is <router-outlet>?
 ------------------------------------------------------------------------------------------------------

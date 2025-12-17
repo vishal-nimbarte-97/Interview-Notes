@@ -185,6 +185,54 @@
 
 =================Downloading Files from Internet==========================
 
+57.How to Downloading a file from Internet?
+->wget URL_of_file
+->wget -O opt_file.txt URL_of_file
 
+58.How to call an API on Linux?
+->curl http://numbersapi.com/random
 
+59.How to install an application on Linux?
+->apt or yum/dnf
 
+-> yum install nginx
+
+60.How to check if an application is install or not on linux?
+->rpm -qa | grep app 
+->apt list --installed
+
+61.How to list available packages to install on Linux?
+->apt search <package_name>
+->apt list 
+->apt list | grep "searching data"
+
+62.How to start/stop a service on Linux?
+->systemctl start/stop service_name
+
+63.How to list all services on Linux?
+->systemctl list-units --type=service --all
+
+64.How to list all existing Environment Variables on Linux?
+->printenv
+
+65.How to ADD a new Environment Variables on Linux?
+->export JAVA_HOME="/usr/lib/jvm/java_v"
+->export PATH=$JAVA_HOME/bin:$PATH
+
+66.How to ADD a new Environment Variables permanently on Linux?
+-> Add env Variables in ./bashrc file 
+-> source ~/.bash_profile
+
+67.How to print a specific column from a CSV file?
+->awk -F, '{print $2}' file.csv 
+
+68.How to Display starting two characters of all line?
+->cut -c1-2 file.txt
+
+69.How to Display a specific line from a file?
+->sed -n '5p' file.txt
+
+70.How to replace a specific word within a file?
+->sed -n 's/from/to/g' file.txt 
+
+71.1.45
