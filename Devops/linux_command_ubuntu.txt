@@ -1,3 +1,15 @@
+=================================================
+Connect ubuntu machin on windows CMD 
+1.systemctl status ssh 
+2.sudo pkill ssh 
+3.systemctl start ssh 
+4.Devices -> Network -> Network Setting -> atttached to -> Briged Adpator -> ok 
+5.close terminal 
+6.ifconfig 
+7.get ip address like 192.168.107.180
+=================================================
+
+
 1.How to Check your current location?
 ->pwd
 
@@ -323,4 +335,89 @@ a - all
 ->uname -a 
 
 =================PROCESS MANGEMENT==================
-91. 2.16
+
+91.How to check if a process(java) is running or not?
+->ps -ef | grep java
+
+92.How to get PID of a process?
+->pgrep chron
+
+93.How to stop a process by PID?
+->kill -9 PID
+
+94.How to stop a process by its name 
+->sudo pkill ssh 
+
+95.How to see all the active jobs?
+->jobs
+
+96.How to resume a job in background?
+->bg
+
+97.How to resume a job in foreground?
+->fg 
+
+98.How to run a script in background?
+->nohup ./script >/dev/null &
+
+99.create a spript 
+->nano myscript.sh 
+script :- 
+
+ #!/bin/bash
+
+echo "What is your name?"
+read name
+
+echo "Welcom $name"
+
+->bash myscript.sh (run scripting)
+
+=====================Networking Info==========================
+100.How to check IP of your machine?
+->ifconfig 
+
+101.How to check if a server or website is accesible or not?
+->ping www.google.com 
+
+102.How to check if a IP:PORT is accessible and open or not?
+->telnet IP Port
+
+103.How to check if port open or not on our server?
+->netstat -putam | grep 80
+
+104.How to check all hubs in Network path to reach a website?
+->traceroute 
+
+105.How to restart our linux server?
+->reboot 
+
+106.how to shutdown our linux server?
+->shutdown
+
+=========================USER Creation=====================
+
+107.How to create a new user on our linux server?
+->useradd
+->id userName
+
+108.How to change password for the user?
+->passwd 
+->passwd userName
+
+109.How to create a new group on our linux server?
+->groupadd
+
+110.How to check UserId or GroupId of a user?
+->id userName
+
+111.How to delete a user or group?
+->userdel userName 
+->groupdel groupName
+
+112.How to schedule a script to run on a particular date/time?
+->at 
+->crontab
+
+113.date show 
+->date
