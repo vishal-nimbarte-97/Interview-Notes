@@ -458,48 +458,113 @@ Prevent Unncessary Rendering -> Updates only when inputes change.
   Can be used together with NgModule-based components.
 ------------------------------------------------------------------------------------------------------
 29.What is <router-outlet>?
+->router-outlet is a placeholder in Angular which is used to load components when we navigate from one route to another.
+
+	<h2>My Angular App</h2>
+	<nav>
+	<a routerLink="/home">Home</a> |
+	<a routerLink="/about">About</a>
+	</nav>
+	<hr>
+	<router-outlet></router-outlet>
 ------------------------------------------------------------------------------------------------------
 30.What is @HostLinsterner & @HostBinding?
+->HostLinsterner & HostBinding both are directive concept.
+-------------------------------------------------------------------------------------
+| Feature           | Purpose                       | Use Case                      |
+| ----------------- | ----------------------------- | ----------------------------- |
+| **@HostListener** | Listen to host element events | Mouse enter, click, key press |
+| **@HostBinding**  | Bind host element properties  | Styles, classes, attributes   |
+-------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
 31.What is an Interceptor in Angular?
+->An interceptor in Angular is a service that catches all http & https request before they go to the server and all responce before they reach the app. 
+->It is used for things like a adding tokens, logging and handling errors.
+=>Note :- It means an interceptor provides security in both ways — while sending the request to the server and while receiving the response back to the application.
 ------------------------------------------------------------------------------------------------------
 32.Why use are Interceptor?
+->Interceptors are used because they work like middleware on the backend. They intercept requests before they reach the server to validate or modify them. If the request is not proper, it can be stopped and not sent to the server.
+->Similarly, interceptors also handle responses before they reach the Angular application. If the response is not valid or has errors, it can be handled globally and prevented from affecting the application.
 ------------------------------------------------------------------------------------------------------
 33.I have totoal 10 API , I want to used the interceptor only for 7 API and skip for 3 API , so How can I do this. 
+->We have a total of 10 APIs in our application, but we want the interceptor to be applied only to 7 APIs and skipped for the remaining 3 APIs.
+To achieve this, we create a skipList that contains an array of API endpoints which should not go through the interceptor.
+Inside the interceptor, we write logic to match the request URL with the endpoints present in the skip list. If the request URL matches any of the endpoints, we simply bypass the interceptor logic and forward the request. Otherwise, the interceptor logic is applied as usual.
+This approach makes it simple and easy to manage which APIs should skip the interceptor by just updating the skip list.
 ------------------------------------------------------------------------------------------------------
 34.How can you catch error get from backend?
+In Angular, we can catch errors returned from the backend using RxJS catchError. This can be done in two main ways.
+
+1️⃣ Request-wise (Service-level) Error Handling
+
+In this approach, we handle errors inside individual service methods using catchError.
+This is useful when we want to show custom error messages or apply specific logic for a particular API request.
+
+This approach gives more control because each API can have its own error handling logic.
+
+2️⃣ Global Error Handling using HTTP Interceptor
+
+In this approach, we handle errors globally inside an HTTP interceptor.
+This is useful for handling common errors such as authentication failures, network issues, or server errors in one place.
+
+It helps reduce duplicate code and keeps error handling consistent across the application.
+
+📌 Conclusion
+
+Both approaches are commonly used in Angular applications.
+Service-level error handling is best for request-specific custom messages, while interceptor-based error handling is best for global and reusable error handling logic.
 ------------------------------------------------------------------------------------------------------
 35.What is used of (ng-model)?
+->In angular , ng-model is a directive used for two-way data binding in template driven form.
+->it is synchronized data between the between HTML view(template) and the typescript compoennt.
+->real life example of two way data binding is searching and filtering data.
+->syntax :- [(ngModel)]="name".
 ------------------------------------------------------------------------------------------------------
 36.Differance between Template driven from and Reactive form?
-->Imports needed	  FormsModule	           ReactiveFormsModule.
 
--> Template driven forms are used basically small case or static forms are there so we will used the template dirvern forms 
--> reactive form are used dynamic froms are there of complex form are there so we will used the reactive forms.
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Feature                 | Template Driven Forms                              | Reactive Forms                                                |
+| ----------------------- | -------------------------------------------------- | ------------------------------------------------------------- |
+| **Usage**               | Mainly used for **small and static forms**         | Used for **complex and dynamic forms**                        |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Data Binding**        | Uses **two-way data binding** with `ngModel`       | Uses **one-way data flow** with `FormControl` and `FormGroup` |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Main Logic Location** | Most logic is handled in **HTML template**         | Most logic is handled in **TypeScript file**                  |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Modules Required**    | `FormsModule`                                      | `ReactiveFormsModule`                                         |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Form Structure**      | Defined directly in the **HTML**                   | Defined **programmatically** in TypeScript                    |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Validation**          | Simple validations, written in **HTML attributes** | **Easy and powerful validations** written in TypeScript       |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Scalability**         | Not suitable for large or complex forms            | Highly **scalable and maintainable**                          |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Control Over Form**   | Less control over form state                       | Full control over form state and values                       |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Learning Curve**      | **Easy to write and understand** (less complexity) | Slightly complex but **better for real-world apps**           |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Best Use Case**       | Login, contact, or simple forms                    | Dynamic forms, large forms, enterprise applications           |
+------------------------------------------------------------------------------------------------------------------------------------------------
 
-template driven forms are used the two way data binding concept and used the ng-model 
-reactive forms case they are used the formgroup and formControlName 
-
--> if you used the reactive forms so we need to the imports the reactiveFormsModule 
--> and if you used the template driven forms so we need to the imports the forms module in the app.module.ts fie 
 ------------------------------------------------------------------------------------------------------
 37.What is track by ?
-->trackBy is used with *ngFor to improve performance when displaying lists or tables.
-->It helps Angular identify which items changed, were added, or removed — so it only re-renders the affected items, not the whole list.
-
-🔍 Why use trackBy?
-By default, Angular uses object references to track changes. When data changes (like adding a new row), Angular may re-render the whole list.
-Using trackBy, Angular knows exactly which item changed, improving performance especially for large lists.
-
+->When using *ngFor to loop throgh a list, Angular re-render the whole list if any change happens.
+->so, this can slow the app especially for large lists.
+->and trackBy helps angular know which items changed, so it only updates the changed ones instead of realoading everything.
 ------------------------------------------------------------------------------------------------------
 38.What is differance between ng build and ng serve?
-->ng build basically used to create a production build timing 
-->ng serve is used to if want only run test webapp on local system
+
+Simple Interview Explanation
+->ng build is used to compile and optimize the Angular project and generate static files for deployment.
+->ng serve is used to run the application locally during development with live reload.
+
+One-Line Answer (Very Short)
+->ng build → Creates optimized files for production
+->ng serve → Runs the app locally for development
 ------------------------------------------------------------------------------------------------------
 39.I want to load some config before starting angular app, How can I do?
 ->we can used APP_INITIALIZER they are exectued before starting angular app
 ------------------------------------------------------------------------------------------------------
-
 40.Explain APP_INITIALIZER?
 ->
 ✅ Simple explanation:
@@ -523,21 +588,26 @@ This ensures that everything is ready before the app shows anything to the user.
 ->If check user are login or not for there authencatution process and user are not logged so in the auth gard they are direclty navigating to the login page.
 ------------------------------------------------------------------------------------------------------
 43.What is Route Gaurd in Angular?
-->Route Gaurd is type of the AuthGaurd basicaclly we can write the mutliple conditon or they are used for the role base acces controlled case 
--> A Route Guard is a feature in Angular used to control access to routes.
-It allows you to define conditions that must be true before navigating to a route.
+->A Route Guard is used in Angular to protect routes from unauthorized access.
+->A route guard is used to protect the routes in our angular applicaion from unauthorized access.
 
-There are different types of route guards:
+There are five main types of route guards:
+	canActivate :- protect a routes
+	--> A user tries to open the Dashboard page, but they are not logged in.
 
-CanActivate – Checks if the user can access a route.
+	canDeactivate :- Prevent Leaving Without Saving
+	--> User is filling a form and clicks Back without saving → show confirmation popup.
 
-CanDeactivate – Checks if the user can leave a route.
+	canActivateChild :- Protect All Child Pages
+	--> Inside an Admin module, all child pages like Users, Reports, Logs require admin permission.
 
-CanActivateChild – Checks if a child route can be accessed.
+	canLoad :- Stop Lazy Module Loading
+	--> Authorized users load the module.
+		Unauthorized users don’t access.
 
-CanLoad – Checks if a module can be lazily loaded.
-
-Resolve – Loads data before navigating to a route.
+	resolve :- Fetch Data Before Page Loads
+	-->Before opening a Profile page, app fetches user data.
+	   The page loads only when data is ready.
 ------------------------------------------------------------------------------------------------------
 44.Dirreance Between AuthGaurd and Route Gaurd?
 ->AuthGaurd is a type of the route gaurd and there main work is they are check user are logged or not 
@@ -1842,6 +1912,17 @@ of(1,2,3).subscribe(value => {
 	Promises
 	Iterables (like strings, Sets, Maps)
 	Async generators
+
+
+
+
+
+
+
+
+
+
+
 
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
