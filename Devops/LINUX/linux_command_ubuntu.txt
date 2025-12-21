@@ -1,0 +1,423 @@
+=================================================
+Connect ubuntu machin on windows CMD 
+1.systemctl status ssh 
+2.sudo pkill ssh 
+3.systemctl start ssh 
+4.Devices -> Network -> Network Setting -> atttached to -> Briged Adpator -> ok 
+5.close terminal 
+6.ifconfig 
+7.get ip address like 192.168.107.180
+=================================================
+
+
+1.How to Check your current location?
+->pwd
+
+2.How to Display name of current logged-in User?
+->whoami
+
+3.how to check system date and time?
+->date
+
+4.How to Display files and directory present in current location?
+->ls
+
+5.Find overall data in the folder and file which timing created how many size?
+->ls -lt
+
+6.How to clear the linux terminal?
+->clear
+
+7.How to Display Content of File on terminal?
+->cat file_name
+
+8.How to read file and search for word?
+->less file_name
+->used / for searching words in file top to bottom
+->using shift + G -> Go to END or Last Line 
+->using shift + P -> Go to TOP or First Line
+->used ? botton to top search
+->exist so used -> q
+
+9.How to view Content of a file page by page?
+->more file_name
+
+10.How to Create a File in Linux?
+->touch file_name
+
+11.Delete a file in Linux?
+->rm file_name
+
+12.Create a folder in Linux?
+->mkdir folder_name
+
+12.Delete a folder in Linux?
+->rmdir folder_name
+
+13.how to edit a file in Linux?
+->vi file_name
+->nano file_name
+
+14.Create a file and write a text?
+->echo "My Name is Vishal Nimbarte" > file_name 
+
+15.cat > filename.txt 
+->create file and write a text in this file 
+
+16.create a file and write a somthing so used cat - cat > file_name
+
+17.using cat command also read a file - cat
+
+18.cd command 
+
+19. cd / -> going to root folder
+
+20.how to copy and paste a file from one folder to another in linux?
+-> cp file_name path/dest/path
+
+21.how to copy Content of a file to another file on linux?
+-> cp file_nameA file_nameB
+
+22.how to cut-paste a file from one folder to another folder in linux?
+-> mv file_name path/dest/path
+
+23.create a file used cat command -> cat > file_name 
+
+24.edit a file used nano command -> nano file_name
+
+25.how to rename a file in a linux?
+->mv fileA newFileNamefileA
+
+26.how to read or Display top 5 lines from a file in linux?
+-> head -5 file_name
+
+27.how to read or Display latest or bottom lines form a file in linux?
+-> tail -5 file_name
+
+28.How to SORT the Content from a file in Linux?
+-> sort file_name
+-> sort -r file_name
+
+29.How to Display UNIQUE Content from a file in Linux?
+-> sort file_name | uniq 
+
+30.A file has 9 lines.
+   How to split this file in 3 differnt files in Linux?
+->split -l 3 file_name
+
+31.How to search a word and Display matching Content from a file in Linux?
+->grep "word" file_name 
+
+32.How to search a multiple words and Display matching Content from a file i linux?
+->egrep "word1|word2" file_name
+
+33.How to used WILDCARDS in linux * [] {}
+->ls file_name* -> find file name they starting word provided by user and then *
+->ls *.extention -> find .extention provided file_name
+
+34.Create a multiple files at a single timing?
+->touch file_name{1..5}
+
+35.How to SHUFFLE Content of file in Linux?
+->shuf file_name 
+
+36.How to COUNT no. of lines in file in linux?
+->wc -l file_name -> lines count in file_name 
+->wc -w file_name -> words count in file_name
+
+37.How to check if two files are identical or not in linux?
+->cmp fileA fileB 
+
+38.How to compare and Display differnace between two files in linux?
+->diff -u fileA fileB 
+
+39.How to find a file in linux?
+->find /path/ -name file_name
+
+40.How to find a file in linux?
+->updatedb
+->locate file_name
+
+==============================Utility Commands================================
+
+41.How to Display previously used commands in past?
+->history
+->history | grep sort 
+->ls --help
+
+42.how to check syntax and options available for a commands?
+->ls --help 
+->help
+
+43.How to read or get more info about a command?
+->man
+
+44.How to check which executable is using for a commands?
+->which 
+
+45.How to used calculator in linux?
+->bc
+
+46.How to check Calender of last year in Linux?
+->cal
+
+47.How to check how long server has been running in Linux?
+->uptime 
+
+48.How to record your activity on terminal in a file?
+->script
+
+49.How to create a short-cut of a long command in linux?
+->alias l="ls -ltr"
+
+50.How to compress a file in Linux?
+->gzip -k file 
+
+51.How to decompress a file in Linux?
+->gzip -d file_name 
+->gunzip file 
+
+52.How to compress a folder in Linux?
+->tar -czf myfiles.tar.gz myfiles/
+
+53.How to decompress a folder i Linux?
+->tar -xzf myfiles.tar.gz 
+
+54.Delete a folder forcefully?
+-> rm -rf folderName 
+
+55.How to compress multiple file in one zipped file in Linux?
+->zip myfiles.zip file1 file2 
+
+55.How to unzip a files in linux?
+->unzip myfiles.zip
+
+56.How to list files in zipped file?
+->zip -l myfiles.zip 
+
+=================Downloading Files from Internet==========================
+
+57.How to Downloading a file from Internet?
+->wget URL_of_file
+->wget -O opt_file.txt URL_of_file
+
+58.How to call an API on Linux?
+->curl http://numbersapi.com/random
+
+59.How to install an application on Linux?
+->apt or yum/dnf
+
+-> yum install nginx
+
+60.How to check if an application is install or not on linux?
+->rpm -qa | grep app 
+->apt list --installed
+
+61.How to list available packages to install on Linux?
+->apt search <package_name>
+->apt list 
+->apt list | grep "searching data"
+
+62.How to start/stop a service on Linux?
+->systemctl start/stop service_name
+
+63.How to list all services on Linux?
+->systemctl list-units --type=service --all
+
+64.How to list all existing Environment Variables on Linux?
+->printenv
+
+65.How to ADD a new Environment Variables on Linux?
+->export JAVA_HOME="/usr/lib/jvm/java_v"
+->export PATH=$JAVA_HOME/bin:$PATH
+
+66.How to ADD a new Environment Variables permanently on Linux?
+-> Add env Variables in ./bashrc file 
+-> source ~/.bash_profile
+
+67.How to print a specific column from a CSV file?
+->awk -F, '{print $2}' file.csv 
+
+68.How to Display starting two characters of all line?
+->cut -c1-2 file.txt
+
+69.How to Display a specific line from a file?
+->sed -n '5p' file.txt
+
+70.How to replace a specific word within a file?
+->sed -n 's/from/to/g' file.txt 
+
+71.How to convert the content to UpperCase or Lowercase within a file?
+->tr [:lower] [:upper] < file.txt 
+->tr [:punct:] Z <file.txt 
+->tr [:digit:] Z <file.txt 
+
+72.Delete some data our requirements wise if you want to delete %, ^, @ like that so they will write in @ symbol like that
+->tr -d @ <file.txt
+->tr "%" "$" <file.txt (Also Replace % symbol to this $ symbol)
+
+73.How to extend or shrink size of a file?
+->truncate -s 100M file.txt 
+
+74.How to display following line in vertical line? ABCD 
+->echo "ABCD" | fold -w1
+
+75.How to change user or login as differnt user in linux?
+->normal user
+->sudo -i 
+->enter root password 
+->login root 
+->exit 
+->logout root 
+->normal user
+
+76.If you not root user, how to execute admin commands like installing new apps?
+->sudo apt install package_name
+->sudo apt install nginx
+
+==================Access Remote Servers=================
+
+77.How to access remote Linux server?
+->ssh user@hostname 
+
+78.If you want windows terminal open unbuntu vertual maching so used this command 
+->ssh vboxuser@190.168.102.189 -> access remote server 
+
+79.how to copy file to a remote Linux server?
+->scp file user@hostname:/tmp/
+
+=================Working with permissions===============
+
+80.How to check permission of a file?
+->ls -ltr 
+->rwx rw- r--
+
+user group other 
+
+81.How to modify permissions of a file?
+->chmod a+rwx file.txt 
+
+u - user , g - group , o - other 
+a - all 
+
+81.how to change owenership of a file?
+->chown root file.txt 
+
+82.How to change a group owenership of a file?
+->chgrp pual file.txt 
+
+===============memory info==============
+83.How to check free RAM space?
+->free
+->free -h
+->free -th
+
+84.How to check % Memory and CPU Utilization?
+->top
+
+85.How to check disk Utilization?
+->du 
+
+============System INFO==================
+86.How to check hostname of your linux server?
+->hostname
+
+87.How to check cpu/core/thread info of your linux server?
+->lscpu 
+
+88.How to check type of architecture of your linux server?
+->arch
+
+89.How to see list of storage devices,disk partition on your linux server?
+->lsblk 
+
+90.How to see OS name of Linux server?
+->uname -a 
+
+=================PROCESS MANGEMENT==================
+
+91.How to check if a process(java) is running or not?
+->ps -ef | grep java
+
+92.How to get PID of a process?
+->pgrep chron
+
+93.How to stop a process by PID?
+->kill -9 PID
+
+94.How to stop a process by its name 
+->sudo pkill ssh 
+
+95.How to see all the active jobs?
+->jobs
+
+96.How to resume a job in background?
+->bg
+
+97.How to resume a job in foreground?
+->fg 
+
+98.How to run a script in background?
+->nohup ./script >/dev/null &
+
+99.create a spript 
+->nano myscript.sh 
+script :- 
+
+ #!/bin/bash
+
+echo "What is your name?"
+read name
+
+echo "Welcom $name"
+
+->bash myscript.sh (run scripting)
+
+=====================Networking Info==========================
+100.How to check IP of your machine?
+->ifconfig 
+
+101.How to check if a server or website is accesible or not?
+->ping www.google.com 
+
+102.How to check if a IP:PORT is accessible and open or not?
+->telnet IP Port
+
+103.How to check if port open or not on our server?
+->netstat -putam | grep 80
+
+104.How to check all hubs in Network path to reach a website?
+->traceroute 
+
+105.How to restart our linux server?
+->reboot 
+
+106.how to shutdown our linux server?
+->shutdown
+
+=========================USER Creation=====================
+
+107.How to create a new user on our linux server?
+->useradd
+->id userName
+
+108.How to change password for the user?
+->passwd 
+->passwd userName
+
+109.How to create a new group on our linux server?
+->groupadd
+
+110.How to check UserId or GroupId of a user?
+->id userName
+
+111.How to delete a user or group?
+->userdel userName 
+->groupdel groupName
+
+112.How to schedule a script to run on a particular date/time?
+->at 
+->crontab
+
+113.date show 
+->date

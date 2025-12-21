@@ -625,13 +625,13 @@ To ignore these errors and still install the package, we can use the --force fla
 This flag forces the installation by skipping the errors and adds the dependency to our Angular application.
 ------------------------------------------------------------------------------------------------------
 
----->47.What is difference between --force and --legacy-peer-deps too.
+Important Questions :- ]]47.What is difference between --force and --legacy-peer-deps too.
 
 --force: Even if there are errors or conflicts, ignore everything and forcefully install the package.
 
 --legacy-peer-deps: Only skip peer dependency errors and install the package without breaking like in old npm versions.
 
-so , i will recomeded first is used the lagacy-peer-deps they are skip the peer dependency erros .
+so , i will recomeded first is used the lagacy-peer-deps they are skip the peer dependency errors .
 In case they are also occured the errors or conflits so we can used the --force flag.
 
 ⚠️ When to use?
@@ -657,14 +657,28 @@ This is because ngOnInit() runs before the child components or DOM elements are 
 But in ngAfterViewInit(), all child components and DOM elements are ready, so we can safely use @ViewChild there.
 🔁 In short: Use @ViewChild inside ngAfterViewInit() to avoid undefined values.
 ------------------------------------------------------------------------------------------------------
-
+48.What is used of @viewChildren?
+->@ViewChildren works similar to @ViewChild, but @ViewChild is used to access a single child component or element, whereas @ViewChildren is used to access multiple child components or elements at the same time. With @ViewChildren, the parent component can access and update multiple child component properties or call their methods.
+------------------------------------------------------------------------------------------------------
+Difference between @ViewChild and @ViewChildren
+----------------------------------------------------------------------------------------------------------------
+| `@ViewChild`                                      | `@ViewChildren`                                          |
+| ------------------------------------------------- | -------------------------------------------------------- |
+| Used to access **one** child component or element | Used to access **multiple** child components or elements |
+| Returns **single instance**                       | Returns **QueryList (collection)**                       |
+| No loop needed                                    | Loop (`forEach`) is required                             |
+| Example: one child                                | Example: many children                                   |
+----------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 48.Give me example where you have invoked manual change detection and how?
 -> By default, Angular automatically detects changes and re-renders the application.
 But in some cases — like when using sockets, timers, or external libraries — Angular does not detect the changes.
 In such cases, we can use ChangeDetectorRef to manually trigger change detection.
 ------------------------------------------------------------------------------------------------------
+
 48.Differance between the markForkCheck() and detectChange()?
--> markForCheck() triggers change detection, but it does not immediately update the application.
+=>Both are used to manually control Angular change detection strategy, mainly when using ChangeDetectionStrategy.OnPush.
+-> but one main differance is markForCheck() triggers change detection, but it does not immediately update the application.
 The data is updated in the next Angular execution cycle — for example, when you go to another tab and come back, the changes will appear.
 But in the case of detectChanges(), the changes are updated immediately in the view at that moment.
 
@@ -685,7 +699,8 @@ We can directly use the Bootstrap CDN link by adding it inside the <head> tag of
 Using npm install
 We can also install Bootstrap using the following command:
 
-npm install bootstrap
+command -> npm install bootstrap
+
 After installation, we need to configure it in angular.json.
 Go to the angular.json file and set the Bootstrap path in the "styles" array like this:
 
@@ -695,47 +710,67 @@ Go to the angular.json file and set the Bootstrap path in the "styles" array lik
 ]
 ------------------------------------------------------------------------------------------------------
 50.How to Use NG-ZORRO in an Angular Application?
+
 -> NG-ZORRO is an Angular UI library, and it contains many inbuilt components.
 
 If we want to install NG-ZORRO in our Angular application, we can use the following command:
 
-ng add ng-zorro-antd
+command -> ng add ng-zorro-antd
 
 This will automatically configure everything, including adding styles in the angular.json file.
-
-
-
-
-
-
-
-
-
-
-
 ------------------------------------------------------------------------------------------------------
 51.If we want to used both NG-ZORRO and bootstrap so it's possible?
 ->Yes, it's possible to use both NG-ZORRO and Bootstrap, but their styles may conflict, so we have to manage the design carefully.
-
+------------------------------------------------------------------------------------------------------
 52.What is pipes?
-->Pipes basically used to transform data using the pipe operator.
-->timer,toLowecase,UpperCase like that pipes are used 
+->Pipes are used to transform data in the template.
+->They use the pipe (|) operator.
+->Pipes change how data is displayed, not the original data.
+
+->In-built Pipes Examples
+	date → formats date
+	uppercase → converts text to uppercase
+	lowercase → converts text to lowercase
+	currency → formats currency
+	percent → formats percentage
+	async → handles observables/promises
 ------------------------------------------------------------------------------------------------------
+52.What is async pipe?
+->the async pipe in Angular is used to automatically subscribe and unsubscribe from observable or propmises.
+->simple meaning :- it listen for the data changes and updates the UI auto-matically and no need to manually subscribe or unsubscribe.
 
---->52.What is async pipe?
+->Benifites :- 
+->No need to manually subscribe and unsubscribe.
+->Prevents memory leakes.
+->Keeps the template clean.
+
+ts file 
+data$ = of('Hello Vishal');
+
+html template 
+{{data$ | async}}
 ------------------------------------------------------------------------------------------------------
---->53.How can we say Asyn Pipe it type of the pure pipe?
-
-
+53.How can we say Asyn Pipe it type of the pure pipe?
+->The async pipe is a pure pipe because it updates the UI only when the observable or promise emits a new value , otpimize performance by avoiding Unneccesary exection.
 ------------------------------------------------------------------------------------------------------
-
 54.How to apply background colors to rows in a table based on the age condition (age>18 blue else green)?
-->
+->]]]Important Question Asking in Interview
 ------------------------------------------------------------------------------------------------------
+
 0.What is HttpClientModule in Angular?
 ->HttpClientModule is the Angular module that allows your app to communicate with backend APIs over HTTP or HTTPS.
-------------------------------------------------------------------------------------------------------
 
+->HttpClientModule is used in Angular to communicate between the client
+and backend APIs using HTTP requests.
+
+->HttpClientModule is used to communicate with backend servers.
+->It helps Angular apps send and receive HTTP requests like:
+
+GET,POST,PUT,DELETE
+
+Used for calling REST APIs.
+It returns data as Observables.
+------------------------------------------------------------------------------------------------------
 55.What is CORS Origin error, how can we handle it?
 -> CORS stands for Cross-Origin Resource Sharing.
 
@@ -761,16 +796,15 @@ CORS error occurs when the request is blocked due to cross-origin policy.
 We can fix it using backend changes (recommended), or by setting a proxy file in frontend.
 In my app, we handled it on the backend side using the cors module in Node.js.
 ------------------------------------------------------------------------------------------------------
-
 56.What is Angular Proxy or Server-Side proxy?
 -> In Angular, a proxy is used to bypass CORS errors during development.
 It allows the Angular app to send requests to the backend server without getting blocked by the browser.
 Basically, it contains some lines of code (proxy rules) that tell the browser to allow and forward requests to the backend server.
-
 ------------------------------------------------------------------------------------------------------
 57.What is <ng-container>?
--><ng-container> is used instead of <div> for conditions,
+-><ng-container> is used instead of <div> for write a conditions like a ngIf, ngFor , ngSwitch ,
 ->so the layout doesn't change, and it doesn’t add extra HTML.
+->most of used ng-container for write a condition
 ------------------------------------------------------------------------------------------------------
 58.In Same div can we used two structural directive? why? and how to fixed it? 
 -> No, it's not possible to use two structural directives (like *ngIf and *ngFor) on the same HTML element.
@@ -778,7 +812,20 @@ This is because Angular transforms structural directives into HTML templates int
 
 ✅How to fix it?
 We can fix this by using an <ng-container>, which doesn't create extra DOM elements.
+
+❌ Wrong Example
+<div *ngIf="show" *ngFor="let item of items">
+  {{ item }}
+</div>
+
+✅ How to Fix It (Using ng-container)
+<ng-container *ngIf="show">
+  <div *ngFor="let item of items">
+    {{ item }}
+  </div>
+</ng-container>
 ------------------------------------------------------------------------------------------------------
+
 59.What is ng-template?
 ng-template is used when we want to write an else condition.
 👉 For example: If a condition like *ngIf is false, then the else block is shown using ng-template.
@@ -788,18 +835,45 @@ If data is available, we show the list on the UI.
 But if no data is found (0 records), then we want to show a message like "No Data Available".
 In that case, we write the else block using ng-template.
 
+Example]] :- 
+
+<div *ngIf="users.length > 0; else noData">
+  <!-- show table -->
+</div>
+
+<ng-template #noData>
+  <p>No data found</p>
+</ng-template>
+
 ✅ Key Points:
 ng-template is not directly rendered in the DOM by default.
 When the if condition is false, Angular renders the ng-template block.
 It is very useful to handle empty state or alternative content.
 ------------------------------------------------------------------------------------------------------
 60.What is content project (ng-content)?
-->transfter the data bwtween the parent to child.
-->ng-content is used to send HTML content from parent to child,
-->ng-content is used to transfter the data or content form parant to child compenent.
+->ng-content is used to send HTML content from parent to child
+->It is mainly used when we want reusable components with dynamic content.
+
+Example :- ]]] 
+
+Parent
+<app-card>
+  <h3>User Details</h3>
+</app-card>
+
+
+Child
+<div class="card">
+  <ng-content></ng-content>
+</div>
+
 ------------------------------------------------------------------------------------------------------
 61.What is the Universal Language of API's?
-->JSON
+->Earlier (Old time): XML
+->Currently (Most used): ✅ JSON
+->JSON is considered the universal language of APIs today.
+
+current market lunch -> TOON (Token-Oriented Object Notation).
 ------------------------------------------------------------------------------------------------------
 62.What is Differance Between @ViewChild and @ViewChildren?
 -> @ViewChild is used in the parent component to access one element, directive, or component from the child or DOM.
@@ -809,34 +883,43 @@ But in the case of @ViewChildren, we use it to access multiple elements, directi
 @ViewChild → used to access single element or directive.
 
 @ViewChildren → used to access multiple elements or directives.
+
+----------------------------------------------------------------------------------------------------------------
+| `@ViewChild`                                      | `@ViewChildren`                                          |
+| ------------------------------------------------- | -------------------------------------------------------- |
+| Used to access **one** child component or element | Used to access **multiple** child components or elements |
+| Returns **single instance**                       | Returns **QueryList (collection)**                       |
+| No loop needed                                    | Loop (`forEach`) is required                             |
+| Example: one child                                | Example: many children                                   |
+----------------------------------------------------------------------------------------------------------------
+
 ------------------------------------------------------------------------------------------------------
-----> 63.What is the Role of ng Module?
--> NgModule is a core part of Angular that helps to organize the application.
+63.What is the Role of NgModule ?
+->NgModule is a core part of Angular that helps to organize the application.
 
-It is used to group related things like:
-components
-directives
-pipes
-services
-and other modules into a single unit.
-
+->NgModule organizes components, directives, pipes, and services,
+and manages imports and exports in an Angular application.
 ------------------------------------------------------------------------------------------------------
+64. What is NgModule in Angular? Why was it used before Angular 14?
+->NgModule is a core part of Angular that helps to organize the application.
+->NgModule organizes components, directives, pipes, and services, and manages imports and exports in an Angular application.
 
-✅ 64. What is NgModule in Angular? Why was it used before Angular 14?
-NgModule is a core part of Angular that helps to organize the application structure.
-It groups components, directives, pipes, and services into one unit.
-Before Angular 14, it was mandatory to define all components inside a module using @NgModule.
+✅ Before Angular 14:
+it was mandatory to define all components inside a module using @NgModule.
 Without it, Angular didn’t know how to load or use the components.
 
 ✅ After Angular 14:
 Angular introduced Standalone Components, so now we can create components without @NgModule.
 So, from Angular 14 onwards, NgModule is not mandatory.
-
 ------------------------------------------------------------------------------------------------------
 65.What are Standalone Component in Angular?
-->Standalone components are Angular components that do not need to be declared inside an NgModule.
-->They are independent and can be used or executed directly without using any module.
-->Standalone components are mainly used to reuse the component easily and optimize the code structure.
+->Standalone Components are self-contained components.
+->They do not require an NgModule to declare them.
+->They can declare their own imports, exports, and dependencies.
+->Introduced in Angular 14 to simplify module management and make components more reusable.
+
+Standalone components are self-contained components introduced in Angular 14,
+which do not need NgModule and can manage their own imports and declarations.
 ------------------------------------------------------------------------------------------------------
 66.Is NgModule required in Angular 16+?Why or why not?
 -> No, NgModule is not required in Angular 16+.
@@ -850,20 +933,132 @@ That means, you don’t need to declare the component inside any NgModule.
 -> Easy to reuse
 -> Easy to test and maintain
 -> Better performance with lazy loading.(they are best for lazy loading).
+
+Standalone Components were introduced in Angular 14 to simplify Angular application development. They reduce the need for NgModule and make the code cleaner and easier to maintain.
+
+✅ Key Benefits of Standalone Components
+1️⃣ No Need for NgModule
+
+Standalone components do not require NgModule
+
+All dependencies are defined directly inside the component
+
+👉 Less boilerplate code
+
+2️⃣ Simpler & Cleaner Code
+
+Everything (components, directives, pipes) is declared in one place
+
+Easy to understand for beginners and interviewers
+
+@Component({
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+})
+
+3️⃣ Better Reusability
+
+Standalone components can be reused across projects easily
+
+No dependency on a specific module
+
+4️⃣ Improved Lazy Loading
+
+Standalone components can be lazy-loaded directly
+
+No need to create extra feature modules
+
+{
+  path: 'login',
+  loadComponent: () =>
+    import('./login.component').then(m => m.LoginComponent)
+}
+
+5️⃣ Faster Development
+
+Fewer files to manage
+
+Less configuration → faster coding
+
+6️⃣ Easier Testing
+
+Test setup is simple because there is no NgModule dependency
+
+Only import required dependencies
+
+7️⃣ Better Tree Shaking & Performance
+
+Unused code is removed during build
+
+Results in smaller bundle size
+
+8️⃣ Modern Angular Architecture
+
+Recommended by Angular team for new projects
+
+Aligns with future Angular versions
+
+🔁 Comparison Summary
+--------------------------------------------------------
+| Feature        | NgModule     | Standalone Component |
+| -------------- | ------------ | -------------------- |
+| Boilerplate    | More         | Less                 |
+| Lazy loading   | Module-based | Component-based      |
+| Reusability    | Limited      | High                 |
+| Learning curve | Higher       | Lower                |
+| Future ready   | ❌          |✅                    |
+--------------------------------------------------------
+
+📝 Interview One-Line Answer
+
+Standalone Components reduce boilerplate code, simplify dependency management, improve lazy loading, and make Angular apps more modular and maintainable without NgModule.
+
 ------------------------------------------------------------------------------------------------------
 68.Can we mix ngModule and Standalone Component in the same projects?
 -> Yes, we can use both NgModule and standalone components in one project.
 -> First, we create a standalone component, and if needed, we can import that into a module or use it directly.
+
+=>Standalone Components and NgModule can both be used in a single Angular application based on project requirements.
+If we want to use a Standalone Component inside an NgModule, we create the component with
+standalone: true and then import it in the imports array of AppModule (or any NgModule).
+This approach is called a hybrid architecture, where both Standalone Components and NgModule coexist in the same application.
+
+✔️ Small Confirmation Example
+
+Standalone Component
+
+@Component({
+  selector: 'app-user',
+  standalone: true,
+  template: `<h3>User Component</h3>`
+})
+export class UserComponent {}
+
+
+Using it in NgModule
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    UserComponent   // ✅ standalone component imported
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+
 ------------------------------------------------------------------------------------------------------
 69.How do you declare dependencies in a standalone compoent?
--> We use the imports array to declare dependencies of a standalone component.
+-> We use the [imports] array to declare dependencies of a standalone component.
 ------------------------------------------------------------------------------------------------------
+
+
+
 
 
 70.What is used of Angular.json?
 -> angular.json is the main configuration file for an Angular project.
 It controls how the Angular CLI builds, serves, tests, and configures the application.
-
 -> we can install any decpenceis in angular application so they are need to the configuration to the angular.json file example like they are install the bootstrap and they are configuration to the angular.json file they are set the bootstrap path to the styles.
 ------------------------------------------------------------------------------------------------------
 71.What is CLI in Angular?
@@ -1079,6 +1274,10 @@ No need for loading spinners or empty states.
 ->session are stored the login token and aonther data is stored.
 ------------------------------------------------------------------------------------------------------
 100.There are several types of storage mechanisms available in browsers to manage and stored data?
+
+
+
+
 ------------------------------------------------------------------------------------------------------
 101.Why Do Websities ask for 'Accept all Cookies'?
 ------------------------------------------------------------------------------------------------------
