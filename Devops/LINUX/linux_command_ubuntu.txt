@@ -7,6 +7,10 @@ Connect ubuntu machin on windows CMD
 5.close terminal 
 6.ifconfig 
 7.get ip address like 192.168.107.180
+
+8.sudo ufw allow ssh 
+9.ssh vboxuser@192.168.15.180
+
 =================================================
 
 

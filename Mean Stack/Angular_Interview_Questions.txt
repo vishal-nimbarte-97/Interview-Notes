@@ -1056,6 +1056,14 @@ export class AppModule {}
 
 
 
+
+
+
+
+
+
+
+
 70.What is used of Angular.json?
 -> angular.json is the main configuration file for an Angular project.
 It controls how the Angular CLI builds, serves, tests, and configures the application.
@@ -1274,6 +1282,21 @@ No need for loading spinners or empty states.
 ->session are stored the login token and aonther data is stored.
 ------------------------------------------------------------------------------------------------------
 100.There are several types of storage mechanisms available in browsers to manage and stored data?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
