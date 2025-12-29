@@ -1,0 +1,218 @@
+🐳 Docker Interview Questions & Answers
+🔹 BASIC DOCKER QUESTIONS
+1️⃣ What is Docker?
+
+Answer:
+Docker is a containerization platform that allows developers to package applications with all dependencies and run them consistently across environments.
+
+2️⃣ What is a Docker Container?
+
+Answer:
+A Docker container is a lightweight, isolated runtime environment created from a Docker image that runs an application.
+
+3️⃣ What is a Docker Image?
+
+Answer:
+A Docker image is a read-only template used to create containers.
+It contains application code, libraries, dependencies, and OS instructions.
+
+4️⃣ Docker vs Virtual Machine?
+Docker	Virtual Machine
+Lightweight	Heavy
+Shares host OS	Own OS
+Faster startup	Slow startup
+Less resource usage	High resource usage
+5️⃣ What is Dockerfile?
+
+Answer:
+A Dockerfile is a text file with instructions to build a Docker image.
+
+Example:
+
+FROM node:20-alpine
+WORKDIR /app
+COPY . .
+RUN npm install
+CMD ["node", "index.js"]
+
+🔹 CONTAINER & IMAGE QUESTIONS
+6️⃣ Difference between docker run and docker start?
+
+docker run → Creates + starts a new container
+
+docker start → Starts an existing stopped container
+
+7️⃣ How to check running containers?
+docker ps
+
+8️⃣ How to check all containers?
+docker ps -a
+
+9️⃣ How to remove a container?
+docker rm container_name
+
+🔟 How to remove an image?
+docker rmi image_name
+
+🔹 NETWORKING & DATABASE QUESTIONS
+11️⃣ How do containers communicate?
+
+Answer:
+Containers communicate through a Docker network using service names, not localhost.
+
+12️⃣ Why localhost doesn't work inside containers?
+
+Answer:
+Inside a container, localhost refers to the container itself, not the host or another container.
+
+13️⃣ How does Node connect to PostgreSQL in Docker?
+
+Answer:
+By using the service name defined in docker-compose.yml.
+
+DB_HOST=db
+
+14️⃣ What is Docker Volume?
+
+Answer:
+A Docker volume stores persistent data outside the container lifecycle.
+
+15️⃣ Why volumes are required for databases?
+
+Answer:
+Without volumes, database data is lost when containers restart.
+
+🔹 DOCKER COMPOSE QUESTIONS (IMPORTANT 🔥)
+16️⃣ What is Docker Compose?
+
+Answer:
+Docker Compose is a tool to define and run multi-container applications using a single YAML file.
+
+17️⃣ docker-compose vs docker run?
+docker-compose	docker run
+Multi-container	Single container
+Easy networking	Manual setup
+YAML config	CLI-based
+18️⃣ What is depends_on?
+
+Answer:
+It ensures one service starts before another.
+
+19️⃣ How to start services?
+docker-compose up -d
+
+20️⃣ How to stop services?
+docker-compose down
+
+🔹 NODE + DOCKER QUESTIONS
+21️⃣ How to pass environment variables?
+
+Answer:
+Using .env file or environment in docker-compose.
+
+22️⃣ Why .env file path matters in Docker?
+
+Answer:
+Because Docker copies files into /app, wrong path causes missing env variables.
+
+23️⃣ How to debug DB connection errors in Docker?
+
+Answer:
+
+Check DB container is running
+
+Use correct service name
+
+Check logs
+
+Exec into container and test DB
+
+🔹 POSTGRES + DOCKER QUESTIONS
+24️⃣ Where is PostgreSQL data stored?
+
+Answer:
+Inside Docker volume (/var/lib/postgresql/data).
+
+25️⃣ Is Docker PostgreSQL same as local PostgreSQL?
+
+Answer:
+Yes, same engine — only environment differs.
+
+26️⃣ Can Docker DB and local DB work together?
+
+Answer:
+Yes, using port mapping or shared volumes.
+
+🔹 REAL-WORLD SCENARIO QUESTIONS 🔥
+27️⃣ Why backend starts but DB fails?
+
+Answer:
+DB is not ready yet or wrong DB_HOST.
+
+28️⃣ How to fix DB connection refused error?
+
+Answer:
+
+Use service name (db)
+
+Wait for DB readiness
+
+Check ports & credentials
+
+29️⃣ How to insert data manually into Docker PostgreSQL?
+docker exec -it <db_container> psql -U postgres -d database01
+
+30️⃣ How to restart all services?
+docker-compose restart
+
+🔹 ADVANCED QUESTIONS (2–4 YOE)
+31️⃣ What is multi-stage build?
+
+Answer:
+It reduces image size by separating build and runtime stages.
+
+32️⃣ What is Docker healthcheck?
+
+Answer:
+Checks if a service is healthy before others start.
+
+33️⃣ What is container orchestration?
+
+Answer:
+Managing multiple containers automatically (Kubernetes, Docker Swarm).
+
+34️⃣ Docker vs Kubernetes?
+
+Docker → Container runtime
+
+Kubernetes → Container orchestration
+
+35️⃣ Best practices for Docker?
+
+✔ Use small images (alpine)
+✔ Use .dockerignore
+✔ Don’t store secrets in images
+✔ Use volumes for DB
+✔ Use service names
+
+🔹 ONE-LINE RAPID FIRE (VERY COMMON)
+
+Image = Blueprint
+
+Container = Running instance
+
+Volume = Persistent storage
+
+Network = Container communication
+
+Compose = Multi-container manager
+
+🔹 FINAL INTERVIEW TIP 🧠
+
+If asked:
+
+“Have you used Docker in real projects?”
+
+Answer:
+
+Yes, I used Docker Compose to containerize Node.js backend with PostgreSQL, handled environment variables, volumes for DB persistence, and fixed networking issues like DB connection refused using service names.

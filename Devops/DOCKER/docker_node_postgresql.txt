@@ -1,0 +1,137 @@
+----------------------------------------------------------------------------------------
+📘 Docker + Node.js + PostgreSQL (v16) – Command Documentation
+----------------------------------------------------------------------------------------
+📌 1. Check Docker Status
+Check running containers
+=>docker ps
+
+Check all containers (running + stopped)
+=>docker ps -a
+----------------------------------------------------------------------------------------
+📌 2. Start / Stop Docker Services (docker-compose)
+Start all services
+=>docker-compose up
+
+Start services in background
+=>docker-compose up -d
+
+Stop all services
+=>docker-compose down
+
+Stop services + remove volumes (⚠ deletes DB data)
+=>docker-compose down -v  
+----------------------------------------------------------------------------------------
+📌 3. Rebuild Containers (After Code / Env Changes)
+Rebuild images and start services
+=>docker-compose up --build
+
+Force clean rebuild (recommended if issues occur)
+=>docker-compose down -v
+=>docker-compose build --no-cache
+=>docker-compose up
+----------------------------------------------------------------------------------------
+📌 4. Restart Services
+Restart all running containers
+=>docker restart $(docker ps -q)
+
+Restart only backend
+=>docker-compose restart backend
+
+Restart only database
+=>docker-compose restart db
+----------------------------------------------------------------------------------------
+📌 5. View Logs (Very Important)
+Backend logs
+=>docker logs backend-1
+
+Database logs
+=>docker logs db-1
+
+Follow logs in real time
+=>docker logs -f backend-1
+----------------------------------------------------------------------------------------
+📌 6. Enter PostgreSQL (Inside Docker)
+Login to PostgreSQL container
+=>docker exec -it db-1 psql -U postgres -d database01
+
+After this you’ll see:
+
+database01=#
+----------------------------------------------------------------------------------------
+📌 7. Create users Table (Manual)
+CREATE TABLE IF NOT EXISTS public.users
+(
+    id BIGSERIAL PRIMARY KEY,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    password TEXT NOT NULL,
+    role VARCHAR(50) NOT NULL DEFAULT 'USER',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+----------------------------------------------------------------------------------------
+📌 8. Insert ADMIN User (root)
+sql
+Copy code
+INSERT INTO public.users
+(username, password, role, created_at, updated_at)
+VALUES
+(
+  'root',
+  '$2b$10$WdbXsPO0VWH.oE0JZbttIuLxEyTgES.qJYt8nyqdkkQrVFgUOzspa',
+  'ADMIN',
+  '2025-12-19 00:02:07.813135',
+  '2025-12-19 00:02:07.813135'
+)
+ON CONFLICT (username) DO NOTHING;
+----------------------------------------------------------------------------------------
+📌 9. Verify Data
+SELECT id, username, role, created_at FROM users;
+
+Expected output:
+
+ id | username | role  | created_at
+----+----------+-------+---------------------
+ 1  | root     | ADMIN | 2025-12-19 00:02:07
+
+----------------------------------------------------------------------------------------
+📌 10. Exit PostgreSQL
+\q
+----------------------------------------------------------------------------------------
+📌 11. Debug Environment Variables (Backend)
+docker exec -it backend-1 env | grep DB
+
+Expected:
+
+DB_HOST=db
+DB_PORT=5432
+DB_USER=postgres
+DB_NAME=database01
+----------------------------------------------------------------------------------------
+📌 12. Common Errors & Fixes
+❌ ECONNREFUSED 127.0.0.1:5432
+
+✔ Cause: Using localhost inside Docker
+✔ Fix:
+
+DB_HOST=db
+
+❌ Table does not exist
+
+✔ Create table using SQL commands above
+
+❌ Duplicate user error
+
+✔ Use ON CONFLICT DO NOTHING
+----------------------------------------------------------------------------------------
+🧠 Docker Networking Rule (IMPORTANT)
+
+❌ localhost does NOT work between containers
+✅ Always use service name (db)
+
+✅ Final Status Checklist
+
+✔ Backend running
+✔ PostgreSQL running
+✔ Table created
+✔ Admin user inserted
+✔ API working
