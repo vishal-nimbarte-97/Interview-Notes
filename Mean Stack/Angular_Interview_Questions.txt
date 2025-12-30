@@ -1053,74 +1053,88 @@ export class AppModule {}
 ------------------------------------------------------------------------------------------------------
 
 
-
-
-
-
-
-
-
-
-
-
-
 70.What is used of Angular.json?
 -> angular.json is the main configuration file for an Angular project.
 It controls how the Angular CLI builds, serves, tests, and configures the application.
 -> we can install any decpenceis in angular application so they are need to the configuration to the angular.json file example like they are install the bootstrap and they are configuration to the angular.json file they are set the bootstrap path to the styles.
 ------------------------------------------------------------------------------------------------------
 71.What is CLI in Angular?
-->CLI is the command line interface with the help of this we can write a command like a ng serve,ng build ng test  also with the help of this we can create a compoent there command is ng g c componentName
+->Angular CLI (Command Line Interface) is a tool that allows us to use commands like ng serve, ng build, ng test, etc.
+With the help of Angular CLI, we can create components, services, modules, pipes, and other Angular files easily.
 ------------------------------------------------------------------------------------------------------
 72.How to Change the dist or Build path in Angular?
 -> If you want to change the dist or build path in Angular,
 then you need to go to the angular.json file,
 find the build options, and change the outputPath value.
 After that, restart the Angular app, and the build files will be created in the new folder.
+->We change the Angular build path by updating the outputPath in the angular.json file.
 ------------------------------------------------------------------------------------------------------
-73.What is Lazy-Loading in Angular?
+73.What is Lazy-Loading in Angular?]]]]]IMPORTANT]]]]]
 -> Lazy loading is a concept where modules are loaded only when needed, instead of loading all modules at the start of the application.
-
--> Lazy loading is basically used when we only want to load a module when it is needed.
 -> That means, when the user navigates to a specific route, then only that module is loaded.
 -> This helps to improve the performance and reduce the initial loading time of the Angular app.
+
+2️⃣ App Routing (app-routing.module.ts)
+const routes: Routes = [
+  {
+    path: 'user',
+    loadChildren: () =>
+      import('./user/user.module').then(m => m.UserModule)
+  }
+];
+
+3️⃣ User Module Routing (user-routing.module.ts)
+const routes: Routes = [
+  {
+    path: '',
+    component: UserComponent
+  }
+];
+
 ------------------------------------------------------------------------------------------------------
 74.Why use Lazy Loading?
-->	Lazy Loading in Angular means loading components or modules only when they are needed — not at the start of the app.
-	It helps to speed up the initial load time and makes the app faster and optimized.
-	That means lazy loading is used for optimization. Some components are not needed at the beginning, so they should not be loaded immediately.
-	Lazy loading loads the component only when it is required, which helps in avoiding full application reload and keeps the app faster.
+->Lazy Loading in Angular means loading components or modules only when they are needed — not at the start of the app.
+->It helps to speed up the initial load time and makes the app faster and optimized.
+->That means lazy loading is used for optimization. Some components are not needed at the beginning, so they should not be loaded immediately.
+->Lazy loading loads the component only when it is required, which helps in avoiding full application reload and keeps the app faster.
 ------------------------------------------------------------------------------------------------------
 74.What is differanance between the Lazy Loading and Eger Loading?
-
--> Lazy loading means if I want to load a specific module only when I need it, then that module will load at that time only.
--> In this case, Angular does not load the module at the start of the application.
-
--> But in eager loading, all modules (even if they are not needed) are loaded at the same time when the app starts.
--> So lazy loading helps in improving performance by loading modules only when required.
+-> Lazy loading and Eager loading are both used to load modules in an Angular application.
+In Lazy loading, modules are loaded only when they are needed, meaning when a user navigates to a specific route, only that module is loaded.
+In Eager loading, all modules are loaded at the initial application load, even if they are not immediately required.
+Lazy loading improves performance and optimizes the Angular application, whereas Eager loading increases initial load time because all modules are loaded at once.
+----------------------------------------------------------------
+| Lazy Loading                 | Eager Loading                 |
+| ---------------------------- | ----------------------------- |
+| Loads module **when needed** | Loads **all modules at once** |
+| Uses `loadChildren`          | Uses `imports` in `AppModule` |
+| Better performance           | Slower initial load           |
+| Optimized for large apps     | Suitable for small apps       |
+----------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
 75.What is pre-loading?
-->prealoading case lazy module are already load and navigation timing they are queickly navigated one component to the another compoent.
+->Pre-loading means all lazy-loaded modules are loaded in the background after the application is executed.
+Because of this, the loading time of lazy-loaded modules is reduced, and the user can access those modules more quickly when navigating.
 ------------------------------------------------------------------------------------------------------
 76.why used preloading?
+->Pre-loading is used to load lazy-loaded modules in the background after the application starts.
+This way, when a user navigates to a module, it loads quickly without waiting, improving the application’s performance and user experience.
 ------------------------------------------------------------------------------------------------------
 77.What is Circular depedency in Angular?
-
 -> Circular dependency happens when one service is injected into another service,
 and that second service also injects the first one back using Angular's Dependency Injection system.
-
 -> This creates a loop between the services, and it can cause runtime errors or unexpected behavior.
-
 ------------------------------------------------------------------------------------------------------
-78.HOw to Fix Circular Dependency?
+78.How to Fix Circular Dependency?
 -> To fix circular dependency, we can remove direct injection between two services.
 -> We can use Injector, create a common service, or use interfaces to break the loop.
 -> This helps to avoid runtime errors and keep our code clean and optimized.
-->we also used the interfaces or abstract class they are add the similar module to this classes.
+-> we also used the interfaces or abstract class they are add the similar module to this classes.
+-> also used shared/comman services and this service injected both services so not conflit or error occured.
 ------------------------------------------------------------------------------------------------------
 79.What is Dependency Injection in Angular?
-->
-
+->Dependency Injection (DI) means we can create a service in an Angular application, and if we want to use it in a component, we add it in the constructor.
+This constructor creates an instance of the service, and with that instance, we can call the service’s functions. This whole process is called Dependency Injection.
 ------------------------------------------------------------------------------------------------------
 80.Differance Between private and public when Injecting Services in Angular?
 -> When we inject a service with public, that service reference can be used in both the HTML template and the TypeScript file.
@@ -1131,6 +1145,8 @@ and that second service also injects the first one back using Angular's Dependen
 -> public service: we can access it in TS file and HTML template
 -> private service: we can access it only in TS file, not in HTML
 ------------------------------------------------------------------------------------------------------
+
+
 81.Differance Between Injecting a Service using inject() vs Constrcutor in Angular?
 -> The main way to inject a service in a component is by using the constructor.
 -> But inject() is another way to inject a service into a component or service.

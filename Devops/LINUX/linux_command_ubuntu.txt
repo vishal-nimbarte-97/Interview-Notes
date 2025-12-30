@@ -1,427 +1,789 @@
-=================================================
-Connect ubuntu machin on windows CMD 
-1.systemctl status ssh 
-2.sudo pkill ssh 
-3.systemctl start ssh 
-4.Devices -> Network -> Network Setting -> atttached to -> Briged Adpator -> ok 
-5.close terminal 
-6.ifconfig 
-7.get ip address like 192.168.107.180
+================================================================================
+✅ Connect Ubuntu Machine from Windows CMD (via SSH)
+🔹 On Ubuntu (VirtualBox)
 
-8.sudo ufw allow ssh 
-9.ssh vboxuser@192.168.15.180
+1️⃣ Check SSH service status
 
-=================================================
+sudo systemctl status ssh
 
 
-1.How to Check your current location?
-->pwd
+2️⃣ (Optional) Restart SSH service
+👉 Instead of killing the process, restart is recommended
 
-2.How to Display name of current logged-in User?
-->whoami
+sudo systemctl restart ssh
 
-3.how to check system date and time?
-->date
 
-4.How to Display files and directory present in current location?
-->ls
+OR (manual way)
 
-5.Find overall data in the folder and file which timing created how many size?
-->ls -lt
+sudo pkill ssh
+sudo systemctl start ssh
 
-6.How to clear the linux terminal?
-->clear
 
-7.How to Display Content of File on terminal?
-->cat file_name
+3️⃣ Enable SSH to start on boot (recommended)
 
-8.How to read file and search for word?
-->less file_name
-->used / for searching words in file top to bottom
-->using shift + G -> Go to END or Last Line 
-->using shift + P -> Go to TOP or First Line
-->used ? botton to top search
-->exist so used -> q
+sudo systemctl enable ssh
 
-9.How to view Content of a file page by page?
-->more file_name
 
-10.How to Create a File in Linux?
-->touch file_name
+4️⃣ Allow SSH through firewall
 
-11.Delete a file in Linux?
-->rm file_name
+sudo ufw allow ssh
+sudo ufw reload
 
-12.Create a folder in Linux?
-->mkdir folder_name
 
-12.Delete a folder in Linux?
-->rmdir folder_name
+5️⃣ Set Network Adapter in VirtualBox
 
-13.how to edit a file in Linux?
-->vi file_name
-->nano file_name
+Go to Devices → Network → Network Settings
 
-14.Create a file and write a text?
-->echo "My Name is Vishal Nimbarte" > file_name 
+Set Attached to: Bridged Adapter
 
-15.cat > filename.txt 
-->create file and write a text in this file 
+Click OK
 
-16.create a file and write a somthing so used cat - cat > file_name
+6️⃣ Restart Ubuntu terminal / VM
 
-17.using cat command also read a file - cat
+7️⃣ Get Ubuntu IP address
 
-18.cd command 
+ip a
 
-19. cd / -> going to root folder
 
-20.how to copy and paste a file from one folder to another in linux?
--> cp file_name path/dest/path
+OR
 
-21.how to copy Content of a file to another file on linux?
--> cp file_nameA file_nameB
+ifconfig
 
-22.how to cut-paste a file from one folder to another folder in linux?
--> mv file_name path/dest/path
 
-23.create a file used cat command -> cat > file_name 
+➡️ Example IP:
 
-24.edit a file used nano command -> nano file_name
+192.168.107.180
 
-25.how to rename a file in a linux?
-->mv fileA newFileNamefileA
+🔹 On Windows (CMD / PowerShell)
 
-26.how to read or Display top 5 lines from a file in linux?
--> head -5 file_name
+8️⃣ Connect to Ubuntu using SSH
 
-27.how to read or Display latest or bottom lines form a file in linux?
--> tail -5 file_name
+ssh vboxuser@192.168.107.180
 
-28.How to SORT the Content from a file in Linux?
--> sort file_name
--> sort -r file_name
 
-29.How to Display UNIQUE Content from a file in Linux?
--> sort file_name | uniq 
+9️⃣ Enter Ubuntu user password when prompted ✅
 
-30.A file has 9 lines.
-   How to split this file in 3 differnt files in Linux?
-->split -l 3 file_name
+=======================================================================================================
 
-31.How to search a word and Display matching Content from a file in Linux?
-->grep "word" file_name 
+🐧 Linux Basic Commands (Corrected Notes)
+1️⃣ How to check your current location?
+pwd
 
-32.How to search a multiple words and Display matching Content from a file i linux?
-->egrep "word1|word2" file_name
+2️⃣ How to display the name of the currently logged-in user?
+whoami
 
-33.How to used WILDCARDS in linux * [] {}
-->ls file_name* -> find file name they starting word provided by user and then *
-->ls *.extention -> find .extention provided file_name
+3️⃣ How to check system date and time?
+date
 
-34.Create a multiple files at a single timing?
-->touch file_name{1..5}
+4️⃣ How to display files and directories in the current location?
+ls
 
-35.How to SHUFFLE Content of file in Linux?
-->shuf file_name 
+5️⃣ How to view files with details (time created/modified, size)?
+ls -lt
 
-36.How to COUNT no. of lines in file in linux?
-->wc -l file_name -> lines count in file_name 
-->wc -w file_name -> words count in file_name
+6️⃣ How to clear the Linux terminal?
+clear
 
-37.How to check if two files are identical or not in linux?
-->cmp fileA fileB 
+7️⃣ How to display content of a file on terminal?
+cat file_name
 
-38.How to compare and Display differnace between two files in linux?
-->diff -u fileA fileB 
+📄 File Reading & Searching
+8️⃣ How to read a file and search for a word?
+less file_name
 
-39.How to find a file in linux?
-->find /path/ -name file_name
 
-40.How to find a file in linux?
-->updatedb
-->locate file_name
+/word → search top to bottom
+
+?word → search bottom to top
+
+Shift + G → go to last line
+
+g → go to first line
+
+q → exit
+
+9️⃣ How to view content of a file page by page?
+more file_name
+
+📁 File & Folder Operations
+🔟 How to create a file in Linux?
+touch file_name
+
+1️⃣1️⃣ How to delete a file?
+rm file_name
+
+1️⃣2️⃣ How to create a folder?
+mkdir folder_name
+
+1️⃣3️⃣ How to delete a folder?
+rmdir folder_name
+
+
+(Folder must be empty)
+
+✏️ Editing Files
+1️⃣4️⃣ How to edit a file?
+vi file_name
+
+
+OR
+
+nano file_name
+
+1️⃣5️⃣ Create a file and write text using echo?
+echo "My name is Vishal Nimbarte" > file_name
+
+1️⃣6️⃣ Create and write a file using cat?
+cat > file_name
+
+
+(Type content → press Ctrl + D to save)
+
+1️⃣7️⃣ Read file using cat?
+cat file_name
+
+📂 Directory Navigation
+1️⃣8️⃣ Change directory
+cd folder_name
+
+1️⃣9️⃣ Go to root directory
+cd /
+
+📑 Copy, Move, Rename
+2️⃣0️⃣ Copy a file from one folder to another
+cp file_name /destination/path/
+
+2️⃣1️⃣ Copy content of one file to another
+cp fileA fileB
+
+2️⃣2️⃣ Cut–paste (move) a file
+mv file_name /destination/path/
+
+2️⃣3️⃣ Rename a file
+mv oldFileName newFileName
+
+🔍 File Content Viewing
+2️⃣4️⃣ Display top 5 lines of a file
+head -5 file_name
+
+2️⃣5️⃣ Display last 5 lines of a file
+tail -5 file_name
+
+🔠 Sorting & Filtering
+2️⃣6️⃣ Sort file content
+sort file_name
+sort -r file_name
+
+2️⃣7️⃣ Display unique content from a file
+sort file_name | uniq
+
+✂️ File Splitting
+2️⃣8️⃣ Split a 9-line file into 3 files
+split -l 3 file_name
+
+🔎 Searching
+2️⃣9️⃣ Search a word in a file
+grep "word" file_name
+
+3️⃣0️⃣ Search multiple words in a file
+egrep "word1|word2" file_name
+
+⭐ Wildcards
+3️⃣1️⃣ How to use wildcards?
+ls file*
+ls *.extension
+
+📄 Multiple Files
+3️⃣2️⃣ Create multiple files at once
+touch file{1..5}
+
+🔀 Miscellaneous
+3️⃣3️⃣ Shuffle content of a file
+shuf file_name
+
+3️⃣4️⃣ Count lines and words in a file
+wc -l file_name   # line count
+wc -w file_name   # word count
+
+📊 File Comparison
+3️⃣5️⃣ Check if two files are identical
+cmp fileA fileB
+
+3️⃣6️⃣ Show differences between two files
+diff -u fileA fileB
+
+🔍 Finding Files
+3️⃣7️⃣ Find a file using path
+find /path/ -name file_name
+
+3️⃣8️⃣ Find a file using locate (fast)
+updatedb
+locate file_name
 
 ==============================Utility Commands================================
 
-41.How to Display previously used commands in past?
-->history
-->history | grep sort 
-->ls --help
+🛠️ Linux Utility Commands (Corrected Notes)
+4️⃣1️⃣ How to display previously used commands?
+history
 
-42.how to check syntax and options available for a commands?
-->ls --help 
-->help
 
-43.How to read or get more info about a command?
-->man
+🔹 Search a command from history
 
-44.How to check which executable is using for a commands?
-->which 
+history | grep sort
 
-45.How to used calculator in linux?
-->bc
+4️⃣2️⃣ How to check syntax and available options of a command?
+ls --help
 
-46.How to check Calender of last year in Linux?
-->cal
 
-47.How to check how long server has been running in Linux?
-->uptime 
+OR (built-in commands)
 
-48.How to record your activity on terminal in a file?
-->script
+help
 
-49.How to create a short-cut of a long command in linux?
-->alias l="ls -ltr"
+4️⃣3️⃣ How to read detailed information about a command?
+man command_name
 
-50.How to compress a file in Linux?
-->gzip -k file 
 
-51.How to decompress a file in Linux?
-->gzip -d file_name 
-->gunzip file 
+Example:
 
-52.How to compress a folder in Linux?
-->tar -czf myfiles.tar.gz myfiles/
+man ls
 
-53.How to decompress a folder i Linux?
-->tar -xzf myfiles.tar.gz 
+4️⃣4️⃣ How to check which executable is used for a command?
+which command_name
 
-54.Delete a folder forcefully?
--> rm -rf folderName 
 
-55.How to compress multiple file in one zipped file in Linux?
-->zip myfiles.zip file1 file2 
+Example:
 
-55.How to unzip a files in linux?
-->unzip myfiles.zip
+which ls
 
-56.How to list files in zipped file?
-->zip -l myfiles.zip 
+4️⃣5️⃣ How to use calculator in Linux?
+bc
+
+
+(Press Ctrl + D to exit)
+
+4️⃣6️⃣ How to check calendar in Linux?
+cal
+
+
+🔹 Previous year
+
+cal -y 2024
+
+4️⃣7️⃣ How to check how long the server has been running?
+uptime
+
+4️⃣8️⃣ How to record terminal activity into a file?
+script
+
+
+(Default file: typescript)
+
+🔹 Exit recording
+
+exit
+
+4️⃣9️⃣ How to create a shortcut (alias) for a long command?
+alias l="ls -ltr"
+
+
+🔹 Remove alias
+
+unalias l
+
+📦 Compression & Archiving
+5️⃣0️⃣ How to compress a file?
+gzip -k file_name
+
+
+(-k keeps original file)
+
+5️⃣1️⃣ How to decompress a file?
+gzip -d file_name.gz
+
+
+OR
+
+gunzip file_name.gz
+
+5️⃣2️⃣ How to compress a folder?
+tar -czf myfiles.tar.gz myfiles/
+
+5️⃣3️⃣ How to decompress a folder?
+tar -xzf myfiles.tar.gz
+
+5️⃣4️⃣ How to delete a folder forcefully?
+rm -rf folderName
+
+
+⚠️ Be careful – this deletes without confirmation.
+
+5️⃣5️⃣ How to compress multiple files into one zip file?
+zip myfiles.zip file1 file2
+
+5️⃣6️⃣ How to unzip a file?
+unzip myfiles.zip
+
+5️⃣7️⃣ How to list files inside a zip without extracting?
+zip -l myfiles.zip
+
+✅ Key Interview Tips
+
+history → command tracking
+
+man → most important Linux help command
+
+alias → improves productivity
+
+tar → used for folders
+
+zip → cross-platform
 
 =================Downloading Files from Internet==========================
+🌐 Downloading Files, Package Management & Text Processing Commands (57–76)
 
-57.How to Downloading a file from Internet?
-->wget URL_of_file
-->wget -O opt_file.txt URL_of_file
+I fixed grammar, corrected commands, and clarified a few points while keeping your learning style simple.
 
-58.How to call an API on Linux?
-->curl http://numbersapi.com/random
+🌐 Downloading Files from Internet & Utility Commands
+5️⃣7️⃣ How to download a file from the Internet?
+wget URL_of_file
 
-59.How to install an application on Linux?
-->apt or yum/dnf
 
--> yum install nginx
+🔹 Save with a different name
 
-60.How to check if an application is install or not on linux?
-->rpm -qa | grep app 
-->apt list --installed
+wget -O opt_file.txt URL_of_file
 
-61.How to list available packages to install on Linux?
-->apt search <package_name>
-->apt list 
-->apt list | grep "searching data"
+5️⃣8️⃣ How to call an API on Linux?
+curl http://numbersapi.com/random
 
-62.How to start/stop a service on Linux?
-->systemctl start/stop service_name
+📦 Package Management
+5️⃣9️⃣ How to install an application on Linux?
 
-63.How to list all services on Linux?
-->systemctl list-units --type=service --all
+Debian / Ubuntu
 
-64.How to list all existing Environment Variables on Linux?
-->printenv
+sudo apt install package_name
 
-65.How to ADD a new Environment Variables on Linux?
-->export JAVA_HOME="/usr/lib/jvm/java_v"
-->export PATH=$JAVA_HOME/bin:$PATH
 
-66.How to ADD a new Environment Variables permanently on Linux?
--> Add env Variables in ./bashrc file 
--> source ~/.bash_profile
+RHEL / CentOS
 
-67.How to print a specific column from a CSV file?
-->awk -F, '{print $2}' file.csv 
+sudo yum install package_name
 
-68.How to Display starting two characters of all line?
-->cut -c1-2 file.txt
 
-69.How to Display a specific line from a file?
-->sed -n '5p' file.txt
+Rocky / Alma / Fedora
 
-70.How to replace a specific word within a file?
-->sed -n 's/from/to/g' file.txt 
+sudo dnf install package_name
 
-71.How to convert the content to UpperCase or Lowercase within a file?
-->tr [:lower] [:upper] < file.txt 
-->tr [:punct:] Z <file.txt 
-->tr [:digit:] Z <file.txt 
 
-72.Delete some data our requirements wise if you want to delete %, ^, @ like that so they will write in @ symbol like that
-->tr -d @ <file.txt
-->tr "%" "$" <file.txt (Also Replace % symbol to this $ symbol)
+Example:
 
-73.How to extend or shrink size of a file?
-->truncate -s 100M file.txt 
+sudo yum install nginx
 
-74.How to display following line in vertical line? ABCD 
-->echo "ABCD" | fold -w1
+6️⃣0️⃣ How to check if an application is installed?
 
-75.How to change user or login as differnt user in linux?
-->normal user
-->sudo -i 
-->enter root password 
-->login root 
-->exit 
-->logout root 
-->normal user
+RPM-based systems
 
-76.If you not root user, how to execute admin commands like installing new apps?
-->sudo apt install package_name
-->sudo apt install nginx
+rpm -qa | grep app_name
+
+
+APT-based systems
+
+apt list --installed | grep app_name
+
+6️⃣1️⃣ How to list available packages to install?
+apt search package_name
+
+apt list
+
+apt list | grep search_term
+
+⚙️ Services & Environment Variables
+6️⃣2️⃣ How to start / stop a service?
+sudo systemctl start service_name
+sudo systemctl stop service_name
+
+6️⃣3️⃣ How to list all services?
+systemctl list-units --type=service --all
+
+6️⃣4️⃣ How to list all environment variables?
+printenv
+
+6️⃣5️⃣ How to add a new environment variable (temporary)?
+export JAVA_HOME="/usr/lib/jvm/java_v"
+export PATH=$JAVA_HOME/bin:$PATH
+
+
+⚠️ Valid only for current session
+
+6️⃣6️⃣ How to add environment variables permanently?
+nano ~/.bashrc
+
+
+(Add variables → save)
+
+source ~/.bashrc
+
+
+OR
+
+source ~/.bash_profile
+
+📄 Text Processing Commands
+6️⃣7️⃣ How to print a specific column from a CSV file?
+awk -F, '{print $2}' file.csv
+
+6️⃣8️⃣ How to display first two characters of each line?
+cut -c1-2 file.txt
+
+6️⃣9️⃣ How to display a specific line from a file?
+sed -n '5p' file.txt
+
+7️⃣0️⃣ How to replace a specific word in a file?
+sed 's/from/to/g' file.txt
+
+
+(To save changes)
+
+sed -i 's/from/to/g' file.txt
+
+7️⃣1️⃣ How to convert text to Uppercase / Lowercase?
+tr '[:lower:]' '[:upper:]' < file.txt
+
+
+🔹 Replace punctuation
+
+tr '[:punct:]' 'Z' < file.txt
+
+
+🔹 Replace digits
+
+tr '[:digit:]' 'Z' < file.txt
+
+7️⃣2️⃣ How to delete or replace specific characters?
+
+🔹 Delete character
+
+tr -d '@' < file.txt
+
+
+🔹 Replace % with $
+
+tr '%' '$' < file.txt
+
+7️⃣3️⃣ How to extend or shrink file size?
+truncate -s 100M file.txt
+
+7️⃣4️⃣ How to display characters vertically?
+echo "ABCD" | fold -w1
+
+
+Output:
+
+A
+B
+C
+D
+
+👤 User & Privilege Management
+7️⃣5️⃣ How to switch user or login as root?
+sudo -i
+
+
+🔹 Exit root
+
+exit
+
+7️⃣6️⃣ If not root, how to run admin commands?
+sudo apt install package_name
+
+
+Example:
+
+sudo apt install nginx
+
+✅ Final Notes (Interview Focus)
+
+wget → download files
+
+curl → API calls
+
+apt / yum / dnf → package managers
+
+systemctl → service control
+
+sed / awk / tr → powerful text processing
 
 ==================Access Remote Servers=================
 
-77.How to access remote Linux server?
-->ssh user@hostname 
+🔐 Access Remote Servers (77–79)
 
-78.If you want windows terminal open unbuntu vertual maching so used this command 
-->ssh vboxuser@190.168.102.189 -> access remote server 
+I fixed grammar, IP typo, and command clarity while keeping it simple.
 
-79.how to copy file to a remote Linux server?
-->scp file user@hostname:/tmp/
+🔐 Access Remote Linux Servers
+7️⃣7️⃣ How to access a remote Linux server?
+ssh user@hostname
 
-=================Working with permissions===============
 
-80.How to check permission of a file?
-->ls -ltr 
-->rwx rw- r--
+OR using IP address:
 
-user group other 
+ssh user@server_ip
 
-81.How to modify permissions of a file?
-->chmod a+rwx file.txt 
 
-u - user , g - group , o - other 
-a - all 
+Example:
 
-81.how to change owenership of a file?
-->chown root file.txt 
+ssh root@192.168.1.100
 
-82.How to change a group owenership of a file?
-->chgrp pual file.txt 
+7️⃣8️⃣ How to access an Ubuntu Virtual Machine from Windows Terminal?
+ssh vboxuser@192.168.102.189
 
-===============memory info==============
-83.How to check free RAM space?
-->free
-->free -h
-->free -th
 
-84.How to check % Memory and CPU Utilization?
-->top
+✅ Corrections made
 
-85.How to check disk Utilization?
-->du 
+❌ 190.168.x.x → ✅ 192.168.x.x
 
-============System INFO==================
-86.How to check hostname of your linux server?
-->hostname
+Ensure:
 
-87.How to check cpu/core/thread info of your linux server?
-->lscpu 
+SSH service is running on Ubuntu
 
-88.How to check type of architecture of your linux server?
-->arch
+VM network adapter is Bridged
 
-89.How to see list of storage devices,disk partition on your linux server?
-->lsblk 
+Correct username (vboxuser)
 
-90.How to see OS name of Linux server?
-->uname -a 
+7️⃣9️⃣ How to copy a file to a remote Linux server?
+scp file_name user@hostname:/tmp/
 
-=================PROCESS MANGEMENT==================
 
-91.How to check if a process(java) is running or not?
-->ps -ef | grep java
+Example:
 
-92.How to get PID of a process?
-->pgrep chron
+scp test.txt vboxuser@192.168.102.189:/home/vboxuser/
 
-93.How to stop a process by PID?
-->kill -9 PID
 
-94.How to stop a process by its name 
-->sudo pkill ssh 
+🔹 Copy a folder (recursive)
 
-95.How to see all the active jobs?
-->jobs
+scp -r folder_name user@hostname:/path/
 
-96.How to resume a job in background?
-->bg
+✅ Key Interview Points
 
-97.How to resume a job in foreground?
-->fg 
+ssh → remote login
 
-98.How to run a script in background?
-->nohup ./script >/dev/null &
+scp → secure file transfer
 
-99.create a spript 
-->nano myscript.sh 
-script :- 
+Default SSH port → 22
 
- #!/bin/bash
+Uses encrypted communication
+
+🔐 Working with Permissions, System Info, Process, Networking & User Management (80–113)
+
+I fixed grammar, numbering, command accuracy, and added small clarifications while keeping everything simple.
+
+🔐 Working with Permissions
+8️⃣0️⃣ How to check permissions of a file?
+ls -l file.txt
+
+
+Example output:
+
+-rwxrw-r--  user  group  file.txt
+
+
+🔹 Permission format:
+
+rwx  rw-  r--
+user group other
+
+8️⃣1️⃣ How to modify permissions of a file?
+chmod a+rwx file.txt
+
+
+🔹 Permission symbols:
+
+u → user
+
+g → group
+
+o → other
+
+a → all
+
+Example:
+
+chmod u+x file.txt
+
+8️⃣2️⃣ How to change ownership of a file?
+chown root file.txt
+
+8️⃣3️⃣ How to change group ownership of a file?
+chgrp paul file.txt
+
+🧠 Memory Information
+8️⃣4️⃣ How to check free RAM space?
+free
+free -h
+free -th
+
+8️⃣5️⃣ How to check CPU and memory utilization?
+top
+
+8️⃣6️⃣ How to check disk usage?
+du
+
+
+🔹 Human-readable:
+
+du -h
+
+🖥️ System Information
+8️⃣7️⃣ How to check hostname?
+hostname
+
+8️⃣8️⃣ How to check CPU / core / thread details?
+lscpu
+
+8️⃣9️⃣ How to check system architecture?
+arch
+
+9️⃣0️⃣ How to list storage devices and partitions?
+lsblk
+
+9️⃣1️⃣ How to check OS information?
+uname -a
+
+⚙️ Process Management
+9️⃣2️⃣ How to check if a process (Java) is running?
+ps -ef | grep java
+
+9️⃣3️⃣ How to get PID of a process?
+pgrep cron
+
+9️⃣4️⃣ How to stop a process using PID?
+kill -9 PID
+
+9️⃣5️⃣ How to stop a process by name?
+sudo pkill ssh
+
+9️⃣6️⃣ How to see all active jobs?
+jobs
+
+9️⃣7️⃣ Resume a job in background?
+bg
+
+9️⃣8️⃣ Resume a job in foreground?
+fg
+
+9️⃣9️⃣ How to run a script in background?
+nohup ./script.sh > /dev/null &
+
+🔟0️⃣0️⃣ Create and run a script
+nano myscript.sh
+
+
+Script content:
+
+#!/bin/bash
 
 echo "What is your name?"
 read name
+echo "Welcome $name"
 
-echo "Welcom $name"
 
-->bash myscript.sh (run scripting)
+Make executable:
 
-=====================Networking Info==========================
-100.How to check IP of your machine?
-->ifconfig 
+chmod +x myscript.sh
 
-101.How to check if a server or website is accesible or not?
-->ping www.google.com 
 
-102.How to check if a IP:PORT is accessible and open or not?
-->telnet IP Port
+Run:
 
-103.How to check if port open or not on our server?
-->netstat -putam | grep 80
+./myscript.sh
 
-104.How to check all hubs in Network path to reach a website?
-->traceroute 
 
-105.How to restart our linux server?
-->reboot 
+OR
 
-106.how to shutdown our linux server?
-->shutdown
+bash myscript.sh
 
-=========================USER Creation=====================
+🌐 Networking Information
+🔟0️⃣1️⃣ How to check IP address?
+ifconfig
 
-107.How to create a new user on our linux server?
-->useradd
-->id userName
 
-108.How to change password for the user?
-->passwd 
-->passwd userName
+OR
 
-109.How to create a new group on our linux server?
-->groupadd
+ip a
 
-110.How to check UserId or GroupId of a user?
-->id userName
+🔟0️⃣2️⃣ How to check if a website/server is reachable?
+ping www.google.com
 
-111.How to delete a user or group?
-->userdel userName 
-->groupdel groupName
+🔟0️⃣3️⃣ How to check if IP and port are accessible?
+telnet IP PORT
 
-112.How to schedule a script to run on a particular date/time?
-->at 
-->crontab
 
-113.date show 
-->date
+Example:
+
+telnet 192.168.1.10 80
+
+🔟0️⃣4️⃣ How to check if a port is open?
+netstat -putan | grep 80
+
+
+OR
+
+ss -lntp | grep 80
+
+🔟0️⃣5️⃣ How to see network hops to a website?
+traceroute google.com
+
+🔟0️⃣6️⃣ How to restart Linux server?
+reboot
+
+🔟0️⃣7️⃣ How to shutdown Linux server?
+shutdown now
+
+👤 User & Group Management
+🔟0️⃣8️⃣ How to create a new user?
+useradd userName
+
+
+Verify:
+
+id userName
+
+🔟0️⃣9️⃣ How to change password for a user?
+passwd
+
+
+OR
+
+passwd userName
+
+🔟1️⃣0️⃣ How to create a new group?
+groupadd groupName
+
+🔟1️⃣1️⃣ How to check UID and GID of a user?
+id userName
+
+🔟1️⃣2️⃣ How to delete a user or group?
+userdel userName
+groupdel groupName
+
+🔟1️⃣3️⃣ How to schedule a script?
+
+One-time job
+
+at
+
+
+Recurring job
+
+crontab -e
+
+🔟1️⃣4️⃣ How to display current date and time?
+date
+
+✅ Final Interview Highlights
+
+chmod / chown / chgrp → permissions & ownership
+
+top / free / du → resource monitoring
+
+ps / kill / nohup → process control
+
+ifconfig / ping / netstat → networking
+
+useradd / passwd / crontab → admin tasks
