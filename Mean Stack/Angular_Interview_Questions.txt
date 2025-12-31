@@ -1030,7 +1030,8 @@ Standalone Component
 @Component({
   selector: 'app-user',
   standalone: true,
-  template: `<h3>User Component</h3>`
+  template: `
+<h3>User Component</h3>`
 })
 export class UserComponent {}
 
@@ -1145,13 +1146,32 @@ This constructor creates an instance of the service, and with that instance, we 
 -> public service: we can access it in TS file and HTML template
 -> private service: we can access it only in TS file, not in HTML
 ------------------------------------------------------------------------------------------------------
-
-
 81.Differance Between Injecting a Service using inject() vs Constrcutor in Angular?
--> The main way to inject a service in a component is by using the constructor.
--> But inject() is another way to inject a service into a component or service.
--> inject() is used when we don’t create a constructor, like in some services or files where a constructor is not available.
--> If we want to inject another service in that case, we can use inject().
+→ Most of the time, if we want to inject a service in Angular, we use the constructor, and this is the recommended and traditional way of Dependency Injection.
+
+→ In constructor DI, we create a constructor and pass the service as a parameter, then Angular automatically creates the instance of that service and we can use its methods inside the class.
+
+→ But in some cases, we cannot or do not want to create a constructor (like in standalone functions, functional guards, interceptors, or utility files).
+→ At that time, we use the inject() function.
+
+→ With the help of inject(), we can also perform Dependency Injection without using a constructor.
+→ It directly returns the instance of the service and works only inside Angular’s injection context.
+
+Simple Difference Summary
+Constructor Injection
+	Most commonly used
+	Best and standard way for DI
+	Used in components, directives, and services
+	Easy to read and test
+
+inject() Function
+	Used when constructor is not allowed or not needed
+	Useful in functional guards, resolvers, interceptors
+	Introduced in newer Angular versions
+	Alternative way to perform DI
+
+👉 Conclusion:
+Constructor DI is the preferred and good practice, but inject() is helpful in special cases where constructor injection is not possible.
 ------------------------------------------------------------------------------------------------------
 82.Differance between constructor and ngOnInit?
 -> Constructor is the first method that gets executed when the component is created.
@@ -1163,37 +1183,49 @@ This constructor creates an instance of the service, and with that instance, we 
 Constructor runs first → Injects dependencies
 Then ngOnInit() runs → Used for API calls or any logic
 ------------------------------------------------------------------------------------------------------
-
 ✅ 83. What is AOT Compiler in Angular?
--> AOT stands for Ahead of Time Compiler.
--> It is used to optimize the Angular build by compiling Angular HTML and TypeScript code into JavaScript at build time, before the browser loads it.
--> This helps in faster rendering, better performance, and early error detection.
+→ AOT is Ahead-of-Time compiler in Angular.
+→ The main use of AOT is that at build time, Angular compiles the HTML templates and TypeScript files and     converts them into JavaScript files.
+→ Because the compilation already happens during the build, there is no need to compile the code in the browser at a runtime, so the application loads faster.
+→ If any error occurs at build time, like template errors or binding issues, AOT detects those errors early and provides logs showing what error occurred.
 
-✅ In Simple Words:
--> AOT compiles your Angular code before the app runs, so the browser doesn't need to compile it. 
--> It improves load speed and performance.
+👉 Conclusion:
+AOT improves application performance, reduces runtime errors, and helps developers catch issues before deployment.
 ------------------------------------------------------------------------------------------------------
 ✅ 84. What is JIT Compiler in Angular?
--> JIT stands for Just-in-Time Compiler.
--> It compiles TypeScript into JavaScript at runtime, when the app is running in the browser.
--> It is mainly used in development mode for faster builds during development.
+→ JIT is Just-in-Time compiler in Angular.
+→ It is mainly used during ng serve timing, which means it works in development mode.
+→ In JIT, Angular compiles the HTML templates and TypeScript files at runtime, inside the browser when the application is running.
+→ Because compilation happens at runtime, the initial load time is slower, but it is useful for fast development and debugging.
 
-✅ In Simple Words:
--> JIT converts Angular code to JavaScript when the application runs, not before like AOT.
--> So, it is slower to load compared to AOT but faster to build during development.
+👉 Conclusion:
+JIT compiler is helpful in development mode,
 ------------------------------------------------------------------------------------------------------
 85.How many types of compiler are there in Angular?
 ->JIT and AOT
 ------------------------------------------------------------------------------------------------------
 86.Differance between JIT and AOT in Angular?
-->	JIT is Just in Time Compiler and they are used to typescript are converted to the JavaScript at runtime
-->  AOT is the ahead of time comiler they are used to the production build are optimization case used.
-   and they are also the typescript are converted to the javsacript for the browser exection timing.
-------------------------------------------------------------------------------------------------------
+→ AOT is mainly used at ng build timing, where Angular compiles the HTML templates and TypeScript files before the application runs in the browser.
+→ JIT is mainly used at ng serve timing, where Angular compiles the templates at runtime in the browser.
 
+👉 In short:
+ng build → AOT compiler
+ng serve → JIT compiler (default for development)
+
+
+→ AOT is used to create an optimized build for production deployment.
+→ It improves performance, reduces bundle size, and catches errors at build time, so it is preferred for production mode.
+
+→ JIT is mainly used in development mode.
+→ It compiles the code at runtime, supports faster changes and debugging, and is suitable while developing the application.
+
+👉 Final conclusion (one-liner for interview):
+AOT = Production optimized build,
+JIT = Development mode compiler ✅
+------------------------------------------------------------------------------------------------------
 87.How to get params from route?
 -> Use ActivatedRoute and snapshot or paramMap.
-
+-> We get route params using ActivatedRoute and access them with route.snapshot.params or route.params.subscribe().
 ------------------------------------------------------------------------------------------------------
 ✅ 88. Tell me some Route Guard service methods in Angular
 Angular provides 5 main route guard methods to secure and control navigation:
@@ -1225,9 +1257,12 @@ export const environment = {
   production: true,
   apiUrl: 'https://api.production.com'
 };
+
+	The environment.ts file is used to configure different environments like staging, UAT, and production. Each environment can have its own settings, such as API URLs and feature flags (true/false). This way, you don’t need to change the code manually when switching between development and production; Angular automatically picks the correct configuration during the build.
 ------------------------------------------------------------------------------------------------------
+
 91.What is Event Propagation?
-Event propagation means when both an outer and an inner div have event listeners, clicking the inner div may also trigger the outer div event due to bubbling. If we want to stop this, we can use event.stopPropagation() inside the inner div handler. This prevents the event from bubbling up to the outer div.
+->Event propagation means when both an outer and an inner div have event listeners, clicking the inner div may also trigger the outer div event due to bubbling. If we want to stop this, we can use event.stopPropagation() inside the inner div handler. This prevents the event from bubbling up to the outer div.
 ------------------------------------------------------------------------------------------------------
 92.What is router-outlet?
 ->When you navigate to a specific route (URL path), Angular checks the route configuration and loads the matched component into the <router-outlet>.
