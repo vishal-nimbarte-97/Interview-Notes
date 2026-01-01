@@ -1260,12 +1260,45 @@ export const environment = {
 
 	The environment.ts file is used to configure different environments like staging, UAT, and production. Each environment can have its own settings, such as API URLs and feature flags (true/false). This way, you don’t need to change the code manually when switching between development and production; Angular automatically picks the correct configuration during the build.
 ------------------------------------------------------------------------------------------------------
-
 91.What is Event Propagation?
 ->Event propagation means when both an outer and an inner div have event listeners, clicking the inner div may also trigger the outer div event due to bubbling. If we want to stop this, we can use event.stopPropagation() inside the inner div handler. This prevents the event from bubbling up to the outer div.
+
+-> Event propagation means how an event moves between elements.
+-> If a parent div and child div both have an event, clicking the child triggers both.
+-> This is called event bubbling.
+-> We can stop it using stopPropagation().
+
+.HTML
+
+<div (click)="parentClick()">
+  Parent
+  <button (click)="childClick($event)">Child</button>
+</div>
+
+.TS 
+
+parentClick() {
+  console.log('Parent clicked');
+}
+
+childClick(event: Event) {
+  console.log('Child clicked');
+  event.stopPropagation(); // stop bubbling
+}
 ------------------------------------------------------------------------------------------------------
 92.What is router-outlet?
-->When you navigate to a specific route (URL path), Angular checks the route configuration and loads the matched component into the <router-outlet>.
+-> When we navigate from one route to another, that route is loaded inside the router-outlet.
+
+-> router-outlet is used to load components based on routing.
+-> When we navigate from one route to another, Angular loads the matched route’s component inside router-outlet.
+-> It helps us easily access and display route-wise components in the application.
+
+Deeply Explain :- 
+-> Routes are configured in the routes.ts file.
+-> When a user clicks on a route, Angular matches the route configuration.
+-> The related component is called for that route.
+-> That component has a selector with its own HTML template.
+-> Angular loads that component and displays it inside the router-outlet using the selector.
 ------------------------------------------------------------------------------------------------------
 93.How to create Multiple router-outlet?
 ->basicacally
@@ -1282,14 +1315,11 @@ One or more named outlets for secondary content (like a popup, right panel, etc.
 🧠 Real-Life Scenario:
 Imagine a dashboard with a sidebar, header, and main content area. The sidebar and header remain constant. Only the main content changes when you navigate. To handle this cleanly, we can use multiple router-outlet.
 ------------------------------------------------------------------------------------------------------
-
 94.What is Tree Shaking?
 ->Tree Shaking is the build optimization technique basically used in the production build timing.
 ->Tree shaking means removing dead (unused) code from your project during the build process, so the final bundle is smaller and faster to load.
-
 ------------------------------------------------------------------------------------------------------
 95.I want to fetch data before a compoent is called?
-
 ->If we want to fetch data before a component loads, we can use a Resolver in Angular.
 
 A Resolver is a special Angular service that runs before a route is activated. When a user navigates to a route, the resolver is called first, it fetches the required data (like from an API), and only after that, the component is loaded.
@@ -1305,14 +1335,13 @@ Resolver is used to load data before the component opens. When a route is activa
 96.Benifites of Using a Resolver?
 ->fast data are occured and show the UI 
 ->they are not a need of the loader 
-->and most import is they are not show the empty data in the tables
+->and most import is they are not show the empty data in the tables.
 ------------------------------------------------------------------------------------------------------
 97.What is Angular Resolver?
-->fetch the data before the compoent are called Resolver.
-->they are helpful for our compoent are contain to the tables and this table contain two the multiple data.
+-> Angular Resolver is used to fetch data before the component is loaded.
+-> It is helpful when a component contains tables or multiple data, so the data is ready before the page is shown.
 ------------------------------------------------------------------------------------------------------
 98.Give me Real-Time Senario of Angular Resolver?
-
 ->Imagine you have a dashboard page that shows a table with 100+ records from the backend (like orders, users, or shipments).
 
 If you load the component before the data arrives, the table shows as empty first, then fills later. This gives a poor user experience and may need a loading spinner.
@@ -1325,33 +1354,16 @@ No need for loading spinners or empty states.
 
 ->Resolver helps in cases where we want to show large or important data (like tables) immediately when the component opens, without waiting or showing empty UI. It makes the app feel faster and smoother.
 ------------------------------------------------------------------------------------------------------
+
+
+
 99.Differance between Local Storage and Session Storage.
 ->local storage data is permanent stored and they are need to be clear
 ->session storage case close our applciation so the session data automatically clear 
-
 ->local storage also used for stored in sensetive data 
 ->session are stored the login token and aonther data is stored.
 ------------------------------------------------------------------------------------------------------
 100.There are several types of storage mechanisms available in browsers to manage and stored data?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ------------------------------------------------------------------------------------------------------
 101.Why Do Websities ask for 'Accept all Cookies'?
 ------------------------------------------------------------------------------------------------------
