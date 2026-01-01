@@ -1,3 +1,7 @@
+https://github.com/shubhanshurav/Interview-Preparation-Notes/tree/master
+
+https://github.com/shubhanshurav/Interview-Preparation-Notes.git
+
 Here's a comprehensive breakdown of **Data Structures and Algorithms (DSA)** topics, organized by category and difficulty level. This roadmap is ideal for students, developers, and anyone preparing for coding interviews or competitive programming.
 
 ## 📚 Data Structures

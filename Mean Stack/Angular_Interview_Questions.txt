@@ -1392,16 +1392,21 @@ Main Differance :-
 ->indexedDB :- Saves offline data for apps like a google Docs. so in this offline also access downloaded data 
 ->Cache Storage (use by service works) :- saves website assest to make it load faster next time.
 ------------------------------------------------------------------------------------------------------
-
-
 101.Why Do Websities ask for 'Accept all Cookies'?
-->we can accept all cookies then your data are analysis and you have provided the information for you search wise 
-->
+-> When we accept all cookies, the website can collect and analyze our data.
+-> This data is used to understand our searches, browsing behavior, and preferences.
+-> Based on this information, websites provide personalized content, ads, and a better user experience.
 ------------------------------------------------------------------------------------------------------
+
+
+
+
+
 102.Encapsulation in Angular?
 ->In Angular, Encapsulation is used to isolate the CSS styles of a component, so that:
 One component’s styles do not affect other components.
 Other components’ styles do not apply to the current component.
+->There is the three main types :- 
 ->Emulated(By default) -> by default set (we can used or not they are directly apply to the components css styles).
 ->ShowdoDom -> fully isolated
 ->None -> No encaspulaltion
@@ -1424,28 +1429,27 @@ In our project, we have created multiple feature modules, and their routes or co
 ->It tells Angular when something has changed, so Angular can update the UI without manual effort.
 ------------------------------------------------------------------------------------------------------
 
+
+
+
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
--------------------------Core Concept--------------------------------
+------------------------------------------------------------------------------------------------------
+-----------------------------------]]]]]]Core Concept Important]]]]]]]]]------------------------------
+------------------------------------------------------------------------------------------------------
 154.What is a Shared Module in Angular?
 ->Shared Module contains common code that we can reuse in other modules by importing it. It helps to avoid writing the same code again and again.
+->so this share module create a services , set the enums of files and more utilities used for used in entire applicaion
 ------------------------------------------------------------------------------------------------------
 155.What is Interface in Angular?
-->Interface in Angular is used to define the structure of an object.
+->In angular Interface is used to define the structure of an object.
 ------------------------------------------------------------------------------------------------------
-✅ 156. What is the use of app.module.ts?
-
-app.module.ts is the main file of an Angular application.
-
-It contains the declarations of all components, and it also manages imports, providers, and bootstrap components for the whole app.
-
-✅ In your wording :
-
-app.module.ts is the main file of the Angular application. It contains the declaration of components and is used to organize the whole application.
+156. What is the use of app.module.ts?
+->app.module.ts is the main file of the Angular application. It contains the declaration of components and is used to organize the whole application.
 ------------------------------------------------------------------------------------------------------
-✅ 157. How can we unsubscribe from an Observable when moving to the next page?
-We unsubscribe from an Observable using the ngOnDestroy lifecycle hook in Angular.
+157. How can we unsubscribe from an Observable when moving to the next page?
+-> We unsubscribe from an Observable using the ngOnDestroy lifecycle hook in Angular.
 This helps to prevent memory leaks when the component is destroyed or when navigating to another page.
 
 ✅ In your wording:
@@ -1458,6 +1462,7 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 ->no need of the ng module 
 ->self dependent component 
 ->optimize and faster as compare to the ngModule case 
+->and easy to create a lazy modules
 ------------------------------------------------------------------------------------------------------
 160.What Angular version introduced Standalone Component?
 ->After the Angular 14 they are introduced the standalone component.
@@ -1468,21 +1473,44 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 162.How do you bootstrap an angular application using only a standalone compoents?
 ->In Angular, we can bootstrap the app using a standalone component by using the bootstrapApplication() method instead of NgModule.
 ------------------------------------------------------------------------------------------------------
-178.How to Security provided our angular application?
+178.]*]*].How to Security provided our angular application?
 ->Angular provides security using features like sanitization, route guards, JWT token handling, and strict content policies.
 ------------------------------------------------------------------------------------------------------
 179.What is differanance between the template driven forms and reactive forms ?
-->template driven froms are used when the small forms or static forms are there in our applicaion
-->reactive forsm are used when the complex and large forms or dynamic forms are there so we can used the reactive forms 
-
-->template driven forms case used the two way data binding concept and used the ngModule 
-->and reactive is also the two way data bainding concept and used the FormGroup and formControl
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Feature                 | Template Driven Forms                              | Reactive Forms                                                |
+| ----------------------- | -------------------------------------------------- | ------------------------------------------------------------- |
+| **Usage**               | Mainly used for **small and static forms**         | Used for **complex and dynamic forms**                        |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Data Binding**        | Uses **two-way data binding** with `ngModel`       | Uses **one-way data flow** with `FormControl` and `FormGroup` |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Main Logic Location** | Most logic is handled in **HTML template**         | Most logic is handled in **TypeScript file**                  |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Modules Required**    | `FormsModule`                                      | `ReactiveFormsModule`                                         |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Form Structure**      | Defined directly in the **HTML**                   | Defined **programmatically** in TypeScript                    |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Validation**          | Simple validations, written in **HTML attributes** | **Easy and powerful validations** written in TypeScript       |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Scalability**         | Not suitable for large or complex forms            | Highly **scalable and maintainable**                          |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Control Over Form**   | Less control over form state                       | Full control over form state and values                       |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Learning Curve**      | **Easy to write and understand** (less complexity) | Slightly complex but **better for real-world apps**           |
+------------------------------------------------------------------------------------------------------------------------------------------------
+| **Best Use Case**       | Login, contact, or simple forms                    | Dynamic forms, large forms, enterprise applications           |
+------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
 
-182.Types of Decorators in Angular?
-->Common decorators are: @Component, @Directive, @Pipe, @Injectable, and @NgModule, @Input
+
+
+
+
+
+182]]]].Types of Decorators in Angular?
+->Common decorators are: @Component, @Directive, @Pipe, @Injectable, and @NgModule, @Input, @Output
 -------------------------------------------------------------------------------------------------------------
-183.What is Selectors in Angular?
+183]]]].What is Selectors in Angular?
 ->✅ Selector means the name of the custom tag, which is defined in the selector property inside the .ts (component) file.
 -------------------------------------------------------------------------------------------------------------
 184.What is Anotation in Angular?
@@ -1491,7 +1519,6 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 185.What is differanance between JavaScript and TypeScript.
 ->JavaScript is dynamic and loosely typed; TypeScript is a superset of JavaScript with static typing.
 -------------------------------------------------------------------------------------------------------------
-
 163.Can Standalone Components Work alongside Tranditional NgModules?
 164.How do Standalone Components Handle dependencies such as FormsModule and HttpClientModule?
 165.Can you create standalone directive and pipes in Angular?
@@ -1499,13 +1526,10 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 167.How do you mamage routing with standalone compoents in Angular?
 168.How do you configure Providers inside a standalone compoents?
 169.How do you migrate an existing Angular application to standalone compoents?
-
 ->  FormsModule is used for template-driven forms.
 ->  ReactiveFormsModule is used for reactive forms.
-
 170.What is used of ngForm in Angular?
 ->ngForm is used to handle and manage template-driven forms in Angular.
-
 171.Explain state management of Form?
 172.What are FormControl,FormGroup and FormArray?
 173.How do you perform validation in Angular forms?
@@ -1513,12 +1537,14 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 175.How do you used patchValue() and setValue() in Reactive forms?
 176.How do you track form state changes in angular?
 177.How do you display error message for form validation in Angular?
-
-
-
 179.How to implement security measures for Angular?
 180.What is differance between bootstrapApplication() and bootstrapModule().
 -------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 
 -------------------------------------------------------------------------------------------------------------
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
