@@ -1318,6 +1318,17 @@ Imagine a dashboard with a sidebar, header, and main content area. The sidebar a
 94.What is Tree Shaking?
 ->Tree Shaking is the build optimization technique basically used in the production build timing.
 ->Tree shaking means removing dead (unused) code from your project during the build process, so the final bundle is smaller and faster to load.
+
+->and How to Enable Tree Shaking in Angular
+->Tree shaking is automatically Enable in Angular when building for production, but you can otpimize it further with the following steps:
+
+->User production build 
+ ng build --configuration=production
+
+->Benifites of tree shaking 
+	Reduces bundle size 
+	Improves performance
+	Faster Loading speed 
 ------------------------------------------------------------------------------------------------------
 95.I want to fetch data before a compoent is called?
 ->If we want to fetch data before a component loads, we can use a Resolver in Angular.
@@ -1354,18 +1365,38 @@ No need for loading spinners or empty states.
 
 ->Resolver helps in cases where we want to show large or important data (like tables) immediately when the component opens, without waiting or showing empty UI. It makes the app feel faster and smoother.
 ------------------------------------------------------------------------------------------------------
-
-
-
 99.Differance between Local Storage and Session Storage.
-->local storage data is permanent stored and they are need to be clear
-->session storage case close our applciation so the session data automatically clear 
-->local storage also used for stored in sensetive data 
-->session are stored the login token and aonther data is stored.
+-> Both localStorage and sessionStorage are used to store data in the browser.
+-> Both can store around 5 MB of data, domain-wise.
+
+LocalStorage
+-> Stores data permanently.
+-> Data is not cleared even after closing the browser.
+-> Used when we want data to persist across pages or browser sessions.
+
+SessionStorage
+-> Stores data only for the current session.
+-> Data is cleared automatically when the browser or tab is closed.
+-> Data is not shared across tabs or applications.
+
+Main Differance :- 
+-> LocalStorage stores data permanently and we need to manage/clear it manually.
+-> SessionStorage stores data temporarily and it is cleared automatically when the browser or tab is closed.
 ------------------------------------------------------------------------------------------------------
 100.There are several types of storage mechanisms available in browsers to manage and stored data?
+->there is total 5 types of storage mechanisms available in browser to manage and stored data 
+
+->LocalStorage :- permant data stored and you have manage the data 
+->SessionStorage :- session wise data stored and tab or browser closed then seesion closed or clear data
+->Cookies :- "Remember Me" checkbox on login saves your login status.
+->indexedDB :- Saves offline data for apps like a google Docs. so in this offline also access downloaded data 
+->Cache Storage (use by service works) :- saves website assest to make it load faster next time.
 ------------------------------------------------------------------------------------------------------
+
+
 101.Why Do Websities ask for 'Accept all Cookies'?
+->we can accept all cookies then your data are analysis and you have provided the information for you search wise 
+->
 ------------------------------------------------------------------------------------------------------
 102.Encapsulation in Angular?
 ->In Angular, Encapsulation is used to isolate the CSS styles of a component, so that:
@@ -1388,11 +1419,9 @@ In our project, we have created multiple feature modules, and their routes or co
 108.What is NgZone in Angular?
 ->NgZone is a service in Angular that helps detect changes and update the UI, even if those changes happen outside of Angular’s control, like with setTimeout, setInterval, or third-party libraries.
 ------------------------------------------------------------------------------------------------------
-
 109.What is zone.js?
 ->zone.js is a library used in Angular that helps to detect changes automatically when any asynchronous operations (like API calls, timers, or events) happen.
 ->It tells Angular when something has changed, so Angular can update the UI without manual effort.
-
 ------------------------------------------------------------------------------------------------------
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1950,6 +1979,24 @@ Any component can subscribe to receive updates.
 type of decorator
 data binding
 Lazy Loading in Angular
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
