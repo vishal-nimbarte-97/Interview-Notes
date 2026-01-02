@@ -1397,18 +1397,13 @@ Main Differance :-
 -> This data is used to understand our searches, browsing behavior, and preferences.
 -> Based on this information, websites provide personalized content, ads, and a better user experience.
 ------------------------------------------------------------------------------------------------------
-
-
-
-
-
 102.Encapsulation in Angular?
 ->In Angular, Encapsulation is used to isolate the CSS styles of a component, so that:
 One component’s styles do not affect other components.
 Other components’ styles do not apply to the current component.
 ->There is the three main types :- 
 ->Emulated(By default) -> by default set (we can used or not they are directly apply to the components css styles).
-->ShowdoDom -> fully isolated
+->ShadowDom -> fully isolated
 ->None -> No encaspulaltion
 ------------------------------------------------------------------------------------------------------
 103.What is forRoot() and forChild()?
@@ -1416,10 +1411,11 @@ Other components’ styles do not apply to the current component.
 In our project, we have created multiple feature modules, and their routes or configurations are loaded using forChild().
 ------------------------------------------------------------------------------------------------------
 104.What is used of Constrcutor in Angular?
-->Constructor is used for injecting the service, so we use the constructor in Angular to access and use that service inside the component.
+->Constructor in Angular is used to initialize the component/service and inject dependencies.
+It executes first, before any Angular lifecycle hooks, and is mainly used for Dependency Injection and object initialization.
 ------------------------------------------------------------------------------------------------------
 107.What is ChangeDetectorRef in Angular?
-->ChangeDetectorRef in angular basicaclly used for manually changes to the angular applicaion
+->ChangeDetectorRef in angular basicaclly used for manually updates to the angular applicaion.
 ------------------------------------------------------------------------------------------------------
 108.What is NgZone in Angular?
 ->NgZone is a service in Angular that helps detect changes and update the UI, even if those changes happen outside of Angular’s control, like with setTimeout, setInterval, or third-party libraries.
@@ -1429,15 +1425,12 @@ In our project, we have created multiple feature modules, and their routes or co
 ->It tells Angular when something has changed, so Angular can update the UI without manual effort.
 ------------------------------------------------------------------------------------------------------
 
-
-
-
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ------------------------------------------------------------------------------------------------------
 -----------------------------------]]]]]]Core Concept Important]]]]]]]]]------------------------------
 ------------------------------------------------------------------------------------------------------
+
 154.What is a Shared Module in Angular?
 ->Shared Module contains common code that we can reuse in other modules by importing it. It helps to avoid writing the same code again and again.
 ->so this share module create a services , set the enums of files and more utilities used for used in entire applicaion
@@ -1502,11 +1495,6 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 ------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
 
-
-
-
-
-
 182]]]].Types of Decorators in Angular?
 ->Common decorators are: @Component, @Directive, @Pipe, @Injectable, and @NgModule, @Input, @Output
 -------------------------------------------------------------------------------------------------------------
@@ -1517,38 +1505,72 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 ->Annotation means the @symbol line (like @Component) that tells Angular this is a component or service.
 -------------------------------------------------------------------------------------------------------------
 185.What is differanance between JavaScript and TypeScript.
-->JavaScript is dynamic and loosely typed; TypeScript is a superset of JavaScript with static typing.
+=>main differanance is :- JavaScript is dynamic and loosely typed; TypeScript is a superset of JavaScript with static typing.
+----------------------------------------------------------------------------
+| JavaScript                   | TypeScript                                |
+| ---------------------------- | ----------------------------------------- |
+| Dynamically typed            | Statically typed                          |
+| Runs directly in the browser | Compiles to JavaScript                    |
+| Errors found at runtime      | Errors found at compile time              |
+| No interfaces or types       | Supports interfaces and types             |
+| Less code structure          | Better code structure and maintainability |
+| Suitable for small scripts   | Better for large applications             |
+----------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-------------------------------------------------------------------------------------------------------------
+------------------------]]]]]Some Hard Question Asking for Angular Developer]]]]]]]]]------------------------
+-------------------------------------------------------------------------------------------------------------
+
+
+
 163.Can Standalone Components Work alongside Tranditional NgModules?
+-------------------------------------------------------------------------------------------------------------
 164.How do Standalone Components Handle dependencies such as FormsModule and HttpClientModule?
+-------------------------------------------------------------------------------------------------------------
 165.Can you create standalone directive and pipes in Angular?
+-------------------------------------------------------------------------------------------------------------
 166.How do you Lazy load a Standalone Components dynamically?
+-------------------------------------------------------------------------------------------------------------
 167.How do you mamage routing with standalone compoents in Angular?
+-------------------------------------------------------------------------------------------------------------
 168.How do you configure Providers inside a standalone compoents?
+-------------------------------------------------------------------------------------------------------------
 169.How do you migrate an existing Angular application to standalone compoents?
 ->  FormsModule is used for template-driven forms.
 ->  ReactiveFormsModule is used for reactive forms.
+-------------------------------------------------------------------------------------------------------------
 170.What is used of ngForm in Angular?
 ->ngForm is used to handle and manage template-driven forms in Angular.
+-------------------------------------------------------------------------------------------------------------
 171.Explain state management of Form?
+-------------------------------------------------------------------------------------------------------------
 172.What are FormControl,FormGroup and FormArray?
+-------------------------------------------------------------------------------------------------------------
 173.How do you perform validation in Angular forms?
+-------------------------------------------------------------------------------------------------------------
 174.What is the role of FormBuilders in Angular?
+-------------------------------------------------------------------------------------------------------------
 175.How do you used patchValue() and setValue() in Reactive forms?
+-------------------------------------------------------------------------------------------------------------
 176.How do you track form state changes in angular?
+-------------------------------------------------------------------------------------------------------------
 177.How do you display error message for form validation in Angular?
+-------------------------------------------------------------------------------------------------------------
 179.How to implement security measures for Angular?
+-------------------------------------------------------------------------------------------------------------
 180.What is differance between bootstrapApplication() and bootstrapModule().
 -------------------------------------------------------------------------------------------------------------
 
 
 
 
-
-
 -------------------------------------------------------------------------------------------------------------
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -------------------------------------------------------------------------------------------------------------
+
 
 185.What is used of Angular.json?
 ->  🔧Why deleting angular.json causes problems:
@@ -1620,7 +1642,7 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 ------------------------------------------------------------------------------------------------------------
 
 
----------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 
 1.routing
 ->they are navigate to the one page to the another page that is the concept of the routing
