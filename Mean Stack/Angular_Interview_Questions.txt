@@ -1517,103 +1517,54 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 | Suitable for small scripts   | Better for large applications             |
 ----------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------
-
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
--------------------------------------------------------------------------------------------------------------
-------------------------]]]]]Some Hard Question Asking for Angular Developer]]]]]]]]]------------------------
--------------------------------------------------------------------------------------------------------------
-
-
-
-163.Can Standalone Components Work alongside Tranditional NgModules?
--------------------------------------------------------------------------------------------------------------
-164.How do Standalone Components Handle dependencies such as FormsModule and HttpClientModule?
--------------------------------------------------------------------------------------------------------------
-165.Can you create standalone directive and pipes in Angular?
--------------------------------------------------------------------------------------------------------------
-166.How do you Lazy load a Standalone Components dynamically?
--------------------------------------------------------------------------------------------------------------
-167.How do you mamage routing with standalone compoents in Angular?
--------------------------------------------------------------------------------------------------------------
-168.How do you configure Providers inside a standalone compoents?
--------------------------------------------------------------------------------------------------------------
-169.How do you migrate an existing Angular application to standalone compoents?
-->  FormsModule is used for template-driven forms.
-->  ReactiveFormsModule is used for reactive forms.
--------------------------------------------------------------------------------------------------------------
-170.What is used of ngForm in Angular?
-->ngForm is used to handle and manage template-driven forms in Angular.
--------------------------------------------------------------------------------------------------------------
-171.Explain state management of Form?
--------------------------------------------------------------------------------------------------------------
-172.What are FormControl,FormGroup and FormArray?
--------------------------------------------------------------------------------------------------------------
-173.How do you perform validation in Angular forms?
--------------------------------------------------------------------------------------------------------------
-174.What is the role of FormBuilders in Angular?
--------------------------------------------------------------------------------------------------------------
-175.How do you used patchValue() and setValue() in Reactive forms?
--------------------------------------------------------------------------------------------------------------
-176.How do you track form state changes in angular?
--------------------------------------------------------------------------------------------------------------
-177.How do you display error message for form validation in Angular?
--------------------------------------------------------------------------------------------------------------
-179.How to implement security measures for Angular?
--------------------------------------------------------------------------------------------------------------
-180.What is differance between bootstrapApplication() and bootstrapModule().
--------------------------------------------------------------------------------------------------------------
-
-
-
-
--------------------------------------------------------------------------------------------------------------
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
--------------------------------------------------------------------------------------------------------------
-
-
 185.What is used of Angular.json?
-->  🔧Why deleting angular.json causes problems:
+-> Angular.json is used to configure Angular CLI commands (ng build, ng serve, ng test), manage frontend libraries (Bootstrap, NgZorro), and set the  build path in outputPath key.
+
+->🔧Why deleting angular.json causes problems:
 	Yes, problems will happen if we delete the angular.json file, because:
+	
 	It configures important things like:
-	Bootstrap settings (which component or module to load first)
-	Production and staging environments
-	Output folder (like dist/ or public/)
-	Without this file, Angular won’t know how to:
-	Build the project (ng build)
-	Serve the app (ng serve)
-	Run tests (ng test)
+		Bootstrap settings (which component or module to load first)
+		Production and staging environments
+		Output folder (like dist/ or public/)
+
+		Without this file, Angular won’t know how to:
+			Build the project (ng build)
+			Serve the app (ng serve)
+			Run tests (ng test)
+
 	So, if angular.json is deleted, the Angular CLI will not work properly, and your whole application may stop working.
-	✅ Final Line (Your version, improved):
+
+	✅ In Short :-
 	Yes, problems are created if we delete the angular.json file because it configures important things like bootstrap, production/staging environments, and the output folder (dist/public). Without it, Angular commands like ng serve, ng build, and ng test will not work, and the application will not run properly.
 ------------------------------------------------------------------------------------------------------------
 186.What is used of package.json?
-->	The package.json file is automatically created when we create a new Angular project using the Angular CLI.
-	It configures the project by storing important information like:
+->package.json is used to store project dependencies and their versions.
+
+->The package.json file is automatically created when we create a new Angular project using the Angular CLI.
+->It configures the project by storing important information like:
 	Project name and version
 	Scripts (like ng serve, ng build)
 	Dependencies (libraries and modules used in the project)
 	The package.json helps in managing all the main packages (like @angular/core, rxjs, etc.) needed to run the project.
-	
+
+✅ In Short :-
 	File			Purpose
 	package.json	Lists main dependencies and scripts
 ------------------------------------------------------------------------------------------------------------
 187.What is used of the package-lock.json?
-->	📌 What about package-lock.json?
-	package-lock.json is also automatically created.
-	It stores sub-dependencies (the inner dependencies of main packages) and their exact versions.
-	This file ensures that:
-	The same package versions are installed every time — even on different systems or teams.
+-> package-lock.json is also automatically created.
+-> It stores sub-dependencies (the inner dependencies of main packages) and their exact versions.
+-> This file ensures that:- The same package versions are installed every time — even on different systems or teams.
 	
+✅ In Short :-
 	File				Purpose
 	package-lock.json	Locks the exact version of each dependency and sub-dependency
 ------------------------------------------------------------------------------------------------------------
 188.What is differance between the Angular.json,package.json and package-lock.json?
-->  package.json: Defines the main dependencies and scripts of the project.
-
-	package-lock.json: Stores the exact versions of all dependencies (including sub-dependencies) for consistency.
-
-	angular.json: Handles Angular-specific settings like build/serve config, environments, output folder, assets, and styles.
+->  package.json:- stored the all the main depedencies of all the project with version.
+->	package-lock.json:- stores all the sub-dependencies of all the project with version.
+->	angular.json:- configuration of CLI commands and set of the configuration like a build path , frontend design libraries etc..
 ------------------------------------------------------------------------------------------------------------
 189.What can problem are occured when ever i can delete the file like a angular.json,package.json and package-lock.json ?
 ->	🔹 If you delete angular.json:
@@ -1621,7 +1572,7 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 	App settings like styles, assets, and environments are lost.
 	Angular CLI shows error: "angular.json not found".
 
-	🔹 If you delete package.json:
+->	🔹 If you delete package.json:
 	You cannot install packages.
 	npm start, ng serve won’t work.
 	Project won’t run at all.
@@ -1631,41 +1582,33 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 	You may get bugs due to version mismatch.
 	It is auto-created again with npm install.
 
-	✅ Summary:
-	
-	File				Problem if Deleted
-	angular.json		CLI commands stop working
-	package.json		Project can’t run or install packages
-	package-lock.json	Version mismatch, possible bugs
+->	✅ Summary:-
+-------------------------------------------------------------
+| File              | Problem if Deleted                    |
+| ----------------- | ------------------------------------- |
+| angular.json      | CLI commands stop working             |
+| package.json      | Project can’t run or install packages |
+| package-lock.json | Version mismatch, possible bugs       |
+-------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
 
-------------------------------------------------------------------------------------------------------------
 
-
-------------------------------------------------------------------------------------------------------------
-
-1.routing
+1.what is routing
 ->they are navigate to the one page to the another page that is the concept of the routing
 ->basically if you want to create the route so in the anuglar contain the app-routing.module.ts file that is contain the Routes array
 ->and they are declare the path of the route and there componentName which component are route 
 ---------------------------------------------------------------------------------------
-
 2.auth gaurd 
 ->auth gaurd is the type of the route gaurd.
 ->auth gaurd basically secure the routes and in that case only the authorized person naviagate routes 
 ->so in that case if you want secure our routes so in that angular application write create th gaurd for securing the routes 
 ->they are used ng g gaurd auth that command are create the auth servie in our angular application and in that service write the routes secure reagrading logic
-
 ---------------------------------------------------------------------------------------
-
 3.route gaurd
 ->Route Guard is basically used in RBAC (Role-Based Access Control) cases to control which user can access which route.
 ---------------------------------------------------------------------------------------
-
 4.multiple form editing 
-
 ->In Angular, you can manage multiple forms using Reactive Forms. There are two main ways:
-
 -->Using Multiple FormGroup (Separate Forms)
 
 	Use when you have independent forms (e.g., login form & registration form).
@@ -2028,6 +1971,7 @@ type of decorator
 data binding
 Lazy Loading in Angular
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 
@@ -2039,16 +1983,52 @@ Lazy Loading in Angular
 
 
 
+-------------------------------------------------------------------------------------------------------------
+------------------------]]]]]Some Hard Question Asking for Angular Developer]]]]]]]]]------------------------
+-------------------------------------------------------------------------------------------------------------
 
 
 
-
-
-
-
+163.Can Standalone Components Work alongside Tranditional NgModules?
+-------------------------------------------------------------------------------------------------------------
+164.How do Standalone Components Handle dependencies such as FormsModule and HttpClientModule?
+-------------------------------------------------------------------------------------------------------------
+165.Can you create standalone directive and pipes in Angular?
+-------------------------------------------------------------------------------------------------------------
+166.How do you Lazy load a Standalone Components dynamically?
+-------------------------------------------------------------------------------------------------------------
+167.How do you mamage routing with standalone compoents in Angular?
+-------------------------------------------------------------------------------------------------------------
+168.How do you configure Providers inside a standalone compoents?
+-------------------------------------------------------------------------------------------------------------
+169.How do you migrate an existing Angular application to standalone compoents?
+->  FormsModule is used for template-driven forms.
+->  ReactiveFormsModule is used for reactive forms.
+-------------------------------------------------------------------------------------------------------------
+170.What is used of ngForm in Angular?
+->ngForm is used to handle and manage template-driven forms in Angular.
+-------------------------------------------------------------------------------------------------------------
+171.Explain state management of Form?
+-------------------------------------------------------------------------------------------------------------
+172.What are FormControl,FormGroup and FormArray?
+-------------------------------------------------------------------------------------------------------------
+173.How do you perform validation in Angular forms?
+-------------------------------------------------------------------------------------------------------------
+174.What is the role of FormBuilders in Angular?
+-------------------------------------------------------------------------------------------------------------
+175.How do you used patchValue() and setValue() in Reactive forms?
+-------------------------------------------------------------------------------------------------------------
+176.How do you track form state changes in angular?
+-------------------------------------------------------------------------------------------------------------
+177.How do you display error message for form validation in Angular?
+-------------------------------------------------------------------------------------------------------------
+179.How to implement security measures for Angular?
+-------------------------------------------------------------------------------------------------------------
+180.What is differance between bootstrapApplication() and bootstrapModule().
+-------------------------------------------------------------------------------------------------------------
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-----------------------------------------------RxJS----------------------------------------------------
+----------------------------------------------RxJS Library--------------------------------------------
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 110.What is Latest Version of RxJS?->7th veriosn

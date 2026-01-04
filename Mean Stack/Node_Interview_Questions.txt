@@ -797,3 +797,266 @@ How do you implement throttling to prevent abuse in an API?
 How do you pass data between middlewares?
 How can you conditionally apply middleware to specific routes?
 What are signed cookies, and how are they used in Express?
+
+
+Skymeric Technologies – Node JS Questioner
+
+ ✅ 1. Explain the Node.js event loop architecture in detail
+Answer:
+Node.js uses libuv to implement an event-driven, non-blocking I/O model.
+Event Loop phases:
+Phase	Description
+Timers	Executes setTimeout & setInterval callbacks
+I/O Callbacks	Executes pending asynchronous callbacks
+Idle/Prepare	Internal use
+Poll	Retrieves new I/O events, runs I/O callbacks
+Check	Executes setImmediate() callbacks
+Close Callbacks	e.g. socket .close()
+Key point: Node runs JavaScript in one main thread, but C++ thread-pool handles I/O in background.
+Why important? Enables massive concurrency for I/O heavy apps (APIs, messaging, DB apps).
+________________________________________
+✅ 2. How does Node.js scale on multi-core CPUs?
+Answer:
+Node is single-threaded but can scale using:
+Technique	Purpose
+cluster module	Spawns multiple worker processes
+PM2 clustering	Production-grade process manager
+Worker Threads	CPU-heavy computation
+Load balancer (NGINX/AWS ALB)	Distribute traffic
+Example: PM2 start
+pm2 start server.js -i max
+Best practice:
+•	Use workers for CPU tasks
+•	Use clusters for scaling I/O apps
+________________________________________
+✅ 3. When would you NOT use Node.js?
+Answer:
+Avoid Node.js when:
+❌ CPU-intensive workloads (video encoding, ML, crypto loops)
+❌ High-precision numeric computation
+❌ Real-time media processing (unless offloaded to workers)
+Use Python/Go/Rust for compute-heavy workloads.
+________________________________________
+✅ 4. Explain how to handle CPU-intensive tasks
+Answer:
+Use:
+✅ Worker Threads — for CPU tasks
+✅ Redis Queue + Worker Service
+✅ Delegate to Go/Python microservice
+Example Worker:
+const { Worker } = require('worker_threads');
+new Worker('./heavyTask.js', { workerData: data });
+________________________________________
+✅ 5. What is the difference between a Microservice and an API Gateway?
+Microservice: A single business capability
+API Gateway: Single entry point for all microservices
+Gateway functions:
+•	Authentication
+•	Rate-limit
+•	Request routing
+•	Caching
+•	Logging / Tracing
+Node tools: Express Gateway, Kong, NGINX, Fastify, NestJS Gateway
+________________________________________
+✅ 6. Explain Node.js memory model & GC
+V8 Heap:
+•	New space (young generation)
+•	Old space (long-lived objects)
+Garbage collection: Mark-and-Sweep incremental GC
+Monitor memory:
+node --inspect
+Use flags if needed:
+--max-old-space-size=4096
+Key risks:
+❗ Memory leaks via global objects
+❗ Holding references in caches
+________________________________________
+✅ 7. What is backpressure in Node streams?
+Backpressure: Producer sends data faster than consumer can handle.
+Solution: using .pipe() since it manages flow:
+fs.createReadStream('largefile.txt').pipe(res);
+________________________________________
+✅ 8. Explain caching patterns in Node backend
+Types:
+Layer	Tech
+Browser	HTTP Cache, Service Worker
+API	Redis, Memcached
+DB Results	Redis hash sets
+CDN	CloudFront / Akamai
+Patterns:
+•	Write-through
+•	Write-back
+•	Cache-aside
+Example Redis
+const cached = await redis.get(key);
+if (cached) return JSON.parse(cached);
+________________________________________
+✅ 9. Explain JWT vs Session-based Auth
+Feature	JWT	Session
+Storage	Client side	Server memory/Redis
+Scalability	High	Needs distributed store
+Expiry	Automatic	Manual cleanup
+JWT best practices:
+•	Use refresh tokens
+•	HttpOnly cookies
+•	Rotate tokens
+________________________________________
+✅ 10. What is Domain Driven Design (DDD) in Node?
+Purpose: Structure large backend apps
+Layers:
+•	Domain layer — business logic
+•	Application layer — services, orchestrates logic
+•	Infrastructure layer — DB, messaging, APIs
+•	API layer — controllers/routes
+NestJS follows DDD well.
+________________________________________
+✅ 11. How to prevent blocking event loop?
+•	Avoid sync functions (fs.readFileSync)
+•	Use worker threads for CPU work
+•	Use async DB drivers
+•	Monitor event loop lag
+Monitor example:
+const start = Date.now();
+setImmediate(() => console.log(Date.now() - start));
+________________________________________
+✅ 12. What are Node.js best security practices?
+•	Validate input (Joi/Zod)
+•	Escape output — prevent XSS
+•	Helmet headers
+•	CSRF protection (cookies)
+•	Rotate secrets
+•	Avoid eval, Function()
+________________________________________
+✅ 13. Explain DB connection pooling
+Connection pool reuses DB connections to improve performance.
+Node ORMs implement pooling:
+•	Sequelize
+•	Prisma
+•	TypeORM
+•	Knex
+Example (MySQL pool):
+mysql.createPool({ connectionLimit: 10 });
+________________________________________
+✅ 14. Explain Circuit Breaker pattern
+Used to stop cascading failures in microservices.
+Libraries:
+•	opossum
+•	Resilience4j (Java equivalent)
+Behaviors:
+•	Open → reject calls
+•	Half-open → trial calls
+•	Closed → normal
+Good for external API failure handling.
+________________________________________
+✅ 15. Observability in Node apps
+Key components:
+•	Logs — Winston / Pino
+•	Metrics — Prometheus + Grafana
+•	Tracing — OpenTelemetry / Jaeger
+•	Health checks — /healthz, /readyz
+Example health route:
+app.get('/healthz', (req,res)=>res.send('OK'));
+
+
+
+
+✅ 1. What is the Node.js event loop and why is it important?
+Answer:
+The event loop is a single-threaded mechanism that handles asynchronous operations in Node.js. It allows non-blocking I/O — enabling Node to handle thousands of requests simultaneously.
+Instead of waiting for operations like DB queries or file I/O, Node delegates them to system threads and processes callbacks when ready, improving scalability.
+________________________________________
+✅ 2. Explain the difference between microservices and monolithic Node.js architecture.
+Answer:
+Monolith	Microservices
+One large codebase	Small independently deployable services
+Shared DB	DB per service or shared–with–contracts
+Simple deployment	Complex deployment + DevOps
+Hard to scale specific modules	Scale each service independently
+Node.js fits microservices due to lightweight runtime, event-driven architecture, and excellent API performance.
+________________________________________
+✅ 3. Why is Node.js good for I/O-intensive workloads, but not CPU-heavy tasks?
+Answer:
+Node uses a single thread for JavaScript execution. CPU-heavy tasks (like large calculations or ML processing) block it.
+I/O (DB calls, file I/O, API calls) are delegated to system threads, making Node ideal for I/O-heavy, real-time systems.
+________________________________________
+✅ 4. How do you handle CPU-intensive tasks in Node.js?
+Answer:
+•	Worker Threads
+•	Child Processes
+•	Task queue with Redis + BullMQ / RabbitMQ
+•	Offload to microservice (Python/Go) for heavy compute
+________________________________________
+✅ 5. What is clustering in Node.js?
+Answer:
+Clustering allows running multiple Node processes on multiple CPU cores to increase throughput.
+Uses the cluster module — Master creates worker processes.
+________________________________________
+✅ 6. How do you secure a Node.js API?
+Answer:
+•	JWT / OAuth2 / Access & Refresh tokens
+•	HTTPS everywhere
+•	Helmet.js for security headers
+•	Input validation (Joi/Zod)
+•	Rate-limiting & IP throttling
+•	Avoid storing secrets in code (use Vault / env vars)
+•	Proper CORS policy
+________________________________________
+✅ 7. Difference between process.nextTick(), setImmediate(), setTimeout()?
+Function	When runs
+process.nextTick()	Before event-loop continues
+setImmediate()	After I/O events callback phase
+setTimeout(fn,0)	Queued after minimum timer delay
+________________________________________
+✅ 8. What is streaming in Node.js?
+Answer:
+Node handles data in chunks — useful for large files and real-time data.
+Types: Readable, Writable, Duplex, Transform.
+Example: piping file streams to improve performance without loading full data in memory.
+________________________________________
+✅ 9. What are Middlewares?
+Answer:
+Functions that run before the route handler.
+Used for logging, authentication, body parsing, rate limiting.
+Examples: Express, Fastify hooks.
+________________________________________
+✅ 10. Difference between CommonJS and ES Modules in Node
+CommonJS	ES Modules
+require()	import
+Older Node default	Modern standard
+Synchronous	Asynchronous
+.cjs extension	.mjs or "type": "module"
+________________________________________
+✅ 11. When to use Streams vs Buffers?
+•	Buffer → entire data in memory (small files)
+•	Stream → chunked processing (large files, video, logs)
+________________________________________
+✅ 12. Explain Middleware vs Interceptors vs Filters
+Concept	Use
+Middleware	Pre-processing requests
+Interceptors	Modify request/response life-cycle (NestJS)
+Filters	Handle exceptions globally (NestJS)
+________________________________________
+✅ 13. Common Node.js performance improvements
+•	Use cluster / PM2
+•	Caching (Redis)
+•	Connection pooling
+•	Use async database drivers
+•	Avoid synchronous functions
+•	Use streams instead of reading full files
+•	Load balancing (NGINX, AWS ALB)
+________________________________________
+✅ 14. What is backpressure in Node.js streams?
+Answer:
+Backpressure occurs when the receiving stream cannot process data as fast as the sending stream.
+Solution:
+•	Use .pipe() (handles it automatically)
+•	await stream.write() / drain event
+________________________________________
+✅ 15. Explain JWT token refresh flow
+Step	Action
+Login	Issue Access token + Refresh token
+Access token expires	Client sends Refresh token
+Server validates Refresh token	Issues new Access token
+Refresh token rotation	Invalidate old refresh token
+Store refresh token securely (DB/Redis/HttpOnly cookie).
+
