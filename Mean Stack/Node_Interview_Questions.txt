@@ -1,19 +1,19 @@
 0.What is V8 Engine?
-->The V8 Engine is an open-source JavaScript engine developed by Google. It's written in C++ and is used to execute JavaScript code.
-->they are here in chrome
-----------------------------------------------------------------------------------------------------------------
+->V8 Engine is an open-source JavaScript engine developed by Google, written in C++, and used to execute JavaScript code—mainly in Google Chrome (and also in Node.js).
+---------------------------------------------------------------------------------------------------------------
 1.What is Node.js?
-->Node.js is the runtime evernment and they are write a javascript code , this javascript code are run on the server side,
-----------------------------------------------------------------------------------------------------------------
+->Node.js is a runtime environment that runs JavaScript on the server side.
+---------------------------------------------------------------------------------------------------------------
 1.HOW TO NODE JS WORK?
-->Node.js is the runtiming environment and they are write the javascript code , and they are executed to chrome v8 engine
-->basically javascript is the single threaded programing language but the with the help fo the libuv package the node js are handling the multiple request at same timing.
-----------------------------------------------------------------------------------------------------------------
+->Node.js is the runtiming environment and they are write the javascript code , and they are executed to chrome v8 engine, that means javsacript code run on server side.
+->basically javascript is the single threaded programing language but the with the help fo the libuv package the node.js are handling the multiple request at same timing. because libuv package contain the event loop and non-blocking I/O.
+---------------------------------------------------------------------------------------------------------------
 2.What is event-driven programming in Node.js?
 ->Event-Driven programing means event handling concept in the backend side , it's same functionality like a event handling.
-->they are contain the main three parts 
 
-->1.Event Emiiter -> they are emmiting the events 
+->they are contain the main three parts :- 
+
+->1.Event Emitter -> they are emmiting the events 
 ->2.Event Listener  -> they are listening the emmitting event 
 ->3.Event handler -> they are handling the event using the callback function.
 
@@ -29,66 +29,86 @@ eventEmitter.on('eventOccured',(req,res)=>{
 });
 
 eventEmitter.emit('eventOccured');
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 3.How does Node.js handle asynchronous I/O operations?
-->the node.js are handle the asynchronous I/O Operation using the libuv package because of the libuv contain to the threads pool and event loop.
+->The node.js are handle the asynchronous I/O Operation using the libuv package because of the libuv contain to the threads pool and event loop.
 ->Threads Pool 
 ->Event Loop
 ---------------------------------------------------------------------------------------------------------------
-4.What is Non-Blocking I/O  IN Node.JS?
-->Non-Blocking I/O means every client request or user request they are not deppend upon with each other they are parreaaly executed .
-->that the process is called the Non-Blocking i/o.
-----------------------------------------------------------------------------------------------------------------
+4.What is Non-Blocking I/O In Node.JS?
+->Non-Blocking I/O means every client request or user request they are not deppend upon with each other they are parallelly executed .
+->that the process is called the Non-Blocking I/O.
+---------------------------------------------------------------------------------------------------------------
 5.Node js is single threaded language or multithreaded language?
 ->In the Node.js is the Run Time Enviroment and they are used the jacascript for the execution and this javascript is the single threaded programing language, but the node are js are used the libuv package and this libuv package are contain to the thread pool and event loop. so that the reason was the node.js are handling the multiple request at same timing.
-----------------------------------------------------------------------------------------------------------------
-6.HTTP Module & Create a Server In Node JS?
--> If you handling the networking regarding request like a post delete get patch and put so we need to the http module, 
-and that rquest if you want to secure so we can used to the https module 
-->and this https module are password and certication are by ssl but they are need to the purchased.
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+6.what is HTTP Module & Create a Server In Node JS?
+->If we want to handle networking requests like GET, POST, UPDATE, DELETE, PATCH, we use the HTTP module.
+->If we want to handle these requests in a secure way, we use the HTTPS module, but it needs an SSL certificate, which is usually purchased and contains a certificate file and password.
+---------------------------------------------------------------------------------------------------------------
 7.What is URL MODULE IN NODE JS.
+->URL is Uniform Resource Locator
+->and The URL module is used to work with web addresses (URLs).
 ->URL module basically used to handle the request of the path they are occured to the frontend side like. 
-->A URL (Uniform Resource Locator) is the address of a resource on the internet, like a web page, image, or file.
-->They are handling the user request path and they are performt the operations.
-----------------------------------------------------------------------------------------------------------------
+->It helps to read, parse, and manage the parts of a URL, like the path, query, or parameters, when a user makes a request.
+->In short, It helps Node.js understand and handle the user’s request URL.
+---------------------------------------------------------------------------------------------------------------
 8.WHAT IS ROUTING IN NODE JS?
--> if you want to navigate to the one view to the another view that is called as the routing 
+-> if you want to navigate to the one view to the another view that is called as the routing.
 -> but the backend side the routing means path of the client request 
--> and this rquest wise which controller , services and reposotry are executed they are find and this service or controller are executed.
-----------------------------------------------------------------------------------------------------------------
+-> and this rquest wise which controller , services and reposotry are executed they are find and this service or controller are executed with the help of the routing.
+---------------------------------------------------------------------------------------------------------------
 9.Types of Routes in Node.js (Using the Express JS).
--> the POST, PUT , PATCH, GET, DELETE
-----------------------------------------------------------------------------------------------------------------
+-> In Express, routes are based on HTTP methods:
+
+GET → Used to fetch or get data from the server.
+POST → Used to create/send new data to the server.
+PUT → Used to update all the data completely.
+PATCH → Used to update data partially, field by field.
+DELETE → Used to remove/delete data from the server.
+---------------------------------------------------------------------------------------------------------------
 10.PATH MODULE IN NODE JS?
-->if you want to the file regarding concept are handling so we can used to the path module.
--> because they are find the file path like a pdf, json etc.
--> and they are also the number of the funtion are there to handling the file regarding operation.
--> like a parce the file path and file the name of the file like that
-----------------------------------------------------------------------------------------------------------------
-11.Module Scope & Module Wrapper Function In Node JS?
+->The Path module is used to work with file and directory paths.
+->It helps Node.js find and manage files like .pdf, .json, etc.
+->It has many functions to handle paths, for example:
+	path.parse() → Get file name, extension, and folder
+	path.join() → Combine paths
+	path.basename() → Get only the file name
+In short:
+	The Path module helps work with and manipulate file paths easily in Node.js.
+---------------------------------------------------------------------------------------------------------------
+11.What is Module Scope & Module Wrapper Function In Node JS?
 ->Module Scope means in the single folder contain to the number of the js files and this files contian to the data member and member function are there , so this is the one module scope , and this module are used to the another module so we can used to the import or export functionality are used.
-
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 12.What is Module Wrapper Function in Node.js
+->In a single JS file, we can write the same data members and member functions using the module wrapper function.
+->We just use circular braces ( ) and write the code inside.
+->If we want another set of data members and functions, we can create one more circular braces and write code inside it.
 
-->And, this module wrapper function means same variable name or function name are write a same js file using the module wrapper function 
--> (
-let a = 10;
-exports function A(){
-	console.log(a);
-}
-);
-(
-let a = 10;
-exports function A(){
-	console.log(A);
-}
-)
+// Module Wrapper Function example
 
-----------------------------------------------------------------------------------------------------------------
+// First "circular braces" scope
+(function() {
+    const name = "Vishal";
+    function greet() {
+        console.log("Hello " + name);
+    }
+
+    greet(); // Output: Hello Vishal
+})();
+
+// Second "circular braces" scope
+(function() {
+    const name = "NodeJS";
+    function greet() {
+        console.log("Welcome to " + name);
+    }
+
+    greet(); // Output: Welcome to NodeJS
+})();
+---------------------------------------------------------------------------------------------------------------
 13.What is CallBack Function?
--> the function passed as an argument to the another functin that is called as the CallBack function.
+-> The function passed as an argument to the another functin that is called as the CallBack function.
 
 funtion show(callback) --> Higher Order function 
 {
@@ -101,20 +121,23 @@ function newShow()
 };
 
 show(newShow);
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 14.Why Used CallBack Function?
--> The callback function are used to the handling the asychrounou operation in the node.js
-----------------------------------------------------------------------------------------------------------------
+-> The callback function are used to the handling the asychrounous operation in the node.js .
+---------------------------------------------------------------------------------------------------------------
 15.What is Callback Hell (Pyramid of Doom):
--> callback function can call to the another callback function and this callback function are passed to the another callback function that means nested callback that is called as the callback hell.
--> and also called as the pyramid of doom.
-----------------------------------------------------------------------------------------------------------------
+->A callback function calls another callback, and that one calls another callback, making nested callbacks.
+->This is called Callback Hell or Pyramid of Doom.
+->To avoid it, we can use Promises or async/await.
+---------------------------------------------------------------------------------------------------------------
+
+
+
 
 16.What is the purpose of the EventEmitter in Node.js, and how do you use it?
 ->Event Emitter basically used in the node.js they are creating the custom events in the node.js . 
 ->and there are three main parts event emitter,event listner and event handler.
-
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 17.What is Libuv & Thread Pool In Node Js?
 ->Libuv package are create using the c language, and this c language supported to the kernal of the system that measn 
 ->CPU cores are handle and that is the cores are woker threads and this workers thread are the colletion of the threads pool.
@@ -129,6 +152,11 @@ show(newShow);
 ----------------------------------------------------------------------------------------------------------------
 20.What do you mean by event loop in Node.js?
 ->
+
+
+
+
+
 ----------------------------------------------------------------------------------------------------------------
 21.Explain about the Event Loop Phases in Node.JS?
 ->There are the six phases are there in the event loop
@@ -206,7 +234,10 @@ Regularly update packages and run npm audit.
 we can used the v1 or v2 for handling the veriosn in the node.js 
 ->some time old api are used to the old customer and that timing they are not need to the new feauters but they are working this api, some new customer are create the new api for the some features add and they are not blobk the api for using the version in the node.js
 ->in my current project i handle version using the v1,v2 routes in that cases the old user are used the old api and current api version are changes so the new customer are used the newest api and they are some enhancement are write to this api and handling to using the v1 and v2 rougin process.
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
+
+
 31.What is the difference between Buffer and Stream in Node.js?
 ->they both are used to the handling the file regarding process in the node.js server.
 ----------------------------------------------------------------------------------------------------------------
@@ -288,7 +319,11 @@ showC();
 40.How do you optimize the performance of a Node.js application?
 ->they are used the asynchronous programing also used I/O Intensive Work.
 ->they are used the asyn/await and promises and used the asynchronous function 
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
+
+
+
 41.What is Web Socket ? 
 ->Communication Between the two differance client that communication are perfrom using the web socket ,
 ->real time senario is notification ,
@@ -407,7 +442,12 @@ console.log(token);
 and in this token contain to the three main parts 
 header,payload and signature 
 
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 51.How JWT Works?
 ----------------------------------------------------------------------------------------------------------------
 
