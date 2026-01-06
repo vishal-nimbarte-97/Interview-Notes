@@ -1593,6 +1593,8 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 ------------------------------------------------------------------------------------------------------------
 
 
+
+
 1.what is routing
 ->they are navigate to the one page to the another page that is the concept of the routing
 ->basically if you want to create the route so in the anuglar contain the app-routing.module.ts file that is contain the Routes array
@@ -1983,6 +1985,7 @@ Lazy Loading in Angular
 
 
 
+
 -------------------------------------------------------------------------------------------------------------
 ------------------------]]]]]Some Hard Question Asking for Angular Developer]]]]]]]]]------------------------
 -------------------------------------------------------------------------------------------------------------
@@ -2026,6 +2029,9 @@ Lazy Loading in Angular
 -------------------------------------------------------------------------------------------------------------
 180.What is differance between bootstrapApplication() and bootstrapModule().
 -------------------------------------------------------------------------------------------------------------
+
+
+
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ----------------------------------------------RxJS Library--------------------------------------------
@@ -2272,6 +2278,9 @@ of(1,2,3).subscribe(value => {
 	Promises
 	Iterables (like strings, Sets, Maps)
 	Async generators
+
+
+
 
 
 
