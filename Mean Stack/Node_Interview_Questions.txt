@@ -129,81 +129,168 @@ show(newShow);
 ->A callback function calls another callback, and that one calls another callback, making nested callbacks.
 ->This is called Callback Hell or Pyramid of Doom.
 ->To avoid it, we can use Promises or async/await.
+
+-> Callback Hell :- 
+
+setTimeout(()=>{
+    console.log("Step First ..!");
+    setTimeout(()=>{
+        console.log("Step Second ..!");
+        setTimeout(()=>{
+            console.log("Step Third ..!");
+            setTimeout(()=>{
+                console.log("Step Four ..!");
+            },1000);
+        },2000);
+    },3000);
+},4000);
+
+-> promise :- 
+
+function wait(ms,message){
+    return new Promise((resolved,rejected)=>{
+        setTimeout(()=>{
+            console.log(message);
+            resolved();
+        },ms);
+    });
+}
+
+wait(1000,"Step Firest ..!")
+    .then(()=>wait(2000,"Second Step..!"))
+    .then(()=>wait(3000,"Third Step...!"))
+    .then(()=>wait(4000,"Fourth Step..!"))
+    .then(()=>console.log("Completed All Step..!"));
+
+-> async/await 
+
+function wait(ms,message){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log(message);
+            resolve();
+        },ms);
+    });
+}
+
+async function callWait(){
+    await wait(1000,"Vishal Nimbarte");
+    await wait(2000,"Vivek Moyaje");
+    await wait(3000,"Karan Moyaje");
+    console.log("All Step Completed ..!");
+}
+
+callWait();
 ---------------------------------------------------------------------------------------------------------------
-
-
-
-
 16.What is the purpose of the EventEmitter in Node.js, and how do you use it?
 ->Event Emitter basically used in the node.js they are creating the custom events in the node.js . 
 ->and there are three main parts event emitter,event listner and event handler.
+
+const EventEmitter = require('events');
+const eventEmitter = new EventEmitter();
+
+eventEmitter.on('greet',()=>{
+    console.log("Hello, World..!");
+});
+
+eventEmitter.emit('greet');
+
 ---------------------------------------------------------------------------------------------------------------
 17.What is Libuv & Thread Pool In Node Js?
-->Libuv package are create using the c language, and this c language supported to the kernal of the system that measn 
-->CPU cores are handle and that is the cores are woker threads and this workers thread are the colletion of the threads pool.
-
-----------------------------------------------------------------------------------------------------------------
+-> Libuv is a library which is created using C language.
+-> C language is directly supported by the system kernel.
+-> This kernel manages the CPU cores.
+-> Every CPU core works like a thread.
+-> These threads work together and that is called the thread pool.
+-> With the help of the Libuv library, JavaScript handles asynchronous I/O operations in Node.js. because of Libuv package contain the threads pool and event loop.
+---------------------------------------------------------------------------------------------------------------
 18.What is Network I/O in Node Js?
-->if you want to the handling the networking regarding conecept you can used the http and https module are used to handling the networking i/o operation.
-----------------------------------------------------------------------------------------------------------------
+-> If you want to handle networking concepts in Node.js, you can use the http and https modules.
+-> These modules are used to handle network I/O operations, like sending requests and receiving responses over the network.
+---------------------------------------------------------------------------------------------------------------
 19.How does the Node.js event loop work, and why is it important?
-->the node.js are contain to the synchrouns and asychrounou code of function and this function they are one executed and stored to the callstack but the asynchronous function they are lot of timing for the exection and so that case there request to the another server or database and they are completed they are one by one stored to the callback queue 
-->then main working of the event loop they are continously check if there exection are run to the callstack so wait other wise they are they are passed the callback queue for the exectuin and callback thrught they are provied the responce that is the working of the event loop.
-----------------------------------------------------------------------------------------------------------------
+-> Node.js contains both synchronous and asynchronous functions.
+-> These functions are executed and stored in the call stack.
+-> Asynchronous functions take more time for execution, so their requests go to another server or database.
+-> Once they are completed, they are stored one by one in the callback queue.
+-> The main work of the event loop is to continuously check whether the call stack is empty.
+-> If the call stack is empty, the event loop moves tasks from the callback queue to the call stack for execution.
+-> Through callbacks, the response is provided.
+-> the event loop is important because of it's allows Node.js to handle non-blocking and asynchronous operations efficiently. 
+---------------------------------------------------------------------------------------------------------------
 20.What do you mean by event loop in Node.js?
-->
-
-
-
-
-
-----------------------------------------------------------------------------------------------------------------
+-> Event loop continuously checks whether the call stack is empty or not.
+-> If the call stack is empty, then it passes callbacks to the call stack.
+-> After that, those callbacks are executed.
+-> The main importance of the event loop is that it passes callbacks to the call stack based on priority.
+---------------------------------------------------------------------------------------------------------------
 21.Explain about the Event Loop Phases in Node.JS?
-->There are the six phases are there in the event loop
-->idle,prepare,timers,poll and close callback there is the total six pahses are there in event loop
-->and there priority wise they are executed.
-->timers -> they are contain to the setTimeout and setIntervel callback queue are there 
-->pending callbacks ->
-->idle/prepare -> pending callback and idle/prepare they are internally working and developer they are not write in the node.js server 
-->poll -> poll contain to the setImmediate function 
-->close callback -> and last one phase is they are closing the all the resources of the callback
-----------------------------------------------------------------------------------------------------------------
+-> There are six phases in the Node.js event loop.
+-> timers, pending callbacks , Idle / Prepare , Poll, Check, Close CallBacks
+-> These phases are executed priority-wise.
+
+-> 1.Timers → Timers contain callbacks like setTimeout and setInterval.
+-> 2.Pending Callbacks → These contain pending callbacks, which means operations are performed and processed.
+-> 3.Idle / Prepare → These phases work internally and are not handled by the developer; they are handled internally by Node.js.
+-> 4.Poll → This phase handles I/O callbacks.
+-> 5.Check → This phase executes the setImmediate callback.
+-> 6.Close Callbacks → This phase is used to close callback resources when they are used.
+---------------------------------------------------------------------------------------------------------------
 22.How to Asynchronouse Code are Executed?
-->Asynchronous Code are executed in the node.js using the libuv package, because of they are containing to the threads pool and event loop.
-----------------------------------------------------------------------------------------------------------------
-23.What is the Micro-Task Queue?
-->Micro-Task are executed first before the event loop and the micro-task queue are contain to the nextTick-quieue and promise queue. 
--> Micro-Task are execution before the event loop and the micro task are containg to the nextTick.queue and promise queue 
-and this case the first exection to the nextTick queue and 2 exection is the promise queue and this phases are exectued then exexuted to the event loop micro task.
-----------------------------------------------------------------------------------------------------------------
+-> Asynchronous code is executed in Node.js using the Libuv package.
+-> Libuv contains the thread pool and the event loop.
+-> With the help of the thread pool and event loop, Node.js executes asynchronous code in a non-blocking way.
+---------------------------------------------------------------------------------------------------------------
+23.What is the Micro-Task Queue? 
+-> Micro-tasks are executed before the event loop.
+-> It contains the nextTick queue and the Promise queue.
+-> First nextTick is executed, then Promise callbacks.
+-> After that, the event loop (macro tasks) execution starts.
+---------------------------------------------------------------------------------------------------------------
 24.What is Macro Task Queue?
-->Macro Task queue means event loop phases.
-->macro task queue maesn the event loop phases they are one by one all the queue are executed.
-----------------------------------------------------------------------------------------------------------------
+-> Macro task queue means the event loop phases in Node.js.
+-> In the macro task queue, all event loop phase queues are executed one by one.
+---------------------------------------------------------------------------------------------------------------
 25.Can you explain the differences between process.nextTick() and setImmediate()?
-process.nextTick are the first privorty for the execution and setImmediate are after executed 
-micro task -> macro task 
-->process.nextTick is the part of the mircro task and setImmediate is the part of the macro task and in this task 
--> the first priority for the execution is the process.nextTick queue and then exectued to the setImmediate queue.
-----------------------------------------------------------------------------------------------------------------
--->26.What are streams in Node.js, and what are their different types?
--->
-----------------------------------------------------------------------------------------------------------------
+-> process.nextTick() has the first priority for execution, setImmediate() executes after.
+-> process.nextTick() is part of the micro-task, setImmediate() is part of the macro-task.
+-> First, the process.nextTick queue is executed, then the setImmediate queue.
+---------------------------------------------------------------------------------------------------------------
+	->26.What are streams in Node.js, and what are their different types?
+	-->
+---------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------
+-------------------------------------------Implement this Concept ---------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 27.How do you implement caching in a Node.js application?
--> they are used the radis open source libry other wise we can used teh temp.json file to stored the caching data in the node,js application.
--> if you want to used the caching in the node js so will used to the tem.json are created other wise we can used the radius librray to hanlding to caching in the node.js 
-->seanrio is the most of the timing same output are provided to the number of the users so that case first timing they are exection to the overall code to the manually process then again same request are occured so in that case we can used the cache temp memeroy and they are again same request are occured so i will provided the this same responce.
-----------------------------------------------------------------------------------------------------------------
+-> We can use Redis (open-source library) or a temp.json file to store cached data in a Node.js application.
+-> If you want caching, you can create a temp.json file or use the Redis library to handle caching.
+
+-> Scenario: Most of the time, the same output is requested by multiple users.
+-> The first time, the code executes normally and generates the response.
+-> Next time, the same request comes, so the cached data from memory or temp.json/Redis is returned, avoiding full execution again.
+-> so that reason the responce timing is less because of they are not perform DB operation.
+---------------------------------------------------------------------------------------------------------------
+
+
+
+50.what is redis?
+-> Redis is an open-source in-memory database.
+-> It is used for memory management in Node.js applications.
+-> Mainly Redis is used to handle caching, so data can be stored in memory and accessed very fast.
+---------------------------------------------------------------------------------------------------------------
 28.What is load balancing, and how would you implement it in a Node.js environment?
 -> In the node.js load are balancing so we can used the cluster module in the node.js they are increase the CPU cores in the node.js 
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 29.what is cluster module?
 ->The Cluster module in Node.js is used to run the application using all available CPU cores.
 It helps handle multiple requests simultaneously by creating multiple worker processes (not threads).
 This improves performance and scalability, especially for high-traffic applications.
 By default, Node.js uses a single core. But using the Cluster module, we can create one worker per CPU core — whether it's 4, 8, or more, depending on the system.
 These worker processes share the same port and can handle requests in parallel, making full use of the system’s CPU power.
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 29.What security concerns should you be aware of when developing a Node.js application?
 -> if you want to the secure the node.js server so we can used the procedure query , parameterized queries and also used the bycrypt module in the node.js and also used the SHA-256 alogorith and AES also used.
 
@@ -229,22 +316,24 @@ Use helmet to set HTTP headers securely.
 Enable rate limiting to protect from DDoS attacks.
 Always use HTTPS for secure communication.
 Regularly update packages and run npm audit.
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 30.How do you handle versioning in a Node.js API?
 we can used the v1 or v2 for handling the veriosn in the node.js 
 ->some time old api are used to the old customer and that timing they are not need to the new feauters but they are working this api, some new customer are create the new api for the some features add and they are not blobk the api for using the version in the node.js
 ->in my current project i handle version using the v1,v2 routes in that cases the old user are used the old api and current api version are changes so the new customer are used the newest api and they are some enhancement are write to this api and handling to using the v1 and v2 rougin process.
 ---------------------------------------------------------------------------------------------------------------
-
-
-
 31.What is the difference between Buffer and Stream in Node.js?
 ->they both are used to the handling the file regarding process in the node.js server.
-----------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+
+
+
 32.what are state in promise?
 ->there are three state of promises, resolved,rejected and pending.
 -> there are the three state of the promises resolved, rejected and pending.
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 33.what are used promise.all()?
 ->We can used the number of the promises and this promise there are called at a same time if you call to the promise.all() are used if any promise are throw the error or faild so that timing used the catch block to handling this error.
 ->you can write the mutliple promises and they are executed group of the data so we can used to the promise.all and in that case they are all promises are exectued other wise they are failed for the exection process.
@@ -257,20 +346,16 @@ promise.all(['promise_1','promise_2','promise_3'])
 	  .then((result)=>{console.log(result)})
 	  .catch((error)=>{console.log(error.message)});
 
-----------------------------------------------------------------------------------------------------------------
-
+---------------------------------------------------------------------------------------------------------------
 34.What is vertical scaling and horizontal scaling?
 -> Vertical Scaling means increasing the power (CPU, RAM, etc.) of a single server to handle more load.
 -> Horizontal Scaling means adding more servers to handle more traffic. The load is divided among multiple machines.
-----------------------------------------------------------------------------------------------------------------
-
+---------------------------------------------------------------------------------------------------------------
 35.How do you use the cluster module to scale a Node.js application?
 ->cluster module in the node.js application they are increase the number of the worker process.
-
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 36.What difference between monolithic archestructure and microservice?
-----------------------------------------------------------------------------------------------------------------
-
+---------------------------------------------------------------------------------------------------------------
 37.How to share data between two services?
 
 serviceA
@@ -289,8 +374,7 @@ const {serviceA} = require('../service/serviceB');
 
 serviceA.serviceA();
 
-----------------------------------------------------------------------------------------------------------------
-
+---------------------------------------------------------------------------------------------------------------
 38.What is the Synchronous and Asynchronous Programing Languages ?.
 
 ->Synchronous programing language they are need to the executed to the one by one and they are wait to the another functin exection process.
@@ -304,10 +388,10 @@ showC();
 ->Then exection are completed of the showA then exectued to the showB and wait the showC() synchrous method that is the process of the synchrouns programing language.
 
 ->Asynchronous Programing Languages case they are all the function are executed to the parallelly.
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 38.Differance bwtween the require and import?
 ->require is part of the older CommonJS module system (used in Node.js), while import is part of the modern ES6 (ECMAScript Module) system used in modern JavaScript.
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 39.Explain the concept of middleware in Node.js.
 
 -> Middleware is mid part of the user request and there server , and in that case the user are send the request they are validated to through this middleware.
@@ -315,36 +399,27 @@ showC();
 -> The middleware are contain the headers of each request and they will check the user are valide or not.
 
 -> middleware is the mid part of the request and server , before going to the server they are rich to the middleware and the request are validated or not they are check by the middleware that is working of the middleware.
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 40.How do you optimize the performance of a Node.js application?
 ->they are used the asynchronous programing also used I/O Intensive Work.
 ->they are used the asyn/await and promises and used the asynchronous function 
 ---------------------------------------------------------------------------------------------------------------
-
-
-
-
 41.What is Web Socket ? 
 ->Communication Between the two differance client that communication are perfrom using the web socket ,
 ->real time senario is notification ,
 ->real time communication between the client and server or client and client that is working of the websocket.
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 42.How do you handle non blocking operations in Node.js?
 -> they are used the asyn/await and promises to handling the non blocking operation.
-----------------------------------------------------------------------------------------------------------------
-
+---------------------------------------------------------------------------------------------------------------
 43.How can you prevent SQL injection in a Node.js application?
 -> i can used the parameterized queries and stored procedure. 
 -> and also used to the bycrypt module.
-
-----------------------------------------------------------------------------------------------------------------
-
+---------------------------------------------------------------------------------------------------------------
 44.How would you handle data encryption in a Node.js project?
 -> Using bycrypt package, used sha-256 and also used AES
 -> also used parameterized queries and stored procedure.
-
-
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 45.How would you connect to a PostgreSQL database in a Node.js app?
 
 -> const {Pool} = require('pg');
@@ -361,16 +436,13 @@ pool.connect()
 	.catch((error)=>{console.log(error.message)});
 
 
-----------------------------------------------------------------------------------------------------------------
-
+---------------------------------------------------------------------------------------------------------------
 46.What are the differences between using an ORM and raw SQL queries in Node.js?
 ->ORM -> Object Relational Mapping used Sequelize
 ->Raw Queries -> Simple Queries
 ->Object Realtional mapping code second approach to creating the database and they are automatically database are creation
 ->raw queries means manual queries write for the database operation
-
-----------------------------------------------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------------------------------------
 47.How would you handle database connection pooling in a Node.js application?
 
 ->create a connection node and database they are need to crating the pool 
@@ -403,7 +475,7 @@ client.connect()
       .then((result)=>{console.log(result)})
 	  .catch((error)=>{console.log(error)})
 
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 49.How would you implement rate limiting in a Node.js API?
 
 -> To implement rate limiting in a Node.js API, especially for basic use cases like REST APIs, you can use the popular middleware package called express-rate-limit.
@@ -411,14 +483,8 @@ client.connect()
 -> we can used the express-rate-limit.
 
 -> we can used the express-rate-limit module in the node.js to handling the hot many timiing samw request are hit that shedular are write and again and again they are hit same api so they are set the timer 1 min only one request are hit that like that timing are set to the node.js server.
+---------------------------------------------------------------------------------------------------------------
 
-----------------------------------------------------------------------------------------------------------------
-
-50.what is redis?
-
--> Redis is an open-source, in-memory data store used for caching, databases, and real-time message brokering in Node.js and other applications.
-
--> Radius is the open-souce and they are used to the handling the memeroy mangement in the node appplication and they are used to the handling cache in the node.js.
 
 ----------------------------------------------------------------------------------------------------------------
 50.What is JWT?
