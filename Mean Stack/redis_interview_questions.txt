@@ -1,0 +1,90 @@
+🔹 Redis Interview Questions & Answers
+1. What is Redis?
+
+-> Redis is an open-source in-memory database.
+-> It is mainly used for caching in Node.js applications.
+
+2. Why do we use Redis?
+
+-> Redis is very fast because it stores data in RAM.
+-> It reduces database load and improves application performance.
+
+3. Is Redis a database or cache?
+
+-> Redis can work as both database and cache.
+-> Mostly Redis is used as a cache.
+
+4. Where does Redis store data?
+
+-> Redis stores data in system memory (RAM).
+
+5. What is TTL in Redis?
+
+-> TTL means time to live.
+-> After TTL time, Redis automatically deletes the data.
+
+6. How Redis improves performance?
+
+-> Redis returns data from memory instead of database.
+-> So response time is very fast.
+
+7. What data types are supported by Redis?
+
+-> String
+-> List
+-> Set
+-> Hash
+-> Sorted Set
+
+8. What is Redis used for in Node.js?
+
+-> Redis is used for caching API responses.
+-> Session management
+-> Rate limiting
+
+9. How does Redis work with Node.js?
+
+-> Node.js connects to Redis using redis client.
+-> First check cache → if not found → fetch from DB → store in Redis.
+
+10. What is Redis eviction policy?
+
+-> Redis removes old data when memory is full.
+-> Example: LRU (Least Recently Used).
+
+11. What happens when Redis is down?
+
+-> Application should fetch data from database.
+-> Redis is optional, DB is primary.
+
+12. Difference between Redis and temp.json cache
+
+-> temp.json uses disk storage (slow).
+-> Redis uses memory (fast).
+
+13. How do you check Redis data?
+
+-> Using redis-cli
+-> Commands: keys *, get keyName
+
+14. What is SETEX in Redis?
+
+-> SETEX stores data with expiry time.
+
+15. Can Redis be used in production?
+
+-> Yes, Redis is widely used in production systems.
+
+✅ One-Line Interview Summary
+
+Redis is an in-memory cache used to store frequently accessed data and improve application performance by reducing database calls.
+
+If you want, I can also give:
+
+🔹 Advanced Redis interview questions
+
+🔹 Scenario-based questions
+
+🔹 Redis + Node.js coding questions
+
+Just tell me 👍
