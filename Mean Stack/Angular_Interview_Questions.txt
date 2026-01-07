@@ -1592,87 +1592,78 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 -------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
 
-
-
-
-1.what is routing
-->they are navigate to the one page to the another page that is the concept of the routing
-->basically if you want to create the route so in the anuglar contain the app-routing.module.ts file that is contain the Routes array
-->and they are declare the path of the route and there componentName which component are route 
+*]what is routing
+->Navigating one page to another page that is concept of the routing.
 ---------------------------------------------------------------------------------------
-2.auth gaurd 
-->auth gaurd is the type of the route gaurd.
-->auth gaurd basically secure the routes and in that case only the authorized person naviagate routes 
-->so in that case if you want secure our routes so in that angular application write create th gaurd for securing the routes 
-->they are used ng g gaurd auth that command are create the auth servie in our angular application and in that service write the routes secure reagrading logic
+*]Auth Guard → Checks if the user is logged in or not (authorization).
+👉 they are stop unauthorized user accessing the routes.
 ---------------------------------------------------------------------------------------
-3.route gaurd
-->Route Guard is basically used in RBAC (Role-Based Access Control) cases to control which user can access which route.
+*]Route Guard → check the which type of user logged that means role-based access control.
 ---------------------------------------------------------------------------------------
-4.multiple form editing 
-->In Angular, you can manage multiple forms using Reactive Forms. There are two main ways:
--->Using Multiple FormGroup (Separate Forms)
+*]Multiple Form Editing in Angular :-  
+In Angular, we can manage multiple forms using Reactive Forms in two main ways:
 
-	Use when you have independent forms (e.g., login form & registration form).
+1️⃣ Using Multiple FormGroup (Separate Forms)
+Use when forms are independent (e.g., login form & registration form).
 Each form has its own FormGroup.
-	Example
-	
-	form1 = new FormGroup({
-	  name: new FormControl(''),
-	  email: new FormControl('')
-	});
-	
-	form2 = new FormGroup({
-	  username: new FormControl(''),
-	  password: new FormControl('')
-	});
-	
+
+form1 = new FormGroup({
+  name: new FormControl(''),
+  email: new FormControl('')
+});
+
+form2 = new FormGroup({
+  username: new FormControl(''),
+  password: new FormControl('')
+});
+
 👉 Each form works separately.
 
--->Using FormArray (Dynamic Forms)
-
+2️⃣ Using FormArray (Dynamic Forms)
 Use when you have a list of similar forms (e.g., multiple users).
 Allows adding/removing forms dynamically.
 
-	Example :- 
+form = new FormGroup({
+  users: new FormArray([])
+});
 
-	form = new FormGroup({
-	  users: new FormArray([])
-	});
-
-	addUser() {
-	  this.users.push(new FormGroup({
-		name: new FormControl(''),
-		email: new FormControl('')
-	  }));
-	}
+addUser() {
+  this.users.push(new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl('')
+  }));
+}
 
 👉 Useful for forms where users can add multiple entries dynamically.
-Which One to Use?
 
-✅ Use FormGroup for separate forms.
-✅ Use FormArray for dynamic, repeatable forms.
-
-Let me know if you need more details! 🚀
+✅ Which One to Use?
+FormGroup → For separate forms
+FormArray → For dynamic/repeatable forms
 ---------------------------------------------------------------------------------------
+*]Auth interceptor :-  
+👉Auth Interceptor is a service that runs before every HTTP request.
+👉Its main job is to add the JWT token to requests so the backend can verify the user is logged in.
+👉Backend requires this token for authentication and authorization during the user session.
+👉Auth Interceptor also checks responses from the backend, like errors or token expiration.
+👉It works like a middleware: runs before request and after response.
 
-5.auth interceptor 
+One-Line Interview Answer ✅
+👉Auth Interceptor adds JWT tokens to requests and checks responses, acting like middleware for authentication.
+---------------------------------------------------------------------------------------
+*] How Does an Auth Interceptor Work?
+👉Acts as an authentication service
+Every request goes through the interceptor before reaching the server.
 
-->auth interceptor is a service in angular they are created using the ng g s auth so auth service are direclty create and they are user authorization and authencatution code for the every request before reach the server they are check perticular user they are accessing the data and perticular user are request to the server using the JWT token .
+👉Modifies the request
+Adds JWT token in the Authorization header.
 
--->Auth Interceptor is the service in your angular app so that case they are automatically add the jwt token for the every HTTP request 
+👉Forwards the request
+Sends the modified request to the next step in the HTTP pipeline.
 
--->An Auth Interceptor is a special service in Angular that automatically adds authentication tokens (like JWT) to outgoing HTTP requests. It helps ensure that all API calls include the necessary authorization credentials without needing to manually add tokens in every request.
-
-->How Does an Auth Interceptor Work?
- ️⃣ Intercepts HTTP requests before they are sent to the server.
- ️⃣ Modifies the request (e.g., adds an Authorization header with a token).
- ️⃣ Forwards the modified request to the next step in the HTTP pipeline.
- ️⃣ Can also handle errors (e.g., redirect to login if the token is invalid).
- 
+👉Handles responses or errors
+Can catch errors like invalid tokens and redirect the user to login.
 --------------------------------------------------------------------------------------
-
-6.Custom css 
+*] Custom css 
 
 ->In Angular, you can apply custom CSS in different ways to style your application.
 
@@ -1687,69 +1678,61 @@ Let me know if you need more details! 🚀
 
  ️⃣ Using External CSS Files
 👉 You can include external CSS libraries like Bootstrap in angular.json.
----------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
 
 6.polly filling, throttling, bubbling 
 
- ️⃣ Polyfilling :- 
-📌 Definition: A polyfill is a piece of code that adds support for modern JavaScript features in old browsers.
+*]polly filling, :- 
+📌 Definition
 
-✅ Example: Older browsers don’t support fetch(), so we use a polyfill to make it work.
+A polyfill is a piece of code that adds support for modern JavaScript features in older browsers.
 
+✅ Example
+Older browsers don’t support fetch(), so we use a polyfill:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
-👉 Use Case: Helps older browsers run modern JavaScript smoothly.
----------------------------------------------------------
 
- ️⃣ Throttling (Simple Example & Explanation)
-📌 Definition:
-Throttling controls how many times a function runs in a given time. Even if an event happens many times, the function runs at fixed intervals only.
+👉 Use Case
+Ensures older browsers can run modern JavaScript smoothly.
+Commonly used for features like Promise, fetch(), Array.from(), etc.
 
-Example 1: Button Click (Without Throttling)
-👉 Suppose you have a button, and clicking it many times quickly calls a function every time.
+One-Line Interview Answer ✅ :- 
+A polyfill adds support for modern JavaScript features in browsers that don’t support them.
+--------------------------------------------------------------------------------------
+*] Throttling (Simple Example & Explanation)
+👉 Throttling means setting a time limit for performing an action.
+👉 It controls how often an action can be executed within a fixed time period.
 
-document.getElementById("myButton").addEventListener("click", () => {
-  console.log("Button clicked!");
-});
+Example (Login Button)
+User clicks Login button
+Network is slow, API request is still pending
+User clicks the button again and again
+This sends multiple requests to the backend ❌
 
-❌ If you click 10 times in 1 second, it logs 10 times.
+👉 To avoid this, we use throttling:
+Allow only one request in a given time
+Or disable the button after the first click
+✔️ This prevents multiple requests from reaching the backend server.
 
+One-Line Interview Answer ✅
+Throttling limits how frequently an action can be performed to avoid multiple requests.
 
-Example 2: Button Click (With Throttling)
-👉 Now, let's apply throttling to allow clicking only once every 2 seconds (2000ms).
+👉 In RxJS library contains the throttleTime operator.
+👉 throttleTime is used the handle throttling in angular applicaion.---------------------------------------------------------------------------------------
+*] DebounceTime :- 
+👉 DebounceTime is mainly used for live search functionality.
 
-function throttle(func, delay) {
-  let lastTime = 0;
-  return function () {
-    let now = Date.now();
-    if (now - lastTime >= delay) {
-      func();
-      lastTime = now;
-    }
-  };
-}
+👉 Without debounce:
+Every key press in the search input triggers an API call ❌
+This creates many unwanted requests to the backend
+It can slow down or overload the server
 
-const handleClick = throttle(() => {
-  console.log("Button clicked!");
-}, 2000);
-
-document.getElementById("myButton").addEventListener("click", handleClick);
-✅ Now, even if you click 10 times in 1 second, it will only log once every 2 seconds.
-
-Real-Life Use Cases:
-✔ Scrolling: Prevents running code too many times when scrolling.
-✔ Resizing: Limits function calls when resizing the browser window.
-✔ Button Clicks: Stops multiple clicks at the same time.
-✔ API Requests: Prevents overloading the server with too many requests.
-
-Summary:
-✅ Throttling limits function execution.
-✅ Runs at fixed time intervals.
-✅ Improves performance and prevents excessive calls.
-
-Let me know if you need a clearer explanation! 🚀 
-
+👉 With debounceTime:
+We wait for a fixed time after the user stops typing
+If the user types again within that time, the timer resets
+API is called only once after typing stops
+✔️ This reduces unnecessary API calls and improves performance.
 ------------------------------------------------------------------------------------------
- ️⃣  bubbling:- 
+ *] bubbling:- 
  
 -> In the bubbling case consider the parent div and child button same event or other event are called so that timing if you want to the only click the button but at that same timing there parent div also called so that concept is called as the bubbling.
 
@@ -1791,34 +1774,204 @@ document.getElementById("myButton").addEventListener("click", function(event) {
 ✔ Event bubbling → Events move up from child to parent.
 ✔ Stops bubbling → Use event.stopPropagation().
 ✔ Useful for preventing unwanted event triggers.
+---------------------------------------------------------------------------------------s
+*] Lazy loading :- 
+👉 Lazy loading in Angular loads modules only when they are needed, which makes the application faster.
 
----------------------------------------------------------------------------------------
+1️⃣ Create a Module for Lazy Loading
+ng generate module products --route products --module app.module
 
-7. lazy loading 
-Lazy loading in Angular loads modules only when needed, making the app faster.
+🔹 This command creates the ProductsModule and automatically configures it for lazy loading.
 
- ️⃣ Create a Module for Lazy Loading
- 
-   ng generate module products --route products --module app.module
-   
-🔹 This creates a products module and sets up lazy loading.
-
- ️⃣ Set Up Lazy Loading in app-routing.module.ts
+2️⃣ Set Up Lazy Loading in app-routing.module.ts file 
 
 const routes: Routes = [
-  { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) }
+  {
+    path: 'products',
+    loadChildren: () =>
+      import('./products/products.module').then(m => m.ProductsModule)
+  }
 ];
 
-🔹 This tells Angular to load ProductsModule only when /products is visited.
+🔹 This tells Angular to load ProductsModule only when /products route is visited.
 
 🔹 Why Use Lazy Loading?
-✔ Faster App – Loads only what is needed.
-✔ Better Performance – Reduces initial load time.
-✔ Efficient – Saves bandwidth.
+✔ Faster App – Loads only required modules
+✔ Better Performance – Reduces initial load time
+✔ Efficient – Saves bandwidth
 
+One-Line Interview Answer ✅ :- 
+Lazy loading loads Angular modules only when required, improving performance and reducing initial load time.
 ---------------------------------------------------------------------------------------
+*]local storage and session storage 
+✅ Local Storage
+Stores permanent data (until manually cleared).
+Data is accessible in all tabs of the same browser.
+Common use: storing login tokens, user preferences, themes, etc.
+If local storage is cleared, the user is logged out.
 
-8. ngrx 
+✅ Session Storage
+Stores temporary data (deleted when the tab or browser is closed).
+Data is only accessible in the current tab.
+Common use: storing temporary session data like form inputs or session tokens.
+More secure than local storage because data is cleared automatically when the session ends.
+
+✅ Common Features
+Both can store up to 5MB of data.
+Both store data as key-value pairs in the browser.
+--------------------------------------------------------------------------------
+*]Ways to transfer data between components not using parent and child.
+👉 For non parent–child components, data can be shared using services with BehaviorSubject, router query parameters, or browser storage.
+
+When components are not in parent–child relationship, so we can use these methods:
+
+1️⃣ Service with BehaviorSubject (Best Practice ✅)
+
+👉 Create a shared service using BehaviorSubject or Subject.
+👉 One component updates the data, and other components subscribe to receive updates.
+👉 This is the best and most commonly used approach.
+
+2️⃣ Using Angular Router (Query Parameters)
+
+👉 Data can be passed while navigating between routes using query params.
+👉 The target component can read the data from the URL.
+✔️ Useful for navigation-based data sharing.
+
+3️⃣ Using Local Storage / Session Storage
+👉 Store data in localStorage or sessionStorage.
+👉 Any component can read the stored data.
+✔️ Useful for temporary or persistent data.
+------------------------------------------------------------------------------------------
+*]Transferring Data Between Components using parant and child
+👉 Parent → Child
+	Use @Input()
+	Pass data from parent component to child component
+
+👉 Child → Parent
+	Use @Output() with EventEmitter
+	Send data from child component to parent component
+
+👉 Non Parent–Child Components
+	Use shared service with BehaviorSubject/Subject, router, or storage
+------------------------------------------------------------------------------------------
+*] Selectors :- 
+👉 Selectors are used to call or use a specific component.
+👉 The selector is defined inside the app.component.ts (or any component .ts file).
+👉 We use this selector as an HTML tag to display that component.
+
+@Component({
+  selector: 'app-header',
+  templateUrl: './header.component.html'
+})
+
+<app-header></app-header>
+
+Selector with router-outlet
+👉 router-outlet is a placeholder provided by Angular.
+👉 When routing is used, Angular loads the component’s selector inside the router-outlet automatically.
+👉 Based on the route, the specific component is rendered in router-outlet, not manually by writing the selector.
+
+One-Line Interview Answer ✅ :- 
+A selector is used to display a component, and with routing, Angular loads the component automatically inside router-outlet.
+------------------------------------------------------------------------------------------
+*] Anotation
+👉 Annotation is used to access data or elements from the template file.
+------------------------------------------------------------------------------------------
+*] Template 
+👉 Template in Angular is the structure of the HTML body.
+👉 When we create a component, Angular automatically creates a
+component.html file.
+👉 This component.html file is called the template, and it is used to
+display the UI and bind data from the component TypeScript file.
+------------------------------------------------------------------------------------------
+*]Current Angular Version?
+👉 “The current version of Angular is Angular 21"
+------------------------------------------------------------------------------------------
+*]Type of decorator :- 
+👉 Decorators are used to add extra information (metadata) to classes, methods, properties, and parameters so Angular knows how to use them.
+
+Angular mainly has 4 types of decorators 👇
+
+1️⃣ Class Decorators
+Used to define what a class is.
+Examples:
+@Component
+@NgModule
+@Directive
+@Pipe
+@Injectable
+
+@Component({
+  selector: 'app-demo',
+  templateUrl: './demo.component.html'
+})
+export class DemoComponent {}
+
+2️⃣ Property Decorators
+Used on class properties.
+Examples:
+@Input()
+@Output()
+@ViewChild()
+@ViewChildren()
+@Input() name: string;
+
+3️⃣ Method Decorators
+Used on methods.
+Example:
+@HostListener
+@HostListener('click')
+onClick() {}
+
+4️⃣ Parameter Decorators
+Used on constructor parameters.
+Examples:
+@Inject
+@Optional
+@Self
+@SkipSelf
+
+constructor(@Inject(HttpClient) private http: HttpClient) {}
+
+One-Line Interview Answer ✅ :- 
+Angular decorators add metadata to classes, properties, methods, and parameters to define their behavior.
+------------------------------------------------------------------------------------------
+*]data binding in angular :- 
+👉 Data binding is used for communication between the TypeScript file and the HTML template.
+👉 There are 4 types of data binding in Angular.
+
+1️⃣ Interpolation
+👉 Communication from TS file to HTML template
+{{ value }}
+
+2️⃣ Property Binding
+👉 Communication from TS file to HTML template
+[property]="value"
+
+3️⃣ Event Binding
+👉 Communication from HTML template to TS file
+(event)="method()"
+
+4️⃣ Two-Way Data Binding
+👉 Communication from both sides (TS ↔ HTML)
+[(ngModel)]="value"
+
+One-Line Interview Answer ✅ :- 
+Data binding in Angular allows communication between the component TypeScript file and the HTML template.
+------------------------------------------------------------------------------------------
+*]Lazy Loading in Angular
+->Lazy loading in Angular loads modules only when required, which improves performance and reduces execution time.
+
+const routes = [
+	{
+		path : 'admin',
+		loadChildren : () => import('./admin/admin.module.ts').then(m=>m.AdminModule);
+	}
+];
+------------------------------------------------------------------------------------------
+
+
+*] ngrx :- 
 
 What is NgRx? (Simple Explanation)
 
@@ -1834,8 +1987,7 @@ What is NgRx? (Simple Explanation)
 👉 RxJS is used inside NgRx to handle asynchronous operations like API calls.
 
 ---------------------------------------------------------------------------------------
-
-9.code coverage
+*] code coverage
 
 📌 What is Code Coverage?
 Code coverage tells you how much of your code is tested by unit tests. If some parts of your code are not tested, they might have bugs.
@@ -1889,108 +2041,12 @@ describe('MathService', () => {
 ✔ Write tests in .spec.ts files to verify your code.
 ✔ Run ng test --code-coverage to check coverage.
 ✔ Higher coverage = Fewer bugs! 🚀
-
----------------------------------------------------------------------------------------
-
-10.local storage and session storage 
-
-->In the localstorage case they are stored the permant data to there domain and they are access to the every tab of our application 
-
-->basically localstorage are used to stored the user login token
- 
-->and the localstorage are clean so user are logout
-
-->session storage is also used to the stored the data our application but in this case they are not stored the permant data user are logout close the web app so they are lose the data and session storage stpored the secure data of our application they are after the closing the web app so that timing storeage are clear 
-
-->local storage and session storeage both are 5mb storage 
-
-Local Storage vs. Session Storage (Simple Explanation)
-
-✅ Local Storage
-
-Stores permanent data (until manually cleared).
-Data is accessible in all tabs/windows of the same browser.
-Common use: Storing login tokens, user preferences, themes, etc.
-If you clear local storage, the user gets logged out.
-
-✅ Session Storage
-
-Stores temporary data (deleted when the tab/browser is closed).
-Data is only accessible in the current tab.
-Common use: Storing temporary session data like form inputs, session tokens, etc.
-More secure than local storage because data is cleared automatically when the session ends.
-
-✅ Common Features
-
-Both store up to 5MB of data.
-
-Both are used to store key-value pairs in the browser.
-
-🔹 Corrected Example Sentences
-❌ "Local storage stores permanent data to the domain and is accessible in every tab of our application."
-✔ "Local storage keeps data even after closing the browser and can be accessed across multiple tabs."
-
-❌ "Session storage stores secure data of our application."
-✔ "Session storage holds temporary data and gets cleared when the tab is closed."
-
---------------------------------------------------------------------------------
-11.Ways to transfer data between components if not parent and child
-
- ⃣ Service with BehaviorSubject (Best Practice ✅)
- -------------
-Create a shared service with BehaviorSubject or Subject to store and update data.
-Any component can subscribe to receive updates.
-
- ️⃣ Using Angular Router (Passing Data via Query Params)
-
- ️⃣ Using Local Storage / Session Storage
------------------------------------------------------------------------------------------------
-
-*] decorator
-->A Decorator is a special kind of TypeScript features they are add metaData to the classes
-->example @viewChild and @viewChildren
-------------------------------------------------------------------------------------------
-
-*] Selectors 
--> selectors basically used to call the specific component using this selector they are write a app.component.ts file and used of this selector to calling a component.
-->router outlet is the placeholder of the angular and that case this selector are reload to this router-outlet and this specific selector using the route. 
-------------------------------------------------------------------------------------------
-
-*] Anotation
-->Anotation are similar to the Decorators but they are used internally by Angular 
-->@viewChild and @viewChildren
-------------------------------------------------------------------------------------------
-
-*]Template 
-->Template in angular they are structure of the HTML Body and every component are create so the compoennt.html file are created so that file are also the template 
-------------------------------------------------------------------------------------------
-
-*]Angular 10 version and your are currently version differanance.
-->
-------------------------------------------------------------------------------------------
-
-type of decorator
-data binding
-Lazy Loading in Angular
-
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-
-
-
-
-
-
-
-
 
 
 -------------------------------------------------------------------------------------------------------------
 ------------------------]]]]]Some Hard Question Asking for Angular Developer]]]]]]]]]------------------------
 -------------------------------------------------------------------------------------------------------------
-
-
 
 163.Can Standalone Components Work alongside Tranditional NgModules?
 -------------------------------------------------------------------------------------------------------------
