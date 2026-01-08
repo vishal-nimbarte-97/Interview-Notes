@@ -1969,22 +1969,11 @@ const routes = [
 	}
 ];
 ------------------------------------------------------------------------------------------
-
 *] ngrx :- 
 
 What is NgRx? (Simple Explanation)
 
-📌 NgRx is a state management library for Angular. It helps store and manage data in one place so different components can easily access and update it.
-
-✔ NgRx stores and manages app data efficiently.
-✔ It follows a pattern using Store, Actions, Reducers, Selectors, and Effects.
-✔ Useful for large apps where many components share the same data.
-
-✔ RxJS → Handles real-time data and events (like API calls, user input, etc.).
-✔ NgRx → Stores and manages application data in one place for all components.
-
-👉 RxJS is used inside NgRx to handle asynchronous operations like API calls.
-
+NgRx is a state management library for Angular that works very much like Redux in React. Both create one central place (a store) to hold and manage all app data, making it simple for components to share and update state predictably.
 ---------------------------------------------------------------------------------------
 *] code coverage
 
