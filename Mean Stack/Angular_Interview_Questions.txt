@@ -1969,12 +1969,12 @@ const routes = [
 	}
 ];
 ------------------------------------------------------------------------------------------
-
 *] ngrx :- 
 
 What is NgRx? (Simple Explanation)
 
-📌 NgRx is a state management library for Angular. It helps store and manage data in one place so different components can easily access and update it.
+📌 NgRx is a state management library, similar to Redux in React JS.
+📌 With the help of NgRx, we can create a centralized state, and this state can be used by any component whenever needed.
 
 ✔ NgRx stores and manages app data efficiently.
 ✔ It follows a pattern using Store, Actions, Reducers, Selectors, and Effects.
@@ -1982,26 +1982,77 @@ What is NgRx? (Simple Explanation)
 
 ✔ RxJS → Handles real-time data and events (like API calls, user input, etc.).
 ✔ NgRx → Stores and manages application data in one place for all components.
+------------------------------------------
+Which memory is used to store NgRx data?
+👉 NgRx stores data in browser memory (RAM).
+Data is stored in JavaScript memory
+Inside the Angular application runtime
+It is not stored in database
+It is not stored in localStorage by default
 
-👉 RxJS is used inside NgRx to handle asynchronous operations like API calls.
+So when:
+Page refresh → ❌ data is lost
+Browser close → ❌ data is lost
+------------------------------------------
+After refresh, NgRx data is not stored
+Why?
+NgRx store data is kept in browser memory (RAM).
+When you refresh the page, the Angular app reloads and memory is cleared, so the store becomes empty again.
+------------------------------------------
+How long is the data stored?
+👉 Only until the application is running
+
+As long as Angular app is loaded
+Once refresh happens → store resets
+------------------------------------------
+How much data can we store? (Limit)
+
+👉 There is no fixed limit set by NgRx
+But practically:
+Depends on browser RAM
+Depends on user device
+Depends on app performance
+
+⚠ Best practice:
+Store small to medium data
+Avoid storing large files, images, videos
+------------------------------------------
 
 ---------------------------------------------------------------------------------------
-*] code coverage
+*] code coverage :- 
 
-📌 What is Code Coverage?
-Code coverage tells you how much of your code is tested by unit tests. If some parts of your code are not tested, they might have bugs.
+👉Code coverage is the concept of checking how much of your code is tested.
+👉In Angular, we write unit tests in .spec.ts files to verify our code works correctly.
+👉Tools like Jasmine (testing framework) and Karma (test runner) are used to run these tests.
+👉Then code coverage tools check which parts of the code are tested and which are not.
 
-📌 What is Code Coverage?
-👉 Code coverage means checking how much of your code is tested using unit tests.
+Flow (Simple)
+	Your Angular Code (.ts files)
+			↓
+	Unit Tests (.spec.ts files)
+			↓
+	Run with Jasmine + Karma
+			↓
+	Generate Code Coverage Report
+
+Example in simple words
+	You wrote a service with add() and subtract() functions
+	You tested only add() in .spec.ts
+	Code coverage shows add() is covered ✅, subtract() not covered ❌
+	After writing a test for subtract(), coverage increases
+
+Quick Key Points
+	.spec.ts files → Where we write tests
+	Jasmine → Testing framework
+	Karma → Test runner
+	Code Coverage → Shows % of code tested
+	Higher coverage = fewer bugs 🚀
 
 🔹 How Does It Work?
  ️⃣ When you create a component in Angular, a test file (component.spec.ts) is automatically created.
  ️⃣ You write test cases in the .spec.ts file to check if your code works correctly.
-
  ️⃣ To check how much of your code is tested, you run:
-
-ng test --code-coverage
-
+	ng test --code-coverage
  ️⃣ This command runs all test cases and stores the results in the /coverage folder.
  ️⃣ You can open the coverage/index.html file to see which parts of your code are tested and which are missing tests.
 
@@ -2042,9 +2093,8 @@ describe('MathService', () => {
 ✔ Higher coverage = Fewer bugs! 🚀
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
 -------------------------------------------------------------------------------------------------------------
-------------------------]]]]]Some Hard Question Asking for Angular Developer]]]]]]]]]------------------------
+------------------------]]]]]]Some Hard Question Asking for Angular Developer]]]]]]]]]------------------------
 -------------------------------------------------------------------------------------------------------------
 
 163.Can Standalone Components Work alongside Tranditional NgModules?
