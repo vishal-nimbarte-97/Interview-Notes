@@ -2330,11 +2330,10 @@ FORMS REGARDING Question Aksing in Interview Last Timing :-
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ----------------------------------------------RxJS Library--------------------------------------------
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 -------------------------------------------------------------------------------------------------------------
 What is RxJs ?
-->RxJS is a Reactive Extension for JavaScript used to handle API calls and async data.
--------------------------------------------------------------------------------------------------------------
+->RxJS is a Reactive Extension for JavaScript used to handle API calls and asynchronous Operation in Angular.
+------------------------------------------------------------------------------------------------------------
 110.What is Latest Version of RxJS?-> 7th veriosn
 ->The latest stable version of RxJS (Reactive Extensions for JavaScript) is v7.8.2, released in February 2025.
 ->With the help of this command "npm install rxjs" you will download the RxJs.
@@ -2344,54 +2343,179 @@ What is RxJs ?
 ->Rxjs provided the Observable and Observer for the handling the responce and request.
 ------------------------------------------------------------------------------------------------------
 112.What is Observable?
-->Observable is a way to handling asyc data,and they are more powerfull and flexible as compare to the promises.
+->Observable is a way to handling asynchronous Operation,and they are more powerfull and flexible as compare to the promises.
 ------------------------------------------------------------------------------------------------------
 113.What is differance between the Observable and Promises?
-	Observable is a feature of RxJS library, while Promise is a core JavaScript object.
-	Both are used to handle asynchronous operations in Angular apps.
-	Promise handles one value and cannot be cancelled/unsubscribed once started.
-	Observable can handle multiple values over time and can be unsubscribed to stop the data stream.
-	Promise has 3 states: Pending, Resolved, Rejected.
+👉 Observable is a feature of RxJS library, while Promise is a core JavaScript object.
+👉 Both are used to handle asynchronous operations in Angular applications.
+👉 Promise handles only one value and cannot be cancelled or unsubscribed once started.
+👉 Observable can handle multiple values over time and can be unsubscribed to stop the data stream.
+👉 Promise has three states: Pending, Resolved, and Rejected.but Observable does not have predefined states like Promise.
+
+Example of Promise :- 
+
+const myPromise = new Promise((resolved,rejected)=>{
+    resolved("Hello , World ..!");
+});
+
+myPromise.then((data)=>{
+    console.log(data);
+});
+
+Example of Observable :- 
+myObservable: any = new Observable((observer) => {
+    setTimeout(() => {
+      observer.next("Observable First Data..!");
+    }, 1000);
+    setTimeout(() => {
+      observer.next("Observable Second Data..!");
+    }, 2000)
+    setTimeout(() => {
+      observer.complete();
+    });
+    setTimeout(() => {
+      observer.next("Observable Third Data..!");
+    }, 4000);
+});
+
+constructor() {
+this.myObservable.subscribe((data: string): void => {
+	console.log(data);
+})
+}
 ------------------------------------------------------------------------------------------------------
 114.What is Promises?
-->promises is the object in the javascript they are contain the three main status 
-->pending,rejected and resolve
+->promises is the object in the javascript they are contain the three main state. 
+->pending,rejected and resolve.
 ------------------------------------------------------------------------------------------------------
 115.Explain About Observable?
 -> Observable are used in handling the asynchronous operation in our anuglar applicaion.
 ------------------------------------------------------------------------------------------------------
+120.What are Operator?
+👉 RxJS operator is a predefined function used to modify or handle API response data.
+------------------------------------------------------------------------------------------------------
 116.Explain Map Operator?
-The map operator in RxJS is similar to JavaScript's map().
-It is used to transform the data emitted by an Observable (like modifying an API response).
+👉 RxJS map operator works similar to core JavaScript map function.
+👉 It is used to modify the existing data emitted by an Observable.
+
+Example :- 
+
+import { of } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+of(1, 2, 3)
+  .pipe(
+    map(value => value * 2)
+  )
+  .subscribe(result => {
+    console.log(result);
+  });
+
 ------------------------------------------------------------------------------------------------------
 117.Explain Filter Operator?
-The filter operator is used to filter the values from an Observable based on a condition, just like JavaScript's filter().
+👉 Filter operator is similar to the core JavaScript filter function.
+👉 It is used to filter the API response data based on a condition.
+
+Example :- 
+
+import { of } from 'rxjs';
+import { filter } from 'rxjs/operators';
+
+of(1, 2, 3, 4, 5)
+  .pipe(
+    filter(value => value > 2)
+  )
+  .subscribe(result => {
+    console.log(result);
+  });
 ------------------------------------------------------------------------------------------------------
 118.Explain Tap Operator?
--> they are used for logs and sideeffects also logs like a error.
--> The tap operator is used to perform side operations, like logging or debugging, without changing the data
-------------------------------------------------------------------------------------------------------
-120.What are Operator?
-->Operator measn function they are contain to the Rxjs Library.
-------------------------------------------------------------------------------------------------------
+👉 Tap operator is used to log the data like console.log.
+👉 It does not modify the API response data.
+👉 It is used to check success or error response without affecting the actual data.
 
+Example :- 
+
+import { of } from 'rxjs';
+import { tap, map } from 'rxjs/operators';
+
+of(1, 2, 3)
+  .pipe(
+    tap(value => console.log('Before map:', value)),
+    map(value => value * 2),
+    tap(value => console.log('After map:', value))
+  )
+  .subscribe(result => {
+    console.log('Result:', result);
+  });
+
+------------------------------------------------------------------------------------------------------
 127.What is a Subscription in RxJS?
-->A Subscription in RxJS is the connection between the Observable and the Observer.
+👉 Subscription is the connection between Observable and Observer.
+👉 It is used to start receiving data from the Observable and can also stop (unsubscribe) the data when needed.
 
-Observable =>   A YouTube channel that keeps uploading videos (data stream)
-Observer   => You, the viewer who watches the videos
-Subscription = When you click the Subscribe button — you start receiving video updates (data)
-Unsubscribe = When you click the Unsubscribe button — you stop receiving notifications or data
+Real Time Senario :- 
+
+Observable → Sends data (like a YouTube channel uploading videos)
+Observer → Receives data (like you watching videos)
+Subscription → Start getting data (like clicking Subscribe)
+Unsubscribe → Stop getting data (like clicking Unsubscribe)
 ------------------------------------------------------------------------------------------------------
-
 119.Explain fromEvent Operator?
-------------------------------------------------------------------------------------------------------
+👉 fromEvent gets the event from the DOM and performs operation on that event.
 
+Example :- 
+
+HTML :- 
+<button id="myButton">Click Me</button>
+
+TS :- 
+import { Component, OnInit } from '@angular/core';
+import { fromEvent } from 'rxjs';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent implements OnInit {
+
+  ngOnInit() {
+    const button = document.getElementById('myButton');
+
+    // Create Observable from button click
+    const buttonClick$ = fromEvent(button, 'click');
+
+    // Subscribe to perform operation when click happens
+    buttonClick$.subscribe(() => {
+      console.log('Button clicked! Performing operation...');
+      alert('Button was clicked!');
+    });
+  }
+}
 ------------------------------------------------------------------------------------------------------
 121.explain ajax Operator?
-->ajax is used in RxJS to make HTTP requests like GET or POST, and it works with Observables to manage timing and responses.
-->ajax is an operator in RxJS used to make HTTP requests and handle the timing of those requests. However, it's not commonly used in Angular applications because Angular provides HttpClient for making HTTP calls. ajax is mostly used in non-Angular applications where HttpClient is not available
+👉 ajax is used to call APIs and get the response.
+👉 This response is stored as an Observable, and you can subscribe to use the data or unsubscribe to stop listening.
+
+import { ajax } from 'rxjs/ajax';
+
+// Call API using ajax and Stored the data Observable
+const apiData$ = ajax('https://jsonplaceholder.typicode.com/todos/1');
+
+// Subscribe to get the response
+apiData$.subscribe(response => {
+  console.log('API Response:', response.response);
+});
+
+->ajax is an operator in RxJS used to make HTTP requests and handle the timing of those requests. However, it's not commonly used in Angular applications because of Angular provides HttpClient for making HTTP calls. ajax is mostly used in non-Angular applications where HttpClient is not available
 ------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
 122.Differance between Map and SwitchMap Operator?
 ->The map operator in RxJS works like the core JavaScript map function. It takes the input value and returns a modified value.
 ->The switchMap operator in RxJS is used to switch to a new Observable. When a new Observable starts, the previous one is canceled, and only the latest Observable continues.
