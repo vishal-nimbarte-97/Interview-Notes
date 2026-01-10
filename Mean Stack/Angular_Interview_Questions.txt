@@ -1970,7 +1970,6 @@ const routes = [
 ];
 ------------------------------------------------------------------------------------------
 *] ngrx :- 
-
 What is NgRx? (Simple Explanation)
 
 📌 NgRx is a state management library, similar to Redux in React JS.
@@ -2020,6 +2019,11 @@ Avoid storing large files, images, videos
 
 ---------------------------------------------------------------------------------------
 *] code coverage :- 
+NgRx is a state management library for Angular that works very much like Redux in React. Both create one central place (a store) to hold and manage all app data, making it simple for components to share and update state predictably.
+---------------------------------------------------------------------------------------
+
+
+*] code coverage
 
 👉Code coverage is the concept of checking how much of your code is tested.
 👉In Angular, we write unit tests in .spec.ts files to verify our code works correctly.
@@ -2096,18 +2100,149 @@ describe('MathService', () => {
 -------------------------------------------------------------------------------------------------------------
 ------------------------]]]]]]Some Hard Question Asking for Angular Developer]]]]]]]]]------------------------
 -------------------------------------------------------------------------------------------------------------
-
 163.Can Standalone Components Work alongside Tranditional NgModules?
+Yes, a standalone component works inside an NgModule, but:
+
+✔ It must be created with standalone: true
+✔ It must be added to the imports array
+
+✅ Correct Example :- 
+
+Standalone Component
+
+@Component({
+  selector: 'app-standalone-demo',
+  standalone: true,
+  imports: [CommonModule],
+  template: `<p>Standalone component works!</p>`
+})
+export class StandaloneDemoComponent {}
+
+Using it inside an NgModule
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    StandaloneDemoComponent // ✅ correct place
+  ],
+  declarations: [
+    AppComponent
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+
 -------------------------------------------------------------------------------------------------------------
 164.How do Standalone Components Handle dependencies such as FormsModule and HttpClientModule?
+-> Standalone components handle dependencies using the imports array.
+
+@Component({
+  selector: 'app-demo',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  template: `<input [(ngModel)]="name" />`
+})
+export class DemoComponent {}
+
 -------------------------------------------------------------------------------------------------------------
 165.Can you create standalone directive and pipes in Angular?
+-> Yes. Angular allows you to create standalone directives and standalone pipes.
+
+They work just like standalone components and use standalone: true.
+
+✅ Standalone Directive
+
+@Directive({
+  selector: '[appHighlight]',
+  standalone: true
+})
+export class HighlightDirective {}
+
+✅ Standalone Pipe
+
+@Pipe({
+  name: 'capitalize',
+  standalone: true
+})
+export class CapitalizePipe implements PipeTransform {
+  transform(value: string) {
+    return value.toUpperCase();
+  }
+}
+
+✅ Using Them
+@Component({
+  standalone: true,
+  imports: [HighlightDirective, CapitalizePipe],
+  template: `<p appHighlight>{{ 'hello' | capitalize }}</p>`
+})
+export class DemoComponent {}
+
+🎯 Simple Answer (Interview) :- 
+Yes, Angular supports standalone directives and pipes using standalone: true.
 -------------------------------------------------------------------------------------------------------------
 166.How do you Lazy load a Standalone Components dynamically?
+->Standalone components are lazy loaded using loadComponent() in Angular routing.
+
+✅ Example
+const routes: Routes = [
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./login/login.component')
+        .then(m => m.LoginComponent)
+  }
+];
+
+🎯 Interview One-Liner
+Lazy loading of standalone components is done using loadComponent() instead of loadChildren().
+
+🔑 Key Point
+loadComponent() → Standalone Component
+loadChildren() → NgModule
+
+and ngModule is used that means standalone false so that case used loadChildern
+
+✅ Correct & Simple Statement
+If an NgModule is used (standalone is false), lazy loading is done using loadChildren().
+
+🔁 Quick Comparison
+Type					Standalone			Lazy Loading Method
+Standalone Component	true			    loadComponent()
+NgModule				false				loadChildren()
+
+✅ Example (NgModule Lazy Loading)
+{
+  path: 'admin',
+  loadChildren: () =>
+    import('./admin/admin.module')
+      .then(m => m.AdminModule)
+}
 -------------------------------------------------------------------------------------------------------------
-167.How do you mamage routing with standalone compoents in Angular?
+167.How do you manage routing with standalone compoents in Angular?
+-> Routing with standalone components is managed using the Angular Router with loadComponent().
+
+✅ Basic Routing with Standalone Components
+const routes: Routes = [
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./login/login.component')
+        .then(c => c.LoginComponent)
+  }
+];
 -------------------------------------------------------------------------------------------------------------
 168.How do you configure Providers inside a standalone compoents?
+-> Providers in a standalone component are configured using the providers array inside the @Component decorator.
+
+✅ Example
+@Component({
+  selector: 'app-demo', 
+  standalone: true,
+  providers: [UserService],
+  template: `<p>Demo works!</p>`
+})
+export class DemoComponent {}
 -------------------------------------------------------------------------------------------------------------
 169.How do you migrate an existing Angular application to standalone compoents?
 ->  FormsModule is used for template-driven forms.
