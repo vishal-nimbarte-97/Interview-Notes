@@ -2114,7 +2114,8 @@ Standalone Component
   selector: 'app-standalone-demo',
   standalone: true,
   imports: [CommonModule],
-  template: `<p>Standalone component works!</p>`
+  template: `
+<p>Standalone component works!</p>`
 })
 export class StandaloneDemoComponent {}
 
@@ -2174,7 +2175,8 @@ export class CapitalizePipe implements PipeTransform {
 @Component({
   standalone: true,
   imports: [HighlightDirective, CapitalizePipe],
-  template: `<p appHighlight>{{ 'hello' | capitalize }}</p>`
+  template: `
+<p appHighlight="appHighlight">{{ 'hello' | capitalize }}</p>`
 })
 export class DemoComponent {}
 
@@ -2240,46 +2242,102 @@ const routes: Routes = [
   selector: 'app-demo', 
   standalone: true,
   providers: [UserService],
-  template: `<p>Demo works!</p>`
+  template: `
+<p>Demo works!</p>`
 })
 export class DemoComponent {}
 -------------------------------------------------------------------------------------------------------------
 169.How do you migrate an existing Angular application to standalone compoents?
-->  FormsModule is used for template-driven forms.
-->  ReactiveFormsModule is used for reactive forms.
+->First of all, we upgrade the Angular version using the Angular CLI command because standalone components work in the latest Angular versions.
+
+->Standalone components do not need NgModule. Every component is made standalone by adding standalone: true.
+After that, each component injects its own dependencies inside the component itself, so it does not depend on NgModule or app.module.ts.
+
+->Because of this, the app.module.ts file is no longer needed and can be removed after migration.
+
+->While migrating, some issues or errors may occur, like missing imports or routing problems. These errors are solved manually one by one.
+
+->This is the process of migrating an existing Angular project to the latest version using standalone components.
+
+->First we upgrade Angular, then make every component standalone, move dependencies into components, remove NgModule, and fix errors step by step.
+-------------------------------------------------------------------------------------------------------------
+
+FORMS REGARDING Question Aksing in Interview Last Timing :- 
+
+170. FormsModule is used for template-driven forms
+->If you want to use template-driven forms, then you need to import the FormsModule.
+-------------------------------------------------------------------------------------------------------------
+171. ReactiveFormsModule is used for reactive forms
+->If you want to use reactive forms, then you need to import the ReactiveFormsModule.
 -------------------------------------------------------------------------------------------------------------
 170.What is used of ngForm in Angular?
 ->ngForm is used to handle and manage template-driven forms in Angular.
+->and, It helps to track the form state, such as valid, invalid, touched, and submitted, and also handles form submission.
 -------------------------------------------------------------------------------------------------------------
 171.Explain state management of Form?
+->Form state management tracks form values, validation, and user interactions like touched, dirty, and submitted.
 -------------------------------------------------------------------------------------------------------------
 172.What are FormControl,FormGroup and FormArray?
+->They are classes present in ReactiveFormsModule.
+->They are used to create and manage reactive forms in Angular.
+	+ FormControl is used to control a single form field.
+	+ FormGroup contains a collection of multiple FormControls.
+	+ FormArray is used for dynamic form controls, like adding or removing fields.
 -------------------------------------------------------------------------------------------------------------
 173.How do you perform validation in Angular forms?
+->Validation in Angular forms is used to check the user input.
+->and In Angular there is two ways to handled the validation using the template driven forms and reactive forms.
+->In template-driven forms, validation is done using HTML attributes like required, minlength, etc.
+->In reactive forms, validation is done using Validators like Validators.required and Validators.minLength.
+->Angular automatically checks whether the form is valid or invalid and helps us show error messages.
+👉 [implementation asking last interview]
 -------------------------------------------------------------------------------------------------------------
 174.What is the role of FormBuilders in Angular?
+->FormBuilder is used to easily create and manage reactive forms with less code.
+->It helps us write less code when creating FormControl, FormGroup, and FormArray.
+->Instead of creating form controls manually, FormBuilder provides simple methods to build the form structure.
 -------------------------------------------------------------------------------------------------------------
 175.How do you used patchValue() and setValue() in Reactive forms?
+->setValue is used to set the form values, and with the help of this all default values are also set.
+->patchValue is basically used to patch the values to the form (partial update).
 -------------------------------------------------------------------------------------------------------------
 176.How do you track form state changes in angular?
+->We track form state changes using form properties like valid, dirty, touched, and by subscribing to valueChanges and statusChanges in reactive forms.
+->value → current form values
+->valid / invalid → form validation status
+->touched / untouched → user interaction
+->dirty / pristine → whether form value is changed
+->pending → async validation status
 -------------------------------------------------------------------------------------------------------------
 177.How do you display error message for form validation in Angular?
+->We display error messages by checking the form control is invalid and touched or dirty, then show the message using the errors property in the template.
+[Asking in interview implementation]
 -------------------------------------------------------------------------------------------------------------
 179.How to implement security measures for Angular?
+->We implement security in Angular by using authentication and authorization, route guards, JWT tokens, form validation, HTTP interceptors, and Angular built-in protection like CORS prevention.
 -------------------------------------------------------------------------------------------------------------
 180.What is differance between bootstrapApplication() and bootstrapModule().
+--------------------------------------------------------------
+| bootstrapModule()          | bootstrapApplication()        |
+| -------------------------- | ----------------------------- |
+| Uses **NgModule**          | Uses **Standalone Component** |
+| Requires `AppModule`       | No module required            |
+| Old / traditional approach | New / modern approach         |
+| More boilerplate           | Less boilerplate              |
+--------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------
-
-
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ----------------------------------------------RxJS Library--------------------------------------------
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-110.What is Latest Version of RxJS?->7th veriosn
+-------------------------------------------------------------------------------------------------------------
+What is RxJs ?
+->RxJS is a Reactive Extension for JavaScript used to handle API calls and async data.
+-------------------------------------------------------------------------------------------------------------
+110.What is Latest Version of RxJS?-> 7th veriosn
 ->The latest stable version of RxJS (Reactive Extensions for JavaScript) is v7.8.2, released in February 2025.
 ->With the help of this command "npm install rxjs" you will download the RxJs.
-
 ------------------------------------------------------------------------------------------------------
 111.What is RxJS and why is it used in Angular?
 ->RxJs is Reactive Extensions for JavaScript Library, they are handle the asynchronous operation or api's calls and there responce and request.
@@ -2518,9 +2576,7 @@ of(1,2,3).subscribe(value => {
 	Iterables (like strings, Sets, Maps)
 	Async generators
 
-
-
-
+------------------------------------------------------------------------------------------------------
 
 
 
