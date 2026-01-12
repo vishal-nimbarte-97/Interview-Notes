@@ -2802,6 +2802,10 @@ The API keeps calling until the order status changes (like Processing, Shipped, 
 | **AsyncSubject**    | Communicate between two components | ✅ Last/latest value         | Sends value only when Observable completes   |
 ------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
+
+
 ------------------------------------------------------------------------------------------------------
 145.Differance between Observable and Subject?
 ------------------------------------------------------------------------------------------------------
