@@ -290,6 +290,10 @@ Flow:
 ---------------------------------------------------------------------------------------------------------------
 
 
+
+
+
+
 28.What is load balancing, and how would you implement it in a Node.js environment?
 -> In the node.js load are balancing so we can used the cluster module in the node.js they are increase the CPU cores in the node.js 
 ---------------------------------------------------------------------------------------------------------------
