@@ -288,6 +288,8 @@ Flow:
 -> Then the data is stored in Redis for future use.
 -> This helps to improve performance and reduce database load.
 ---------------------------------------------------------------------------------------------------------------
+
+
 28.What is load balancing, and how would you implement it in a Node.js environment?
 -> In the node.js load are balancing so we can used the cluster module in the node.js they are increase the CPU cores in the node.js 
 ---------------------------------------------------------------------------------------------------------------
@@ -718,106 +720,96 @@ console.log(value);
 79.How can you prevent SQL injection in a Node.js application?
 -> prevent SQL injection so i used the sp and parameterized queries. and also used the stored procedure.
 ----------------------------------------------------------------------------------------------------------------
-
 80.What is SQL Injection?
-
 -> they are breack the sql condition are clear the password in the databases so that process is called the sql injections.
-
 -> they are normal condition query are write that queries not used the parameterized ($) symbol are used or strored procedure so they are breack using the &condtion and condition are true and you can acces the account without need to the actula password that the process is called as the SQL Injection.
 
-----------------------------------------------------------------------------------------------------------------
 
+----------------------------------------------------------------------------------------------------------------
 81.How do you handle authentication and authorization securely in a Node.js app?
-
-->Authenication is the process of the user are log or not they are cheack using the JWT Token in case JWT token are expire so the user are not login or accesing the our application, 
-
-->and Authorization case they are used to RBAC to handle the Authorization case.
-
+->"Authentication is the process of checking if user is logged in or not using JWT Token. In case JWT token expires, user cannot login or access our application.
+Authorization uses RBAC to handle permissions." that means which type of the user they are access the which type of the module.
 ----------------------------------------------------------------------------------------------------------------
-
+81.What is express-rate-limit module used & What is DDoS ?
+-> Multiple clients send multiple fake requests and they are not handled so server crashes. We use express-rate-limit to prevent DDoS attack. It blocks multiple requests sent by one client."
+----------------------------------------------------------------------------------------------------------------
 82.What are some common security best practices for securing an Express.js application?
-->used the express-rate-limit module 
-->used bycrypt module that contain the sha-256 and AES algorithm 
-->used https module insted of the http 
-->prevent SQL Injection 
-->used stored procedure
+-> used express-rate-limit = prevents brute force/DDoS
+-> used bcrypt package = secure password hashing
+-> used HTTPS over HTTP = encrypts data
+-> prevent SQL Injection = for critical security
+> used Stored procedures = safe database queries
 ----------------------------------------------------------------------------------------------------------------
 83.How would you handle data encryption in a Node.js project?
--> IN the node js they are handle the encryption so we can used to the bycrypt module
-the real time senario is the user password are stored the encrypted formated in the database so that time we can used the bycrypt module.
--> SHA-256 alogorith, AES and used the Optimization Technique.
+-> "In Node.js, we handle encryption using the bcrypt module. 
+-> In real-time scenario, user passwords are stored in encrypted format in the database, so we use bcrypt module. 
+-> Also use SHA-256 algorithm, AES, and optimization techniques."
+	bcrypt = password hashing (most common use case)
+	SHA-256 = hashing algorithm
+	AES = symmetric encryption
+	Real scenario = password storage
 ----------------------------------------------------------------------------------------------------------------
-
 84.What is the difference between the package.json and package-lock.json?
-->both the package.json and package-lock.json are create when the node project are created 
-->and package.json are contain to the dependencies of our node js project and package-lock.json are contain to the there subdepednices of the project.
-->
+->"Both package.json and package-lock.json are created when the Node project is created. package.json contains the path of dependencies our Node.js project and package-lock.json contains path of their sub-dependencies of the project."
 ----------------------------------------------------------------------------------------------------------------
-
 85.How do you create a custom Node.js module, and how would you share it across projects?
+-> "With the help of module.exports and require, I will create a custom Node.js module and share it across projects using require."
 
-->const {orderCreate} = require('../moduleName/path');
-  exports.module = {orderCreate}
+Module file (myModule.js):
+
+const myFunction = () => "Hello from module!";
+module.exports = { myFunction };  // Export
+
+Using it:
+const { myFunction } = require('./myModule');  // Import
 ----------------------------------------------------------------------------------------------------------------
 86.Types of module in Node.js ?
-->	core module, inbuild module and custome module are there in the node.js 
--> core module like a nodemon,pg and inbuild is http,https and path , fs and custome means they are crated by the programer.
+->Core modules (built-in): http, https, fs, path, os
+->Third-party modules: nodemon, pg (npm install needed)  
+->Custom modules: Created by programmer
 ----------------------------------------------------------------------------------------------------------------
 87.Alternative Way of Nodemon in Node.js ?
-->node --watch index
+-> Alternative way of Nodemon: node --watch index
+-> Nodemon needs to download nodemon module and configure in package.json file. But using --watch, there is no need to install any package and no need for configuration.
 ----------------------------------------------------------------------------------------------------------------
-88.How to Improving the performance of a Node.js server 
-
--> In the node js server write the I/O Intensive work are write 
--> used the Asynchronous function 
--> and they are increase the thread pool size using the UV_THREAD_POOL_SIZE 
-there are number of the ways to improve the performance of the node.js server 
--> they are write the aycnchouse code and using the asyn/await
--> write the I/O intensive work insted of the CPU Intensive work
--> and also used the promises.
-
+88.How to Improving the performance of a Node.js server.
+-> "To improve Node.js server performance:
+-> Use asynchronous functions using async and await
+-> Write I/O intensive work and avoid CPU intensive work
+-> Increase thread pool using UV_THREAD_POOL_SIZE
+-> Use async, await, and promises for creating functions"
 ----------------------------------------------------------------------------------------------------------------
 89.What is the promises?
--> A Promise is a JavaScript object that represents an asynchronous operation and returns one of three states: pending, resolved, or rejected.
+->Promises is the javascript object and they are used to handling the asynchronous operation in the node.js and they are provided the three main state resolved, rejected and pending.
 
-let promise = new Promise((resolved,reject)=>{
-	let condition = true;
-	if(condition){
-		console.log('Completed the Promise Task..!');
-	}else{
-		console.log('Failed the Promise Task..!');
-	}
+const myPromise = new Promise((resolve,reject) => {
+    console.log("Request Pending..!");
+    setTimeout(()=>{
+        // resolve("Resolved..!");
+        reject("Rejected ..!");
+    },1000);
 });
 
-promise.
-	   .then((result)=>{console.log(result)})
-	   .catch((error)=>{console.log(error.message)})
-
-->Promises is the javascript object and they are used to handling the asynchronous operation in the node.js and they are provided the three main state pending,resolved and rejected.
-
-let promise = new Promise((resolve,reject)=>{
-	let condition = true;
-	if(condition){
-		console.log('All Condition are true..!');
-	}
-	else {
-		console.log('Faild..!');
-	}
+myPromise.then((result) => {
+    console.log("Result :- ",result);
+}).catch((error) => {
+    console.log("Error :- ",error);
 });
-
-promise.then((result)=>{console.log(result)})
-	   .catch((error)=>{console.log(error)});
 	   
 ----------------------------------------------------------------------------------------------------------------
 90.What is the asyn/await?
--> async/await are JavaScript keywords used to handle Promises in a cleaner way—async makes a function return a Promise, and await pauses the execution until the Promise is resolved or rejected.
+-> Async/await is used to handle asynchronous operations in Node.js/JavaScript. They were introduced in ECMAScript 6 (ES6). async makes a function asynchronous, and await pauses code execution until a Promise completes.
 
-function orderPlace(){
-	return 'Order Place and Created Successfully..!';
+Example :- 
+
+async function processWork(){
+    return new Promise(resolve => setTimeout(resolve, 2000));
 }
-async function createSimple(){
-	let value = await orderPlace();
-	console.log(value);
+
+async function simpleWork(){
+    console.log("Work..!");           
+    await processWork();              // Pauses 2 seconds
+    console.log("Work done!");        
 }
 ----------------------------------------------------------------------------------------------------------------
 91.Difference between the promise and asyc/await?
@@ -827,14 +819,13 @@ async function createSimple(){
 ->async/await are used to handle the asynchronous opetaion in the node js , the async are used that measn our function is the aycnchouse and they are return to the promises and await are used because they are wait for the exection.
 ----------------------------------------------------------------------------------------------------------------
 92.what is difference between the https and http module?
--> http module is used for the basic development of the application.
--> and if you want to the secure our node application so we can used the https module 
--> and they are write the SSL Certifiaction Secure Socket Layer. thjey are need to the purchased.
+->Both http and https modules are used to handle API requests. The http module is not secure, but the https module is secure because it uses SSL/SSL certificates. We usually use http in development or testing (UAT, staging), and https in production.
 ----------------------------------------------------------------------------------------------------------------
-93.Without using the express server we can create the node.js server it's possible to creating the server in the node.js 
-->yes,it's possible to creating the server in the node.js but in this case one disadvacses is they are increase the line of the code. but the server are working and it's possible to create server without using the express server.
+93.Without using the express server we can create the node.js server it's possible to creating the server in the node.js ?
+->Yes, it is possible to create a server in Node.js without Express. The server works, but the disadvantage is that the code becomes longer and harder to manage.
 ----------------------------------------------------------------------------------------------------------------
 94.What is Higher Order Function?
+-> A higher order function is a function that accepts another function as an argument and/or returns a function.
 
 function show()
 {
