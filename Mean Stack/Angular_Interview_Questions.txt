@@ -2509,58 +2509,135 @@ apiData$.subscribe(response => {
 
 ->ajax is an operator in RxJS used to make HTTP requests and handle the timing of those requests. However, it's not commonly used in Angular applications because of Angular provides HttpClient for making HTTP calls. ajax is mostly used in non-Angular applications where HttpClient is not available
 ------------------------------------------------------------------------------------------------------
+123.Explain SwitchMap Operator?
+👉 switchMap operator is basically used in search boxes (live search).
+👉 When a user types continuously, multiple key presses happen, so multiple API requests go to the backend server.
+👉 We use debounceTime to control time-based API calls, but debounceTime alone is not fully optimized, because it may still send unwanted API requests.
+👉 To make live search fully optimized, we use both debounceTime and switchMap together.
 
+👉 switchMap works like this:
+If a previous API request is pending
+And the user types again
+The previous API request is cancelled
+A new API request is triggered
+The new request does not depend on the previous one
+👉 Only the latest API response is used.
 
-
-
-
-
-
+👉 switchMap is used to cancel previous API calls and handle only the latest request, especially in live search scenarios.
+------------------------------------------------------------------------------------------------------
 122.Differance between Map and SwitchMap Operator?
-->The map operator in RxJS works like the core JavaScript map function. It takes the input value and returns a modified value.
+->The map opesrator in RxJS works like the core JavaScript map function. It takes the input value and returns a modified value.
 ->The switchMap operator in RxJS is used to switch to a new Observable. When a new Observable starts, the previous one is canceled, and only the latest Observable continues.
 ->The map operator does not stop the previous request; it just transforms the value. But the switchMap operator cancels the previous request and switches to the new one.
-------------------------------------------------------------------------------------------------------
-123.Explain SwitchMap Operator?
-->switchMap is mainly used when a new request occurs before the previous request finishes. In such cases, switchMap cancels the previous request and only continues processing the latest one. That is the main working of switchMap.
-->SwitchMap is Best for the API calls(they are avoiding multiple request)
 ------------------------------------------------------------------------------------------------------
 124.What is Operator in RxJS?
 ->In RxJS, an operator is a function that helps work with Observables. Operators are used to transform, filter, or handle the data or responses from an Observable.
 ->If we want to use an operator in RxJS, we need to use it inside the pipe() method.
 ->and, The pipe() method allows you to use one or more operators to transform or handle the data from an Observable.
+->simpellly, operators is functions of Rxjs.
 ------------------------------------------------------------------------------------------------------
 126.What is Observable?
-->An Observable continuously emits data, and if we want to use that data, we need to subscribe to the Observable. Once we subscribe, we can receive and use the emitted data.
+👉 Observable means a data source (like API response data).
+👉 An Observer is an object that receives data from an Observable.
 
--> Observable = creates a data stream
-
--> Subscribe = start listening to the stream
+📌 In short:
+Observable provides data, and Observer receives the data using subscribe/unsubscribe.
 ------------------------------------------------------------------------------------------------------
 126.What is Observer?
-
-->An Observer is an object that receives data from an Observable. It contains three main methods: next(), error(), and complete().
+👉 An Observer is an object that receives data from an Observable. It contains three main methods: next(), error(), and complete().
 
 ->next() — handles each data value emitted
 ->error() — handles any error emitted
 ->complete() — handles when the Observable finishes
+
+export class App {
+  ngOnInit() {
+    const observable: any = new Observable<number>(observer => {
+      observer.next(1);
+      observer.next(2);
+      observer.next(3);
+      observer.next(4);
+      observer.complete
+    });
+
+    const observer = {
+      next: (value: number) => console.log('Observer got a next value: ' + value),
+      error: (error: any) => console.error("Observer got an error: ", error),
+      complete: () => console.log('Observer got a complete notification')
+    }
+
+    observable.subscribe(observer);
+  }
+}
+
 ------------------------------------------------------------------------------------------------------
+
 127.What is a Subscription in RxJS?
 ->A Subscription in RxJS is the connection between the Observable and the Observer.
 
-Observable =>   A YouTube channel that keeps uploading videos (data stream)
+// Real Time Senario :- 
+
+Observable =>   A YouTube channel that keeps uploading videos (data stream),=, multiple videos uploaded
 Observer   => You, the viewer who watches the videos
 Subscription = When you click the Subscribe button — you start receiving video updates (data)
 Unsubscribe = When you click the Unsubscribe button — you stop receiving notifications or data
+
+export class App {
+  ngOnInit() {
+    const observable: any = new Observable<number>(observer => {
+      observer.next(1);
+      observer.next(2);
+      observer.next(3);
+      observer.next(4);
+      observer.complete
+    });
+
+    const observer = {
+      next: (value: number) => console.log('Observer got a next value: ' + value),
+      error: (error: any) => console.error("Observer got an error: ", error),
+      complete: () => console.log('Observer got a complete notification')
+    }
+
+    observable.subscribe(observer);
+  }
+}
 ------------------------------------------------------------------------------------------------------
 128.What is Unsubscribe() Important?
-->The unsubscribe() method is used to stop an Observable from sending more data.
-->It is important to free up memory, avoid memory leaks, and prevent unwanted background tasks.
+->We use Observable, so they need to be closed because they use resources.
+->If we don’t close them, the process keeps running in the background.
+->So unsubscribe() is used to close the Observable, means stop that process.
+->With the help of unsubscribe(), we avoid memory leakage.
+
+subscription: Subscription | undefined;
+
+ngOnInit() {
+  console.log("Observable Started..!");
+  this.subscription = interval(1000).subscribe(value => {
+    console.log("Observable running value :- ", value);
+  })
+}
+
+ngOnDestroy() {
+  console.log("Observable Stopped..!");
+  this.subscription?.unsubscribe();
+}
 ------------------------------------------------------------------------------------------------------
+
+
 129.What is a Subject in RxJS?
-->A Subject is a special type of Observable in RxJS.
-->It helps in emitting data and sending it to multiple subscribers at the same time.
-->and ,with The Help subject.next() method is used to pass data to all the subscribers.
+->Subject is used to share data between two components.
+->In this case, we write the Subject inside a service, and this service works like a middle layer between the components.
+->One component sends the data using the Subject, and with the help of this middle service the data is stored.
+->Another component subscribes to this data and uses it.
+
+->And it is a recommended way to send data between two components instead of using browser storage or parent-child and child-parent relationship.
+->Using Subject with a service is a cleaner and better approach for component-to-component communication, especially when components are not directly related.
+
+reason :- why we recomeded
+  No tight coupling
+  No unnecessary browser storage
+  Easy to manage and scalable
+
 
 import {Subject} from 'rxjs';
 
@@ -2569,6 +2646,7 @@ const subject = new Subject<number>();
 subject.subscribe(value => {
 	console.log('Subscriber 1: ',value);
 });
+
 subject.subscribe(value => {
 	console.log('Subscriber 2: ',value);
 });
@@ -2677,40 +2755,44 @@ When WebSocket or Server-Sent Events are not available
 151.How do you Handle Real-Time data stream in Angular using RxJS?
 152.What is API Polling?
 153.How do you create a custom RxJS Operator?
-------------------------------------------------------------------------------------------------------
-105.What is differance between promise and observable?
+
+
+
 ------------------------------------------------------------------------------------------------------
 106.Differance between promise/fetch API and Observable/Subscribe?
+
+Promise / Fetch API
+👉 Returns only one value
+👉 Executes immediately
+👉 Cannot be cancelled
+👉 Used for single API response
+
+Observable / Subscribe
+👉 Can return multiple values
+👉 Executes only when subscribed
+👉 Can be cancelled (unsubscribe)
+👉 Used for API calls, events, streams
+
+📌 In short:
+Promise gives one-time data, but Observable gives continuous or multiple data and is more flexible.
+
 ------------------------------------------------------------------------------------------------------
-107.Used of of Operator?
-->The **of** operator is used to create an Observable from static values. It is mostly used when you want to manually emit values and see how Observables or operators behave.
-->If you have constant values like a number, string, array, or object, and you want to convert them into an Observable, then you can use the of operator.
-->It will emit those values just like any other Observable would, and you can subscribe to them.
+107.Used of 'of' Operator?
+👉 Normal values like array, string, number, or object are converted into an Observable using of.
+👉 This Observable can then be subscribed wherever required.
+👉 On subscribe, the Observable emits the values and completes.
 
 import {of} from 'rxjs';
 
 of(1,2,3).subscribe(value => {
 	console.log('Value : ',value);
 });
+
 ------------------------------------------------------------------------------------------------------
 108.used form Operator?
-->The from operator creates an Observable from different types of data sources like:
-	Arrays
-	Promises
-	Iterables (like strings, Sets, Maps)
-	Async generators
-
+👉 Operators are used to modify or change the upcoming response from the API.
+👉 They perform different types of operations on the data like filtering, mapping, transforming, or handling errors before the response reaches subscribe().
 ------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
 
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
