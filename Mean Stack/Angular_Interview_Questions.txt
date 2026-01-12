@@ -2622,15 +2622,14 @@ ngOnDestroy() {
   this.subscription?.unsubscribe();
 }
 ------------------------------------------------------------------------------------------------------
-
-
 129.What is a Subject in RxJS?
 ->Subject is used to share data between two components.
-->In this case, we write the Subject inside a service, and this service works like a middle layer between the components.
+->In this case, we write the Subject inside a service, and this service works like a middle layer between the two components.
 ->One component sends the data using the Subject, and with the help of this middle service the data is stored.
 ->Another component subscribes to this data and uses it.
 
 ->And it is a recommended way to send data between two components instead of using browser storage or parent-child and child-parent relationship.
+
 ->Using Subject with a service is a cleaner and better approach for component-to-component communication, especially when components are not directly related.
 
 reason :- why we recomeded
@@ -2638,6 +2637,7 @@ reason :- why we recomeded
   No unnecessary browser storage
   Easy to manage and scalable
 
+Example :- 
 
 import {Subject} from 'rxjs';
 
@@ -2655,28 +2655,60 @@ subject.next(1);
 subject.next(2);
 ------------------------------------------------------------------------------------------------------
 130.What is Event Driven Architecture?
-->Event-driven architecture means two or more components (or parts of a system) communicate with each 
-other by sending and receiving events, without being directly connected.
+->Event-Driven Architecture (EDA) means two or more components (or parts of a system) communicate with each other by sending and receiving events, without being directly connected to each other.
+
+-> Real-Time Example: Subject & Broadcast (Event-Driven Architecture)
+
+---->  One component emits (broadcasts) an event
+---->  Multiple components subscribe to it
+---->  All subscribed components receive the event at the same time
+---->  Components are not directly connected
+
+Real Time Senario :- 
+
+Component A  --->  Subject (Broadcast)
+                       |
+                       |----> Component B (Subscriber)
+                       |----> Component C (Subscriber)
+                       |----> Component D (Subscriber)
+
 ------------------------------------------------------------------------------------------------------
 131.What is Shedulers?
+->Schedulers are used to decide which task executes at which time, similar to cron job schedules tasks.
 
-->In RxJS, a Scheduler is a tool that controls when and how an Observable's tasks are executed.
-
-->It helps manage timing, asynchronous execution, and performance.
+Cron = server time based scheduling
+Scheduler = Observable execution timing
 
 ------------------------------------------------------------------------------------------------------
 132.Why use a Schedulers?
+->Schedulers are used to control when and how a task is executed in RxJS.
 
-->Control when a subscription happens
-->Decide when values are emitted
-->Change execution context (like sync, async, or animation frame)
-
+They help us:
+  Decide which task runs at what time
+  Control synchronous or asynchronous execution
+  Manage delays, intervals, and retries
+  Improve performance by avoiding UI blocking
+  Handle multiple tasks in an organized way
 ------------------------------------------------------------------------------------------------------
 134.Why use debounceTime()?
 ->Reduces unnecessary API calls 
 ->Improves performance (avoids too many requests).
 ->prevents server overloading
 ->Best for search functionality.
+
+👉 DebounceTime is mainly used for live search functionality.
+
+👉 Without debounce:
+Every key press in the search input triggers an API call ❌
+This creates many unwanted requests to the backend
+It can slow down or overload the server
+
+👉 With debounceTime:
+We wait for a fixed time after the user stops typing
+If the user types again within that time, the timer resets
+API is called only once after typing stops
+✔️ This reduces unnecessary API calls and improves performance.
+
 ------------------------------------------------------------------------------------------------------
 135.Cold(Unicast) vs Hot(Multicast) Observable in RxJS?
 
@@ -2722,41 +2754,72 @@ ngOnInit(): void {
 
 ------------------------------------------------------------------------------------------------------
 136.how to converted cold to hot observable?
-To convert a Cold Observable to a Hot Observable, we can use:
-	Subject
-	share() or shareReplay() operator
+-> To convert a Cold Observable to a Hot Observable, we can use:
+   Subject
+   share() or shareReplay() operator
 
-
-++++++++++++++++------------------==================+++++++++++++++
 ------------------------------------------------------------------------------------------------------
-✅ What is API Polling?
-API Polling is a technique where your application repeatedly calls an API at regular intervals to check for new or updated data.
+137.What is API Polling?
+->API polling means the client continuously hits the API again and again to check whether a specific output has occurred or not.
 
-✅ When to Use:
-Real-time tracking (orders, shipments)
-Chat applications (check for new messages)
-Dashboard data updates
-When WebSocket or Server-Sent Events are not available
+For example, in order tracking:
+You create an order
+Order current status is Pending
+At this time, API polling continuously checks:
+Order is updated or not
+Status is changed or not
+The API keeps calling until the order status changes (like Processing, Shipped, Delivered).
 ------------------------------------------------------------------------------------------------------
-
-
+138.Why use API Polling when Socket is available?
+->
+  Even though WebSocket exists, we still use API polling because:
+  Socket is not always supported on all systems
+  Backend setup for socket is complex
+  Some applications do not need real-time updates
+  Polling is simple to implement using normal APIs
+  Works well for low-frequency updates (order status, reports)
+------------------------------------------------------------------------------------------------------
 142.Differance between SetTimeout and SetInterval?
-->SetTimeout : They are basically used to 
 ------------------------------------------------------------------------------------------------------
 143.Explain Subject,BehaviorSubject,ReplaySubject and AsynSubject?
-------------------------------------------------------------------------------------------------------
 144.Differance between Subject,BehaviorSubject,ReplaySubject and AsynSubject?
+=> Both are using the communicate between the two components, using the middle layer service and there is differnt purpose to used like a, 
+
+ Subject → Used to communicate between two components, but it does not store previous values.
+
+ BehaviorSubject → Also communicates between components, but it stores the latest value so new subscribers get it immediately.
+
+ ReplaySubject → Communicates between components and stores multiple previous values, so new subscribers receive all the past values.
+
+ AsyncSubject → Communicates between components, but it sends only the last/latest value, and only when the Observable completes.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+| **Subject Type**    | **Communication**                  | **Previous Values Stored?**  | **Notes**                                    |
+| ------------------- | ---------------------------------- | ---------------------------  | -------------------------------------------- |
+| **Subject**         | Communicate between two components | ❌ No                        | Only sends current value                     |
+| **BehaviorSubject** | Communicate between two components | ✅ Latest value              | New subscribers get latest value immediately |
+| **ReplaySubject**   | Communicate between two components | ✅ Multiple previous values  | New subscribers get all past values          |
+| **AsyncSubject**    | Communicate between two components | ✅ Last/latest value         | Sends value only when Observable completes   |
+------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------
 145.Differance between Observable and Subject?
+------------------------------------------------------------------------------------------------------
 146.What is the use of throttleTime() in RxJs?
+------------------------------------------------------------------------------------------------------
 147.Differance between forkJoin() & combineLatest()?
+------------------------------------------------------------------------------------------------------
 148.How do you manage state management using RxJS in Angular application?
+------------------------------------------------------------------------------------------------------
 149.How can you cancel an HTTP request in Angular using RxJS?
+------------------------------------------------------------------------------------------------------
 150.How do you use RxJS with Angular Forms?
+------------------------------------------------------------------------------------------------------
 151.How do you Handle Real-Time data stream in Angular using RxJS?
+------------------------------------------------------------------------------------------------------
 152.What is API Polling?
+------------------------------------------------------------------------------------------------------
 153.How do you create a custom RxJS Operator?
-
-
 
 ------------------------------------------------------------------------------------------------------
 106.Differance between promise/fetch API and Observable/Subscribe?
