@@ -2802,29 +2802,249 @@ The API keeps calling until the order status changes (like Processing, Shipped, 
 | **AsyncSubject**    | Communicate between two components | ✅ Last/latest value         | Sends value only when Observable completes   |
 ------------------------------------------------------------------------------------------------------------------------------------------
 
+1.Example :- Subject in Rxjs
+
+Subject is used to transfer the data between two components without needing any relationship between the two components.
+Normally, we create a shared service using Subject.
+Component A uses this service to send the data, and Component B subscribes to this service and uses the data.
 
 
+  shared.service.ts
+
+  import { Injectable } from '@angular/core';
+  import { Subject } from 'rxjs';
+
+  @Injectable({ providedIn: 'root' })
+  export class SharedService {
+    mySubject = new Subject<string>();
+  }
 
 
+  component-a.ts (Sender)
+
+  this.sharedService.mySubject.next('Hello from Component A');
+
+
+  component-b.ts (Receiver)
+
+  this.sharedService.mySubject.subscribe(data => {
+    console.log('Subject received:', data);
+  });
+
+
+  ✅ Only future values received
+  ❌ Old values not stored
+
+2.Example : BehaviorSubject in RxJs :- 
+
+BehaviorSubject is used to transfer data between two components without needing any relationship between the components.
+In this case, it also stores the previous (latest) value.
+Normally, we create a shared service using BehaviorSubject.
+Component A uses this service to send the data, and Component B subscribes to this service and immediately gets the latest stored value.
+
+  shared.service.ts
+
+  import { Injectable } from '@angular/core';
+  import { BehaviorSubject } from 'rxjs';
+
+  @Injectable({ providedIn: 'root' })
+  export class SharedService {
+    myBehavior = new BehaviorSubject<string>('Initial Value');
+  }
+
+
+  component-b.ts (Receiver)
+
+  this.sharedService.myBehavior.subscribe(data => {
+    console.log('BehaviorSubject received:', data);
+  });
+
+
+  component-a.ts (Sender)
+
+  this.sharedService.myBehavior.next('Updated Value');
+
+
+  ✅ New subscribers get the latest value immediately
+
+3.Example :- ReplaySubject is used to transfer data between two components without needing any relationship between the components.
+In this case, it stores multiple previous values.
+Normally, we create a shared service using ReplaySubject.
+Component A uses this service to send the data, and Component B subscribes to this service and receives the previous stored data along with new data.
+
+  shared.service.ts
+
+  import { Injectable } from '@angular/core';
+  import { ReplaySubject } from 'rxjs';
+
+  @Injectable({ providedIn: 'root' })
+  export class SharedService {
+    myReplay = new ReplaySubject<string>(2); // last 2 values
+  }
+
+
+  component-a.ts (Sender)
+
+  this.sharedService.myReplay.next('Message 1');
+  this.sharedService.myReplay.next('Message 2');
+  this.sharedService.myReplay.next('Message 3');
+
+
+  component-b.ts (Receiver)
+
+  this.sharedService.myReplay.subscribe(data => {
+    console.log('ReplaySubject received:', data);
+  });
+
+
+  ✅ Subscriber receives last 2 messages
+
+4.Example :- AsyncSubject is used to transfer data between two components without needing any relationship between the components.
+In this case, it sends only the last or latest value.
+Normally, we create a shared service using AsyncSubject.
+Component A uses this service to send multiple values, and Component B receives only the last value when the Subject is completed
+
+  shared.service.ts
+
+  import { Injectable } from '@angular/core';
+  import { AsyncSubject } from 'rxjs';
+
+  @Injectable({ providedIn: 'root' })
+  export class SharedService {
+    myAsync = new AsyncSubject<string>();
+  }
+
+
+  component-a.ts (Sender)
+
+  this.sharedService.myAsync.next('Value 1');
+  this.sharedService.myAsync.next('Value 2');
+  this.sharedService.myAsync.complete(); // only now value is sent
+
+
+  component-b.ts (Receiver)
+
+  this.sharedService.myAsync.subscribe(data => {
+    console.log('AsyncSubject received:', data);
+  });
+
+
+  ✅ Only last value is sent
+  ✅ Sent after complete()
 ------------------------------------------------------------------------------------------------------
 145.Differance between Observable and Subject?
+-> Observable is used to call the API and get or modify data, but it does not share the data between two components.
+In the case of Subject, it is used to share the data between two or multiple components.
+That is the main difference between Observable and Subject.
+=>shortly :- Observable is mainly used for API calls, while Subject is used for sharing data between components.
+
+---------------------------------------------------------------------------------------------
+| **Observable**                             | **Subject**                                  |
+| ------------------------------------------ | -------------------------------------------- |
+| Observable is used to **get data**         | Subject is used to **send and receive data** |
+| Data is **unicast** (one-to-one)           | Data is **multicast** (one-to-many)          |
+| Observable **cannot send data manually**   | Subject can **send data using next()**       |
+| Each subscriber gets its **own execution** | All subscribers share the **same execution** |
+| Mostly used for **API calls**              | Mostly used for **component communication**  |
+--------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
 146.What is the use of throttleTime() in RxJs?
+->throttleTime operator is used for handling the unwanted API calls.
+It does not trigger the API again and again; after one hitting, it waits before hitting the next API.
+It is mainly used in cases like the login page.
+If the network is slow, the user may hit multiple requests, which is not good practice and also loads the server.
+So throttleTime allows one request and makes some wait time before sending the next request.
 ------------------------------------------------------------------------------------------------------
 147.Differance between forkJoin() & combineLatest()?
+=> forkJoin() is basically used when we want two or more API responses to be completed first and then perform some calculation or merge the responses.
+In this case, forkJoin() waits for every API to be called and completed.
+After all the APIs are executed, it combines all the responses and then returns the final result to the frontend.
+=> forkJoin() waits for all API calls to complete, then combines their responses and returns a single result.
+
+=> combineLatest is used when two or more APIs are called.
+It waits until all APIs return at least one response.
+After that, whenever any API returns a new response, combineLatest sends the latest combined data.
+=> combineLatest returns the latest data whenever any API response changes, after all APIs have returned once.
+
+-----------------------------------------------------------------------------------------
+| **forkJoin()**                            | **combineLatest()**                       |
+| ----------------------------------------- | ----------------------------------------- |
+| Waits for **all Observables to complete** | Emits when **any Observable emits**       |
+| Emits **only once**                       | Emits **multiple times**                  |
+| Gives **last value** of each Observable   | Gives **latest value** of each Observable |
+| Used mainly for **multiple API calls**    | Used mainly for **live / real-time data** |
+-----------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------
+| Operator      | Real-Time Use Case | How it works                                                  |
+| ------------- | ------------------ | ------------------------------------------------------------- |
+| forkJoin      | Dashboard APIs     | Waits for all APIs, returns once                              |
+| combineLatest | Live search/filter | Returns latest combined value whenever any API/stream changes |
+------------------------------------------------------------------------------------------------------
+
 ------------------------------------------------------------------------------------------------------
 148.How do you manage state management using RxJS in Angular application?
+-> I used the Subject for handling the state management.
+I create a shared service with a Subject or SubjectBahavior.
+Component A sends data using .next() and Component B subscribes to this Subject to get the updated data.
+This way, state is shared and managed between multiple components without any direct relationship.
 ------------------------------------------------------------------------------------------------------
 149.How can you cancel an HTTP request in Angular using RxJS?
+->I want to cancel the HTTP request, so I use the takeUntil operator.
+
+Scenario:
+There are two modules – About and Report.
+The Report module takes more time to load data because it fetches a lot of information.
+While the request is still pending, the user switches to the About module with a single click.
+In this case, the Report API request is no longer needed, and its response is not required.
+So I use takeUntil to cancel the pending HTTP request when switching modules.
+
+=> I cancel unnecessary HTTP requests in Angular using takeUntil so that pending requests don’t complete when the user navigates away.
 ------------------------------------------------------------------------------------------------------
-150.How do you use RxJS with Angular Forms?
+150.How do you use RxJS with Angular Forms?[IMP]
+->RxJS in Angular Forms helps reactively handle form input and manage API calls efficiently.
 ------------------------------------------------------------------------------------------------------
 151.How do you Handle Real-Time data stream in Angular using RxJS?
+->I handle real-time data streaming using Observables, and with RxJS operators like map, switchMap, filter, etc., I manage the data as per the requirements.
 ------------------------------------------------------------------------------------------------------
 152.What is API Polling?
+-> API polling is the concept where an API is called again and again until the required output is received.
+Once the required output is received, the polling stops.
 ------------------------------------------------------------------------------------------------------
 153.How do you create a custom RxJS Operator?
+-> I create a custom RxJS operator as a function that takes an Observable, applies custom logic, and returns a new Observable.
+This is useful to reuse logic across multiple Observables.
 
+  import { of, Observable } from 'rxjs';
+
+  // Custom operator to double the values
+  function doubleValues() {
+    return (source: Observable<number>) =>
+      new Observable<number>(observer => {
+        return source.subscribe({
+          next(value) { observer.next(value * 2); },
+          error(err) { observer.error(err); },
+          complete() { observer.complete(); }
+        });
+      });
+  }
+
+  // Usage
+  of(1, 2, 3).pipe(doubleValues()).subscribe(console.log);
+  // Output: 2, 4, 6
+
+------------------------------------------------------------------------------------------------------
+107.What is takeUntil Operator?
+->I want to cancel the HTTP request, so I use the takeUntil operator.
+
+Scenario:
+There are two modules – About and Report.
+The Report module takes more time to load data because it fetches a lot of information.
+While the request is still pending, the user switches to the About module with a single click.
+In this case, the Report API request is no longer needed, and its response is not required.
+So I use takeUntil to cancel the pending HTTP request when switching modules.
+
+=> I cancel unnecessary HTTP requests in Angular using takeUntil so that pending requests don’t complete when the user navigates away.
 ------------------------------------------------------------------------------------------------------
 106.Differance between promise/fetch API and Observable/Subscribe?
 
