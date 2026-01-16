@@ -333,23 +333,69 @@ Flow:
 --> ORM instead of raw queries → ORM helps to avoid SQL injection and makes database queries safer.
 --> Stored procedure → For database operations, I also use stored procedures. This adds another layer of security because the logic is inside the database, and it ---> reduces the chance of SQL injection compared to writing raw queries directly in code.
 ---------------------------------------------------------------------------------------------------------------
+29.0.🔹]]] What is Load Balancing in Node.js?
+->Node.js runs on one CPU core by default.
+->Cluster allows Node.js to:
+	Create multiple worker processes
+	Share the same port
+	Distribute requests between workers
+
+👉 This is basic backend load balancing.
+
+🔹 How Cluster Works (Very Simple)
+	Multiple Client Requests
+			↓
+	OS / Node.js Load Balancer
+			↓
+	Worker 1   Worker 2   Worker 3   Worker 4 ]]] there creation is deppend on system logical cores 
+
+👉 Each worker handles some requests.
+---------------------------------------------------------------------------------------------------------------
 30.How do you handle versioning in a Node.js API?
 we can used the v1 or v2 for handling the veriosn in the node.js 
 ->some time old api are used to the old customer and that timing they are not need to the new feauters but they are working this api, some new customer are create the new api for the some features add and they are not blobk the api for using the version in the node.js
 ->in my current project i handle version using the v1,v2 routes in that cases the old user are used the old api and current api version are changes so the new customer are used the newest api and they are some enhancement are write to this api and handling to using the v1 and v2 rougin process.
 ---------------------------------------------------------------------------------------------------------------
+31.What is PM2 ?
+->PM2 is basically a production process manager for Node.js apps.
+
+It is used to:
+
+Start production servers
+pm2 start server.js
+
+Stop production servers
+pm2 stop server
+
+
+Restart servers
+pm2 restart server
+
+Monitor CPU, memory, uptime
+pm2 monit
+
+Show logs
+pm2 logs
+
+Run in cluster mode
+ Use all CPU cores for better performance:
+pm2 start server.js -i max
+
+Auto-start after server reboot
+pm2 startup
+pm2 save
+---------------------------------------------------------------------------------------------------------------
 31.What is the difference between Buffer and Stream in Node.js?
 ->they both are used to the handling the file regarding process in the node.js server.
-
+->the main differance is 
+->Use Buffer for small files or quick manipulation
+->Use Stream for large files or continuous data
 ---------------------------------------------------------------------------------------------------------------
-
-
-
-
 32.what are state in promise?
-->there are three state of promises, resolved,rejected and pending.
--> there are the three state of the promises resolved, rejected and pending.
+-> There are the three state of the promises resolved, rejected and pending.
 ---------------------------------------------------------------------------------------------------------------
+
+
 33.what are used promise.all()?
 ->We can used the number of the promises and this promise there are called at a same time if you call to the promise.all() are used if any promise are throw the error or faild so that timing used the catch block to handling this error.
 ->you can write the mutliple promises and they are executed group of the data so we can used to the promise.all and in that case they are all promises are exectued other wise they are failed for the exection process.
