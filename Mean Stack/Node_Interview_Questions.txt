@@ -256,8 +256,11 @@ eventEmitter.emit('greet');
 -> process.nextTick() is part of the micro-task, setImmediate() is part of the macro-task.
 -> First, the process.nextTick queue is executed, then the setImmediate queue.
 ---------------------------------------------------------------------------------------------------------------
-	->26.What are streams in Node.js, and what are their different types?
-	-->
+26.What are streams in Node.js, and what are their different types?
+->Streams is a process: they are working with file data step by step.
+->Instead of loading the overall file data at a single timing, streams handle data piece by piece (chunk by chunk).
+->This means you can start working on the data while it’s still coming in, without waiting for the full file to finish loading.
+->Streams are often used with packages like fs (file system), http, or zlib for file-related work, network requests, or compression.
 ---------------------------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------------------
@@ -288,20 +291,39 @@ Flow:
 -> Then the data is stored in Redis for future use.
 -> This helps to improve performance and reduce database load.
 ---------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
 28.What is load balancing, and how would you implement it in a Node.js environment?
--> In the node.js load are balancing so we can used the cluster module in the node.js they are increase the CPU cores in the node.js 
----------------------------------------------------------------------------------------------------------------
+-> Load balancing means handling the client request traffic so that server is not overloading or not a crashed.
+-> As per my experience, I have seen load balancing in two ways: frontend side and backend side.
+🔀 Frontend Side (Nginx Reverse Proxy)
+	On the frontend side, I used Nginx reverse proxy.
+	In the nginx.config file, I set multiple server paths.
+	When multiple clients send requests, Nginx handles the request traffic and divides the requests to different servers.
+	So every server gets a part of the traffic, and this scenario is frontend side load balancing.
+⚙️ Backend Side (Node.js Cluster Module)
+	On the backend side, Node.js  server by default uses single core.
+	With the help of the cluster module, we can increase the processes.
+	One core means one process, and each process works like a worker thread.
+	So when client requests come, they are handled by these worker processes, and this is backend side load balancing.
+----------------------------------------------------------------------------------------------------------------
 29.what is cluster module?
-->The Cluster module in Node.js is used to run the application using all available CPU cores.
-It helps handle multiple requests simultaneously by creating multiple worker processes (not threads).
-This improves performance and scalability, especially for high-traffic applications.
-By default, Node.js uses a single core. But using the Cluster module, we can create one worker per CPU core — whether it's 4, 8, or more, depending on the system.
+-> Cluster module is used to handling the cores of system.
+   By default, Node.js  is single-threaded, that means only one core is used.
+   With the help of cluster module, we create multiple processes using the system cores.
+  
+	🔧 Example Scenario 
+	Suppose the system contains 4 cores.
+	So cluster will create 4 processes — each process runs on one core.
+	When multiple client requests are incoming, the main thread will divide the request to these cores.
+	These processes will work and return the data.
+
+	🔁 How It Handles Requests
+	Each process works like a worker thread.
+	When request comes, the main thread sends it to a worker.
+	That worker handles the request and gives back the response.
+	This process works with the help of async functions, promises, and callback functions.->The Cluster module in Node.js is used to run the application using all available CPU cores.
+	It helps handle multiple requests simultaneously by creating multiple worker processes (not threads).
+	This improves performance and scalability, especially for high-traffic applications.
+	By default, Node.js uses a single core. But using the Cluster module, we can create one worker per CPU core — whether it's 4, 8, or more, depending on the system.
 These worker processes share the same port and can handle requests in parallel, making full use of the system’s CPU power.
 ---------------------------------------------------------------------------------------------------------------
 29.What security concerns should you be aware of when developing a Node.js application?
