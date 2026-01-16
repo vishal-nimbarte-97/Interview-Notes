@@ -321,36 +321,17 @@ Flow:
 	When request comes, the main thread sends it to a worker.
 	That worker handles the request and gives back the response.
 	This process works with the help of async functions, promises, and callback functions.->The Cluster module in Node.js is used to run the application using all available CPU cores.
-	It helps handle multiple requests simultaneously by creating multiple worker processes (not threads).
-	This improves performance and scalability, especially for high-traffic applications.
-	By default, Node.js uses a single core. But using the Cluster module, we can create one worker per CPU core — whether it's 4, 8, or more, depending on the system.
-These worker processes share the same port and can handle requests in parallel, making full use of the system’s CPU power.
 ---------------------------------------------------------------------------------------------------------------
 29.What security concerns should you be aware of when developing a Node.js application?
--> if you want to the secure the node.js server so we can used the procedure query , parameterized queries and also used the bycrypt module in the node.js and also used the SHA-256 alogorith and AES also used.
-
-When developing a Node.js application, the following security concerns should be considered:
-
-Use Parameterized Queries and Stored Procedures:
-Always use parameterized queries to prevent SQL or NoSQL injection. Stored procedures can also help reduce risks by limiting direct access to data.
-
-Validate Requests with Middleware:
-Use middleware to check whether each request is valid or not. Input validation is very important to avoid injection and other attacks.
-
-JWT Token Handling:
-If JWT tokens are not passed through requests, secure the application using a secret key or private/public key pair to verify users.
-
-Password Hashing:
-Never store plain passwords. Use bcrypt to hash and securely store user passwords.
-
-Use Strong Hashing Algorithms:
-For other sensitive data, use strong hashing algorithms like SHA-256.
-
-Extra Security Measures:
-Use helmet to set HTTP headers securely.
-Enable rate limiting to protect from DDoS attacks.
-Always use HTTPS for secure communication.
-Regularly update packages and run npm audit.
+--> JWT for login case → I will use JSON Web Token for secure login sessions.
+--> Load balancing → Helps to manage multiple client requests so no single server is overloaded.
+--> Rate-limiting → Protects against brute-force attacks and too many requests from one client.
+--> Bcrypt module for encryption → For password storage, I use bcrypt so plain text is not saved.
+--> SHA-256 or AES → For extra security, I can use SHA-256 hashing or AES encryption for sensitive data.
+--> Middleware implement → Middleware is used for authentication, validation, and request security checks.
+--> HTTPS instead of HTTP → For secure communication, I always use HTTPS so data is encrypted in transfer.
+--> ORM instead of raw queries → ORM helps to avoid SQL injection and makes database queries safer.
+--> Stored procedure → For database operations, I also use stored procedures. This adds another layer of security because the logic is inside the database, and it ---> reduces the chance of SQL injection compared to writing raw queries directly in code.
 ---------------------------------------------------------------------------------------------------------------
 30.How do you handle versioning in a Node.js API?
 we can used the v1 or v2 for handling the veriosn in the node.js 
