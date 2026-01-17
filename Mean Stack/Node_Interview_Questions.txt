@@ -394,49 +394,90 @@ pm2 save
 32.what are state in promise?
 -> There are the three state of the promises resolved, rejected and pending.
 ---------------------------------------------------------------------------------------------------------------
-
-
 33.what are used promise.all()?
-->We can used the number of the promises and this promise there are called at a same time if you call to the promise.all() are used if any promise are throw the error or faild so that timing used the catch block to handling this error.
-->you can write the mutliple promises and they are executed group of the data so we can used to the promise.all and in that case they are all promises are exectued other wise they are failed for the exection process.
+->Promise.all() is used to execute all promises, and if one promise fails, the overall output fails.
 
-const promise_1 = new Promise('');
-const promise_2 = new Promise('');
-const promise_3 = new Promise('');
+const promise_1 = new Promise((resolve, reject) => {
+  return resolve("Promise 1 Resolved..!");
+});
 
-promise.all(['promise_1','promise_2','promise_3'])
-	  .then((result)=>{console.log(result)})
-	  .catch((error)=>{console.log(error.message)});
+const promise_2 = new Promise((resolve, reject) => {
+  return resolve("Promise 2 Resolved..!");
+});
 
+const promise_3 = new Promise((resolve, reject) => {
+  return reject("Promise 3 Rejected..!");
+});
+
+Promise.all([promise_1, promise_2, promise_3])
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
 ---------------------------------------------------------------------------------------------------------------
 34.What is vertical scaling and horizontal scaling?
--> Vertical Scaling means increasing the power (CPU, RAM, etc.) of a single server to handle more load.
--> Horizontal Scaling means adding more servers to handle more traffic. The load is divided among multiple machines.
+->Vertical scaling means a single server handles more load, so we increase the hardware parts like RAM, CPU, or storage.
+->Horizontal scaling means multiple servers are used to handle the load.
+
+Example :- 
+->When server side is only Node.js running on a single server, and to handle more load we increase CPU, RAM, or storage, this is a vertical scaling example.
+->When Node.js is used with NGINX, and multiple Node.js servers are running behind NGINX to handle the load, this is a horizontal scaling example.
 ---------------------------------------------------------------------------------------------------------------
 35.How do you use the cluster module to scale a Node.js application?
-->cluster module in the node.js application they are increase the number of the worker process.
+->Cluster module in Node.js is used to scale an application by creating multiple worker processes.
+It uses the system’s logical CPU cores to fork worker processes, so the load is distributed across all cores.
 ---------------------------------------------------------------------------------------------------------------
-36.What difference between monolithic archestructure and microservice?
+36.What difference between monolithic Architecture and microservice Architecture?
+->As per my experience, I have worked with both monolithic and microservices architectures.
+On the frontend side, the application follows a monolithic architecture, while on the backend side, I have used microservices architecture, where the Saga pattern is used to manage distributed transactions.
+->On the backend side, services like read service, write service, API Gateway, audit log service, and Prometheus monitoring are implemented as independent microservices.
+
+These services work independently and communicate with each other using RabbitMQ for asynchronous messaging.
+
+👉 Monlithic Architecture :- 
+	Monolithic architecture means the entire application is built and developed as a single unit.
+	If one part of the application goes down or an error occurs, the entire application goes down.
+
+➡️ Example :- An e-commerce application where login, product listing, cart, payment, and orders are all built and deployed as one single Node.js application.
+
+	If the payment module crashes
+	The entire application goes down
+	Even login and product pages stop working
+
+👉 Microservice Architecture :- 
+  	Microservices architecture means the application is divided into small, independent services that are built and developed separately.
+	They are loosely coupled and not directly dependent on each other, but they communicate using APIs.
+
+➡️ Example :- Imagine an e-commerce application:
+
+	Auth Service – handles user login and registration
+	Product Service – manages product catalog
+	Cart Service – manages shopping cart
+	Payment Service – handles payments and transactions
+	Order Service – manages orders
+	
+	In this case Each service is independent:
+	If Payment Service fails, users cannot pay, but they can still browse products or login.
+	Each service can be developed, deployed, and scaled separately.
 ---------------------------------------------------------------------------------------------------------------
 37.How to share data between two services?
+➡️ API communication (REST):
+In this case, service APIs are used for sending and receiving data between services. One service calls another service API and uses the data.
 
-serviceA
+➡️ Message Broker (RabbitMQ / Kafka):
+Message broker is mostly used for communication between services and it is a standard way.
+In my old project, I used RabbitMQ, and in my current project, I am using Kafka.
 
-function serviceA(){
-	console.log('I am Service A..!');
-}
+➡️ WebSocket:
+WebSocket is also used for communication between two or more services. In this case, one service emits events and another service gets the events using the .emit() and .on() functions.
 
-exports.module = {serviceA}
- 
-----
- 
-serviceB
-
-const {serviceA} = require('../service/serviceB');
-
-serviceA.serviceA();
-
+➡️ Shared Database (not recommended):
+Sharing the database is not recommended because services become dependent on each other.
 ---------------------------------------------------------------------------------------------------------------
+
+
 38.What is the Synchronous and Asynchronous Programing Languages ?.
 
 ->Synchronous programing language they are need to the executed to the one by one and they are wait to the another functin exection process.
@@ -956,7 +997,7 @@ How can you conditionally apply middleware to specific routes?
 What are signed cookies, and how are they used in Express?
 
 
-Skymeric Technologies – Node JS Questioner
++++++++++++++++++++++++++++++++++++++++++++++++Skymeric Technologies – Node JS Questioner+++++++++++++++++++++++++++++++++++++
 
  ✅ 1. Explain the Node.js event loop architecture in detail
 Answer:
