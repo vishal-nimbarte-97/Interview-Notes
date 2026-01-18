@@ -705,97 +705,117 @@ console.log("Token :- ", token);
 ---------------------------------------------------------------------------------------------------------------
 55.What is the purpose of the header in a JWT?
 ->The JWT header is used to identify the request type, such as mobile or browser, and helps in handling authentication.
-
-
-
-
-
-
-
 ---------------------------------------------------------------------------------------------------------------
 56.What's config in Node.js ?
-->config file are write a code like a coneection of the databases.
-->config file are used they are write the database connection
-----------------------------------------------------------------------------------------------------------------
+→ A config file in Node.js is used to store application configuration details like database connection, Redis settings, API keys, ports, and environment variables.
+→ It helps to separate configuration from business logic, making the application easy to manage, secure, and environment-specific (development, testing, production).
+---------------------------------------------------------------------------------------------------------------
 57.What's optional in TypeScript?
--> in the node js also write the typescript and they are need to the install the typscript support module and they used ts-node and index file name are easylli run the typescript code in the node.js applcation
-----------------------------------------------------------------------------------------------------------------
+→ Optional in TypeScript means parameters are not required for a function to work.
+→ It is defined using the ? symbol.
+→ Optional parameters allow a function to be called with or without that parameter.
+
+Example (simple):-
+function greet(name?: string) {
+  console.log("Hello", name);
+}
+→ Here, name is optional, so the function works even if the parameter is not passed.
+---------------------------------------------------------------------------------------------------------------
 58.What are nullables in TypeScript?
 -> In TypeScript, nullables refer to the types that can have a value of null or undefined.
-----------------------------------------------------------------------------------------------------------------
-npm init -y
-npm install typescript ts-node @types/node --save-dev
-npx tsc --init
-
-with the help of this command we can used the typescript in the node.js project.
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+59.]] TypeScript is used in nodejs applicaion?
+	npm init -y
+	npm install typescript ts-node @types/node --save-dev
+	npx tsc --init
+=> with the help of this command we can used the typescript in the node.js project.
+---------------------------------------------------------------------------------------------------------------
 59.What is an interface?(if there is 2 inteface like user and user address how will you map)?
-->Interface basically used to the handle the type of the object in node.js.
-->Interface is basically create the type of the object and this object contain which type of the values are there that is working of the interface.
-----------------------------------------------------------------------------------------------------------------
+→ Interface is used to define the structure of an object.
+→ If there are two interfaces (like User and UserAddress), you can map them by referencing one interface inside another.
+
+Simple example:-
+
+interface UserAddress {
+  city: string;
+  pincode: number;
+}
+
+interface User {
+  name: string;
+  address: UserAddress;
+}
+
+→ Here, User is mapped with UserAddress using the address property.
+→ This helps to organize data, reuse interfaces, and keep the structure clear.
+---------------------------------------------------------------------------------------------------------------
 60.Could you explain package.json?
 ->pcakges.json are stored the dependencies of the our node applcaiotn.
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 61.Could you explain the packages used for file uploading in Node.js?
-->file uploading in the node.js i can used the mutler module for uploloding the file on the node applcaiton.
-->and, that case i can stored the path on the database and file are stored to the server of the node.js.
-----------------------------------------------------------------------------------------------------------------
+→ For file uploading in Node.js, we commonly use the multer module.
+→ Multer is used to handle multipart/form-data and upload files in a Node.js application.
+→ In this case, the files are stored on the server or cloud storage, and only the file path or file URL is stored in the database.
+→ This is a good practice because it improves performance, security, and scalability
+---------------------------------------------------------------------------------------------------------------
 62.Current nodejs version ?
-->current node.js version is v24
-->in the my current project i have used the v20
-----------------------------------------------------------------------------------------------------------------
+->current node.js version is v25
+->in the my current project i have used the v21
+---------------------------------------------------------------------------------------------------------------
 63.Rest api in node (explain flow)?
--> first of the request are occured to the routes and which routes are match that type fo the controllers are extecuted and that type of the service executed and return the output of that request.
--> client request are send and this request contain the part of the routes and this routes wise controller and services are executed and they are provided the responce.
-----------------------------------------------------------------------------------------------------------------
+→ First, a client like mobile app, browser, or Postman sends an HTTP request.
+→ The request type can be GET, POST, PUT, or DELETE.
+→ The request reaches the Node.js server.
+→ The Node.js server contains a routes file, which checks which route and request type is called.
+→ When the route matches, the corresponding controller file is executed.
+→ The controller calls the service file (business logic).
+→ The service file performs database operations or calls third-party services.
+→ The service returns the response to the controller.
+→ Finally, the controller sends the response back to the client in JSON format.
+👉 This is the overall flow of a REST API in Node.js.
+---------------------------------------------------------------------------------------------------------------
 64.Difference between import and require?
-->both are import the module to our file but the import are latestly version are supported and rqurie are used to the older verison of the node.js
-->both are help to accured the file to the another module but this module need to the exports and 
-one main differance is import is the lastest version are used they are supported to the ES6
-->require are previous version are used.
-----------------------------------------------------------------------------------------------------------------
+→ Both import and require are used to import modules into the current JavaScript file.
+→ import is part of ES6 (latest JavaScript) and is mainly used in modern Node.js and frontend frameworks.
+→ require is part of CommonJS and was used in older versions of Node.js.
+→ import works with static imports and supports tree-shaking.
+→ require works with dynamic imports and loads modules at runtime.
+👉 So, import is the modern way, and require is the older Node.js approach.
+---------------------------------------------------------------------------------------------------------------
 65.Difference between find and filter?
+→ Both find and filter are JavaScript array methods used to perform operations on data.
+→ find() :- 
+	Used to find the first matching element in an array
+	and return the first matching element other return undefined values 
+→ filter() :- 
+	Used to filter data from an array
+	Returns a new array with all matching elements
+	If no match is found, it returns an empty array
 
-->find are return only one value is the condition through
-->but we can used the filter so they are return the mutliple values of the array 
 
 const arr = [12,23,34,45,46,67];
 
-const number_1 = arr.find((data)=>{return data>23});//34 return only 
-const number_2 = arr.filter((data)=>{return data>23});//34,35,36,67 this values are returns 
-
-----------------------------------------------------------------------------------------------------------------
+const number_1 = arr.find((data)=>{return data>23});//34 return only match values otherwise return undefined 
+const number_2 = arr.filter((data)=>{return data>23});//34,35,36,67 they are return arrays other wise empty array 
+---------------------------------------------------------------------------------------------------------------
 66.Any encryption algorithm you have used?
--> i have used the AES Algorith , SHA-256 and also used the module bycrypt module in the node.js 
-----------------------------------------------------------------------------------------------------------------
+→ Yes, I have used the bcrypt module for encrypting user passwords before storing them in the database.
+→ This module uses salt and a hashing algorithm to make the passwords secure and hard to crack.
+→ During login, the hashed password is compared instead of decrypting it.
+---------------------------------------------------------------------------------------------------------------
 66.Any encryption algorithm you have used? 
 -> Yes , In the My Current Application WPS they are used the Encryption alogorith AES and SHA-256 are used for the encrypted data are stored the databases.
 
-----------------------------------------------------------------------------------------------------------------
+const bcrypt = require('bcrypt');
 
-68.How to optimized query performance ?
--> if you want to optimize the query performance so we can used the parameterized queries and also used the stored procedure to handling the performance of the queries.
+bcrypt.hash('Vishal@123', 10, (err, hash) => {
+  if (err) throw err;
+  console.log(hash);
+});
+---------------------------------------------------------------------------------------------------------------
 
-->	Use Indexes – On WHERE, JOIN, ORDER BY columns.
 
-	Avoid SELECT * – Fetch only needed columns.
 
-	Use Proper Joins – Prefer INNER JOIN, index join keys.
-
-	Filter Early – Apply WHERE conditions ASAP.
-
-	Analyze with EXPLAIN – Check execution plan.
-
-	Use LIMIT – For large result sets (pagination).
-
-	Avoid Functions on Indexed Columns – Like LOWER(column).
-
-	Optimize Subqueries – Replace with joins if possible.
-
-	Partition Big Tables – For faster access.
-
-	Cache Repeated Queries – Use Redis or app cache.
-----------------------------------------------------------------------------------------------------------------
 
 69.Difference between async await and promise ?
 -> asyn/await are used to the our function for handling the asynchronous operation in node.js and 
@@ -847,37 +867,37 @@ const value = () =>{
 	console.log('Arrow Function..!');
 }
 
-----------------------------------------------------------------------------------------------------------------
-
+---------------------------------------------------------------------------------------------------------------
 76.How to achieve Concurrency  in Node JS.?
 -> In the node js application if you want to the achiving the concurrency so we can used non-blocking asychouse code are write, async and await are used , and also we can used the promises.
 -> if you want to achieve concurrency in node.js so we can used asyc/await and promise and also used the non-blocking asynchronous i/o operations.
-----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------
 77.What is used of reduce method.
-->the reduce are used to the entire array are perform the operation and single value they will be return 
-const arr = [1,2,3,4,5];
-arr.reduce((acc,currrentValue)=>{
-	acc + currentValue
-},0);
+-> reduce is a JavaScript array method used to process all elements in an array and return a single value as the result.
+-> It is commonly used for calculations, like sum, product, or combining values from the array.
+
 ->reduce method are used to they are return the single value to perform the operation on the array they are used to agregation regarding work on this array are need to the single value so we can used the reducer.
 
-const arr = [12,23,34,45];
+Example :- 
 
+const arr = [12,23,34,45];
 const value = arr.reduce((acc,data)=>{
-	return acc + data
+	return acc + data;
 },0);
 
 console.log(value);
 ---------------------------------------------------------------------------------------------------------------
 78.What are some ways to handle errors in a Node.js application?
--> In the node.js application we can handle errors so we can used the try and catch block 
--> so in that process the risky code they are write to the try block and error handling code they are write to the catch block and when ever some we can used the resource in our node js applicaion module so that timing also used the finaaly block to closing the all the resources.
-
-
-
-
-
-
+-> In a Node.js application, we can handle errors using try-catch blocks.
+-> The risky code is written in the try block, and the error-handling code is written in the catch block.
+-> If we are using resources (like files, DB connections), we can use a finally block to release or close them.
+-> In Node.js, errors can also be handled globally using middleware (in frameworks like Express).
+-> Additionally, errors can be handled manually in each service or controller.
 ---------------------------------------------------------------------------------------------------------------
 79.How can you prevent SQL injection in a Node.js application?
 -> prevent SQL injection so i used the SP and parameterized queries. and also used ORM.
@@ -1044,7 +1064,29 @@ function newFunction(callback){ --> Higher Order Function
 
 newFunction(show);//callback function
 ---------------------------------------------------------------------------------------------------------------
+68.How to optimized query performance ?
+-> if you want to optimize the query performance so we can used the parameterized queries and also used the stored procedure to handling the performance of the queries.
 
+->	Use Indexes – On WHERE, JOIN, ORDER BY columns.
+
+	Avoid SELECT * – Fetch only needed columns.
+
+	Use Proper Joins – Prefer INNER JOIN, index join keys.
+
+	Filter Early – Apply WHERE conditions ASAP.
+
+	Analyze with EXPLAIN – Check execution plan.
+
+	Use LIMIT – For large result sets (pagination).
+
+	Avoid Functions on Indexed Columns – Like LOWER(column).
+
+	Optimize Subqueries – Replace with joins if possible.
+
+	Partition Big Tables – For faster access.
+
+	Cache Repeated Queries – Use Redis or app cache.
+---------------------------------------------------------------------------------------------------------------
 ------------------------------------------------Expressjs------------------------------------------------------
 
 
