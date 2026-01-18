@@ -476,178 +476,243 @@ WebSocket is also used for communication between two or more services. In this c
 ➡️ Shared Database (not recommended):
 Sharing the database is not recommended because services become dependent on each other.
 ---------------------------------------------------------------------------------------------------------------
-
-
 38.What is the Synchronous and Asynchronous Programing Languages ?.
-
-->Synchronous programing language they are need to the executed to the one by one and they are wait to the another functin exection process.
+➡️ Synchronous Programming Language:
+In synchronous programming, functions are executed one by one, and each function waits for the previous function to complete.
 
 showA();
 showB();
-showC(); 
+showC();
 
-->there these three function case first exectued to the showA , so that timing showB and showC are wait for the exection.
+In this case, showA() is executed first, and showB() and showC() wait until showA() execution is completed.
+After that, showB() is executed, and then showC() is executed.
+This is the process of synchronous programming.
 
-->Then exection are completed of the showA then exectued to the showB and wait the showC() synchrous method that is the process of the synchrouns programing language.
-
-->Asynchronous Programing Languages case they are all the function are executed to the parallelly.
+➡️ Asynchronous Programming Language:
+In asynchronous programming, functions are executed independently and do not wait for each other.
+Multiple functions can be executed in parallel or non-blocking way.
 ---------------------------------------------------------------------------------------------------------------
 38.Differance bwtween the require and import?
-->require is part of the older CommonJS module system (used in Node.js), while import is part of the modern ES6 (ECMAScript Module) system used in modern JavaScript.
+➡️ Both require and import are used to import modules into our JavaScript file.
+
+Comman Differance is :- 
+
+➡️require → CommonJS (Node.js)
+➡️import → ES Modules (modern JavaScript)
+
+require is part of the older CommonJS module system (used in Node.js), while import is part of the modern ES6 (ECMAScript Module) system used in modern JavaScript.
 ---------------------------------------------------------------------------------------------------------------
 39.Explain the concept of middleware in Node.js.
-
--> Middleware is mid part of the user request and there server , and in that case the user are send the request they are validated to through this middleware.
-
--> The middleware are contain the headers of each request and they will check the user are valide or not.
-
--> middleware is the mid part of the request and server , before going to the server they are rich to the middleware and the request are validated or not they are check by the middleware that is working of the middleware.
+➡️ Middleware is the mid part between the user request and the server.
+➡️ Before the request reaches the server, it first occurs in the middleware, where request validation, token checking, route type, and headers are verified.
+➡️ After everything is ok so then, with the help of next(), the request goes to the server.
 ---------------------------------------------------------------------------------------------------------------
 40.How do you optimize the performance of a Node.js application?
-->they are used the asynchronous programing also used I/O Intensive Work.
-->they are used the asyn/await and promises and used the asynchronous function 
+➡️ I use asynchronous programming and handle I/O-intensive work instead of CPU-intensive work.
+➡️ I use async/await and promises to create asynchronous functions, which helps keep the application fast and non-blocking.
 ---------------------------------------------------------------------------------------------------------------
 41.What is Web Socket ? 
-->Communication Between the two differance client that communication are perfrom using the web socket ,
-->real time senario is notification ,
-->real time communication between the client and server or client and client that is working of the websocket.
+➡️ WebSocket is a continuous, real-time communication between the client and the server, allowing data to be sent and received without creating new requests.
+
+Real Time Senario :- 
+➡️WhatsApp chat – messages appear instantly
+➡️Live notifications – like alerts on social media or apps
+➡️Live stock updates or dashboards – data updates without refreshing
+➡️Online gaming – real-time multiplayer interactions
+
+➡️ Working of Socket :- 
+	Connect the socket → establish connection between client and server.
+	Emit events → send data from client to server or server to client.
+	Listen using .on() → receive data or events on either side.
+	Handle requirements → perform actions like updating UI, sending notifications, or processing messages.
 ---------------------------------------------------------------------------------------------------------------
 42.How do you handle non blocking operations in Node.js?
--> they are used the asyn/await and promises to handling the non blocking operation.
+-> In Node.js, non-blocking operations are handled using async/await and promises.
+
+-> Non-blocking I/O means the operation does not wait for other operations to complete.
+Multiple client requests are executed independently and do not depend on each other, so the server can handle many requests at the same time.
 ---------------------------------------------------------------------------------------------------------------
 43.How can you prevent SQL injection in a Node.js application?
--> i can used the parameterized queries and stored procedure. 
--> and also used to the bycrypt module.
+->To prevent SQL injection in Node.js:
+	➡️Use parameterized queries
+	➡️Validate user input or data
+	➡️Use ORM for safety
+	➡️Avoid raw SQL queries
+	➡️Use stored procedures
 ---------------------------------------------------------------------------------------------------------------
 44.How would you handle data encryption in a Node.js project?
--> Using bycrypt package, used sha-256 and also used AES
--> also used parameterized queries and stored procedure.
+➡️Use HTTPS/SSL to encrypt data in transit
+➡️Use bcrypt to hash passwords
+➡️Use crypto module for encrypting sensitive data
+➡️Store secrets and keys in environment variables
+➡️Use JWT with signed tokens for authentication
 ---------------------------------------------------------------------------------------------------------------
 45.How would you connect to a PostgreSQL database in a Node.js app?
+	const { Pool } = require('pg');
 
--> const {Pool} = require('pg');
+	const pool = new Pool({
+	user: 'postgres',
+	password: 'root',
+	database: 'database01',
+	port: 5432,
+	host: 'localhost'
+	});
+
+	pool.connect()
+	.then((result) => {
+		console.log("Connected to the database successfully.");
+	})
+	.catch((error) => {
+		console.log("Error connecting to the database : ", error);
+	});
+---------------------------------------------------------------------------------------------------------------
+46.What are the differences between using an ORM and raw SQL queries in Node.js?
+✅ Code-First Approach
+	First, we write the code (models/entities)
+	Then we run the code
+	The database and tables are created automatically
+	This happens because we use an ORM like Sequelize, TypeORM, or Mongoose
+
+Example:
+Code → ORM → Database (auto-created)
+
+✅ Database-First Approach
+	First, we create the database manually
+	We use raw SQL queries to create tables
+	Then we write the application code
+	In this case, the database is NOT created automatically
+
+Example:
+Database → Code (manually mapped)
+
+=> Code-first with ORM is good for fast development and simple CRUD operations, but for complex data and performance-critical queries, using raw SQL queries is a better and more reliable option.
+--------------------------------------------------------------------------------------------------------------
+47.How would you handle database connection pooling in a Node.js application?
+->create a connection node and database they are need to crating the pool 
+
+const {Pool} = require('pg');
 
 const pool = new Pool({
-	port : 5034,
-	database : 'postgres',
-	name : 'WPS',
-	password : 'WPS@123'
+	port : 5432,
+	user : 'postgres',
+	password : 'root',
+	database : 'database01',
+	host : localhost
 });
 
 pool.connect()
-	.then((result)=>{console.log(result successfully connection)})
-	.catch((error)=>{console.log(error.message)});
-
-
+	.then((result)=>{
+		console.log('Database Connected successfully..!');
+	})
+	.catch((error)=>{
+		console.log('Database Not Connected..!');
+	});
 ---------------------------------------------------------------------------------------------------------------
-46.What are the differences between using an ORM and raw SQL queries in Node.js?
-->ORM -> Object Relational Mapping used Sequelize
-->Raw Queries -> Simple Queries
-->Object Realtional mapping code second approach to creating the database and they are automatically database are creation
-->raw queries means manual queries write for the database operation
---------------------------------------------------------------------------------------------------------------
-47.How would you handle database connection pooling in a Node.js application?
-
-->create a connection node and database they are need to crating the pool 
-
-const {Client} = require('../dababase/config.js');
-
-const client = new Client({
-	host:'host_name',
-	port:3334,
-	database:'mysql',
-	name:'wps_database'
-});
-
-client.connection()
-	  .then((result)=>{console.log(result)})
-	  .catch((error)=>{console.log(error)});
-
----------------------------------------
-
-const {Client} = require('pg');
-
-const cleint = new Client({
-	host:'host_name',
-	port:5034,
-	database:'postgres',
-	name:'WPS'
-});
-
-client.connect()
-      .then((result)=>{console.log(result)})
-	  .catch((error)=>{console.log(error)})
-
+48. How would you connect to a MongoDB database in a Node.js app?
+=> ]]]]
 ---------------------------------------------------------------------------------------------------------------
 49.How would you implement rate limiting in a Node.js API?
+✅Rate Limiting in Node.js :-
+->If you want to use rate limiting in our application, first install the express-rate-limit module and use it in the Node.js app.
+->We set how many times a single IP can hit an API.
+->express-rate-limit is used for handling unwanted requests so our Node.js server doesn’t crash.
 
--> To implement rate limiting in a Node.js API, especially for basic use cases like REST APIs, you can use the popular middleware package called express-rate-limit.
+✅Scenario:-
+->If we create a Node server and do not handle rate limiting, multiple unwanted API calls can hit the server.
+->This loads the server and can crash it.
 
--> we can used the express-rate-limit.
+✅Solution:-
+->express-rate-limit handles requests from the same IP hitting the same API multiple times.
+->It stops the excessive requests, preventing server overload.
+->This is also called a DDoS (Distributed Denial of Service) scenario.
 
--> we can used the express-rate-limit module in the node.js to handling the hot many timiing samw request are hit that shedular are write and again and again they are hit same api so they are set the timer 1 min only one request are hit that like that timing are set to the node.js server.
+Example :- 
+
+	const express = require('express');
+	const rateLimit = require('express-rate-limit');
+
+	const app = express();
+
+	// Rate limit: 5 requests per minute per IP
+	const limiter = rateLimit({
+	windowMs: 1 * 60 * 1000, // 1 minute
+	max: 5, // max 5 requests
+	message: "Too many requests from this IP, please try again later."
+	});
+
+	// Apply limiter to all routes
+	app.use(limiter);
+
+	// API endpoint
+	app.get('/api', (req, res) => {
+	const ip = req.ip || req.connection.remoteAddress; // get client IP
+	console.log(`Request from IP: ${ip}`); // log IP
+	res.send(`API working! Your IP: ${ip}`);
+	});
+
+	// Start server
+	app.listen(3000, () => {
+	console.log('Node server running on port 3000');
+	});
+
 ---------------------------------------------------------------------------------------------------------------
-
-
-----------------------------------------------------------------------------------------------------------------
 50.What is JWT?
-->jsonwebtoken thhey are creating the token 
-and 
+->JWT stands for JSON Web Token.
+->JWT is used for creating tokens, which help the client and server communicate securely.
+->They are commonly used in applications for authentication and authorization.
+
+A JWT contains three main parts:-
+	Header – contain which type request, mobile through or browser through
+	Payload – user info
+	Signature – secure key set
+
+Example :- 
 
 const jwt = require('jsonwebtoken');
-
 const secret_key = 'Vishal@123';
-
-const user = {
-	id:1,
-	username:'vishalnimbarte097@gmail.com',
-	role:'Admin'
+const userInfo = {
+  id: 1,
+  username: 'vishal_nimbarte',
+  role: 'USER'
 };
+const token = jwt.sign(userInfo, secret_key, { expiresIn: 120 });
+console.log("Token :- ", token);
+---------------------------------------------------------------------------------------------------------------
+51.How JWT Works?
+->JWT is used for secure communication between client and server.
+->For every request, the token is sent securely from client to server.
+->From the token, the server knows which type of user is hitting the request.
+---------------------------------------------------------------------------------------------------------------
+52.Explain the structure of a JWT.?
+->JWT structure contains Header, Payload, and Signature, which together make the token secure.
+---------------------------------------------------------------------------------------------------------------
+53.What are the three parts of a JWT?
+-> JWT has three parts: Header, Payload, and Signature.
+---------------------------------------------------------------------------------------------------------------
+54.How do you create a JWT in Node.js?
+-> if you want to create the JWT Token in the node.js so we can used the jsonwebtoken module and that module are contain to the sign method.
 
-const token = jwt.sign(secret_key,user,{expiresIn:1h});
+Example :- 
+const jwt = require('jsonwebtoken');
+const secret_key = 'Vishal@123';
+const userInfo = {
+  id: 1,
+  username: 'vishal_nimbarte',
+  role: 'USER'
+};
+const token = jwt.sign(userInfo, secret_key, { expiresIn: 120 });
+console.log("Token :- ", token);
+---------------------------------------------------------------------------------------------------------------
+55.What is the purpose of the header in a JWT?
+->The JWT header is used to identify the request type, such as mobile or browser, and helps in handling authentication.
 
-console.log(token);
 
-and in this token contain to the three main parts 
-header,payload and signature 
+
+
+
+
 
 ---------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-51.How JWT Works?
-----------------------------------------------------------------------------------------------------------------
-
--> 52.Explain the structure of a JWT.?
-->header,payload and signature they are three parts are there in JWT.
-
-----------------------------------------------------------------------------------------------------------------
-53.What are the three parts of a JWT?
--> header, payload and signature are there.
-----------------------------------------------------------------------------------------------------------------
-54.How do you create a JWT in Node.js?
--> if you want to create the JWT Token in the node.js so we can used the jsonwebtoken module and that module are contain to the sign method 
-
-const jwt = require('jsonwebtoken');
-
-const user = {
-	id:1,
-	username:'vishal.nimberte01'
-};
-
-const sercret_key = 'Vishal@123';
-
-const token = jwt.sing(sercret_key,user,{expiresIn:'1h'});
-
-----------------------------------------------------------------------------------------------------------------
-55.What is the purpose of the header in a JWT?
-->Json Web token are used to handling the authentication process , 
-the user are log with the help of the username and password and and this username , id , and there password are used to create the JWT Token and genarated to token responce are though they are passed and frontend side the they are stored to the localstorage or session storage.
-->header are used because they are contain the which type of the request are there like a mobile applcaiotn request or web broser rquest they are find with the help fo the headers 
-
-----------------------------------------------------------------------------------------------------------------
 56.What's config in Node.js ?
 ->config file are write a code like a coneection of the databases.
 ->config file are used they are write the database connection
@@ -803,37 +868,85 @@ const value = arr.reduce((acc,data)=>{
 },0);
 
 console.log(value);
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 78.What are some ways to handle errors in a Node.js application?
-
 -> In the node.js application we can handle errors so we can used the try and catch block 
 -> so in that process the risky code they are write to the try block and error handling code they are write to the catch block and when ever some we can used the resource in our node js applicaion module so that timing also used the finaaly block to closing the all the resources.
 
--> 
-----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------
 79.How can you prevent SQL injection in a Node.js application?
--> prevent SQL injection so i used the sp and parameterized queries. and also used the stored procedure.
-----------------------------------------------------------------------------------------------------------------
+-> prevent SQL injection so i used the SP and parameterized queries. and also used ORM.
+---------------------------------------------------------------------------------------------------------------
 80.What is SQL Injection?
--> they are breack the sql condition are clear the password in the databases so that process is called the sql injections.
--> they are normal condition query are write that queries not used the parameterized ($) symbol are used or strored procedure so they are breack using the &condtion and condition are true and you can acces the account without need to the actula password that the process is called as the SQL Injection.
-
-
-----------------------------------------------------------------------------------------------------------------
+->SQL Injection is breaking SQL conditions to access an account without the actual password.
+->SQL Injection is possible when we do not use parameterized queries or stored procedures and use simple queries without validation.
+->In that case, an attacker or hacker breaks the SQL queries, and without authentication, they can get database data or insert data.
+->This whole process is called SQL Injection.
+->To avoid SQL Injection, we should use ORM, stored procedures, and parameterized queries.
+---------------------------------------------------------------------------------------------------------------
 81.How do you handle authentication and authorization securely in a Node.js app?
 ->"Authentication is the process of checking if user is logged in or not using JWT Token. In case JWT token expires, user cannot login or access our application.
-Authorization uses RBAC to handle permissions." that means which type of the user they are access the which type of the module.
-----------------------------------------------------------------------------------------------------------------
+->Authorization uses RBAC to handle permissions." that means which type of the user they are access the which type of the module.
+---------------------------------------------------------------------------------------------------------------
+49.How would you implement rate limiting in a Node.js API?
+✅Rate Limiting in Node.js :-
+->If you want to use rate limiting in our application, first install the express-rate-limit module and use it in the Node.js app.
+->We set how many times a single IP can hit an API.
+->express-rate-limit is used for handling unwanted requests so our Node.js server doesn’t crash.
+
+✅Scenario:-
+->If we create a Node server and do not handle rate limiting, multiple unwanted API calls can hit the server.
+->This loads the server and can crash it.
+
+✅Solution:-
+->express-rate-limit handles requests from the same IP hitting the same API multiple times.
+->It stops the excessive requests, preventing server overload.
+->This is also called a DDoS (Distributed Denial of Service) scenario.
+
+Example :- 
+
+	const express = require('express');
+	const rateLimit = require('express-rate-limit');
+
+	const app = express();
+
+	// Rate limit: 5 requests per minute per IP
+	const limiter = rateLimit({
+	windowMs: 1 * 60 * 1000, // 1 minute
+	max: 5, // max 5 requests
+	message: "Too many requests from this IP, please try again later."
+	});
+
+	// Apply limiter to all routes
+	app.use(limiter);
+
+	// API endpoint
+	app.get('/api', (req, res) => {
+	const ip = req.ip || req.connection.remoteAddress; // get client IP
+	console.log(`Request from IP: ${ip}`); // log IP
+	res.send(`API working! Your IP: ${ip}`);
+	});
+
+	// Start server
+	app.listen(3000, () => {
+	console.log('Node server running on port 3000');
+	});
+---------------------------------------------------------------------------------------------------------------
 81.What is express-rate-limit module used & What is DDoS ?
 -> Multiple clients send multiple fake requests and they are not handled so server crashes. We use express-rate-limit to prevent DDoS attack. It blocks multiple requests sent by one client."
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 82.What are some common security best practices for securing an Express.js application?
 -> used express-rate-limit = prevents brute force/DDoS
 -> used bcrypt package = secure password hashing
 -> used HTTPS over HTTP = encrypts data
 -> prevent SQL Injection = for critical security
 > used Stored procedures = safe database queries
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 83.How would you handle data encryption in a Node.js project?
 -> "In Node.js, we handle encryption using the bcrypt module. 
 -> In real-time scenario, user passwords are stored in encrypted format in the database, so we use bcrypt module. 
@@ -841,38 +954,38 @@ Authorization uses RBAC to handle permissions." that means which type of the use
 	bcrypt = password hashing (most common use case)
 	SHA-256 = hashing algorithm
 	AES = symmetric encryption
-	Real scenario = password storage
-----------------------------------------------------------------------------------------------------------------
+	Real Time scenario = password storage
+---------------------------------------------------------------------------------------------------------------
 84.What is the difference between the package.json and package-lock.json?
 ->"Both package.json and package-lock.json are created when the Node project is created. package.json contains the path of dependencies our Node.js project and package-lock.json contains path of their sub-dependencies of the project."
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 85.How do you create a custom Node.js module, and how would you share it across projects?
--> "With the help of module.exports and require, I will create a custom Node.js module and share it across projects using require."
+-> To create a custom module, I use exports and import keywords.
+-> With the help of the require keyword, that custom module is used in the entire application.
 
-Module file (myModule.js):
+	Module file (myModule.js):
 
-const myFunction = () => "Hello from module!";
-module.exports = { myFunction };  // Export
+	const myFunction = () => "Hello from module!";
+	module.exports = { myFunction };  // Export
 
-Using it:
-const { myFunction } = require('./myModule');  // Import
-----------------------------------------------------------------------------------------------------------------
+	Using it:
+	const { myFunction } = require('./myModule');  // Import
+---------------------------------------------------------------------------------------------------------------
 86.Types of module in Node.js ?
 ->Core modules (built-in): http, https, fs, path, os
 ->Third-party modules: nodemon, pg (npm install needed)  
 ->Custom modules: Created by programmer
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 87.Alternative Way of Nodemon in Node.js ?
 -> Alternative way of Nodemon: node --watch index
 -> Nodemon needs to download nodemon module and configure in package.json file. But using --watch, there is no need to install any package and no need for configuration.
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 88.How to Improving the performance of a Node.js server.
 -> "To improve Node.js server performance:
--> Use asynchronous functions using async and await
--> Write I/O intensive work and avoid CPU intensive work
--> Increase thread pool using UV_THREAD_POOL_SIZE
--> Use async, await, and promises for creating functions"
-----------------------------------------------------------------------------------------------------------------
+✅ Use asynchronous functions using async and await
+✅ Write I/O intensive work and avoid CPU intensive work
+✅ Increase thread pool using UV_THREAD_POOL_SIZE
+---------------------------------------------------------------------------------------------------------------
 89.What is the promises?
 ->Promises is the javascript object and they are used to handling the asynchronous operation in the node.js and they are provided the three main state resolved, rejected and pending.
 
@@ -889,10 +1002,9 @@ myPromise.then((result) => {
 }).catch((error) => {
     console.log("Error :- ",error);
 });
-	   
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 90.What is the asyn/await?
--> Async/await is used to handle asynchronous operations in Node.js/JavaScript. They were introduced in ECMAScript 6 (ES6). async makes a function asynchronous, and await pauses code execution until a Promise completes.
+-> Async/await is used to handle asynchronous operations in Node.js. They were introduced in ECMAScript 6 (ES6). async makes a function asynchronous, and await pauses code execution until a Promise completes.
 
 Example :- 
 
@@ -905,19 +1017,19 @@ async function simpleWork(){
     await processWork();              // Pauses 2 seconds
     console.log("Work done!");        
 }
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 91.Difference between the promise and asyc/await?
 ->promises and async/await both are the core concept of the javsacropt.
 ->the promise is the object of the javascript and they are cotain to the threee main state for execution timing 
 ->resolved, reject and pending  
-->async/await are used to handle the asynchronous opetaion in the node js , the async are used that measn our function is the aycnchouse and they are return to the promises and await are used because they are wait for the exection.
-----------------------------------------------------------------------------------------------------------------
+->async/await are used to handle the asynchronous opetaion in the node js , the async are used that measn our function is the aycnchouse and they are return to the promises and await are used for stop the execution code and wait.
+---------------------------------------------------------------------------------------------------------------
 92.what is difference between the https and http module?
 ->Both http and https modules are used to handle API requests. The http module is not secure, but the https module is secure because it uses SSL/SSL certificates. We usually use http in development or testing (UAT, staging), and https in production.
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 93.Without using the express server we can create the node.js server it's possible to creating the server in the node.js ?
 ->Yes, it is possible to create a server in Node.js without Express. The server works, but the disadvantage is that the code becomes longer and harder to manage.
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 94.What is Higher Order Function?
 -> A higher order function is a function that accepts another function as an argument and/or returns a function.
 
@@ -931,7 +1043,7 @@ function newFunction(callback){ --> Higher Order Function
 };
 
 newFunction(show);//callback function
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------Expressjs------------------------------------------------------
 
