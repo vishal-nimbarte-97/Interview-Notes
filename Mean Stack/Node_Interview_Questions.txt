@@ -813,69 +813,43 @@ bcrypt.hash('Vishal@123', 10, (err, hash) => {
   console.log(hash);
 });
 ---------------------------------------------------------------------------------------------------------------
-
-
-
-
 69.Difference between async await and promise ?
--> asyn/await are used to the our function for handling the asynchronous operation in node.js and 
--> they are used the asyn they are show the function are asynchronous and return the promise 
--> await are pause the exection
--> promises are the three main state reject resolved and pending
-----------------------------------------------------------------------------------------------------------------
-70.Have you worked on transactional queries ?
--> yes, i have used to the transactional queries begin, commit and rollback.
-----------------------------------------------------------------------------------------------------------------
-
+-> async/await and promise both are the concept of the javascript for handling the asynchronouse operation in node.js 
+-> so async is used for declared the function as a asycnhronous and await is used for pause the execution of code 
+-> and promise is the object is javacript they are always return the three main state resolved,rejected and pending.
+---------------------------------------------------------------------------------------------------------------
 71.Do you know about scheduling in Node Js ?
--> In the node js we want to the used the scheduling so we can used the setTimeout or setInterval function and also used node-cron module in the node.js , basically in my current node applicaiotn i have used the setTimeout and setInterval for handling the session expire features and node-cron aslo used the in the EST 12.01 AM execution the cron-job dummed the preiose day data in the mongodb database.
-
+-> Yes, I know about scheduling in Node.js  for timing-related tasks. The concept is to set a specific time, and at that time the event will be triggered — that is the idea of scheduling in Node.js. . For this, we can use setTimeout, setInterval, and also the node-cron module for scheduling.
+-> In my last project, I used scheduling for tasks like reporting and data dumping. These tasks were set to specific timings, and at those times they were triggered and performed the required actions.
 ----------------------------------------------------------------------------------------------------------------
 72.Have you used typescript in node JS?
--> In node js application if you want to the used the typescript so we need to the third party module are install our node.js applcaiotn
--> yes i can also used the typscript in the node.js application and that time need to the typescript module and they are import to the node. server and used to the ts-node through they are run the node.js server 
+-> Yes, I have used TypeScript in Node.js, but it is not set up by default. So we need to install third-party packages to configure and use TypeScript properly in a Node.js  application.
 ----------------------------------------------------------------------------------------------------------------
---> 73.how do you validate the request body in  node js? Any  package for that?
--> Express Validators are used to the validate the request body in the node.js.
+73.how do you validate the request body in node.js? Any  package for that?
+-> Validation in Node.js  can be done in different ways like manual validation, middleware validation, and also by using packages. In my projects, I have used manual validation for simple checks, middleware validation to handle request data before reaching the controller, and also express-validator package for validating the user request body in a structured way.
 ----------------------------------------------------------------------------------------------------------------
 74.have you created swagger in node js?
 ->Yes, I can used the Swagger in the node.Js and In the my current Node application i can used the swagger for the collection of the api's for the third party integration case and also the used the postman tool to hit the api.
 ----------------------------------------------------------------------------------------------------------------
 75.Fat arrow function of JavaScript?
--> Fat arrow function is called the arrow function in the javascript and the arrow function are used because they normal function they are line of the code are less and they are most of the used to the hanlding.
+-> Fat arrow function is called the arrow function in JavaScript. As compared to regular functions, the lines of code are less, making them shorter and cleaner. Arrow functions also have their own lexical this, which means they don’t bind this dynamically like regular functions — instead, they inherit it from the surrounding scope.
 
-cosnt value = () => {
-
-
-
+Example :- 
+function regularFunction(){
+    console.log('Regular Function Data..!');
+    console.log();
 }
 
-normal function like 
-function normalFunction(){
-
+const arrowFunction = (a,b) => {
+    console.log("A :- ",a);
+    console.log("B :- ",b);
 }
 
-but , the syntax of the arrow function is 
-
-const arrowFunction = (obj_1,obj_2) =>{
-
-}
-
-syntax is 
-
-const value = () =>{
-	console.log('Arrow Function..!');
-}
-
+regularFunction();
+arrowFunction(23,78);
 ---------------------------------------------------------------------------------------------------------------
 76.How to achieve Concurrency  in Node JS.?
--> In the node js application if you want to the achiving the concurrency so we can used non-blocking asychouse code are write, async and await are used , and also we can used the promises.
--> if you want to achieve concurrency in node.js so we can used asyc/await and promise and also used the non-blocking asynchronous i/o operations.
-
-
-
-
-
+-> In Node.js  to achieve concurrency we can use event-driven programming and non-blocking I/O operations. Node.js  is mostly used for I/O intensive work instead of CPU-intensive work because of its single-threaded nature. For handling asynchronous tasks, we use async/await and Promise keywords to create asynchronous functions, which allow multiple operations to run concurrently without blocking the main thread.
 ---------------------------------------------------------------------------------------------------------------
 77.What is used of reduce method.
 -> reduce is a JavaScript array method used to process all elements in an array and return a single value as the result.
@@ -1063,30 +1037,6 @@ function newFunction(callback){ --> Higher Order Function
 };
 
 newFunction(show);//callback function
----------------------------------------------------------------------------------------------------------------
-68.How to optimized query performance ?
--> if you want to optimize the query performance so we can used the parameterized queries and also used the stored procedure to handling the performance of the queries.
-
-->	Use Indexes – On WHERE, JOIN, ORDER BY columns.
-
-	Avoid SELECT * – Fetch only needed columns.
-
-	Use Proper Joins – Prefer INNER JOIN, index join keys.
-
-	Filter Early – Apply WHERE conditions ASAP.
-
-	Analyze with EXPLAIN – Check execution plan.
-
-	Use LIMIT – For large result sets (pagination).
-
-	Avoid Functions on Indexed Columns – Like LOWER(column).
-
-	Optimize Subqueries – Replace with joins if possible.
-
-	Partition Big Tables – For faster access.
-
-	Cache Repeated Queries – Use Redis or app cache.
----------------------------------------------------------------------------------------------------------------
 ------------------------------------------------Expressjs------------------------------------------------------
 
 
