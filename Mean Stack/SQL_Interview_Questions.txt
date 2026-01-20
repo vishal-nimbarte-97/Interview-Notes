@@ -1,3 +1,33 @@
+---------------------------------------------------------------------------------------------------------------
+68.How to optimized query performance ?
+-> if you want to optimize the query performance so we can used the parameterized queries and also used the stored procedure to handling the performance of the queries.
+
+->	Use Indexes – On WHERE, JOIN, ORDER BY columns.
+
+	Avoid SELECT * – Fetch only needed columns.
+
+	Use Proper Joins – Prefer INNER JOIN, index join keys.
+
+	Filter Early – Apply WHERE conditions ASAP.
+
+	Analyze with EXPLAIN – Check execution plan.
+
+	Use LIMIT – For large result sets (pagination).
+
+	Avoid Functions on Indexed Columns – Like LOWER(column).
+
+	Optimize Subqueries – Replace with joins if possible.
+
+	Partition Big Tables – For faster access.
+
+	Cache Repeated Queries – Use Redis or app cache.
+---------------------------------------------------------------------------------------------------------------
+70.Have you worked on transactional queries ?
+-> yes, i have used to the transactional queries begin, commit and rollback.
+---------------------------------------------------------------------------------------------------------------
+
+
+
 🔹 Basic Database Questions (1–25)
 
 1.What is a database?
