@@ -813,19 +813,15 @@ bcrypt.hash('Vishal@123', 10, (err, hash) => {
   console.log(hash);
 });
 ---------------------------------------------------------------------------------------------------------------
-
-
-
-
 69.Difference between async await and promise ?
 -> asyn/await are used to the our function for handling the asynchronous operation in node.js and 
 -> they are used the asyn they are show the function are asynchronous and return the promise 
 -> await are pause the exection
 -> promises are the three main state reject resolved and pending
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 70.Have you worked on transactional queries ?
 -> yes, i have used to the transactional queries begin, commit and rollback.
-----------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 
 71.Do you know about scheduling in Node Js ?
 -> In the node js we want to the used the scheduling so we can used the setTimeout or setInterval function and also used node-cron module in the node.js , basically in my current node applicaiotn i have used the setTimeout and setInterval for handling the session expire features and node-cron aslo used the in the EST 12.01 AM execution the cron-job dummed the preiose day data in the mongodb database.
@@ -869,13 +865,12 @@ const value = () =>{
 
 ---------------------------------------------------------------------------------------------------------------
 76.How to achieve Concurrency  in Node JS.?
--> In the node js application if you want to the achiving the concurrency so we can used non-blocking asychouse code are write, async and await are used , and also we can used the promises.
--> if you want to achieve concurrency in node.js so we can used asyc/await and promise and also used the non-blocking asynchronous i/o operations.
+In a Node.js application, we handle concurrency using non-blocking I/O operations.
+Node.js is designed to handle I/O-intensive work instead of CPU-intensive work.
 
-
-
-
-
+→ We use asynchronous operations to achieve concurrency.
+→ async/await and Promises are used to write non-blocking asynchronous code.
+→ This allows multiple tasks (like database calls, file operations, and API requests) to run concurrently without blocking the main thread.
 ---------------------------------------------------------------------------------------------------------------
 77.What is used of reduce method.
 -> reduce is a JavaScript array method used to process all elements in an array and return a single value as the result.
@@ -1153,76 +1148,146 @@ What are signed cookies, and how are they used in Express?
 
 +++++++++++++++++++++++++++++++++++++++++++++++Skymeric Technologies – Node JS Questioner+++++++++++++++++++++++++++++++++++++
 
- ✅ 1. Explain the Node.js event loop architecture in detail
-Answer:
-Node.js uses libuv to implement an event-driven, non-blocking I/O model.
-Event Loop phases:
-Phase	Description
-Timers	Executes setTimeout & setInterval callbacks
-I/O Callbacks	Executes pending asynchronous callbacks
-Idle/Prepare	Internal use
-Poll	Retrieves new I/O events, runs I/O callbacks
-Check	Executes setImmediate() callbacks
-Close Callbacks	e.g. socket .close()
-Key point: Node runs JavaScript in one main thread, but C++ thread-pool handles I/O in background.
-Why important? Enables massive concurrency for I/O heavy apps (APIs, messaging, DB apps).
-________________________________________
+✅ 1. Explain the Node.js event loop architecture in detail
+Answer:- 
+	Basically Node.js used the libuv library,
+	and this library contains the event loop and thread pool.
+	So, event loop and thread pool help Node.js to handle non-blocking I/O.
+
+	So, in every JavaScript file in Node.js, it contains two types of functions:
+	synchronous and asynchronous.
+
+	So, synchronous functions are executed one by one and stored in the call stack.
+	So, this call stack executes in LIFO or FILO order, that means Last In First Out or First In Last Out.
+
+	But asynchronous operations take more time because they request another server,
+	call the database, like that type of operation, and they take more time.
+
+	So, when this task is completed, it is stored in the callback queue.
+	So, when everything process is completed, then the main work starts for the event loop.
+
+	So, this event loop contains 6 main phases, like idle, prepare, timers, like that.
+
+	So, the event loop continuously checks whether the call stack is empty or not.
+	In case the call stack is empty, the callback queue contains tasks one by one priority-wise,
+	and the callback is passed to the call stack.
+
+	So, this callback is executed by the call stack,
+	and with the help of the callback function, they return the response.
+
+	So, that is the overall scenario of the event loop architecture.
+___________________________________________________________________________________________________
 ✅ 2. How does Node.js scale on multi-core CPUs?
 Answer:
-Node is single-threaded but can scale using:
-Technique	Purpose
-cluster module	Spawns multiple worker processes
-PM2 clustering	Production-grade process manager
-Worker Threads	CPU-heavy computation
-Load balancer (NGINX/AWS ALB)	Distribute traffic
-Example: PM2 start
-pm2 start server.js -i max
-Best practice:
-•	Use workers for CPU tasks
-•	Use clusters for scaling I/O apps
-________________________________________
+	Node.js server by default is single-threaded because it uses JavaScript, and JavaScript is a single-threaded programming language.
+
+	So, for handling multiple requests at the same time, inside the Node.js application we use the cluster module, PM2, like that.
+
+	So, the cluster module creates worker processes, and they get the CPU cores.
+	That means our system contains logical processors like 4, 8, or 10, so that number of worker processes is created and used by the main thread to pass the tasks.
+
+	So, in case multiple clients send multiple requests at the same time, the main thread divides every request to these worker processes.
+	And this operation is performed by the worker processes, means system cores, and with the help of the callback function, they return the response.
+
+	And if you want to scale the Node.js server, multiple Node.js servers are created, and they are configured with the help of NGINX.
+
+	So, NGINX is used for handling load balancing in our application.
+__________________________________________________________________________________________________
 ✅ 3. When would you NOT use Node.js?
 Answer:
-Avoid Node.js when:
-❌ CPU-intensive workloads (video encoding, ML, crypto loops)
-❌ High-precision numeric computation
-❌ Real-time media processing (unless offloaded to workers)
-Use Python/Go/Rust for compute-heavy workloads.
-________________________________________
+	We should not use Node.js when the application is CPU-intensive work.
+	Because CPU-intensive work blocks the event loop and it affects the performance of the Node.js application.
+
+	So, we should avoid CPU-intensive work and use I/O-intensive work in Node.js.
+
+	CPU-intensive work means tasks like mathematical calculations, video processing, audio processing, like that type of tasks.
+	These tasks are performed by the CPU, and the main CPU keeps working, so in that case the event loop gets blocked.
+________________________________________________________________________________
 ✅ 4. Explain how to handle CPU-intensive tasks
 Answer:
-Use:
-✅ Worker Threads — for CPU tasks
-✅ Redis Queue + Worker Service
-✅ Delegate to Go/Python microservice
+	If we want to perform CPU-intensive work, we can use the worker threads module.
+	Worker threads create another threads for performing this CPU-intensive work, and they do not block the main thread.
+
+	So, the main thread can perform other tasks or event loop work.
+	In this case, they do not block the event loop and do not affect the performance of the Node.js application.
+
+	We can also use the cluster module for handling CPU-intensive work.
+	That means one worker process is provided for performing the CPU-intensive work.
+
+	Another way is to create a separate service in another programming language which is better for CPU-intensive work.
+
 Example Worker:
-const { Worker } = require('worker_threads');
-new Worker('./heavyTask.js', { workerData: data });
-________________________________________
+main.js 
+	const { Worker } = require('worker_threads');
+
+	console.log("Main thread start");
+
+	const worker = new Worker('./worker.js');
+
+	worker.on('message', (result) => {
+	console.log("Result from worker:", result);
+	});
+
+	console.log("Main thread continues other work");
+
+woker.js 
+	const { parentPort } = require('worker_threads');
+
+	// CPU-intensive task
+	let sum = 0;
+	for (let i = 0; i < 1000000000; i++) {
+	sum += i;
+	}
+
+	parentPort.postMessage(sum);
+________________________________________________________________________________________________________________________
 ✅ 5. What is the difference between a Microservice and an API Gateway?
-Microservice: A single business capability
-API Gateway: Single entry point for all microservices
-Gateway functions:
-•	Authentication
-•	Rate-limit
-•	Request routing
-•	Caching
-•	Logging / Tracing
-Node tools: Express Gateway, Kong, NGINX, Fastify, NestJS Gateway
-________________________________________
+Answer :- 
+
+	Microservice means each and every service is independent, because they have their own development, deployment, and also their own database.
+	They are not dependent on each other, so in case one service is down, it does not affect another service.
+
+	And API Gateway is the entry point of the client request.
+	So, when multiple client requests come to the server, they first reach the API Gateway.
+
+	API Gateway contains request validation, authentication, authorization, rate limiting, logging, and load balancing.
+
+	And it does not contain business logic, and it does not have a database.
+
+	So, it is the middle part between the client request and microservices, and with the help of this, it manages which service is called.
+
+-----------------------------------------------------------------------------------------------------------------------
+| Microservice                                    | API Gateway                                                       |
+| ----------------------------------------------- | ----------------------------------------------------------------- |
+| Each and every service is independent           | Entry point for client requests                                   |
+| Developed independently                         | Handles incoming requests                                         |
+| Deployed independently                          | Routes requests to services                                       |
+| Each service has its own database               | Does not have a database                                          |
+| One service down does not affect other services | Acts as middle layer                                              |
+| Contains business logic                         | Does not contain business logic                                   |
+| Services communicate with each other            | Manages which service is called                                   |
+| Used for application features                   | Used for validation, auth, rate limiting, logging, load balancing |
+-----------------------------------------------------------------------------------------------------------------------
+________________________________________________________________________________________________________________________
 ✅ 6. Explain Node.js memory model & GC
-V8 Heap:
-•	New space (young generation)
-•	Old space (long-lived objects)
-Garbage collection: Mark-and-Sweep incremental GC
-Monitor memory:
-node --inspect
-Use flags if needed:
---max-old-space-size=4096
-Key risks:
-❗ Memory leaks via global objects
-❗ Holding references in caches
-________________________________________
+Answer :- 
+	In Node.js, the memory model and GC are handled by the V8 JavaScript engine by default, and they do not need to be handled by the programmer.
+
+	So, in the Node.js memory model, there are two types of memory:
+
+	Static memory
+
+	Heap memory
+
+	Static memory stores local variables, primitive data types, and function calls.
+	The call stack stores the data in FILO or LIFO order.
+
+	Heap memory stores arrays, objects, and strings.
+	Heap memory is dynamic memory, and it gets the size dynamically.
+
+	The Garbage Collector (GC) also works by default, and it is executed by the V8 JavaScript engine.
+	It is used to remove unwanted or no longer used objects from memory.
+________________________________________________________________________________________________________________________
 ✅ 7. What is backpressure in Node streams?
 Backpressure: Producer sends data faster than consumer can handle.
 Solution: using .pipe() since it manages flow:
