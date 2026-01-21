@@ -145,7 +145,7 @@ Here’s a **complete topic-wise breakdown of 25+ interview questions per Data S
 ## 📌 Arrays (25+ Questions)
 - Reverse an array
 
-  // Reverse Number without using the .reverse() method
+  //]] Reverse Number without using the .reverse() method
   const arr = [12,23,34,45,56,76];
   console.log("Before Array Reversing :- ",arr);
   let i = 0;
@@ -161,7 +161,7 @@ Here’s a **complete topic-wise breakdown of 25+ interview questions per Data S
 ------------------------------------------------------------------
 - Find max/min element
 
-  // Find max/min element
+  //]] Find max/min element
   const arr = [12,42,89,56,43,90,32,2];
   let max = arr[0];
   for(let i=1;i<arr.length;i++){
@@ -170,6 +170,23 @@ Here’s a **complete topic-wise breakdown of 25+ interview questions per Data S
     }
   }
   console.log('Maximum Number in Array :- ',max);
+
+
+//Find Mix & Max single timing
+function findMaxAndMin(arr){
+    
+    const sortedArray = arr.sort((a,b) => {
+        return a - b;
+    });
+    
+    return [sortedArray[0],sortedArray[arr.length-1]];
+}
+
+const newArray = findMaxAndMin([12,23,89,67,7,54,90,43,677,90,43]);
+
+console.log('Min Value :- ',newArray[0]);
+console.log('Max Value :- ',newArray[1]);
+
 ------------------------------------------------------------------
 - Remove duplicates
 
