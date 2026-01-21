@@ -1372,19 +1372,32 @@ ________________________________________________________________________________
 Answer:
 -> Middlewares are the middle part between the client request and the server. When a request comes, it first passes through the middleware. In this middleware, the request can be validated or processed, and then it is sent to the server. This is the overall concept of middlewares. Middleware is also used for global error handling and can perform tasks like authentication, logging, or modifying request/response objects before reaching the server logic.
 ________________________________________________________________________________________________________________________
-
-
 ✅ 10. Difference between CommonJS and ES Modules in Node
-CommonJS	ES Modules
-require()	import
-Older Node default	Modern standard
-Synchronous	Asynchronous
-.cjs extension	.mjs or "type": "module"
-________________________________________
+Answer:
+-> CommonJS is the old module system in Node.js, while ES Modules (ESM) are the newest features of JavaScript. There are several differences between them:
+
+CommonJS uses require() to import modules and module.exports to export.
+ES Modules use import and export keywords, which are part of modern JavaScript.
+CommonJS modules are loaded synchronously, while ES Modules are loaded asynchronously.
+ES Modules support static analysis (tools can understand imports/exports before running code), which helps with tree-shaking and optimization.
+CommonJS is widely used in older Node.js  projects, while ES Modules are the standard for modern JavaScript development.
+________________________________________________________________________________________________________________________
 ✅ 11. When to use Streams vs Buffers?
-•	Buffer → entire data in memory (small files)
-•	Stream → chunked processing (large files, video, logs)
-________________________________________
+Answer:
+-> Streams and Buffers are used for handling file-related operations in Node.js.
+Streams are used when we want to load file data chunk by chunk instead of loading the entire file at once. This is useful for large files or continuous data, as it saves memory and improves performance.
+Buffers are used when we want to handle a small amount of file data directly in memory. Buffers store raw binary data and are useful for tasks like reading small files, working with binary protocols, or manipulating data before writing.
+
+Aspect							Streams										Buffers
+Definition						Handle data chunk by chunk					Store raw binary data in memory
+Use case						Large files or continuous data				Small data or binary manipulation
+Memory usage					Efficient, low memory footprint				Consumes memory directly
+Performance						Better for I/O-intensive tasks				Suitable for quick, small operations
+Modules used					fs module with stream API					Buffer class in Node.js
+Example							Reading a big file in chunks				Converting string to binary data
+________________________________________________________________________________________________________________________
+
+
 ✅ 12. Explain Middleware vs Interceptors vs Filters
 Concept	Use
 Middleware	Pre-processing requests
