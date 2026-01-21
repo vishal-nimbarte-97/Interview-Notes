@@ -1334,63 +1334,46 @@ app.get('/healthz', (req,res)=>res.send('OK'));
 
 ✅ 1. What is the Node.js event loop and why is it important?
 Answer:
-The event loop is a single-threaded mechanism that handles asynchronous operations in Node.js. It allows non-blocking I/O — enabling Node to handle thousands of requests simultaneously.
-Instead of waiting for operations like DB queries or file I/O, Node delegates them to system threads and processes callbacks when ready, improving scalability.
-________________________________________
+-> The event loop is used for handling asynchronous operations in Node.js. . It continuously checks if the call stack is empty or not. When the call stack is empty, the event loop takes tasks from the event queue and passes them to the call stack to execute asynchronous functions. It is important because it handles non-blocking I/O, and every request is independent — one request does not depend on another.
+________________________________________________________________________________________________________________________
 ✅ 2. Explain the difference between microservices and monolithic Node.js architecture.
 Answer:
-Monolith	Microservices
-One large codebase	Small independently deployable services
-Shared DB	DB per service or shared–with–contracts
-Simple deployment	Complex deployment + DevOps
-Hard to scale specific modules	Scale each service independently
-Node.js fits microservices due to lightweight runtime, event-driven architecture, and excellent API performance.
-________________________________________
+-> Monolithic architecture is a single code base that contains all the modules developed and deployed together, and it usually has one database. In this case, if any error or problem occurs, the entire application can go down.
+
+But in microservice architecture, services are created module-wise. They are developed, deployed, and maintained separately, and each service can have its own database. They do not depend on each other, so if one service or module goes down, the overall application does not go down. This is the main advantage of microservices.
+________________________________________________________________________________________________________________________
 ✅ 3. Why is Node.js good for I/O-intensive workloads, but not CPU-heavy tasks?
 Answer:
-Node uses a single thread for JavaScript execution. CPU-heavy tasks (like large calculations or ML processing) block it.
-I/O (DB calls, file I/O, API calls) are delegated to system threads, making Node ideal for I/O-heavy, real-time systems.
-________________________________________
+-> Yes, Node.js  is good for I/O-intensive workloads instead of CPU-intensive work because CPU-intensive tasks are performed by the system CPU and they block the event loop. This directly affects the performance of the Node.js  server and increases the load on it. That is the reason CPU-intensive tasks are heavy for a Node.js  server, while I/O-intensive tasks are handled efficiently with its non-blocking architecture.
+________________________________________________________________________________________________________________________
 ✅ 4. How do you handle CPU-intensive tasks in Node.js?
 Answer:
-•	Worker Threads
-•	Child Processes
-•	Task queue with Redis + BullMQ / RabbitMQ
-•	Offload to microservice (Python/Go) for heavy compute
-________________________________________
+-> If we want to handle CPU-intensive tasks in a Node.js  server, we can use the cluster module. The cluster module creates worker processes, and each worker process runs separately to perform the CPU-intensive work. CPU-intensive tasks include things like math calculations, video processing, audio processing, etc. Another way is to create a separate service or use another programming language that is better suited for performing CPU-intensive tasks.
+________________________________________________________________________________________________________________________
 ✅ 5. What is clustering in Node.js?
 Answer:
-Clustering allows running multiple Node processes on multiple CPU cores to increase throughput.
-Uses the cluster module — Master creates worker processes.
-________________________________________
+-> In Node.js, clustering is achieved using the cluster module. With the help of clustering, worker processes are created, and they depend on the system’s CPU logical cores. For example, if my system contains 4 cores, then 4 worker processes will be created. When multiple clients send requests, Node.js  uses the main thread to pass these requests to the worker processes. The worker processes handle the tasks and, with the help of callbacks, return the response. This is the overall process of clustering in Node.js..
+________________________________________________________________________________________________________________________
 ✅ 6. How do you secure a Node.js API?
 Answer:
-•	JWT / OAuth2 / Access & Refresh tokens
-•	HTTPS everywhere
-•	Helmet.js for security headers
-•	Input validation (Joi/Zod)
-•	Rate-limiting & IP throttling
-•	Avoid storing secrets in code (use Vault / env vars)
-•	Proper CORS policy
-________________________________________
+-> I used JWT, OAuth2 access token and refresh token concepts for authentication and authorization. I also used middleware so that every request is validated before reaching the server. For secure communication, I used HTTPS instead of HTTP, which means every client request is securely transmitted to the server. Most importantly, I avoided writing secret keys directly in the code (using environment variables instead), and I handled a proper CORS policy to control which domains can access the API.
+________________________________________________________________________________________________________________________
 ✅ 7. Difference between process.nextTick(), setImmediate(), setTimeout()?
-Function	When runs
-process.nextTick()	Before event-loop continues
-setImmediate()	After I/O events callback phase
-setTimeout(fn,0)	Queued after minimum timer delay
-________________________________________
+Answer:
+-> process.nextTick() is a type of microtask, and it has the first priority compared to setImmediate() and setTimeout().
+-> setImmediate() and setTimeout() are types of macrotasks, and they have second priority after microtasks.
+-> The setTimeout() queue is present in the timer phase of the event loop, while setImmediate() is executed in the check phase of the event loop.
+________________________________________________________________________________________________________________________
 ✅ 8. What is streaming in Node.js?
 Answer:
-Node handles data in chunks — useful for large files and real-time data.
-Types: Readable, Writable, Duplex, Transform.
-Example: piping file streams to improve performance without loading full data in memory.
-________________________________________
+-> Streaming means handling file-related tasks like getting the file data and performing operations on it step by step instead of loading the whole file at once. If we want to handle file-related concepts, we can use the fs module and the stream module in Node.js. . Streaming is useful for working with large files or continuous data because it improves performance and reduces memory usage.
+________________________________________________________________________________________________________________________
 ✅ 9. What are Middlewares?
 Answer:
-Functions that run before the route handler.
-Used for logging, authentication, body parsing, rate limiting.
-Examples: Express, Fastify hooks.
-________________________________________
+-> Middlewares are the middle part between the client request and the server. When a request comes, it first passes through the middleware. In this middleware, the request can be validated or processed, and then it is sent to the server. This is the overall concept of middlewares. Middleware is also used for global error handling and can perform tasks like authentication, logging, or modifying request/response objects before reaching the server logic.
+________________________________________________________________________________________________________________________
+
+
 ✅ 10. Difference between CommonJS and ES Modules in Node
 CommonJS	ES Modules
 require()	import
