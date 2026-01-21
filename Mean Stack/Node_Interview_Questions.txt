@@ -1423,8 +1423,10 @@ pipe() → solves it by balancing producer and consumer speed.
 ________________________________________________________________________________________________________________________
 ✅ 15. Explain JWT token refresh flow
 Answer:
-	User sends request with expired access token → server rejects it (401 Unauthorized).
-	Client detects expired token → calls the refresh endpoint with the refresh token.
-	Server validates refresh token → issues a new access token.
-	Client stores the new access token (localStorage, sessionStorage, or memory).
-	Client retries the original API request → now with the updated access token → server responds successfully.
+	Client sends request with expired access token → server detects it’s expired.
+	Server rejects the request (401 Unauthorized) → client knows token is invalid.
+	Client calls refresh endpoint → sends the refresh token.
+	Server validates refresh token → if valid, issues a new access token (sometimes also a new refresh token).
+	Client stores the new token → in localStorage / sessionStorage.
+	Client retries the original request → now with updated token.
+	Server responds successfully → user gets the response.
