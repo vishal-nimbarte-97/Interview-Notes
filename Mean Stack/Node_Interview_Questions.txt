@@ -1396,35 +1396,35 @@ Performance						Better for I/O-intensive tasks				Suitable for quick, small ope
 Modules used					fs module with stream API					Buffer class in Node.js
 Example							Reading a big file in chunks				Converting string to binary data
 ________________________________________________________________________________________________________________________
-
-
 ✅ 12. Explain Middleware vs Interceptors vs Filters
-Concept	Use
-Middleware	Pre-processing requests
-Interceptors	Modify request/response life-cycle (NestJS)
-Filters	Handle exceptions globally (NestJS)
-________________________________________
+Answer:
+-> Middleware is the middle part between the client request and the server. With the help of middleware, the user request is validated first and then sent to the server.
+
+-> Interceptors occur before the request reaches the server logic. They can add things like access tokens, modify the client request or response, and also perform validation.
+
+-> Filters are mainly used for filtering data or handling exceptions. In JavaScript, filters are often used to process or transform data before sending it back to the client.
+________________________________________________________________________________________________________________________
 ✅ 13. Common Node.js performance improvements
-•	Use cluster / PM2
-•	Caching (Redis)
-•	Connection pooling
-•	Use async database drivers
-•	Avoid synchronous functions
-•	Use streams instead of reading full files
-•	Load balancing (NGINX, AWS ALB)
-________________________________________
+Answer:
+-> In Node.js  server, performance can be improved in different ways:
+Use the cluster module to create worker processes and utilize multiple CPU cores.
+Focus on I/O-intensive work instead of CPU-heavy tasks, since Node.js  is best for non-blocking I/O.
+Handle CORS properly to avoid unnecessary issues with cross-origin requests.
+Use Nginx for load balancing, so multiple requests are distributed across servers efficiently.
+________________________________________________________________________________________________________________________
 ✅ 14. What is backpressure in Node.js streams?
 Answer:
-Backpressure occurs when the receiving stream cannot process data as fast as the sending stream.
-Solution:
-•	Use .pipe() (handles it automatically)
-•	await stream.write() / drain event
-________________________________________
-✅ 15. Explain JWT token refresh flow
-Step	Action
-Login	Issue Access token + Refresh token
-Access token expires	Client sends Refresh token
-Server validates Refresh token	Issues new Access token
-Refresh token rotation	Invalidate old refresh token
-Store refresh token securely (DB/Redis/HttpOnly cookie).
+Backpressure = when the data producer is faster than the consumer, memory can get overloaded.
+Node.js  avoids this problem because readStream.pipe(writeStream) automatically handles backpressure by pausing and resuming the flow so the consumer can catch up.
 
+👉 Short takeaway:
+Producer faster → backpressure occurs.
+pipe() → solves it by balancing producer and consumer speed.
+________________________________________________________________________________________________________________________
+✅ 15. Explain JWT token refresh flow
+Answer:
+	User sends request with expired access token → server rejects it (401 Unauthorized).
+	Client detects expired token → calls the refresh endpoint with the refresh token.
+	Server validates refresh token → issues a new access token.
+	Client stores the new access token (localStorage, sessionStorage, or memory).
+	Client retries the original API request → now with the updated access token → server responds successfully.
