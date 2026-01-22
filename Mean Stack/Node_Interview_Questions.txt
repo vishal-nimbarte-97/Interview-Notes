@@ -1430,3 +1430,21 @@ Answer:
 	Client stores the new token → in localStorage / sessionStorage.
 	Client retries the original request → now with updated token.
 	Server responds successfully → user gets the response.
+
+
+//Real World Senario :- 
+
+	When the client logs in, at that time two tokens are generated:
+	access token and refresh token.
+
+	The access token expiry time is less, like 15 or 20 minutes, and the
+	refresh token expiry time is more, like 7 days or as per requirement.
+
+	When the access token expires, in that case the client hits the refresh token API.
+	The refresh token is validated, and if it is valid then the server returns a new access token.
+
+	This new access token is again valid for 15 to 20 minutes.
+	This process continues until the refresh token expiry time ends.
+
+	When the refresh token expires, then the refresh token is not valid,
+	and the system logs out the user and the user has to login again.
