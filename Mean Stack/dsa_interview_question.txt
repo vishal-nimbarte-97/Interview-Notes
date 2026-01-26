@@ -6,6 +6,15 @@ Here's a comprehensive breakdown of **Data Structures and Algorithms (DSA)** top
 
 ## 📚 Data Structures
 
+Interview-ready summary 🧠
+
+______________________________________________________________________________________________
+1 for loop → O(n)
+2 for nested loops → O(n²)
+2 for loops sequentially → O(n) two for loop differnt different used so n + n = Big O of 2n
+3 for nested loops → O(n³)
+______________________________________________________________________________________________
+
 ### 🔹 Linear Data Structures
 - **Arrays** :- 
   1.Arrays are indeed a linear data structure, meaning elements are stored sequentially in memory.
@@ -166,7 +175,7 @@ Here’s a **complete topic-wise breakdown of 25+ interview questions per Data S
   let max = arr[0];
   for(let i=1;i<arr.length;i++){
     if(max>arr[i]){
-      max = arr[i];
+      max = arr[i]; 
     }
   }
   console.log('Maximum Number in Array :- ',max);
@@ -188,7 +197,7 @@ console.log('Min Value :- ',newArray[0]);
 console.log('Max Value :- ',newArray[1]);
 
 ------------------------------------------------------------------
-- Remove duplicates
+- ]]Remove duplicates
 
   const arr = [12,12,23,78,90,56,23];
   const uniqueArr = [];
@@ -217,7 +226,7 @@ console.log('Max Value :- ',newArray[1]);
   });
   console.log('Merge Two Sorted Arrays :- ',newArray);
 ------------------------------------------------------------------
-- Rotate array by K steps
+- ]]Rotate array by K steps
 
   const arr = [23,34,45,56,67];
   const rotatedArray = [];
@@ -231,7 +240,7 @@ console.log('Max Value :- ',newArray[1]);
   }
   console.log(rotatedArray);
 ------------------------------------------------------------------
-- Find missing number
+- ]]Find missing number
 
   const arr = [1,2,3,4,5,6,7,9];
   console.log('Find Missing Value in Array :- ',arr);
@@ -243,7 +252,7 @@ console.log('Max Value :- ',newArray[1]);
   }
   console.log('Missing Value in Array :- ',(totalValue-sumArray));
 ------------------------------------------------------------------
-- Find duplicate number
+- ]]Find duplicate number
 
   const arr = [23,12,23,42,78,90,42];
   for(let i=0;i<arr.length;i++){
@@ -255,7 +264,7 @@ console.log('Max Value :- ',newArray[1]);
       }
   }
 ------------------------------------------------------------------
-- Move zeros to end
+- ]]Move zeros to end
   const arr = [23,0,34,0,45,0,89,0,90];
   console.log('Before :- ',arr);
   const arrZero = [];
@@ -263,13 +272,13 @@ console.log('Max Value :- ',newArray[1]);
   for(let i=0;i<arr.length;i++){
       if(arr[i]===0){
           arrZero.push(arr[i]);
-      }else{
+      }else{ 
           arrValue.push(arr[i]);
       }
   }
   console.log('After :- ',[...arrValue,...arrZero]);
 ------------------------------------------------------------------
-- Two sum problem
+- ]]Two sum problem
   const arr = [2,7,0,11,7,4];
   const target = 9;
   for(let i=0;i<arr.length;i++){
@@ -367,7 +376,7 @@ console.log('Max Value :- ',newArray[1]);
   // profit = max(7,(9-1)) = 8
 ------------------------------------------------------------------
 
-  - Product of array except self
+  - ]]Product of array except self
   // Product of array except self
   // [1, 2, 3, 4]
   // [24, 12, 8, 6]
@@ -389,7 +398,7 @@ console.log('Max Value :- ',newArray[1]);
   
   console.log(multiplicationOfItSelf([1,2,3,4]));
 ------------------------------------------------------------------
-- Combine two or more array
+- ]]Combine two or more array
 const arr = [[12,23,90,78,4,89],[45,99,1,8,87],[21,32,2]];
 
 const newArray = [];
@@ -405,7 +414,7 @@ console.log(newArray);
 ------------------------------------------------------------------
 const statement = "Hello Everyone My Name is Vishal Nimbarte From Pune";
 
-// find the length of Vishal word without using the inbuild function
+// ]]find the length of Vishal word without using the inbuild function
 
 const arr = [];
 let char = '';
@@ -425,8 +434,52 @@ for(let i=0;i<arr.length;i++){
    }
 }
 ------------------------------------------------------------------
-
 - Set matrix zeroes
+
+const matrix = [
+    [1, 2, 3],
+    [4, 0, 6],
+    [7, 8, 9]
+];
+
+function setMatrixZeroes(matrix) {
+    const rows = matrix.length;
+    const cols = matrix[0].length;
+
+    const zeroRows = new Set();
+    const zeroCols = new Set();
+
+    // Find zero positions
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            if (matrix[i][j] === 0) {
+                zeroRows.add(i);
+                zeroCols.add(j);
+            }
+        }
+    }
+
+    // Set rows to zero
+    for (let r of zeroRows) {
+        for (let j = 0; j < cols; j++) {
+            matrix[r][j] = 0;
+        }
+    }
+
+    // Set columns to zero
+    for (let c of zeroCols) {
+        for (let i = 0; i < rows; i++) {
+            matrix[i][c] = 0;
+        }
+    }
+
+    console.log("updated matrix :- ");
+    console.log(matrix);
+}
+
+setMatrixZeroes(matrix);
+------------------------------------------------------------------
+
 - Search in rotated sorted array
 - Find peak element
 - Majority element

@@ -1,0 +1,35 @@
+1️⃣ Tell me about your experience
+I have 2+ years of experience and I’m currently working as a Full Stack Developer at Techgrowth Software Solution.
+I have knowledge of both frontend and backend, including database handling, and I also have an idea about the deployment process using Docker and AWS.
+-------------------------------------------------------------------------
+2️⃣ Which company are you currently working for?
+I’m currently on the payroll of Techgrowth Software Solution, and my client is Bajaj Finserv.
+-------------------------------------------------------------------------
+3️⃣ What is your current project?
+My current project is a Bajaj Finserv product, and in this project I’m working as a Full Stack Developer.
+-------------------------------------------------------------------------
+4️⃣ What is your role & responsibilities in the project?
+My main focus is UI development and creating REST APIs based on business requirements.
+I also integrate frontend with backend, manage the database, handle bug fixing, support deployment and monitoring, and collaborate with the team in an Agile environment.
+-------------------------------------------------------------------------
+5️⃣ What is your tech stack?
+I’m working as a Full Stack Developer.
+On the frontend, I use Angular, RxJS, and NgRx.
+I also use Nginx for load balancing.
+On the backend, I work with Node.js and Spring Boot, following a microservices architecture.
+-------------------------------------------------------------------------
+6️⃣ Are you working on frontend or backend?
+I work on both frontend and backend, but my stronger area is frontend and backend integration.
+-------------------------------------------------------------------------
+7️⃣ What is your current CTC?
+My current CTC is ₹4.5 LPA.
+-------------------------------------------------------------------------
+8️⃣ What is your expected CTC?
+I’m expecting around ₹7 LPA, but I’m flexible and open to discussion based on the role and growth opportunities.
+-------------------------------------------------------------------------
+9️⃣ Why are you looking for a job change?
+I’m looking for new opportunities, new challenges, learning new technologies, and overall career growth.
+-------------------------------------------------------------------------
+🔟 When can you join? (Notice period)
+My official notice period is 30 to 45 days, but I can try to negotiate an early release if required.
+-------------------------------------------------------------------------
