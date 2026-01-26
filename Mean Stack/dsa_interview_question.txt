@@ -18,7 +18,7 @@ ________________________________________________________________________________
 ### 🔹 Linear Data Structures
 - **Arrays** :- 
   1.Arrays are indeed a linear data structure, meaning elements are stored sequentially in memory.
-  2.In JavaScript, arrays are heterogeneous — they can store elements of different types (e.g., strings, numbers, booleans, objects,       even other arrays).
+  2.In JavaScript, arrays are heterogeneous — they can store elements of different types (e.g., strings, numbers, booleans, objects,even other arrays).
 
 - **Linked Lists** (Singly, Doubly, Circular)
 - **Stacks**
@@ -481,6 +481,32 @@ setMatrixZeroes(matrix);
 ------------------------------------------------------------------
 
 - Search in rotated sorted array
+
+    const arr = [1, 3, 5, 7, 9, 11]
+    const target = 9;
+
+    function findElementPosition(arr, target) {
+        let start = 0;
+        let end = arr.length - 1;
+        let mid = 0;
+        while (start <= end) {
+            mid = Math.floor((start + end) / 2);
+            if (arr[mid] === target) {
+                console.log(`${target} is found in location at ${mid}`);
+                return;
+            }
+            else if (arr[mid] < target) {
+                start = mid + 1;
+            }
+            else {
+                end = mid - 1;
+            }
+        }
+    }
+
+    findElementPosition(arr, target);
+------------------------------------------------------------------
+
 - Find peak element
 - Majority element
 - Longest consecutive sequence
@@ -498,6 +524,7 @@ setMatrixZeroes(matrix);
 ---
 
 ## 🔗 Linked Lists (25+ Questions)
+- Create a linked list
 - Reverse a linked list
 - Detect cycle
 - Find middle node
