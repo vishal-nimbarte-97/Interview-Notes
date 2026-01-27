@@ -17,10 +17,16 @@ ________________________________________________________________________________
 
 ### 🔹 Linear Data Structures
 - **Arrays** :- 
-  1.Arrays are indeed a linear data structure, meaning elements are stored sequentially in memory.
-  2.In JavaScript, arrays are heterogeneous — they can store elements of different types (e.g., strings, numbers, booleans, objects,even other arrays).
+  1.An array is a linear data structure that stores elements in continuous memory locations.
+  2.It is an index-based data structure, so elements are accessed using an index number.
+  👉 Arrays can store different data types (numbers, strings, objects, etc.)
+
+  In most languages (C, C++, Java):
+  👉 Arrays store same data type only
 
 - **Linked Lists** (Singly, Doubly, Circular)
+    1.A linked list is a collection of nodes, where each node contains data and the address of the next node.
+    
 - **Stacks**
 - **Queues** (Simple, Circular, Priority Queue, Deque)
 
