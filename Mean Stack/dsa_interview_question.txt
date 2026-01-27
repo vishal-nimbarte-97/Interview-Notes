@@ -8,7 +8,7 @@ Here's a comprehensive breakdown of **Data Structures and Algorithms (DSA)** top
 
 Interview-ready summary 🧠
 
-______________________________________________________________________________________________
+_____________________________________]]Time Complexity]]_________________________________________________________
 1 for loop → O(n)
 2 for nested loops → O(n²)
 2 for loops sequentially → O(n) two for loop differnt different used so n + n = Big O of 2n
@@ -26,7 +26,7 @@ ________________________________________________________________________________
 
 - **Linked Lists** (Singly, Doubly, Circular)
     1.A linked list is a collection of nodes, where each node contains data and the address of the next node.
-    
+
 - **Stacks**
 - **Queues** (Simple, Circular, Priority Queue, Deque)
 
