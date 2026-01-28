@@ -27,8 +27,30 @@ ________________________________________________________________________________
 - **Linked Lists** (Singly, Doubly, Circular)
     1.A linked list is a collection of nodes, where each node contains data and the address of the next node.
 
+    Singly Linked Lists :- A singly linked list is a linked list where each node contains data and the address of the next node only.
+
+    Doubly Linked List :- A doubly linked list is a linked list where each node contains data, the address of the previous node, and the address of the next node.
+
+    Circular Linked List :- A circular linked list is a linked list where the last node points back to the first node instead of null
+
 - **Stacks**
+    A Stack is also the linear data structure that stored the data like LIFO or FILO order(Last in First Out OR First In Last Out)
+
+    and they are used Push and Pop for adding the elemement and Removing the element to the stack 
+
+    and in this empty stack remove so stack is underflow and stack limit exist and then you stored one more element so stack is overflow
+
 - **Queues** (Simple, Circular, Priority Queue, Deque)
+    Queue is also the linear data structure that stored the data like LILO or FIFO Order (Last in Last out OR First in First Out);
+
+    Queue also the some types :- 
+    1.Simple Queue 
+    2.Circular Queue 
+    3.Priority Queue
+    4.Deque
+
+
+    
 
 ### 🔹 Non-Linear Data Structures
 - **Trees**
