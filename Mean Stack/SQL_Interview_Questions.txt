@@ -1,3 +1,5 @@
+https://www.interviewquery.com/p/sql-scenario-based-interview-questions#beginner-level-sql-scenario-interview-questions-03-years
+
 ---------------------------------------------------------------------------------------------------------------
 68.How to optimized query performance ?
 -> if you want to optimize the query performance so we can used the parameterized queries and also used the stored procedure to handling the performance of the queries.

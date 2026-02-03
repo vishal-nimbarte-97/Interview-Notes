@@ -8,7 +8,7 @@ Here's a comprehensive breakdown of **Data Structures and Algorithms (DSA)** top
 
 Interview-ready summary 🧠
 
-_____________________________________]]Time Complexity]]_________________________________________________________
+_____________________________________]]Time Complexity]]_______________________________________
 1 for loop → O(n)
 2 for nested loops → O(n²)
 2 for loops sequentially → O(n) two for loop differnt different used so n + n = Big O of 2n
@@ -34,24 +34,30 @@ ________________________________________________________________________________
     Circular Linked List :- A circular linked list is a linked list where the last node points back to the first node instead of null
 
 - **Stacks**
-    A Stack is also the linear data structure that stored the data like LIFO or FILO order(Last in First Out OR First In Last Out)
-
-    and they are used Push and Pop for adding the elemement and Removing the element to the stack 
-
-    and in this empty stack remove so stack is underflow and stack limit exist and then you stored one more element so stack is overflow
+    A stack is a linear data structure that stores data in LIFO or FILO order
+    (Last In First Out or First In Last Out).
+    In stack, we use Push operation for adding the element and Pop operation for removing the element.
+    If we try to remove an element from an empty stack, it is called stack underflow.
+    If the stack limit exists and we try to add one more element, it is called stack overflow.
 
 - **Queues** (Simple, Circular, Priority Queue, Deque)
     Queue is also the linear data structure that stored the data like LILO or FIFO Order (Last in Last out OR First in First Out);
+    In a queue, insertion of elements is done from the end, and removal of elements is done from the front.
 
     Queue also the some types :- 
-    1.Simple Queue 
-    2.Circular Queue 
-    3.Priority Queue
-    4.Deque
+    1️⃣ Simple Queue
+    In a simple queue, elements are inserted from the end and removed from the front.
 
+    2️⃣ Circular Queue
+    In a circular queue, the last position is connected back to the first position to efficiently use memory.
 
-    
+    3️⃣ Priority Queue
+    In a priority queue, elements are removed based on priority, not on insertion order.
 
+    4️⃣ Deque (Double Ended Queue)
+    In a deque, insertion and deletion of elements can be done from both front and end.
+
+_____________________________________________________________________________________
 ### 🔹 Non-Linear Data Structures
 - **Trees**
   - Binary Tree
@@ -553,31 +559,89 @@ setMatrixZeroes(matrix);
 
 ## 🔗 Linked Lists (25+ Questions)
 - Create a linked list
+
+    let head = null;
+
+    function add(data) {
+        if (head === null) {
+            head = { data, next: null };
+            return;
+        }
+
+        let temp = head;
+        while (temp.next) {
+            temp = temp.next;
+        }
+
+        temp.next = { data, next: null };
+    }
+
+    function print() {
+        let temp = head;
+        let result = "";
+        while (temp) {
+            result += temp.data + " -> ";
+            temp = temp.next;
+        }
+        console.log(result + "null");
+    }
+
+    add(10);
+    add(20);
+    add(30);
+
+    print();
+_____________________________________________________________________________________
 - Reverse a linked list
+_____________________________________________________________________________________
 - Detect cycle
+_____________________________________________________________________________________
 - Find middle node
+_____________________________________________________________________________________
 - Merge two sorted lists
+_____________________________________________________________________________________
 - Remove N-th node from end
+_____________________________________________________________________________________
 - Intersection of two lists
+_____________________________________________________________________________________
 - Palindrome linked list
+_____________________________________________________________________________________
 - Flatten multilevel list
+_____________________________________________________________________________________
 - Copy list with random pointer
+_____________________________________________________________________________________
 - Add two numbers
+_____________________________________________________________________________________
 - Rotate list
+_____________________________________________________________________________________
 - Partition list
+_____________________________________________________________________________________
 - Reorder list
+_____________________________________________________________________________________
 - Swap nodes in pairs
+_____________________________________________________________________________________
 - Delete node in constant time
+_____________________________________________________________________________________
 - Sort linked list
+_____________________________________________________________________________________
 - Merge K sorted lists
+_____________________________________________________________________________________
 - LRU cache
+_____________________________________________________________________________________
 - Linked list cycle II
+_____________________________________________________________________________________
 - Odd-even linked list
+_____________________________________________________________________________________
 - Remove duplicates
+_____________________________________________________________________________________
 - Convert binary number to integer
+_____________________________________________________________________________________
 - Split linked list in parts
+_____________________________________________________________________________________
 - Reverse nodes in k-group
+_____________________________________________________________________________________
 - Intersection of cycle lists
+_____________________________________________________________________________________
 
 ---
 
