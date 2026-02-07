@@ -3087,9 +3087,184 @@ of(1,2,3).subscribe(value => {
 ------------------------------------------------------------------------------------------------------
 
 
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+SenWell Asking Interview Questions :- 
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
 
 
+🧠 1. Current Angular Version (as of Feb 2026)
+📌 The latest stable release of Angular is Angular v21.
 
+--------------------------------------------------------------------------------------------------------------------
+
+⚡ 2.  What They Are Angular Signals?
+
+--------------------------------------------------------------------------------------------------------------------
+
+📊 3. Differences Between Angular 16, 19, and Current (v21)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Area                | Angular 16                                                | Angular 19                                                                          | Angular 21 (latest)                                                                            |
+| ------------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Signals**         | Introduced — reactivity model added. ([GeeksforGeeks][1]) | Mature and improved (router integration improvements). ([House of Angular][2])      | Fully supported and integrated, with advanced use cases like Signal Forms. ([Angular Blog][3]) |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| **Routing**         | Standard routing; basic setup via `RouterModule`.         | New `routerOutletData` to pass data into routed components. ([House of Angular][2]) | Continues improvements to routing experience & signals based router state.                     |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| **Reactivity**      | Signals boost change detection. ([GeeksforGeeks][1])      | More signal features and router reactivity. ([House of Angular][2])                 | Reactive forms using signals (Signal Forms). ([Angular Blog][3])                               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| **SSR/Performance** | Hydration improvements. ([GeeksforGeeks][1])              | Continues SSR hydration & viewport improvements. ([House of Angular][2])            | Better performance; zone.js no longer default. ([Angular Blog][3])                             |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| **CLI & Tooling**   | esbuild prep. ([GeeksforGeeks][1])                        | Minor updates.                                                                      | Default test runner -> Vitest. ([Angular Blog][3])                                             |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------
+
+🧭 4. Angular Router Essentials
+📍 What Angular Router Does
+
+Angular’s Router enables single-page app navigation — showing different Angular components based on URL routes — without full page reloads.
+
+🔗 routerLink — Navigation Links
+
+Use the routerLink directive on an <a> (or other) to navigate:
+
+<a routerLink="/home">Home</a>
+
+
+This binds the link to the Angular Router path without page reload.
+
+🎯 Detecting Active Links — routerLinkActive
+
+Use routerLinkActive to apply styles when the link matches the current route:
+
+<a routerLink="/home" routerLinkActive="active">Home</a>
+
+
+When the user is on that route, the CSS class active is added.
+
+You can also specify exact matching options:
+
+<a routerLink="/home"
+   routerLinkActive="active"
+   [routerLinkActiveOptions]="{ exact: true }">
+
+🔄 Redirects
+
+To redirect empty or unmatched paths, put a route entry in your routes:
+
+const routes: Routes = [
+  { path: '', redirectTo: '/heroes-list', pathMatch: 'full' },
+  { path: '**', redirectTo: '/not-found' }
+];
+
+
+redirectTo: target route to navigate.
+
+pathMatch: 'full': ensures exact empty path matches before redirect.
+
+--------------------------------------------------------------------------------------------------------------------
+What is Architecture of Current Angular Project?
+
+  Our Angular project follows a modular, component-based architecture.
+  The application is divided into feature modules, core, and shared modules.
+  Core module contains common services like authentication, guards, and HTTP interceptors.
+  Shared module has reusable components, pipes, and directives.
+  Each business feature has its own module and most of them are lazy-loaded.
+  UI logic is handled by components, while API calls and business logic are handled by services using HttpClient.
+  Navigation is managed using Angular Router with routerLink, guards, and redirects.
+  This architecture helps in scalability, performance, and easy maintenance
+
+src/
+│
+├── app/
+│   │
+│   ├── core/
+│   │   ├── guards/
+│   │   │   └── auth.guard.ts
+│   │   ├── interceptors/
+│   │   │   └── auth.interceptor.ts
+│   │   ├── services/
+│   │   │   └── auth.service.ts
+│   │   └── core.module.ts
+│   │
+│   ├── shared/
+│   │   ├── components/
+│   │   │   └── header/
+│   │   │       ├── header.component.ts
+│   │   │       ├── header.component.html
+│   │   │       └── header.component.scss
+│   │   ├── pipes/
+│   │   │   └── date-format.pipe.ts
+│   │   ├── directives/
+│   │   │   └── highlight.directive.ts
+│   │   └── shared.module.ts
+│   │
+│   ├── features/
+│   │   ├── dashboard/
+│   │   │   ├── components/
+│   │   │   │   └── dashboard.component.ts
+│   │   │   ├── services/
+│   │   │   │   └── dashboard.service.ts
+│   │   │   ├── dashboard-routing.module.ts
+│   │   │   └── dashboard.module.ts
+│   │   │
+│   │   ├── users/
+│   │   │   ├── components/
+│   │   │   ├── services/
+│   │   │   ├── users-routing.module.ts
+│   │   │   └── users.module.ts
+│   │
+│   ├── app-routing.module.ts
+│   ├── app.component.ts
+│   └── app.module.ts
+│
+├── assets/
+│   └── images/
+│
+├── environments/
+│   ├── environment.ts
+│   └── environment.prod.ts
+│
+└── main.ts
+
+🗣️ How to explain this structure in interview (speak this)
+
+“We organized our Angular application into core, shared, and feature modules to keep it scalable and maintainable.”
+
+🔹 Core Module
+
+“The core module contains singleton services like authentication, guards, and HTTP interceptors. These are loaded once in the application.”
+
+🔹 Shared Module
+
+“The shared module contains reusable components, pipes, and directives that are used across multiple feature modules.”
+
+🔹 Feature Modules
+
+“Each business feature like Dashboard or Users has its own feature module with its own components, services, and routing. Most feature modules are lazy-loaded.”
+
+🔹 Routing
+
+“We manage navigation using Angular Router. Each feature module has its own routing module, and routes are configured for lazy loading.”
+
+🔹 Services
+
+“All API calls and business logic are placed inside services, keeping components lightweight and focused on UI.”
+
+🔹 Environments
+
+“Environment files are used to manage different API URLs and configurations for development and production.”
+
+--------------------------------------------------------------------------------------------------------------------
+
+📜 javascript all version and what's differences?
+->current version :- ECMAScript (ES15) 2024
+->The current JavaScript version is ES15 (2024). It includes new methods to work with sets, arrays, and strings more easily. 
+->JavaScript comes with different versions like ES5, ES6, ES7, etc. In each version, some new features are added to improve coding. ES6 is the major version where let, const, arrow function, and promise were introduced. After that, small features come every year to make JavaScript more powerful and easy.
+
+
+differance var,let and const
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 =========================================== NgRx ==============================================

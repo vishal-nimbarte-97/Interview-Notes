@@ -1,3 +1,6 @@
+📦 what is data types in javacript?
+->JavaScript data types define the type of value a variable can store. The main data types are string, number, boolean, undefined, null, bigint, symbol, and object.
+-------------------------------------------------------------------------------------------------
 📦 Where are let, var, and const stored in memory?
 ->let, var, and const are used to declare the variables. These variables can store both primitive and non-primitive (object) data types.
 
@@ -10,15 +13,14 @@ But when we use let, var, or const to store objects, arrays, or functions, then 
 ->We don’t need to write any method or service for garbage collection. It automatically runs in the background and removes the unused or unreferenced variables or objects from memory.
 -------------------------------------------------------------------------------------------------
 📜 javascript all version and what's differences?
-->current version :- ECMAScript (ES15) 2024
-->The current JavaScript version is ES15 (2024). It includes new methods to work with sets, arrays, and strings more easily. 
-->JavaScript comes with different versions like ES5, ES6, ES7, etc. In each version, some new features are added to improve coding. ES6 is the major version where let, const, arrow function, and promise were introduced. After that, small features come every year to make JavaScript more powerful and easy.
+->current version :- ✅ ECMAScript 2025 (ES2025)
 -------------------------------------------------------------------------------------------------
 🧠 What is Inheritance in JavaScript?
 ->Inheritance is the process where a child class can access the properties (data members) and methods (member functions) of a parent class. The child class reuses the parent class code — this is called inheritance in object-oriented programming.
 ->they are used prototypal __proto__ .
+->__proto__ is used to allow a child class to access the data members and member functions of the parent class through the prototype chain.
 -------------------------------------------------------------------------------------------------
-🧠 Real time senario of the method overiding and method overloading
+🧠 Real time senario of the method overiding and method overloading.
 -> Application: Amazon / Flipkart
 
 In Amazon, different users (Customer, Seller, Admin) all have a login() method, but each type overrides it to handle login in different ways — like password, OTP, or secure token.
@@ -29,13 +31,18 @@ In Zomato, placeOrder() function handles order with promo code, without promo co
 
 ->In JavaScript, method overriding is fully supported — we can define the same method name in child class and give different logic from the parent class.
 But method overloading is not directly supported like in Java or C++. JavaScript allows only one function with the same name, so we handle overloading by using default parameters, arguments object, or if-else conditions inside the function.
+
+Method Overloading
+    Definition: Same class contains methods with the same name but different parameter list (signature).
+
+Method Overriding
+    Definition: Different classes contain a method with the same name and same signature, and the classes have an IS-A (inheritance) relationship.
 -------------------------------------------------------------------------------------------------
 0.what is prototypal inheritance in javascript?
 -> Prototypal Inheritance is a feature in JavaScript where an object can inherit properties and methods from another object using the __proto__ or Object.create().
 -------------------------------------------------------------------------------------------------
 1.Current Version of JavaScript?
-->ECMAScript 2024 (ES15).
-->✅ECMAScript 2024 (ES15) is the current official version of JavaScript as of June 2025.
+->current version :- ✅ ECMAScript 2025 (ES2025)
 -------------------------------------------------------------------------------------------------
 1.What is javascript?
 ->JavaScript is a scripting language used to make web pages interactive.
@@ -110,7 +117,6 @@ const callFunction = outerFunction();
 callFunction();
 callFunction();
 -------------------------------------------------------------------------------------------------
-
 4.What are promises and how are they better than callbacks?
 
 → A Promise is an object in JavaScript that has three states: resolved, rejected, and pending.
@@ -313,6 +319,7 @@ We can use RxJS operators:
 debounceTime() → For search box
 throttleTime() → For button click or scroll events
 -------------------------------------------------------------------------------------------------
+
 33.What is the purpose of Promise.all() and Promise.race()?
 
 🔹 Promise.all()
@@ -391,11 +398,8 @@ Promise.race([task_1,task_2,task_3])
 ->they are used the try and catch block to handle the errors and exception 
 ->so in that case risky code write inside the try block and catch are using to handling exception
 -------------------------------------------------------------------------------------------------
-
-
-
 37.What is the difference between try...catch and throw?
-Try and catch block basically used to handle exception but the throw case they are create the manually exception and they are throw and this exception can handle using the try and catch block.
+->Try and catch block basically used to handle exception but the throw case they are create the manually exception and they are throw and this exception can handle using the try and catch block.
 -------------------------------------------------------------------------------------------------
 38.we can not handle the exception so what?
 ->In our application they are not handle the exception so they are chances to crash our application and server.
@@ -406,7 +410,7 @@ Try and catch block basically used to handle exception but the throw case they a
 -------------------------------------------------------------------------------------------------
 40.what is ES6 and latest version of javsacript?
 ->ES6 stands for ECMAScript 6, also known as ECMAScript 2015.
-->The latest JavaScript version as of 2024 is ECMAScript 2024 (also called ES15). This version added several new and useful methods, especially for arrays and sets.
+->The latest JavaScript version as of 2025 is ECMAScript 2025 (also called ES25). This version added several new and useful methods, especially for arrays and sets.
 ->Here are the main features (including the one you mentioned like toReversed()):
 -------------------------------------------------------------------------------------------------
 41.what is differanance bwtween the splice and slice?
@@ -423,7 +427,7 @@ let fruits = ["apple", "banana", "cherry"];
 fruits.splice(1, 1); // remove 1 item at index 1
 console.log(fruits); // ["apple", "cherry"]
 
-
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}VERY IMP Before Interview implementation}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 1. Creating Arrays
 
 Array.of(): Creates an array with the provided values.
@@ -465,7 +469,6 @@ array.splice(startIndex, deleteCount, ...itemsToAdd);
 startIndex: The index at which to start modifying the array.
 deleteCount: The number of elements to remove starting from startIndex.
 itemsToAdd (optional): Elements to add at the startIndex. If omitted, no elements are added.
-
 -----------------------------------------------------------------------------------------------------------------
 Non-Mutative Methods (don’t change the original array):
 concat(): Combines arrays into a new array.
@@ -518,7 +521,6 @@ console.log(doubled); // [2, 4, 6]
 filter(): Creates a new array with elements that pass a test. OR they are used the condition of the each data 
 const filtered = [1, 2, 3].filter(num => num > 1);
 console.log(filtered); // [2, 3]
-
 -----------------------------------------------------------------------------------------------------------------
 ✅ reduce() Explanation (Simple):
 reduce() is used to calculate a single value (like total, average, etc.) from an array.
@@ -547,13 +549,13 @@ includes(): Checks if an element exists.
 const hasTwo = [1, 2, 3].includes(2);
 console.log(hasTwo); // true
 
-some(): Checks if any element satisfies a condition.
-const hasEven = [1, 2, 3].some(num => num % 2 === 0);
-console.log(hasEven); // true
+    some(): Checks if any element satisfies a condition.
+    const hasEven = [1, 2, 3].some(num => num % 2 === 0);
+    console.log(hasEven); // true
 
-every(): Checks if all elements satisfy a condition.
-const allPositive = [1, 2, 3].every(num => num > 0);
-console.log(allPositive); // true
+    every(): Checks if all elements satisfy a condition.
+    const allPositive = [1, 2, 3].every(num => num > 0);
+    console.log(allPositive); // true
 
 important last day interview :- some() and every() methods 
 
@@ -573,8 +575,14 @@ const arr = [1, 2, 3];
 arr.reverse();
 console.log(arr); // [3, 2, 1]
 -----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
 6. Combining and Joining
-join(): Combines elements into a st  ring.
+join(): Combines elements into a string.
 const str = [1, 2, 3].join('-');
 console.log(str); // "1-2-3"
 toString(): Converts the array to a string.
