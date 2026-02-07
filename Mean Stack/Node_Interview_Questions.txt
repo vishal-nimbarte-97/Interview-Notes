@@ -888,8 +888,13 @@ console.log(value);
 81.How do you handle authentication and authorization securely in a Node.js app?
 ->"Authentication is the process of checking if user is logged in or not using JWT Token. In case JWT token expires, user cannot login or access our application.
 ->Authorization uses RBAC to handle permissions." that means which type of the user they are access the which type of the module.
+
+
+
+
+
 ---------------------------------------------------------------------------------------------------------------
-49.How would you implement rate limiting in a Node.js API?
+49.How would you implement rate limiting in a Node.js API?}}}}}IMP}}}}}
 ✅Rate Limiting in Node.js :-
 ->If you want to use rate limiting in our application, first install the express-rate-limit module and use it in the Node.js app.
 ->We set how many times a single IP can hit an API.
@@ -941,7 +946,7 @@ Example :-
 -> used bcrypt package = secure password hashing
 -> used HTTPS over HTTP = encrypts data
 -> prevent SQL Injection = for critical security
-> used Stored procedures = safe database queries
+-> used Stored procedures = safe database queries
 ---------------------------------------------------------------------------------------------------------------
 83.How would you handle data encryption in a Node.js project?
 -> "In Node.js, we handle encryption using the bcrypt module. 
@@ -970,7 +975,7 @@ Example :-
 86.Types of module in Node.js ?
 ->Core modules (built-in): http, https, fs, path, os
 ->Third-party modules: nodemon, pg (npm install needed)  
-->Custom modules: Created by programmer
+->Custom modules: Created by programmer by there requirements wise
 ---------------------------------------------------------------------------------------------------------------
 87.Alternative Way of Nodemon in Node.js ?
 -> Alternative way of Nodemon: node --watch index
@@ -1016,7 +1021,7 @@ async function simpleWork(){
 ---------------------------------------------------------------------------------------------------------------
 91.Difference between the promise and asyc/await?
 ->promises and async/await both are the core concept of the javsacropt.
-->the promise is the object of the javascript and they are cotain to the threee main state for execution timing 
+->the promise is the object of the javascript and they are contain to the threee main state for execution timing 
 ->resolved, reject and pending  
 ->async/await are used to handle the asynchronous opetaion in the node js , the async are used that measn our function is the aycnchouse and they are return to the promises and await are used for stop the execution code and wait.
 ---------------------------------------------------------------------------------------------------------------
