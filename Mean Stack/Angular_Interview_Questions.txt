@@ -23,7 +23,7 @@ what is your current salary?
 ->My current salary is 4.5 LPA.
 ------------------------------------------------------------------------------------------------------
 what is your expecetation ?
-->Based on my skills and experience, I am expecting around 8 LPA.
+->Based on my skills and experience, I am expecting around 7 LPA.
 ------------------------------------------------------------------------------------------------------
 
 ## **WPS (Wellington Parcel Service) – Simple Description**
@@ -206,8 +206,8 @@ Each role has different permissions and features based on their responsibilities
 ->Component is basic building block of an angular applicaion. and it's contain to the HTML Template,CSS file and TypeScript file and if you want to find the code coverage so you will be used the spec.ts file for finding the code coverage.
 ------------------------------------------------------------------------------------------------------
 4.What is the differance between Angular & Angular.JS ?
-->Features          		Angular                						Angular.Js
-1.Based On Architecture     TypeScript Component Based Architecture     TypeScript Component Based Architecture
+->Features          		    Angular                						          Angular.Js
+1.Based On Architecture     TypeScript Component Based Architecture     JavaScript Component Based Architecture
 2.Data Binding              Two-Way & One Way                           Two Way Only 
 3.Mobile Support            Yes                                         No 
 4.Performance               Faster                                      Slower
@@ -295,7 +295,7 @@ There are five main types of route guards:
 	Memory leakage in Angular means:
 	Unwanted or no-longer-needed objects are not removed from memory.
 	Because they stay in the component or service, Angular cannot free that memory.
-	So during application running, these unused objects keep taking space, and this situation is called a memory leak
+	So during application running, these unused objects keep taking space, and this situation is called a memory leak.
 ------------------------------------------------------------------------------------------------------
 15.Why Memory Leaks Happens in Angular?
 	Memory leaks happen in Angular when unwanted or no-more-needed objects are not removed.
@@ -577,6 +577,9 @@ Connect to external services (like Firebase, Auth0, etc.)
 This ensures that everything is ready before the app shows anything to the user.
 
 🔧 So think of APP_INITIALIZER like a setup step that runs before the Angular app starts
+
+Real Time Senario SSO Login using OIDC type.
+
 ------------------------------------------------------------------------------------------------------
 41.What is AuthGaurd in Angular?
 -> AuthGuard is used to protect routes in an Angular application.
@@ -875,6 +878,8 @@ Child
 
 current market lunch -> TOON (Token-Oriented Object Notation).
 ------------------------------------------------------------------------------------------------------
+
+
 62.What is Differance Between @ViewChild and @ViewChildren?
 -> @ViewChild is used in the parent component to access one element, directive, or component from the child or DOM.
 But in the case of @ViewChildren, we use it to access multiple elements, directives, or components from the DOM.
@@ -1549,7 +1554,7 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 	The package.json helps in managing all the main packages (like @angular/core, rxjs, etc.) needed to run the project.
 
 ✅ In Short :-
-	File			Purpose
+	File			    Purpose
 	package.json	Lists main dependencies and scripts
 ------------------------------------------------------------------------------------------------------------
 187.What is used of the package-lock.json?
@@ -1558,8 +1563,8 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 -> This file ensures that:- The same package versions are installed every time — even on different systems or teams.
 	
 ✅ In Short :-
-	File				Purpose
-	package-lock.json	Locks the exact version of each dependency and sub-dependency
+	File				        Purpose
+	package-lock.json	  Locks the exact version of each dependency and sub-dependency
 ------------------------------------------------------------------------------------------------------------
 188.What is differance between the Angular.json,package.json and package-lock.json?
 ->  package.json:- stored the all the main depedencies of all the project with version.
@@ -2364,6 +2369,7 @@ myPromise.then((data)=>{
 
 Example of Observable :- 
 myObservable: any = new Observable((observer) => {
+
     setTimeout(() => {
       observer.next("Observable First Data..!");
     }, 1000);
@@ -2376,6 +2382,7 @@ myObservable: any = new Observable((observer) => {
     setTimeout(() => {
       observer.next("Observable Third Data..!");
     }, 4000);
+
 });
 
 constructor() {
@@ -2572,6 +2579,8 @@ export class App {
 
 ------------------------------------------------------------------------------------------------------
 
+
+
 127.What is a Subscription in RxJS?
 ->A Subscription in RxJS is the connection between the Observable and the Observer.
 
@@ -2694,7 +2703,7 @@ They help us:
 ->Reduces unnecessary API calls 
 ->Improves performance (avoids too many requests).
 ->prevents server overloading
-->Best for search functionality.
+->Best for live search functionality.
 
 👉 DebounceTime is mainly used for live search functionality.
 
@@ -2708,7 +2717,6 @@ We wait for a fixed time after the user stops typing
 If the user types again within that time, the timer resets
 API is called only once after typing stops
 ✔️ This reduces unnecessary API calls and improves performance.
-
 ------------------------------------------------------------------------------------------------------
 135.Cold(Unicast) vs Hot(Multicast) Observable in RxJS?
 
@@ -2882,13 +2890,11 @@ Component A uses this service to send the data, and Component B subscribes to th
     myReplay = new ReplaySubject<string>(2); // last 2 values
   }
 
-
   component-a.ts (Sender)
 
   this.sharedService.myReplay.next('Message 1');
   this.sharedService.myReplay.next('Message 2');
   this.sharedService.myReplay.next('Message 3');
-
 
   component-b.ts (Receiver)
 
@@ -2913,7 +2919,6 @@ Component A uses this service to send multiple values, and Component B receives 
   export class SharedService {
     myAsync = new AsyncSubject<string>();
   }
-
 
   component-a.ts (Sender)
 
@@ -3080,6 +3085,10 @@ of(1,2,3).subscribe(value => {
 👉 Operators are used to modify or change the upcoming response from the API.
 👉 They perform different types of operations on the data like filtering, mapping, transforming, or handling errors before the response reaches subscribe().
 ------------------------------------------------------------------------------------------------------
+
+
+
+
 
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

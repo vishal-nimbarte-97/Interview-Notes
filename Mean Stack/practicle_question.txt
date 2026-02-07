@@ -1,0 +1,48 @@
+Form implemented 
+1.Reactive Forms with validation
+2.Template Driven Forms with validation
+
+Interceptor
+
+api integrations
+
+rxjs & ngrx 
+
+54.How to apply background colors to rows in a table based on the age condition (age>18 blue else green)?
+->]]]Important Question Asking in Interview
+
+<div *ngIf="users.length > 0; else noData">
+  <!-- show table -->
+</div>
+
+<ng-template #noData>
+  <p>No data found</p>
+</ng-template>
+
+lazy loading 
+
+implement promises and observable
+
+rxjs operator
+pipe,
+
+DSA 
+
+{let a=3}
+console.log(a)
+
+{var a=3}
+console.log(a)
+
+{const a=3}
+console.log(a)
+
+find the first non repeating word
+
+const str = 'angular';
+
+//output = n 
+
+callback function implementation 
+
+

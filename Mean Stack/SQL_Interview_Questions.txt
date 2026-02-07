@@ -107,9 +107,7 @@ https://www.interviewquery.com/p/sql-scenario-based-interview-questions#beginner
 ->The main normal forms used in database normalization are:
 
 	1st Normal Form (1NF) – Ensures each column contains atomic values (no multiple values in one column) and each record is unique.
-
 	2nd Normal Form (2NF) – Achieves 1NF and removes partial dependency (non-key attributes depend on the whole primary key).
-
 	3rd Normal Form (3NF) – Achieves 2NF and removes transitive dependency (non-key attributes shouldn’t depend on other non-key attributes).
 -----------------------------------------------------------------------------------------------------------------
 16.What is denormalization?

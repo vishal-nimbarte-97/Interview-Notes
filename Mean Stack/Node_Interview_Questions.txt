@@ -1,5 +1,5 @@
 0.What is V8 Engine?
-->V8 Engine is an open-source JavaScript engine developed by Google, written in C++, and used to execute JavaScript code—mainly in Google Chrome (and also in Node.js).
+->V8 Engine is an open-source JavaScript engine developed by Google, written in C++, and used to execute JavaScript code—mainly in Google Chrome (and also in Node.js). 
 ---------------------------------------------------------------------------------------------------------------
 1.What is Node.js?
 ->Node.js is a runtime environment that runs JavaScript on the server side.
@@ -108,7 +108,7 @@ In short:
 })();
 ---------------------------------------------------------------------------------------------------------------
 13.What is CallBack Function?
--> The function passed as an argument to the another functin that is called as the CallBack function.
+-> The function passed as an argument to the another function that is called as the CallBack function.
 
 funtion show(callback) --> Higher Order function 
 {
@@ -194,7 +194,6 @@ eventEmitter.on('greet',()=>{
 });
 
 eventEmitter.emit('greet');
-
 ---------------------------------------------------------------------------------------------------------------
 17.What is Libuv & Thread Pool In Node Js?
 -> Libuv is a library which is created using C language.
@@ -218,6 +217,9 @@ eventEmitter.emit('greet');
 -> Through callbacks, the response is provided.
 -> the event loop is important because of it's allows Node.js to handle non-blocking and asynchronous operations efficiently. 
 ---------------------------------------------------------------------------------------------------------------
+
+
+
 20.What do you mean by event loop in Node.js?
 -> Event loop continuously checks whether the call stack is empty or not.
 -> If the call stack is empty, then it passes callbacks to the call stack.
@@ -1103,7 +1105,7 @@ What are signed cookies, and how are they used in Express?
 
 +++++++++++++++++++++++++++++++++++++++++++++++Skymeric Technologies – Node JS Questioner+++++++++++++++++++++++++++++++++++++
 
-✅ 1. Explain the Node.js event loop architecture in detail
+✅ 1. Explain the Node.js event loop architecture in detail.
 Answer:- 
 	Basically Node.js used the libuv library,
 	and this library contains the event loop and thread pool.
@@ -1219,7 +1221,7 @@ Answer :-
 | Deployed independently                          | Routes requests to services                                       |
 | Each service has its own database               | Does not have a database                                          |
 | One service down does not affect other services | Acts as middle layer                                              |
-| Contains business logic                         | Does not contain business logic                                   |
+| Contains business logic                         | Does not contain business logic     	                              |
 | Services communicate with each other            | Manages which service is called                                   |
 | Used for application features                   | Used for validation, auth, rate limiting, logging, load balancing |
 -----------------------------------------------------------------------------------------------------------------------
