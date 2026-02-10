@@ -1,5 +1,5 @@
 0.What is V8 Engine?
-->V8 Engine is an open-source JavaScript engine developed by Google, written in C++, and used to execute JavaScript code—mainly in Google Chrome (and also in Node.js). 
+->V8 Engine is an open-source JavaScript engine developed by Google, written in C++, and used to execute JavaScript code—mainly in Google Chrome (and also in Node.js).
 ---------------------------------------------------------------------------------------------------------------
 1.What is Node.js?
 ->Node.js is a runtime environment that runs JavaScript on the server side.
@@ -36,11 +36,11 @@ eventEmitter.emit('eventOccured');
 ->Event Loop
 ---------------------------------------------------------------------------------------------------------------
 4.What is Non-Blocking I/O In Node.JS?
-->Non-Blocking I/O means every client request or user request they are not deppend upon with each other they are parallelly executed .
+->Non-Blocking I/O means every client request or user request they are not deppend upon with each other they are parallelly executed.
 ->that the process is called the Non-Blocking I/O.
 ---------------------------------------------------------------------------------------------------------------
 5.Node js is single threaded language or multithreaded language?
-->In the Node.js is the Run Time Enviroment and they are used the jacascript for the execution and this javascript is the single threaded programing language, but the node are js are used the libuv package and this libuv package are contain to the thread pool and event loop. so that the reason was the node.js are handling the multiple request at same timing.
+->In the Node.js is the Run Time Enviroment and they are used the jacascript for the execution and this javascript is the single threaded programing language, but the node js are used the libuv package and this libuv package are contain to the thread pool and event loop. so that the reason was the node.js are handling the multiple request at same timing.
 ---------------------------------------------------------------------------------------------------------------
 6.what is HTTP Module & Create a Server In Node JS?
 ->If we want to handle networking requests like GET, POST, UPDATE, DELETE, PATCH, we use the HTTP module.
@@ -217,15 +217,20 @@ eventEmitter.emit('greet');
 -> Through callbacks, the response is provided.
 -> the event loop is important because of it's allows Node.js to handle non-blocking and asynchronous operations efficiently. 
 ---------------------------------------------------------------------------------------------------------------
-
-
-
 20.What do you mean by event loop in Node.js?
 -> Event loop continuously checks whether the call stack is empty or not.
 -> If the call stack is empty, then it passes callbacks to the call stack.
 -> After that, those callbacks are executed.
 -> The main importance of the event loop is that it passes callbacks to the call stack based on priority.
 ---------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
 21.Explain about the Event Loop Phases in Node.JS?
 -> There are six phases in the Node.js event loop.
 -> timers, pending callbacks , Idle / Prepare , Poll, Check, Close CallBacks
@@ -888,6 +893,11 @@ console.log(value);
 81.How do you handle authentication and authorization securely in a Node.js app?
 ->"Authentication is the process of checking if user is logged in or not using JWT Token. In case JWT token expires, user cannot login or access our application.
 ->Authorization uses RBAC to handle permissions." that means which type of the user they are access the which type of the module.
+
+
+
+
+
 
 
 

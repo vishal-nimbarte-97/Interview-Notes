@@ -7,7 +7,7 @@ Thank you!
 
 ------------------------------------------------------------------------------------------------------
 what is your current project and what i your role?
-->my current project is Kpay Web Application 
+->my current project is Uniconnect Web Application.
 ->and In my current role, I handle both frontend and backend development, integrate third-party APIs, and improve application performance.
 ------------------------------------------------------------------------------------------------------
 what is current role?
@@ -17,13 +17,13 @@ what is size of team?
 ->I'm part of an 10-members team that includes 5 Full Stack Developers, a Team Lead,a QA lead , Manager,  Business Analyst, and a Tester. We work together using the Agile methodology to deliver quality solutions.
 ------------------------------------------------------------------------------------------------------
 what is notice period?
-->My current notice period is 2 months, but I am open to discussing an early release if needed.
+->My current notice period is 45 days, but I am open to discussing an early release if needed.
 ------------------------------------------------------------------------------------------------------
 what is your current salary?
 ->My current salary is 4.5 LPA.
 ------------------------------------------------------------------------------------------------------
 what is your expecetation ?
-->Based on my skills and experience, I am expecting around 7 LPA.
+->Based on my skills and experience, I am expecting 7 LPA.
 ------------------------------------------------------------------------------------------------------
 
 ## **WPS (Wellington Parcel Service) – Simple Description**
@@ -185,7 +185,7 @@ Each role has different permissions and features based on their responsibilities
 1.What is Angular?
 ->Angular is TypeScript Based Frontend Framework for developing single page web applicaion. and this Framework developed by google for creating single page web applicaion.
 ->In a first version of angular used javascript, but all curent version is used typescript in angular.
-->so currently used typescript in angular and runtiming typescript converted to javascript using the compiler and javascript is easy to undestaing by browser. so that like that work by angular Framework.
+->so currently used typescript in angular and runtiming typescript converted to javascript using the compiler and javascript is easy to undestading by browser. so that like that work by angular Framework.
 ------------------------------------------------------------------------------------------------------
 2.What are the key features of Angular?
 ->Component Based Architecture
@@ -258,7 +258,6 @@ D.two way data binding :- two way data binding means they are combination bwtwee
 ->If you want to navigate one view to another view that is the concept of the routing. 
 ------------------------------------------------------------------------------------------------------
 13.What is Route Gaurd and there types?
-->A Route Guard is used in Angular to protect routes from unauthorized access.
 ->A route guard is used to protect the routes in our angular applicaion from unauthorized access.
 
 There are five main types of route guards:
@@ -364,8 +363,8 @@ Faster UI Updates -> Reduces Unneccesary change detection calls.
 Better Performance -> Especially useful for large applications.
 Prevent Unncessary Rendering -> Updates only when inputes change.
 ------------------------------------------------------------------------------------------------------
-21.What is DOM Sanitization?
-->DOM sanitization is a security process that ensures only safe and clean data is rendered on the UI, protecting the application from XSS attacks. [XSS (Cross-Site Scripting) Attack]
+21.What is DOM Sanitization? }}}}IMPORTANT}}}}
+->DOM sanitization is a security process that ensures only safe and clean data is rendered on the UI, protecting the application from }}}XSS attacks}}}. [XSS (Cross-Site Scripting) Attack]
 ------------------------------------------------------------------------------------------------------
 22.What is One & Two Way Data Binding and There Types ?
 ------------------------------------------------------------------------------------------------------
@@ -380,13 +379,12 @@ Prevent Unncessary Rendering -> Updates only when inputes change.
 	Using this instance of the service class, we can call the functions of the service inside the component.
 	This process is called Dependency Injection.
 ------------------------------------------------------------------------------------------------------
-24.How to Check a third-party Library for vulnerabilities?
--> To check third-party library vulnerabilities, we use npm audit. It scans all installed dependencies and shows known security issues.
-   To fix those vulnerabilities automatically, we use npm audit fix, which updates the packages to safe versions.
-
+24.How to Check a third-party Library for vulnerabilities?}}}IMP}}}
+-> To check third-party library vulnerabilities, we use }npm audit}. It scans all installed dependencies and shows known security issues.
+-> To fix those vulnerabilities automatically, we use npm audit fix, which updates the packages to safe versions.
 -> We use npm audit to detect vulnerabilities in third-party libraries and npm audit fix to automatically fix them.
 ------------------------------------------------------------------------------------------------------
-25.Why npm audit fix --force is risky
+25.Why npm audit fix --force is risky.
 -> npm audit fix --force is risky because it can force incompatible package versions, causing dependency mismatch and breaking the application.
 ------------------------------------------------------------------------------------------------------
 25.What is Standalone Component?
@@ -410,7 +408,6 @@ Prevent Unncessary Rendering -> Updates only when inputes change.
 -------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
 27.When to Use Standalone Component?
-
 ->Creating a new Angular project
   Angular now suggests using standalone components from the start because they make the project simpler.
 
@@ -458,7 +455,7 @@ Prevent Unncessary Rendering -> Updates only when inputes change.
   Can be used together with NgModule-based components.
 ------------------------------------------------------------------------------------------------------
 29.What is <router-outlet>?
-->router-outlet is a placeholder in Angular which is used to load components when we navigate from one route to another.
+->router-outlet is a placeholder in Angular which is used to load components when we navigate from one route to another route.
 
 	<h2>My Angular App</h2>
 	<nav>
@@ -499,7 +496,6 @@ In Angular, we can catch errors returned from the backend using RxJS catchError.
 
 In this approach, we handle errors inside individual service methods using catchError.
 This is useful when we want to show custom error messages or apply specific logic for a particular API request.
-
 This approach gives more control because each API can have its own error handling logic.
 
 2️⃣ Global Error Handling using HTTP Interceptor
@@ -510,7 +506,6 @@ This is useful for handling common errors such as authentication failures, netwo
 It helps reduce duplicate code and keeps error handling consistent across the application.
 
 📌 Conclusion
-
 Both approaches are commonly used in Angular applications.
 Service-level error handling is best for request-specific custom messages, while interceptor-based error handling is best for global and reusable error handling logic.
 ------------------------------------------------------------------------------------------------------
@@ -544,8 +539,7 @@ Service-level error handling is best for request-specific custom messages, while
 | **Learning Curve**      | **Easy to write and understand** (less complexity) | Slightly complex but **better for real-world apps**           |
 ------------------------------------------------------------------------------------------------------------------------------------------------
 | **Best Use Case**       | Login, contact, or simple forms                    | Dynamic forms, large forms, enterprise applications           |
-------------------------------------------------------------------------------------------------------------------------------------------------
-
+-----------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
 37.What is track by ?
 ->When using *ngFor to loop throgh a list, Angular re-render the whole list if any change happens.
@@ -576,10 +570,12 @@ Load user roles, permissions, or settings from the backend
 Connect to external services (like Firebase, Auth0, etc.)
 This ensures that everything is ready before the app shows anything to the user.
 
-🔧 So think of APP_INITIALIZER like a setup step that runs before the Angular app starts
+🔧 So think of APP_INITIALIZER like a setup step that runs before the Angular app starts.
 
-Real Time Senario SSO Login using OIDC type.
+Real Time Senario SSO Login using OIDC type.}}}}IMPORTANT}}}}
 
+40.what is difference between the SAML vs OIDC type.}}}IMPORTANT}}}
+->
 ------------------------------------------------------------------------------------------------------
 41.What is AuthGaurd in Angular?
 -> AuthGuard is used to protect routes in an Angular application.
@@ -643,11 +639,9 @@ Use --legacy-peer-deps when you see peer dependency warnings.
 Use --force only as a last option, if nothing else works — it may break things.
 
 Peer dependencies avoid version conflicts
-
 ------------------------------------------------------------------------------------------------------
 47.What is the used of @viewChild?
-
--> @ViewChild is used inside a parent component to access a child component, directive, DOM element, or HTML element from the template.
+->@ViewChild is used inside a parent component to access a child component, directive, DOM element, or HTML element from the template.
 
 With the help of @ViewChild, we can:
 Call child component methods or access its properties.
@@ -678,7 +672,6 @@ Difference between @ViewChild and @ViewChildren
 But in some cases — like when using sockets, timers, or external libraries — Angular does not detect the changes.
 In such cases, we can use ChangeDetectorRef to manually trigger change detection.
 ------------------------------------------------------------------------------------------------------
-
 48.Differance between the markForkCheck() and detectChange()?
 =>Both are used to manually control Angular change detection strategy, mainly when using ChangeDetectionStrategy.OnPush.
 -> but one main differance is markForCheck() triggers change detection, but it does not immediately update the application.
@@ -759,20 +752,15 @@ html template
 54.How to apply background colors to rows in a table based on the age condition (age>18 blue else green)?
 ->]]]Important Question Asking in Interview
 ------------------------------------------------------------------------------------------------------
-
 0.What is HttpClientModule in Angular?
 ->HttpClientModule is the Angular module that allows your app to communicate with backend APIs over HTTP or HTTPS.
-
-->HttpClientModule is used in Angular to communicate between the client
-and backend APIs using HTTP requests.
-
 ->HttpClientModule is used to communicate with backend servers.
 ->It helps Angular apps send and receive HTTP requests like:
 
 GET,POST,PUT,DELETE
 
 Used for calling REST APIs.
-It returns data as Observables.
+It returns data as Observables or Repsonce of API.
 ------------------------------------------------------------------------------------------------------
 55.What is CORS Origin error, how can we handle it?
 -> CORS stands for Cross-Origin Resource Sharing.
@@ -807,7 +795,7 @@ Basically, it contains some lines of code (proxy rules) that tell the browser to
 57.What is <ng-container>?
 -><ng-container> is used instead of <div> for write a conditions like a ngIf, ngFor , ngSwitch ,
 ->so the layout doesn't change, and it doesn’t add extra HTML.
-->most of used ng-container for write a condition
+->most of used ng-container for write a condition.
 ------------------------------------------------------------------------------------------------------
 58.In Same div can we used two structural directive? why? and how to fixed it? 
 -> No, it's not possible to use two structural directives (like *ngIf and *ngFor) on the same HTML element.
@@ -828,7 +816,6 @@ We can fix this by using an <ng-container>, which doesn't create extra DOM eleme
   </div>
 </ng-container>
 ------------------------------------------------------------------------------------------------------
-
 59.What is ng-template?
 ng-template is used when we want to write an else condition.
 👉 For example: If a condition like *ngIf is false, then the else block is shown using ng-template.
@@ -869,7 +856,6 @@ Child
 <div class="card">
   <ng-content></ng-content>
 </div>
-
 ------------------------------------------------------------------------------------------------------
 61.What is the Universal Language of API's?
 ->Earlier (Old time): XML
@@ -878,8 +864,6 @@ Child
 
 current market lunch -> TOON (Token-Oriented Object Notation).
 ------------------------------------------------------------------------------------------------------
-
-
 62.What is Differance Between @ViewChild and @ViewChildren?
 -> @ViewChild is used in the parent component to access one element, directive, or component from the child or DOM.
 But in the case of @ViewChildren, we use it to access multiple elements, directives, or components from the DOM.
@@ -897,15 +881,13 @@ But in the case of @ViewChildren, we use it to access multiple elements, directi
 | No loop needed                                    | Loop (`forEach`) is required                             |
 | Example: one child                                | Example: many children                                   |
 ----------------------------------------------------------------------------------------------------------------
-
 ------------------------------------------------------------------------------------------------------
-63.What is the Role of NgModule ?
+63.What is the Role of NgModule?
 ->NgModule is a core part of Angular that helps to organize the application.
-
 ->NgModule organizes components, directives, pipes, and services,
 and manages imports and exports in an Angular application.
 ------------------------------------------------------------------------------------------------------
-64. What is NgModule in Angular? Why was it used before Angular 14?
+64.What is NgModule in Angular? Why was it used before Angular 14?
 ->NgModule is a core part of Angular that helps to organize the application.
 ->NgModule organizes components, directives, pipes, and services, and manages imports and exports in an Angular application.
 
@@ -1017,7 +999,6 @@ Aligns with future Angular versions
 📝 Interview One-Line Answer
 
 Standalone Components reduce boilerplate code, simplify dependency management, improve lazy loading, and make Angular apps more modular and maintainable without NgModule.
-
 ------------------------------------------------------------------------------------------------------
 68.Can we mix ngModule and Standalone Component in the same projects?
 -> Yes, we can use both NgModule and standalone components in one project.
@@ -1057,8 +1038,6 @@ export class AppModule {}
 69.How do you declare dependencies in a standalone compoent?
 -> We use the [imports] array to declare dependencies of a standalone component.
 ------------------------------------------------------------------------------------------------------
-
-
 70.What is used of Angular.json?
 -> angular.json is the main configuration file for an Angular project.
 It controls how the Angular CLI builds, serves, tests, and configures the application.
@@ -1131,7 +1110,7 @@ This way, when a user navigates to a module, it loads quickly without waiting, i
 and that second service also injects the first one back using Angular's Dependency Injection system.
 -> This creates a loop between the services, and it can cause runtime errors or unexpected behavior.
 ------------------------------------------------------------------------------------------------------
-78.How to Fix Circular Dependency?
+78.How to Fix Circular Dependency?}}}}}IMP}}}}}
 -> To fix circular dependency, we can remove direct injection between two services.
 -> We can use Injector, create a common service, or use interfaces to break the loop.
 -> This helps to avoid runtime errors and keep our code clean and optimized.
@@ -1190,7 +1169,7 @@ Then ngOnInit() runs → Used for API calls or any logic
 ------------------------------------------------------------------------------------------------------
 ✅ 83. What is AOT Compiler in Angular?
 → AOT is Ahead-of-Time compiler in Angular.
-→ The main use of AOT is that at build time, Angular compiles the HTML templates and TypeScript files and     converts them into JavaScript files.
+→ The main use of AOT is that at build time, Angular compiles the HTML templates and TypeScript files and converts them into JavaScript files.
 → Because the compilation already happens during the build, there is no need to compile the code in the browser at a runtime, so the application loads faster.
 → If any error occurs at build time, like template errors or binding issues, AOT detects those errors early and provides logs showing what error occurred.
 
@@ -1228,7 +1207,7 @@ ng serve → JIT compiler (default for development)
 AOT = Production optimized build,
 JIT = Development mode compiler ✅
 ------------------------------------------------------------------------------------------------------
-87.How to get params from route?
+87.How to get params from route?}}}IMP}}}
 -> Use ActivatedRoute and snapshot or paramMap.
 -> We get route params using ActivatedRoute and access them with route.snapshot.params or route.params.subscribe().
 ------------------------------------------------------------------------------------------------------
@@ -1429,12 +1408,15 @@ It executes first, before any Angular lifecycle hooks, and is mainly used for De
 ->zone.js is a library used in Angular that helps to detect changes automatically when any asynchronous operations (like API calls, timers, or events) happen.
 ->It tells Angular when something has changed, so Angular can update the UI without manual effort.
 ------------------------------------------------------------------------------------------------------
-
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ------------------------------------------------------------------------------------------------------
 -----------------------------------]]]]]]Core Concept Important]]]]]]]]]------------------------------
 ------------------------------------------------------------------------------------------------------
+
+
+Next Time Start from this Questions
+
 
 154.What is a Shared Module in Angular?
 ->Shared Module contains common code that we can reuse in other modules by importing it. It helps to avoid writing the same code again and again.
@@ -1471,7 +1453,7 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 162.How do you bootstrap an angular application using only a standalone compoents?
 ->In Angular, we can bootstrap the app using a standalone component by using the bootstrapApplication() method instead of NgModule.
 ------------------------------------------------------------------------------------------------------
-178.]*]*].How to Security provided our angular application?
+178.]*]*].How to Security provided our angular application?}}}IMP}}}
 ->Angular provides security using features like sanitization, route guards, JWT token handling, and strict content policies.
 ------------------------------------------------------------------------------------------------------
 179.What is differanance between the template driven forms and reactive forms ?
@@ -1596,7 +1578,6 @@ We unsubscribe Observable using the ngOnDestroy phase of Angular lifecycle hooks
 | package-lock.json | Version mismatch, possible bugs       |
 -------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
-
 *]what is routing
 ->Navigating one page to another page that is concept of the routing.
 ---------------------------------------------------------------------------------------
@@ -1722,7 +1703,8 @@ One-Line Interview Answer ✅
 Throttling limits how frequently an action can be performed to avoid multiple requests.
 
 👉 In RxJS library contains the throttleTime operator.
-👉 throttleTime is used the handle throttling in angular applicaion.---------------------------------------------------------------------------------------
+👉 throttleTime is used the handle throttling in angular applicaion.
+---------------------------------------------------------------------------------------
 *] DebounceTime :- 
 👉 DebounceTime is mainly used for live search functionality.
 
@@ -2023,11 +2005,6 @@ Avoid storing large files, images, videos
 ------------------------------------------
 
 ---------------------------------------------------------------------------------------
-*] code coverage :- 
-NgRx is a state management library for Angular that works very much like Redux in React. Both create one central place (a store) to hold and manage all app data, making it simple for components to share and update state predictably.
----------------------------------------------------------------------------------------
-
-
 *] code coverage
 
 👉Code coverage is the concept of checking how much of your code is tested.
@@ -2101,7 +2078,6 @@ describe('MathService', () => {
 ✔ Run ng test --code-coverage to check coverage.
 ✔ Higher coverage = Fewer bugs! 🚀
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 -------------------------------------------------------------------------------------------------------------
 ------------------------]]]]]]Some Hard Question Asking for Angular Developer]]]]]]]]]------------------------
 -------------------------------------------------------------------------------------------------------------
@@ -2149,7 +2125,6 @@ export class AppModule {}
   template: `<input [(ngModel)]="name" />`
 })
 export class DemoComponent {}
-
 -------------------------------------------------------------------------------------------------------------
 165.Can you create standalone directive and pipes in Angular?
 -> Yes. Angular allows you to create standalone directives and standalone pipes.
@@ -2214,9 +2189,9 @@ and ngModule is used that means standalone false so that case used loadChildern
 If an NgModule is used (standalone is false), lazy loading is done using loadChildren().
 
 🔁 Quick Comparison
-Type					Standalone			Lazy Loading Method
-Standalone Component	true			    loadComponent()
-NgModule				false				loadChildren()
+Type					        Standalone			Lazy Loading Method
+Standalone Component	true			      loadComponent()
+NgModule				      false				    loadChildren()
 
 ✅ Example (NgModule Lazy Loading)
 {
@@ -2248,26 +2223,22 @@ const routes: Routes = [
   standalone: true,
   providers: [UserService],
   template: `
-<p>Demo works!</p>`
+  <p>Demo works!</p>
+  `
 })
 export class DemoComponent {}
 -------------------------------------------------------------------------------------------------------------
 169.How do you migrate an existing Angular application to standalone compoents?
 ->First of all, we upgrade the Angular version using the Angular CLI command because standalone components work in the latest Angular versions.
-
 ->Standalone components do not need NgModule. Every component is made standalone by adding standalone: true.
-After that, each component injects its own dependencies inside the component itself, so it does not depend on NgModule or app.module.ts.
-
+->After that, each component injects its own dependencies inside the component itself, so it does not depend on NgModule or app.module.ts.
 ->Because of this, the app.module.ts file is no longer needed and can be removed after migration.
-
 ->While migrating, some issues or errors may occur, like missing imports or routing problems. These errors are solved manually one by one.
-
 ->This is the process of migrating an existing Angular project to the latest version using standalone components.
-
 ->First we upgrade Angular, then make every component standalone, move dependencies into components, remove NgModule, and fix errors step by step.
 -------------------------------------------------------------------------------------------------------------
 
-FORMS REGARDING Question Aksing in Interview Last Timing :- 
+FORMS REGARDING Question Aksing in Interview Last Timing :- }}}IMPORTANT}}} 
 
 170. FormsModule is used for template-driven forms
 ->If you want to use template-driven forms, then you need to import the FormsModule.
@@ -2316,8 +2287,8 @@ FORMS REGARDING Question Aksing in Interview Last Timing :-
 -------------------------------------------------------------------------------------------------------------
 177.How do you display error message for form validation in Angular?
 ->We display error messages by checking the form control is invalid and touched or dirty, then show the message using the errors property in the template.
-[Asking in interview implementation]
--------------------------------------------------------------------------------------------------------------
+[Asking in interview implementation]}}}IMP}}}
+-------------------------------------------------------------------
 179.How to implement security measures for Angular?
 ->We implement security in Angular by using authentication and authorization, route guards, JWT tokens, form validation, HTTP interceptors, and Angular built-in protection like CORS prevention.
 -------------------------------------------------------------------------------------------------------------
@@ -2331,6 +2302,11 @@ FORMS REGARDING Question Aksing in Interview Last Timing :-
 | More boilerplate           | Less boilerplate              |
 --------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ----------------------------------------------RxJS Library--------------------------------------------
@@ -3087,6 +3063,15 @@ of(1,2,3).subscribe(value => {
 ------------------------------------------------------------------------------------------------------
 
 
+
+
+
+
+
+
+
+
+
 --------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------
 SenWell Asking Interview Questions :- 
@@ -3096,14 +3081,45 @@ SenWell Asking Interview Questions :-
 
 🧠 1. Current Angular Version (as of Feb 2026)
 📌 The latest stable release of Angular is Angular v21.
-
 --------------------------------------------------------------------------------------------------------------------
-
 ⚡ 2.  What They Are Angular Signals?
+=> Signals are used to store values and manage UI state.
+   They automatically update the UI when the value changes, without using subscribe() or unsubscribe().
+   They are better than RxJS for simple state management, especially for UI-related state.
+
+One-line interview answer 🎯
+Angular Signals manage reactive UI state without subscriptions, while RxJS is still used for async data streams and APIs.
+
+import 'zone.js';
+import { Component, signal } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  template: `
+    <h1>{{count()}}</h1>
+    <button (click)=count.set(count()+1)>Increment</button>
+  `,
+})
+export class App {
+  name = 'Angular';
+  count = signal(0);
+}
+
+bootstrapApplication(App);
 
 --------------------------------------------------------------------------------------------------------------------
 
 📊 3. Differences Between Angular 16, 19, and Current (v21)
+all the curent latest version introduced 
+->standalone compenent
+->signals
+->routing 
+->Reactivity
+->SSR-server side Rendering
+->Hydration improvements
+->CLI & Tooling
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Area                | Angular 16                                                | Angular 19                                                                          | Angular 21 (latest)                                                                            |
 | ------------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -3126,20 +3142,15 @@ SenWell Asking Interview Questions :-
 Angular’s Router enables single-page app navigation — showing different Angular components based on URL routes — without full page reloads.
 
 🔗 routerLink — Navigation Links
-
 Use the routerLink directive on an <a> (or other) to navigate:
-
 <a routerLink="/home">Home</a>
-
 
 This binds the link to the Angular Router path without page reload.
 
+
 🎯 Detecting Active Links — routerLinkActive
-
 Use routerLinkActive to apply styles when the link matches the current route:
-
 <a routerLink="/home" routerLinkActive="active">Home</a>
-
 
 When the user is on that route, the CSS class active is added.
 
@@ -3163,10 +3174,15 @@ redirectTo: target route to navigate.
 
 pathMatch: 'full': ensures exact empty path matches before redirect.
 
---------------------------------------------------------------------------------------------------------------------
-What is Architecture of Current Angular Project?
 
-  Our Angular project follows a modular, component-based architecture.
+routerLink
+routerLinkActive
+redirectTo 
+
+--------------------------------------------------------------------------------------------------------------------
+📊 5. What is Architecture of Current Angular Project?
+
+  My curent Angular project follows a modular, component-based architecture.
   The application is divided into feature modules, core, and shared modules.
   Core module contains common services like authentication, guards, and HTTP interceptors.
   Shared module has reusable components, pipes, and directives.
@@ -3256,6 +3272,39 @@ src/
 
 “Environment files are used to manage different API URLs and configurations for development and production.”
 
+
+  My current Angular application follows a modular, component-based architecture.
+  We organize the app into feature modules, shared modules, and a core module.
+  Components handle UI logic, while services manage business logic and API communication.
+  The Shared module contains reusable components, pipes, and directives.
+  The Core module holds singleton services like authentication, interceptors, guards, and global utilities.
+
+  For state management:
+  We use RxJS, mainly Subject and BehaviorSubject, to manage shared state and reactive data flow.
+
+  Application structure:
+  The application contains five different portals, all using a single common login page.
+  Access control is handled using Auth Guards, lazy loading, and token-based validation.
+
+  Authentication & security:
+  We use JWT access tokens with refresh token support.
+  Implemented SSO authentication using OIDC and SAML integration.
+
+  Performance & infrastructure:
+  Lazy loading improves performance by loading modules on demand.
+  Nginx is used for load balancing.
+  On the frontend, we use localStorage for token persistence.
+  On the backend, Redis is used for centralized session/state storage.
+
+  30-Second Spoken Script (Very Important for Interviews 🎤)
+
+  “Our Angular application follows a modular, component-based architecture.
+  We use feature modules, shared modules, and a core module to keep the code scalable and maintainable.
+  Components handle UI, services manage business logic, and RxJS with BehaviorSubject is used for state management.
+  The app has five portals with a common login page, secured using auth guards, lazy loading, and token validation.
+  Authentication is handled using JWT with refresh tokens, and we’ve integrated SSO using OIDC and SAML.
+  For performance and scalability, we use Nginx for load balancing, localStorage on the frontend, and Redis on the backend.”
+
 --------------------------------------------------------------------------------------------------------------------
 
 📜 javascript all version and what's differences?
@@ -3264,7 +3313,13 @@ src/
 ->JavaScript comes with different versions like ES5, ES6, ES7, etc. In each version, some new features are added to improve coding. ES6 is the major version where let, const, arrow function, and promise were introduced. After that, small features come every year to make JavaScript more powerful and easy.
 
 
-differance var,let and const
+📜 differance var,let and const
+
+
+
+
+
+
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 =========================================== NgRx ==============================================

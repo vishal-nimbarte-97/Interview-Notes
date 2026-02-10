@@ -184,8 +184,290 @@ ________________________________________________________________________________
 Here’s a **complete topic-wise breakdown of 25+ interview questions per Data Structures and Algorithms (DSA) topic**, organized from **simple to advanced**. This is perfect for mastering DSA for interviews and competitive programming.
 
 ---
+https://www.codinn.dev/tricky-javascript/es6789-code-snippets-interview-questions
+
+Tricky Questions or javascript snippets :- 
+
+1️⃣
+console.log(typeof 12);
+Output: "number"
+
+2️⃣
+console.log(typeof "12");
+Output: "string"
+
+3️⃣
+console.log(typeof 12.5);
+Output: "number"
+
+4️⃣
+console.log(typeof NaN);
+Output: "number"
+
+5️⃣
+console.log(typeof Infinity);
+Output: "number"
+
+6️⃣
+console.log(typeof true);
+Output: "boolean"
+
+7️⃣
+console.log(typeof false);
+Output: "boolean"
+
+8️⃣
+console.log(typeof undefined);
+Output: "undefined"
+
+9️⃣
+console.log(typeof null);
+Output: "object" ❗ (JS bug)
+
+🔟
+console.log(typeof {});
+Output: "object"
+
+1️⃣1️⃣
+console.log(typeof []);
+Output: "object"
+
+1️⃣2️⃣
+console.log(typeof function() {});
+Output: "function"
+
+1️⃣3️⃣
+console.log(typeof (() => {}));
+Output: "function"
+
+1️⃣4️⃣
+console.log(typeof new Date());
+Output: "object"
+
+1️⃣5️⃣
+console.log(typeof /abc/);
+Output: "object" (RegExp)
+
+1️⃣6️⃣
+console.log(typeof BigInt(10));
+Output: "bigint"
+
+1️⃣7️⃣
+console.log(typeof 10n);
+Output: "bigint"
+
+1️⃣7️⃣
+console.log(typeof 10n);
+Output: "bigint"
+
+1️⃣8️⃣
+console.log(typeof Symbol("id"));
+Output: "symbol"
+
+1️⃣9️⃣
+console.log(typeof class Test {});
+Output: "function"
+
+2️⃣0️⃣
+console.log(typeof typeof 12);
+Output: "string"
+
+2️⃣1️⃣
+let a;
+console.log(typeof a);
+Output: "undefined"
+
+2️⃣2️⃣
+let b = null;
+console.log(typeof b);
+Output: "object"
+
+2️⃣3️⃣
+console.log(typeof (1 + "2"));
+Output: "string"
+
+2️⃣4️⃣
+console.log(typeof (1 - "2"));
+Output: "number"
+
+2️⃣5️⃣
+console.log(typeof [] + []);
+Output: "object"
+
+2️⃣6️⃣
+console.log(typeof {} + {});
+Output: "object[object Object]"
+👉 typeof {} → "object"
+
+2️⃣7️⃣
+console.log(typeof null === "object");
+typeof null = object
+object === object
+Output: true
+
+2️⃣8️⃣
+console.log(typeof undefined == typeof null);
+typeof undefined = undefined
+typeof null = object
+undefined===object
+Output: false
+
+2️⃣9️⃣ }}}IMPORTANT}}}
+console.log(typeof (function(){}()));
+Output: "undefined"
+
+3️⃣0️⃣ }}}IMPORTANT}}}
+console.log(typeof Array);
+Output: "function"
+
+*]] Output?
+console.log([] == []);
+Answer:
+false
+👉 Different memory references.
+
+*]] Output?
+console.log(0 == false);//true
+console.log(1 == true);//true
+console.log(0 === false);//false
+console.log(1 === true);//false
+👉 == does type conversion, === does not.
+
+*]] Output?
+console.log("5" + 3);
+console.log("5" - 3);
+Answer:
+53
+2
+👉 + does string concatenation, - forces number conversion.
+
+*]] Output?
+var a = 10;
+function test() {
+  console.log(a);
+  var a = 20;
+}
+test();
+Answer:
+undefined
+👉 Due to hoisting (local a shadows global one).
+
+*]] Output?
+console.log(true + true);//1+1=2
+console.log(false + true);//0+1=1
+👉 true → 1, false → 0
+
+*]] Output?
+console.log(typeof NaN);
+Answer:
+"number"
+👉 Weird but true 😅
+
+*]] Output?
+let a = 10;
+let b = a++;
+function demo(){
+    console.log(a,b);//11,10
+}
+demo();
+👉 Post-increment returns old value first.
+
+*]] Output?
+console.log(1+"2"+3);//123
+console.log(1+"2"+3-5);//118
+👉 Left-to-right evaluation.
+
+*]] Output?
+console.log(null == undefined);//because of both nothing value so they are match without checking type so they are true
+console.log(null === undefined);//nothing value both side but check type so they are false
+Answer:
+true
+false
+
+*]] Output?
+function demo() {}
+console.log(demo());
+Answer:
+undefined
+👉 Function without return so they returns undefined.
+
+
+
+*]] Output
+console.log([] + []);
+console.log({} + {});
+
+✅ Output
+""
+"[object Object][object Object]"
+
+
+🟦 Case 1: [] + []
+Step-by-step:
+[]      → ""        // empty array converts to empty string
+[]      → ""
+"" + "" → ""
+✅ Final output:
+""
+
+🟦 Case 2: { } + { }
+Step-by-step:
+{} → "[object Object]"
+{} → "[object Object]"
+Now JS does:
+"[object Object]" + "[object Object]"
+✅ Final output:
+"[object Object][object Object]"
+
+*]] Output?
+let a = [1, 2, 3];
+let b = a;
+b.push(4);
+console.log(a);
+console.log(a===b);//because of referance same 
+
+Answer:
+a = [1, 2, 3, 4]
+👉 Arrays are reference types.
+
+*]] Output?
+console.log("10" - "5");
+Answer:
+5
+
+*]] Output?
+console.log(!!"hello"); 
+!"Hello"->false
+!false -> true
+console.log(!!0);
+!0 -> true
+!true -> false
+👉 !! converts value to boolean.
+
 
 ## 📌 Arrays (25+ Questions)
+
+    - Find First Non-repeating char from string 
+
+    let str = 'angular';
+
+    function findFirstChar(str){
+        for(let i=0;i<str.length;i++){
+            let count = 0;
+            for(let j=0;j<str.length;j++){
+                if(str.charAt(i)===str.charAt(j)){
+                    count++;
+                }
+            }
+            if(count===1){
+                console.log(str[i]);
+                break;
+            }
+        }
+    }
+
+    findFirstChar(str);
+
 - Reverse an array
 
   //]] Reverse Number without using the .reverse() method
@@ -409,7 +691,6 @@ console.log('Max Value :- ',newArray[1]);
   // min = 1
   // profit = max(7,(9-1)) = 8
 ------------------------------------------------------------------
-
   - ]]Product of array except self
   // Product of array except self
   // [1, 2, 3, 4]
@@ -554,6 +835,10 @@ setMatrixZeroes(matrix);
 - Merge intervals
 - Insert interval
 - Spiral matrix
+
+
+
+
 
 ---
 
