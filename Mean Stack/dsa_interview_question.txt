@@ -23,6 +23,7 @@ ________________________________________________________________________________
 
   In most languages (C, C++, Java):
   👉 Arrays store same data type only
+______________________________________________________________________________________________
 
 - **Linked Lists** (Singly, Doubly, Circular)
     1.A linked list is a collection of nodes, where each node contains data and the address of the next node.
@@ -32,14 +33,14 @@ ________________________________________________________________________________
     Doubly Linked List :- A doubly linked list is a linked list where each node contains data, the address of the previous node, and the address of the next node.
 
     Circular Linked List :- A circular linked list is a linked list where the last node points back to the first node instead of null
-
+______________________________________________________________________________________________
 - **Stacks**
     A stack is a linear data structure that stores data in LIFO or FILO order
     (Last In First Out or First In Last Out).
     In stack, we use Push operation for adding the element and Pop operation for removing the element.
     If we try to remove an element from an empty stack, it is called stack underflow.
     If the stack limit exists and we try to add one more element, it is called stack overflow.
-
+______________________________________________________________________________________________
 - **Queues** (Simple, Circular, Priority Queue, Deque)
     Queue is also the linear data structure that stored the data like LILO or FIFO Order (Last in Last out OR First in First Out);
     In a queue, insertion of elements is done from the end, and removal of elements is done from the front.
@@ -85,6 +86,8 @@ ________________________________________________________________________________
 - Path Compression
 
 ---
+
+______________________________________________________________________________________________
 
 ## ⚙️ Algorithms
 
@@ -184,155 +187,159 @@ ________________________________________________________________________________
 Here’s a **complete topic-wise breakdown of 25+ interview questions per Data Structures and Algorithms (DSA) topic**, organized from **simple to advanced**. This is perfect for mastering DSA for interviews and competitive programming.
 
 ---
+
+_________________________________________________________________________________
 https://www.codinn.dev/tricky-javascript/es6789-code-snippets-interview-questions
 
-Tricky Questions or javascript snippets :- 
 
+Tricky Questions or javascript snippets :- }}}}} PART ONE }}}}}
+______________________________________________________________________________________________
 1️⃣
 console.log(typeof 12);
 Output: "number"
-
+______________________________________________________________________________________________
 2️⃣
 console.log(typeof "12");
 Output: "string"
-
+______________________________________________________________________________________________
 3️⃣
 console.log(typeof 12.5);
 Output: "number"
-
+______________________________________________________________________________________________
 4️⃣
 console.log(typeof NaN);
 Output: "number"
-
+______________________________________________________________________________________________
 5️⃣
 console.log(typeof Infinity);
 Output: "number"
-
+______________________________________________________________________________________________
 6️⃣
 console.log(typeof true);
 Output: "boolean"
-
+______________________________________________________________________________________________
 7️⃣
 console.log(typeof false);
 Output: "boolean"
-
+______________________________________________________________________________________________
 8️⃣
 console.log(typeof undefined);
 Output: "undefined"
-
+______________________________________________________________________________________________
 9️⃣
 console.log(typeof null);
 Output: "object" ❗ (JS bug)
-
+______________________________________________________________________________________________
 🔟
 console.log(typeof {});
 Output: "object"
-
+______________________________________________________________________________________________
 1️⃣1️⃣
 console.log(typeof []);
 Output: "object"
-
+______________________________________________________________________________________________
 1️⃣2️⃣
 console.log(typeof function() {});
 Output: "function"
-
+______________________________________________________________________________________________
 1️⃣3️⃣
 console.log(typeof (() => {}));
 Output: "function"
-
+______________________________________________________________________________________________
 1️⃣4️⃣
 console.log(typeof new Date());
 Output: "object"
-
+______________________________________________________________________________________________
 1️⃣5️⃣
 console.log(typeof /abc/);
 Output: "object" (RegExp)
-
+______________________________________________________________________________________________
 1️⃣6️⃣
 console.log(typeof BigInt(10));
 Output: "bigint"
-
+______________________________________________________________________________________________
 1️⃣7️⃣
 console.log(typeof 10n);
 Output: "bigint"
-
+______________________________________________________________________________________________
 1️⃣7️⃣
 console.log(typeof 10n);
 Output: "bigint"
-
+______________________________________________________________________________________________
 1️⃣8️⃣
 console.log(typeof Symbol("id"));
 Output: "symbol"
-
+______________________________________________________________________________________________
 1️⃣9️⃣
 console.log(typeof class Test {});
 Output: "function"
-
+______________________________________________________________________________________________
 2️⃣0️⃣
 console.log(typeof typeof 12);
 Output: "string"
-
+______________________________________________________________________________________________
 2️⃣1️⃣
 let a;
 console.log(typeof a);
 Output: "undefined"
-
+______________________________________________________________________________________________
 2️⃣2️⃣
 let b = null;
 console.log(typeof b);
 Output: "object"
-
+______________________________________________________________________________________________
 2️⃣3️⃣
 console.log(typeof (1 + "2"));
 Output: "string"
-
+______________________________________________________________________________________________
 2️⃣4️⃣
 console.log(typeof (1 - "2"));
 Output: "number"
-
+______________________________________________________________________________________________
 2️⃣5️⃣
 console.log(typeof [] + []);
 Output: "object"
-
+______________________________________________________________________________________________
 2️⃣6️⃣
 console.log(typeof {} + {});
 Output: "object[object Object]"
 👉 typeof {} → "object"
-
+______________________________________________________________________________________________
 2️⃣7️⃣
 console.log(typeof null === "object");
 typeof null = object
 object === object
 Output: true
-
+______________________________________________________________________________________________
 2️⃣8️⃣
 console.log(typeof undefined == typeof null);
 typeof undefined = undefined
 typeof null = object
 undefined===object
 Output: false
-
+______________________________________________________________________________________________
 2️⃣9️⃣ }}}IMPORTANT}}}
 console.log(typeof (function(){}()));
 Output: "undefined"
-
+______________________________________________________________________________________________
 3️⃣0️⃣ }}}IMPORTANT}}}
 console.log(typeof Array);
 Output: "function"
 
+______________________________________________________________________________________________
 *]] Output?
 console.log([] == []);
 Answer:
 false
 👉 Different memory references.
-
+______________________________________________________________________________________________
 *]] Output?
 console.log(0 == false);//true
 console.log(1 == true);//true
 console.log(0 === false);//false
 console.log(1 === true);//false
 👉 == does type conversion, === does not.
-
+______________________________________________________________________________________________
 *]] Output?
 console.log("5" + 3);
 console.log("5" - 3);
@@ -340,7 +347,7 @@ Answer:
 53
 2
 👉 + does string concatenation, - forces number conversion.
-
+______________________________________________________________________________________________
 *]] Output?
 var a = 10;
 function test() {
@@ -351,18 +358,18 @@ test();
 Answer:
 undefined
 👉 Due to hoisting (local a shadows global one).
-
+______________________________________________________________________________________________
 *]] Output?
 console.log(true + true);//1+1=2
 console.log(false + true);//0+1=1
 👉 true → 1, false → 0
-
+______________________________________________________________________________________________
 *]] Output?
 console.log(typeof NaN);
 Answer:
 "number"
 👉 Weird but true 😅
-
+______________________________________________________________________________________________
 *]] Output?
 let a = 10;
 let b = a++;
@@ -371,28 +378,26 @@ function demo(){
 }
 demo();
 👉 Post-increment returns old value first.
-
+______________________________________________________________________________________________
 *]] Output?
 console.log(1+"2"+3);//123
 console.log(1+"2"+3-5);//118
 👉 Left-to-right evaluation.
-
+______________________________________________________________________________________________
 *]] Output?
 console.log(null == undefined);//because of both nothing value so they are match without checking type so they are true
 console.log(null === undefined);//nothing value both side but check type so they are false
 Answer:
 true
 false
-
+______________________________________________________________________________________________
 *]] Output?
 function demo() {}
 console.log(demo());
 Answer:
 undefined
 👉 Function without return so they returns undefined.
-
-
-
+_____________________________________________________________________________________________
 *]] Output
 console.log([] + []);
 console.log({} + {});
@@ -418,7 +423,7 @@ Now JS does:
 "[object Object]" + "[object Object]"
 ✅ Final output:
 "[object Object][object Object]"
-
+______________________________________________________________________________________________
 *]] Output?
 let a = [1, 2, 3];
 let b = a;
@@ -429,12 +434,12 @@ console.log(a===b);//because of referance same
 Answer:
 a = [1, 2, 3, 4]
 👉 Arrays are reference types.
-
+______________________________________________________________________________________________
 *]] Output?
 console.log("10" - "5");
 Answer:
 5
-
+______________________________________________________________________________________________
 *]] Output?
 console.log(!!"hello"); 
 !"Hello"->false
@@ -443,31 +448,4806 @@ console.log(!!0);
 !0 -> true
 !true -> false
 👉 !! converts value to boolean.
+______________________________________________________________________________________________
+
+______________________________________________________________________________________________
+# 🚀 JavaScript 100 Output Questions – Batch 1
+______________________________________________________________________________________________
+
+## 🔹 1–20: Event Loop & Async
+
+1.
+console.log('A');
+setTimeout(() => console.log('B'), 0);
+console.log('C');
+
+Output:- 
+A 
+C 
+B
+______________________________________________________________________________________________
+2.
+Promise.resolve().then(() => console.log(1));
+console.log(2);
+
+
+3.
+
+```js
+setTimeout(() => console.log(1));
+Promise.resolve().then(() => console.log(2));
+console.log(3);
+```
+
+4.
+
+```js
+async function test(){
+  console.log(1);
+  await Promise.resolve();
+  console.log(2);
+}
+test();
+console.log(3);
+```
+
+5.
+
+```js
+console.log('Start');
+setTimeout(()=>console.log('Timeout'),0);
+Promise.resolve().then(()=>console.log('Promise'));
+console.log('End');
+```
+
+6.
+
+```js
+setTimeout(()=>console.log(1),1000);
+setTimeout(()=>console.log(2),0);
+```
+
+7.
+
+```js
+Promise.resolve(10).then(console.log);
+console.log('Done');
+```
+
+8.
+
+```js
+async function a(){
+  return 5;
+}
+a().then(console.log);
+```
+
+9.
+
+```js
+console.log(1);
+queueMicrotask(()=>console.log(2));
+console.log(3);
+```
+
+10.
+
+```js
+Promise.resolve().then(()=>{
+  console.log(1);
+  return 2;
+}).then(console.log);
+```
+
+11.
+
+```js
+setTimeout(()=>{
+  console.log('A');
+  Promise.resolve().then(()=>console.log('B'));
+});
+```
+
+12.
+
+```js
+Promise.reject('Error')
+.catch(e=>console.log(e))
+.then(()=>console.log('Done'));
+```
+
+13.
+
+```js
+async function x(){
+  console.log('A');
+  await null;
+  console.log('B');
+}
+x();
+console.log('C');
+```
+
+14.
+
+```js
+Promise.resolve().then(()=>{
+  setTimeout(()=>console.log('X'));
+});
+```
+
+15.
+
+```js
+new Promise((res)=>{
+  console.log('Inside');
+  res();
+}).then(()=>console.log('Then'));
+```
+
+16.
+
+```js
+console.log(typeof Promise);
+```
+
+17.
+
+```js
+console.log(typeof setTimeout);
+```
+
+18.
+
+```js
+Promise.resolve().then(()=>console.log(1));
+Promise.resolve().then(()=>console.log(2));
+```
+
+19.
+
+```js
+setTimeout(()=>console.log(1));
+setTimeout(()=>console.log(2));
+```
+
+20.
+
+```js
+async function a(){
+  return Promise.resolve(10);
+}
+a().then(console.log);
+```
+
+---
+
+## 🔹 21–40: var / let / const
+
+21.
+
+```js
+for(var i=0;i<3;i++){
+  setTimeout(()=>console.log(i),100);
+}
+```
+
+22.
+
+```js
+for(let i=0;i<3;i++){
+  setTimeout(()=>console.log(i),100);
+}
+```
+
+23.
+
+```js
+console.log(a);
+var a=10;
+```
+
+24.
+
+```js
+console.log(b);
+let b=20;
+```
+
+25.
+
+```js
+function test(){
+  console.log(x);
+  var x=5;
+}
+test();
+```
+
+26.
+
+```js
+{
+  let x=10;
+}
+console.log(x);
+```
+
+27.
+
+```js
+var x=10;
+function test(){
+  console.log(x);
+  var x=20;
+}
+test();
+```
+
+28.
+
+```js
+const obj={a:1};
+obj.a=2;
+console.log(obj);
+```
+
+29.
+
+```js
+const arr=[1,2];
+arr.push(3);
+console.log(arr);
+```
+
+30.
+
+```js
+var x=1;
+if(true){
+  var x=2;
+}
+console.log(x);
+```
+
+31.
+
+```js
+let x=1;
+if(true){
+  let x=2;
+}
+console.log(x);
+```
+
+32.
+
+```js
+console.log(typeof a);
+let a=10;
+```
+
+33.
+
+```js
+var a=10;
+(function(){
+  console.log(a);
+  var a=20;
+})();
+```
+
+34.
+
+```js
+function foo(){
+  if(true){
+    var x=10;
+  }
+  console.log(x);
+}
+foo();
+```
+
+35.
+
+```js
+function foo(){
+  if(true){
+    let x=10;
+  }
+  console.log(x);
+}
+foo();
+```
+
+36.
+
+```js
+let x=10;
+{
+  let x=20;
+  console.log(x);
+}
+console.log(x);
+```
+
+37.
+
+```js
+var x=10;
+{
+  var x=20;
+}
+console.log(x);
+```
+
+38.
+
+```js
+function test(a){
+  a=20;
+}
+let x=10;
+test(x);
+console.log(x);
+```
+
+39.
+
+```js
+function test(obj){
+  obj.name="JS";
+}
+let user={};
+test(user);
+console.log(user);
+```
+
+40.
+
+```js
+var a=10;
+function foo(){
+  console.log(a);
+}
+foo();
+```
+
+---
+
+## 🔹 41–60: Closures
+
+41.
+
+```js
+function outer(){
+  let count=0;
+  return function(){
+    count++;
+    console.log(count);
+  }
+}
+const fn=outer();
+fn();
+fn();
+```
+
+42.
+
+```js
+function outer(){
+  var x=10;
+  return function(){
+    console.log(x);
+  }
+}
+outer()();
+```
+
+43.
+
+```js
+function a(){
+  var x=10;
+  return function(){
+    console.log(x);
+  }
+}
+let b=a();
+b();
+```
+
+44.
+
+```js
+function add(a){
+  return function(b){
+    return a+b;
+  }
+}
+console.log(add(5)(10));
+```
+
+45.
+
+```js
+for(var i=1;i<=3;i++){
+  setTimeout(()=>console.log(i),1000);
+}
+```
+
+46.
+
+```js
+for(let i=1;i<=3;i++){
+  setTimeout(()=>console.log(i),1000);
+}
+```
+
+47.
+
+```js
+function x(){
+  var i=1;
+  setTimeout(()=>console.log(i),1000);
+}
+x();
+```
+
+48.
+
+```js
+function x(){
+  for(let i=1;i<=3;i++){
+    setTimeout(()=>console.log(i),i*1000);
+  }
+}
+x();
+```
+
+49.
+
+```js
+function x(){
+  for(var i=1;i<=3;i++){
+    function close(i){
+      setTimeout(()=>console.log(i),i*1000);
+    }
+    close(i);
+  }
+}
+x();
+```
+
+50.
+
+```js
+function counter(){
+  let c=0;
+  return {
+    inc:()=>++c,
+    dec:()=>--c
+  }
+}
+const cnt=counter();
+console.log(cnt.inc());
+console.log(cnt.inc());
+```
+
+---
+
+## 🔹 61–80: Type Coercion
+
+61.
+
+```js
+console.log({}+[]);
+```
+
+62.
+
+```js
+console.log([]+{});
+```
+
+63.
+
+```js
+console.log([]+[]);
+```
+
+64.
+
+```js
+console.log({}+{});
+```
+
+65.
+
+```js
+console.log(true+false);
+```
+
+66.
+
+```js
+console.log(true+true);
+```
+
+67.
+
+```js
+console.log(1+"2");
+```
+
+68.
+
+```js
+console.log("2"-1);
+```
+
+69.
+
+```js
+console.log(null==undefined);
+```
+
+70.
+
+```js
+console.log(null===undefined);
+```
+
+71.
+
+```js
+console.log([]==false);
+```
+
+72.
+
+```js
+console.log([]===false);
+```
+
+73.
+
+```js
+console.log({}=={});
+```
+
+74.
+
+```js
+console.log(NaN==NaN);
+```
+
+75.
+
+```js
+console.log(typeof NaN);
+```
+
+76.
+
+```js
+console.log(typeof null);
+```
+
+77.
+
+```js
+console.log(!!"hello");
+```
+
+78.
+
+```js
+console.log(!!0);
+```
+
+79.
+
+```js
+console.log(0.1+0.2===0.3);
+```
+
+80.
+
+```js
+console.log(9007199254740991+1);
+```
+
+---
+
+## 🔹 81–100: Objects & Functions
+
+81.
+
+```js
+function foo(){
+  console.log(this);
+}
+foo();
+```
+
+82.
+
+```js
+const obj={
+  name:"JS",
+  getName:function(){
+    console.log(this.name);
+  }
+};
+obj.getName();
+```
+
+83.
+
+```js
+const obj={
+  name:"JS",
+  getName:()=>console.log(this.name)
+};
+obj.getName();
+```
+
+84.
+
+```js
+function foo(){
+  return
+  {
+    name:"JS"
+  }
+}
+console.log(foo());
+```
+
+85.
+
+```js
+console.log(typeof function(){} );
+```
+
+86.
+
+```js
+console.log(typeof Array);
+```
+
+87.
+
+```js
+console.log([] instanceof Array);
+```
+
+88.
+
+```js
+console.log({} instanceof Object);
+```
+
+89.
+
+```js
+console.log([] instanceof Object);
+```
+
+90.
+
+```js
+function Person(name){
+  this.name=name;
+}
+const p=new Person("JS");
+console.log(p.name);
+```
+
+91.
+
+```js
+console.log([1,2,3].map(parseInt));
+```
+
+92.
+
+```js
+console.log(1<2<3);
+```
+
+93.
+
+```js
+console.log(3>2>1);
+```
+
+94.
+
+```js
+console.log("5"==5);
+```
+
+95.
+
+```js
+console.log("5"===5);
+```
+
+96.
+
+```js
+console.log(Object.keys({a:1,b:2}));
+```
+
+97.
+
+```js
+console.log(Object.values({a:1,b:2}));
+```
+
+98.
+
+```js
+console.log(Object.entries({a:1}));
+```
+
+99.
+
+```js
+console.log(JSON.stringify({a:undefined}));
+```
+
+100.
+
+```js
+console.log(JSON.stringify([undefined]));
+```
+
+---
+
+🔥 Batch 1 Completed (100 Questions)
+
+Reply:
+
+* **"Batch 2"** → I’ll generate next 100
+* **"Give answers for Batch 1"**
+* **"Make PDF"**
+* **"Hard level only"**
+
+Let’s build your interview strength step-by-step 💪
+
+
+______________________________________________________________________________________________
+Perfect 🔥
+Here is Batch-2 – 100 Advanced JavaScript Output Questions
+
+(No answers — practice mode)
+
+---
+
+# 🚀 JavaScript 100 Output Questions – Batch 2
+
+---
+
+## 🔹 101–120: Hoisting & Execution Context
+
+101.
+
+```js
+console.log(a);
+function a(){ }
+var a = 10;
+console.log(a);
+```
+
+102.
+
+```js
+foo();
+function foo(){
+  console.log("Hello");
+}
+```
+
+103.
+
+```js
+foo();
+var foo = function(){
+  console.log("Hi");
+}
+```
+
+104.
+
+```js
+var a = 1;
+function test(){
+  console.log(a);
+  var a = 2;
+}
+test();
+```
+
+105.
+
+```js
+function test(){
+  console.log(a);
+}
+var a = 5;
+test();
+```
+
+106.
+
+```js
+var a = 10;
+(function(){
+  console.log(a);
+})();
+```
+
+107.
+
+```js
+(function(){
+  console.log(a);
+  var a = 20;
+})();
+```
+
+108.
+
+```js
+console.log(typeof foo);
+function foo(){}
+```
+
+109.
+
+```js
+console.log(typeof bar);
+var bar = function(){}
+```
+
+110.
+
+```js
+var x = 10;
+function x(){}
+console.log(typeof x);
+```
+
+111.
+
+```js
+function x(){
+  return 1;
+}
+function x(){
+  return 2;
+}
+console.log(x());
+```
+
+112.
+
+```js
+var x = 1;
+function x(){}
+console.log(x);
+```
+
+113.
+
+```js
+console.log(a());
+function a(){
+  return 5;
+}
+```
+
+114.
+
+```js
+console.log(a());
+var a = function(){
+  return 10;
+}
+```
+
+115.
+
+```js
+var a = 1;
+(function a(){
+  a = 10;
+  console.log(a);
+})();
+```
+
+116.
+
+```js
+function foo(){
+  console.log(this);
+}
+foo.call(null);
+```
+
+117.
+
+```js
+function foo(){
+  console.log(this);
+}
+foo.call(undefined);
+```
+
+118.
+
+```js
+function foo(){
+  "use strict";
+  console.log(this);
+}
+foo();
+```
+
+119.
+
+```js
+(function(){
+  console.log(this);
+})();
+```
+
+120.
+
+```js
+(() => {
+  console.log(this);
+})();
+```
+
+---
+
+## 🔹 121–140: this Keyword Deep Dive
+
+121.
+
+```js
+const obj = {
+  name: "JS",
+  print(){
+    console.log(this.name);
+  }
+};
+const fn = obj.print;
+fn();
+```
+
+122.
+
+```js
+const obj = {
+  name: "JS",
+  print(){
+    setTimeout(function(){
+      console.log(this.name);
+    },100);
+  }
+};
+obj.print();
+```
+
+123.
+
+```js
+const obj = {
+  name: "JS",
+  print(){
+    setTimeout(()=>{
+      console.log(this.name);
+    },100);
+  }
+};
+obj.print();
+```
+
+124.
+
+```js
+function Person(name){
+  this.name = name;
+}
+const p = Person("JS");
+console.log(p);
+```
+
+125.
+
+```js
+const obj = {
+  name:"JS",
+  get: function(){
+    return function(){
+      console.log(this.name);
+    }
+  }
+};
+obj.get()();
+```
+
+126.
+
+```js
+const obj = {
+  name:"JS",
+  get: function(){
+    return ()=>{
+      console.log(this.name);
+    }
+  }
+};
+obj.get()();
+```
+
+127.
+
+```js
+const obj = {
+  name:"JS"
+};
+function print(){
+  console.log(this.name);
+}
+print.call(obj);
+```
+
+128.
+
+```js
+function print(){
+  console.log(this);
+}
+print.bind({a:1})();
+```
+
+129.
+
+```js
+const obj = {
+  name:"JS",
+  arrow: () => console.log(this.name)
+};
+obj.arrow();
+```
+
+130.
+
+```js
+const obj = {
+  name:"JS",
+  normal(){
+    return () => console.log(this.name);
+  }
+};
+obj.normal()();
+```
+
+131.
+
+```js
+class A{
+  constructor(){
+    this.name="JS";
+  }
+  print(){
+    console.log(this.name);
+  }
+}
+const a=new A();
+const fn=a.print;
+fn();
+```
+
+132.
+
+```js
+class A{
+  name="JS";
+  print=()=>{
+    console.log(this.name);
+  }
+}
+const a=new A();
+const fn=a.print;
+fn();
+```
+
+133.
+
+```js
+const obj = {
+  a:10,
+  b:{
+    a:20,
+    print(){
+      console.log(this.a);
+    }
+  }
+};
+obj.b.print();
+```
+
+134.
+
+```js
+const obj = {
+  a:10,
+  b:{
+    a:20,
+    print:()=>console.log(this.a)
+  }
+};
+obj.b.print();
+```
+
+135.
+
+```js
+function foo(){
+  return {
+    name:"JS",
+    print(){
+      console.log(this.name);
+    }
+  }
+}
+foo().print();
+```
+
+136.
+
+```js
+const obj={
+  name:"JS"
+};
+const arr=[function(){
+  console.log(this.name);
+}];
+arr[0].call(obj);
+```
+
+137.
+
+```js
+const obj={
+  name:"JS"
+};
+setTimeout(function(){
+  console.log(this.name);
+}.bind(obj),100);
+```
+
+138.
+
+```js
+setTimeout(()=>{
+  console.log(this);
+},100);
+```
+
+139.
+
+```js
+(function(){
+  console.log(this);
+}).call({a:1});
+```
+
+140.
+
+```js
+(() => {
+  console.log(this);
+}).call({a:1});
+```
+
+---
+
+## 🔹 141–160: Prototype & Inheritance
+
+141.
+
+```js
+function A(){}
+A.prototype.x=10;
+const a=new A();
+console.log(a.x);
+```
+
+142.
+
+```js
+function A(){}
+A.prototype.x=10;
+const a=new A();
+a.x=20;
+console.log(a.x);
+```
+
+143.
+
+```js
+function A(){}
+A.prototype.x=10;
+const a=new A();
+delete a.x;
+console.log(a.x);
+```
+
+144.
+
+```js
+function A(){}
+A.prototype.x=10;
+const a=new A();
+delete A.prototype.x;
+console.log(a.x);
+```
+
+145.
+
+```js
+function A(){}
+A.prototype={x:10};
+const a=new A();
+console.log(a.constructor===A);
+```
+
+146.
+
+```js
+function A(){}
+const a=new A();
+console.log(a instanceof A);
+```
+
+147.
+
+```js
+console.log([] instanceof Array);
+```
+
+148.
+
+```js
+console.log([] instanceof Object);
+```
+
+149.
+
+```js
+console.log({} instanceof Array);
+```
+
+150.
+
+```js
+function A(){}
+function B(){}
+B.prototype=new A();
+const b=new B();
+console.log(b instanceof A);
+```
+
+151.
+
+```js
+class A{
+  constructor(){
+    this.x=10;
+  }
+}
+class B extends A{}
+const b=new B();
+console.log(b.x);
+```
+
+152.
+
+```js
+class A{
+  static x=10;
+}
+console.log(A.x);
+```
+
+153.
+
+```js
+class A{
+  x=10;
+}
+console.log(new A().x);
+```
+
+154.
+
+```js
+console.log(Object.getPrototypeOf([])===Array.prototype);
+```
+
+155.
+
+```js
+console.log(Object.getPrototypeOf({})===Object.prototype);
+```
+
+156.
+
+```js
+const obj={a:1};
+console.log(obj.hasOwnProperty("a"));
+```
+
+157.
+
+```js
+const obj={a:1};
+console.log("toString" in obj);
+```
+
+158.
+
+```js
+function A(){}
+A.prototype.y=20;
+const a=new A();
+console.log("y" in a);
+```
+
+159.
+
+```js
+function A(){}
+A.prototype.y=20;
+const a=new A();
+console.log(a.hasOwnProperty("y"));
+```
+
+160.
+
+```js
+function A(){}
+A.prototype.y=20;
+const a=new A();
+a.y=30;
+console.log(a.hasOwnProperty("y"));
+```
+
+---
+
+🔥 Batch-2 Completed (100 Questions)
+
+Reply:
+
+* **Batch-3**
+* **Hard Level Only**
+* **Give Answers for Batch-2**
+* **Create PDF (200 Questions)**
+
+We’re building toward 1000+ 🚀💪
+
+______________________________________________________________________________________________
+Perfect 🔥
+Here is Batch-3 – 100 Advanced & Tricky JavaScript Output Questions
+
+(No answers — practice mode)
+
+---
+
+# 🚀 JavaScript 100 Output Questions – Batch 3
+
+---
+
+## 🔹 161–180: Arrays Deep Tricks
+
+161.
+
+```js
+console.log([1,2,3].reduce((a,b)=>a+b));
+```
+
+162.
+
+```js
+console.log([].reduce((a,b)=>a+b,10));
+```
+
+163.
+
+```js
+console.log([1,2,3].map(x=>x*2));
+```
+
+164.
+
+```js
+console.log([1,2,3].filter(x=>x>1));
+```
+
+165.
+
+```js
+console.log([1,2,3].some(x=>x>2));
+```
+
+166.
+
+```js
+console.log([1,2,3].every(x=>x>0));
+```
+
+167.
+
+```js
+console.log([1,2,3].find(x=>x>1));
+```
+
+168.
+
+```js
+console.log([1,2,3].includes(2));
+```
+
+169.
+
+```js
+console.log([1,2,3].indexOf(4));
+```
+
+170.
+
+```js
+console.log([1,2,3].push(4));
+```
+
+171.
+
+```js
+const arr=[1,2,3];
+console.log(arr.pop());
+console.log(arr);
+```
+
+172.
+
+```js
+const arr=[1,2,3];
+arr.shift();
+console.log(arr);
+```
+
+173.
+
+```js
+const arr=[1,2,3];
+arr.unshift(0);
+console.log(arr);
+```
+
+174.
+
+```js
+console.log([1,2,3].slice(1));
+```
+
+175.
+
+```js
+const arr=[1,2,3];
+arr.splice(1,1);
+console.log(arr);
+```
+
+176.
+
+```js
+console.log([1,2,3].join("-"));
+```
+
+177.
+
+```js
+console.log(Array(3));
+```
+
+178.
+
+```js
+console.log(Array(3).fill(1));
+```
+
+179.
+
+```js
+console.log(Array.from("JS"));
+```
+
+180.
+
+```js
+console.log([...new Set([1,2,2,3])]);
+```
+
+---
+
+## 🔹 181–200: Destructuring & Spread
+
+181.
+
+```js
+const [a,b]=[1,2];
+console.log(a,b);
+```
+
+182.
+
+```js
+const [a,,b]=[1,2,3];
+console.log(b);
+```
+
+183.
+
+```js
+const {x}= {x:10,y:20};
+console.log(x);
+```
+
+184.
+
+```js
+const {x=5}= {};
+console.log(x);
+```
+
+185.
+
+```js
+const obj={a:1,b:2};
+const copy={...obj};
+copy.a=10;
+console.log(obj.a);
+```
+
+186.
+
+```js
+const arr=[1,2];
+const newArr=[...arr,3];
+console.log(newArr);
+```
+
+187.
+
+```js
+const arr=[1,2];
+const newArr=[arr];
+console.log(newArr);
+```
+
+188.
+
+```js
+const obj={a:1};
+const newObj={obj};
+console.log(newObj);
+```
+
+189.
+
+```js
+const obj={a:1};
+const newObj={...obj,a:5};
+console.log(newObj);
+```
+
+190.
+
+```js
+const {a,...rest}={a:1,b:2,c:3};
+console.log(rest);
+```
+
+191.
+
+```js
+function sum(...args){
+  return args.length;
+}
+console.log(sum(1,2,3));
+```
+
+192.
+
+```js
+function sum(a,b,...rest){
+  console.log(rest);
+}
+sum(1,2,3,4);
+```
+
+193.
+
+```js
+const arr=[1,2];
+console.log(Math.max(...arr));
+```
+
+194.
+
+```js
+console.log({...{a:1},...{a:2}});
+```
+
+195.
+
+```js
+const a=[1,2];
+const b=a;
+b[0]=10;
+console.log(a);
+```
+
+196.
+
+```js
+const a=[1,2];
+const b=[...a];
+b[0]=10;
+console.log(a);
+```
+
+197.
+
+```js
+const obj={a:{b:1}};
+const copy={...obj};
+copy.a.b=10;
+console.log(obj.a.b);
+```
+
+198.
+
+```js
+const obj={a:{b:1}};
+const copy=JSON.parse(JSON.stringify(obj));
+copy.a.b=10;
+console.log(obj.a.b);
+```
+
+199.
+
+```js
+console.log([...[...[1,2]]]);
+```
+
+200.
+
+```js
+console.log({...{a:1},b:2});
+```
+
+---
+
+## 🔹 201–220: Numbers & Strings Edge Cases
+
+201.
+
+```js
+console.log("5"+1+2);
+```
+
+202.
+
+```js
+console.log(1+2+"5");
+```
+
+203.
+
+```js
+console.log("5"-2);
+```
+
+204.
+
+```js
+console.log("5"*2);
+```
+
+205.
+
+```js
+console.log("5"/2);
+```
+
+206.
+
+```js
+console.log("5"%2);
+```
+
+207.
+
+```js
+console.log(parseInt("08"));
+```
+
+208.
+
+```js
+console.log(parseFloat("10.5px"));
+```
+
+209.
+
+```js
+console.log(Number(true));
+```
+
+210.
+
+```js
+console.log(Number(false));
+```
+
+211.
+
+```js
+console.log(String(123));
+```
+
+212.
+
+```js
+console.log((123).toString());
+```
+
+213.
+
+```js
+console.log("hello".toUpperCase());
+```
+
+214.
+
+```js
+console.log("hello".includes("ell"));
+```
+
+215.
+
+```js
+console.log("hello".slice(1,4));
+```
+
+216.
+
+```js
+console.log("hello".substring(1,4));
+```
+
+217.
+
+```js
+console.log("hello".charAt(1));
+```
+
+218.
+
+```js
+console.log("hello".indexOf("l"));
+```
+
+219.
+
+```js
+console.log("hello".lastIndexOf("l"));
+```
+
+220.
+
+```js
+console.log("hello".split("l"));
+```
+
+---
+
+## 🔹 221–240: Logical & Comparison Tricks
+
+221.
+
+```js
+console.log(1 && 2);
+```
+
+222.
+
+```js
+console.log(0 && 2);
+```
+
+223.
+
+```js
+console.log(1 || 2);
+```
+
+224.
+
+```js
+console.log(0 || 2);
+```
+
+225.
+
+```js
+console.log(null ?? "JS");
+```
+
+226.
+
+```js
+console.log(0 ?? "JS");
+```
+
+227.
+
+```js
+console.log("" ?? "JS");
+```
+
+228.
+
+```js
+console.log(1 == true);
+```
+
+229.
+
+```js
+console.log(0 == false);
+```
+
+230.
+
+```js
+console.log("" == false);
+```
+
+231.
+
+```js
+console.log([] == 0);
+```
+
+232.
+
+```js
+console.log([1] == 1);
+```
+
+233.
+
+```js
+console.log([1,2] == "1,2");
+```
+
+234.
+
+```js
+console.log({} + 1);
+```
+
+235.
+
+```js
+console.log([] + 1);
+```
+
+236.
+
+```js
+console.log(+true);
+```
+
+237.
+
+```js
+console.log(+false);
+```
+
+238.
+
+```js
+console.log(+"123");
+```
+
+239.
+
+```js
+console.log(+"abc");
+```
+
+240.
+
+```js
+console.log(!"JS");
+```
+
+---
+
+🔥 Batch-3 Completed (100 Questions)
+
+Reply:
+
+* **Batch-4**
+* **Only Hard Level (Senior 5+ years)**
+* **Give Answers for Batch-3**
+* **Create 300 Question PDF**
+* **Node.js Specific Questions**
+
+We are now at **240 questions total** 🚀
+Let’s continue toward 1000+ 💪
+______________________________________________________________________________________________
+Perfect 🔥
+Here is Batch-4 – 100 Advanced JavaScript Output Questions
+(No answers — practice mode)
+
+We are now at **340 total questions** 🚀
+
+---
+
+# 🚀 JavaScript 100 Output Questions – Batch 4
+
+---
+
+## 🔹 241–260: Advanced Async & Promise Chains
+
+241.
+
+```js
+Promise.resolve(1)
+  .then(x => x + 1)
+  .then(x => { throw x; })
+  .catch(x => x + 10)
+  .then(x => console.log(x));
+```
+
+242.
+
+```js
+Promise.resolve()
+  .then(() => Promise.resolve(5))
+  .then(console.log);
+```
+
+243.
+
+```js
+Promise.resolve()
+  .then(() => 5)
+  .then(x => Promise.reject(x))
+  .catch(console.log);
+```
+
+244.
+
+```js
+async function test(){
+  return await 5;
+}
+test().then(console.log);
+```
+
+245.
+
+```js
+async function test(){
+  return 5;
+}
+console.log(test());
+```
+
+246.
+
+```js
+Promise.resolve()
+  .then(()=>console.log(1))
+  .then(()=>console.log(2));
+console.log(3);
+```
+
+247.
+
+```js
+setTimeout(()=>console.log(1),0);
+Promise.resolve().then(()=>console.log(2));
+queueMicrotask(()=>console.log(3));
+console.log(4);
+```
+
+248.
+
+```js
+async function a(){
+  console.log(1);
+  await Promise.resolve();
+  console.log(2);
+}
+a();
+setTimeout(()=>console.log(3),0);
+console.log(4);
+```
+
+249.
+
+```js
+Promise.all([Promise.resolve(1),Promise.resolve(2)])
+  .then(console.log);
+```
+
+250.
+
+```js
+Promise.race([Promise.resolve(1),Promise.resolve(2)])
+  .then(console.log);
+```
+
+251.
+
+```js
+Promise.all([Promise.resolve(1),Promise.reject(2)])
+  .then(console.log)
+  .catch(console.log);
+```
+
+252.
+
+```js
+Promise.any([Promise.reject(1),Promise.resolve(2)])
+  .then(console.log);
+```
+
+253.
+
+```js
+Promise.any([Promise.reject(1),Promise.reject(2)])
+  .catch(e=>console.log(e.errors));
+```
+
+254.
+
+```js
+Promise.resolve()
+  .then(()=>console.log("A"))
+  .finally(()=>console.log("B"));
+```
+
+255.
+
+```js
+Promise.reject("Err")
+  .finally(()=>console.log("Final"))
+  .catch(console.log);
+```
+
+256.
+
+```js
+async function x(){
+  try{
+    throw "Error";
+  }catch(e){
+    console.log(e);
+  }
+}
+x();
+```
+
+257.
+
+```js
+async function x(){
+  try{
+    return 10;
+  }finally{
+    return 20;
+  }
+}
+x().then(console.log);
+```
+
+258.
+
+```js
+(async ()=>{
+  console.log(await 5);
+})();
+```
+
+259.
+
+```js
+(async ()=>{
+  console.log(await Promise.reject("X"));
+})();
+```
+
+260.
+
+```js
+(async ()=>{
+  try{
+    console.log(await Promise.reject("X"));
+  }catch(e){
+    console.log(e);
+  }
+})();
+```
+
+---
+
+## 🔹 261–280: Object Tricks & Property Descriptors
+
+261.
+
+```js
+const obj = {a:1};
+Object.freeze(obj);
+obj.a = 5;
+console.log(obj.a);
+```
+
+262.
+
+```js
+const obj = {a:1};
+Object.seal(obj);
+obj.b = 2;
+console.log(obj.b);
+```
+
+263.
+
+```js
+const obj = {a:1};
+Object.preventExtensions(obj);
+obj.b = 2;
+console.log(obj.b);
+```
+
+264.
+
+```js
+const obj = {};
+Object.defineProperty(obj,"x",{value:10});
+console.log(obj.x);
+```
+
+265.
+
+```js
+const obj = {};
+Object.defineProperty(obj,"x",{value:10,writable:false});
+obj.x = 20;
+console.log(obj.x);
+```
+
+266.
+
+```js
+const obj = {a:1};
+console.log(Object.keys(obj));
+```
+
+267.
+
+```js
+const obj = {a:1};
+console.log(Object.getOwnPropertyNames(obj));
+```
+
+268.
+
+```js
+const obj = Object.create({a:1});
+console.log(obj.a);
+```
+
+269.
+
+```js
+const obj = Object.create(null);
+console.log(obj.toString);
+```
+
+270.
+
+```js
+const obj = {a:1};
+for(let key in obj){
+  console.log(key);
+}
+```
+
+271.
+
+```js
+const obj = {a:1};
+Object.defineProperty(obj,"b",{value:2,enumerable:false});
+console.log(Object.keys(obj));
+```
+
+272.
+
+```js
+const obj = {a:1};
+Object.defineProperty(obj,"b",{value:2,enumerable:false});
+for(let key in obj){
+  console.log(key);
+}
+```
+
+273.
+
+```js
+const obj = {a:1};
+console.log(Object.entries(obj));
+```
+
+274.
+
+```js
+const obj = {a:1};
+console.log(JSON.stringify(obj));
+```
+
+275.
+
+```js
+const obj = {a:undefined};
+console.log(JSON.stringify(obj));
+```
+
+276.
+
+```js
+const obj = {a:function(){}};
+console.log(JSON.stringify(obj));
+```
+
+277.
+
+```js
+const obj = {a:Symbol("x")};
+console.log(JSON.stringify(obj));
+```
+
+278.
+
+```js
+const obj = {a:1};
+Object.defineProperty(obj,"a",{configurable:false});
+delete obj.a;
+console.log(obj.a);
+```
+
+279.
+
+```js
+const obj = {a:1};
+Object.defineProperty(obj,"a",{writable:false});
+obj.a=10;
+console.log(obj.a);
+```
+
+280.
+
+```js
+const obj = {a:1};
+console.log(Object.getOwnPropertyDescriptor(obj,"a"));
+```
+
+---
+
+## 🔹 281–300: ES6+ Advanced Concepts
+
+281.
+
+```js
+const s = new Set([1,2,2,3]);
+console.log(s.size);
+```
+
+282.
+
+```js
+const m = new Map();
+m.set("a",1);
+console.log(m.get("a"));
+```
+
+283.
+
+```js
+const m = new Map();
+m.set({a:1},10);
+console.log(m.get({a:1}));
+```
+
+284.
+
+```js
+const s = new Set();
+s.add({a:1});
+s.add({a:1});
+console.log(s.size);
+```
+
+285.
+
+```js
+console.log(Symbol("a") === Symbol("a"));
+```
+
+286.
+
+```js
+const sym = Symbol("a");
+const obj = {[sym]:10};
+console.log(obj[sym]);
+```
+
+287.
+
+```js
+console.log(typeof Symbol());
+```
+
+288.
+
+```js
+console.log(typeof BigInt(10));
+```
+
+289.
+
+```js
+console.log(10n + 5n);
+```
+
+290.
+
+```js
+console.log(10n + 5);
+```
+
+291.
+
+```js
+const obj = {a:1};
+Object.assign(obj,{b:2});
+console.log(obj);
+```
+
+292.
+
+```js
+const obj = {a:1};
+const copy = Object.assign({},obj);
+copy.a=10;
+console.log(obj.a);
+```
+
+293.
+
+```js
+class A{
+  static x(){
+    return 10;
+  }
+}
+console.log(A.x());
+```
+
+294.
+
+```js
+class A{
+  x(){
+    return 10;
+  }
+}
+console.log(new A().x());
+```
+
+295.
+
+```js
+class A{
+  constructor(){
+    this.x=10;
+  }
+}
+console.log(A.x);
+```
+
+296.
+
+```js
+class A{
+  constructor(){
+    this.x=10;
+  }
+}
+console.log(new A().constructor===A);
+```
+
+297.
+
+```js
+const obj = {a:1};
+Object.setPrototypeOf(obj,{b:2});
+console.log(obj.b);
+```
+
+298.
+
+```js
+const obj = {};
+Object.setPrototypeOf(obj,null);
+console.log(obj.toString);
+```
+
+299.
+
+```js
+const arr = [1,2,3];
+arr.length = 1;
+console.log(arr);
+```
+
+300.
+
+```js
+const arr = [1,2,3];
+arr.length = 5;
+console.log(arr);
+```
+
+---
+
+🔥 **Batch-4 Completed (Questions 241–300)**
+We are now at **300 total questions** 💪🚀
+
+Reply:
+
+* **Batch-5**
+* **Only Senior Level (Very Hard)**
+* **Node.js Specific**
+* **Frontend (DOM + Browser) Questions**
+* **Give Answers for Batch-4**
+* **Create 300 Question PDF**
+
+Let’s continue toward 1000+ 🔥
+______________________________________________________________________________________________
+Perfect 🔥
+Here is Batch-5 – 100 Senior Level JavaScript Output Questions
+(No answers — interview practice mode)
+
+We are now at **400 total questions** 🚀💪
+
+---
+
+# 🚀 JavaScript 100 Output Questions – Batch 5
+
+---
+
+## 🔹 301–320: Execution Context & Edge Hoisting
+
+301.
+
+```js
+var a = 10;
+(function(){
+  console.log(a);
+  a = 20;
+})();
+```
+
+302.
+
+```js
+let a = 10;
+{
+  console.log(a);
+  let a = 20;
+}
+```
+
+303.
+
+```js
+var a = 10;
+function test(){
+  console.log(a);
+}
+(function(){
+  var a = 20;
+  test();
+})();
+```
+
+304.
+
+```js
+function foo(){
+  console.log(foo);
+}
+foo();
+```
+
+305.
+
+```js
+(function(){
+  console.log(typeof arguments);
+})();
+```
+
+306.
+
+```js
+function foo(a){
+  arguments[0] = 20;
+  console.log(a);
+}
+foo(10);
+```
+
+307.
+
+```js
+function foo(a){
+  "use strict";
+  arguments[0] = 20;
+  console.log(a);
+}
+foo(10);
+```
+
+308.
+
+```js
+console.log(function f(){}.name);
+```
+
+309.
+
+```js
+const f = function(){};
+console.log(f.name);
+```
+
+310.
+
+```js
+console.log((function(){ return typeof x; })());
+var x = 10;
+```
+
+311.
+
+```js
+(function(){
+  console.log(x);
+})();
+let x = 10;
+```
+
+312.
+
+```js
+{
+  function x(){ return 1; }
+}
+console.log(typeof x);
+```
+
+313.
+
+```js
+function x(){ return 1; }
+{
+  function x(){ return 2; }
+}
+console.log(x());
+```
+
+314.
+
+```js
+var x = 1;
+{
+  var x = 2;
+}
+console.log(x);
+```
+
+315.
+
+```js
+let x = 1;
+{
+  var x = 2;
+}
+console.log(x);
+```
+
+316.
+
+```js
+console.log(a);
+if(false){
+  var a = 10;
+}
+```
+
+317.
+
+```js
+if(true){
+  function x(){ return 1; }
+}
+console.log(typeof x);
+```
+
+318.
+
+```js
+console.log(typeof y);
+```
+
+319.
+
+```js
+var a = 10;
+delete a;
+console.log(a);
+```
+
+320.
+
+```js
+let a = 10;
+delete a;
+console.log(a);
+```
+
+---
+
+## 🔹 321–340: Memory, Reference & Mutation Traps
+
+321.
+
+```js
+let a = [1,2];
+let b = a;
+a = [3,4];
+console.log(b);
+```
+
+322.
+
+```js
+let a = {x:1};
+let b = a;
+a.x = 5;
+a = {x:10};
+console.log(b.x);
+```
+
+323.
+
+```js
+let a = [1,2];
+let b = a.slice();
+b.push(3);
+console.log(a.length);
+```
+
+324.
+
+```js
+let a = {x:1};
+let b = {...a};
+b.x = 5;
+console.log(a.x);
+```
+
+325.
+
+```js
+let a = {x:{y:1}};
+let b = {...a};
+b.x.y = 10;
+console.log(a.x.y);
+```
+
+326.
+
+```js
+let a = {x:{y:1}};
+let b = JSON.parse(JSON.stringify(a));
+b.x.y = 10;
+console.log(a.x.y);
+```
+
+327.
+
+```js
+const obj = {a:1};
+Object.freeze(obj);
+obj.a = 10;
+console.log(obj.a);
+```
+
+328.
+
+```js
+const obj = {a:{b:1}};
+Object.freeze(obj);
+obj.a.b = 5;
+console.log(obj.a.b);
+```
+
+329.
+
+```js
+const obj = {a:1};
+Object.seal(obj);
+delete obj.a;
+console.log(obj.a);
+```
+
+330.
+
+```js
+const obj = {a:1};
+Object.preventExtensions(obj);
+obj.a = 2;
+console.log(obj.a);
+```
+
+331.
+
+```js
+let arr = [1,2,3];
+Object.freeze(arr);
+arr[0] = 10;
+console.log(arr[0]);
+```
+
+332.
+
+```js
+let arr = [1,2,3];
+arr.length = 0;
+console.log(arr);
+```
+
+333.
+
+```js
+let arr = [1,2,3];
+delete arr[1];
+console.log(arr);
+```
+
+334.
+
+```js
+let arr = [1,2,3];
+arr[5] = 10;
+console.log(arr.length);
+```
+
+335.
+
+```js
+let arr = [];
+arr[100] = 1;
+console.log(arr.length);
+```
+
+336.
+
+```js
+let obj = {};
+console.log(obj.__proto__ === Object.prototype);
+```
+
+337.
+
+```js
+let obj = Object.create(null);
+console.log(obj.__proto__);
+```
+
+338.
+
+```js
+console.log(Object.prototype.toString.call([]));
+```
+
+339.
+
+```js
+console.log(Object.prototype.toString.call(null));
+```
+
+340.
+
+```js
+console.log(Object.prototype.toString.call(undefined));
+```
+
+---
+
+## 🔹 341–360: Advanced Logical & Conversion Madness
+
+341.
+
+```js
+console.log([] == ![]);
+```
+
+342.
+
+```js
+console.log(![] == []);
+```
+
+343.
+
+```js
+console.log({} == !{});
+```
+
+344.
+
+```js
+console.log([] + {});
+```
+
+345.
+
+```js
+console.log({} + []);
+```
+
+346.
+
+```js
+console.log(+[]);
+```
+
+347.
+
+```js
+console.log(+{});
+```
+
+348.
+
+```js
+console.log([] + 1 + 2);
+```
+
+349.
+
+```js
+console.log(1 + 2 + []);
+```
+
+350.
+
+```js
+console.log([1] + [2]);
+```
+
+351.
+
+```js
+console.log([1,2] + [3,4]);
+```
+
+352.
+
+```js
+console.log([] == 0);
+```
+
+353.
+
+```js
+console.log([] == "0");
+```
+
+354.
+
+```js
+console.log(false == "0");
+```
+
+355.
+
+```js
+console.log(null == 0);
+```
+
+356.
+
+```js
+console.log(undefined == 0);
+```
+
+357.
+
+```js
+console.log(null >= 0);
+```
+
+358.
+
+```js
+console.log(null > 0);
+```
+
+359.
+
+```js
+console.log(null == 0);
+```
+
+360.
+
+```js
+console.log(" \t\n" == 0);
+```
+
+---
+
+## 🔹 361–400: Real Senior-Level Brain Twisters
+
+361.
+
+```js
+function foo(){
+  return
+  10;
+}
+console.log(foo());
+```
+
+362.
+
+```js
+console.log(1 === 1n);
+```
+
+363.
+
+```js
+console.log(1 == 1n);
+```
+
+364.
+
+```js
+console.log(typeof NaN);
+```
+
+365.
+
+```js
+console.log(NaN === NaN);
+```
+
+366.
+
+```js
+console.log(Object.is(NaN, NaN));
+```
+
+367.
+
+```js
+console.log(Object.is(0, -0));
+```
+
+368.
+
+```js
+console.log(0 === -0);
+```
+
+369.
+
+```js
+console.log(Math.max());
+```
+
+370.
+
+```js
+console.log(Math.min());
+```
+
+371.
+
+```js
+console.log(parseInt("101", 2));
+```
+
+372.
+
+```js
+console.log(parseInt("11", 8));
+```
+
+373.
+
+```js
+console.log(isNaN("123"));
+```
+
+374.
+
+```js
+console.log(Number.isNaN("123"));
+```
+
+375.
+
+```js
+console.log(Number.isNaN(NaN));
+```
+
+376.
+
+```js
+console.log(typeof null);
+```
+
+377.
+
+```js
+console.log(typeof undefined);
+```
+
+378.
+
+```js
+console.log(typeof []);
+```
+
+379.
+
+```js
+console.log(typeof {});
+```
+
+380.
+
+```js
+console.log(typeof function(){} );
+```
+
+381.
+
+```js
+console.log("b" + "a" + + "a" + "a");
+```
+
+382.
+
+```js
+console.log(("5" - - "2"));
+```
+
+383.
+
+```js
+console.log(("5" - + "2"));
+```
+
+384.
+
+```js
+console.log((true + true) * false);
+```
+
+385.
+
+```js
+console.log(!![]);
+```
+
+386.
+
+```js
+console.log(!!{});
+```
+
+387.
+
+```js
+console.log(Boolean("false"));
+```
+
+388.
+
+```js
+console.log(Boolean("0"));
+```
+
+389.
+
+```js
+console.log(Boolean(0));
+```
+
+390.
+
+```js
+console.log(Boolean(null));
+```
+
+391.
+
+```js
+console.log(1 && 0 || 2);
+```
+
+392.
+
+```js
+console.log((1 && 0) || 2);
+```
+
+393.
+
+```js
+console.log(1 && (0 || 2));
+```
+
+394.
+
+```js
+console.log(0 || 1 && 2);
+```
+
+395.
+
+```js
+console.log((0 || 1) && 2);
+```
+
+396.
+
+```js
+console.log(0 && 1 || 2);
+```
+
+397.
+
+```js
+console.log((0 && 1) || 2);
+```
+
+398.
+
+```js
+console.log(0 && (1 || 2));
+```
+
+399.
+
+```js
+console.log("JS" && 0);
+```
+
+400.
+
+```js
+console.log("JS" || 0);
+```
+
+---
+
+🔥 **Batch-5 Completed (301–400)**
+You now have **400 high-quality JavaScript output questions**.
+
+Reply:
+
+* **Batch-6**
+* **Ultra Hard (Architect Level)**
+* **Node.js Event Loop Deep**
+* **Browser DOM Specific**
+* **Give Answers (Batch 5)**
+* **Create 400 Question PDF**
+
+We continue toward 1000+ 🚀💪
+
+______________________________________________________________________________________________
+Perfect 🔥
+Here is Batch-6 – 100 Ultra Advanced JavaScript Output Questions
+(No answers — serious interview mode)
+
+We are now at **500 total questions** 🚀💪
+
+---
+
+# 🚀 JavaScript 100 Output Questions – Batch 6
+
+---
+
+## 🔹 401–420: Closures + Async Combination
+
+401.
+
+```js
+for (var i = 0; i < 3; i++) {
+  Promise.resolve().then(() => console.log(i));
+}
+```
+
+402.
+
+```js
+for (let i = 0; i < 3; i++) {
+  Promise.resolve().then(() => console.log(i));
+}
+```
+
+403.
+
+```js
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 0);
+}
+console.log("Done");
+```
+
+404.
+
+```js
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 0);
+}
+console.log("Done");
+```
+
+405.
+
+```js
+function x() {
+  for (var i = 1; i <= 3; i++) {
+    setTimeout(function () {
+      console.log(i);
+    }, i * 100);
+  }
+}
+x();
+```
+
+406.
+
+```js
+function x() {
+  for (let i = 1; i <= 3; i++) {
+    setTimeout(function () {
+      console.log(i);
+    }, i * 100);
+  }
+}
+x();
+```
+
+407.
+
+```js
+var i = 5;
+function test() {
+  console.log(i);
+  var i = 10;
+}
+test();
+```
+
+408.
+
+```js
+let i = 5;
+function test() {
+  console.log(i);
+}
+test();
+```
+
+409.
+
+```js
+function outer() {
+  let count = 0;
+  return async function () {
+    count++;
+    await Promise.resolve();
+    console.log(count);
+  };
+}
+const fn = outer();
+fn();
+fn();
+```
+
+410.
+
+```js
+async function test() {
+  console.log(1);
+  await 0;
+  console.log(2);
+}
+test();
+console.log(3);
+```
+
+411.
+
+```js
+async function test() {
+  return 1;
+}
+console.log(test());
+```
+
+412.
+
+```js
+async function test() {
+  return Promise.resolve(5);
+}
+test().then(console.log);
+```
+
+413.
+
+```js
+(async function () {
+  console.log(await 1);
+})();
+```
+
+414.
+
+```js
+(async function () {
+  try {
+    console.log(await Promise.reject("Error"));
+  } catch (e) {
+    console.log("Caught");
+  }
+})();
+```
+
+415.
+
+```js
+Promise.resolve(1)
+  .then(x => x + 1)
+  .then(x => Promise.resolve(x + 1))
+  .then(console.log);
+```
+
+416.
+
+```js
+Promise.resolve()
+  .then(() => console.log("A"))
+  .then(() => { throw "B"; })
+  .catch(e => console.log(e));
+```
+
+417.
+
+```js
+Promise.resolve()
+  .then(() => Promise.reject("X"))
+  .catch(e => e + "Y")
+  .then(console.log);
+```
+
+418.
+
+```js
+Promise.resolve()
+  .then(() => 1)
+  .finally(() => console.log("Final"))
+  .then(console.log);
+```
+
+419.
+
+```js
+Promise.reject("Err")
+  .finally(() => console.log("Finally"))
+  .catch(console.log);
+```
+
+420.
+
+```js
+Promise.resolve()
+  .then(() => console.log(1))
+  .then(() => console.log(2));
+console.log(3);
+```
+
+---
+
+## 🔹 421–440: Prototype & Class Deep Edge Cases
+
+421.
+
+```js
+function A() {}
+A.prototype.x = 10;
+const a = new A();
+console.log(a.__proto__.x);
+```
+
+422.
+
+```js
+function A() {}
+A.prototype.x = 10;
+const a = new A();
+a.x = 20;
+console.log(a.__proto__.x);
+```
+
+423.
+
+```js
+class A {
+  constructor() {
+    this.x = 10;
+  }
+}
+class B extends A {}
+const b = new B();
+console.log(b.x);
+```
+
+424.
+
+```js
+class A {
+  static x = 10;
+}
+const a = new A();
+console.log(a.x);
+```
+
+425.
+
+```js
+class A {
+  x = 10;
+  static y = 20;
+}
+console.log(A.y);
+```
+
+426.
+
+```js
+function A() {}
+A.prototype = { x: 10 };
+const a = new A();
+console.log(a.constructor === A);
+```
+
+427.
+
+```js
+function A() {}
+A.prototype.x = 10;
+delete A.prototype.x;
+const a = new A();
+console.log(a.x);
+```
+
+428.
+
+```js
+const obj = {};
+Object.setPrototypeOf(obj, { x: 10 });
+console.log(obj.x);
+```
+
+429.
+
+```js
+const obj = Object.create(null);
+console.log("toString" in obj);
+```
+
+430.
+
+```js
+function A() {}
+function B() {}
+B.prototype = new A();
+const b = new B();
+console.log(b instanceof A);
+```
+
+431.
+
+```js
+console.log(Object.getPrototypeOf([]) === Array.prototype);
+```
+
+432.
+
+```js
+console.log(Object.getPrototypeOf({}) === Object.prototype);
+```
+
+433.
+
+```js
+console.log([] instanceof Object);
+```
+
+434.
+
+```js
+console.log({} instanceof Array);
+```
+
+435.
+
+```js
+class A {
+  constructor() {
+    this.x = 10;
+  }
+}
+const a = new A();
+console.log(a.hasOwnProperty("x"));
+```
+
+436.
+
+```js
+function A() {}
+A.prototype.y = 20;
+const a = new A();
+console.log(a.hasOwnProperty("y"));
+```
+
+437.
+
+```js
+function A() {}
+A.prototype.y = 20;
+const a = new A();
+a.y = 30;
+console.log(a.hasOwnProperty("y"));
+```
+
+438.
+
+```js
+const obj = { a: 1 };
+Object.freeze(obj);
+delete obj.a;
+console.log(obj.a);
+```
+
+439.
+
+```js
+const obj = { a: 1 };
+Object.seal(obj);
+obj.a = 5;
+console.log(obj.a);
+```
+
+440.
+
+```js
+const obj = { a: 1 };
+Object.preventExtensions(obj);
+obj.a = 5;
+console.log(obj.a);
+```
+
+---
+
+## 🔹 441–460: ES6+ Advanced & Symbol / BigInt
+
+441.
+
+```js
+const s1 = Symbol("x");
+const s2 = Symbol("x");
+console.log(s1 === s2);
+```
+
+442.
+
+```js
+const s = Symbol("x");
+const obj = { [s]: 10 };
+console.log(Object.keys(obj));
+```
+
+443.
+
+```js
+console.log(typeof BigInt(10));
+```
+
+444.
+
+```js
+console.log(10n + 5n);
+```
+
+445.
+
+```js
+console.log(10n == 10);
+```
+
+446.
+
+```js
+console.log(10n === 10);
+```
+
+447.
+
+```js
+const m = new Map();
+m.set({}, 10);
+console.log(m.get({}));
+```
+
+448.
+
+```js
+const s = new Set();
+s.add({});
+s.add({});
+console.log(s.size);
+```
+
+449.
+
+```js
+const arr = [1, 2, 3];
+arr.length = 1;
+console.log(arr);
+```
+
+450.
+
+```js
+const arr = [1, 2, 3];
+arr.length = 5;
+console.log(arr);
+```
+
+451.
+
+```js
+console.log([..."JS"]);
+```
+
+452.
+
+```js
+console.log({...[1,2,3]});
+```
+
+453.
+
+```js
+console.log({...{a:1}, ...{a:2}});
+```
+
+454.
+
+```js
+console.log([1,2] + [3,4]);
+```
+
+455.
+
+```js
+console.log([] + {});
+```
+
+456.
+
+```js
+console.log({} + []);
+```
+
+457.
+
+```js
+console.log(+true);
+```
+
+458.
+
+```js
+console.log(+false);
+```
+
+459.
+
+```js
+console.log(+"123abc");
+```
+
+460.
+
+```js
+console.log(!!{});
+```
+
+---
+
+## 🔹 461–500: Real Architect-Level Brain Twisters
+
+461.
+
+```js
+console.log("b" + "a" + + "a" + "a");
+```
+
+462.
+
+```js
+console.log(0 == "0");
+```
+
+463.
+
+```js
+console.log(0 === "0");
+```
+
+464.
+
+```js
+console.log(null == undefined);
+```
+
+465.
+
+```js
+console.log(null === undefined);
+```
+
+466.
+
+```js
+console.log([] == false);
+```
+
+467.
+
+```js
+console.log([] === false);
+```
+
+468.
+
+```js
+console.log([1] == true);
+```
+
+469.
+
+```js
+console.log([2] == true);
+```
+
+470.
+
+```js
+console.log([1,2] == "1,2");
+```
+
+471.
+
+```js
+console.log(NaN === NaN);
+```
+
+472.
+
+```js
+console.log(Object.is(NaN, NaN));
+```
+
+473.
+
+```js
+console.log(Object.is(0, -0));
+```
+
+474.
+
+```js
+console.log(0 === -0);
+```
+
+475.
+
+```js
+console.log(typeof null);
+```
+
+476.
+
+```js
+console.log(typeof undefined);
+```
+
+477.
+
+```js
+console.log(typeof []);
+```
+
+478.
+
+```js
+console.log(typeof {});
+```
+
+479.
+
+```js
+console.log(typeof function(){} );
+```
+
+480.
+
+```js
+console.log(Boolean("false"));
+```
+
+481.
+
+```js
+console.log(Boolean("0"));
+```
+
+482.
+
+```js
+console.log(Boolean(""));
+```
+
+483.
+
+```js
+console.log(1 && 0 || 2);
+```
+
+484.
+
+```js
+console.log(0 || 1 && 2);
+```
+
+485.
+
+```js
+console.log((0 || 1) && 2);
+```
+
+486.
+
+```js
+console.log(0 && 1 || 2);
+```
+
+487.
+
+```js
+console.log("JS" && 0);
+```
+
+488.
+
+```js
+console.log("JS" || 0);
+```
+
+489.
+
+```js
+console.log(1 < 2 < 3);
+```
+
+490.
+
+```js
+console.log(3 > 2 > 1);
+```
+
+491.
+
+```js
+console.log([1,2,3].map(parseInt));
+```
+
+492.
+
+```js
+console.log(parseInt("10px"));
+```
+
+493.
+
+```js
+console.log(parseInt("px10"));
+```
+
+494.
+
+```js
+console.log(isNaN("hello"));
+```
+
+495.
+
+```js
+console.log(Number.isNaN("hello"));
+```
+
+496.
+
+```js
+console.log(0.1 + 0.2 === 0.3);
+```
+
+497.
+
+```js
+console.log(9007199254740991 + 1);
+```
+
+498.
+
+```js
+console.log(Math.max());
+```
+
+499.
+
+```js
+console.log(Math.min());
+```
+
+500.
+
+```js
+console.log(typeof (function(){}()));
+```
+
+---
+
+🔥 **Batch-6 Completed (401–500)**
+You now have **500 JavaScript Interview Output Questions**.
+
+Reply:
+
+* **Batch-7**
+* **Extreme Architect Level**
+* **Node.js Deep Event Loop**
+* **Browser / DOM Specific**
+* **Give Answers Batch-6**
+* **Create 500 Question PDF**
+
+We are halfway to 1000+ 🚀💪
+
+______________________________________________________________________________________________
+Great 👍
+
+Here is **Batch-7** (JavaScript tricky/output questions):
+
+---
+
+### 6️⃣1️⃣ Output?
+
+```js
+console.log([] + []);
+```
+
+**Answer:**
+
+```
+""
+```
+
+👉 Both arrays convert to empty strings → `"" + ""` = `""`
+
+---
+
+### 6️⃣2️⃣ Output?
+
+```js
+console.log([] + {});
+```
+
+**Answer:**
+
+```
+"[object Object]"
+```
+
+👉 `[]` → `""`
+👉 `{}` → `"[object Object]"`
+👉 Result → `"[object Object]"`
+
+---
+
+### 6️⃣3️⃣ Output?
+
+```js
+console.log({} + []);
+```
+
+**Answer (in browser):**
+
+```
+0
+```
+
+👉 `{}` is treated as empty block
+👉 `+[]` → `+""` → `0`
+
+---
+
+### 6️⃣4️⃣ Output?
+
+```js
+console.log(true + false);
+```
+
+**Answer:**
+
+```
+1
+```
+
+👉 `true = 1`, `false = 0`
+
+---
+
+### 6️⃣5️⃣ Output?
+
+```js
+console.log("5" - - "2");
+```
+
+**Answer:**
+
+```
+7
+```
+
+👉 `"5"` → 5
+👉 `-"2"` → -2
+👉 `5 - (-2)` → 7
+
+---
+
+### 6️⃣6️⃣ Output?
+
+```js
+let x = 10;
+(function() {
+  console.log(x);
+  let x = 20;
+})();
+```
+
+**Answer:**
+
+```
+ReferenceError
+```
+
+👉 `let x` inside function is in **temporal dead zone**
+
+---
+
+### 6️⃣7️⃣ Output?
+
+```js
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 100);
+}
+```
+
+**Answer:**
+
+```
+0
+1
+2
+```
+
+👉 `let` creates new block scope for each iteration
+
+---
+
+### 6️⃣8️⃣ Output?
+
+```js
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 100);
+}
+```
+
+**Answer:**
+
+```
+3
+3
+3
+```
+
+👉 `var` is function-scoped → final value is 3
+
+---
+
+### 6️⃣9️⃣ Output?
+
+```js
+console.log(typeof null);
+```
+
+**Answer:**
+
+```
+"object"
+```
+
+👉 This is a **JavaScript bug** (historical mistake)
+
+---
+
+### 7️⃣0️⃣ Output?
+
+```js
+console.log(!![]);
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 Empty array is **truthy**
+
+---
+
+If you want 👉 **Batch-8**, say “Next Batch” 😄
+
+______________________________________________________________________________________________
+
+Here is **Batch-8** 🚀 (JavaScript Tricky / Output Questions)
+
+---
+
+### 7️⃣1️⃣ Output?
+
+```js
+console.log([] == false);
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 `[]` → `""` → `0`
+👉 `false` → `0`
+👉 `0 == 0` → `true`
+
+---
+
+### 7️⃣2️⃣ Output?
+
+```js
+console.log([] === false);
+```
+
+**Answer:**
+
+```
+false
+```
+
+👉 Different types → no type coercion in `===`
+
+---
+
+### 7️⃣3️⃣ Output?
+
+```js
+console.log(null == undefined);
+console.log(null === undefined);
+```
+
+**Answer:**
+
+```
+true
+false
+```
+
+👉 `==` considers them equal
+👉 `===` checks type also
+
+---
+
+### 7️⃣4️⃣ Output?
+
+```js
+console.log("10" + 1 - 1);
+```
+
+**Answer:**
+
+```
+100
+```
+
+👉 `"10" + 1` → `"101"`
+👉 `"101" - 1` → `100`
+
+---
+
+### 7️⃣5️⃣ Output?
+
+```js
+console.log(0.1 + 0.2 === 0.3);
+```
+
+**Answer:**
+
+```
+false
+```
+
+👉 Floating point precision issue
+👉 `0.1 + 0.2 = 0.30000000000000004`
+
+---
+
+### 7️⃣6️⃣ Output?
+
+```js
+console.log(NaN == NaN);
+console.log(NaN === NaN);
+```
+
+**Answer:**
+
+```
+false
+false
+```
+
+👉 `NaN` is never equal to itself
+
+---
+
+### 7️⃣7️⃣ Output?
+
+```js
+let a = { name: "JS" };
+let b = a;
+b.name = "JavaScript";
+console.log(a.name);
+```
+
+**Answer:**
+
+```
+JavaScript
+```
+
+👉 Objects are reference types
+
+---
+
+### 7️⃣8️⃣ Output?
+
+```js
+console.log(typeof NaN);
+```
+
+**Answer:**
+
+```
+"number"
+```
+
+👉 `NaN` stands for Not-a-Number, but type is number
+
+---
+
+### 7️⃣9️⃣ Output?
+
+```js
+console.log("5" * "2");
+```
+
+**Answer:**
+
+```
+10
+```
+
+👉 `*` converts strings to numbers
+
+---
+
+### 8️⃣0️⃣ Output?
+
+```js
+console.log([1,2] + [3,4]);
+```
+
+**Answer:**
+
+```
+"1,23,4"
+```
+
+👉 Arrays convert to strings → `"1,2" + "3,4"`
+
+---
+
+Say **Batch-9** for next set 🔥
+
+______________________________________________________________________________________________
+Here is **Batch-9** 🚀 (JavaScript Tricky / Output Questions)
+
+---
+
+### 8️⃣1️⃣ Output?
+
+```js
+console.log(typeof undefined);
+```
+
+**Answer:**
+
+```
+"undefined"
+```
+
+---
+
+### 8️⃣2️⃣ Output?
+
+```js
+console.log(typeof function() {});
+```
+
+**Answer:**
+
+```
+"function"
+```
+
+👉 Functions are special objects in JS
+
+---
+
+### 8️⃣3️⃣ Output?
+
+```js
+console.log([] == ![]);
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 `![]` → `false`
+👉 `[] == false` → `true`
+
+---
+
+### 8️⃣4️⃣ Output?
+
+```js
+let a = 1;
+let b = a++;
+console.log(a, b);
+```
+
+**Answer:**
+
+```
+2 1
+```
+
+👉 Post-increment returns old value
+
+---
+
+### 8️⃣5️⃣ Output?
+
+```js
+let a = 1;
+let b = ++a;
+console.log(a, b);
+```
+
+**Answer:**
+
+```
+2 2
+```
+
+👉 Pre-increment returns updated value
+
+---
+
+### 8️⃣6️⃣ Output?
+
+```js
+console.log("2" > 1);
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 `"2"` converts to number → `2 > 1`
+
+---
+
+### 8️⃣7️⃣ Output?
+
+```js
+console.log("a" > "b");
+```
+
+**Answer:**
+
+```
+false
+```
+
+👉 String comparison uses Unicode values
+
+---
+
+### 8️⃣8️⃣ Output?
+
+```js
+console.log(1 < 2 < 3);
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 `1 < 2` → `true`
+👉 `true < 3` → `1 < 3` → `true`
+
+---
+
+### 8️⃣9️⃣ Output?
+
+```js
+console.log(3 > 2 > 1);
+```
+
+**Answer:**
+
+```
+false
+```
+
+👉 `3 > 2` → `true`
+👉 `true > 1` → `1 > 1` → `false`
+
+---
+
+### 9️⃣0️⃣ Output?
+
+```js
+console.log(+true);
+console.log(+false);
+```
+
+**Answer:**
+
+```
+1
+0
+```
+
+👉 Unary `+` converts to number
+
+---
+
+Say **Batch-10** for next set 🔥
+
+______________________________________________________________________________________________
+Here is **Batch-10** 🚀 (JavaScript Tricky / Output Questions)
+
+---
+
+### 9️⃣1️⃣ Output?
+
+```js
+console.log("5" + 3 + 2);
+```
+
+**Answer:**
+
+```
+"532"
+```
+
+👉 `"5" + 3` → `"53"`
+👉 `"53" + 2` → `"532"`
+
+---
+
+### 9️⃣2️⃣ Output?
+
+```js
+console.log(3 + 2 + "5");
+```
+
+**Answer:**
+
+```
+"55"
+```
+
+👉 `3 + 2` → `5`
+👉 `5 + "5"` → `"55"`
+
+---
+
+### 9️⃣3️⃣ Output?
+
+```js
+console.log(!!"");
+```
+
+**Answer:**
+
+```
+false
+```
+
+👉 Empty string is **falsy**
+
+---
+
+### 9️⃣4️⃣ Output?
+
+```js
+console.log(Boolean("0"));
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 Non-empty string is truthy (even `"0"`)
+
+---
+
+### 9️⃣5️⃣ Output?
+
+```js
+console.log(typeof []);
+```
+
+**Answer:**
+
+```
+"object"
+```
+
+👉 Arrays are objects in JavaScript
+
+---
+
+### 9️⃣6️⃣ Output?
+
+```js
+console.log(Array.isArray([]));
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 Correct way to check array
+
+---
+
+### 9️⃣7️⃣ Output?
+
+```js
+console.log(parseInt("10px"));
+```
+
+**Answer:**
+
+```
+10
+```
+
+👉 Parses number until non-number character
+
+---
+
+### 9️⃣8️⃣ Output?
+
+```js
+console.log(parseInt("px10"));
+```
+
+**Answer:**
+
+```
+NaN
+```
+
+👉 Must start with number
+
+---
+
+### 9️⃣9️⃣ Output?
+
+```js
+console.log(isNaN("hello"));
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 `"hello"` converts to `NaN`
+
+---
+
+### 🔟0️⃣0️⃣ Output?
+
+```js
+console.log(Number(" "));
+```
+
+**Answer:**
+
+```
+0
+```
+
+👉 Empty space string converts to 0
+
+---
+
+🔥 You have now completed **100 JavaScript tricky questions!**
+
+If you want:
+
+* **Batch-11 (Advanced Level)**
+* **Promises / Async special batch**
+* **Closures special batch**
+* **Interview rapid-fire 50 questions**
+
+Just tell me 😄
+
+______________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
 
 
 ## 📌 Arrays (25+ Questions)
 
-    - Find First Non-repeating char from string 
+    -]] Find First Non-repeating char from string 
 
     let str = 'angular';
 
     function findFirstChar(str){
-        for(let i=0;i<str.length;i++){
-            let count = 0;
-            for(let j=0;j<str.length;j++){
-                if(str.charAt(i)===str.charAt(j)){
-                    count++;
-                }
-            }
-            if(count===1){
-                console.log(str[i]);
-                break;
+    for(let i=0;i<str.length;i++){
+        let count = 0;
+        for(let j=0;j<str.length;j++){
+            if(str.charAt(i)===str.charAt(j)){
+                count++;
             }
         }
+        if(count===1){
+            console.log(str[i]);
+            break;
+        }
+    }
     }
 
     findFirstChar(str);
-
+------------------------------------------------------------------
 - Reverse an array
 
   //]] Reverse Number without using the .reverse() method
@@ -821,7 +5601,35 @@ setMatrixZeroes(matrix);
 
     findElementPosition(arr, target);
 ------------------------------------------------------------------
+- 2D bubble Sort Algorithm:- 
 
+    const array = [[12,32,89,4],[8,2,1],[89,12,45,32,70]];
+
+    console.log(array);
+
+    function sort(array){
+        for(let i=0;i<array.length;i++){
+            for(let j=0;j<array.length-1;j++){
+                if(array[i]<array[j]){
+                    let temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+        return array;
+    }
+
+    function bubbleSort2D(array){
+        const sorted2DArray = [];
+        for(let i=0;i<array.length;i++){
+            sorted2DArray[i] = sort(array[i]);
+        }
+        return sorted2DArray;
+    }
+
+    console.log(bubbleSort2D(array));
+------------------------------------------------------------------
 - Find peak element
 - Majority element
 - Longest consecutive sequence
@@ -835,6 +5643,16 @@ setMatrixZeroes(matrix);
 - Merge intervals
 - Insert interval
 - Spiral matrix
+
+
+
+
+
+
+
+
+
+
 
 
 
