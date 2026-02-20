@@ -28,14 +28,16 @@ https://www.interviewquery.com/p/sql-scenario-based-interview-questions#beginner
 -> yes, i have used to the transactional queries begin, commit and rollback.
 ---------------------------------------------------------------------------------------------------------------
 
-
 🔹 Basic Database Questions (1–25)
 
 1.What is a database?
-->	A database is a collection of data that is stored and organized, often in tabular format (rows and columns).
-	There are two main types of databases:
-	Relational Database – Stores data in tables with rows and columns.
-	Non-Relational (NoSQL) Database – Stores data in other formats like documents, key-value pairs, or graphs.
+->	A database is a collection of data that is stored and organized, often in a structured format such as tables (rows and columns), so it can be easily accessed, managed, and updated.
+
+There are two main types of databases:
+	1. Relational Database – Stores data in tables with rows and columns and uses SQL for managing data. Examples include PostgreSQL and MySQL.
+	2. Non-Relational (NoSQL) Database – Stores data in formats like documents, key-value pairs, graphs, or wide-column stores. An example is MongoDB.
+
+In my experience, I have worked with both relational and non-relational databases, with more hands-on experience in PostgreSQL.
 -----------------------------------------------------------------------------------------------------------------
 2.What is a table?
 ->  A table is a structure in a database that stores data in rows and columns.
@@ -48,10 +50,12 @@ https://www.interviewquery.com/p/sql-scenario-based-interview-questions#beginner
 ->SQL (Structured Query Language) is a language used to store, manage, and retrieve data from a relational database.
 -----------------------------------------------------------------------------------------------------------------
 5.What is a primary key?
-->Primary key is the combination of the unique key and NOT NULL 
+->Primary key is the combination of the UNIQUE KEY and NOT NULL 
 -----------------------------------------------------------------------------------------------------------------
 6.What is a foreign key?
 ->A foreign key is another table’s primary key used to create a connection between two tables.
+OR
+->A foreign key is a column that references another table’s primary key, and it is used to create a relationship between two tables.
 -----------------------------------------------------------------------------------------------------------------
 7.What is a unique key?
 ->A unique key is a column that ensures all its values are different, but it can have one null value.
@@ -122,17 +126,72 @@ https://www.interviewquery.com/p/sql-scenario-based-interview-questions#beginner
 -----------------------------------------------------------------------------------------------------------------
 18.What is a view?
 ->A view is a virtual table in a database that contains a result of a query. It doesn't store data itself but displays data from one or more tables. Views are used to simplify complex queries or hide sensitive data.
+OR 
+->A view is a virtual table created using a SELECT query to display data from one or more tables without storing the data.
 -----------------------------------------------------------------------------------------------------------------
 19.What is a stored procedure?
+->  Stored procedure is similar to function, if our need wise they are called and used.
+	But in the database, stored procedure is used for query optimization, query reuse, and most importantly for security purpose.
+->	Stored procedure is mostly used in backend development because we can store the logic inside the database and call it whenever required.
+
+OR
+
 ->A stored procedure is similar to a function: it's reusable and can be called to execute a set of SQL queries. It helps reduce code repetition and improves efficiency.
 ->A stored procedure (SP) is a collection of one or more SQL queries grouped together and stored in the database.
 It allows you to perform operations like insert, update, delete, or select, and you can reuse these queries whenever needed.
 
-CREATE PROCEDURE procedure_name()
-BEGIN
-    SELECT 'Hello, world!';
-END;
+SEELCT * FROM car;
+SELECT * FROM car_details;
 
+CREATE OR REPLACE PROCEDURE add_car(
+	car_id INT,
+	car_name VARCHAR(100),
+	brand VARCHAR(100)
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+	INSERT INTO car(
+		car_id,
+		car_name,
+		brand
+	)
+	VALUES(
+		car_id,
+		car_name,
+		brand
+	);
+END;
+$$;
+
+CALL car(data,data,data);
+
+
+CREATE OR REPLACE PROCEDURE car_details(
+	detail_id INT,
+	car_id INT,
+	color VARCHAR(100),
+	model_year VARCHAR(100)
+)
+LANGUAGE Plpgsql
+AS $$
+BEGIN
+	INSERT INTO car_details(
+		detail_id,
+		car_id,
+		color,
+		model_year
+	)
+	VALUES(
+		detail_id,
+		car_id,
+		color,
+		model_year
+	);
+END;
+$$;
+
+CALL car_details(data,data,data,data);
 -----------------------------------------------------------------------------------------------------------------
 19.I will create a same stored procedure name but two differnt tables so the sp are overide or not?
 ->Yes, in PostgreSQL, if you create a stored procedure with the same name and the same parameter types, it will override (replace) the existing one when you use:
@@ -152,24 +211,16 @@ END;
 	$$;
 	
 	CALL add_employee('John Doe', 50000);
-	
------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
 20.What is a trigger?
-->A trigger is a predefined set of SQL statements that automatically executes when changes like insert, update, or delete happen in a table.
-Triggers are often used to log changes (e.g., user login, data deletion) to keep a history or audit trail.
-Backend developers use triggers to automatically store logs without writing extra code in the application.
 ✅ Example Use Case:
-When a user is deleted, a trigger can insert a log entry into a user_logs table showing who was deleted and when.
-Useful for audit, monitoring, and security.
-->	A trigger is a set of SQL actions that automatically runs when a specific event (like INSERT, UPDATE, or DELETE) happens on a table.
-Simple definition:
-A trigger is automatic code that runs when table data changes.
-->real time senario is user login and performing the operation that logs are trigger using the trigger command.
+Trigger is a pre-defined SQL statement that automatically executes when some action happens on a table like insert, update, or delete.
+It is mostly used for logs purpose.
+For example, when any user login into the system and perform some action like create, update, or delete, then trigger automatically executes and stores the logs into the database.
 -----------------------------------------------------------------------------------------------------------------
 21.What is a constraint in SQL?
-A constraint is a set of rules applied to column headings.
+-> A constraint is a ]]]set of rules]]] applied to column headings.
 Constraints like NOT NULL, UNIQUE, and DEFAULT are used to control the column data, make sure it's valid, and keep the data clean and correct.
-
 	Simple example constraints:
 	PRIMARY KEY – Uniquely identifies each row.
 	FOREIGN KEY – Links to a primary key in another table.
@@ -177,16 +228,27 @@ Constraints like NOT NULL, UNIQUE, and DEFAULT are used to control the column da
 	NOT NULL – Prevents null (empty) values.
 	CHECK – Ensures values meet a condition.
 	DEFAULT – Sets a default value if none is provided.
-
 -----------------------------------------------------------------------------------------------------------------
 22.What is the difference between WHERE and HAVING?
-->  WHERE is used to filter normal (individual) data in a table. 
-	But when we use GROUP BY to group data, WHERE doesn't work for grouped results. 
-	In that case, we use HAVING to filter the grouped data.
+-> WHERE clause is used to apply condition on table data and filter the required records.
+-> HAVING clause is used to write a condition on grouped data.It is mainly used with GROUP BY.When we apply grouping and want to filter grouped result, then HAVING clause is used.
+
+difference :- 
+
+	The main difference between WHERE and HAVING clause is:
+	WHERE is used to write a condition on normal table data (before grouping).
+	HAVING clause is used to write a condition on grouped data.
+	When GROUP BY is used and we want to apply some condition on grouped result, then we use HAVING clause.
 -----------------------------------------------------------------------------------------------------------------
 23.What are aliases in SQL?
 -> Aliases is a temporary name used to make selected data more readable in SQL queries.
+-> aliases is declare using AS keyword.
 -----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 24.What is the use of DISTINCT?
 -> DISTINCT is used in SQL to find unique records in a table by removing duplicates.
 
@@ -376,7 +438,58 @@ FROM old_table;
 -----------------------------------------------------------------------------------------------------------------
 
 
+Window functions are mainly used for ranking, aggregation, and row comparison without grouping the data.
 
+Here is the **list of commonly used Window Functions** in database:
+
+---
+
+### 🔢 Ranking Functions
+
+1. **ROW_NUMBER()** – Assigns unique number to each row
+2. **RANK()** – Gives rank with gaps
+3. **DENSE_RANK()** – Gives rank without gaps
+4. **NTILE(n)** – Divides rows into equal groups
+
+---
+
+### ➕ Aggregate Window Functions
+
+1. **SUM()**
+2. **AVG()**
+3. **COUNT()**
+4. **MIN()**
+5. **MAX()**
+
+(Used with `OVER()` clause)
+
+Example:
+
+```sql
+SUM(salary) OVER (PARTITION BY department)
+```
+
+---
+
+### 🔁 Value Functions
+
+1. **LAG()** – Get previous row value
+2. **LEAD()** – Get next row value
+3. **FIRST_VALUE()** – First value in window
+4. **LAST_VALUE()** – Last value in window
+5. **NTH_VALUE()** – Nth value in window
+
+---
+
+### 🪟 Important Clause
+
+* **OVER()** – Mandatory for window functions
+* **PARTITION BY** – Divides data into groups
+* **ORDER BY** – Defines order inside window
+
+---
+
+If you want, I can also give simple examples for each function 👍
 
 
 

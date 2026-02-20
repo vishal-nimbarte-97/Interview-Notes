@@ -470,18 +470,21 @@ ________________________________________________________________________________
 Promise.resolve().then(() => console.log(1));
 console.log(2);
 
-
+Output:-
+2
+1
+______________________________________________________________________________________________
 3.
-
-```js
 setTimeout(() => console.log(1));
 Promise.resolve().then(() => console.log(2));
 console.log(3);
-```
 
+Output:-
+3
+2
+1
+______________________________________________________________________________________________
 4.
-
-```js
 async function test(){
   console.log(1);
   await Promise.resolve();
@@ -489,17 +492,24 @@ async function test(){
 }
 test();
 console.log(3);
-```
 
+Output:-
+1
+3
+2
+______________________________________________________________________________________________
 5.
-
-```js
 console.log('Start');
 setTimeout(()=>console.log('Timeout'),0);
 Promise.resolve().then(()=>console.log('Promise'));
 console.log('End');
-```
 
+Output:-
+Start 
+End 
+Promise
+Timeout
+______________________________________________________________________________________________
 6.
 
 ```js

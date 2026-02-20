@@ -1,3 +1,97 @@
+Javascript Code Flow Of Execution
+
+]]] Call Stack → Microtasks → Macrotasks ]]]
+
+┌──────────────────────────────────────────────────────────┐
+│                    JAVASCRIPT ENGINE                     │
+│  (Example: V8 Engine in Chrome / Node.js)               │
+│                                                          │
+│   ┌──────────────────────────────────────────────────┐   │
+│   │                  CALL STACK                     │   │
+│   │  (Executes synchronous code)                    │   │
+│   │                                                  │   │
+│   │  • Global Execution Context                     │   │
+│   │  • Function Execution Context                   │   │
+│   │  • Runs LIFO (Last In First Out)                │   │
+│   └──────────────────────────────────────────────────┘   │
+│                           ▲                              │
+│                           │ (Event Loop pushes tasks)    │
+└───────────────────────────┼──────────────────────────────┘
+                            │
+                            ▼
+                ┌───────────────────────┐
+                │     EVENT LOOP        │
+                │───────────────────────│
+                │ 1. Is Call Stack empty? 
+                │ 2. Run ALL Microtasks
+                │ 3. Run ONE Macrotask
+                │ 4. Repeat forever 🔁
+                └─────────────┬─────────┘
+                              │
+          ┌───────────────────┴───────────────────┐
+          ▼                                       ▼
+┌───────────────────────┐             ┌───────────────────────┐
+│     MICROTASK QUEUE   │             │     MACROTASK QUEUE   │
+│───────────────────────│             │───────────────────────│
+│  HIGH PRIORITY        │             │  LOWER PRIORITY       │
+│                       │             │                       │
+│  • Promise.then()     │             │  • setTimeout()       │
+│  • catch()            │             │  • setInterval()      │
+│  • finally()          │             │  • setImmediate()     │
+│  • queueMicrotask()   │             │  • DOM Events         │
+│  • MutationObserver   │             │  • I/O operations     │
+│                       │             │                       │
+│  ⚠ Runs COMPLETELY    │             │  ⚠ Runs ONE at time   │
+│    before macrotask   │             │                       │
+└───────────────▲───────┘             └───────────────▲───────┘
+                │                                       │
+                │                                       │
+                └───────────────┬───────────────────────┘
+                                ▼
+                     ┌───────────────────────┐
+                     │       WEB APIs        │
+                     │ (Browser / Node Env)  │
+                     │───────────────────────│
+                     │ • Timers              │
+                     │ • Fetch / AJAX        │
+                     │ • DOM Events          │
+                     │ • File System (Node)  │
+                     │ • HTTP Requests       │
+                     └───────────────────────┘
+
+
+🔁 JavaScript Execution Order (Correct Priority)
+
+JavaScript engine works like this:
+
+1️⃣ Call Stack (Synchronous Code)
+
+All normal code
+console.log()
+Variable declarations
+Function calls
+👉 Executed immediately, top to bottom
+
+2️⃣ Microtask Queue (Higher Priority Async)
+
+Promise.then()
+Promise.catch()
+queueMicrotask()
+MutationObserver
+👉 Executed after call stack is empty
+👉 Runs before setTimeout
+
+3️⃣ Macrotask Queue (Lower Priority Async)
+
+setTimeout
+setInterval
+DOM events
+setImmediate (Node)
+👉 Executed after microtasks are completed
+
+
+*]] MutationObserver
+
 📦 what is data types in javacript?
 ->JavaScript data types define the type of value a variable can store. The main data types are string, number, boolean, undefined, null, bigint, symbol, and object.
 -------------------------------------------------------------------------------------------------
