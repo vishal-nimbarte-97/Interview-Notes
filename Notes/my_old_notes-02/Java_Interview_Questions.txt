@@ -31,6 +31,7 @@ This is why we say: "Write Once, Run Anywhere."
     Originally Developed By: Sun Microsystems (1991)
     Acquired By: Oracle Corporation in 2010
     Now, Oracle is the official owner and maintainer of Java.
+
 ------------------------------------------------------------------------------------------------------------
 6.What is static or dynamic programming language?
 → A static programming language is one where type checking and memory allocation for variables (including primitive types) happens at compile time.
@@ -74,19 +75,12 @@ Java uses call by value only. For objects, the reference value is passed, so cha
 → Because of this, Java reduces memory leaks and errors, giving it better memory management than C and C++.
 ------------------------------------------------------------------------------------------------------------
 12.features of Java?
-
 Simple: Syntax is easy and similar to C and C++
-
 Platform Independent: Write once, run anywhere on any operating system
-
 Portable: Can run on different hardware without changes
-
 Object-Oriented: Supports OOP concepts like inheritance, polymorphism, encapsulation, and abstraction
-
 Secure: Provides strong security features compared to many other languages
-
 Multithreaded: Supports multiple threads running simultaneously for better performance
-
 Robust: Uses strong exception handling and error checking to create reliable programs.
 ------------------------------------------------------------------------------------------------------------
 13.What do you mean by platform independent?
@@ -412,6 +406,8 @@ They use keywords like public, private, protected, and default (no keyword) to c
     protected: Accessible within package and subclasses
     default (no keyword): Accessible within the same package only
 ------------------------------------------------------------------------------------------------------------
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 42.What is Oop's?
 ->Writing code using classes and objects to make it more organized, reusable, and easier to maintain is called OOPs (Object-Oriented Programming System).
 ->It is the most popular programming paradign used b the programmers.
@@ -447,6 +443,8 @@ With the help of a class, we can create objects.
 ->B.parameterized constructor :- This constructor are create by programer for initialize the object of the classes.
 ->C.0-Argument constructor(No Argument Constructors) :- This constructor also created by the programer because they are used the parameterized constructor so that timinng by default values are passed so that timing they are need to the 0-Argument constructor.
 ------------------------------------------------------------------------------------------------------------
+
+
 48.What is differences between constructor and method.
 ->constructor:constructor does not have a any return type.
 ->method:method Always have return type.
@@ -1125,6 +1123,9 @@ B.nextTokens()
 C.countTokens()
 D.hasMoreElements()
 E.nextElement()
+
+
+
 
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------Collection Frameworks---------------------------------------------

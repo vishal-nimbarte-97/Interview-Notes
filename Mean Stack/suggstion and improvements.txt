@@ -1,13 +1,12 @@
-let var and const which location they are stored?
-garbage collector in javascript and node.js 
-javascript all version and what's differences
-oop's concept inheritance in javascript and object how to create in hjavaccript
-Method overload and method overrding in javascript 
-and what is purpose of the method overiding
-and what is purpose of the method overloading
-and real time senario of the method overiding and method overloading
-how to reduce cache?
 
-1.focus on javascript scippet
-2.css styles
-3.english
+1.focus on javascript scippet or javascript sudo code 
+2.css styles display flexbox and others properties 
+3.english communication
+
+Question :- 
+Angular :- 
+1.What is Decorators?
+2.What is signals and used?
+
+database :- 
+👉 “Find the total order amount for the customer whose customer_id = 1 from the customer and orders tables.”

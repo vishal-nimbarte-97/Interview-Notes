@@ -244,13 +244,10 @@ difference :-
 -> Aliases is a temporary name used to make selected data more readable in SQL queries.
 -> aliases is declare using AS keyword.
 -----------------------------------------------------------------------------------------------------------------
-
-
-
-
-
 24.What is the use of DISTINCT?
--> DISTINCT is used in SQL to find unique records in a table by removing duplicates.
+-> DISTINCT keyword is used to find unique records from the table.
+-> It is used with SELECT statement.
+-> It removes duplicate values and shows only unique data.
 
 	SELECT DISTINCT column_name
 	FROM table_name;
@@ -259,14 +256,13 @@ difference :-
 -> CHAR: Fixed length, uses extra space for shorter data.
    VARCHAR: Variable length, more space-efficient.
 -----------------------------------------------------------------------------------------------------------------
-
 🔹 Intermediate Database Questions (26–60)
 
 26.What are joins in SQL?
--> Joins in SQL are used to combine data from two or more tables based on a related column.
-   Joins are basically used to combine data from multiple tables at the time of selecting data.
+-> Joins are basically used to combine data from multiple tables at the time of selecting data.
 -----------------------------------------------------------------------------------------------------------------
 27.Explain different types of joins.
+->  Joins are basically used to combine two or more tables and return the result based on a related column.
 -> 	INNER JOIN – Returns only matching rows from both tables.
 	LEFT JOIN – Returns all rows from the left table, and matched rows from the right table.
 	RIGHT JOIN – Returns all rows from the right table, and matched rows from the left table.
@@ -275,32 +271,42 @@ difference :-
 
 In the case of LEFT JOIN, it returns all the data from the left table and the matching rows from the right table.
 In the case of RIGHT JOIN, it returns all the data from the right table and the matching rows from the left table.
-
 -----------------------------------------------------------------------------------------------------------------
 28.What is a self join?
 ->  A self join is a type of join where a table is joined with itself.
 -----------------------------------------------------------------------------------------------------------------
 29.What is a cross join?
-->  A CROSS JOIN is a type of SQL join that returns the Cartesian product of two tables — meaning it combines every row from the first table with every row from the second table.
+->  A CROSS JOIN is a type of SQL join that returns the ]]]Cartesian product of two tables]]] — meaning it combines every row from the first table with every row from the second table.
 -----------------------------------------------------------------------------------------------------------------
 30.What is a subquery?
-->  A subquery (also called an inner query or nested query) is a query inside another SQL query.
-->  A subquery is a nested query, meaning a query inside another query.
-This inner query is called a subquery and is used to provide data for the outer query.
+->Subquery is a query inside another query.
+->It is also called inner query.
+->It returns result to the outer query.
 -----------------------------------------------------------------------------------------------------------------
-31.What is a correlated subquery?
+31.What is a correlated subquery?}}}
 -> A correlated subquery is a type of subquery that depends on the outer query for its values.
 -----------------------------------------------------------------------------------------------------------------
-32.What is a temporary table?
+32.What is a temporary table?}}}
 ->  A temporary table is a table that stores data only for a short time, usually during a session or a query. It gets automatically deleted when the session ends.
 ->  You can create a temporary table using a SELECT statement.
 -> 	Temporary tables are automatically deleted when:
 	Your database session ends, or
 	You close the connection to the database.
 -----------------------------------------------------------------------------------------------------------------
-33.What is a composite key?
-->A composite key is a combination of two or more columns in a table that together uniquely identify each row.
-A single column alone is not enough, so multiple columns are used as the primary key.
+33.What is a composite key?}}}
+->In some tables:
+
+One column is not unique
+Another column is also not unique
+But when we combine them → they become unique
+So we use two or more columns together as a single primary key.
+that is called as the composite key.
+
+CREATE TABLE student_course (
+    student_id INT,
+    course_id INT,
+    PRIMARY KEY (student_id, course_id)
+);
 -----------------------------------------------------------------------------------------------------------------
 34.What are aggregate functions?
 ->aggregate function is funnction they are perform operation on the group of the data and return the single value.
@@ -325,14 +331,17 @@ It creates a group of the data based on one or more columns, and then it perform
 	Largest to smallest number
 -----------------------------------------------------------------------------------------------------------------
 37.What is the LIMIT clause?
-->The LIMIT clause in SQL is used to restrict the number of rows returned by a query. It helps you get only a certain number of results, even if there are many rows in the table.
+->Limit clause is used for that limit wise records fetch.
+
+select * from car limit 4;
+-----------------------------------------------------------------------------------------------------------------
+37.What is the OFFSET clause?
+-> OFFSET clause is used to skip a specific number of rows, and they are after rows return.
+
+select * from car offset 2;
 -----------------------------------------------------------------------------------------------------------------
 38.What is a UNION?
-->	The UNION operator in SQL is used to combine the results of two or more SELECT queries into a single result set.
-	It removes duplicate rows by default (like DISTINCT).
-	All SELECT queries in the UNION must have the same number of columns, and the columns must have compatible data types.
-->  UNION keyword is basically used to combine two or more SELECT queries, and it returns only unique data.
-->  ✅ The number and type of columns must match in all queries.
+->	UNION is used to combine the result of two or more SELECT queries.and in this case they are unique records return.
 
 ->	Query:- 
 	SELECT Name, Age
@@ -344,11 +353,15 @@ It creates a group of the data based on one or more columns, and then it perform
 ->When two different tables have the same column name and type, you can use the UNION to combine their results using that column.
 -----------------------------------------------------------------------------------------------------------------
 39.What is the difference between UNION and UNION ALL?
-->UNION means combine and remove the duplicate records,
-->but UNION ALL means combine and allow duplicate records.
+->UNION means return the combine data of two table with same field name and remove the duplicate records.
+->UNION ALL means return the combine data of two table with same field name and allows the duplicate records.
 -----------------------------------------------------------------------------------------------------------------
 40.What is an INNER QUERY?
-->	An inner query (or subquery) is a query written inside another query. It returns some value(s), and those values are used by the outer query to perform operations.
+->An inner query is a query written inside another query.
+Inner query is also called a subquery.
+It runs first.
+It returns data to the outer query.
+The outer query uses that result and performs some operation.
 -----------------------------------------------------------------------------------------------------------------
 41.What is the difference between EXISTS and IN?
 ->Both EXISTS and IN are used in subqueries to filter records, but they work differently.
@@ -381,6 +394,8 @@ You can think of it as a blueprint or layout of the database.
 50.How do you rename a column?
 ->You can rename a column using the ALTER TABLE statement along with RENAME COLUMN.
 -----------------------------------------------------------------------------------------------------------------
+
+
 52.What are transactions?
 ->A transaction is a group of queries (like INSERT, UPDATE, DELETE) that perform operations together.
 If all queries run successfully, the changes are saved.
@@ -581,3 +596,173 @@ What is a connection pool in Sequelize?
 How do you handle database connection errors in Node.js?
 -----------------------------------------------------------------------------------------------------------------
 
+
+
+
+
+
+
+
+*]From customer and orders tables, find the customer whose total order amount is the highest.
+->
+
+
+You want 100+ SQL practice questions like this (JOIN + GROUP BY + highest type) 👍
+
+Here are **120+ SQL Interview Practice Questions** (Simple to Advanced)
+
+---
+
+# 🔹 BASIC (1–25)
+
+1. Select all customers.
+2. Select customers from Pune.
+3. Find customers whose age > 25.
+4. Count total customers.
+5. Find maximum salary.
+6. Find minimum price.
+7. Find average marks.
+8. Find total order amount.
+9. Display distinct cities.
+10. Sort customers by name.
+11. Sort salary in descending order.
+12. Find customers whose name starts with 'A'.
+13. Find customers whose name ends with 'n'.
+14. Find NULL values in table.
+15. Replace NULL with default value.
+16. Use BETWEEN operator example.
+17. Use IN operator example.
+18. Use NOT IN operator.
+19. Use LIMIT clause.
+20. Use OFFSET clause.
+21. Create a table.
+22. Add new column in table.
+23. Update salary by 10%.
+24. Delete specific record.
+25. Drop table.
+
+---
+
+# 🔹 JOIN QUESTIONS (26–50)
+
+26. Inner join customer & orders.
+27. Left join example.
+28. Right join example.
+29. Full join example.
+30. Find customers without orders.
+31. Find orders without customers.
+32. Count orders per customer.
+33. Find total order amount per customer.
+34. Find highest order per customer.
+35. Find lowest order per customer.
+36. Find customer with highest total order value.
+37. Find top 3 customers by total purchase.
+38. Find average order value per customer.
+39. Find customers with more than 5 orders.
+40. Find customers whose total purchase > 50000.
+41. Find second highest salary.
+42. Find duplicate records.
+43. Delete duplicate records.
+44. Self join example.
+45. Find employee and manager name.
+46. Join 3 tables example.
+47. Find department wise total salary.
+48. Find department with highest salary expense.
+49. Find product wise total sales.
+50. Find month wise sales report.
+
+---
+
+# 🔹 GROUP BY & HAVING (51–70)
+
+51. Count customers city wise.
+52. Sum salary department wise.
+53. Average salary per department.
+54. Find departments with more than 10 employees.
+55. Find cities with total sales > 1 lakh.
+56. Find customers having total orders > 3.
+57. Find max salary per department.
+58. Find min salary per department.
+59. Find second highest total sale.
+60. Find third highest salary.
+61. Use HAVING clause example.
+62. Difference between WHERE and HAVING.
+63. Find daily sales report.
+64. Find yearly sales report.
+65. Find highest selling product.
+66. Find lowest selling product.
+67. Find top 5 selling products.
+68. Find customers with no orders.
+69. Find customers with exactly 2 orders.
+70. Find department wise employee count.
+
+---
+
+# 🔹 SUBQUERY / INNER QUERY (71–90)
+
+71. Find employees earning more than average salary.
+72. Find products costlier than average price.
+73. Find customer with highest order amount (using subquery).
+74. Use IN with subquery.
+75. Use EXISTS with subquery.
+76. Difference between IN and EXISTS.
+77. Correlated subquery example.
+78. Find second highest salary using subquery.
+79. Delete duplicate using subquery.
+80. Update salary using subquery.
+81. Find employees in same department as 'Vishal'.
+82. Find products not ordered.
+83. Find customers who ordered specific product.
+84. Find highest order in each city.
+85. Find departments having salary greater than overall average.
+86. Nested subquery example.
+87. Scalar subquery example.
+88. Multi-row subquery example.
+89. Find employees working in department with highest avg salary.
+90. Use ALL operator example.
+
+---
+
+# 🔹 ADVANCED (91–120)
+
+91. Find running total of sales.
+92. Find rank of employees by salary.
+93. Use ROW_NUMBER().
+94. Use RANK().
+95. Use DENSE_RANK().
+96. Find duplicate using window function.
+97. Find nth highest salary.
+98. Pivot table example.
+99. Unpivot example.
+100. Find gaps in sequence.
+101. Find consecutive dates.
+102. Recursive query example.
+103. CTE example.
+104. Multiple CTE example.
+105. Delete using join.
+106. Update using join.
+107. Transaction example.
+108. Trigger example.
+109. Stored procedure example.
+110. View example.
+111. Index example.
+112. Composite key example.
+113. Foreign key example.
+114. Normalization example.
+115. Denormalization example.
+116. Clustered vs Non-clustered index.
+117. Find deadlock concept.
+118. ACID properties.
+119. Find performance optimization query.
+120. Explain execution plan.
+
+---
+
+If you want, I can also:
+
+* ✅ Provide answers for all
+* ✅ Create PDF for practice
+* ✅ Give real interview-level hard questions
+* ✅ Give company-based questions (TCS, Infosys, Capgemini, etc.)
+
+Tell me what you want next 😊

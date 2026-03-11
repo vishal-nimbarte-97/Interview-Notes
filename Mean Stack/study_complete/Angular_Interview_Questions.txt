@@ -366,6 +366,9 @@ Prevent Unncessary Rendering -> Updates only when inputes change.
 21.What is DOM Sanitization? }}}}IMPORTANT}}}}
 ->DOM sanitization is a security process that ensures only safe and clean data is rendered on the UI, protecting the application from }}}XSS attacks}}}. [XSS (Cross-Site Scripting) Attack]
 ------------------------------------------------------------------------------------------------------
+22.What is [XSS (Cross-Site Scripting) Attack]?
+-> 
+------------------------------------------------------------------------------------------------------
 22.What is One & Two Way Data Binding and There Types ?
 ------------------------------------------------------------------------------------------------------
 23.Explain About Dependency Injection?
