@@ -4,7 +4,7 @@ Javascript Code Flow Of Execution
 
 ┌──────────────────────────────────────────────────────────┐
 │                    JAVASCRIPT ENGINE                     │
-│  (Example: V8 Engine in Chrome / Node.js)                │
+│  (Example: V8 Engine in Chrome / Node.js)                │ 
 │                                                          │
 │   ┌──────────────────────────────────────────────────┐   │
 │   │                  CALL STACK                      │   │
