@@ -4,15 +4,15 @@ Javascript Code Flow Of Execution
 
 ┌──────────────────────────────────────────────────────────┐
 │                    JAVASCRIPT ENGINE                     │
-│  (Example: V8 Engine in Chrome / Node.js)               │
+│  (Example: V8 Engine in Chrome / Node.js)                │
 │                                                          │
 │   ┌──────────────────────────────────────────────────┐   │
-│   │                  CALL STACK                     │   │
-│   │  (Executes synchronous code)                    │   │
+│   │                  CALL STACK                      │   │
+│   │  (Executes synchronous code)                     │   │
 │   │                                                  │   │
-│   │  • Global Execution Context                     │   │
-│   │  • Function Execution Context                   │   │
-│   │  • Runs LIFO (Last In First Out)                │   │
+│   │  • Global Execution Context                      │   │
+│   │  • Function Execution Context                    │   │
+│   │  • Runs LIFO (Last In First Out)                 │   │
 │   └──────────────────────────────────────────────────┘   │
 │                           ▲                              │
 │                           │ (Event Loop pushes tasks)    │
@@ -92,6 +92,9 @@ setImmediate (Node)
 
 *]] MutationObserver
 
+
+
+
 📦 what is data types in javacript?
 ->JavaScript data types define the type of value a variable can store. The main data types are string, number, boolean, undefined, null, bigint, symbol, and object.
 -------------------------------------------------------------------------------------------------
@@ -107,11 +110,12 @@ But when we use let, var, or const to store objects, arrays, or functions, then 
 ->We don’t need to write any method or service for garbage collection. It automatically runs in the background and removes the unused or unreferenced variables or objects from memory.
 -------------------------------------------------------------------------------------------------
 📜 javascript all version and what's differences?
-->current version :- ✅ ECMAScript 2025 (ES2025)
+->current version :- ✅ ECMAScript 2025 (ES16)
 -------------------------------------------------------------------------------------------------
 🧠 What is Inheritance in JavaScript?
 ->Inheritance is the process where a child class can access the properties (data members) and methods (member functions) of a parent class. The child class reuses the parent class code — this is called inheritance in object-oriented programming.
-->they are used prototypal __proto__ .
+
+->in javascript also used prototypal __proto__ .
 ->__proto__ is used to allow a child class to access the data members and member functions of the parent class through the prototype chain.
 -------------------------------------------------------------------------------------------------
 🧠 Real time senario of the method overiding and method overloading.
@@ -136,7 +140,7 @@ Method Overriding
 -> Prototypal Inheritance is a feature in JavaScript where an object can inherit properties and methods from another object using the __proto__ or Object.create().
 -------------------------------------------------------------------------------------------------
 1.Current Version of JavaScript?
-->current version :- ✅ ECMAScript 2025 (ES2025)
+->current version :- ✅ ECMAScript 2025 (ES2016)
 -------------------------------------------------------------------------------------------------
 1.What is javascript?
 ->JavaScript is a scripting language used to make web pages interactive.
@@ -212,13 +216,11 @@ callFunction();
 callFunction();
 -------------------------------------------------------------------------------------------------
 4.What are promises and how are they better than callbacks?
-
 → A Promise is an object in JavaScript that has three states: resolved, rejected, and pending.
-→ Promises are better compared to callbacks because:
+→ Promises are better as compared to callbacks because:
 They avoid callback hell (deeply nested callbacks).
 They provide better error handling using .catch().
 They support chaining of multiple asynchronous operations using .then().
-
 -------------------------------------------------------------------------------------------------
 5.what are state in promise?
 ->There are three state of promises resolved,rejected and pending.
@@ -230,11 +232,34 @@ They support chaining of multiple asynchronous operations using .then().
 → Event loop is basically used for handling asynchronous operations in JavaScript.
 → It continuously checks the call stack for method execution.
 → When the call stack is free, then one by one, events are passed to the call stack for asynchronous method execution.
+
+How it works
+
+JavaScript executes synchronous code in the Call Stack.
+Asynchronous tasks go to Web APIs / Node APIs.
+After completion, their callbacks move to the Callback Queue.
+The Event Loop checks if the Call Stack is empty.
+If empty, it moves the callback to the Call Stack for execution.
+-------------------------------------------------------------------------------------------------
+7.Difference Between JavaScript Event Loop and Node.js Event Loop?
+->
+--------------------------------------------------------------------------------
+| Feature        | Browser JavaScript        | Node.js                         |
+| -------------- | ------------------------- | ------------------------------- |
+| Environment    | Runs in browser           | Runs on server                  |
+| Async handling | Uses browser Web APIs     | Uses libuv                      |
+| Type of tasks  | DOM events, fetch, timers | File system, network, timers    |
+| Event loop     | Simple event loop         | Event loop with multiple phases |
+--------------------------------------------------------------------------------
+
 -------------------------------------------------------------------------------------------------
 8.What is hoisting?
 ->JavaScript moves variable and function declarations to the top before executing the code.
 → Hoisting means you can declare a variable at the bottom, and still use it before declaring it.
-→ During compilation time, the variable declarations are moved to the top of their scope (this is called hoisting)
+→ During compilation time, the variable declarations are moved to the top of their scope (this is called hoisting).
+
+var → hoisted and initialized with undefined
+let and const → hoisted but not initialized (Temporal Dead Zone)
 -------------------------------------------------------------------------------------------------
 9. Difference between Arrow Functions and Regular Functions?
 → Arrow functions have shorter syntax as compared to the Regular funtion.
@@ -257,7 +282,7 @@ They support chaining of multiple asynchronous operations using .then().
 13.What is javascript?
 ->JavaScript is a scripting language, and currently it is used on both the client side and server side.
 -------------------------------------------------------------------------------------------------
-14.What is the purpose of the this keyword? Provide examples?
+14.What is the purpose of the 'this' keyword? Provide examples?
 ->"this" keyword is the reference of the current class object.
 -------------------------------------------------------------------------------------------------
 15.What is the difference between null and undefined?
@@ -334,9 +359,7 @@ const obj_3 = {...obj_1,...obj_2};
 
 console.log(obj_3); 
 -------------------------------------------------------------------------------------------------
-
 22.✅ Difference between Object.freeze() and Object.seal()?
-
 ->Object.freeze() → ❌ Cannot add, remove, or modify any property. Object becomes fully immutable.
 ->Object.seal() → ❌ Cannot add or remove properties, but ✅ can modify existing properties.
 -------------------------------------------------------------------------------------------------
@@ -368,7 +391,7 @@ console.log(obj_3);
 28.What is await?
 ->await is used inside the asychronouse functin and they are pause the exection of the code and they are something wait for the execution process.
 -------------------------------------------------------------------------------------------------
-29.Explain event delegation and why it's useful?
+29.Explain event delegation and why it's useful?}}}IMP}}}
 ->Event delegation means the child element event is accessed by the parent element.
 It is useful for handling multiple child elements with one parent event.
 -------------------------------------------------------------------------------------------------
@@ -413,9 +436,7 @@ We can use RxJS operators:
 debounceTime() → For search box
 throttleTime() → For button click or scroll events
 -------------------------------------------------------------------------------------------------
-
 33.What is the purpose of Promise.all() and Promise.race()?
-
 🔹 Promise.all()
 The purpose of Promise.all() is to run multiple promises together, and wait until all promises are resolved.
 But if one promise is rejected, then the whole result is rejected.
@@ -489,7 +510,7 @@ Promise.race([task_1,task_2,task_3])
 ->and to avoids callback hell we used the promise and async/wait 
 -------------------------------------------------------------------------------------------------
 36.How do you handle errors and exection in JavaScript?
-->they are used the try and catch block to handle the errors and exception 
+->they are used the try and catch block to handle the errors and exception in javsacript. 
 ->so in that case risky code write inside the try block and catch are using to handling exception
 -------------------------------------------------------------------------------------------------
 37.What is the difference between try...catch and throw?
@@ -521,7 +542,16 @@ let fruits = ["apple", "banana", "cherry"];
 fruits.splice(1, 1); // remove 1 item at index 1
 console.log(fruits); // ["apple", "cherry"]
 
+Simple Interview Answer
+    slice() returns a portion of an array without modifying the original array, while splice() modifies the original array by adding, removing, or replacing elements.
+
+💡 Easy Trick to Remember
+    slice → “copy” part of array
+    splice → “change” the original array
+
+
 }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}VERY IMP Before Interview implementation}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+
 1. Creating Arrays
 
 Array.of(): Creates an array with the provided values.
@@ -570,14 +600,11 @@ const arr1 = [1];
 const arr2 = [2, 3];
 const result = arr1.concat(arr2);
 console.log(result); // [1, 2, 3]
-
 -----------------------------------------------------------------------------------------------------------------
 slice(): Extracts part of an array into a new one.
 const arr = [1, 2, 3];
 const result = arr.slice(0, 2);
 console.log(result); // [1, 2]
-
-
 -----------------------------------------------------------------------------------------------------------------
 Why Use the Spread Operator?
 Avoid Unintended Changes (Side Effects):
@@ -667,6 +694,9 @@ reverse(): Reverses the array.
 const arr = [1, 2, 3];
 arr.reverse();
 console.log(arr); // [3, 2, 1]
+
+
+
 -----------------------------------------------------------------------------------------------------------------
 6. Combining and Joining
 join(): Combines elements into a string.
@@ -700,3 +730,432 @@ entries(): Returns an iterator for key-value pairs.
 for (let [key, value] of [1, 2].entries()) console.log(key, value);
 // Logs: 0 1, 1 2
 -----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+## 📌 Arrays (25+ Questions)
+
+    -]] Find First Non-repeating char from string 
+
+    let str = 'angular';
+
+    function findFirstChar(str){
+    for(let i=0;i<str.length;i++){
+        let count = 0;
+        for(let j=0;j<str.length;j++){
+            if(str.charAt(i)===str.charAt(j)){
+                count++;
+            }
+        }
+        if(count===1){
+            console.log(str[i]);
+            break;
+        }
+    }
+    }
+
+    findFirstChar(str);
+------------------------------------------------------------------
+- Reverse an array
+
+  //]] Reverse Number without using the .reverse() method
+  const arr = [12,23,34,45,56,76];
+  console.log("Before Array Reversing :- ",arr);
+  let i = 0;
+  let j = arr.length - 1;
+  while(i<j){
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+    i++;
+    j--;
+  }
+  console.log('After Array Reversing :- ',arr);
+------------------------------------------------------------------
+- Find max/min element
+
+  //]] Find max/min element
+  const arr = [12,42,89,56,43,90,32,2];
+  let max = arr[0];
+  for(let i=1;i<arr.length;i++){
+    if(max>arr[i]){
+      max = arr[i]; 
+    }
+  }
+  console.log('Maximum Number in Array :- ',max);
+
+
+//Find Mix & Max single timing
+function findMaxAndMin(arr){
+    
+    const sortedArray = arr.sort((a,b) => {
+        return a - b;
+    });
+    
+    return [sortedArray[0],sortedArray[arr.length-1]];
+}
+
+const newArray = findMaxAndMin([12,23,89,67,7,54,90,43,677,90,43]);
+
+console.log('Min Value :- ',newArray[0]);
+console.log('Max Value :- ',newArray[1]);
+
+------------------------------------------------------------------
+- ]]Remove duplicates
+
+  const arr = [12,12,23,78,90,56,23];
+  const uniqueArr = [];
+  console.log('Before Array :- ',arr);
+  for(let i=0;i<arr.length;i++){
+      let isDuplicate = false;
+      for(let j=0;j<uniqueArr.length;j++){
+          if(arr[i]===uniqueArr[j]){
+              isDuplicate = true;
+              break;
+          }
+      }
+      if(!isDuplicate){
+          uniqueArr[uniqueArr.length] = arr[i];
+      }
+  }
+  console.log('After Array  :- ',uniqueArr);
+------------------------------------------------------------------
+- Merge two sorted arrays
+  
+  const arr1 = [34,23,89,90,54,32];
+  const arr2 = [908,342,897,903,675,432];
+  const newArray = [...arr1,...arr2];
+  newArray.sort((a,b)=>{
+      return a - b;
+  });
+  console.log('Merge Two Sorted Arrays :- ',newArray);
+------------------------------------------------------------------
+- ]]Rotate array by K steps
+
+  const arr = [23,34,45,56,67];
+  const rotatedArray = [];
+  let k = 2;
+  let n = arr.length-1;
+  for(let i=k;i<=n;i++){
+      rotatedArray[rotatedArray.length] = arr[i];
+  }
+  for(let i=0;i<k;i++){
+      rotatedArray[rotatedArray.length] = arr[i];
+  }
+  console.log(rotatedArray);
+------------------------------------------------------------------
+- ]]Find missing number
+
+  const arr = [1,2,3,4,5,6,7,9];
+  console.log('Find Missing Value in Array :- ',arr);
+  const n = arr.length + 1;
+  const totalValue = [n * (n+1)]/2;
+  let sumArray = 0;
+  for(let a of arr){
+      sumArray = sumArray + a;
+  }
+  console.log('Missing Value in Array :- ',(totalValue-sumArray));
+------------------------------------------------------------------
+- ]]Find duplicate number
+
+  const arr = [23,12,23,42,78,90,42];
+  for(let i=0;i<arr.length;i++){
+      let duplicate = arr[i];
+      for(let j=i+1;j<arr.length;j++){
+          if(duplicate === arr[j]){
+              console.log('Duplicate Element :- ',duplicate);
+          }
+      }
+  }
+------------------------------------------------------------------
+- ]]Move zeros to end
+  const arr = [23,0,34,0,45,0,89,0,90];
+  console.log('Before :- ',arr);
+  const arrZero = [];
+  const arrValue = [];
+  for(let i=0;i<arr.length;i++){
+      if(arr[i]===0){
+          arrZero.push(arr[i]);
+      }else{ 
+          arrValue.push(arr[i]);
+      }
+  }
+  console.log('After :- ',[...arrValue,...arrZero]);
+------------------------------------------------------------------
+- ]]Two sum problem
+  const arr = [2,7,0,11,7,4];
+  const target = 9;
+  for(let i=0;i<arr.length;i++){
+      for(let j=i+1;j<arr.length;j++){
+          if(target == arr[i] + arr[j]){
+              console.log(`Index :- [${i},${j}]`);
+          }
+      }
+  }
+------------------------------------------------------------------
+- Best time to buy and sell stock
+
+  // // Function to calculate maximum profit with ONE buy and ONE sell
+  // function maxProfit(prices) {
+  //   let minPrice = Infinity;  // lowest price seen so far
+  //   let maxProfit = 0;        // best profit found so far
+  
+  //   for (let price of prices) {
+  //     // update minimum price if current price is lower
+  //     if (price < minPrice) {
+  //       minPrice = price;
+  //     }
+  //     // calculate profit if sold today, update maxProfit if better
+  //     maxProfit = Math.max(maxProfit, price - minPrice);
+  //   }
+  
+  //   return maxProfit;
+  // }
+  
+  // // Example usage:
+  // console.log(maxProfit([7, 1, 5, 3, 6, 4])); // Output: 5 (buy at 1, sell at 6)
+  // console.log(maxProfit([7, 6, 4, 3, 1]));    // Output: 0 (no profit possible)
+  
+  // Best time to buy and sell stock
+  
+  function maxProfit(prices){
+      // min = infinity;
+      // profit = 0;
+      // profit = max(profit,price-min);
+      let minPrice = Infinity;
+      let maxProfit = 0;
+      
+      for(let price of prices){
+          //update mininum price
+          if(price<minPrice){
+              minPrice = price;
+          }
+          
+          // calculated the maxProfit
+          // profit = max(profit,price-min);
+          
+          maxProfit = Math.max(maxProfit,(price-minPrice));
+      }
+      return maxProfit;
+  }
+  
+  console.log('Max Profit :- ',maxProfit([7,1,5,3,6,4]));
+  console.log('Max Profit :- ',maxProfit([7,2,3,9,8,3,1]));
+  
+  // min = infinity;
+  // profit = 0;
+  // profit = max(profit,(price-min));
+  
+  // Day First : 7
+  // price = 7;
+  // min = 7;
+  // profit = max(0,(7-7)) = 0
+  
+  // Day Second : 2
+  // min = 2
+  // profit = max(0,(2-2)) = 0
+  
+  // Day Third : 3
+  // min = 2
+  // profit = max(0,(3-2)) = 1
+  
+  // Day Four : 9
+  // min = 2 
+  // profit = max(1,(9-2)) = 7
+  
+  // Day Five : 8 
+  // min = 2
+  // profit = max(7,(8-2)) = 7
+  
+  // Day Six : 3 
+  // min = 2
+  // profit = max(7,(3-2)) = 7
+  
+  // Day Seven : 1
+  // min = 1
+  // profit = max(7,(1-1)) = 7
+  
+  // Day Eight : 9
+  // min = 1
+  // profit = max(7,(9-1)) = 8
+------------------------------------------------------------------
+  - ]]Product of array except self
+  // Product of array except self
+  // [1, 2, 3, 4]
+  // [24, 12, 8, 6]
+  
+  function multiplicationOfItSelf(arr){
+      let newArray = [];
+      for(let i=0;i<arr.length;i++){
+          let s = arr[i];
+          let result = 1;
+          for(let j=0;j<arr.length;j++){
+              if(s!==arr[j]){
+                  result = result * arr[j];
+              }
+          }
+          newArray.push(result);
+      }
+      return newArray;
+  }
+  
+  console.log(multiplicationOfItSelf([1,2,3,4]));
+------------------------------------------------------------------
+- ]]Combine two or more array
+const arr = [[12,23,90,78,4,89],[45,99,1,8,87],[21,32,2]];
+
+const newArray = [];
+
+for(let i=0;i<arr.length;i++){
+    for(let j=0;j<arr[i].length;j++){
+        newArray.push(arr[i][j]);
+    }
+}
+
+newArray.sort((a,b)=>a-b);
+console.log(newArray);
+------------------------------------------------------------------
+const statement = "Hello Everyone My Name is Vishal Nimbarte From Pune";
+
+// ]]find the length of Vishal word without using the inbuild function
+
+const arr = [];
+let char = '';
+for(let i=0;i<statement.length;i++){
+    if(statement.charAt(i)!==' '){
+        char = char + statement.charAt(i);
+    }
+    else {
+        arr.push(char);
+        char = '';
+    }
+}
+
+for(let i=0;i<arr.length;i++){
+   if(arr[i]==='Vishal'){
+       console.log(`${arr[i]} -> ${arr[i].length}`);
+   }
+}
+------------------------------------------------------------------
+- Set matrix zeroes
+
+const matrix = [
+    [1, 2, 3],
+    [4, 0, 6],
+    [7, 8, 9]
+];
+
+function setMatrixZeroes(matrix) {
+    const rows = matrix.length;
+    const cols = matrix[0].length;
+
+    const zeroRows = new Set();
+    const zeroCols = new Set();
+
+    // Find zero positions
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            if (matrix[i][j] === 0) {
+                zeroRows.add(i);
+                zeroCols.add(j);
+            }
+        }
+    }
+
+    // Set rows to zero
+    for (let r of zeroRows) {
+        for (let j = 0; j < cols; j++) {
+            matrix[r][j] = 0;
+        }
+    }
+
+    // Set columns to zero
+    for (let c of zeroCols) {
+        for (let i = 0; i < rows; i++) {
+            matrix[i][c] = 0;
+        }
+    }
+
+    console.log("updated matrix :- ");
+    console.log(matrix);
+}
+
+setMatrixZeroes(matrix);
+------------------------------------------------------------------
+
+- Search in rotated sorted array
+
+    const arr = [1, 3, 5, 7, 9, 11]
+    const target = 9;
+
+    function findElementPosition(arr, target) {
+        let start = 0;
+        let end = arr.length - 1;
+        let mid = 0;
+        while (start <= end) {
+            mid = Math.floor((start + end) / 2);
+            if (arr[mid] === target) {
+                console.log(`${target} is found in location at ${mid}`);
+                return;
+            }
+            else if (arr[mid] < target) {
+                start = mid + 1;
+            }
+            else {
+                end = mid - 1;
+            }
+        }
+    }
+
+    findElementPosition(arr, target);
+------------------------------------------------------------------
+- 2D bubble Sort Algorithm:- 
+
+    const array = [[12,32,89,4],[8,2,1],[89,12,45,32,70]];
+
+    console.log(array);
+
+    function sort(array){
+        for(let i=0;i<array.length;i++){
+            for(let j=0;j<array.length-1;j++){
+                if(array[i]<array[j]){
+                    let temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+        return array;
+    }
+
+    function bubbleSort2D(array){
+        const sorted2DArray = [];
+        for(let i=0;i<array.length;i++){
+            sorted2DArray[i] = sort(array[i]);
+        }
+        return sorted2DArray;
+    }
+
+    console.log(bubbleSort2D(array));
+------------------------------------------------------------------
+- Find peak element
+- Majority element
+- Longest consecutive sequence
+- Sliding window maximum
+- Subarray sum equals K
+- Minimum size subarray sum
+- Jump game
+- Trapping rain water
+- Maximum subarray (Kadane’s)
+- Sort colors (Dutch flag)
+- Merge intervals
+- Insert interval
+- Spiral matrix
+
+
+
+
