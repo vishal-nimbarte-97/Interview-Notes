@@ -15,6 +15,13 @@ _____________________________________]]Time Complexity]]________________________
 3 for nested loops → O(n³)
 ______________________________________________________________________________________________
 
+}}}What is Difference between linked list and arraylist and array
+}}}How to implement linked list 
+}}}what is single linked list 
+}}}what is doubly linked list 
+}}}differanance between the single link list & double liked list 
+}}}circular linked list 
+
 ### 🔹 Linear Data Structures
 - **Arrays** :- 
   1.An array is a linear data structure that stores elements in continuous memory locations.
@@ -803,20 +810,17 @@ var a=10;
 Output:-
 undefined
 ______________________________________________________________________________________________
-
 33.
-
-```js
 var a=10;
 (function(){
   console.log(a);
   var a=20;
 })();
-```
 
+Output :- 
+Undefined
+______________________________________________________________________________________________
 34.
-
-```js
 function foo(){
   if(true){
     var x=10;
@@ -824,11 +828,11 @@ function foo(){
   console.log(x);
 }
 foo();
-```
 
+Output:-
+10
+______________________________________________________________________________________________
 35.
-
-```js
 function foo(){
   if(true){
     let x=10;
@@ -836,68 +840,59 @@ function foo(){
   console.log(x);
 }
 foo();
-```
 
+Output:-
+ReferenceError
+______________________________________________________________________________________________
 36.
-
-```js
 let x=10;
 {
   let x=20;
-  console.log(x);
+  console.log(x);//20
 }
-console.log(x);
-```
-
+console.log(x);//10
+______________________________________________________________________________________________
+36.
+var x=10;
+{
+  var x=20;
+  console.log(x);//20
+}
+console.log(x);//20
+______________________________________________________________________________________________
 37.
-
-```js
 var x=10;
 {
   var x=20;
 }
-console.log(x);
-```
-
+console.log(x);//20
+______________________________________________________________________________________________
 38.
-
-```js
 function test(a){
   a=20;
 }
 let x=10;
 test(x);
-console.log(x);
-```
-
+console.log(x);//10
+______________________________________________________________________________________________
 39.
-
-```js
 function test(obj){
   obj.name="JS";
 }
 let user={};
 test(user);
-console.log(user);
-```
-
+console.log(user);//{name:'JS'}
+______________________________________________________________________________________________
 40.
-
-```js
 var a=10;
 function foo(){
-  console.log(a);
+  console.log(a);//10
 }
 foo();
-```
-
----
-
+______________________________________________________________________________________________
 ## 🔹 41–60: Closures
-
+______________________________________________________________________________________________
 41.
-
-```js
 function outer(){
   let count=0;
   return function(){
@@ -908,11 +903,10 @@ function outer(){
 const fn=outer();
 fn();
 fn();
-```
 
+output:- 1 2
+______________________________________________________________________________________________
 42.
-
-```js
 function outer(){
   var x=10;
   return function(){
@@ -920,11 +914,10 @@ function outer(){
   }
 }
 outer()();
-```
 
+output:- 10
+______________________________________________________________________________________________
 43.
-
-```js
 function a(){
   var x=10;
   return function(){
@@ -933,89 +926,88 @@ function a(){
 }
 let b=a();
 b();
-```
 
+output:- 10
+______________________________________________________________________________________________
 44.
-
-```js
 function add(a){
   return function(b){
     return a+b;
   }
 }
 console.log(add(5)(10));
-```
 
+Output:- 15
+
+reason to Understanding :- 
+const add5 = add(5);
+console.log(add5(10)); // 15
+______________________________________________________________________________________________
 45.
-
-```js
 for(var i=1;i<=3;i++){
-  setTimeout(()=>console.log(i),1000);
+  setTimeout(()=>console.log(i),1000);//3 3 3 
 }
-```
 
+Reason :-
+This happens because of two things:
+var is function scoped (not block scoped).
+setTimeout runs asynchronously after the loop finishes.
+______________________________________________________________________________________________
 46.
-
-```js
 for(let i=1;i<=3;i++){
-  setTimeout(()=>console.log(i),1000);
+  setTimeout(()=>console.log(i),1000);//1 2 3
 }
-```
 
+Reason :-
+let is block scoped.
+In a for loop, each iteration creates a new block scope, so every setTimeout callback gets its own copy of i.
+______________________________________________________________________________________________
 47.
-
-```js
 function x(){
   var i=1;
-  setTimeout(()=>console.log(i),1000);
+  setTimeout(()=>console.log(i),1000);//1
 }
 x();
-```
-
+______________________________________________________________________________________________
 48.
-
-```js
 function x(){
   for(let i=1;i<=3;i++){
-    setTimeout(()=>console.log(i),i*1000);
+    setTimeout(()=>console.log(i),i*1000);//1 2 3
   }
 }
 x();
-```
-
+______________________________________________________________________________________________
 49.
-
-```js
 function x(){
   for(var i=1;i<=3;i++){
     function close(i){
-      setTimeout(()=>console.log(i),i*1000);
+      setTimeout(()=>console.log(i),i*1000);// 1 2 3
     }
     close(i);
   }
 }
 x();
-```
+______________________________________________________________________________________________
+
+
+
+
+
 
 50.
-
-```js
 function counter(){
   let c=0;
   return {
-    inc:()=>++c,
-    dec:()=>--c
+    inc:()=>++c,//1
+    dec:()=>--c//0
   }
 }
 const cnt=counter();
 console.log(cnt.inc());
 console.log(cnt.inc());
-```
-
----
-
+______________________________________________________________________________________________
 ## 🔹 61–80: Type Coercion
-
+______________________________________________________________________________________________
 61.
 
 ```js
