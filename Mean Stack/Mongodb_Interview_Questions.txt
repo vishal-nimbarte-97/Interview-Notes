@@ -2,6 +2,7 @@
 ->MongoDB is a NoSQL database that stores data in the form of key-value pairs, and its structure is similar to JSON.
 ->mongodb provides high scalability,flexibility and performance.
 ->mongodb they are stored json formated.
+
 ->mongodb is a open source and cross platform.
 -----------------------------------------------------------------------------------------------
 2.what is NoSQL database?
