@@ -1,0 +1,897 @@
+
+______________________________________________________________________________________________
+## 🔹 61–80: Type Coercion
+______________________________________________________________________________________________
+61.
+
+console.log({}+[]);
+```
+
+62.
+
+```js
+console.log([]+{});
+```
+
+63.
+
+```js
+console.log([]+[]);
+```
+
+64.
+
+```js
+console.log({}+{});
+```
+
+65.
+
+```js
+console.log(true+false);
+```
+
+66.
+
+```js
+console.log(true+true);
+```
+
+67.
+
+```js
+console.log(1+"2");
+```
+
+68.
+
+```js
+console.log("2"-1);
+```
+
+69.
+
+```js
+console.log(null==undefined);
+```
+
+70.
+
+```js
+console.log(null===undefined);
+```
+
+71.
+
+```js
+console.log([]==false);
+```
+
+72.
+
+```js
+console.log([]===false);
+```
+
+73.
+
+```js
+console.log({}=={});
+```
+
+74.
+
+```js
+console.log(NaN==NaN);
+```
+
+75.
+
+```js
+console.log(typeof NaN);
+```
+
+76.
+
+```js
+console.log(typeof null);
+```
+
+77.
+
+```js
+console.log(!!"hello");
+```
+
+78.
+
+```js
+console.log(!!0);
+```
+
+79.
+
+```js
+console.log(0.1+0.2===0.3);
+```
+
+80.
+
+```js
+console.log(9007199254740991+1);
+```
+
+---
+
+## 🔹 81–100: Objects & Functions
+
+81.
+
+```js
+function foo(){
+  console.log(this);
+}
+foo();
+```
+
+82.
+
+```js
+const obj={
+  name:"JS",
+  getName:function(){
+    console.log(this.name);
+  }
+};
+obj.getName();
+```
+
+83.
+
+```js
+const obj={
+  name:"JS",
+  getName:()=>console.log(this.name)
+};
+obj.getName();
+```
+
+84.
+
+```js
+function foo(){
+  return
+  {
+    name:"JS"
+  }
+}
+console.log(foo());
+```
+
+85.
+
+```js
+console.log(typeof function(){} );
+```
+
+86.
+
+```js
+console.log(typeof Array);
+```
+
+87.
+
+```js
+console.log([] instanceof Array);
+```
+
+88.
+
+```js
+console.log({} instanceof Object);
+```
+
+89.
+
+```js
+console.log([] instanceof Object);
+```
+
+90.
+
+```js
+function Person(name){
+  this.name=name;
+}
+const p=new Person("JS");
+console.log(p.name);
+```
+
+91.
+
+```js
+console.log([1,2,3].map(parseInt));
+```
+
+92.
+
+```js
+console.log(1<2<3);
+```
+
+93.
+
+```js
+console.log(3>2>1);
+```
+
+94.
+
+```js
+console.log("5"==5);
+```
+
+95.
+
+```js
+console.log("5"===5);
+```
+
+96.
+
+```js
+console.log(Object.keys({a:1,b:2}));
+```
+
+97.
+
+```js
+console.log(Object.values({a:1,b:2}));
+```
+
+98.
+
+```js
+console.log(Object.entries({a:1}));
+```
+
+99.
+
+```js
+console.log(JSON.stringify({a:undefined}));
+```
+
+100.
+
+```js
+console.log(JSON.stringify([undefined]));
+```
+
+---
+
+🔥 Batch 1 Completed (100 Questions)
+
+Reply:
+
+* **"Batch 2"** → I’ll generate next 100
+* **"Give answers for Batch 1"**
+* **"Make PDF"**
+* **"Hard level only"**
+
+Let’s build your interview strength step-by-step 💪
+
+
+______________________________________________________________________________________________
+Perfect 🔥
+Here is Batch-2 – 100 Advanced JavaScript Output Questions
+
+(No answers — practice mode)
+
+---
+
+# 🚀 JavaScript 100 Output Questions – Batch 2
+
+---
+
+## 🔹 101–120: Hoisting & Execution Context
+
+101.
+
+```js
+console.log(a);
+function a(){ }
+var a = 10;
+console.log(a);
+```
+
+102.
+
+```js
+foo();
+function foo(){
+  console.log("Hello");
+}
+```
+
+103.
+
+```js
+foo();
+var foo = function(){
+  console.log("Hi");
+}
+```
+
+104.
+
+```js
+var a = 1;
+function test(){
+  console.log(a);
+  var a = 2;
+}
+test();
+```
+
+105.
+
+```js
+function test(){
+  console.log(a);
+}
+var a = 5;
+test();
+```
+
+106.
+
+```js
+var a = 10;
+(function(){
+  console.log(a);
+})();
+```
+
+107.
+
+```js
+(function(){
+  console.log(a);
+  var a = 20;
+})();
+```
+
+108.
+
+```js
+console.log(typeof foo);
+function foo(){}
+```
+
+109.
+
+```js
+console.log(typeof bar);
+var bar = function(){}
+```
+
+110.
+
+```js
+var x = 10;
+function x(){}
+console.log(typeof x);
+```
+
+111.
+
+```js
+function x(){
+  return 1;
+}
+function x(){
+  return 2;
+}
+console.log(x());
+```
+
+112.
+
+```js
+var x = 1;
+function x(){}
+console.log(x);
+```
+
+113.
+
+```js
+console.log(a());
+function a(){
+  return 5;
+}
+```
+
+114.
+
+```js
+console.log(a());
+var a = function(){
+  return 10;
+}
+```
+
+115.
+
+```js
+var a = 1;
+(function a(){
+  a = 10;
+  console.log(a);
+})();
+```
+
+116.
+
+```js
+function foo(){
+  console.log(this);
+}
+foo.call(null);
+```
+
+117.
+
+```js
+function foo(){
+  console.log(this);
+}
+foo.call(undefined);
+```
+
+118.
+
+```js
+function foo(){
+  "use strict";
+  console.log(this);
+}
+foo();
+```
+
+119.
+
+```js
+(function(){
+  console.log(this);
+})();
+```
+
+120.
+
+```js
+(() => {
+  console.log(this);
+})();
+```
+
+---
+
+## 🔹 121–140: this Keyword Deep Dive
+
+121.
+
+```js
+const obj = {
+  name: "JS",
+  print(){
+    console.log(this.name);
+  }
+};
+const fn = obj.print;
+fn();
+```
+
+122.
+
+```js
+const obj = {
+  name: "JS",
+  print(){
+    setTimeout(function(){
+      console.log(this.name);
+    },100);
+  }
+};
+obj.print();
+```
+
+123.
+
+```js
+const obj = {
+  name: "JS",
+  print(){
+    setTimeout(()=>{
+      console.log(this.name);
+    },100);
+  }
+};
+obj.print();
+```
+
+124.
+
+```js
+function Person(name){
+  this.name = name;
+}
+const p = Person("JS");
+console.log(p);
+```
+
+125.
+
+```js
+const obj = {
+  name:"JS",
+  get: function(){
+    return function(){
+      console.log(this.name);
+    }
+  }
+};
+obj.get()();
+```
+
+126.
+
+```js
+const obj = {
+  name:"JS",
+  get: function(){
+    return ()=>{
+      console.log(this.name);
+    }
+  }
+};
+obj.get()();
+```
+
+127.
+
+```js
+const obj = {
+  name:"JS"
+};
+function print(){
+  console.log(this.name);
+}
+print.call(obj);
+```
+
+128.
+
+```js
+function print(){
+  console.log(this);
+}
+print.bind({a:1})();
+```
+
+129.
+
+```js
+const obj = {
+  name:"JS",
+  arrow: () => console.log(this.name)
+};
+obj.arrow();
+```
+
+130.
+
+```js
+const obj = {
+  name:"JS",
+  normal(){
+    return () => console.log(this.name);
+  }
+};
+obj.normal()();
+```
+
+131.
+
+```js
+class A{
+  constructor(){
+    this.name="JS";
+  }
+  print(){
+    console.log(this.name);
+  }
+}
+const a=new A();
+const fn=a.print;
+fn();
+```
+
+132.
+
+```js
+class A{
+  name="JS";
+  print=()=>{
+    console.log(this.name);
+  }
+}
+const a=new A();
+const fn=a.print;
+fn();
+```
+
+133.
+
+```js
+const obj = {
+  a:10,
+  b:{
+    a:20,
+    print(){
+      console.log(this.a);
+    }
+  }
+};
+obj.b.print();
+```
+
+134.
+
+```js
+const obj = {
+  a:10,
+  b:{
+    a:20,
+    print:()=>console.log(this.a)
+  }
+};
+obj.b.print();
+```
+
+135.
+
+```js
+function foo(){
+  return {
+    name:"JS",
+    print(){
+      console.log(this.name);
+    }
+  }
+}
+foo().print();
+```
+
+136.
+
+```js
+const obj={
+  name:"JS"
+};
+const arr=[function(){
+  console.log(this.name);
+}];
+arr[0].call(obj);
+```
+
+137.
+
+```js
+const obj={
+  name:"JS"
+};
+setTimeout(function(){
+  console.log(this.name);
+}.bind(obj),100);
+```
+
+138.
+
+```js
+setTimeout(()=>{
+  console.log(this);
+},100);
+```
+
+139.
+
+```js
+(function(){
+  console.log(this);
+}).call({a:1});
+```
+
+140.
+
+```js
+(() => {
+  console.log(this);
+}).call({a:1});
+```
+
+---
+
+## 🔹 141–160: Prototype & Inheritance
+
+141.
+
+```js
+function A(){}
+A.prototype.x=10;
+const a=new A();
+console.log(a.x);
+```
+
+142.
+
+```js
+function A(){}
+A.prototype.x=10;
+const a=new A();
+a.x=20;
+console.log(a.x);
+```
+
+143.
+
+```js
+function A(){}
+A.prototype.x=10;
+const a=new A();
+delete a.x;
+console.log(a.x);
+```
+
+144.
+
+```js
+function A(){}
+A.prototype.x=10;
+const a=new A();
+delete A.prototype.x;
+console.log(a.x);
+```
+
+145.
+
+```js
+function A(){}
+A.prototype={x:10};
+const a=new A();
+console.log(a.constructor===A);
+```
+
+146.
+
+```js
+function A(){}
+const a=new A();
+console.log(a instanceof A);
+```
+
+147.
+
+```js
+console.log([] instanceof Array);
+```
+
+148.
+
+```js
+console.log([] instanceof Object);
+```
+
+149.
+
+```js
+console.log({} instanceof Array);
+```
+
+150.
+
+```js
+function A(){}
+function B(){}
+B.prototype=new A();
+const b=new B();
+console.log(b instanceof A);
+```
+
+151.
+
+```js
+class A{
+  constructor(){
+    this.x=10;
+  }
+}
+class B extends A{}
+const b=new B();
+console.log(b.x);
+```
+
+152.
+
+```js
+class A{
+  static x=10;
+}
+console.log(A.x);
+```
+
+153.
+
+```js
+class A{
+  x=10;
+}
+console.log(new A().x);
+```
+
+154.
+
+```js
+console.log(Object.getPrototypeOf([])===Array.prototype);
+```
+
+155.
+
+```js
+console.log(Object.getPrototypeOf({})===Object.prototype);
+```
+
+156.
+
+```js
+const obj={a:1};
+console.log(obj.hasOwnProperty("a"));
+```
+
+157.
+
+```js
+const obj={a:1};
+console.log("toString" in obj);
+```
+
+158.
+
+```js
+function A(){}
+A.prototype.y=20;
+const a=new A();
+console.log("y" in a);
+```
+
+159.
+
+```js
+function A(){}
+A.prototype.y=20;
+const a=new A();
+console.log(a.hasOwnProperty("y"));
+```
+
+160.
+
+```js
+function A(){}
+A.prototype.y=20;
+const a=new A();
+a.y=30;
+console.log(a.hasOwnProperty("y"));
+```
+
+---
