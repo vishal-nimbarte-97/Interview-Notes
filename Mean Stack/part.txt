@@ -52,7 +52,7 @@ console.log("2"-1);
 69.
 
 ```js
-console.log(null==undefined);
+console.log(null==undefined);    
 ```
 
 70.
