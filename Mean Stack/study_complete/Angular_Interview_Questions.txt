@@ -181,6 +181,18 @@ Each role has different permissions and features based on their responsibilities
 > The system supports inbound/outbound calls, AI Voice-Bot, call logs, and recordings.
 > Contributed to both frontend and backend with role-based access for Super Admin, Admin, Supervisor, TL, and Agents.
 
+
+
+
+0.what is signals?
+👉 Signals are lightweight state management for local or component state, and they automatically update and do not require much code.
+------------------------------------------------------------------------------------------------------
+0.Types of signals in angular?
+👉There are mainly 3 types of signals in Angular:
+
+👉 Writable Signal = store/change data
+👉 Computed Signal = calculated data
+👉 Effect Signal   = run code when data changes
 ------------------------------------------------------------------------------------------------------
 1.What is Angular?
 ->Angular is TypeScript Based Frontend Framework for developing single page web applicaion. and this Framework developed by google for creating single page web applicaion.
