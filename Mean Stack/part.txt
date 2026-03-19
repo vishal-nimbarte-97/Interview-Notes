@@ -1,488 +1,456 @@
-
 ______________________________________________________________________________________________
-## 🔹 61–80: Type Coercion
-______________________________________________________________________________________________
-61.
+ ## 🔹 61–80: Type Coercion
+ ______________________________________________________________________________________________
+ 61.
+ console.log({}+[]);
+ Output :- [object Object]
+ ______________________________________________________________________________________________
+ 62.
+ console.log([]+{});
+ Output : - [object Object]
+ ______________________________________________________________________________________________
+ 63.
+ console.log([]+[]);
+ Output :- Nothing
+ ______________________________________________________________________________________________
+ 64.
+ console.log({}+{});
+ Output :- [object Object][object Object]
+ ______________________________________________________________________________________________
+ 65.
+ console.log(true+false);
+ Output :- 1
+ ______________________________________________________________________________________________
+ 66.
+ console.log(true+true);
+ Output :- 2
+ ______________________________________________________________________________________________
+ 67.
+ console.log(1+"2");
+ Output :- 12
+ ______________________________________________________________________________________________
+ 68.
+ console.log("2"-1);
+ Output :- 1
+ ______________________________________________________________________________________________
+ 69.
+ console.log(null==undefined);
+ Output :- true
+ ______________________________________________________________________________________________
+ 70.
+ console.log(null===undefined);//false
+ ______________________________________________________________________________________________
+ 71.
+ console.log([]==false);//true statement
+ ______________________________________________________________________________________________
+ 72.
+ console.log([]===false);//false statment becase check type
+ ______________________________________________________________________________________________
+ 73.
+ console.log({}=={});//false
+ console.log({}==={});//false
+ let obj = {
+ a : 'a'
+ };
 
-console.log({}+[]);
-```
+let obj2 = {
+ a : 'a'
+ };
 
-62.
+console.log(obj==obj2);//false
+ console.log(obj===obj2);//false
+ //false becuase of memory address
+ ______________________________________________________________________________________________
+ 74.
+ console.log(NaN==NaN);//false
+ ______________________________________________________________________________________________
+ 75.
+ console.log(typeof NaN);//number
+ ______________________________________________________________________________________________
+ 76.
+ console.log(typeof null);//object
+ ______________________________________________________________________________________________
+ 77.
+ console.log(!"hello");//false
+ console.log(!!"hello");//true
+ console.log(!!!"hello");//false
+ console.log(!!!!"hello");//true
+ ______________________________________________________________________________________________
+ 78.
+ console.log(!!0);//false
+ console.log(!!!0);//true
+ ______________________________________________________________________________________________
+ 79.
+ console.log(0.1+0.2===0.3);//false
+ [Important}}}}}]
+ ______________________________________________________________________________________________
+ 80.
+ console.log(9007199254740991+1);//9007199254740992
+ ______________________________________________________________________________________________
+ 81.
+ function foo(){
+ console.log(this);
+ }
+ foo();
 
-```js
-console.log([]+{});
-```
+Output:- 
+ <ref *1> Object [global] {
+ global: [Circular *1],
+ clearImmediate: [Function: clearImmediate],
+ setImmediate: [Function: setImmediate] {
+ [Symbol(nodejs.util.promisify.custom)]: [Getter]
+ },
+ clearInterval: [Function: clearInterval],
+ clearTimeout: [Function: clearTimeout],
+ setInterval: [Function: setInterval],
+ setTimeout: [Function: setTimeout] {
+ [Symbol(nodejs.util.promisify.custom)]: [Getter]
+ },
+ queueMicrotask: [Function: queueMicrotask],
+ structuredClone: [Function: structuredClone],
+ atob: [Function: atob],
+ btoa: [Function: btoa],
+ performance: [Getter/Setter],
+ fetch: [Function: fetch],
+ navigator: [Getter],
+ crypto: [Getter],
+ alert: [Function: log],
+ prompt: [Function (anonymous)]
+ }
+ ______________________________________________________________________________________________
+ 82.
+ const obj={
+ name:"JS",
+ getName:function(){
+ console.log(this.name);
+ }
+ };
 
-63.
-
-```js
-console.log([]+[]);
-```
-
-64.
-
-```js
-console.log({}+{});
-```
-
-65.
-
-```js
-console.log(true+false);
-```
-
-66.
-
-```js
-console.log(true+true);
-```
-
-67.
-
-```js
-console.log(1+"2");
-```
-
-68.
-
-```js
-console.log("2"-1);
-```
-
-69.
-
-```js
-console.log(null==undefined);
-```
-
-70.
-
-```js
-console.log(null===undefined);
-```
-
-71.
-
-```js
-console.log([]==false);
-```
-
-72.
-
-```js
-console.log([]===false);
-```
-
-73.
-
-```js
-console.log({}=={});
-```
-
-74.
-
-```js
-console.log(NaN==NaN);
-```
-
-75.
-
-```js
-console.log(typeof NaN);
-```
-
-76.
-
-```js
-console.log(typeof null);
-```
-
-77.
-
-```js
-console.log(!!"hello");
-```
-
-78.
-
-```js
-console.log(!!0);
-```
-
-79.
-
-```js
-console.log(0.1+0.2===0.3);
-```
-
-80.
-
-```js
-console.log(9007199254740991+1);
-```
-
----
-
-## 🔹 81–100: Objects & Functions
-
-81.
-
-```js
-function foo(){
-  console.log(this);
-}
-foo();
-```
-
-82.
-
-```js
-const obj={
-  name:"JS",
-  getName:function(){
-    console.log(this.name);
-  }
-};
 obj.getName();
-```
 
-83.
+Output:-
+ JS
+ ______________________________________________________________________________________________
+ 83.
+ const obj={
+ name:"JS",
+ getName:()=>console.log(this.name)
+ };
+ obj.getName();
 
-```js
-const obj={
-  name:"JS",
-  getName:()=>console.log(this.name)
-};
-obj.getName();
-```
+ Output:-
+ undefined because of arrow function does'nt have own this
+ ______________________________________________________________________________________________
+ 84.
+ function foo(){
+ return
+ {
+ name:"JS"
+ }
+ }
 
-84.
-
-```js
-function foo(){
-  return
-  {
-    name:"JS"
-  }
-}
 console.log(foo());
-```
 
-85.
+Output:-
+ undefined
+ because of
 
-```js
-console.log(typeof function(){} );
-```
+function foo() {
+ return; // <--- JavaScript ne yahan apne aap semicolon laga diya!
+ {
+ name: "JS"
+ }
+ }
 
-86.
+and
 
-```js
-console.log(typeof Array);
-```
+function foo() {
+ return{
+ name: "JS"
+ }
+ }
 
-87.
+so that case they are return
 
-```js
-console.log([] instanceof Array);
-```
+{
+ name : "JS"
+ }
+ ______________________________________________________________________________________________
+ 85.
+ console.log(typeof function(){} );//function
+ ______________________________________________________________________________________________
+ 86.
+ console.log(typeof Array);;//function
+ Array is a function in javascript so that reason there is type is function
+ ______________________________________________________________________________________________
+ 87.
+ console.log([] instanceof Array);//true
+ ______________________________________________________________________________________________
+ 88.
+ console.log({} instanceof Object);//true
+ ______________________________________________________________________________________________
+ 89.
+ console.log([] instanceof Object);//true
+ output :- true because of [] is a Object so this statement is converted like a
+ console.log(Object instanceof Object);
+ ______________________________________________________________________________________________
+ 90.
+ function Person(name){
+ this.name=name;
+ }
+ const p=new Person("JS");
+ console.log(p.name);
 
-88.
+Output :- 
+ JS
+ ______________________________________________________________________________________________
+ 91.
+ console.log([1,2,3].map(parseInt));
+ Output: [1, NaN, NaN]
+ ______________________________________________________________________________________________
+ 92.
+ console.log(1<2<3);
+ Output:- true
+ ______________________________________________________________________________________________
+ 93.
+ console.log(3>2>1);
+ Output:- false
+ ______________________________________________________________________________________________
+ 94.
+ console.log("5"==5);//true
+ ______________________________________________________________________________________________
+ 95.
+ console.log("5"===5);//false
+ ______________________________________________________________________________________________
+ 96.
+ console.log(Object.keys({a:1,b:2}));//['a','b']
+ ______________________________________________________________________________________________
+ 97.
+ console.log(Object.values({a:1,b:2}));//[1,2]
+ ______________________________________________________________________________________________
+ 98.
+ console.log(Object.entries({a:1}));//[ [ 'a', 1 ] ]
+ ______________________________________________________________________________________________
+ 99.
+ console.log(JSON.stringify({a:undefined}));//{}
+ ______________________________________________________________________________________________
+ 100.
+ console.log(JSON.stringify([undefined]));//[null]
+ ______________________________________________________________________________________________
+ 🔥 Batch 1 Completed (100 Questions)
+ ______________________________________________________________________________________________
+ ## 🔹 101–120: Hoisting & Execution Context
+ ______________________________________________________________________________________________
+ 101.
+ console.log(a);//undefined
+ var a = 10;
+ console.log(a);//10
 
-```js
-console.log({} instanceof Object);
-```
+Output:-
+ undefined
+ 10
+ ______________________________________________________________________________________________
+ 101.
+ console.log(a);//[Function: a]
+ function a(){ }
+ var a = 10;
+ console.log(a);//10
 
-89.
+Output:-
+ [Function: a]
+ 10
+ ______________________________________________________________________________________________
+ 102.
+ foo();
+ console.log('Hii');//Hii
+ function foo(){
+ console.log("Hello");//Hello
+ }
 
-```js
-console.log([] instanceof Object);
-```
+Output:-
+ Hello
+ ______________________________________________________________________________________________
+ 103.
+ foo();
+ var foo = function(){
+ console.log("Hi");
+ }
 
-90.
+Output :- 
+ foo() is not a function
+ ______________________________________________________________________________________________
+ 104.
+ var a = 1;
+ function test(){
+ console.log(a);
+ var a = 2;
+ }
+ test();
 
-```js
-function Person(name){
-  this.name=name;
-}
-const p=new Person("JS");
-console.log(p.name);
-```
+Output:-
+ undefined
+ ______________________________________________________________________________________________
+ 105.
+ function test(){
+ console.log(a);
+ }
+ var a = 5;
+ test();
 
-91.
+Output:-
+ 5
+ ______________________________________________________________________________________________
+ 106.
+ var a = 10;
+ (function(){
+ console.log(a);
+ })();
 
-```js
-console.log([1,2,3].map(parseInt));
-```
+Output:-
+ 10
+ ______________________________________________________________________________________________
+ 107.
+ (function(){
+ console.log(a);
+ var a = 20;
+ })();
 
-92.
+Output:-
+ undefined
+ ______________________________________________________________________________________________
+ 108.
+ console.log(typeof foo);//function
+ function foo(){}
+ ______________________________________________________________________________________________
+ 109.
+ console.log(typeof bar);//undefined
+ var bar = function(){}
+ ______________________________________________________________________________________________
+ 110.
+ var x = 10;
+ function x(){}
+ console.log(typeof x);//number
+ ---
+ function x(){}
+ console.log(typeof x);//function
+ ______________________________________________________________________________________________
+ 111.
+ function x(){
+ return 1;
+ }
+ function x(){
+ return 2;
+ }
+ console.log(x());//2
+ ______________________________________________________________________________________________
+ 112.
+ var x = 1;
+ function x(){}
+ console.log(x);//1
+ Output:-
+ 1
+ ______________________________________________________________________________________________
+ 113.
+ console.log(a());
+ function a(){
+ return 5;
+ }
 
-```js
-console.log(1<2<3);
-```
+Output:-
+ 5
+ ______________________________________________________________________________________________
+ 114.
+ console.log(a());
+ var a = function(){
+ return 10;
+ }
 
-93.
+Output:-
+ a is not a function
+ ______________________________________________________________________________________________
+ 115.
+ var a = 1;
+ (function a(){
+ a = 10;
+ console.log(a);
+ })();
 
-```js
-console.log(3>2>1);
-```
+Output:-
+ [Function: a]
+ ______________________________________________________________________________________________
+ 116.
+ function foo(){
+ console.log(this);
+ }
+ foo.call(null);
 
-94.
+Output:-
+ print globle object
 
-```js
-console.log("5"==5);
-```
+<ref *1> Object [global] {
+ global: [Circular *1],
+ clearImmediate: [Function: clearImmediate],
+ setImmediate: [Function: setImmediate] {
+ [Symbol(nodejs.util.promisify.custom)]: [Getter]
+ },
+ clearInterval: [Function: clearInterval],
+ clearTimeout: [Function: clearTimeout],
+ setInterval: [Function: setInterval],
+ setTimeout: [Function: setTimeout] {
+ [Symbol(nodejs.util.promisify.custom)]: [Getter]
+ },
+ queueMicrotask: [Function: queueMicrotask],
+ structuredClone: [Function: structuredClone],
+ atob: [Function: atob],
+ btoa: [Function: btoa],
+ performance: [Getter/Setter],
+ fetch: [Function: fetch],
+ navigator: [Getter],
+ crypto: [Getter],
+ alert: [Function: log],
+ prompt: [Function (anonymous)]
+ }
+ ______________________________________________________________________________________________
+ 117.
+ function foo(){
+ console.log(this);
+ }
+ foo.call(undefined);
 
-95.
+Output:- 
+ Globle Object Print
+ ______________________________________________________________________________________________
+ 118.
+ function foo(){
+ "use strict";
+ console.log(this);
+ }
+ foo();
 
-```js
-console.log("5"===5);
-```
+Output:-
+ undifined print because of use strict mode
 
-96.
+remove strict mode so that time they are print globel object
+ ______________________________________________________________________________________________
+ 119.
+ (function(){
+ console.log(this);
+ })();
 
-```js
-console.log(Object.keys({a:1,b:2}));
-```
+Output:-
+ Globle Object Print
+ ______________________________________________________________________________________________
+ 120.
+ (() => {
+ console.log(this);
+ })();
 
-97.
-
-```js
-console.log(Object.values({a:1,b:2}));
-```
-
-98.
-
-```js
-console.log(Object.entries({a:1}));
-```
-
-99.
-
-```js
-console.log(JSON.stringify({a:undefined}));
-```
-
-100.
-
-```js
-console.log(JSON.stringify([undefined]));
-```
-
----
-
-🔥 Batch 1 Completed (100 Questions)
-
-Reply:
-
-* **"Batch 2"** → I’ll generate next 100
-* **"Give answers for Batch 1"**
-* **"Make PDF"**
-* **"Hard level only"**
-
-Let’s build your interview strength step-by-step 💪
-
-
+Output:-
+ {}
 ______________________________________________________________________________________________
-Perfect 🔥
-Here is Batch-2 – 100 Advanced JavaScript Output Questions
-
-(No answers — practice mode)
-
----
-
-# 🚀 JavaScript 100 Output Questions – Batch 2
-
----
-
-## 🔹 101–120: Hoisting & Execution Context
-
-101.
-
-```js
-console.log(a);
-function a(){ }
-var a = 10;
-console.log(a);
-```
-
-102.
-
-```js
-foo();
-function foo(){
-  console.log("Hello");
-}
-```
-
-103.
-
-```js
-foo();
-var foo = function(){
-  console.log("Hi");
-}
-```
-
-104.
-
-```js
-var a = 1;
-function test(){
-  console.log(a);
-  var a = 2;
-}
-test();
-```
-
-105.
-
-```js
-function test(){
-  console.log(a);
-}
-var a = 5;
-test();
-```
-
-106.
-
-```js
-var a = 10;
-(function(){
-  console.log(a);
-})();
-```
-
-107.
-
-```js
-(function(){
-  console.log(a);
-  var a = 20;
-})();
-```
-
-108.
-
-```js
-console.log(typeof foo);
-function foo(){}
-```
-
-109.
-
-```js
-console.log(typeof bar);
-var bar = function(){}
-```
-
-110.
-
-```js
-var x = 10;
-function x(){}
-console.log(typeof x);
-```
-
-111.
-
-```js
-function x(){
-  return 1;
-}
-function x(){
-  return 2;
-}
-console.log(x());
-```
-
-112.
-
-```js
-var x = 1;
-function x(){}
-console.log(x);
-```
-
-113.
-
-```js
-console.log(a());
-function a(){
-  return 5;
-}
-```
-
-114.
-
-```js
-console.log(a());
-var a = function(){
-  return 10;
-}
-```
-
-115.
-
-```js
-var a = 1;
-(function a(){
-  a = 10;
-  console.log(a);
-})();
-```
-
-116.
-
-```js
-function foo(){
-  console.log(this);
-}
-foo.call(null);
-```
-
-117.
-
-```js
-function foo(){
-  console.log(this);
-}
-foo.call(undefined);
-```
-
-118.
-
-```js
-function foo(){
-  "use strict";
-  console.log(this);
-}
-foo();
-```
-
-119.
-
-```js
-(function(){
-  console.log(this);
-})();
-```
-
-120.
-
-```js
-(() => {
-  console.log(this);
-})();
-```
-
----
-
 ## 🔹 121–140: this Keyword Deep Dive
-
+______________________________________________________________________________________________
 121.
-
-```js
 const obj = {
   name: "JS",
   print(){
@@ -491,8 +459,9 @@ const obj = {
 };
 const fn = obj.print;
 fn();
-```
 
+Output:-undefined
+______________________________________________________________________________________________
 122.
 
 ```js
