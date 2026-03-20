@@ -128,7 +128,7 @@ Syntax :-
 
 export class MyService { }
 
-What is RxJS and how is it used in Angular?
+What is RxJS and how is it used in Angular?     
 ->Reactive Extensions for JavaScript (RxJS) is a library used to handle asynchronous operations and event-based data using Observables.
 
 It allows you to work with data that changes over time, such as:
