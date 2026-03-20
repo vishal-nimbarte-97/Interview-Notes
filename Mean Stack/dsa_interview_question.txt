@@ -988,12 +988,6 @@ function x(){
 }
 x();
 ______________________________________________________________________________________________
-
-
-
-
-
-
 50.
 function counter(){
   let c=0;
@@ -1006,902 +1000,458 @@ const cnt=counter();
 console.log(cnt.inc());
 console.log(cnt.inc());
 ______________________________________________________________________________________________
-## 🔹 61–80: Type Coercion
-______________________________________________________________________________________________
-61.
+ ## 🔹 61–80: Type Coercion
+ ______________________________________________________________________________________________
+ 61.
+ console.log({}+[]);
+ Output :- [object Object]
+ ______________________________________________________________________________________________
+ 62.
+ console.log([]+{});
+ Output : - [object Object]
+ ______________________________________________________________________________________________
+ 63.
+ console.log([]+[]);
+ Output :- Nothing
+ ______________________________________________________________________________________________
+ 64.
+ console.log({}+{});
+ Output :- [object Object][object Object]
+ ______________________________________________________________________________________________
+ 65.
+ console.log(true+false);
+ Output :- 1
+ ______________________________________________________________________________________________
+ 66.
+ console.log(true+true);
+ Output :- 2
+ ______________________________________________________________________________________________
+ 67.
+ console.log(1+"2");
+ Output :- 12
+ ______________________________________________________________________________________________
+ 68.
+ console.log("2"-1);
+ Output :- 1
+ ______________________________________________________________________________________________
+ 69.
+ console.log(null==undefined);
+ Output :- true
+ ______________________________________________________________________________________________
+ 70.
+ console.log(null===undefined);//false
+ ______________________________________________________________________________________________
+ 71.
+ console.log([]==false);//true statement
+ ______________________________________________________________________________________________
+ 72.
+ console.log([]===false);//false statment becase check type
+ ______________________________________________________________________________________________
+ 73.
+ console.log({}=={});//false
+ console.log({}==={});//false
+ let obj = {
+ a : 'a'
+ };
 
-```js
-console.log({}+[]);
-```
+let obj2 = {
+ a : 'a'
+ };
 
-62.
+console.log(obj==obj2);//false
+ console.log(obj===obj2);//false
+ //false becuase of memory address
+ ______________________________________________________________________________________________
+ 74.
+ console.log(NaN==NaN);//false
+ ______________________________________________________________________________________________
+ 75.
+ console.log(typeof NaN);//number
+ ______________________________________________________________________________________________
+ 76.
+ console.log(typeof null);//object
+ ______________________________________________________________________________________________
+ 77.
+ console.log(!"hello");//false
+ console.log(!!"hello");//true
+ console.log(!!!"hello");//false
+ console.log(!!!!"hello");//true
+ ______________________________________________________________________________________________
+ 78.
+ console.log(!!0);//false
+ console.log(!!!0);//true
+ ______________________________________________________________________________________________
+ 79.
+ console.log(0.1+0.2===0.3);//false
+ [Important}}}}}]
+ ______________________________________________________________________________________________
+ 80.
+ console.log(9007199254740991+1);//9007199254740992
+ ______________________________________________________________________________________________
+ 81.
+ function foo(){
+ console.log(this);
+ }
+ foo();
 
-```js
-console.log([]+{});
-```
+Output:- 
+ <ref *1> Object [global] {
+ global: [Circular *1],
+ clearImmediate: [Function: clearImmediate],
+ setImmediate: [Function: setImmediate] {
+ [Symbol(nodejs.util.promisify.custom)]: [Getter]
+ },
+ clearInterval: [Function: clearInterval],
+ clearTimeout: [Function: clearTimeout],
+ setInterval: [Function: setInterval],
+ setTimeout: [Function: setTimeout] {
+ [Symbol(nodejs.util.promisify.custom)]: [Getter]
+ },
+ queueMicrotask: [Function: queueMicrotask],
+ structuredClone: [Function: structuredClone],
+ atob: [Function: atob],
+ btoa: [Function: btoa],
+ performance: [Getter/Setter],
+ fetch: [Function: fetch],
+ navigator: [Getter],
+ crypto: [Getter],
+ alert: [Function: log],
+ prompt: [Function (anonymous)]
+ }
+ ______________________________________________________________________________________________
+ 82.
+ const obj={
+ name:"JS",
+ getName:function(){
+ console.log(this.name);
+ }
+ };
 
-63.
-
-```js
-console.log([]+[]);
-```
-
-64.
-
-```js
-console.log({}+{});
-```
-
-65.
-
-```js
-console.log(true+false);
-```
-
-66.
-
-```js
-console.log(true+true);
-```
-
-67.
-
-```js
-console.log(1+"2");
-```
-
-68.
-
-```js
-console.log("2"-1);
-```
-
-69.
-
-```js
-console.log(null==undefined);
-```
-
-70.
-
-```js
-console.log(null===undefined);
-```
-
-71.
-
-```js
-console.log([]==false);
-```
-
-72.
-
-```js
-console.log([]===false);
-```
-
-73.
-
-```js
-console.log({}=={});
-```
-
-74.
-
-```js
-console.log(NaN==NaN);
-```
-
-75.
-
-```js
-console.log(typeof NaN);
-```
-
-76.
-
-```js
-console.log(typeof null);
-```
-
-77.
-
-```js
-console.log(!!"hello");
-```
-
-78.
-
-```js
-console.log(!!0);
-```
-
-79.
-
-```js
-console.log(0.1+0.2===0.3);
-```
-
-80.
-
-```js
-console.log(9007199254740991+1);
-```
-
----
-
-## 🔹 81–100: Objects & Functions
-
-81.
-
-```js
-function foo(){
-  console.log(this);
-}
-foo();
-```
-
-82.
-
-```js
-const obj={
-  name:"JS",
-  getName:function(){
-    console.log(this.name);
-  }
-};
 obj.getName();
-```
 
-83.
+Output:-
+ JS
+ ______________________________________________________________________________________________
+ 83.
+ const obj={
+ name:"JS",
+ getName:()=>console.log(this.name)
+ };
+ obj.getName();
 
-```js
-const obj={
-  name:"JS",
-  getName:()=>console.log(this.name)
-};
-obj.getName();
-```
+ Output:-
+ undefined because of arrow function does'nt have own this
+ ______________________________________________________________________________________________
+ 84.
+ function foo(){
+ return
+ {
+ name:"JS"
+ }
+ }
 
-84.
-
-```js
-function foo(){
-  return
-  {
-    name:"JS"
-  }
-}
 console.log(foo());
-```
 
-85.
+Output:-
+ undefined
+ because of
+
+function foo() {
+ return; // <--- JavaScript ne yahan apne aap semicolon laga diya!
+ {
+ name: "JS"
+ }
+ }
+
+and
+
+function foo() {
+ return{
+ name: "JS"
+ }
+ }
+
+so that case they are return
+
+{
+ name : "JS"
+ }
+ ______________________________________________________________________________________________
+ 85.
+ console.log(typeof function(){} );//function
+ ______________________________________________________________________________________________
+ 86.
+ console.log(typeof Array);;//function
+ Array is a function in javascript so that reason there is type is function
+ ______________________________________________________________________________________________
+ 87.
+ console.log([] instanceof Array);//true
+ ______________________________________________________________________________________________
+ 88.
+ console.log({} instanceof Object);//true
+ ______________________________________________________________________________________________
+ 89.
+ console.log([] instanceof Object);//true
+ output :- true because of [] is a Object so this statement is converted like a
+ console.log(Object instanceof Object);
+ ______________________________________________________________________________________________
+ 90.
+ function Person(name){
+ this.name=name;
+ }
+ const p=new Person("JS");
+ console.log(p.name);
+
+Output :- 
+ JS
+ ______________________________________________________________________________________________
+ 91.
+ console.log([1,2,3].map(parseInt));
+ Output: [1, NaN, NaN]
+ ______________________________________________________________________________________________
+ 92.
+ console.log(1<2<3);
+ Output:- true
+ ______________________________________________________________________________________________
+ 93.
+ console.log(3>2>1);
+ Output:- false
+ ______________________________________________________________________________________________
+ 94.
+ console.log("5"==5);//true
+ ______________________________________________________________________________________________
+ 95.
+ console.log("5"===5);//false
+ ______________________________________________________________________________________________
+ 96.
+ console.log(Object.keys({a:1,b:2}));//['a','b']
+ ______________________________________________________________________________________________
+ 97.
+ console.log(Object.values({a:1,b:2}));//[1,2]
+ ______________________________________________________________________________________________
+ 98.
+ console.log(Object.entries({a:1}));//[ [ 'a', 1 ] ]
+ ______________________________________________________________________________________________
+ 99.
+ console.log(JSON.stringify({a:undefined}));//{}
+ ______________________________________________________________________________________________
+ 100.
+ console.log(JSON.stringify([undefined]));//[null]
+ ______________________________________________________________________________________________
+ 🔥 Batch 1 Completed (100 Questions)
+ ______________________________________________________________________________________________
+ ## 🔹 101–120: Hoisting & Execution Context
+ ______________________________________________________________________________________________
+ 101.
+ console.log(a);//undefined
+ var a = 10;
+ console.log(a);//10
+
+Output:-
+ undefined
+ 10
+ ______________________________________________________________________________________________
+ 101.
+ console.log(a);//[Function: a]
+ function a(){ }
+ var a = 10;
+ console.log(a);//10
+
+Output:-
+ [Function: a]
+ 10
+ ______________________________________________________________________________________________
+ 102.
+ foo();
+ console.log('Hii');//Hii
+ function foo(){
+ console.log("Hello");//Hello
+ }
+
+Output:-
+ Hello
+ ______________________________________________________________________________________________
+ 103.
+ foo();
+ var foo = function(){
+ console.log("Hi");
+ }
+
+Output :- 
+ foo() is not a function
+ ______________________________________________________________________________________________
+ 104.
+ var a = 1;
+ function test(){
+ console.log(a);
+ var a = 2;
+ }
+ test();
+
+Output:-
+ undefined
+ ______________________________________________________________________________________________
+ 105.
+ function test(){
+ console.log(a);
+ }
+ var a = 5;
+ test();
+
+Output:-
+ 5
+ ______________________________________________________________________________________________
+ 106.
+ var a = 10;
+ (function(){
+ console.log(a);
+ })();
+
+Output:-
+ 10
+ ______________________________________________________________________________________________
+ 107.
+ (function(){
+ console.log(a);
+ var a = 20;
+ })();
+
+Output:-
+ undefined
+ ______________________________________________________________________________________________
+ 108.
+ console.log(typeof foo);//function
+ function foo(){}
+ ______________________________________________________________________________________________
+ 109.
+ console.log(typeof bar);//undefined
+ var bar = function(){}
+ ______________________________________________________________________________________________
+ 110.
+ var x = 10;
+ function x(){}
+ console.log(typeof x);//number
+ ---
+ function x(){}
+ console.log(typeof x);//function
+ ______________________________________________________________________________________________
+ 111.
+ function x(){
+ return 1;
+ }
+ function x(){
+ return 2;
+ }
+ console.log(x());//2
+ ______________________________________________________________________________________________
+ 112.
+ var x = 1;
+ function x(){}
+ console.log(x);//1
+ Output:-
+ 1
+ ______________________________________________________________________________________________
+ 113.
+ console.log(a());
+ function a(){
+ return 5;
+ }
+
+Output:-
+ 5
+ ______________________________________________________________________________________________
+ 114.
+ console.log(a());
+ var a = function(){
+ return 10;
+ }
+
+Output:-
+ a is not a function
+ ______________________________________________________________________________________________
+ 115.
+ var a = 1;
+ (function a(){
+ a = 10;
+ console.log(a);
+ })();
+
+Output:-
+ [Function: a]
+ ______________________________________________________________________________________________
+ 116.
+ function foo(){
+ console.log(this);
+ }
+ foo.call(null);
+
+Output:-
+ print globle object
+
+<ref *1> Object [global] {
+ global: [Circular *1],
+ clearImmediate: [Function: clearImmediate],
+ setImmediate: [Function: setImmediate] {
+ [Symbol(nodejs.util.promisify.custom)]: [Getter]
+ },
+ clearInterval: [Function: clearInterval],
+ clearTimeout: [Function: clearTimeout],
+ setInterval: [Function: setInterval],
+ setTimeout: [Function: setTimeout] {
+ [Symbol(nodejs.util.promisify.custom)]: [Getter]
+ },
+ queueMicrotask: [Function: queueMicrotask],
+ structuredClone: [Function: structuredClone],
+ atob: [Function: atob],
+ btoa: [Function: btoa],
+ performance: [Getter/Setter],
+ fetch: [Function: fetch],
+ navigator: [Getter],
+ crypto: [Getter],
+ alert: [Function: log],
+ prompt: [Function (anonymous)]
+ }
+ ______________________________________________________________________________________________
+ 117.
+ function foo(){
+ console.log(this);
+ }
+ foo.call(undefined);
+
+Output:- 
+ Globle Object Print
+ ______________________________________________________________________________________________
+ 118.
+ function foo(){
+ "use strict";
+ console.log(this);
+ }
+ foo();
+
+Output:-
+ undifined print because of use strict mode
+
+remove strict mode so that time they are print globel object
+ ______________________________________________________________________________________________
+ 119.
+ (function(){
+ console.log(this);
+ })();
+
+Output:-
+ Globle Object Print
+ ______________________________________________________________________________________________
+ 120.
+ (() => {
+ console.log(this);
+ })();
+
+Output:-
+ {}
 
-```js
-console.log(typeof function(){} );
-```
 
-86.
 
-```js
-console.log(typeof Array);
-```
 
-87.
-
-```js
-console.log([] instanceof Array);
-```
-
-88.
-
-```js
-console.log({} instanceof Object);
-```
-
-89.
-
-```js
-console.log([] instanceof Object);
-```
-
-90.
-
-```js
-function Person(name){
-  this.name=name;
-}
-const p=new Person("JS");
-console.log(p.name);
-```
-
-91.
-
-```js
-console.log([1,2,3].map(parseInt));
-```
-
-92.
-
-```js
-console.log(1<2<3);
-```
-
-93.
-
-```js
-console.log(3>2>1);
-```
-
-94.
-
-```js
-console.log("5"==5);
-```
-
-95.
-
-```js
-console.log("5"===5);
-```
-
-96.
-
-```js
-console.log(Object.keys({a:1,b:2}));
-```
-
-97.
-
-```js
-console.log(Object.values({a:1,b:2}));
-```
-
-98.
-
-```js
-console.log(Object.entries({a:1}));
-```
-
-99.
-
-```js
-console.log(JSON.stringify({a:undefined}));
-```
-
-100.
-
-```js
-console.log(JSON.stringify([undefined]));
-```
-
----
-
-🔥 Batch 1 Completed (100 Questions)
-
-Reply:
-
-* **"Batch 2"** → I’ll generate next 100
-* **"Give answers for Batch 1"**
-* **"Make PDF"**
-* **"Hard level only"**
-
-Let’s build your interview strength step-by-step 💪
-
-
-______________________________________________________________________________________________
-Perfect 🔥
-Here is Batch-2 – 100 Advanced JavaScript Output Questions
-
-(No answers — practice mode)
-
----
-
-# 🚀 JavaScript 100 Output Questions – Batch 2
-
----
-
-## 🔹 101–120: Hoisting & Execution Context
-
-101.
-
-```js
-console.log(a);
-function a(){ }
-var a = 10;
-console.log(a);
-```
-
-102.
-
-```js
-foo();
-function foo(){
-  console.log("Hello");
-}
-```
-
-103.
-
-```js
-foo();
-var foo = function(){
-  console.log("Hi");
-}
-```
-
-104.
-
-```js
-var a = 1;
-function test(){
-  console.log(a);
-  var a = 2;
-}
-test();
-```
-
-105.
-
-```js
-function test(){
-  console.log(a);
-}
-var a = 5;
-test();
-```
-
-106.
-
-```js
-var a = 10;
-(function(){
-  console.log(a);
-})();
-```
-
-107.
-
-```js
-(function(){
-  console.log(a);
-  var a = 20;
-})();
-```
-
-108.
-
-```js
-console.log(typeof foo);
-function foo(){}
-```
-
-109.
-
-```js
-console.log(typeof bar);
-var bar = function(){}
-```
-
-110.
-
-```js
-var x = 10;
-function x(){}
-console.log(typeof x);
-```
-
-111.
-
-```js
-function x(){
-  return 1;
-}
-function x(){
-  return 2;
-}
-console.log(x());
-```
-
-112.
-
-```js
-var x = 1;
-function x(){}
-console.log(x);
-```
-
-113.
-
-```js
-console.log(a());
-function a(){
-  return 5;
-}
-```
-
-114.
-
-```js
-console.log(a());
-var a = function(){
-  return 10;
-}
-```
-
-115.
-
-```js
-var a = 1;
-(function a(){
-  a = 10;
-  console.log(a);
-})();
-```
-
-116.
-
-```js
-function foo(){
-  console.log(this);
-}
-foo.call(null);
-```
-
-117.
-
-```js
-function foo(){
-  console.log(this);
-}
-foo.call(undefined);
-```
-
-118.
-
-```js
-function foo(){
-  "use strict";
-  console.log(this);
-}
-foo();
-```
-
-119.
-
-```js
-(function(){
-  console.log(this);
-})();
-```
-
-120.
-
-```js
-(() => {
-  console.log(this);
-})();
-```
-
----
-
-## 🔹 121–140: this Keyword Deep Dive
-
-121.
-
-```js
-const obj = {
-  name: "JS",
-  print(){
-    console.log(this.name);
-  }
-};
-const fn = obj.print;
-fn();
-```
-
-122.
-
-```js
-const obj = {
-  name: "JS",
-  print(){
-    setTimeout(function(){
-      console.log(this.name);
-    },100);
-  }
-};
-obj.print();
-```
-
-123.
-
-```js
-const obj = {
-  name: "JS",
-  print(){
-    setTimeout(()=>{
-      console.log(this.name);
-    },100);
-  }
-};
-obj.print();
-```
-
-124.
-
-```js
-function Person(name){
-  this.name = name;
-}
-const p = Person("JS");
-console.log(p);
-```
-
-125.
-
-```js
-const obj = {
-  name:"JS",
-  get: function(){
-    return function(){
-      console.log(this.name);
-    }
-  }
-};
-obj.get()();
-```
-
-126.
-
-```js
-const obj = {
-  name:"JS",
-  get: function(){
-    return ()=>{
-      console.log(this.name);
-    }
-  }
-};
-obj.get()();
-```
-
-127.
-
-```js
-const obj = {
-  name:"JS"
-};
-function print(){
-  console.log(this.name);
-}
-print.call(obj);
-```
-
-128.
-
-```js
-function print(){
-  console.log(this);
-}
-print.bind({a:1})();
-```
-
-129.
-
-```js
-const obj = {
-  name:"JS",
-  arrow: () => console.log(this.name)
-};
-obj.arrow();
-```
-
-130.
-
-```js
-const obj = {
-  name:"JS",
-  normal(){
-    return () => console.log(this.name);
-  }
-};
-obj.normal()();
-```
-
-131.
-
-```js
-class A{
-  constructor(){
-    this.name="JS";
-  }
-  print(){
-    console.log(this.name);
-  }
-}
-const a=new A();
-const fn=a.print;
-fn();
-```
-
-132.
-
-```js
-class A{
-  name="JS";
-  print=()=>{
-    console.log(this.name);
-  }
-}
-const a=new A();
-const fn=a.print;
-fn();
-```
-
-133.
-
-```js
-const obj = {
-  a:10,
-  b:{
-    a:20,
-    print(){
-      console.log(this.a);
-    }
-  }
-};
-obj.b.print();
-```
-
-134.
-
-```js
-const obj = {
-  a:10,
-  b:{
-    a:20,
-    print:()=>console.log(this.a)
-  }
-};
-obj.b.print();
-```
-
-135.
-
-```js
-function foo(){
-  return {
-    name:"JS",
-    print(){
-      console.log(this.name);
-    }
-  }
-}
-foo().print();
-```
-
-136.
-
-```js
-const obj={
-  name:"JS"
-};
-const arr=[function(){
-  console.log(this.name);
-}];
-arr[0].call(obj);
-```
-
-137.
-
-```js
-const obj={
-  name:"JS"
-};
-setTimeout(function(){
-  console.log(this.name);
-}.bind(obj),100);
-```
-
-138.
-
-```js
-setTimeout(()=>{
-  console.log(this);
-},100);
-```
-
-139.
-
-```js
-(function(){
-  console.log(this);
-}).call({a:1});
-```
-
-140.
-
-```js
-(() => {
-  console.log(this);
-}).call({a:1});
-```
-
----
-
-## 🔹 141–160: Prototype & Inheritance
-
-141.
-
-```js
-function A(){}
-A.prototype.x=10;
-const a=new A();
-console.log(a.x);
-```
-
-142.
-
-```js
-function A(){}
-A.prototype.x=10;
-const a=new A();
-a.x=20;
-console.log(a.x);
-```
-
-143.
-
-```js
-function A(){}
-A.prototype.x=10;
-const a=new A();
-delete a.x;
-console.log(a.x);
-```
-
-144.
-
-```js
-function A(){}
-A.prototype.x=10;
-const a=new A();
-delete A.prototype.x;
-console.log(a.x);
-```
-
-145.
-
-```js
-function A(){}
-A.prototype={x:10};
-const a=new A();
-console.log(a.constructor===A);
-```
-
-146.
-
-```js
-function A(){}
-const a=new A();
-console.log(a instanceof A);
-```
-
-147.
-
-```js
-console.log([] instanceof Array);
-```
-
-148.
-
-```js
-console.log([] instanceof Object);
-```
-
-149.
-
-```js
-console.log({} instanceof Array);
-```
-
-150.
-
-```js
-function A(){}
-function B(){}
-B.prototype=new A();
-const b=new B();
-console.log(b instanceof A);
-```
-
-151.
-
-```js
-class A{
-  constructor(){
-    this.x=10;
-  }
-}
-class B extends A{}
-const b=new B();
-console.log(b.x);
-```
-
-152.
-
-```js
-class A{
-  static x=10;
-}
-console.log(A.x);
-```
-
-153.
-
-```js
-class A{
-  x=10;
-}
-console.log(new A().x);
-```
-
-154.
-
-```js
-console.log(Object.getPrototypeOf([])===Array.prototype);
-```
-
-155.
-
-```js
-console.log(Object.getPrototypeOf({})===Object.prototype);
-```
-
-156.
-
-```js
-const obj={a:1};
-console.log(obj.hasOwnProperty("a"));
-```
-
-157.
-
-```js
-const obj={a:1};
-console.log("toString" in obj);
-```
-
-158.
-
-```js
-function A(){}
-A.prototype.y=20;
-const a=new A();
-console.log("y" in a);
-```
-
-159.
-
-```js
-function A(){}
-A.prototype.y=20;
-const a=new A();
-console.log(a.hasOwnProperty("y"));
-```
-
-160.
-
-```js
-function A(){}
-A.prototype.y=20;
-const a=new A();
-a.y=30;
-console.log(a.hasOwnProperty("y"));
-```
-
----
 
 🔥 Batch-2 Completed (100 Questions)
 
