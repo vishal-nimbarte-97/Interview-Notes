@@ -40,7 +40,9 @@ ________________________________________________________________________________
 }}}what is nginx
 }}}what is load balanced
 }}}how to share data between two components
-}}}
+}}}console.log([] instanceof Array);//ture
+}}}console.log([] instanceof Object);//true
+}}}console.log({} instanceof Array);//false
 }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 
 ### 🔹 Linear Data Structures
@@ -1470,782 +1472,403 @@ Output:-
 Output:-
  {}
 
-
-
-
-
-🔥 Batch-2 Completed (100 Questions)
-
-Reply:
-
-* **Batch-3**
-* **Hard Level Only**
-* **Give Answers for Batch-2**
-* **Create PDF (200 Questions)**
-
-We’re building toward 1000+ 🚀💪
-
 ______________________________________________________________________________________________
-Perfect 🔥
-Here is Batch-3 – 100 Advanced & Tricky JavaScript Output Questions
-
-(No answers — practice mode)
-
----
-
-# 🚀 JavaScript 100 Output Questions – Batch 3
-
----
-
-## 🔹 161–180: Arrays Deep Tricks
-
-161.
-
-```js
-console.log([1,2,3].reduce((a,b)=>a+b));
-```
-
-162.
-
-```js
-console.log([].reduce((a,b)=>a+b,10));
-```
-
-163.
-
-```js
-console.log([1,2,3].map(x=>x*2));
-```
-
-164.
-
-```js
-console.log([1,2,3].filter(x=>x>1));
-```
-
-165.
-
-```js
-console.log([1,2,3].some(x=>x>2));
-```
-
-166.
-
-```js
-console.log([1,2,3].every(x=>x>0));
-```
-
-167.
-
-```js
-console.log([1,2,3].find(x=>x>1));
-```
-
-168.
-
-```js
-console.log([1,2,3].includes(2));
-```
-
-169.
-
-```js
-console.log([1,2,3].indexOf(4));
-```
-
-170.
-
-```js
-console.log([1,2,3].push(4));
-```
-
-171.
-
-```js
-const arr=[1,2,3];
-console.log(arr.pop());
-console.log(arr);
-```
-
-172.
-
-```js
-const arr=[1,2,3];
-arr.shift();
-console.log(arr);
-```
-
-173.
-
-```js
-const arr=[1,2,3];
-arr.unshift(0);
-console.log(arr);
-```
-
-174.
-
-```js
-console.log([1,2,3].slice(1));
-```
-
-175.
-
-```js
-const arr=[1,2,3];
-arr.splice(1,1);
-console.log(arr);
-```
-
-176.
-
-```js
-console.log([1,2,3].join("-"));
-```
-
-177.
-
-```js
-console.log(Array(3));
-```
-
-178.
-
-```js
-console.log(Array(3).fill(1));
-```
-
-179.
-
-```js
-console.log(Array.from("JS"));
-```
-
-180.
-
-```js
-console.log([...new Set([1,2,2,3])]);
-```
-
----
-
-## 🔹 181–200: Destructuring & Spread
-
-181.
-
-```js
-const [a,b]=[1,2];
-console.log(a,b);
-```
-
-182.
-
-```js
-const [a,,b]=[1,2,3];
-console.log(b);
-```
-
-183.
-
-```js
-const {x}= {x:10,y:20};
-console.log(x);
-```
-
-184.
-
-```js
-const {x=5}= {};
-console.log(x);
-```
-
-185.
-
-```js
-const obj={a:1,b:2};
-const copy={...obj};
-copy.a=10;
-console.log(obj.a);
-```
-
-186.
-
-```js
-const arr=[1,2];
-const newArr=[...arr,3];
-console.log(newArr);
-```
-
-187.
-
-```js
-const arr=[1,2];
-const newArr=[arr];
-console.log(newArr);
-```
-
-188.
-
-```js
-const obj={a:1};
-const newObj={obj};
-console.log(newObj);
-```
-
-189.
-
-```js
-const obj={a:1};
-const newObj={...obj,a:5};
-console.log(newObj);
-```
-
-190.
-
-```js
-const {a,...rest}={a:1,b:2,c:3};
-console.log(rest);
-```
-
-191.
-
-```js
-function sum(...args){
-  return args.length;
-}
-console.log(sum(1,2,3));
-```
-
-192.
-
-```js
-function sum(a,b,...rest){
-  console.log(rest);
-}
-sum(1,2,3,4);
-```
-
-193.
-
-```js
-const arr=[1,2];
-console.log(Math.max(...arr));
-```
-
-194.
-
-```js
-console.log({...{a:1},...{a:2}});
-```
-
-195.
-
-```js
-const a=[1,2];
-const b=a;
-b[0]=10;
-console.log(a);
-```
-
-196.
-
-```js
-const a=[1,2];
-const b=[...a];
-b[0]=10;
-console.log(a);
-```
-
-197.
-
-```js
-const obj={a:{b:1}};
-const copy={...obj};
-copy.a.b=10;
-console.log(obj.a.b);
-```
-
-198.
-
-```js
-const obj={a:{b:1}};
-const copy=JSON.parse(JSON.stringify(obj));
-copy.a.b=10;
-console.log(obj.a.b);
-```
-
-199.
-
-```js
-console.log([...[...[1,2]]]);
-```
-
-200.
-
-```js
-console.log({...{a:1},b:2});
-```
-
----
-
-## 🔹 201–220: Numbers & Strings Edge Cases
-
-201.
-
-```js
-console.log("5"+1+2);
-```
-
-202.
-
-```js
-console.log(1+2+"5");
-```
-
-203.
-
-```js
-console.log("5"-2);
-```
-
-204.
-
-```js
-console.log("5"*2);
-```
-
-205.
-
-```js
-console.log("5"/2);
-```
-
-206.
-
-```js
-console.log("5"%2);
-```
-
-207.
-
-```js
-console.log(parseInt("08"));
-```
-
-208.
-
-```js
-console.log(parseFloat("10.5px"));
-```
-
-209.
-
-```js
-console.log(Number(true));
-```
-
-210.
-
-```js
-console.log(Number(false));
-```
-
-211.
-
-```js
-console.log(String(123));
-```
-
-212.
-
-```js
-console.log((123).toString());
-```
-
-213.
-
-```js
-console.log("hello".toUpperCase());
-```
-
-214.
-
-```js
-console.log("hello".includes("ell"));
-```
-
-215.
-
-```js
-console.log("hello".slice(1,4));
-```
-
-216.
-
-```js
-console.log("hello".substring(1,4));
-```
-
-217.
-
-```js
-console.log("hello".charAt(1));
-```
-
-218.
-
-```js
-console.log("hello".indexOf("l"));
-```
-
-219.
-
-```js
-console.log("hello".lastIndexOf("l"));
-```
-
-220.
-
-```js
-console.log("hello".split("l"));
-```
-
----
-
-## 🔹 221–240: Logical & Comparison Tricks
-
-221.
-
-```js
-console.log(1 && 2);
-```
-
-222.
-
-```js
-console.log(0 && 2);
-```
-
-223.
-
-```js
-console.log(1 || 2);
-```
-
-224.
-
-```js
-console.log(0 || 2);
-```
-
-225.
-
-```js
-console.log(null ?? "JS");
-```
-
-226.
-
-```js
-console.log(0 ?? "JS");
-```
-
-227.
-
-```js
-console.log("" ?? "JS");
-```
-
-228.
-
-```js
-console.log(1 == true);
-```
-
-229.
-
-```js
-console.log(0 == false);
-```
-
-230.
-
-```js
-console.log("" == false);
-```
-
-231.
-
-```js
-console.log([] == 0);
-```
-
-232.
-
-```js
-console.log([1] == 1);
-```
-
-233.
-
-```js
-console.log([1,2] == "1,2");
-```
-
-234.
-
-```js
-console.log({} + 1);
-```
-
-235.
-
-```js
-console.log([] + 1);
-```
-
-236.
-
-```js
-console.log(+true);
-```
-
-237.
-
-```js
-console.log(+false);
-```
-
-238.
-
-```js
-console.log(+"123");
-```
-
-239.
-
-```js
-console.log(+"abc");
-```
-
-240.
-
-```js
-console.log(!"JS");
-```
-
----
-
-🔥 Batch-3 Completed (100 Questions)
-
-Reply:
-
-* **Batch-4**
-* **Only Hard Level (Senior 5+ years)**
-* **Give Answers for Batch-3**
-* **Create 300 Question PDF**
-* **Node.js Specific Questions**
-
-We are now at **240 questions total** 🚀
-Let’s continue toward 1000+ 💪
+## 🔹 121–140: this Keyword Deep Dive
 ______________________________________________________________________________________________
-Perfect 🔥
-Here is Batch-4 – 100 Advanced JavaScript Output Questions
-(No answers — practice mode)
+121.
+const obj = {
+  name: "JS",
+  print(){
+    console.log(this.name);
+  }
+};
+const fn = obj.print;
+fn();
 
-We are now at **340 total questions** 🚀
+Output:-undefined
+______________________________________________________________________________________________
+122.
+const obj = {
+  name: "JS",
+  print(){
+    setTimeout(function(){
+      console.log(this.name);
+    },100);
+  }
+};
+obj.print();
 
----
+Output:-undefined
+______________________________________________________________________________________________
+123.
+const obj = {
+  name: "JS",
+  print(){
+    setTimeout(()=>{
+      console.log(this.name);
+    },100);
+  }
+};
+obj.print();
 
-# 🚀 JavaScript 100 Output Questions – Batch 4
-
----
-
-## 🔹 241–260: Advanced Async & Promise Chains
-
-241.
-
-```js
-Promise.resolve(1)
-  .then(x => x + 1)
-  .then(x => { throw x; })
-  .catch(x => x + 10)
-  .then(x => console.log(x));
-```
-
-242.
-
-```js
-Promise.resolve()
-  .then(() => Promise.resolve(5))
-  .then(console.log);
-```
-
-243.
-
-```js
-Promise.resolve()
-  .then(() => 5)
-  .then(x => Promise.reject(x))
-  .catch(console.log);
-```
-
-244.
-
-```js
-async function test(){
-  return await 5;
+Output:- JS
+______________________________________________________________________________________________
+124.
+function Person(name){
+  this.name = name;
 }
-test().then(console.log);
-```
+const p = Person("JS");
+console.log(p);
 
-245.
+Output:-
+undefined
+______________________________________________________________________________________________
+125.
+const obj = {
+  name:"JS",
+  get: function(){
+    return function(){
+      console.log(this.name);
+    }
+  }
+};
+obj.get()();
 
-```js
-async function test(){
-  return 5;
+Output:-undefined
+______________________________________________________________________________________________
+126.
+const obj = {
+  name:"JS",
+  get: function(){
+    return ()=>{
+      console.log(this.name);
+    }
+  }
+};
+obj.get()();
+
+Output :- JS 
+______________________________________________________________________________________________
+127.
+const obj = {
+  name:"JS"
+};
+function print(){
+  console.log(this.name);
 }
-console.log(test());
-```
+print.call(obj);
 
-246.
-
-```js
-Promise.resolve()
-  .then(()=>console.log(1))
-  .then(()=>console.log(2));
-console.log(3);
-```
-
-247.
-
-```js
-setTimeout(()=>console.log(1),0);
-Promise.resolve().then(()=>console.log(2));
-queueMicrotask(()=>console.log(3));
-console.log(4);
-```
-
-248.
-
-```js
-async function a(){
-  console.log(1);
-  await Promise.resolve();
-  console.log(2);
+Output :- JS 
+______________________________________________________________________________________________
+128.
+function print(){
+  console.log(this);
 }
-a();
-setTimeout(()=>console.log(3),0);
-console.log(4);
-```
+print.bind({a:1})();
 
-249.
+Output :- {a:1}
+______________________________________________________________________________________________
+129.
+const obj = {
+  name:"JS",
+  arrow: () => console.log(this.name)
+};
+obj.arrow();
 
-```js
-Promise.all([Promise.resolve(1),Promise.resolve(2)])
-  .then(console.log);
-```
+Output :- undefined
+______________________________________________________________________________________________
+130.
+const obj = {
+  name:"JS",
+  normal(){
+    return () => console.log(this.name);
+  }
+};
+obj.normal()();
 
-250.
-
-```js
-Promise.race([Promise.resolve(1),Promise.resolve(2)])
-  .then(console.log);
-```
-
-251.
-
-```js
-Promise.all([Promise.resolve(1),Promise.reject(2)])
-  .then(console.log)
-  .catch(console.log);
-```
-
-252.
-
-```js
-Promise.any([Promise.reject(1),Promise.resolve(2)])
-  .then(console.log);
-```
-
-253.
-
-```js
-Promise.any([Promise.reject(1),Promise.reject(2)])
-  .catch(e=>console.log(e.errors));
-```
-
-254.
-
-```js
-Promise.resolve()
-  .then(()=>console.log("A"))
-  .finally(()=>console.log("B"));
-```
-
-255.
-
-```js
-Promise.reject("Err")
-  .finally(()=>console.log("Final"))
-  .catch(console.log);
-```
-
-256.
-
-```js
-async function x(){
-  try{
-    throw "Error";
-  }catch(e){
-    console.log(e);
+Output :- JS
+______________________________________________________________________________________________
+131.
+class A{
+  constructor(){
+    this.name="JS";
+  }
+  print(){
+    console.log(this.name);
   }
 }
-x();
-```
+const a=new A();
+const fn=a.print;
+fn();
 
-257.
-
-```js
-async function x(){
-  try{
-    return 10;
-  }finally{
-    return 20;
+Output :- 
+TypeError: Cannot read properties of undefined (reading 'name'
+)
+______________________________________________________________________________________________
+132.
+class A{
+  name="JS";
+  print=()=>{
+    console.log(this.name);
   }
 }
-x().then(console.log);
-```
+const a=new A();
+const fn=a.print;
+fn();
 
-258.
-
-```js
-(async ()=>{
-  console.log(await 5);
-})();
-```
-
-259.
-
-```js
-(async ()=>{
-  console.log(await Promise.reject("X"));
-})();
-```
-
-260.
-
-```js
-(async ()=>{
-  try{
-    console.log(await Promise.reject("X"));
-  }catch(e){
-    console.log(e);
+Output :- JS
+______________________________________________________________________________________________
+133.
+const obj = {
+  a:10,
+  b:{
+    a:20,
+    print(){
+      console.log(this.a);
+    }
   }
-})();
-```
+};
+obj.b.print();
 
----
+Output :- 20
+______________________________________________________________________________________________
+134.
+const obj = {
+  a:10,
+  b:{
+    a:20,
+    print:()=>console.log(this.a)
+  }
+};
+obj.b.print();
+
+Output :- undefined
+______________________________________________________________________________________________
+135.
+function foo(){
+  return {
+    name:"JS",
+    print(){
+      console.log(this.name);
+    }
+  }
+}
+foo().print();
+
+Output :- JS 
+______________________________________________________________________________________________
+136.
+
+const arr = [function () {
+  console.log('Hello World - 1');
+},
+function () {
+  console.log('Hello World - 2');
+}
+];
+
+arr[0].call();//Hello World - 1
+arr[1].call();//Hello World - 2
+______________________________________________________________________________________________
+
+const obj={
+  name:"JS"
+};
+const arr=[function(){
+  console.log(this.name);
+}];
+arr[0].call(obj);
+
+Output :- JS
+______________________________________________________________________________________________
+137.
+const obj={
+  name:"JS"
+};
+
+setTimeout(function(){
+  console.log(this.name);
+}.bind(obj),100);
+
+Output :- JS
+______________________________________________________________________________________________
+138.
+setTimeout(()=>{
+  console.log(this);
+},100);
+
+Output:- {}
+______________________________________________________________________________________________
+139.
+(function(){
+  console.log(this);
+}).call({a:1});
+
+Output :- {a:1}
+______________________________________________________________________________________________
+140.
+(() => {
+  console.log(this);
+}).call({a:1});
+
+Output:- {}
+______________________________________________________________________________________________
+## 🔹 141–160: Prototype & Inheritance
+______________________________________________________________________________________________
+141.
+function A(){}
+A.prototype.x=10;
+const a=new A();
+console.log(a.x);
+
+Output :- 10
+______________________________________________________________________________________________
+142.
+function A(){}
+A.prototype.x=10;
+const a=new A();
+a.x=20;
+console.log(a.x);//20
+
+Output :- 20
+______________________________________________________________________________________________
+
+143.
+function A(){}
+A.prototype.x=10;
+const a=new A();
+delete a.x;
+console.log(a.x);
+
+Output :- 10
+______________________________________________________________________________________________
+144.
+function A(){}
+A.prototype.x=10;
+const a=new A();
+delete A.prototype.x;
+console.log(a.x);
+
+Output :- undefined
+______________________________________________________________________________________________
+145.
+function A(){}
+A.prototype={x:10};
+const a=new A();
+console.log(a.constructor===A);
+
+Output :- false
+______________________________________________________________________________________________
+146.
+function A(){}
+const a=new A();
+console.log(a instanceof A);//true
+console.log(a.constructor === A);//true
+
+Output :- true
+______________________________________________________________________________________________
+147.
+console.log([] instanceof Array);//ture
+______________________________________________________________________________________________
+148.
+console.log([] instanceof Object);//true
+______________________________________________________________________________________________
+149.
+console.log({} instanceof Array);//false
+______________________________________________________________________________________________
+150.
+function A(){}
+function B(){}
+B.prototype=new A();
+const b=new B();
+console.log(b instanceof A);
+
+Output:-true
+______________________________________________________________________________________________
+151.
+class A{
+  constructor(){
+    this.x=10;
+  }
+}
+class B extends A{}
+const b=new B();
+console.log(b.x);
+
+Output :- 10
+______________________________________________________________________________________________
+152.
+class A{
+  static x=10;
+}
+console.log(A.x);10
+
+Output :- 10
+______________________________________________________________________________________________
+153.
+class A{
+  x=10;
+}
+console.log(new A().x);
+
+Output :- 10
+______________________________________________________________________________________________
+154.
+console.log(Object.getPrototypeOf([])===Array.prototype);
+
+output :- true
+______________________________________________________________________________________________
+155.
+console.log(Object.getPrototypeOf({})===Object.prototype);
+
+Output :- true
+______________________________________________________________________________________________
+156.
+const obj={a:1};
+console.log(obj.hasOwnProperty("a"));
+
+Output :- true
+______________________________________________________________________________________________
+157.
+const obj={a:1};
+console.log("toString" in obj);
+
+Output :- true
+______________________________________________________________________________________________
+158.
+function A(){}
+A.prototype.y=20;
+const a=new A();
+console.log("y" in a);
+
+Output :- true
+______________________________________________________________________________________________
+159.
+function A(){}
+A.prototype.y=20;
+const a=new A();
+console.log(a.hasOwnProperty("y"));
+
+output :- false
+______________________________________________________________________________________________
+160.
+function A(){}
+A.prototype.y=20;
+const a=new A();
+a.y=30;
+console.log(a.hasOwnProperty("y"));
+
+Output :- true
+
+
+
+
+
+
+
+
+
+
 
 ## 🔹 261–280: Object Tricks & Property Descriptors
 
