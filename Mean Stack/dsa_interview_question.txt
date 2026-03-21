@@ -15,12 +15,33 @@ _____________________________________]]Time Complexity]]________________________
 3 for nested loops → O(n³)
 ______________________________________________________________________________________________
 
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}ASKING INTERVIEW}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 }}}What is Difference between linked list and arraylist and array
 }}}How to implement linked list 
 }}}what is single linked list 
 }}}what is doubly linked list 
 }}}differanance between the single link list & double liked list 
-}}}circular linked list 
+}}}circular linked list.
+}}}reverse array without inbuild method 
+}}}prime number find 
+}}}how many times number here in array find the countes of same number present in array 
+}}}bubble sort 1D,2D
+}}}find maximum number and smallest number in array 
+}}}console.log(null+1)
+}}}console.log(undefined+1)
+}}}console.log(null+null)
+}}}console.log(undefined+undefined)
+}}}console.log(null+undefined)
+}}}console.log(null)
+}}}console.log(undefined)
+}}}console.log(this)
+}}}console.log(this.name)
+}}}what is nginx
+}}}what is load balanced
+}}}how to share data between two components
+}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 
 ### 🔹 Linear Data Structures
 - **Arrays** :- 
