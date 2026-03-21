@@ -1,2 +1,54 @@
-werwr
-ghghghghj
+asfdasfasf
+
+______________________________________________________________________________________________
+## 🔹 121–140: this Keyword Deep Dive
+______________________________________________________________________________________________
+121.
+const obj = {
+  name: "JS",
+  print(){
+    console.log(this.name);
+  }
+};
+const fn = obj.print;
+fn();
+
+Output:-undefined
+______________________________________________________________________________________________
+122.
+
+```js
+const obj = {
+  name: "JS",
+  print(){
+    setTimeout(function(){
+      console.log(this.name);
+    },100);
+  }
+};
+obj.print();
+```
+
+123.
+
+```js
+const obj = {
+  name: "JS",
+  print(){
+    setTimeout(()=>{
+      console.log(this.name);
+    },100);
+  }
+};
+obj.print();
+```
+
+124.
+
+```js
+function Person(name){
+  this.name = name;
+}
+const p = Person("JS");
+console.log(p);
+```
