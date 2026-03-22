@@ -1,0 +1,258 @@
+
+Tricky Questions or javascript snippets :- }}}}} PART ONE }}}}}
+______________________________________________________________________________________________
+1️⃣
+console.log(typeof 12);
+Output: "number"
+______________________________________________________________________________________________
+2️⃣
+console.log(typeof "12");
+Output: "string"
+______________________________________________________________________________________________
+3️⃣
+console.log(typeof 12.5);
+Output: "number"
+______________________________________________________________________________________________
+4️⃣
+console.log(typeof NaN);
+Output: "number"
+______________________________________________________________________________________________
+5️⃣
+console.log(typeof Infinity);
+Output: "number"
+______________________________________________________________________________________________
+6️⃣
+console.log(typeof true);
+Output: "boolean"
+______________________________________________________________________________________________
+7️⃣
+console.log(typeof false);
+Output: "boolean"
+______________________________________________________________________________________________
+8️⃣
+console.log(typeof undefined);
+Output: "undefined"
+______________________________________________________________________________________________
+9️⃣
+console.log(typeof null);
+Output: "object" ❗ (JS bug)
+______________________________________________________________________________________________
+🔟
+console.log(typeof {});
+Output: "object"
+______________________________________________________________________________________________
+1️⃣1️⃣
+console.log(typeof []);
+Output: "object"
+______________________________________________________________________________________________
+1️⃣2️⃣
+console.log(typeof function() {});
+Output: "function"
+______________________________________________________________________________________________
+1️⃣3️⃣
+console.log(typeof (() => {}));
+Output: "function"
+______________________________________________________________________________________________
+1️⃣4️⃣
+console.log(typeof new Date());
+Output: "object"
+______________________________________________________________________________________________
+1️⃣5️⃣
+console.log(typeof /abc/);
+Output: "object" (RegExp)
+______________________________________________________________________________________________
+1️⃣6️⃣
+console.log(typeof BigInt(10));
+Output: "bigint"
+______________________________________________________________________________________________
+1️⃣7️⃣
+console.log(typeof 10n);
+Output: "bigint"
+______________________________________________________________________________________________
+1️⃣7️⃣
+console.log(typeof 10n);
+Output: "bigint"
+______________________________________________________________________________________________
+1️⃣8️⃣
+console.log(typeof Symbol("id"));
+Output: "symbol"
+______________________________________________________________________________________________
+1️⃣9️⃣
+console.log(typeof class Test {});
+Output: "function"
+______________________________________________________________________________________________
+2️⃣0️⃣
+console.log(typeof typeof 12);
+Output: "string"
+______________________________________________________________________________________________
+2️⃣1️⃣
+let a;
+console.log(typeof a);
+Output: "undefined"
+______________________________________________________________________________________________
+2️⃣2️⃣
+let b = null;
+console.log(typeof b);
+Output: "object"
+______________________________________________________________________________________________
+2️⃣3️⃣
+console.log(typeof (1 + "2"));
+Output: "string"
+______________________________________________________________________________________________
+2️⃣4️⃣
+console.log(typeof (1 - "2"));
+Output: "number"
+______________________________________________________________________________________________
+2️⃣5️⃣
+console.log(typeof [] + []);
+Output: "object"
+______________________________________________________________________________________________
+2️⃣6️⃣
+console.log(typeof {} + {});
+Output: "object[object Object]"
+👉 typeof {} → "object"
+______________________________________________________________________________________________
+2️⃣7️⃣
+console.log(typeof null === "object");
+typeof null = object
+object === object
+Output: true
+______________________________________________________________________________________________
+2️⃣8️⃣
+console.log(typeof undefined == typeof null);
+typeof undefined = undefined
+typeof null = object
+undefined===object
+Output: false
+______________________________________________________________________________________________
+2️⃣9️⃣ }}}IMPORTANT}}}
+console.log(typeof (function(){}()));
+Output: "undefined"
+______________________________________________________________________________________________
+3️⃣0️⃣ }}}IMPORTANT}}}
+console.log(typeof Array);
+Output: "function"
+
+______________________________________________________________________________________________
+*]] Output?
+console.log([] == []);
+Answer:
+false
+👉 Different memory references.
+______________________________________________________________________________________________
+*]] Output?
+console.log(0 == false);//true
+console.log(1 == true);//true
+console.log(0 === false);//false
+console.log(1 === true);//false
+👉 == does type conversion, === does not.
+______________________________________________________________________________________________
+*]] Output?
+console.log("5" + 3);
+console.log("5" - 3);
+Answer:
+53
+2
+👉 + does string concatenation, - forces number conversion.
+______________________________________________________________________________________________
+*]] Output?
+var a = 10;
+function test() {
+  console.log(a);
+  var a = 20;
+}
+test();
+Answer:
+undefined
+👉 Due to hoisting (local a shadows global one).
+______________________________________________________________________________________________
+*]] Output?
+console.log(true + true);//1+1=2
+console.log(false + true);//0+1=1
+👉 true → 1, false → 0
+______________________________________________________________________________________________
+*]] Output?
+console.log(typeof NaN);
+Answer:
+"number"
+👉 Weird but true 😅
+______________________________________________________________________________________________
+*]] Output?
+let a = 10;
+let b = a++;
+function demo(){
+    console.log(a,b);//11,10
+}
+demo();
+👉 Post-increment returns old value first.
+______________________________________________________________________________________________
+*]] Output?
+console.log(1+"2"+3);//123
+console.log(1+"2"+3-5);//118
+👉 Left-to-right evaluation.
+______________________________________________________________________________________________
+*]] Output?
+console.log(null == undefined);//because of both nothing value so they are match without checking type so they are true
+console.log(null === undefined);//nothing value both side but check type so they are false
+Answer:
+true
+false
+______________________________________________________________________________________________
+*]] Output?
+function demo() {}
+console.log(demo());
+Answer:
+undefined
+👉 Function without return so they returns undefined.
+_____________________________________________________________________________________________
+*]] Output
+console.log([] + []);
+console.log({} + {});
+
+✅ Output
+""
+"[object Object][object Object]"
+
+
+🟦 Case 1: [] + []
+Step-by-step:
+[]      → ""        // empty array converts to empty string
+[]      → ""
+"" + "" → ""
+✅ Final output:
+""
+
+🟦 Case 2: { } + { }
+Step-by-step:
+{} → "[object Object]"
+{} → "[object Object]"
+Now JS does:
+"[object Object]" + "[object Object]"
+✅ Final output:
+"[object Object][object Object]"
+______________________________________________________________________________________________
+*]] Output?
+let a = [1, 2, 3];
+let b = a;
+b.push(4);
+console.log(a);
+console.log(a===b);//because of referance same 
+
+Answer:
+a = [1, 2, 3, 4]
+👉 Arrays are reference types.
+______________________________________________________________________________________________
+*]] Output?
+console.log("10" - "5");
+Answer:
+5
+______________________________________________________________________________________________
+*]] Output?
+console.log(!!"hello"); 
+!"Hello"->false
+!false -> true
+console.log(!!0);
+!0 -> true
+!true -> false
+👉 !! converts value to boolean.
+______________________________________________________________________________________________
