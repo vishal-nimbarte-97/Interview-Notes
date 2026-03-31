@@ -1,0 +1,734 @@
+
+🔥 **Batch-6 Completed (401–500)**
+You now have **500 JavaScript Interview Output Questions**.
+
+Reply:
+
+* **Batch-7**
+* **Extreme Architect Level**
+* **Node.js Deep Event Loop**
+* **Browser / DOM Specific**
+* **Give Answers Batch-6**
+* **Create 500 Question PDF**
+
+We are halfway to 1000+ 🚀💪
+
+______________________________________________________________________________________________
+Great 👍
+
+Here is **Batch-7** (JavaScript tricky/output questions):
+
+---
+
+### 6️⃣1️⃣ Output?
+
+```js
+console.log([] + []);
+```
+
+**Answer:**
+
+```
+""
+```
+
+👉 Both arrays convert to empty strings → `"" + ""` = `""`
+
+---
+
+### 6️⃣2️⃣ Output?
+
+```js
+console.log([] + {});
+```
+
+**Answer:**
+
+```
+"[object Object]"
+```
+
+👉 `[]` → `""`
+👉 `{}` → `"[object Object]"`
+👉 Result → `"[object Object]"`
+
+---
+
+### 6️⃣3️⃣ Output?
+
+```js
+console.log({} + []);
+```
+
+**Answer (in browser):**
+
+```
+0
+```
+
+👉 `{}` is treated as empty block
+👉 `+[]` → `+""` → `0`
+
+---
+
+### 6️⃣4️⃣ Output?
+
+```js
+console.log(true + false);
+```
+
+**Answer:**
+
+```
+1
+```
+
+👉 `true = 1`, `false = 0`
+
+---
+
+### 6️⃣5️⃣ Output?
+
+```js
+console.log("5" - - "2");
+```
+
+**Answer:**
+
+```
+7
+```
+
+👉 `"5"` → 5
+👉 `-"2"` → -2
+👉 `5 - (-2)` → 7
+
+---
+
+### 6️⃣6️⃣ Output?
+
+```js
+let x = 10;
+(function() {
+  console.log(x);
+  let x = 20;
+})();
+```
+
+**Answer:**
+
+```
+ReferenceError
+```
+
+👉 `let x` inside function is in **temporal dead zone**
+
+---
+
+### 6️⃣7️⃣ Output?
+
+```js
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 100);
+}
+```
+
+**Answer:**
+
+```
+0
+1
+2
+```
+
+👉 `let` creates new block scope for each iteration
+
+---
+
+### 6️⃣8️⃣ Output?
+
+```js
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 100);
+}
+```
+
+**Answer:**
+
+```
+3
+3
+3
+```
+
+👉 `var` is function-scoped → final value is 3
+
+---
+
+### 6️⃣9️⃣ Output?
+
+```js
+console.log(typeof null);
+```
+
+**Answer:**
+
+```
+"object"
+```
+
+👉 This is a **JavaScript bug** (historical mistake)
+
+---
+
+### 7️⃣0️⃣ Output?
+
+```js
+console.log(!![]);
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 Empty array is **truthy**
+
+---
+
+If you want 👉 **Batch-8**, say “Next Batch” 😄
+
+______________________________________________________________________________________________
+
+Here is **Batch-8** 🚀 (JavaScript Tricky / Output Questions)
+
+---
+
+### 7️⃣1️⃣ Output?
+
+```js
+console.log([] == false);
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 `[]` → `""` → `0`
+👉 `false` → `0`
+👉 `0 == 0` → `true`
+
+---
+
+### 7️⃣2️⃣ Output?
+
+```js
+console.log([] === false);
+```
+
+**Answer:**
+
+```
+false
+```
+
+👉 Different types → no type coercion in `===`
+
+---
+
+### 7️⃣3️⃣ Output?
+
+```js
+console.log(null == undefined);
+console.log(null === undefined);
+```
+
+**Answer:**
+
+```
+true
+false
+```
+
+👉 `==` considers them equal
+👉 `===` checks type also
+
+---
+
+### 7️⃣4️⃣ Output?
+
+```js
+console.log("10" + 1 - 1);
+```
+
+**Answer:**
+
+```
+100
+```
+
+👉 `"10" + 1` → `"101"`
+👉 `"101" - 1` → `100`
+
+---
+
+### 7️⃣5️⃣ Output?
+
+```js
+console.log(0.1 + 0.2 === 0.3);
+```
+
+**Answer:**
+
+```
+false
+```
+
+👉 Floating point precision issue
+👉 `0.1 + 0.2 = 0.30000000000000004`
+
+---
+
+### 7️⃣6️⃣ Output?
+
+```js
+console.log(NaN == NaN);
+console.log(NaN === NaN);
+```
+
+**Answer:**
+
+```
+false
+false
+```
+
+👉 `NaN` is never equal to itself
+
+---
+
+### 7️⃣7️⃣ Output?
+
+```js
+let a = { name: "JS" };
+let b = a;
+b.name = "JavaScript";
+console.log(a.name);
+```
+
+**Answer:**
+
+```
+JavaScript
+```
+
+👉 Objects are reference types
+
+---
+
+### 7️⃣8️⃣ Output?
+
+```js
+console.log(typeof NaN);
+```
+
+**Answer:**
+
+```
+"number"
+```
+
+👉 `NaN` stands for Not-a-Number, but type is number
+
+---
+
+### 7️⃣9️⃣ Output?
+
+```js
+console.log("5" * "2");
+```
+
+**Answer:**
+
+```
+10
+```
+
+👉 `*` converts strings to numbers
+
+---
+
+### 8️⃣0️⃣ Output?
+
+```js
+console.log([1,2] + [3,4]);
+```
+
+**Answer:**
+
+```
+"1,23,4"
+```
+
+👉 Arrays convert to strings → `"1,2" + "3,4"`
+
+---
+
+Say **Batch-9** for next set 🔥
+
+______________________________________________________________________________________________
+Here is **Batch-9** 🚀 (JavaScript Tricky / Output Questions)
+
+---
+
+### 8️⃣1️⃣ Output?
+
+```js
+console.log(typeof undefined);
+```
+
+**Answer:**
+
+```
+"undefined"
+```
+
+---
+
+### 8️⃣2️⃣ Output?
+
+```js
+console.log(typeof function() {});
+```
+
+**Answer:**
+
+```
+"function"
+```
+
+👉 Functions are special objects in JS
+
+---
+
+### 8️⃣3️⃣ Output?
+
+```js
+console.log([] == ![]);
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 `![]` → `false`
+👉 `[] == false` → `true`
+
+---
+
+### 8️⃣4️⃣ Output?
+
+```js
+let a = 1;
+let b = a++;
+console.log(a, b);
+```
+
+**Answer:**
+
+```
+2 1
+```
+
+👉 Post-increment returns old value
+
+---
+
+### 8️⃣5️⃣ Output?
+
+```js
+let a = 1;
+let b = ++a;
+console.log(a, b);
+```
+
+**Answer:**
+
+```
+2 2
+```
+
+👉 Pre-increment returns updated value
+
+---
+
+### 8️⃣6️⃣ Output?
+
+```js
+console.log("2" > 1);
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 `"2"` converts to number → `2 > 1`
+
+---
+
+### 8️⃣7️⃣ Output?
+
+```js
+console.log("a" > "b");
+```
+
+**Answer:**
+
+```
+false
+```
+
+👉 String comparison uses Unicode values
+
+---
+
+### 8️⃣8️⃣ Output?
+
+```js
+console.log(1 < 2 < 3);
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 `1 < 2` → `true`
+👉 `true < 3` → `1 < 3` → `true`
+
+---
+
+### 8️⃣9️⃣ Output?
+
+```js
+console.log(3 > 2 > 1);
+```
+
+**Answer:**
+
+```
+false
+```
+
+👉 `3 > 2` → `true`
+👉 `true > 1` → `1 > 1` → `false`
+
+---
+
+### 9️⃣0️⃣ Output?
+
+```js
+console.log(+true);
+console.log(+false);
+```
+
+**Answer:**
+
+```
+1
+0
+```
+
+👉 Unary `+` converts to number
+
+---
+
+Say **Batch-10** for next set 🔥
+
+______________________________________________________________________________________________
+Here is **Batch-10** 🚀 (JavaScript Tricky / Output Questions)
+
+---
+
+### 9️⃣1️⃣ Output?
+
+```js
+console.log("5" + 3 + 2);
+```
+
+**Answer:**
+
+```
+"532"
+```
+
+👉 `"5" + 3` → `"53"`
+👉 `"53" + 2` → `"532"`
+
+---
+
+### 9️⃣2️⃣ Output?
+
+```js
+console.log(3 + 2 + "5");
+```
+
+**Answer:**
+
+```
+"55"
+```
+
+👉 `3 + 2` → `5`
+👉 `5 + "5"` → `"55"`
+
+---
+
+### 9️⃣3️⃣ Output?
+
+```js
+console.log(!!"");
+```
+
+**Answer:**
+
+```
+false
+```
+
+👉 Empty string is **falsy**
+
+---
+
+### 9️⃣4️⃣ Output?
+
+```js
+console.log(Boolean("0"));
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 Non-empty string is truthy (even `"0"`)
+
+---
+
+### 9️⃣5️⃣ Output?
+
+```js
+console.log(typeof []);
+```
+
+**Answer:**
+
+```
+"object"
+```
+
+👉 Arrays are objects in JavaScript
+
+---
+
+### 9️⃣6️⃣ Output?
+
+```js
+console.log(Array.isArray([]));
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 Correct way to check array
+
+---
+
+### 9️⃣7️⃣ Output?
+
+```js
+console.log(parseInt("10px"));
+```
+
+**Answer:**
+
+```
+10
+```
+
+👉 Parses number until non-number character
+
+---
+
+### 9️⃣8️⃣ Output?
+
+```js
+console.log(parseInt("px10"));
+```
+
+**Answer:**
+
+```
+NaN
+```
+
+👉 Must start with number
+
+---
+
+### 9️⃣9️⃣ Output?
+
+```js
+console.log(isNaN("hello"));
+```
+
+**Answer:**
+
+```
+true
+```
+
+👉 `"hello"` converts to `NaN`
+
+---
+
+### 🔟0️⃣0️⃣ Output?
+
+```js
+console.log(Number(" "));
+```
+
+**Answer:**
+
+```
+0
+```
+
+👉 Empty space string converts to 0
+
+---
+
+🔥 You have now completed **100 JavaScript tricky questions!**
+
+If you want:
+
+* **Batch-11 (Advanced Level)**
+* **Promises / Async special batch**
+* **Closures special batch**
+* **Interview rapid-fire 50 questions**
+
+Just tell me 😄
+
+______________________________________________________________________________________________

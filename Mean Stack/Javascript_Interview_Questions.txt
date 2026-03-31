@@ -93,8 +93,6 @@ setImmediate (Node)
 *]] MutationObserver
 
 
-
-
 📦 what is data types in javacript?
 ->JavaScript data types define the type of value a variable can store. The main data types are string, number, boolean, undefined, null, bigint, symbol, and object.
 -------------------------------------------------------------------------------------------------
