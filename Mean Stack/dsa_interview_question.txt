@@ -11,6 +11,7 @@ Here's a comprehensive breakdown of **Data Structures and Algorithms (DSA)** top
 Interview-ready summary 🧠
 
 _____________________________________]]Time Complexity]]_______________________________________
+
 1 for loop → O(n)
 2 for nested loops → O(n²)
 2 for loops sequentially → O(n) two for loop differnt different used so n + n = Big O of 2n
@@ -20,31 +21,180 @@ ________________________________________________________________________________
 }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}ASKING INTERVIEW}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 }}}What is Difference between linked list and arraylist and array
+-----------------------------------------------------------------------------------------------------------------------------------------
+| Feature          | Array                                                  | Linked List                                               |
+| ---------------- | ------------------------------------------------------ | --------------------------------------------------------- |
+| **Storage**      | Stores elements in **contiguous memory (index-based)** | Stores elements in **non-contiguous memory (node-based)** |
+| **Structure**    | Only stores **data**                                   | Each node has **data + address (pointer to next node)**   |
+| **Access**       | **Fast (O(1))** using index (e.g., arr[2])             | **Slow (O(n))** – must traverse from head                 |
+| **Insertion**    | **Difficult/Costly** (shifting elements required)      | **Easy** (just change pointers)                           |
+| **Deletion**     | **Costly** (shifting needed)                           | **Easy** (update links)                                   |
+| **Memory Usage** | Less memory (no extra pointer)                         | More memory (extra pointer for each node)                 |
+| **Size**         | Fixed size (in most cases)                             | Dynamic (can grow/shrink anytime)                         |
+| **Types**        | 1D, 2D, Multi-dimensional arrays                       | Singly, Doubly, Circular linked lists                     |
+-----------------------------------------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________
 }}}How to implement linked list 
-}}}what is single linked list 
+-> “I have mostly worked with arrays in my application development, so I haven’t implemented linked lists much in real projects. However, I understand the concept clearly.
+->A linked list consists of nodes where each node contains two parts: data and a reference (address) to the next node. The first node is called the head.
+->To implement it, we first create a node structure, then maintain a head pointer. For operations like insertion or deletion, we update the links between nodes instead of shifting elements like in arrays.”
+______________________________________________________________________________________________
+}}}what is single linked list
+->A singly linked list is a type of linked list where each node contains two parts: data and address to the next node.
+The first node is called the head, and the last node points to null, which indicates the end of the list.
+______________________________________________________________________________________________
 }}}what is doubly linked list 
+-> A doubly linked list is a type of linked list where each node contains three parts: A address to the previous node, the data, and a address to the next node.
+______________________________________________________________________________________________
 }}}differanance between the single link list & double liked list 
+-> A singly linked list contains nodes with two parts: data and a pointer to the next node, so it can be traversed only in one direction.
+-> A doubly linked list contains nodes with three parts: a pointer to the previous node, data, and a pointer to the next node, so it can be traversed in both directions.
+______________________________________________________________________________________________
 }}}circular linked list.
-}}}reverse array without inbuild method 
+-> Circular linked list is a type of linked list where the last node (tail) is connected to the head node instead of null.
+______________________________________________________________________________________________
+}}}reverse array without inbuild method
+-> 
+
+const arr = [12,34,78,3,9,5,20];
+
+console.log("Before Reverse :- ",arr);
+
+function reverseArray(arr){
+	let i = 0;
+	let j = arr.length - 1;
+	while(i<j){
+		let temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+		i++;
+		j--;
+	}
+	return arr;
+}
+
+console.log("After Reverse :- ",reverseArray(arr));
+______________________________________________________________________________________________ 
 }}}prime number find 
+->
+function isPrime(num){
+  if(num<=1) return false;
+  for(let i=2;i<num;i++){
+    if(num%2===0){
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPrime(0));
+console.log(isPrime(1));
+console.log(isPrime(2));
+console.log(isPrime(3));
+console.log(isPrime(4));
+console.log(isPrime(5));
+console.log(isPrime(6));
+console.log(isPrime(7));
+console.log(isPrime(10));
+______________________________________________________________________________________________
 }}}how many times number here in array find the countes of same number present in array 
+->// }}}how many times number here in array find the countes of same number present in array 
+// ->
+
+const arr = [12,23,34,45,12,34,23,89,54,90,12];
+
+function countesOfSameNumber(arr){
+  let count = {};
+  for(let i=0;i<arr.length;i++){
+    let num = arr[i];
+    if(count[num]){
+      count[num]++;
+    }
+    else{
+      count[num] = 1;
+    }
+  }
+  return count;
+}
+
+console.log(countesOfSameNumber(arr));
+______________________________________________________________________________________________
 }}}bubble sort 1D,2D
+const arr = [[12, 23, 90, 78, 4, 89], [45, 99, 1, 8, 87], [21, 32, 2]];
+
+console.log('Before Sorted :- ', arr);
+
+function sortArray(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+function sort2DArray(arr) {
+  const newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArray.push(sortArray(arr[i]));
+  }
+  return newArray;
+}
+
+console.log('After Sorted :- ', sort2DArray(arr));
+______________________________________________________________________________________________
 }}}find maximum number and smallest number in array 
-}}}console.log(null+1)
-}}}console.log(undefined+1)
-}}}console.log(null+null)
-}}}console.log(undefined+undefined)
-}}}console.log(null+undefined)
-}}}console.log(null)
-}}}console.log(undefined)
-}}}console.log(this)
-}}}console.log(this.name)
+const arr = [23,45,89,90,12,78,44];
+
+function findMaximumNumber(arr){
+  let max = arr[0];
+  for(let i=1;i<arr.length;i++){
+    if(arr[i]<max){
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+console.log("Maximum",findMaximumNumber(arr));
+______________________________________________________________________________________________
+}}}console.log(null+1)//1
+______________________________________________________________________________________________
+}}}console.log(undefined+1)//NaN
+______________________________________________________________________________________________
+}}}console.log(null+null)//0
+______________________________________________________________________________________________
+}}}console.log(null)//null
+______________________________________________________________________________________________
+}}}console.log(null+0)//0
+______________________________________________________________________________________________
+}}}console.log(undefined+undefined)//NaN
+______________________________________________________________________________________________
+}}}console.log(null+undefined)//NaN
+______________________________________________________________________________________________
+}}}console.log(undefined+null)//NaN
+______________________________________________________________________________________________
+}}}console.log(null)//null
+______________________________________________________________________________________________
+}}}console.log(undefined)//undefined
+______________________________________________________________________________________________
+}}}console.log(this)//{}
+______________________________________________________________________________________________
+}}}console.log(this.name)//undefined
+______________________________________________________________________________________________
+}}}console.log([] instanceof Array);//true
+}}}console.log([] instanceof Object);//true
+}}}console.log({} instanceof Array);//false
+}}}console.log({} instanceof Object);//true
+______________________________________________________________________________________________
 }}}what is nginx
 }}}what is load balanced
 }}}how to share data between two components
-}}}console.log([] instanceof Array);//ture
-}}}console.log([] instanceof Object);//true
-}}}console.log({} instanceof Array);//false
+______________________________________________________________________________________________
 }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 
 ### 🔹 Linear Data Structures
@@ -470,6 +620,11 @@ console.log('Max Value :- ',newArray[1]);
   // min = 1
   // profit = max(7,(9-1)) = 8
 ------------------------------------------------------------------
+
+
+
+
+
   - ]]Product of array except self
   // Product of array except self
   // [1, 2, 3, 4]
