@@ -104,7 +104,9 @@ ________________________________________________________________________________
 const arr = [12,23,34,45,12,34,23,89,54,90,12];
 
 function countesOfSameNumber(arr){
-  let count = {};
+  let count = 
+
+{};
   for(let i=0;i<arr.length;i++){
     let num = arr[i];
     if(count[num]){
@@ -621,10 +623,6 @@ console.log('Max Value :- ',newArray[1]);
   // profit = max(7,(9-1)) = 8
 ------------------------------------------------------------------
 
-
-
-
-
   - ]]Product of array except self
   // Product of array except self
   // [1, 2, 3, 4]
@@ -647,6 +645,7 @@ console.log('Max Value :- ',newArray[1]);
   
   console.log(multiplicationOfItSelf([1,2,3,4]));
 ------------------------------------------------------------------
+
 - ]]Combine two or more array
 const arr = [[12,23,90,78,4,89],[45,99,1,8,87],[21,32,2]];
 
@@ -682,6 +681,13 @@ for(let i=0;i<arr.length;i++){
        console.log(`${arr[i]} -> ${arr[i].length}`);
    }
 }
+
+
+
+
+
+
+
 ------------------------------------------------------------------
 - Set matrix zeroes
 
