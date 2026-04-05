@@ -1,38 +1,10 @@
 
----
-
-🔥 **Batch-4 Completed (Questions 241–300)**
-We are now at **300 total questions** 💪🚀
-
-Reply:
-
-* **Batch-5**
-* **Only Senior Level (Very Hard)**
-* **Node.js Specific**
-* **Frontend (DOM + Browser) Questions**
-* **Give Answers for Batch-4**
-* **Create 300 Question PDF**
-
-Let’s continue toward 1000+ 🔥
-______________________________________________________________________________________________
-Perfect 🔥
-Here is Batch-5 – 100 Senior Level JavaScript Output Questions
-(No answers — interview practice mode)
-
-We are now at **400 total questions** 🚀💪
-
----
-
-# 🚀 JavaScript 100 Output Questions – Batch 5
-
----
-
 ## 🔹 301–320: Execution Context & Edge Hoisting
 
 301.
 var a = 10;
 (function(){
-  console.log(a);
+  console.log(a);//10
   a = 20;
 })();
 ______________________________________________________________________________________________
@@ -40,7 +12,7 @@ ________________________________________________________________________________
 302.
 let a = 10;
 {
-  console.log(a);
+  console.log(a);//undefined
   let a = 20;
 }
 ______________________________________________________________________________________________
@@ -48,31 +20,35 @@ ________________________________________________________________________________
 303.
 var a = 10;
 function test(){
-  console.log(a);
+  console.log(a);//10
 }
+
 (function(){
   var a = 20;
+  var a = 30;
+  var a = 40;
   test();
 })();
 ______________________________________________________________________________________________
 
 304.
 function foo(){
-  console.log(foo);
+  console.log(foo);//[Function: foo]
 }
 foo();
 ______________________________________________________________________________________________
 
 305.
 (function(){
-  console.log(typeof arguments);
+  console.log(typeof arguments);//Object
 })();
 ______________________________________________________________________________________________
 
 306.
 function foo(a){
   arguments[0] = 20;
-  console.log(a);
+  arguments[0] = 290;
+  console.log(a);//290
 }
 foo(10);
 ______________________________________________________________________________________________
@@ -81,31 +57,43 @@ ________________________________________________________________________________
 function foo(a){
   "use strict";
   arguments[0] = 20;
-  console.log(a);
+  console.log(a);//10
 }
 foo(10);
 ______________________________________________________________________________________________
 
 308.
-console.log(function f(){}.name);
+console.log(function f(){}.name);//f
 ______________________________________________________________________________________________
 
 309.
 const f = function(){};
-console.log(f.name);
+console.log(f.name);//f
 ______________________________________________________________________________________________
 
 310.
-console.log((function(){ return typeof x; })());
+console.log((function(){ return typeof x; })());//undefined
 var x = 10;
+
+console.log(typeof undefined);//undefined
+console.log(typeof null);//object
+console.log(typeof Object);//function
+console.log(typeof 23);//number
+console.log(typeof true);//boolean
+console.log(typeof 1);//number
+console.log(typeof 0);//number
+console.log(typeof 45.78);//number
 ______________________________________________________________________________________________
 
 311.
 (function(){
-  console.log(x);
+  console.log(x);//Error:- ReferenceError
 })();
 let x = 10;
 ______________________________________________________________________________________________
+
+
+
 
 312.
 {

@@ -1,0 +1,178 @@
+## **WPS (Wellington Parcel Service) – Simple Description**
+
+Wellington Parcel Service (WPS) is a parcel delivery platform in Canada. It helps customers create orders and track their shipments. WPS connects customers, businesses, and many third-party carriers in one system.
+
+WPS has **two main portals**:
+
+1. **Order Creation Portal** – Customers create parcel orders here.
+2. **Order Tracking Portal** – Customers track their shipments here using a tracking number.
+
+The system uses **role-based access**, so every user can only see the data that belongs to them.
+
+## **Carriers Connected with WPS**
+
+WPS works with many big carriers like:
+
+* Midland
+* Obibox
+* Frontier
+* Roadrao
+* Canada Post
+* Corporate Courier
+
+All these carriers send order and tracking information to WPS.
+
+## **Big Businesses Using WPS**
+
+* DHL
+* Atlas
+* CanPrev
+* Supership
+* Funding Innovations
+
+These companies use WPS to manage and track thousands of parcels.
+
+## **Main Features**
+
+* Create and manage parcel orders
+* Track parcels in real time
+* Choose the best carrier automatically
+* Secure login with role-based access
+* Easy order management for customers and business users
+
+---
+
+## **How Order Tracking Works (Simple Logic)**
+
+When a parcel moves from one place to another, the carrier sends multiple events.
+Example carrier events:
+
+* Order Created
+* Picked Up
+* In Transit
+* Out for Delivery
+* Delivered
+* Exception (Delay or Issue)
+
+WPS converts these events into **8 main WPS events**, such as:
+
+1. Order Placed
+2. Label Created
+3. In Transit
+4. Out for Delivery
+5. Delivered
+6. Exception
+7. Order Transferred
+8. Customer Contacted
+
+### **Tracking Portal Flow**
+
+1. Customer enters tracking number.
+2. WPS checks the details from database and carrier API.
+3. Carrier events are matched with WPS events.
+4. WPS shows a clean timeline like:
+
+   * Order Created
+   * Parcel Picked Up
+   * In Transit
+   * Out for Delivery
+   * Delivered
+
+This way, customers can easily check the latest status of their parcel.
+
+---
+
+## **My Role in This Project**
+
+### **Backend**
+
+* Integrated third-party carrier APIs
+* Mapped their events to WPS event format
+* Created APIs for order creation and tracking
+* Added role-based authentication
+* Worked on cron jobs for auto-updating tracking status
+
+### **Frontend**
+
+* Developed UI pages for order creation and tracking
+* Created tracking timeline
+* Added search, filters, pagination
+* Integrated backend APIs with frontend
+* Built screens for admin and customers
+
+------------------------------------------------------------------------------------------------------
+
+## **Uniconnect Web Application**
+
+Uniconnect is a web-based application developed for **Bajaj**. It is mainly used by **call centers and BPO agents** to call customers, provide loan information, and track loan details.
+
+This application helps Bajaj teams manage all customer calling operations in one place.
+It supports **inbound calls, outbound calls**, and even **AI Voice-Bot calling** for automated messages.
+
+## **Main Features of Uniconnect**
+
+* Call customers for giving loan information
+* Track loan details of each customer
+* Make inbound & outbound calls
+* AI Voice-Bot automatically calls customers for loan reminders or promotions
+* Store and manage call logs, call duration, and call recordings
+* Dashboard for daily calling reports
+* Role-based access so each user sees only their data
+
+---
+
+## **User Types in the System**
+
+The application has **five types of users**:
+
+1. **Super Admin (Root)** – Full access to entire system
+2. **Admin** – Manage users, reports, and calling setup
+3. **Supervisor** – Monitor team performance and agents
+4. **Team Leader (TL)** – Handle a small group of agents
+5. **Agent** – Makes calls and updates call details
+
+Each role has different permissions and features based on their responsibilities.
+
+---
+
+## **Technology & Your Role**
+
+### **Your Contribution**
+
+* Working on both **frontend and backend** modules
+* Fixing bugs, improving UI/UX, and writing clean API integrations
+* Working on call logs, filters, pagination, and dashboards
+* Helping integrate Voice-Bot calling and call recording modules
+* Managing role-based access and user permissions
+----------------------------------------------------------------------------------------------------
+
+ What is your current project?
+    My current project is Bajaj product UniConnect web app.
+
+    This application is used for calling management and loan management. In this product, Bajaj agents connect with end customers and offer loans, and all loan EMI and related things are managed through the calling process.
+
+    In this application, there are multiple types of calling process like:
+
+    inbound
+    outbound
+    preview
+    predictive
+    voicebot (inbound and outbound)
+
+    The most important part of this product is voicebot calling, where in a single day around 1 crore calls can be made to end users for loan offers.
+
+    Tech stack
+    Frontend: Angular and Nginx
+    Backend: Node.js, Next.js, Spring Boot, Golang
+    Architecture: Microservices (backend) and simple monolithic structure (frontend)
+    My roles and responsibilities
+    Bug fixing
+    Creating REST APIs
+    UI development in Angular
+    API integration
+    Creating Angular build and deployment
+    Handling different environments because this product is used by multiple BPOs
+-------------------------------------------------------------------------
+6️⃣ Are you working on frontend or backend?
+-> I work on both frontend and backend, but I’m mainly focused on and interested in frontend–backend integration
+-------------------------------------------------------------------------
