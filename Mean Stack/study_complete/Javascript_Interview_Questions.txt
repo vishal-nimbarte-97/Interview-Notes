@@ -1,4 +1,6 @@
-Javascript Code Flow Of Execution
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++            Javascript Code Flow Of Execution               +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ]]] Call Stack → Microtasks → Macrotasks ]]]
 
@@ -41,7 +43,7 @@ Javascript Code Flow Of Execution
 │  • queueMicrotask()   │             │  • DOM Events         │
 │  • MutationObserver   │             │  • I/O operations     │
 │                       │             │                       │
-│  ⚠ Runs COMPLETELY    │             │  ⚠ Runs ONE at time   │
+│  ⚠ Runs COMPLETELY   │             │  ⚠ Runs ONE at time   │
 │    before macrotask   │             │                       │
 └───────────────▲───────┘             └───────────────▲───────┘
                 │                                       │
@@ -66,33 +68,130 @@ JavaScript engine works like this:
 
 1️⃣ Call Stack (Synchronous Code)
 
-All normal code
-console.log()
-Variable declarations
-Function calls
-👉 Executed immediately, top to bottom
+    All normal code
+    console.log()
+    Variable declarations
+    Function calls
+    👉 Executed immediately, top to bottom
 
 2️⃣ Microtask Queue (Higher Priority Async)
 
-Promise.then()
-Promise.catch()
-queueMicrotask()
-MutationObserver
-👉 Executed after call stack is empty
-👉 Runs before setTimeout
+    Promise.then()
+    Promise.catch()
+    queueMicrotask()
+    MutationObserver
+    👉 Executed after call stack is empty
+    👉 Runs before setTimeout
 
 3️⃣ Macrotask Queue (Lower Priority Async)
 
-setTimeout
-setInterval
-DOM events
-setImmediate (Node)
-👉 Executed after microtasks are completed
+    setTimeout
+    setInterval
+    DOM events
+    setImmediate (Node)
+    👉 Executed after microtasks are completed
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1. What is the difference between == and === in JavaScript?
+-> == check only value & === check value as well as also check data types
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2. What would be the result of 3+2+"7"?
+let result = 3 + 2 + "7";
+console.log(result);//57
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+3.Is JavaScript compiled or interpreted?
+->javascsipt is both interpreted and compiled at a runtime by browser engines
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+4.Are JavaScript and Java related?
+->No, JavaScript and Java are not related. They are completely different languages.
+
+    Different purpose:
+    JavaScript → Used for web development (frontend + backend)
+    Java → Used for enterprise application and most of used in backend systems
+
+    Different execution:
+    JavaScript → Runs in browser engines like V8 JavaScript engine
+    Java → Runs on JVM (Java Virtual Machine)
+
+    Different syntax & typing:
+    JavaScript → Dynamic typing
+    Java → Strongly typed (static typing)
+
+    Compilation:
+    JavaScript → JIT compiled at runtime
+    Java → Compiled into .class bytecode first
+
+    Naming confusion:
+    Name “JavaScript” was chosen for marketing, not because they are related.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+5.How many ways an HTML element can be accessed in JavaScript code? 
+-> Using getElementById,getElementByClassName,getElementByTagName
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+6.What’s the return-value difference between x++ and ++x?
+x++ (post-increment)
+→ First returns the value, then increments
+++x (pre-increment)
+→ First increments, then returns the value
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+7.What’s the difference between var, let, and const and what is the Temporal Dead Zone?
+-> var, let and const are used to declare variables in JavaScript
+-> and they have different purposes to use
+-> var is function scope, and it can be re-declared and re-assigned
+-> let is block scope, it cannot be re-declared but it can be re-assigned
+-> const is also block scope, it cannot be re-declared as well as cannot be re-assigned
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+8.What is a Variable Scope in JavaScript?
+-> Variable scope means where a variable can be accessed in the code or in different functions/blocks
+-> so there are three types of scope
+
+Global Scope :-
+    -> variable declared outside any function, it can be accessed anywhere in the code
+Function Scope :-
+    -> variable declared inside a function, it can be accessed only inside that function (var)
+Block Scope :-
+    -> variable declared inside { }, it can be accessed only inside that block (let, const)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+}}}9.What the difference between Lexical and Dynamic Scoping?
+->> Lexical scoping depends on where the function is defined, while dynamic scoping depends on who calls the function.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+10.What is the use of isNaN, and how is it different from Number.isNaN?
+
+    -> isNaN is used to check value is Not a Number or not
+    -> but it first converts the value into number, then checks
+    isNaN("123"); // false (converted to number)
+    isNaN("abc"); // true
+
+    -> Number.isNaN is also used to check NaN
+    -> but it does NOT convert the value, it checks strictly
+    Number.isNaN("abc"); // false
+    Number.isNaN(NaN);   // true
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+12. What does this code log?
+const arr = [1, 2, 3];
+arr[10] = 99;
+console.log(arr.length);//11
+Output: 11
+
+Explanation: When you assign to arr[10] you create empty slots from index 3 to 9, making the new length one more than the highest index: 10 + 1 = 11
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+13.What is TDZ(Temporal Dead Zone)?
+-> Temporal Dead Zone means let and const variable declared but not assigned the value
+-> and if we directly use before declaration, due to hoisting TDZ occurs and it gives ReferenceError
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+13. What is negative infinity?
+-> Negative Infinity means a value that is smaller than any number
+-> it represents very very small value (−∞)
+
+🔹 Example in JavaScript
+console.log(-1 / 0); // -Infinity
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+https://www.geeksforgeeks.org/javascript/javascript-interview-questions/
 
 
-*]] MutationObserver
-
-
+📦 What is MutationObserver?
+👉 MutationObserver is a JavaScript API that runs in the microtask queue (higher priority than macrotasks) and is used to detect changes in the DOM.
+-------------------------------------------------------------------------------------------------
 📦 what is data types in javacript?
 ->JavaScript data types define the type of value a variable can store. The main data types are string, number, boolean, undefined, null, bigint, symbol, and object.
 -------------------------------------------------------------------------------------------------
