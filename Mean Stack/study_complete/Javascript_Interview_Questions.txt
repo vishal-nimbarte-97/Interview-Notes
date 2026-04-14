@@ -140,6 +140,10 @@ x++ (post-increment)
 -> let is block scope, it cannot be re-declared but it can be re-assigned
 -> const is also block scope, it cannot be re-declared as well as cannot be re-assigned
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+13.What is TDZ(Temporal Dead Zone)?
+-> Temporal Dead Zone means let and const variable declared but not assigned the value
+-> and if we directly use before declaration, due to hoisting TDZ occurs and it gives ReferenceError
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 8.What is a Variable Scope in JavaScript?
 -> Variable scope means where a variable can be accessed in the code or in different functions/blocks
 -> so there are three types of scope
@@ -151,7 +155,7 @@ Function Scope :-
 Block Scope :-
     -> variable declared inside { }, it can be accessed only inside that block (let, const)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-}}}9.What the difference between Lexical and Dynamic Scoping?
+}}}9.What the difference between Lexical and Dynamic Scoping?}}}
 ->> Lexical scoping depends on where the function is defined, while dynamic scoping depends on who calls the function.
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 10.What is the use of isNaN, and how is it different from Number.isNaN?
@@ -174,10 +178,6 @@ Output: 11
 
 Explanation: When you assign to arr[10] you create empty slots from index 3 to 9, making the new length one more than the highest index: 10 + 1 = 11
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-13.What is TDZ(Temporal Dead Zone)?
--> Temporal Dead Zone means let and const variable declared but not assigned the value
--> and if we directly use before declaration, due to hoisting TDZ occurs and it gives ReferenceError
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 13. What is negative infinity?
 -> Negative Infinity means a value that is smaller than any number
 -> it represents very very small value (−∞)
@@ -196,6 +196,8 @@ https://www.geeksforgeeks.org/javascript/javascript-interview-questions/
 ->JavaScript data types define the type of value a variable can store. The main data types are string, number, boolean, undefined, null, bigint, symbol, and object.
 -------------------------------------------------------------------------------------------------
 📦 Where are let, var, and const stored in memory?
+👉 Saying “primitive = stack, non-primitive = heap” is not 100% accurate memory storage
+
 ->let, var, and const are used to declare the variables. These variables can store both primitive and non-primitive (object) data types.
 
 When we use let, var, or const to store primitive values like numbers, strings, or booleans — that time the value is stored in stack memory because it's small and simple data.
@@ -207,7 +209,7 @@ But when we use let, var, or const to store objects, arrays, or functions, then 
 ->We don’t need to write any method or service for garbage collection. It automatically runs in the background and removes the unused or unreferenced variables or objects from memory.
 -------------------------------------------------------------------------------------------------
 📜 javascript all version and what's differences?
-->current version :- ✅ ECMAScript 2025 (ES16)
+👉 **ECMAScript 2025 (ES2025)** is the latest JavaScript version.
 -------------------------------------------------------------------------------------------------
 🧠 What is Inheritance in JavaScript?
 ->Inheritance is the process where a child class can access the properties (data members) and methods (member functions) of a parent class. The child class reuses the parent class code — this is called inheritance in object-oriented programming.
@@ -237,7 +239,7 @@ Method Overriding
 -> Prototypal Inheritance is a feature in JavaScript where an object can inherit properties and methods from another object using the __proto__ or Object.create().
 -------------------------------------------------------------------------------------------------
 1.Current Version of JavaScript?
-->current version :- ✅ ECMAScript 2025 (ES2016)
+👉 **ECMAScript 2025 (ES2025)** is the latest JavaScript version.
 -------------------------------------------------------------------------------------------------
 1.What is javascript?
 ->JavaScript is a scripting language used to make web pages interactive.
