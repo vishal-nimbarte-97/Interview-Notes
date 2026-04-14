@@ -58,10 +58,10 @@ OR
 ->A foreign key is a column that references another table’s primary key, and it is used to create a relationship between two tables.
 -----------------------------------------------------------------------------------------------------------------
 7.What is a unique key?
-->A unique key is a column that ensures all its values are different, but it can have one null value.
+->Unique key means all the values in a column must be unique, and it allows only one NULL value.
 -----------------------------------------------------------------------------------------------------------------
 8.What is the difference between PRIMARY KEY and UNIQUE?
-->PRIMARY KEY: Uniquely identifies each record and cannot be null (only one per table).
+->PRIMARY KEY: Uniquely identifies each record and cannot be null (only one per table).[combination of not null and unique].
   UNIQUE: Also ensures unique values, but can have one null and multiple unique keys are allowed in a table.
 -----------------------------------------------------------------------------------------------------------------
 9.What is a NULL value?
@@ -86,6 +86,18 @@ OR
 	TCL (Transaction Control Language): Controls transaction behavior.
 	COMMIT, ROLLBACK, SAVEPOINT
 -----------------------------------------------------------------------------------------------------------------
+12.Real Time Senario of Transaction Control Language
+->"Suppose user A amount transfer to user B, transfer amount 5000.
+User A amount deduct ok, then during transfer something error occurred.
+So that time transfer process is incomplete and data may change (data loss / inconsistency).
+
+So that reason TCL is used.
+Before executing we use BEGIN, then execute queries.
+If everything is ok then COMMIT.
+If any problem occurs then ROLLBACK.
+
+And SAVEPOINT is used in case we want to rollback to a specific point, not full transaction."
+-----------------------------------------------------------------------------------------------------------------
 12.What are DDL, DML, DCL, and TCL?
 ->	DDL (Data Definition Language): Defines the structure of the database.
 	CREATE, ALTER, DROP, TRUNCATE
@@ -105,7 +117,8 @@ OR
 -> DROP :- drop the table in the database.
 -----------------------------------------------------------------------------------------------------------------
 14.What is normalization?
-->Normalization is the process of storing data in a database in a proper way to ensure uniqueness, maintain data integrity, and avoid duplication.
+->"Normalization means storing data in a proper structured way to avoid duplication and maintain data consistency and integrity.
+It is divided into types like 1NF, 2NF, and 3NF."
 -----------------------------------------------------------------------------------------------------------------
 15.What are the types of normalization?
 ->The main normal forms used in database normalization are:
@@ -129,6 +142,11 @@ OR
 OR 
 ->A view is a virtual table created using a SELECT query to display data from one or more tables without storing the data.
 -----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 19.What is a stored procedure?
 ->  Stored procedure is similar to function, if our need wise they are called and used.
 	But in the database, stored procedure is used for query optimization, query reuse, and most importantly for security purpose.
