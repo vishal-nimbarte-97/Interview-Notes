@@ -1,0 +1,416 @@
+📌 What is a Microservice?
+
+    Microservice architecture means a collection of services, where every service is:
+
+    Developed individually
+    Deployed individually
+    Responsible for a specific task
+
+    Today, most platforms like e-commerce and banking systems use this architecture because:
+
+    Every service can be developed independently
+    Every service can be deployed separately
+    It is easy to scale and manage
+-----------------------------------------------------------------------------------------------
+📌 About Your Project (CQRS Pattern)
+
+    In microservices, there are different patterns.
+    In my current project, we are using the CQRS pattern.
+
+    CQRS means we separate read and write operations.
+-----------------------------------------------------------------------------------------------
+🔷 Our Architecture Contains:
+    
+    API Gateway
+        It is the entry point
+        All client requests come here first
+
+    Write Service (Command Side)
+    Handles:
+        Create
+        Update
+        Delete
+        Stores data in the write database
+
+    Read Service (Query Side)
+    Handles:
+        Fetch data
+        Uses read database for fast responses
+-----------------------------------------------------------------------------------------------
+🔷 Simple Flow :-
+
+    🟢 Write Flow
+    Client → API Gateway → Write Service → Database
+
+    🔵 Read Flow
+    Client → API Gateway → Read Service → Database
+-----------------------------------------------------------------------------------------------
+📌 Explain your microservice architecture :-
+
+    “My application uses microservice architecture with CQRS pattern. We have an API Gateway as an entry point. The system is divided into Write Service and Read Service. Write service handles create/update/delete operations and stores data in write database. Read service handles queries using a separate read database. We also use Kafka for communication between services and PostgreSQL for data storage.”
+-----------------------------------------------------------------------------------------------
+📌 How to databases in sync in microservice architecture patter ?
+
+    "In my application, I have three databases: read, write, and audit logs. They are synced using Kafka events. Practically, when I store data in the write database, an event is published to Kafka. That event goes to the read service and audit log service, and then the data is stored in the read database and audit database. In this way, data is synced across all databases.”
+-----------------------------------------------------------------------------------------------
+
+
+ api-gateway/
+ ├── src/
+ │
+ │   ├── modules/                          # 🧩 Feature-based modules (PUBLIC APIs)
+ │   │   ├── users/
+ │   │   │   ├── presentation/
+ │   │   │   │   ├── controllers/
+ │   │   │   │   │   ├── users.controller.ts
+ │   │   │   │   │
+ │   │   │   │   ├── dto/
+ │   │   │   │   │   ├── create-user.dto.ts
+ │   │   │   │   │   ├── update-user.dto.ts
+ │   │   │   │   │   ├── index.ts
+ │   │   │   │
+ │   │   │   ├── application/
+ │   │   │   │   ├── services/
+ │   │   │   │   │   ├── users.service.ts   # 🔁 calls write/read services
+ │   │   │   │
+ │   │   │   ├── users.module.ts
+ │   │   │
+ │   │   ├── orders/
+ │   │   │   ├── presentation/
+ │   │   │   │   ├── controllers/orders.controller.ts
+ │   │   │   │   ├── dto/
+ │   │   │   │   │   ├── create-order.dto.ts
+ │   │   │   │
+ │   │   │   ├── application/
+ │   │   │   │   ├── services/orders.service.ts
+ │   │   │   │
+ │   │   │   ├── orders.module.ts
+ │   │   │
+ │   │   ├── auth/                          # 🔐 Authentication module
+ │   │   │   ├── presentation/
+ │   │   │   │   ├── controllers/auth.controller.ts
+ │   │   │   │   ├── dto/
+ │   │   │   │   │   ├── login.dto.ts
+ │   │   │   │
+ │   │   │   ├── application/
+ │   │   │   │   ├── services/auth.service.ts
+ │   │   │   │
+ │   │   │   ├── auth.module.ts
+ │
+ │   ├── infrastructure/                   # 🌍 External integrations
+ │   │   ├── kafka/
+ │   │   │   ├── kafka.config.ts
+ │   │   │   ├── kafka.module.ts
+ │   │   │   ├── kafka.service.ts
+ │   │   │
+ │   │   ├── clients/                      # 🔌 Microservice clients
+ │   │   │   ├── write.client.ts
+ │   │   │   ├── read.client.ts
+ │   │   │   ├── audit.client.ts (optional)
+ │
+ │   ├── common/                           # ♻️ Shared layer
+ │   │   ├── guards/
+ │   │   │   ├── jwt-auth.guard.ts
+ │   │   │   ├── roles.guard.ts
+ │   │   │
+ │   │   ├── decorators/
+ │   │   │   ├── roles.decorator.ts
+ │   │   │   ├── current-user.decorator.ts
+ │   │   │
+ │   │   ├── interceptors/
+ │   │   │   ├── logging.interceptor.ts
+ │   │   │   ├── response.interceptor.ts
+ │   │   │
+ │   │   ├── exceptions/
+ │   │   │   ├── global-exception.filter.ts
+ │   │   │
+ │   │   ├── middlewares/
+ │   │   │   ├── request-id.middleware.ts   # correlation id
+ │   │   │
+ │   │   ├── utils/
+ │   │   │   ├── logger.util.ts
+ │   │   │
+ │   │   ├── constants/
+ │   │   │   ├── routes.constant.ts
+ │
+ │   ├── config/                           # ⚙️ Config management
+ │   │   ├── env.config.ts
+ │   │   ├── app.config.ts
+ │   │
+ │   ├── app.module.ts                     # 🚀 Root module
+ │   ├── main.ts                           # 🚀 Bootstrap
+ │
+ ├── test/
+ │   ├── unit/
+ │   ├── integration/
+ │
+ ├── docker/
+ │   ├── Dockerfile
+ │   ├── docker-compose.yml
+ │
+ ├── .env
+ ├── tsconfig.json
+ ├── package.json
+
+ write-service/
+ ├── src/
+ │
+ │   ├── modules/
+ │   │   ├── users/
+ │   │   │
+ │   │   │   ├── presentation/                 # 🎯 HTTP Layer
+ │   │   │   │   ├── controllers/
+ │   │   │   │   │   ├── users.controller.ts
+ │   │   │   │   │
+ │   │   │   │   ├── dto/
+ │   │   │   │   │   ├── create-user.dto.ts
+ │   │   │   │   │   ├── update-user.dto.ts
+ │   │   │   │   │   ├── index.ts
+ │   │   │   │   │
+ │   │   │   │   ├── validators/
+ │   │   │   │   │   ├── user.validator.ts
+ │   │   │
+ │   │   │   ├── application/                  # 🧠 CQRS Layer
+ │   │   │   │   ├── commands/
+ │   │   │   │   │   ├── create-user.command.ts
+ │   │   │   │   │   ├── update-user.command.ts
+ │   │   │   │   │   ├── delete-user.command.ts
+ │   │   │   │   │
+ │   │   │   │   ├── handlers/
+ │   │   │   │   │   ├── create-user.handler.ts
+ │   │   │   │   │   ├── update-user.handler.ts
+ │   │   │   │   │   ├── delete-user.handler.ts
+ │   │   │   │   │
+ │   │   │   │   ├── events/
+ │   │   │   │   │   ├── user-created.event.ts
+ │   │   │   │   │   ├── user-updated.event.ts
+ │   │   │   │   │
+ │   │   │   │   ├── services/                 # optional orchestration
+ │   │   │   │   │   ├── user.service.ts
+ │   │   │   │   │
+ │   │   │   │   ├── mappers/
+ │   │   │   │   │   ├── user.application.mapper.ts
+ │   │   │
+ │   │   │   ├── domain/                       # 🧩 Core Business
+ │   │   │   │   ├── entities/
+ │   │   │   │   │   ├── user.entity.ts
+ │   │   │   │   │
+ │   │   │   │   ├── value-objects/
+ │   │   │   │   │   ├── email.vo.ts
+ │   │   │   │   │
+ │   │   │   │   ├── repositories/
+ │   │   │   │   │   ├── user.repository.interface.ts
+ │   │   │   │   │
+ │   │   │   │   ├── exceptions/
+ │   │   │   │   │   ├── user-domain.exception.ts
+ │   │   │
+ │   │   │   ├── infrastructure/               # 🔌 External
+ │   │   │   │   ├── persistence/
+ │   │   │   │   │   ├── dao/
+ │   │   │   │   │   │   ├── user.dao.ts
+ │   │   │   │   │   │
+ │   │   │   │   │   ├── repositories/
+ │   │   │   │   │   │   ├── user.repository.ts
+ │   │   │   │   │   │
+ │   │   │   │   │   ├── mappers/
+ │   │   │   │   │   │   ├── user.persistence.mapper.ts
+ │   │   │   │   │
+ │   │   │   │   ├── messaging/
+ │   │   │   │   │   ├── kafka/
+ │   │   │   │   │   │   ├── producers/
+ │   │   │   │   │   │   │   ├── user.producer.ts
+ │   │   │   │   │   │   ├── topics/
+ │   │   │   │   │   │   │   ├── user.topics.ts
+ │   │   │
+ │   │   │   ├── users.module.ts
+ │   │
+ │   ├── infrastructure/                      # 🌍 Global Infra
+ │   │   ├── database/
+ │   │   │   ├── database.config.ts
+ │   │   │   ├── database.module.ts
+ │   │   │   ├── migrations/
+ │   │   │   ├── seeds/
+ │   │   │
+ │   │   ├── kafka/
+ │   │   │   ├── kafka.config.ts
+ │   │   │   ├── kafka.module.ts
+ │   │   │   ├── kafka.service.ts
+ │
+ │   ├── common/                              # ♻️ Shared
+ │   │   ├── base/
+ │   │   ├── exceptions/
+ │   │   ├── response/
+ │   │   ├── utils/
+ │   │   ├── interceptors/
+ │   │
+ │   ├── config/
+ │   │   ├── env.config.ts
+ │   │   ├── app.config.ts
+ │
+ │   ├── app.module.ts
+ │   ├── main.ts
+
+ read-service/
+ ├── src/
+ │
+ │   ├── modules/
+ │   │   ├── users/
+ │   │   │
+ │   │   │   ├── presentation/                 # 🎯 HTTP Layer
+ │   │   │   │   ├── controllers/
+ │   │   │   │   │   ├── users.controller.ts
+ │   │   │   │   │
+ │   │   │   │   ├── dto/
+ │   │   │   │   │   ├── get-user.dto.ts
+ │   │   │   │   │   ├── list-users.dto.ts
+ │   │   │   │   │   ├── index.ts
+ │   │   │
+ │   │   │   ├── application/                  # 🧠 Query Layer (CQRS)
+ │   │   │   │   ├── queries/
+ │   │   │   │   │   ├── get-user.query.ts
+ │   │   │   │   │   ├── list-users.query.ts
+ │   │   │   │   │
+ │   │   │   │   ├── handlers/
+ │   │   │   │   │   ├── get-user.handler.ts
+ │   │   │   │   │   ├── list-users.handler.ts
+ │   │   │   │   │
+ │   │   │   │   ├── services/                 # optional aggregation
+ │   │   │   │   │   ├── user.query.service.ts
+ │   │   │   │   │
+ │   │   │   │   ├── mappers/
+ │   │   │   │   │   ├── user.query.mapper.ts
+ │   │   │
+ │   │   │   ├── domain/                       # 🧩 Read Models
+ │   │   │   │   ├── models/
+ │   │   │   │   │   ├── user.read.model.ts
+ │   │   │   │   │
+ │   │   │   │   ├── repositories/
+ │   │   │   │   │   ├── user.read.repository.interface.ts
+ │   │   │
+ │   │   │   ├── infrastructure/               # 🔌 External
+ │   │   │   │   ├── persistence/
+ │   │   │   │   │   ├── dao/
+ │   │   │   │   │   │   ├── user.read.dao.ts
+ │   │   │   │   │   │
+ │   │   │   │   │   ├── repositories/
+ │   │   │   │   │   │   ├── user.read.repository.ts
+ │   │   │   │   │   │
+ │   │   │   │   │   ├── mappers/
+ │   │   │   │   │   │   ├── user.read.mapper.ts
+ │   │   │   │
+ │   │   │   │   ├── messaging/
+ │   │   │   │   │   ├── kafka/
+ │   │   │   │   │   │   ├── consumers/
+ │   │   │   │   │   │   │   ├── user.consumer.ts
+ │   │   │   │   │   │   ├── topics/
+ │   │   │   │   │   │   │   ├── user.topics.ts
+ │   │   │   │
+ │   │   │   │   ├── projections/              # ⭐ MOST IMPORTANT
+ │   │   │   │   │   ├── user.projection.ts
+ │   │   │
+ │   │   │   ├── users.module.ts
+ │   │
+ │   ├── infrastructure/                      # 🌍 Global Infra
+ │   │   ├── database/
+ │   │   │   ├── database.config.ts
+ │   │   │   ├── database.module.ts
+ │   │   │   ├── migrations/
+ │   │   │
+ │   │   ├── kafka/
+ │   │   │   ├── kafka.config.ts
+ │   │   │   ├── kafka.module.ts
+ │   │   │   ├── kafka.service.ts
+ │
+ │   ├── common/                              # ♻️ Shared
+ │   │   ├── base/
+ │   │   ├── exceptions/
+ │   │   ├── response/
+ │   │   ├── utils/
+ │   │   ├── interceptors/
+ │
+ │   ├── config/
+ │   │   ├── env.config.ts
+ │   │   ├── app.config.ts
+ │
+ │   ├── app.module.ts
+ │   ├── main.ts
+
+ audit-log-service/
+ ├── src/
+ │
+ │   ├── modules/
+ │   │   ├── audit/
+ │   │   │
+ │   │   │   ├── presentation/                 # 🎯 Optional APIs
+ │   │   │   │   ├── controllers/
+ │   │   │   │   │   ├── audit.controller.ts
+ │   │   │   │   │
+ │   │   │   │   ├── dto/
+ │   │   │   │   │   ├── get-logs.dto.ts
+ │   │   │   │   │   ├── index.ts
+ │   │   │   │
+ │   │   │   ├── application/                  # 🧠 Logic
+ │   │   │   │   ├── services/
+ │   │   │   │   │   ├── audit.service.ts
+ │   │   │   │   │
+ │   │   │   │   ├── mappers/
+ │   │   │   │   │   ├── audit.mapper.ts
+ │   │   │
+ │   │   │   ├── domain/                       # 🧩 Core Model
+ │   │   │   │   ├── entities/
+ │   │   │   │   │   ├── audit-log.entity.ts
+ │   │   │   │   │
+ │   │   │   │   ├── value-objects/
+ │   │   │   │   │   ├── metadata.vo.ts
+ │   │   │   │   │
+ │   │   │   │   ├── repositories/
+ │   │   │   │   │   ├── audit.repository.interface.ts
+ │   │   │   │   │
+ │   │   │   │   ├── exceptions/
+ │   │   │   │   │   ├── audit.exception.ts
+ │   │   │
+ │   │   │   ├── infrastructure/               # 🔌 External
+ │   │   │   │   ├── persistence/
+ │   │   │   │   │   ├── dao/
+ │   │   │   │   │   │   ├── audit-log.dao.ts
+ │   │   │   │   │   │
+ │   │   │   │   │   ├── repositories/
+ │   │   │   │   │   │   ├── audit.repository.ts
+ │   │   │   │   │   │
+ │   │   │   │   │   ├── mappers/
+ │   │   │   │   │   │   ├── audit.persistence.mapper.ts
+ │   │   │   │
+ │   │   │   │   ├── messaging/
+ │   │   │   │   │   ├── kafka/
+ │   │   │   │   │   │   ├── consumers/
+ │   │   │   │   │   │   │   ├── audit.consumer.ts
+ │   │   │   │   │   │   ├── topics/
+ │   │   │   │   │   │   │   ├── audit.topics.ts
+ │   │   │
+ │   │   │   ├── audit.module.ts
+ │
+ │   ├── infrastructure/                      # 🌍 Global Infra
+ │   │   ├── database/
+ │   │   │   ├── database.config.ts
+ │   │   │   ├── database.module.ts
+ │   │   │   ├── migrations/
+ │   │   │
+ │   │   ├── kafka/
+ │   │   │   ├── kafka.config.ts
+ │   │   │   ├── kafka.module.ts
+ │   │   │   ├── kafka.service.ts
+ │
+ │   ├── common/                              # ♻️ Shared
+ │   │   ├── base/
+ │   │   ├── exceptions/
+ │   │   ├── response/
+ │   │   ├── utils/
+ │   │   ├── interceptors/
+ │
+ │   ├── config/
+ │   │   ├── env.config.ts
+ │   │   ├── app.config.ts
+ │
+ │   ├── app.module.ts
+ │   ├── main.ts
+

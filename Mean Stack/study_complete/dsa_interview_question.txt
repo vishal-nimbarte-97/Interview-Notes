@@ -104,9 +104,7 @@ ________________________________________________________________________________
 const arr = [12,23,34,45,12,34,23,89,54,90,12];
 
 function countesOfSameNumber(arr){
-  let count = 
-
-{};
+  let count = {};
   for(let i=0;i<arr.length;i++){
     let num = arr[i];
     if(count[num]){
@@ -121,6 +119,8 @@ function countesOfSameNumber(arr){
 
 console.log(countesOfSameNumber(arr));
 ______________________________________________________________________________________________
+
+
 }}}bubble sort 1D,2D
 const arr = [[12, 23, 90, 78, 4, 89], [45, 99, 1, 8, 87], [21, 32, 2]];
 

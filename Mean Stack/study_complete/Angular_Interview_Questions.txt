@@ -3,7 +3,6 @@
 3.lazy module implment 
 4.damy json print on UI 
 
-
 Good Afternoon Ma'am, 
 My name is Vishal Nimbarte. I am currently working as a Software Developer at Technogrowth Software Solutions, I have 2 years of experience in software development. So, During this time, I have worked on two to three major projects with differance domain like a e-commerce platform and logistics solution and i am currently worked as a client side Bajaj Finserv and my currently working to the Uniconnect Web application it's a bajaj product for calling center. i have strongly specialization in Angular and Node.js.I also have hands-on experience in developing scalable and user-friendly web applications.
 
@@ -36,8 +35,45 @@ what is your expecetation ?
 > The system supports inbound/outbound calls, AI Voice-Bot, call logs, and recordings.
 > Contributed to both frontend and backend with role-based access for Super Admin, Admin, Supervisor, TL, and Agents.
 
+
+
+------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
 0.what is signals?
 👉 Signals are lightweight state management for local or component state, and they automatically update and do not require much code.
+
+Signals are a lightweight state management feature in entity["software","Angular","frontend framework"] used mainly for local or component-level state. They provide a simpler and cleaner way to manage reactive data with less code and better performance.
+
+There are mainly 3 types of signals:
+
+1. **Writable Signal**  
+   Used to store and update values.
+
+```ts
+count = signal(0);
+
+this.count.set(1);
+this.count.update(value => value + 1);
+```
+
+2. **Computed Signal**  
+   Used to create derived values based on other signals.
+
+```ts
+total = computed(() => this.count() * 10);
+```
+
+3. **Effect Signal**  
+   Used to perform side effects whenever a signal value changes.
+
+```ts
+effect(() => {
+  console.log(this.count());
+});
+```
+
+Signals are easy to use, reduce boilerplate code, and improve reactivity compared to traditional approaches like RxJS for simple state handling.
+
 ------------------------------------------------------------------------------------------------------
 0.Types of signals in angular?
 👉There are mainly 3 types of signals in Angular:
@@ -46,10 +82,20 @@ what is your expecetation ?
 👉 Computed Signal = calculated data
 👉 Effect Signal   = run code when data changes
 
-
-
+Writable signals store state, computed signals calculate derived state, and effect signals run side-effect logic when the state changes.
+------------------------------------------------------------------------------------------------------
 0.What is Decorators?
-->Decorators in Angular add extra behavior and denote what a class or property is used for. They tell Angular how that decorator should work, like @Component, @ViewChild, and @ViewChildren.
+->Decorators in Angular are special functions used to add metadata or extra behavior to classes, properties, methods, or parameters.
+Decorators are written using the @ symbol and help Angular understand the purpose of a class or property.
+
+For example:
+
+@Component → defines a component
+@Injectable → defines a service
+@Input → receives data from parent component
+@Output → sends data to parent component
+
+Angular provides multiple decorators for different functionalities.
 ------------------------------------------------------------------------------------------------------
 1.What is Angular?
 ->Angular is TypeScript Based Frontend Framework for developing single page web applicaion. and this Framework developed by google for creating single page web applicaion.
@@ -103,7 +149,7 @@ A.interpolation :- they are transfer the data compoent.ts to the html template f
 
 B.property binding :- property binding case they are transfer the data from component.ts file to the html template file,this is syntax of the property binding [property]="value".
 
-C.event Binding :- event binding case they are transfer the data html template to component.ts file and they are syncup data automatically and sytax is (event)="methodName()".
+C.event Binding :- event binding case they are transfer the data html template to component.ts file and they are syncup data automatically and syntax is (event)="methodName()".
 
 D.two way data binding :- two way data binding means they are combination bwtween the event binding and property binding , they are automatically sync up the data between the html template file and compoent.ts file.
 ------------------------------------------------------------------------------------------------------
@@ -146,7 +192,6 @@ There are five main types of route guards:
 	resolve :- Fetch Data Before Page Loads
 	-->Before opening a Profile page, app fetches user data.
 	   The page loads only when data is ready
-
 ------------------------------------------------------------------------------------------------------
 13.Explain Angular Lifecycle of Hooks?
 -> constructor -> The component is called so constructor is the first hooks of angular like cycle they are exexuted.
@@ -236,7 +281,7 @@ Prevent Unncessary Rendering -> Updates only when inputes change.
 ->DOM sanitization is a security process that ensures only safe and clean data is rendered on the UI, protecting the application from }}}XSS attacks}}}. [XSS (Cross-Site Scripting) Attack]
 ------------------------------------------------------------------------------------------------------
 22.What is [XSS (Cross-Site Scripting) Attack]?
--> 
+-> attack by hacker using our web application
 ------------------------------------------------------------------------------------------------------
 22.What is One & Two Way Data Binding and There Types ?
 ------------------------------------------------------------------------------------------------------
@@ -259,6 +304,12 @@ Prevent Unncessary Rendering -> Updates only when inputes change.
 25.Why npm audit fix --force is risky.
 -> npm audit fix --force is risky because it can force incompatible package versions, causing dependency mismatch and breaking the application.
 ------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
 25.What is Standalone Component?
 ->A standalone component is an Angular component that does not require an NgModule for dependency declaration.
 ->It contains its own imports and dependencies, so it does not depend on any NgModule.
@@ -586,6 +637,10 @@ If we want to install NG-ZORRO in our Angular application, we can use the follow
 command -> ng add ng-zorro-antd
 
 This will automatically configure everything, including adding styles in the angular.json file.
+
+
+
+
 ------------------------------------------------------------------------------------------------------
 51.If we want to used both NG-ZORRO and bootstrap so it's possible?
 ->Yes, it's possible to use both NG-ZORRO and Bootstrap, but their styles may conflict, so we have to manage the design carefully.
