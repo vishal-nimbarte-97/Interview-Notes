@@ -1,15 +1,75 @@
-1.implement reactive forms and template driven forms 
-2.search functionality 
-3.lazy module implment 
-4.damy json print on UI 
+Real Time Implementation Process
 
+1. Template Driven Forms
+2. Reactive Forms
+3. Live Search Functionality
+4. API Integration
+5. Lazy Loading
+6. Route Guards
+7. Authentication & Authorization
+8. JWT Token Handling
+9. Angular Signals
+10. Standalone Components
+11. Parent to Child Communication
+12. Child to Parent Communication
+13. Component Lifecycle Hooks
+14. Custom Directives
+15. Structural Directives
+16. Attribute Directives
+17. Pipes in Angular
+18. Custom Pipes
+19. Dependency Injection
+20. Services in Angular
+21. HTTP Interceptors
+22. Error Handling
+23. State Management using Signals
+24. State Management using RxJS
+25. RxJS Operators (`map`, `switchMap`, `debounceTime`)
+26. Observables & Subjects
+27. Form Validation
+28. Dynamic Forms
+29. Nested Form Groups
+30. FormArray Implementation
+31. JSON Patch UI Demo
+32. Pagination Implementation
+33. Infinite Scrolling
+34. File Upload Functionality
+35. Drag and Drop Feature
+36. Angular Material Integration
+37. Reusable Components
+38. Shared Modules
+39. Core Modules
+40. Environment Configuration
+41. Route Resolvers
+42. Resolver-based API Prefetching
+43. Change Detection Strategy
+44. OnPush Change Detection
+45. Custom Validators
+46. Search Filter Functionality
+47. Debouncing Search API Calls
+48. CRUD Operations
+49. Dashboard UI Development
+50. Micro Frontend Basics
+51. WebSocket Integration
+52. Real-time Notifications
+53. SSR (Server Side Rendering)
+54. PWA (Progressive Web App)
+55. Unit Testing using Jasmine & Karma
+56. Responsive UI Design
+57. Bootstrap / Tailwind Integration
+58. NGRX Basics
+59. Angular Routing
+60. Data Binding (`One-way`, `Two-way`)
+
+You can mention these in your resume, interview discussion, or project explanation as Angular practical implementations.
+
+------------------------------------------------------------------------------------------------------
 Good Afternoon Ma'am, 
-My name is Vishal Nimbarte. I am currently working as a Software Developer at Technogrowth Software Solutions, I have 2 years of experience in software development. So, During this time, I have worked on two to three major projects with differance domain like a e-commerce platform and logistics solution and i am currently worked as a client side Bajaj Finserv and my currently working to the Uniconnect Web application it's a bajaj product for calling center. i have strongly specialization in Angular and Node.js.I also have hands-on experience in developing scalable and user-friendly web applications.
+My name is Vishal Nimbarte. I am currently working as a Software Developer at Technogrowth Software Solutions, I have 2+ years of experience in software development. So, During this time, I have worked on two to three major projects with differance domain like a e-commerce platform and logistics solution and i am currently worked as a client side Bajaj Finserv and my currently working to the Uniconnect Web application it's a bajaj product for calling center. i have strongly specialization in Angular and Node.js.I also have hands-on experience in developing scalable and user-friendly web applications.
 
 so, that's all about me.
 
 Thank you!
-
 ------------------------------------------------------------------------------------------------------
 what is your current project and what i your role?
 ->my current project is Uniconnect Web Application.
@@ -38,6 +98,18 @@ what is your expecetation ?
 
 
 ------------------------------------------------------------------------------------------------------
+}}}what is differance between active router and router module.
+-------------------------------------------------------------
+| Router                   | ActivatedRoute                 |
+| ------------------------ | ------------------------------ |
+| Used for navigation      | Used for getting route data    |
+| Navigate to another page | Read current route information |
+| `router.navigate()`      | `route.params`                 |
+| `router.url`             | `route.snapshot.params`        |
+-------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+}}}how to find the current url in angular?
+-> First, we need to inject the Router module. Then, with the help of the Router instance, we can use router.url to get and print the current URL.
 ------------------------------------------------------------------------------------------------------
 0.what is signals?
 👉 Signals are lightweight state management for local or component state, and they automatically update and do not require much code.
@@ -304,11 +376,6 @@ Prevent Unncessary Rendering -> Updates only when inputes change.
 25.Why npm audit fix --force is risky.
 -> npm audit fix --force is risky because it can force incompatible package versions, causing dependency mismatch and breaking the application.
 ------------------------------------------------------------------------------------------------------
-
-
-
-
-
 
 25.What is Standalone Component?
 ->A standalone component is an Angular component that does not require an NgModule for dependency declaration.

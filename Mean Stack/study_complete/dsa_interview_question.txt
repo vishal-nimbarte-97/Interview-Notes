@@ -204,6 +204,14 @@ ________________________________________________________________________________
 }}}console.log({} instanceof Object);//true
 }}}console.log([] instanceof {});//TypeError: Right-hand side of 'instanceof' is not callable
 ______________________________________________________________________________________________
+find second highet salary
+______________________________________________________________________________________________
+what is recurson and factorial 
+______________________________________________________________________________________________
+how to find the current url in angular
+______________________________________________________________________________________________
+what is differance between active router and router module
+______________________________________________________________________________________________
 
 }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 
@@ -409,6 +417,18 @@ https://www.codinn.dev/tricky-javascript/es6789-code-snippets-interview-question
     }
 
     findFirstChar(str);
+------------------------------------------------------------------
+- ]]Find duplicate number
+
+  const arr = [23,12,23,42,78,90,42];
+  for(let i=0;i<arr.length;i++){
+      let duplicate = arr[i];
+      for(let j=i+1;j<arr.length;j++){
+          if(duplicate === arr[j]){
+              console.log('Duplicate Element :- ',duplicate);
+          }
+      }
+  }
 ------------------------------------------------------------------
 - Reverse an array
 
