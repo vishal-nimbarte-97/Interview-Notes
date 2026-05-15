@@ -541,6 +541,27 @@ console.log('Max Value :- ',newArray[1]);
           }
       }
   }
+
+  bug fixing 
+
+  const arr = [23,12,23,42,78,90,42,42,42];
+  
+  function findDuplicate(arr){
+      const newArray = [];
+      for(let i=0;i<arr.length;i++){
+          for(let j=i+1;j<arr.length;j++){
+              if(arr[i]===arr[j]){
+                //   console.log(arr[i]);
+                if(!newArray.includes(arr[i])){
+                    newArray[newArray.length] = arr[i];
+                }
+              }
+          }
+      }
+      return newArray;
+  }
+  
+  console.log(findDuplicate(arr));
 ------------------------------------------------------------------
 - ]]Move zeros to end
   const arr = [23,0,34,0,45,0,89,0,90];
@@ -712,6 +733,119 @@ for(let i=0;i<arr.length;i++){
        console.log(`${arr[i]} -> ${arr[i].length}`);
    }
 }
+
+______________________________________________________________________________________________
+
+}}}reverse array without inbuild method
+-> 
+
+const arr = [12,34,78,3,9,5,20];
+
+console.log("Before Reverse :- ",arr);
+
+function reverseArray(arr){
+	let i = 0;
+	let j = arr.length - 1;
+	while(i<j){
+		let temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+		i++;
+		j--;
+	}
+	return arr;
+}
+
+console.log("After Reverse :- ",reverseArray(arr));
+______________________________________________________________________________________________ 
+}}}prime number find 
+->
+function isPrime(num){
+  if(num<=1) return false;
+  for(let i=2;i<num;i++){
+    if(num%2===0){
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPrime(0));
+console.log(isPrime(1));
+console.log(isPrime(2));
+console.log(isPrime(3));
+console.log(isPrime(4));
+console.log(isPrime(5));
+console.log(isPrime(6));
+console.log(isPrime(7));
+console.log(isPrime(10));
+______________________________________________________________________________________________
+}}}how many times number here in array find the countes of same number present in array 
+->// }}}how many times number here in array find the countes of same number present in array 
+// ->
+
+const arr = [12,23,34,45,12,34,23,89,54,90,12];
+
+function countesOfSameNumber(arr){
+  let count = {};
+  for(let i=0;i<arr.length;i++){
+    let num = arr[i];
+    if(count[num]){
+      count[num]++;
+    }
+    else{
+      count[num] = 1;
+    }
+  }
+  return count;
+}
+
+console.log(countesOfSameNumber(arr));
+______________________________________________________________________________________________
+
+
+}}}bubble sort 1D,2D
+const arr = [[12, 23, 90, 78, 4, 89], [45, 99, 1, 8, 87], [21, 32, 2]];
+
+console.log('Before Sorted :- ', arr);
+
+function sortArray(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+function sort2DArray(arr) {
+  const newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArray.push(sortArray(arr[i]));
+  }
+  return newArray;
+}
+
+console.log('After Sorted :- ', sort2DArray(arr));
+______________________________________________________________________________________________
+}}}find maximum number and smallest number in array 
+const arr = [23,45,89,90,12,78,44];
+
+function findMaximumNumber(arr){
+  let max = arr[0];
+  for(let i=1;i<arr.length;i++){
+    if(arr[i]<max){
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+console.log("Maximum",findMaximumNumber(arr));
 
 
 
