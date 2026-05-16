@@ -1,0 +1,77 @@
+1.What is Kafka & what is used of Kafka?
+
+Apache Kafka is a message broker and it helps communication between two services instead of REST API.
+
+Real-time scenario:
+
+We have two services:
+
+Order-Service
+Notification-Service
+
+In this case, when the user creates the order, after the order is created they need a notification.
+
+Since we are using Microservices Architecture Pattern, we need communication between the two services.
+
+We can use REST API for communication between two services, but this is not a good way because every time one service needs to hit another service API. After some time the system becomes complex and both services become tightly coupled.
+
+So in this case we use Kafka message broker.
+
+With the help of Kafka:
+
+Order-Service publishes the event/message to Kafka
+Kafka stores the message in a topic
+Notification-Service gets/consumes this event
+Then Notification-Service sends the notification
+
+So this is the overall real-time scenario of Kafka and asynchronous communication between microservices.
+--------------------------------------------------------------------------------------------------------------------------------------
+2.We do not use Kafka in every project. why ?
+
+If the application is small and communication is simple, then REST API is enough.
+
+But when the application becomes large scale and we are using Microservices Architecture, then Kafka is useful.
+
+We use Apache Kafka when:
+
+Multiple services need communication
+Real-time event handling is required
+We want asynchronous communication
+We want loose coupling between services
+High traffic or high scalability is needed
+We do not want every service to directly call another service API
+
+Real-time examples:
+
+Order-Service → Notification-Service
+Payment-Service → Invoice-Service
+User Registration → Email-Service
+Ride Booking → Driver Notification
+E-commerce Order Tracking
+
+So Kafka is mainly used in large-scale distributed systems and microservices-based applications.
+--------------------------------------------------------------------------------------------------------------------------------------
+3.Differance between the RabitMQ & Kafka?
+
+Both Apache Kafka and RabbitMQ are message brokers and both are used for communication between services.
+
+But the main difference is:
+
+In RabbitMQ, message goes to the queue and after consumer receives the message, it is removed from the queue.
+
+But in Kafka, message/event stores inside the topic for some time and multiple services can consume the same event.
+
+RabbitMQ is mainly used for simple queue systems and background tasks.
+
+Kafka is mainly used for real-time systems, high traffic applications, and microservices communication.
+--------------------------------------------------------------------------------------------------------------------------------------
+As per my understanding, RabbitMQ follows the queue pattern.
+
+In this case, when the event/message is consumed by another service, the message is removed from the queue.
+
+But in Apache Kafka, Kafka provides real-time event streaming to two or more services.
+
+The producer emits/publishes the events to Kafka topics, and multiple consumers/services can consume the same event.
+
+After consuming the event, the message is not immediately removed from Kafka because Kafka stores the events for some time based on retention policy.
+--------------------------------------------------------------------------------------------------------------------------------------
