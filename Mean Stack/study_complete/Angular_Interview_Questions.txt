@@ -881,21 +881,23 @@ CORS error occurs when the request is blocked due to cross-origin policy.
 We can fix it using backend changes (recommended), or by setting a proxy file in frontend.
 In my app, we handled it on the backend side using the cors module in Node.js.
 ------------------------------------------------------------------------------------------------------
-
-
-
-
-
-56.What is Angular Proxy or Server-Side proxy?
+56.What is Angular Proxy or Server-Side proxy?}}}
 -> In Angular, a proxy is used to bypass CORS errors during development.
 It allows the Angular app to send requests to the backend server without getting blocked by the browser.
 Basically, it contains some lines of code (proxy rules) that tell the browser to allow and forward requests to the backend server.
 ------------------------------------------------------------------------------------------------------
 57.What is <ng-container>?
--><ng-container> is used instead of <div> for write a conditions like a ngIf, ngFor , ngSwitch ,
-->so the layout doesn't change, and it doesn’t add extra HTML.
-->most of used ng-container for write a condition.
+->In Angular, ng-container is used when we want to apply structural directives like *ngIf, *ngFor, or multiple conditions without creating extra HTML elements in the DOM.
+If we apply conditions directly on div or other tags, sometimes unnecessary HTML elements are created and there may be chances of UI or layout issues.
+So using ng-container helps to write clean code and it does not create extra DOM elements in the browser.
+That’s why for conditional rendering I mostly recommend using ng-container.
 ------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
 58.In Same div can we used two structural directive? why? and how to fixed it? 
 -> No, it's not possible to use two structural directives (like *ngIf and *ngFor) on the same HTML element.
 This is because Angular transforms structural directives into HTML templates internally, and having more than one on the same element causes a conflict.
