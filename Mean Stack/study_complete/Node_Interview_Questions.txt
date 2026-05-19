@@ -1,3 +1,44 @@
+________________________________________________________________________________
+}}}Server Questions Asking by Interviewers
+________________________________________________________________________________
+}}}what is load balanced?
+-> “Load balancing is the process of balancing the client requests across multiple servers so that the complete load does not come on a single server. In this, all client requests are distributed to multiple servers, and every client can properly interact with the application and get a proper response without waiting. This process is called load balancing.”
+---------------------------------------------------------------------------------------------------------------
+}}}how to scaling the server?
+-> “Server scaling means increasing the server capacity so that multiple client requests are properly handled without interruption or waiting.
+
+So mainly we used two ways for scaling the server:
+
+Vertical Scaling :- In this case, the same server resources are increased like RAM, memory, CPU, and other hardware parts.
+Horizontal Scaling :- In this case, multiple servers are created for handling the client requests.
+
+So industry standard mostly uses horizontal scaling because it provides better performance and handles more traffic.
+
+In my current project UniConnect web application, we used vertical scaling the server.
+
+For handling multiple client requests, multiple servers are created and managed using load balancing.
+
+On the frontend side, we used NGINX as a reverse proxy, and with the help of NGINX it manages the client requests.
+
+On the backend side also, NGINX is configured, and inside the configuration we used the Round Robin algorithm. So round robin wise, requests hit different servers and responses are returned to the client.
+
+So using this way, in my project we handle multiple client requests efficiently.”
+---------------------------------------------------------------------------------------------------------------
+}}}What is Round Robin?
+->“Round Robin is a load balancing algorithm. In this algorithm, client requests are handled one by one and distributed to different servers.
+
+For example, if we have three servers:
+
+First request goes to the first server
+Second request goes to the second server
+Third request goes to the third server
+Again, if the fourth request occurs, it goes to the first server
+
+So in this way, requests are properly distributed and the complete load does not come on a single server. This is the concept of the Round Robin algorithm.
+
+In my project also, we follow this Round Robin approach using NGINX for handling multiple client requests efficiently.”
+---------------------------------------------------------------------------------------------------------------
+
 0.What is V8 Engine?
 ->V8 Engine is an open-source JavaScript engine developed by Google, written in C++, and used to execute JavaScript code—mainly in Google Chrome (and also in Node.js).
 ---------------------------------------------------------------------------------------------------------------

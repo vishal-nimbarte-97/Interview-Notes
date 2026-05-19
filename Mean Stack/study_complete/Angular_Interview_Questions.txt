@@ -1,5 +1,7 @@
 Real Time Implementation Process
 
+0.How to apply background colors to rows in a table based on the age condition (age>18 blue else green)?
+->]]]Important Question Asking in Interview
 1. Template Driven Forms
 2. Reactive Forms
 3. Live Search Functionality
@@ -376,14 +378,11 @@ Prevent Unncessary Rendering -> Updates only when inputes change.
 25.Why npm audit fix --force is risky.
 -> npm audit fix --force is risky because it can force incompatible package versions, causing dependency mismatch and breaking the application.
 ------------------------------------------------------------------------------------------------------
-
 25.What is Standalone Component?
-->A standalone component is an Angular component that does not require an NgModule for dependency declaration.
-->It contains its own imports and dependencies, so it does not depend on any NgModule.
-->Standalone components were introduced in Angular 14.
-->In the current Angular versions, we can use both standalone components and NgModule-based components, depending on project requirements.
-->If we want to use a standalone component, we only need to mark it as standalone: true in the component’s TypeScript file and add required dependencies in the imports array. No NgModule is required.
-->If we want to use an NgModule-based component, then we must declare that component inside an NgModule file like app.module.ts.
+-> Standalone component is an Angular component where there is no need of NgModule for declaration or importing dependencies.
+-> Standalone component is introduced in Angular 14 version, and from Angular 14 and above, both standalone components and NgModule are currently used.
+-> Standalone components are introduced because of less lines of code, easy understanding, and the main thing is there is no need of NgModule for import or declaration part.
+-> So standalone component is a self-dependent component, and when we use standalone component, the standalone: true property is used.
 ------------------------------------------------------------------------------------------------------
 26.How is it Different from Normal Component?
 -------------------------------------------------------------------------------
@@ -396,6 +395,19 @@ Prevent Unncessary Rendering -> Updates only when inputes change.
 | Easier lazy loading                | Lazy loading via modules               |
 | Less boilerplate code              | More boilerplate                       |
 -------------------------------------------------------------------------------
+
+Both are Angular components.
+Standalone components were introduced in Angular 14 version.
+Normal components are present in all versions of Angular.
+We use standalone components, so there is no need for NgModule.
+But if we use normal components, then we need NgModule.
+Standalone components contain the standalone: true property, which is why they are declared as standalone components.
+But normal components do not have any standalone property.
+Standalone components have less lines of code and less boilerplate.
+But in normal components, we have more lines of code because they depend on NgModule and the app.module.ts file.
+Standalone components are self-dependent components and use the imports[] array for declaring dependencies.
+In normal components, we need NgModule for declaration and importing dependencies.
+
 ------------------------------------------------------------------------------------------------------
 27.When to Use Standalone Component?
 ->Creating a new Angular project
@@ -463,7 +475,22 @@ Prevent Unncessary Rendering -> Updates only when inputes change.
 | **@HostListener** | Listen to host element events | Mouse enter, click, key press |
 | **@HostBinding**  | Bind host element properties  | Styles, classes, attributes   |
 -------------------------------------------------------------------------------------
+
+✅ What is HostListener and HostBinding in Angular?
+Both HostListener and HostBinding are used in Angular to interact with the DOM of an element in HTML (inside directives or components).
+🔹 HostListener
+HostListener is used to listen to events on the host element.
+It listens to events like clicking the mouse, hovering, scrolling, etc.
+When an event occurs, it triggers a method in the class.
+🔹 HostBinding
+HostBinding is used to bind properties to the host element.
+It is used to perform actions or change properties of the DOM element based on events or conditions.
+Example: changing class, style, or attributes dynamically.
+💡 Simple understanding:
+HostListener → listens to events
+HostBinding → updates/binds properties to the element
 ------------------------------------------------------------------------------------------------------
+
 31.What is an Interceptor in Angular?
 ->An interceptor in Angular is a service that catches all http & https request before they go to the server and all responce before they reach the app. 
 ->It is used for things like a adding tokens, logging and handling errors.
@@ -504,6 +531,43 @@ Service-level error handling is best for request-specific custom messages, while
 ->it is synchronized data between the between HTML view(template) and the typescript compoennt.
 ->real life example of two way data binding is searching and filtering data.
 ->syntax :- [(ngModel)]="name".
+
+Difference Between ngModel and NgModule
+1. ngModel
+
+ngModel is a directive in Angular used for two-way data binding between the HTML template and TypeScript component.
+
+✅ Uses of ngModel
+Two-way data binding
+Template-driven forms
+Live search functionality
+Synchronizing data between HTML and TS file
+
+2. NgModule
+
+NgModule is an Angular module class used to organize components, directives, pipes, and services in one place.
+
+Before Angular 14:
+Every component, pipe, and directive had to be declared inside an NgModule
+Dependencies were imported inside modules
+
+Angular 14+ Change
+
+After Angular 14, Angular introduced Standalone Components.
+Now:
+We can create components without using NgModule
+Components can directly import required dependencies
+NgModule usage became less common
+
+Final Simple Difference
+
+| ngModel                       | NgModule                             |
+| ----------------------------- | ------------------------------------ |
+| Directive                     | Module class                         |
+| Used for two-way data binding | Used to organize Angular application |
+| Mainly used in forms          | Used for declarations and imports    |
+| Works in HTML templates       | Works in TypeScript files            |
+
 ------------------------------------------------------------------------------------------------------
 36.Differance between Template driven from and Reactive form?
 
@@ -604,9 +668,9 @@ There are five main types of route guards:
 ------------------------------------------------------------------------------------------------------
 45.How to determine whether a user is logged in or not?
 -> To check if a user is logged in, follow these steps:
-Check if the token exists in local storage or session storage.
-Check if the token is valid and not expired (using expiry time or JWT decode logic).
-If the token exists and is not expired, the user is considered logged in.
+-> Check if the token exists in local storage or session storage.
+-> Check if the token is valid and not expired (using expiry time or JWT decode logic).
+-> If the token exists and is not expired, the user is considered logged in.
 ------------------------------------------------------------------------------------------------------
 46.What is used of --force while installing packages?
 ->Sometimes, when you install a package using npm i package-name, it may show errors during installation.
@@ -705,13 +769,44 @@ command -> ng add ng-zorro-antd
 
 This will automatically configure everything, including adding styles in the angular.json file.
 
+Here’s a cleaner and more professional version of your answer:
 
+---
 
+To use NG-ZORRO in an Angular application, first we need to install the library using the official installation command.
 
+We can search for the installation command on the official website of [NG-ZORRO](https://ng.ant.design?utm_source=chatgpt.com) and run the command in CMD, Terminal, or Git Bash.
+
+Example:
+
+```bash
+ng add ng-zorro-antd
+```
+
+After installation, NG-ZORRO automatically configures the required setup in the Angular application, such as updating the `angular.json` file and adding required styles and dependencies.
+
+NG-ZORRO provides multiple inbuilt UI components that help to build responsive and professional user interfaces quickly. Based on project requirements, we can use different components like:
+
+* Tables
+* Sorting and Filtering
+* Pagination
+* Forms
+* Virtual Scrolling
+* Live Search
+* Modals
+* Dropdowns
+* Date Pickers
+
+To use any component, we can refer to the official documentation and follow the provided examples.
+
+In my previous project, Welling Parcel Service, I used NG-ZORRO for UI development because it provides many ready-made components and reduces development time while improving application design and user experience.
 ------------------------------------------------------------------------------------------------------
 51.If we want to used both NG-ZORRO and bootstrap so it's possible?
 ->Yes, it's possible to use both NG-ZORRO and Bootstrap, but their styles may conflict, so we have to manage the design carefully.
+
+-> ng-zorro and angular material both are also used in posiible in single project but they are properly manage becasue of changes confilt layout and css
 ------------------------------------------------------------------------------------------------------
+
 52.What is pipes?
 ->Pipes are used to transform data in the template.
 ->They use the pipe (|) operator.
@@ -739,23 +834,28 @@ data$ = of('Hello Vishal');
 
 html template 
 {{data$ | async}}
+
+Async pipe means there is no need of manual subscribe and unsubscribe.
+If TypeScript file data is changing continuously, then using async pipe the HTML template automatically updates the UI data.
+Async pipe automatically subscribes the data and when component destroy, page navigate, or UI changes happen then it automatically unsubscribes also.
+Async pipe is mainly used with Observable and Promise data.
 ------------------------------------------------------------------------------------------------------
 53.How can we say Asyn Pipe it type of the pure pipe?
 ->The async pipe is a pure pipe because it updates the UI only when the observable or promise emits a new value , otpimize performance by avoiding Unneccesary exection.
+
+Async pipe is type of impure pipe because they are continuously listening the Observable or Promise data changes.
+If any data changes in TypeScript file then async pipe automatically update the UI.
+Also there is no need of manual subscribe and unsubscribe because async pipe automatically handle everything internally.
 ------------------------------------------------------------------------------------------------------
 54.How to apply background colors to rows in a table based on the age condition (age>18 blue else green)?
 ->]]]Important Question Asking in Interview
 ------------------------------------------------------------------------------------------------------
 0.What is HttpClientModule in Angular?
-->HttpClientModule is the Angular module that allows your app to communicate with backend APIs over HTTP or HTTPS.
-->HttpClientModule is used to communicate with backend servers.
-->It helps Angular apps send and receive HTTP requests like:
-
-GET,POST,PUT,DELETE
-
-Used for calling REST APIs.
-It returns data as Observables or Repsonce of API.
+-> HttpClientModule is used in Angular for communication between frontend and backend applications.
+-> With the help of HttpClientModule we can call REST APIs and perform different types of HTTP requests like GET, POST, PUT, PATCH, and DELETE.
+-> It is mainly used for sending and receiving data from the backend server.
 ------------------------------------------------------------------------------------------------------
+
 55.What is CORS Origin error, how can we handle it?
 -> CORS stands for Cross-Origin Resource Sharing.
 
@@ -781,6 +881,11 @@ CORS error occurs when the request is blocked due to cross-origin policy.
 We can fix it using backend changes (recommended), or by setting a proxy file in frontend.
 In my app, we handled it on the backend side using the cors module in Node.js.
 ------------------------------------------------------------------------------------------------------
+
+
+
+
+
 56.What is Angular Proxy or Server-Side proxy?
 -> In Angular, a proxy is used to bypass CORS errors during development.
 It allows the Angular app to send requests to the backend server without getting blocked by the browser.
@@ -1099,6 +1204,19 @@ Because of this, the loading time of lazy-loaded modules is reduced, and the use
 ->Pre-loading is used to load lazy-loaded modules in the background after the application starts.
 This way, when a user navigates to a module, it loads quickly without waiting, improving the application’s performance and user experience.
 ------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 77.What is Circular depedency in Angular?
 -> Circular dependency happens when one service is injected into another service,
 and that second service also injects the first one back using Angular's Dependency Injection system.

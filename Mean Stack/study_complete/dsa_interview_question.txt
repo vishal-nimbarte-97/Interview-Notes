@@ -20,12 +20,19 @@ _____________________________________]]Time Complexity]]________________________
 3 for nested loops → O(n³)
 ______________________________________________________________________________________________
 
-}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}ASKING INTERVIEW}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}ASKING BY INTERVIEWER IN  INTERVIES}}}}}}}}}}}}}}}}}}}}}}
 }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 }}}what is nginx
-}}}what is load balanced
+______________________________________________________________________________________________
+}}}what is load balanced?
+-> Yes, this is a good simple explanation. You can say it like this in interview:
+
+“Load balancing is the process of balancing the client requests across multiple servers so that the complete load does not come on a single server. In this, all client requests are distributed to multiple servers, and every client can properly interact with the application and get a proper response without waiting. This process is called load balancing.”
+______________________________________________________________________________________________
 }}}how to share data between two components
 ______________________________________________________________________________________________
+
 }}}What is Difference between linked list and arraylist and array
 -----------------------------------------------------------------------------------------------------------------------------------------
 | Feature          | Array                                                  | Linked List                                               |
@@ -215,6 +222,15 @@ ________________________________________________________________________________
 what is differance between active router and router module
 ______________________________________________________________________________________________
 
+
+
+
+
+
+
+
+
+
 }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 
 ### 🔹 Linear Data Structures
@@ -385,8 +401,6 @@ ________________________________________________________________________________
 ---
 
 --------------------------------------------------------------------------------------------------------------------------------
-
-
 
 
 Here’s a **complete topic-wise breakdown of 25+ interview questions per Data Structures and Algorithms (DSA) topic**, organized from **simple to advanced**. This is perfect for mastering DSA for interviews and competitive programming.
@@ -849,13 +863,6 @@ function findMaximumNumber(arr){
 
 console.log("Maximum",findMaximumNumber(arr));
 
-
-
-
-
-
-
-
 ------------------------------------------------------------------
 - Set matrix zeroes
 
@@ -971,6 +978,176 @@ setMatrixZeroes(matrix);
 - Merge intervals
 - Insert interval
 - Spiral matrix
+
+
+1. Introduction to Arrays
+-> Arrays are a collection of data, and they follow indexing. So indexing wise, data is stored inside the array.
+
+example :- 
+
+const arr = [12,23,34,78];
+
+function printAllValues(arr){
+    arr.forEach((data)=>{
+        console.log(data);
+    });
+}
+
+printAllValues(arr);
+________________________________________________________________________________________________________________________
+2. Introduction to 2-D Arrays
+-> 2-D Arrays means an array contains two or more arrays inside it. That is called a 2-D array, and values are stored in matrix format.
+
+example :- 
+const arr = 
+[
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+];
+
+function printValues(arr){
+    for(let i=0;i<arr.length;i++){
+        let row = "";
+        for(let j=0;j<arr[i].length;j++){
+            row = row + arr[i][j] + " ";
+        }
+        console.log(row);
+    }
+}
+
+printValues(arr);
+________________________________________________________________________________________________________________________
+3. Sorting of Array
+
+const arr = [12,32,78,90,43,56,12];
+
+function sortArray(arr){
+    for(let i=0;i<arr.length;i++){
+        for(let j=i+1;j<arr.length;j++){
+            if(arr[i]>arr[j]){
+                let temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    return arr;
+}
+
+console.log(sortArray(arr));
+________________________________________________________________________________________________________________________
+4. Array Rotation
+
+const arr = [12,23,34,45,56];
+let k = 2;
+
+console.log(arr);
+
+function rotateArray(arr,k){//left rotation array
+    const newArray = [];
+    for(let i=k;i<arr.length;i++){
+        newArray[newArray.length] = arr[i];
+    }
+    for(let i=0;i<k;i++){
+        newArray[newArray.length] = arr[i];
+    }
+    return newArray;
+}
+
+console.log(rotateArray(arr,k));
+
+------
+
+// 4. Array Rotation
+
+// [ 12, 23, 34, 45, 56 ]
+// [ 45, 56, 12, 23, 34 ]
+
+const arr = [12,23,34,45,56];
+let k = 2;
+
+console.log(arr);
+
+function rightRotateArray(arr,k){
+    const newArray = [];
+    for(let i=arr.length-k;i<arr.length;i++){//i=5-2=3
+        newArray[newArray.length] = arr[i];
+    }
+    for(let j=0;j<arr.length-k;j++){
+        newArray[newArray.length] = arr[j];
+    }
+    return newArray;
+}
+
+console.log(rightRotateArray(arr,k));
+________________________________________________________________________________________________________________________
+5. Reverse an Array or String
+->Reverse an Array 
+
+const arr = [12,23,34,45,56,67];
+
+console.log(arr);
+
+function reverseArray(arr){
+    let i = 0;
+    let j = arr.length - 1;
+    while(i<j){
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        i++;
+        j--;
+    }
+    return arr;
+}
+
+console.log(reverseArray(arr));
+
+->Reverse String
+
+let str = 'Hello';
+
+console.log(str);
+
+function reverseString(str){
+    let reverse = "";
+    for(let i=str.length-1;i>=0;i--){
+        reverse = reverse + str.charAt(i);
+    }
+    return reverse;
+}
+
+console.log(reverseString(str));
+________________________________________________________________________________________________________________________
+6. Find Pairs in Array with Given Sum
+->
+________________________________________________________________________________________________________________________
+7. Sort the Array in Waveform
+8. Majority Element in Array
+9. Boyer-Moore’s Voting Algorithm
+10. K-Pairs with Smallest Sum in 2 Arrays
+11. Largest Sum Contiguous SubArray
+12. Maximum Average Sub-array of K Length
+13. Size of Sub-array with Max Sum
+14. Sub-array with Given Sum
+15. Triplet that Sum to a Given Value
+16. Segregate 0’s and 1’s in Array
+17. Segregate 0’s, 1’s and 2’s in Array
+18. Sort Elements in Array by Frequency
+19. Finding Pythagorean Triplets in an Array
+20. Reorder Array using Given Indexes
+21. Merging Two Sorted Arrays
+22. Minimum Number of Merge Operations to Make an Array Palindrome
+23. Find Zeros to be Flipped so that Number of Consecutive 1’s is Maximized
+
+
+
+
+
+
+
+
 
 
 ---
