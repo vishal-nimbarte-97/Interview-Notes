@@ -892,12 +892,6 @@ If we apply conditions directly on div or other tags, sometimes unnecessary HTML
 So using ng-container helps to write clean code and it does not create extra DOM elements in the browser.
 That’s why for conditional rendering I mostly recommend using ng-container.
 ------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
 58.In Same div can we used two structural directive? why? and how to fixed it? 
 -> No, it's not possible to use two structural directives (like *ngIf and *ngFor) on the same HTML element.
 This is because Angular transforms structural directives into HTML templates internally, and having more than one on the same element causes a conflict.
@@ -983,7 +977,7 @@ But in the case of @ViewChildren, we use it to access multiple elements, directi
 | Example: one child                                | Example: many children                                   |
 ----------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
-63.What is the Role of NgModule?
+63.What is the Role of NgModule?}}}important
 ->NgModule is a core part of Angular that helps to organize the application.
 ->NgModule organizes components, directives, pipes, and services,
 and manages imports and exports in an Angular application.
@@ -1135,6 +1129,7 @@ Using it in NgModule
 })
 export class AppModule {}
 
+Yes, we can mix NgModule and Standalone Components in the same Angular project. Angular fully supports both approaches. Standalone Components can be imported inside NgModules, and existing NgModule-based applications can gradually migrate to Standalone Components. This is very useful in large projects where developers move module-based architecture to standalone architecture step by step
 ------------------------------------------------------------------------------------------------------
 69.How do you declare dependencies in a standalone compoent?
 -> We use the [imports] array to declare dependencies of a standalone component.
@@ -1176,7 +1171,6 @@ const routes: Routes = [
     component: UserComponent
   }
 ];
-
 ------------------------------------------------------------------------------------------------------
 74.Why use Lazy Loading?
 ->Lazy Loading in Angular means loading components or modules only when they are needed — not at the start of the app.
