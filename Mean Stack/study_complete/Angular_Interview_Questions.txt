@@ -1348,6 +1348,18 @@ Last one is Resolve. This is used to call APIs or fetch data before navigating t
   So overall attribute directives are used to modifying the html element behavior without changing the DOM structure.”
 ------------------------------------------------------------------------------------------------------
 
+
+
+
+
+
+
+
+
+
+
+
+
 ✅ 90. What is the use of environment.ts file in Angular?
 -> The environment.ts file is used to store configuration values for different environments like local, staging, and production.
 -> It helps to manage API URLs, feature flags, and other environment-specific settings without changing the actual code.
