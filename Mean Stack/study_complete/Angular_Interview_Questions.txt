@@ -2,6 +2,7 @@ Real Time Implementation Process
 
 0.How to apply background colors to rows in a table based on the age condition (age>18 blue else green)?
 ->]]]Important Question Asking in Interview
+0. get the values on routes using queryParams
 1. Template Driven Forms
 2. Reactive Forms
 3. Live Search Functionality
@@ -1200,19 +1201,6 @@ Because of this, the loading time of lazy-loaded modules is reduced, and the use
 ->Pre-loading is used to load lazy-loaded modules in the background after the application starts.
 This way, when a user navigates to a module, it loads quickly without waiting, improving the application’s performance and user experience.
 ------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
 77.What is Circular depedency in Angular?
 -> Circular dependency happens when one service is injected into another service,
 and that second service also injects the first one back using Angular's Dependency Injection system.
@@ -1231,7 +1219,6 @@ This constructor creates an instance of the service, and with that instance, we 
 ------------------------------------------------------------------------------------------------------
 80.Differance Between private and public when Injecting Services in Angular?
 -> When we inject a service with public, that service reference can be used in both the HTML template and the TypeScript file.
-
 -> But if we inject a service using private, then we can use it only inside the TypeScript file, not in the HTML template.
 
 ✅ In Simple Terms:
@@ -1275,17 +1262,15 @@ Constructor DI is the preferred and good practice, but inject() is helpful in sp
 Constructor runs first → Injects dependencies
 Then ngOnInit() runs → Used for API calls or any logic
 ------------------------------------------------------------------------------------------------------
+
 ✅ 83. What is AOT Compiler in Angular?
-→ AOT is Ahead-of-Time compiler in Angular.
-→ The main use of AOT is that at build time, Angular compiles the HTML templates and TypeScript files and converts them into JavaScript files.
-→ Because the compilation already happens during the build, there is no need to compile the code in the browser at a runtime, so the application loads faster.
-→ If any error occurs at build time, like template errors or binding issues, AOT detects those errors early and provides logs showing what error occurred.
+AOT stands for Ahead Of Time Compilation in Angular applications. With the help of AOT, Angular converts TypeScript code and HTML templates into optimized JavaScript during build time before execution in the browser. Because of this, the browser does not need to compile the application at runtime. This improves performance, reduces loading time, detects errors early, and creates optimized production-ready builds.
 
 👉 Conclusion:
 AOT improves application performance, reduces runtime errors, and helps developers catch issues before deployment.
 ------------------------------------------------------------------------------------------------------
 ✅ 84. What is JIT Compiler in Angular?
-→ JIT is Just-in-Time compiler in Angular.
+→ JIT stands for Just In Time Compilation in Angular applications+.
 → It is mainly used during ng serve timing, which means it works in development mode.
 → In JIT, Angular compiles the HTML templates and TypeScript files at runtime, inside the browser when the application is running.
 → Because compilation happens at runtime, the initial load time is slower, but it is useful for fast development and debugging.
@@ -1316,8 +1301,17 @@ AOT = Production optimized build,
 JIT = Development mode compiler ✅
 ------------------------------------------------------------------------------------------------------
 87.How to get params from route?}}}IMP}}}
--> Use ActivatedRoute and snapshot or paramMap.
--> We get route params using ActivatedRoute and access them with route.snapshot.params or route.params.subscribe().
+-> To get values from routes in Angular, we use ActivatedRoute.
+-> For route parameters, we use params or paramMap, and for query string values, we use queryParams.
+
+constructor(private route : ActivatedRoutes){
+}
+
+ngOnInit(){
+	this.route.queryParams.subscribe((data) => {
+		console.log(data[id]);
+	});
+}
 ------------------------------------------------------------------------------------------------------
 ✅ 88. Tell me some Route Guard service methods in Angular
 Angular provides 5 main route guard methods to secure and control navigation:
@@ -1327,12 +1321,33 @@ canActivateChild – Checks if child routes can be activated.
 canDeactivate – Checks if you can leave the current route (e.g., unsaved changes warning).
 canLoad – Checks if a module can be lazy-loaded.
 resolve – Used to fetch data before navigating to a route.
+
+“Angular contains mainly 5 types of Route Guards.
+
+First one is CanActivate, basically used to check whether the user is authenticated or not. If the user is unauthorized, then navigate to the login page.
+
+Second one is CanDeactivate. I will explain with a real-time scenario: if we fill some form data and directly close or navigate without saving, then an alert shows like ‘please save the data first’, otherwise data will be lost. This type of action is handled using CanDeactivate.
+
+Next one is CanActivateChild, basically used to secure child routes in Angular applications. For example, dashboard modules contain multiple sub-routes, so those child routes are secured using CanActivateChild.
+
+Next one is CanLoad. This is used to check whether an authorized user can load the lazy-loaded module or not. If the user is unauthorized, then navigate to the login page.
+
+Last one is Resolve. This is used to call APIs or fetch data before navigating to another route.”
 ------------------------------------------------------------------------------------------------------
 89.What is the differance attributes in Angular?
-->structural attributes. ->*ngIf *ngFor  
-->binding attributes. -> property binding, event binding
-->custom attributes are also there.
+  “Attribute directives are used to changing the behavior and appearance of html elements in angular application.
+
+  Basically they are work on existing html elements and dynamically change the style, color, class or other behaviors.
+
+  Some examples are:
+
+  * `ngClass` used to add or remove css classes dynamically
+  * `ngStyle` used to apply the dynamic styles
+  * `ngModel` used for two way data binding
+
+  So overall attribute directives are used to modifying the html element behavior without changing the DOM structure.”
 ------------------------------------------------------------------------------------------------------
+
 ✅ 90. What is the use of environment.ts file in Angular?
 -> The environment.ts file is used to store configuration values for different environments like local, staging, and production.
 -> It helps to manage API URLs, feature flags, and other environment-specific settings without changing the actual code.
