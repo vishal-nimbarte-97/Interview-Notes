@@ -2,9 +2,17 @@ Real Time Implementation Process
 
 0.How to apply background colors to rows in a table based on the age condition (age>18 blue else green)?
 ->]]]Important Question Asking in Interview
+177.How do you display error message for form validation in Angular?
+->We display error messages by checking the form control is invalid and touched or dirty, then show the message using the errors property in the template.
+[Asking in interview implementation]}}}IMP}}}
+-------------------------------------------------------------------
+179.How to implement security measures for Angular?
+->We implement security in Angular by using authentication and authorization, route guards, JWT tokens, form validation, HTTP interceptors, and Angular built-in protection like CORS prevention.
+-------------------------------------------------------------------------------------------------------------
 0. get the values on routes using queryParams
 1. Template Driven Forms
 2. Reactive Forms
+3. validation handle on forms using the errors show on ui 
 3. Live Search Functionality
 4. API Integration
 5. Lazy Loading
@@ -2399,7 +2407,7 @@ NgModule				      false				    loadChildren()
 }
 -------------------------------------------------------------------------------------------------------------
 167.How do you manage routing with standalone compoents in Angular?
--> Routing with standalone components is managed using the Angular Router with loadComponent().
+-> Routing with standalone components is managed using the Angular Router with }}}}loadComponent()}}}}.
 
 ✅ Basic Routing with Standalone Components
 const routes: Routes = [
