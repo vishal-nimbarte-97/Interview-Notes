@@ -34,6 +34,16 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________
 
 }}}What is Difference between linked list and arraylist and array
+Array and Linked List are both data structures used to store data.
+
+Array stores data in a continuous memory location and indexing-wise, so retrieving data is very fast because we can directly access elements using their index.
+
+Linked List consists of nodes, and each node contains data and the address/reference of the next node.
+
+Arrays are best for accessing or retrieving data because of indexing. However, insertion and deletion in the middle can be costly because elements need to be shifted.
+
+Linked Lists are good for insertion and deletion operations because we only need to change the node references. However, accessing or searching data is slower because we need to traverse the nodes one by one.
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 | Feature          | Array                                                  | Linked List                                               |
 | ---------------- | ------------------------------------------------------ | --------------------------------------------------------- |
@@ -221,14 +231,6 @@ how to find the current url in angular
 ______________________________________________________________________________________________
 what is differance between active router and router module
 ______________________________________________________________________________________________
-
-
-
-
-
-
-
-
 
 
 }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
@@ -445,6 +447,24 @@ https://www.codinn.dev/tricky-javascript/es6789-code-snippets-interview-question
           }
       }
   }
+
+  const arr = [23,12,23,42,78,90,42,42,23];
+  
+    function findDuplicate(arr){
+        const newArray = [];
+        for(let i=0;i<arr.length;i++){
+            for(let j=i+1;j<arr.length;j++){
+                if(!newArray.includes(arr[i])){
+                if(arr[i]===arr[j]){
+                    newArray[newArray.length] = arr[i];
+                }  
+                }
+            }
+        }
+        return newArray;
+    }  
+
+    console.log(findDuplicate(arr));
 ------------------------------------------------------------------
 - Reverse an array
 
