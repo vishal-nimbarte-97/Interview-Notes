@@ -1,7 +1,13 @@
 Real Time Implementation Process
 
 0.How to apply background colors to rows in a table based on the age condition (age>18 blue else green)?
+-------------------------------------------------------------------
+1.How to prevent a memory leaks in angular?
+
+-------------------------------------------------------------------
 ->]]]Important Question Asking in Interview
+-------------------------------------------------------------------
+
 177.How do you display error message for form validation in Angular?
 ->We display error messages by checking the form control is invalid and touched or dirty, then show the message using the errors property in the template.
 [Asking in interview implementation]}}}IMP}}}
@@ -2780,15 +2786,6 @@ The new request does not depend on the previous one
 ->and, The pipe() method allows you to use one or more operators to transform or handle the data from an Observable.
 ->simpellly, operators is functions of Rxjs.
 ------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
 128.What is Unsubscribe() Important?
 ->We use Observable, so they need to be closed because they use resources.
 ->If we don’t close them, the process keeps running in the background.

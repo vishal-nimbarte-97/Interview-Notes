@@ -98,7 +98,7 @@ function reverseArray(arr){
 
 console.log("After Reverse :- ",reverseArray(arr));
 ______________________________________________________________________________________________ 
-}}}prime number find 
+}}}prime number find  }}}}important
 ->
 function isPrime(num){
   if(num<=1) return false;
@@ -985,6 +985,52 @@ setMatrixZeroes(matrix);
 
     console.log(bubbleSort2D(array));
 ------------------------------------------------------------------
+- Fibonacci Series print first 10 number 
+
+    function printFun(){
+        let a = 0;
+        let b = 1;
+        let c = 0;
+        console.log(a);
+        console.log(b);
+        for(let i=2;i<10;i++){
+            c = a + b;
+            console.log(c);
+            a = b;
+            b = c;
+        }
+    }
+    printFun();
+
+------------------------------------------------------------------
+}}}Recursion}}}}
+------------------------------------------------------------------
+1.fibonacci series using recursion
+
+    function printFun(a,b,count){
+        if(count===0){
+            return 0;
+        }
+        console.log(a);
+        printFun(b,a+b,count-1);
+    }
+
+    printFun(0,1,10);
+
+------------------------------------------------------------------
+2.prime number using recursion }}Complex Code 
+------------------------------------------------------------------
+3.factorial using recusion
+
+function factFun(num){
+    if(num<=1){
+        return 1;
+    }
+    return num * factFun(num-1);
+}
+
+console.log(factFun(0));//120
+------------------------------------------------------------------
 - Find peak element
 - Majority element
 - Longest consecutive sequence
@@ -1141,11 +1187,63 @@ function reverseString(str){
 console.log(reverseString(str));
 ________________________________________________________________________________________________________________________
 6. Find Pairs in Array with Given Sum
-->
+->  //     0, 1, 2, 3, 4
+    arr = [1, 5, 7, -1, 5] 
+    target = 6
+
+    function sumTarget(arr,target){
+        for(let i=0;i<arr.length;i++){
+            for(let j=0;j<arr.length;j++){
+                if(arr[i]+arr[j]===target){
+                    console.log(`[${i},${j}]`);
+                    break;
+                }
+            }
+        }
+    }
+
+    sumTarget(arr,target);
 ________________________________________________________________________________________________________________________
 7. Sort the Array in Waveform
+________________________________________________________________________________________________________________________
 8. Majority Element in Array
+
+const arr = [2, 2, 1, 2, 3, 2, 2];
+
+function countNumber(arr){
+    const count = {};
+    for(let i=0;i<arr.length;i++){
+        let num = arr[i];
+        if(count[num]){
+            count[num] = count[num] + 1;
+        }
+        else {
+            count[num] = 1;
+        }
+    }
+    return count;
+}
+
+function findMaxValueObject(arr){
+    const count = countNumber(arr);
+    let maxCount = 0;
+    let result = null;
+    
+    for(let key in count){
+        if(count[key]>maxCount){
+            maxCount = count[key];
+            result = key;
+        }
+    }
+    console.log(`${result} :- total count is ${count[result]}`);
+    
+}
+
+findMaxValueObject(arr);
+
+________________________________________________________________________________________________________________________
 9. Boyer-Moore’s Voting Algorithm
+________________________________________________________________________________________________________________________
 10. K-Pairs with Smallest Sum in 2 Arrays
 11. Largest Sum Contiguous SubArray
 12. Maximum Average Sub-array of K Length
