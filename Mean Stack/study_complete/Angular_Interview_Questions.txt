@@ -2778,11 +2778,10 @@ The new request does not depend on the previous one
 | Modifies emitted values     | Handles latest request only        |
 | Does not cancel requests    | Cancels previous requests          |
 --------------------------------------------------------------------
-
 ------------------------------------------------------------------------------------------------------
 124.What is Operator in RxJS?
 ->In RxJS, an operator is a function that helps work with Observables. Operators are used to transform, filter, or handle the data or responses from an Observable.
-->If we want to use an operator in RxJS, we need to use it inside the pipe() mSethod.
+->If we want to use an operator in RxJS, we need to use it inside the pipe() method.
 ->and, The pipe() method allows you to use one or more operators to transform or handle the data from an Observable.
 ->simpellly, operators is functions of Rxjs.
 ------------------------------------------------------------------------------------------------------
@@ -2893,7 +2892,7 @@ If the user types again within that time, the timer resets
 API is called only once after typing stops
 ✔️ This reduces unnecessary API calls and improves performance.
 ------------------------------------------------------------------------------------------------------
-135.Cold(Unicast) vs Hot(Multicast) Observable in RxJS?
+135.Cold(Unicast) vs Hot(Multicast) Observable in RxJS?}}}IMP}}}
 
 In Cold Observable:
 
@@ -2936,7 +2935,7 @@ ngOnInit(): void {
 }
 
 ------------------------------------------------------------------------------------------------------
-136.how to converted cold to hot observable?
+136.how to converted cold to hot observable?}}}IMP}}}
 -> To convert a Cold Observable to a Hot Observable, we can use:
    Subject
    share() or shareReplay() operator
@@ -2963,6 +2962,11 @@ The API keeps calling until the order status changes (like Processing, Shipped, 
   Works well for low-frequency updates (order status, reports)
 ------------------------------------------------------------------------------------------------------
 142.Differance between SetTimeout and SetInterval?
+-> Both setTimeout() and setInterval() are JavaScript timer functions used to execute code asynchronously after a specified time delay.
+
+setTimeout() executes a function only once after the given delay.
+
+setInterval() executes a function repeatedly after every specified interval until it is stopped using clearInterval().
 ------------------------------------------------------------------------------------------------------
 143.Explain Subject,BehaviorSubject,ReplaySubject and AsynSubject?
 144.Differance between Subject,BehaviorSubject,ReplaySubject and AsynSubject?
@@ -3128,14 +3132,16 @@ That is the main difference between Observable and Subject.
 | Mostly used for **API calls**              | Mostly used for **component communication**  |
 --------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------
-146.What is the use of throttleTime() in RxJs?
+146.What is the use of throttleTime() in RxJs?}}}IMP
 ->throttleTime operator is used for handling the unwanted API calls.
 It does not trigger the API again and again; after one hitting, it waits before hitting the next API.
 It is mainly used in cases like the login page.
 If the network is slow, the user may hit multiple requests, which is not good practice and also loads the server.
 So throttleTime allows one request and makes some wait time before sending the next request.
 ------------------------------------------------------------------------------------------------------
-147.Differance between forkJoin() & combineLatest()?
+
+
+147.Differance between forkJoin() & combineLatest()?}}}IMP}}}
 => forkJoin() is basically used when we want two or more API responses to be completed first and then perform some calculation or merge the responses.
 In this case, forkJoin() waits for every API to be called and completed.
 After all the APIs are executed, it combines all the responses and then returns the final result to the frontend.
@@ -3181,7 +3187,7 @@ So I use takeUntil to cancel the pending HTTP request when switching modules.
 
 => I cancel unnecessary HTTP requests in Angular using takeUntil so that pending requests don’t complete when the user navigates away.
 ------------------------------------------------------------------------------------------------------
-150.How do you use RxJS with Angular Forms?[IMP]
+150.How do you use RxJS with Angular Forms?}}}}IMP}}}}
 ->RxJS in Angular Forms helps reactively handle form input and manage API calls efficiently.
 ------------------------------------------------------------------------------------------------------
 151.How do you Handle Real-Time data stream in Angular using RxJS?
@@ -3191,7 +3197,7 @@ So I use takeUntil to cancel the pending HTTP request when switching modules.
 -> API polling is the concept where an API is called again and again until the required output is received.
 Once the required output is received, the polling stops.
 ------------------------------------------------------------------------------------------------------
-153.How do you create a custom RxJS Operator?
+153.How do you create a custom RxJS Operator?}}}IMP}}}
 -> I create a custom RxJS operator as a function that takes an Observable, applies custom logic, and returns a new Observable.
 This is useful to reuse logic across multiple Observables.
 
@@ -3251,7 +3257,7 @@ Promise gives one-time data, but Observable gives continuous or multiple data an
 
 import {of} from 'rxjs';
 
-of(1,2,3).subscribe(value => {
+of(1,2,3).subscribe(value => {  
 	console.log('Value : ',value);
 });
 
