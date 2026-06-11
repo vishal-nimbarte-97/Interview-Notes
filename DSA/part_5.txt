@@ -190,61 +190,111 @@ a.x = 5;
 a = {x:10};
 console.log(b.x);//1
 ______________________________________________________________________________________________
-
 323.
 let a = [1,2];
 let b = a.slice();
+console.log(b);//[1,2]
 b.push(3);
-console.log(a.length);
+console.log(b);//[1,2,3]
+console.log(a.length);//2
+console.log(b.length);//3
 ______________________________________________________________________________________________
 
 324.
 let a = {x:1};
+console.log(a);//{x:1}
 let b = {...a};
+console.log(b);//{x:1}
 b.x = 5;
-console.log(a.x);
+console.log(a.x);//1
+console.log(b.x);//5
 ______________________________________________________________________________________________
 
 325.
 let a = {x:{y:1}};
+console.log(a);
+// {
+//     x : {
+//         y : 1
+//     }
+// }
 let b = {...a};
+console.log(b);
+// {
+//     x : {
+//         y : 1
+//     }
+// }
 b.x.y = 10;
-console.log(a.x.y);
+// {
+//     x : {
+//         y : 10
+//     }
+// }
+console.log(a.x.y);//10
+console.log(b.x.y);//10
 ______________________________________________________________________________________________
 
 326.
 let a = {x:{y:1}};
-let b = JSON.parse(JSON.stringify(a));
+// let b = JSON.parse(JSON.stringify(a));//this are create a deep object copy
+// let b = {...a}; //this are partial object  or shallow copy
 b.x.y = 10;
-console.log(a.x.y);
+console.log(a.x.y);//1
 ______________________________________________________________________________________________
 
 327.
+
 const obj = {a:1};
 Object.freeze(obj);
 obj.a = 10;
-console.log(obj.a);
+console.log(obj.a);//1
+
+
+// Object.seal():- not create,remove but modifying is possible
+// Object.freeze() : not modify,create,remove
 ______________________________________________________________________________________________
 
 328.
 const obj = {a:{b:1}};
 Object.freeze(obj);
 obj.a.b = 5;
-console.log(obj.a.b);
+console.log(obj.a.b);//5
+
+Because Object.freeze(obj) is shallow freeze.
+
+It only freezes:
+
+obj
+
+But NOT:
+
+obj.a   // still a normal mutable object
 ______________________________________________________________________________________________
 
 329.
 const obj = {a:1};
 Object.seal(obj);
 delete obj.a;
-console.log(obj.a);
+console.log(obj.a);//1 becuase of Object.seal() we used so they are not modify,delete or add
+
+Object.seal(obj):
+
+❌ Cannot add new properties.
+❌ Cannot delete existing properties.
+✅ Can modify existing property values.
+
+So:
 ______________________________________________________________________________________________
+
+
+
 
 330.
 const obj = {a:1};
 Object.preventExtensions(obj);
 obj.a = 2;
-console.log(obj.a);
+console.log(obj.a);//2
 ______________________________________________________________________________________________
 
 331.

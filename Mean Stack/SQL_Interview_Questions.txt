@@ -1,31 +1,86 @@
 https://www.interviewquery.com/p/sql-scenario-based-interview-questions#beginner-level-sql-scenario-interview-questions-03-years
+-----------------------------------------------------------------------------------------------------------------
+17.What is an index?
+->Indexing basically used to fast retrive the data from database.
 
+I will explain a real time scenario. We have a CDR (Call Detail Records) table and it contains more than 10 million records.
+
+If I want to find one specific record without indexing, PostgreSQL will check every row one by one and match the condition. This process is called Sequential Scan. Because it scans the full table, it takes more time.
+
+But if we create an index on a specific field like mobile number, call id, or customer id, PostgreSQL will use the index and directly find the required record instead of scanning all rows. This process is called Index Scan.
+
+So with the help of indexing, data retrieval is much faster and query execution time is reduced. That's why indexing is very useful when working with large amounts of data like CDR tables containing millions of records.
+-----------------------------------------------------------------------------------------------------------------
+18.What is indexing?
+->Indexing is the process of creating indexes on database tables to make it easier and faster to identify and access data. It improves the performance of operations like searching, filtering, and sorting by allowing the database to quickly locate the needed rows without scanning the entire table.
+---------------------------------------------------------------------------------------------------------------
+19.What is differance between the index and indexing?
+->so indexing is process of creating the index on database
 ---------------------------------------------------------------------------------------------------------------
 68.How to optimized query performance ?
 -> if you want to optimize the query performance so we can used the parameterized queries and also used the stored procedure to handling the performance of the queries.
 
-->	Use Indexes – On WHERE, JOIN, ORDER BY columns.
+->	✅ Use Indexes – On WHERE, JOIN, ORDER BY columns.
 
-	Avoid SELECT * – Fetch only needed columns.
+	✅ Avoid SELECT * – Fetch only needed columns.
 
-	Use Proper Joins – Prefer INNER JOIN, index join keys.
+	✅ Use Optimize Proper Joins – Prefer INNER JOIN, index join keys.
 
-	Filter Early – Apply WHERE conditions ASAP.
+	✅ Filter Early – Apply WHERE conditions ASAP.
 
-	Analyze with EXPLAIN – Check execution plan.
+	✅ Use LIMIT – For large result sets (pagination).
 
-	Use LIMIT – For large result sets (pagination).
+	✅ Cache Repeated Queries – Use Redis or app cache.
 
-	Avoid Functions on Indexed Columns – Like LOWER(column).
+	✅ Stored Procedures
 
-	Optimize Subqueries – Replace with joins if possible.
-
-	Partition Big Tables – For faster access.
-
-	Cache Repeated Queries – Use Redis or app cache.
+	✅ Parameterized Queries
 ---------------------------------------------------------------------------------------------------------------
 70.Have you worked on transactional queries ?
--> yes, i have used to the transactional queries begin, commit and rollback.
+-> So in real-world applications, transaction queries are used to manage data consistency and avoid data loss.
+
+For example, in a payment application, Sender A has ₹1000 in their account and wants to send ₹500 to Sender B. In this case, first ₹500 is deducted from Sender A's account and then that ₹500 is added to Sender B's account.
+
+If the amount is deducted from Sender A's account but while transferring the amount to Sender B, a server issue, network problem, or any other error occurs, then the data becomes inconsistent because the amount is deducted but not credited.
+
+To handle this situation, we use transaction queries. If all operations are completed successfully, we use COMMIT to save the changes. If any error occurs in between, we use ROLLBACK to undo all changes and restore the previous data.
+
+So the main purpose of transaction queries is to maintain data consistency and ensure that either all operations are completed successfully or none of them are applied.
+
+Example :- 
+
+CREATE TABLE sender_a (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    balance DECIMAL(10,2)
+);
+
+CREATE TABLE sender_b (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    balance DECIMAL(10,2)
+);
+
+INSERT INTO sender_a (name, balance)
+VALUES ('Sender A', 1000);
+
+INSERT INTO sender_b (name, balance)
+VALUES ('Sender B', 500);
+
+
+// used transactional queries 
+
+BEGIN;
+
+UPDATE sender_a
+SET balance = balance - 500
+WHERE id = 1;
+
+UPDATE sender_b
+SET balance = balance + 500
+WHERE id = 1;
+
+COMMIT;
 ---------------------------------------------------------------------------------------------------------------
 
 🔹 Basic Database Questions (1–25)
@@ -39,6 +94,30 @@ There are two main types of databases:
 
 In my experience, I have worked with both relational and non-relational databases, with more hands-on experience in PostgreSQL.
 -----------------------------------------------------------------------------------------------------------------
+0.What is the difference between Relational and Non-Relational Databases?
+
+Both relational and non-relational databases are used to store data.
+
+The main difference is how they store and organize data.
+
+In a relational database, data is stored in a tabular format, which means rows and columns. Tables can be related to each other using primary keys and foreign keys.
+In a non-relational database, data is stored in formats such as JSON documents, key-value pairs, graphs, or columns. For example, MongoDB stores data in JSON-like documents.
+
+Relational databases are suitable when data has complex relationships and requires strong consistency, while non-relational databases are suitable for flexible and rapidly changing data structures.
+
+In my project, we initially used MongoDB because of its flexible schema. However, due to some production and monitoring requirements, we started migrating to PostgreSQL, which provides better support for complex queries, relationships, and transactional operations.
+
+---------------------------------------------------------------------------------------
+| Relational Database              | Non-Relational Database                           |
+| -------------------------------- | ------------------------------------------------- |
+| Data stored in rows and columns  | Data stored as JSON/documents, key-value, etc.    |
+| Fixed schema                     | Flexible schema                                   |
+| Supports joins and relationships | Limited joins                                     |
+| Strong ACID transactions         | Usually optimized for scalability and flexibility |
+| Example: PostgreSQL, MySQL       | Example: MongoDB                                  |
+----------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------
 2.What is a table?
 ->  A table is a structure in a database that stores data in rows and columns.
 -----------------------------------------------------------------------------------------------------------------
@@ -50,19 +129,58 @@ In my experience, I have worked with both relational and non-relational database
 ->SQL (Structured Query Language) is a language used to store, manage, and retrieve data from a relational database.
 -----------------------------------------------------------------------------------------------------------------
 5.What is a primary key?
-->Primary key is the combination of the UNIQUE KEY and NOT NULL 
+->A primary key is a combination of UNIQUE and NOT NULL constraints.
+
+The main purpose of a primary key is to uniquely identify each record in a table.
+
+A primary key column cannot contain duplicate values and cannot contain NULL values.
+
+For example, in an employee table, employee_id can be used as a primary key because each employee has a unique ID.
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(100),
+    salary DECIMAL(10,2)
+);
+
 -----------------------------------------------------------------------------------------------------------------
 6.What is a foreign key?
-->A foreign key is another table’s primary key used to create a connection between two tables.
-OR
 ->A foreign key is a column that references another table’s primary key, and it is used to create a relationship between two tables.
+
+CREATE TABLE departments (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(50)
+);
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(100),
+    department_id INT,
+    FOREIGN KEY (department_id)
+    REFERENCES departments(department_id)
+);
 -----------------------------------------------------------------------------------------------------------------
 7.What is a unique key?
 ->Unique key means all the values in a column must be unique, and it allows only one NULL value.
 -----------------------------------------------------------------------------------------------------------------
 8.What is the difference between PRIMARY KEY and UNIQUE?
-->PRIMARY KEY: Uniquely identifies each record and cannot be null (only one per table).[combination of not null and unique].
-  UNIQUE: Also ensures unique values, but can have one null and multiple unique keys are allowed in a table.
+->A primary key is a combination of UNIQUE and NOT NULL constraints. Its main purpose is to uniquely identify each record in a table.
+
+A unique key is used to ensure that data in a column remains unique and duplicate values are not allowed.
+
+The main differences are:
+
+Primary Key cannot contain NULL values, whereas a Unique Key can contain NULL values.
+A table can have only one Primary Key.
+A table can have multiple Unique Keys.
+Primary Key is used to uniquely identify records, while Unique Key is mainly used to prevent duplicate data in specific columns.
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    email VARCHAR(100) UNIQUE,
+    phone VARCHAR(20) UNIQUE
+);
+
 -----------------------------------------------------------------------------------------------------------------
 9.What is a NULL value?
 ->A NULL value means no data or unknown value in a table cell.
@@ -129,13 +247,7 @@ It is divided into types like 1NF, 2NF, and 3NF."
 -----------------------------------------------------------------------------------------------------------------
 16.What is denormalization?
 ->Denormalization is the opposite of normalization. It allows duplication of data and doesn't focus on maintaining strict data integrity, but it is used to improve performance by reducing the complexity of joins and speeding up query retrieval times.
------------------------------------------------------------------------------------------------------------------
-17.What is an index?
-->An index helps to quickly access data in a table. It improves the performance of queries like SELECT, and allows faster searching, filtering, and sorting.
------------------------------------------------------------------------------------------------------------------
-18.What is indexing?
-->Indexing is the process of creating indexes on database tables to improve the speed and performance of data retrieval operations like SELECT, JOIN, ORDER BY, etc.
-->Indexing is the process of creating indexes on database tables to make it easier and faster to identify and access data. It improves the performance of operations like searching, filtering, and sorting by allowing the database to quickly locate the needed rows without scanning the entire table.
+
 -----------------------------------------------------------------------------------------------------------------
 18.What is a view?
 ->A view is a virtual table in a database that contains a result of a query. It doesn't store data itself but displays data from one or more tables. Views are used to simplify complex queries or hide sensitive data.
