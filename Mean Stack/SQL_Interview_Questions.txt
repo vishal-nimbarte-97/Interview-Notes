@@ -188,6 +188,12 @@ CREATE TABLE employees (
 -----------------------------------------------------------------------------------------------------------------
 10.What is a NOT NULL constraint?
 ->A NOT NULL constraint makes sure that a column cannot have a NULL value — the field must always have data.
+
+CREATE TABLE Employee (
+    EmployeeID INT,
+    Name VARCHAR(50) NOT NULL
+);
+
 -----------------------------------------------------------------------------------------------------------------
 11.What are the different types of SQL statements?
 ->The different types of SQL statements are:
@@ -235,7 +241,8 @@ And SAVEPOINT is used in case we want to rollback to a specific point, not full 
 -> DROP :- drop the table in the database.
 -----------------------------------------------------------------------------------------------------------------
 14.What is normalization?
-->"Normalization means storing data in a proper structured way to avoid duplication and maintain data consistency and integrity.
+-> stored data , organized way, data integrity, data consistency, data maintainalibility, 
+-> "Normalization means storing data in a proper structured way to avoid duplication and maintain data consistency and integrity.
 It is divided into types like 1NF, 2NF, and 3NF."
 -----------------------------------------------------------------------------------------------------------------
 15.What are the types of normalization?
@@ -244,110 +251,121 @@ It is divided into types like 1NF, 2NF, and 3NF."
 	1st Normal Form (1NF) – Ensures each column contains atomic values (no multiple values in one column) and each record is unique.
 	2nd Normal Form (2NF) – Achieves 1NF and removes partial dependency (non-key attributes depend on the whole primary key).
 	3rd Normal Form (3NF) – Achieves 2NF and removes transitive dependency (non-key attributes shouldn’t depend on other non-key attributes).
+
+	1NF → Store data in a single value format and remove repeating data.
+
+	2NF → Remove partial dependency and separate related data into tables.
+
+	3NF → Remove unnecessary dependencies and keep data linked only to the primary key.
+
+	Or even shorter:
+
+	1NF → Remove repeating data.
+
+	2NF → Remove partial dependency.
+
+	3NF → Remove transitive dependency.
+
 -----------------------------------------------------------------------------------------------------------------
 16.What is denormalization?
-->Denormalization is the opposite of normalization. It allows duplication of data and doesn't focus on maintaining strict data integrity, but it is used to improve performance by reducing the complexity of joins and speeding up query retrieval times.
-
+->Denormalization is the opposite of normalization, where some duplicate data is stored to improve data retrieval performance.
 -----------------------------------------------------------------------------------------------------------------
 18.What is a view?
 ->A view is a virtual table in a database that contains a result of a query. It doesn't store data itself but displays data from one or more tables. Views are used to simplify complex queries or hide sensitive data.
 OR 
 ->A view is a virtual table created using a SELECT query to display data from one or more tables without storing the data.
 -----------------------------------------------------------------------------------------------------------------
-
-
-
-
-
 19.What is a stored procedure?
-->  Stored procedure is similar to function, if our need wise they are called and used.
-	But in the database, stored procedure is used for query optimization, query reuse, and most importantly for security purpose.
-->	Stored procedure is mostly used in backend development because we can store the logic inside the database and call it whenever required.
+-> -> Stored procedure means set of SQL statements.
 
-OR
+-> They are written and stored in the database.
 
-->A stored procedure is similar to a function: it's reusable and can be called to execute a set of SQL queries. It helps reduce code repetition and improves efficiency.
-->A stored procedure (SP) is a collection of one or more SQL queries grouped together and stored in the database.
-It allows you to perform operations like insert, update, delete, or select, and you can reuse these queries whenever needed.
+-> After creating the stored procedure, if we want to use those SQL queries, we can call the stored procedure.
 
-SEELCT * FROM car;
-SELECT * FROM car_details;
+-> It is similar to the function concept because we create it once and use it multiple times.
 
-CREATE OR REPLACE PROCEDURE add_car(
-	car_id INT,
-	car_name VARCHAR(100),
-	brand VARCHAR(100)
+-> It helps in reusability of SQL queries.
+
+-> It provides better security.
+
+-> It is easy to use and easy to call.
+
+-> It can improve performance because SQL statements are already stored in the database.
+
+Short Interview Answer
+
+Stored procedure means a set of SQL statements stored in the database. We create it once and call it whenever required. It is similar to a function and provides reusability, security, and better performance.
+
+
+Example :- 
+
+create table students(
+	_id serial primary key,
+	first_name varchar(100),
+	last_name varchar(100),
+	age int,
+	college_name varchar(100),
+	created_at  timestamp default now(),
+	updated_at timestamp default now()
+);
+
+select * from students;
+
+insert into students(
+	first_name,
+	last_name,
+	age,
+	college_name
+)values(
+	'Vishal',
+	'Nimbarte',
+	25,
+	'DRGITR'
+);
+
+select * from students;
+
+
+CREATE OR REPLACE PROCEDURE insert_student_data(
+	first_name varchar(100),
+	last_name varchar(100),
+	age int,
+	college_name varchar(100)
 )
 LANGUAGE plpgsql
 AS $$
 BEGIN
-	INSERT INTO car(
-		car_id,
-		car_name,
-		brand
-	)
-	VALUES(
-		car_id,
-		car_name,
-		brand
-	);
+   insert into students(
+		first_name,
+		last_name,
+		age,
+		college_name
+   )values(
+		first_name,
+		last_name,
+		age,
+		college_name
+   );
 END;
 $$;
 
-CALL car(data,data,data);
+select * from students;
 
+call insert_student_data('Pankaj','Thul',26,'DFRGTE');
 
-CREATE OR REPLACE PROCEDURE car_details(
-	detail_id INT,
-	car_id INT,
-	color VARCHAR(100),
-	model_year VARCHAR(100)
-)
-LANGUAGE Plpgsql
-AS $$
-BEGIN
-	INSERT INTO car_details(
-		detail_id,
-		car_id,
-		color,
-		model_year
-	)
-	VALUES(
-		detail_id,
-		car_id,
-		color,
-		model_year
-	);
-END;
-$$;
-
-CALL car_details(data,data,data,data);
 -----------------------------------------------------------------------------------------------------------------
 19.I will create a same stored procedure name but two differnt tables so the sp are overide or not?
-->Yes, in PostgreSQL, if you create a stored procedure with the same name and the same parameter types, it will override (replace) the existing one when you use:
-
-	CREATE TABLE IF NOT EXISTS employees (
-		id SERIAL PRIMARY KEY,
-		name VARCHAR(100),
-		salary DECIMAL
-	);
-
-	CREATE OR REPLACE PROCEDURE add_employee(name VARCHAR, salary DECIMAL)
-	LANGUAGE plpgsql
-	AS $$
-	BEGIN
-		INSERT INTO employees (name, salary) VALUES (name, salary);
-	END;
-	$$;
-	
-	CALL add_employee('John Doe', 50000);
+->Yes, the stored procedure will be overridden because we are using the CREATE OR REPLACE PROCEDURE statement. If a procedure with the same name and same parameter types already exists, PostgreSQL replaces the existing procedure with the new definition.
 ----------------------------------------------------------------------------------------------------------------
 20.What is a trigger?
-✅ Example Use Case:
-Trigger is a pre-defined SQL statement that automatically executes when some action happens on a table like insert, update, or delete.
-It is mostly used for logs purpose.
-For example, when any user login into the system and perform some action like create, update, or delete, then trigger automatically executes and stores the logs into the database.
+-> Trigger is a database object that automatically executes when a specific operation like INSERT, UPDATE, or DELETE occurs on a table.
+
+-> In my current project, we have implemented an audit logs service as per RBI guidelines. Whenever an Admin, Supervisor, or Agent performs an operation such as create, update, or delete, the trigger automatically stores the log details in the audit logs table.
+
+-> The logs contain information such as user details, API called, IP address, operation performed, and timestamp. This helps us track all activities performed in the system.
 -----------------------------------------------------------------------------------------------------------------
+
+
 21.What is a constraint in SQL?
 -> A constraint is a ]]]set of rules]]] applied to column headings.
 Constraints like NOT NULL, UNIQUE, and DEFAULT are used to control the column data, make sure it's valid, and keep the data clean and correct.
