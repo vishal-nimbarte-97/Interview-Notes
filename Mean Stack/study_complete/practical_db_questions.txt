@@ -1,0 +1,79 @@
+1.Fetch employees whose salary is greater than 50,000?
+
+
+--------------------------------------------------AGGREGATE FUNCTION---------------------------------------------------
+
+Student Table
+
+CREATE TABLE Student (
+    student_id INT,
+    name VARCHAR(50),
+    course VARCHAR(50),
+    marks INT
+);
+
+1.Find the total number of students
+
+    SELECT COUNT(*) AS total_students
+    FROM Student;
+
+2.Find the average marks of all students
+
+    SELECT AVG(marks) AS average_marks
+    FROM Student;
+
+3. Find the highest marks
+
+    SELECT MAX(marks) as highest_marks 
+    FROM Student;
+
+4. Find the lowest marks
+    SELECT MIN(marks) AS lowest_marks
+    FROM Student;
+
+5. Find the total marks of all students
+    SELECT SUM(marks) AS total_marks
+    FROM Student;
+
+6. Find the number of students in each course
+    SELECT course, COUNT(*) AS total_students
+    FROM Student
+    GROUP BY course;
+
+7. Find the average marks course-wise
+    SELECT course, AVG(marks) AS average_marks
+    FROM Student
+    GROUP BY course;
+
+9. Find courses whose average marks are greater than 75
+    SELECT course, AVG(marks) AS avg_marks
+    FROM Student
+    GROUP BY course
+    HAVING AVG(marks) > 75;
+
+10. Find the highest marks in each course
+    SELECT course, MAX(marks) AS highest_marks
+    FROM Student
+    GROUP BY course;
+
+11. Find the lowest marks in each course
+    SELECT course, MIN(marks) AS lowest_marks
+    FROM Student
+    GROUP BY course;
+
+12. Find the total marks course-wise
+    SELECT course, SUM(marks) AS total_marks
+    FROM Student
+    GROUP BY course;
+
+13. Find students whose age is greater than the average age:
+    SELECT *
+    FROM student
+    WHERE student_age >
+    (
+        SELECT AVG(student_age)
+        FROM student
+    );
+
+
+

@@ -364,29 +364,37 @@ call insert_student_data('Pankaj','Thul',26,'DFRGTE');
 
 -> The logs contain information such as user details, API called, IP address, operation performed, and timestamp. This helps us track all activities performed in the system.
 -----------------------------------------------------------------------------------------------------------------
-
-
 21.What is a constraint in SQL?
--> A constraint is a ]]]set of rules]]] applied to column headings.
-Constraints like NOT NULL, UNIQUE, and DEFAULT are used to control the column data, make sure it's valid, and keep the data clean and correct.
-	Simple example constraints:
+-> SQL constraints means a set of rules or instructions applied on table columns. When we create a table, we can apply rules like NOT NULL (value cannot be empty), UNIQUE (duplicate values are not allowed), and PRIMARY KEY (unique identification for each record). These constraints help control what data can be stored in the table and maintain data accuracy.
+
+Simple example constraints:
+
 	PRIMARY KEY – Uniquely identifies each row.
 	FOREIGN KEY – Links to a primary key in another table.
 	UNIQUE – Ensures all values in a column are different.
 	NOT NULL – Prevents null (empty) values.
 	CHECK – Ensures values meet a condition.
 	DEFAULT – Sets a default value if none is provided.
+
+example :- 
+
+CREATE TABLE Student (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    age INT CHECK (age >= 18),
+    course VARCHAR(50) DEFAULT 'Java'
+);
 -----------------------------------------------------------------------------------------------------------------
 22.What is the difference between WHERE and HAVING?
--> WHERE clause is used to apply condition on table data and filter the required records.
--> HAVING clause is used to write a condition on grouped data.It is mainly used with GROUP BY.When we apply grouping and want to filter grouped result, then HAVING clause is used.
+-> 
+So both WHERE and HAVING are used for writing conditions in SQL queries.
 
-difference :- 
+WHERE clause is used when we want to apply a condition on individual records or rows. It filters the data before grouping.
 
-	The main difference between WHERE and HAVING clause is:
-	WHERE is used to write a condition on normal table data (before grouping).
-	HAVING clause is used to write a condition on grouped data.
-	When GROUP BY is used and we want to apply some condition on grouped result, then we use HAVING clause.
+HAVING clause is used when we want to apply a condition on grouped data. For example, after using aggregate functions like COUNT(), SUM(), AVG(), MAX(), and MIN(), if we want to filter that grouped result, then we use the HAVING clause.
+
+So simple difference is, WHERE works on individual rows and HAVING works on grouped or aggregated data.
 -----------------------------------------------------------------------------------------------------------------
 23.What are aliases in SQL?
 -> Aliases is a temporary name used to make selected data more readable in SQL queries.
@@ -401,15 +409,20 @@ difference :-
 	FROM table_name;
 -----------------------------------------------------------------------------------------------------------------
 25.What is the difference between CHAR and VARCHAR?
+
+Both CHAR and VARCHAR are used to store character/string data.
+Using CHAR(1) for gender (M/F) is a good real-world example.
+VARCHAR is commonly used for names, usernames, college names, etc.
+
 -> CHAR: Fixed length, uses extra space for shorter data.
    VARCHAR: Variable length, more space-efficient.
 -----------------------------------------------------------------------------------------------------------------
 🔹 Intermediate Database Questions (26–60)
 
-26.What are joins in SQL?
+26.What are joins in SQL?}}}IMP}}}
 -> Joins are basically used to combine data from multiple tables at the time of selecting data.
 -----------------------------------------------------------------------------------------------------------------
-27.Explain different types of joins.
+27.Explain different types of joins.}}}IMP}}}
 ->  Joins are basically used to combine two or more tables and return the result based on a related column.
 -> 	INNER JOIN – Returns only matching rows from both tables.
 	LEFT JOIN – Returns all rows from the left table, and matched rows from the right table.
@@ -419,17 +432,28 @@ difference :-
 
 In the case of LEFT JOIN, it returns all the data from the left table and the matching rows from the right table.
 In the case of RIGHT JOIN, it returns all the data from the right table and the matching rows from the left table.
+
+-> in real-world backend development, INNER JOIN is one of the most commonly used joins because most business requirements need only matching data from related tables.
 -----------------------------------------------------------------------------------------------------------------
 28.What is a self join?
 ->  A self join is a type of join where a table is joined with itself.
 -----------------------------------------------------------------------------------------------------------------
 29.What is a cross join?
 ->  A CROSS JOIN is a type of SQL join that returns the ]]]Cartesian product of two tables]]] — meaning it combines every row from the first table with every row from the second table.
+
+What you got right ✅
+Cross Join is a type of SQL join.
+It returns all possible combinations of rows from both tables.
+
 -----------------------------------------------------------------------------------------------------------------
 30.What is a subquery?
 ->Subquery is a query inside another query.
 ->It is also called inner query.
 ->It returns result to the outer query.
+
+in short :- 
+A subquery is a query inside another query.
+The result of the inner query is used by the outer query.
 -----------------------------------------------------------------------------------------------------------------
 31.What is a correlated subquery?}}}
 -> A correlated subquery is a type of subquery that depends on the outer query for its values.
@@ -481,6 +505,8 @@ It creates a group of the data based on one or more columns, and then it perform
 37.What is the LIMIT clause?
 ->Limit clause is used for that limit wise records fetch.
 
+The LIMIT clause is used in SQL to restrict the number of rows returned by a query. It is useful when working with large datasets to fetch only a specific number of records, such as the top 5 or top 10 rows.
+
 select * from car limit 4;
 -----------------------------------------------------------------------------------------------------------------
 37.What is the OFFSET clause?
@@ -489,7 +515,7 @@ select * from car limit 4;
 select * from car offset 2;
 -----------------------------------------------------------------------------------------------------------------
 38.What is a UNION?
-->	UNION is used to combine the result of two or more SELECT queries.and in this case they are unique records return.
+->	UNION means return the combine data of two table with same field name and remove the duplicate records.
 
 ->	Query:- 
 	SELECT Name, Age
@@ -511,7 +537,7 @@ It runs first.
 It returns data to the outer query.
 The outer query uses that result and performs some operation.
 -----------------------------------------------------------------------------------------------------------------
-41.What is the difference between EXISTS and IN?
+41.What is the difference between EXISTS and IN?}}}IMP}}}
 ->Both EXISTS and IN are used in subqueries to filter records, but they work differently.
 ->IN is used in subqueries to check whether a value exists in a list of values returned by the subquery.
 ->EXISTS is also used in subqueries. It checks whether data exists or not in the subquery and returns a boolean value (TRUE or FALSE).
@@ -542,6 +568,9 @@ You can think of it as a blueprint or layout of the database.
 50.How do you rename a column?
 ->You can rename a column using the ALTER TABLE statement along with RENAME COLUMN.
 -----------------------------------------------------------------------------------------------------------------
+
+
+
 
 
 52.What are transactions?
@@ -653,6 +682,55 @@ SUM(salary) OVER (PARTITION BY department)
 ---
 
 If you want, I can also give simple examples for each function 👍
+-----------------------------------------------------------------------------------------------------------------
+34.What are aggregate functions?
+->aggregate function is funnction they are perform operation on the group of the data and return the single value.
+
+	Function	Description
+	SUM()		Adds up all the values in a column
+	AVG()		Calculates the average value
+	COUNT()		Counts the number of rows
+	MAX()		Returns the highest value
+	MIN()		Returns the lowest value
+-----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
