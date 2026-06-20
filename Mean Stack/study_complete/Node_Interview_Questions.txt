@@ -1,3 +1,4 @@
+}}}What is differance between the nest framework and express framework.
 ________________________________________________________________________________
 }}}Server Questions Asking by Interviewers
 ________________________________________________________________________________
@@ -264,14 +265,6 @@ eventEmitter.emit('greet');
 -> After that, those callbacks are executed.
 -> The main importance of the event loop is that it passes callbacks to the call stack based on priority.
 ---------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
 21.Explain about the Event Loop Phases in Node.JS?
 -> There are six phases in the Node.js event loop.
 -> timers, pending callbacks , Idle / Prepare , Poll, Check, Close CallBacks

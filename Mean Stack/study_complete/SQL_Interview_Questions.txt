@@ -568,24 +568,19 @@ You can think of it as a blueprint or layout of the database.
 50.How do you rename a column?
 ->You can rename a column using the ALTER TABLE statement along with RENAME COLUMN.
 -----------------------------------------------------------------------------------------------------------------
-
-
-
-
-
 52.What are transactions?
-->A transaction is a group of queries (like INSERT, UPDATE, DELETE) that perform operations together.
-If all queries run successfully, the changes are saved.
-If any query fails, the entire transaction can be rolled back to keep the database safe and correct.
-->and Transaction case used the begin, rollback and commit command for perfroming the group of the sql opration.
+->TCL (Transaction Control Language) is used to manage transactions in a database. A transaction is a group of SQL operations that are executed as a single unit of work. TCL commands include BEGIN TRANSACTION, COMMIT, and ROLLBACK.
 
-BEGIN → Start the transactions
-COMMIT → Save changes if all queries succeed
-ROLLBACK → Undo all changes if any query fails
+BEGIN TRANSACTION starts a transaction.
+COMMIT permanently saves the changes.
+ROLLBACK undoes the changes if an error occurs.
+
+TCL helps maintain data consistency and integrity.
 -----------------------------------------------------------------------------------------------------------------
 53.What are the ACID properties?
 
 ->✅ Real-Time ACID Properties (Using Your Words, Improved):
+-> ACID means Automacity, Consistency, Isolation and Durability
 
 Atomicity :- 
 When data is transferred from User A to User B, the full process must complete.
@@ -603,14 +598,17 @@ Durability :-
 Once the entire process is successfully completed, the data is saved permanently in the database — even if the system crashes after that.
 -----------------------------------------------------------------------------------------------------------------
 54.What is data integrity?
--> Data integrity means the data in the database must be correct, consistent, and valid.
--> It helps prevent wrong data, broken links, or missing values by using rules like primary key, foreign key, and constraints.
+->Data integrity means maintaining the accuracy, consistency, and validity of data in the database. It ensures that data is not duplicated incorrectly, corrupted, or modified in an invalid way. Constraints like Primary Key, Foreign Key, Unique Key, and NOT NULL help maintain data integrity.
 -----------------------------------------------------------------------------------------------------------------
 56.How do you prevent SQL injection?
--> If you want to prevent the SQL injection so we can used the stored procefure and parameterized query.
+-> SQL injection is a type of attack where a user breaks or modifies the SQL condition and tries to get database data without authorization.
+
+To prevent SQL injection, we use parameterized queries and stored procedures. In backend applications, we should not write normal SQL queries by directly adding user input into the query. Instead, we pass user input as parameters.
+
+By using parameterized queries, user input is treated as data and not as SQL code, so attackers cannot break the SQL condition and access database data.
 -----------------------------------------------------------------------------------------------------------------
 
-<IMPORTANT>
+								{{{{{<IMPORTANT>]]]]]
 
 57.What is the difference between clustered and non-clustered indexes?
 ->Clustered Index means the data is physically stored in sorted order in the database, based on the indexed column — like a dictionary, where words are stored in alphabetical order.
@@ -629,12 +627,8 @@ FROM old_table;
 
 -----------------------------------------------------------------------------------------------------------------
 
-
 Window functions are mainly used for ranking, aggregation, and row comparison without grouping the data.
-
-Here is the **list of commonly used Window Functions** in database:
-
----
+-----------------------------------------------------------------------------------------------------------------
 
 ### 🔢 Ranking Functions
 
@@ -643,7 +637,7 @@ Here is the **list of commonly used Window Functions** in database:
 3. **DENSE_RANK()** – Gives rank without gaps
 4. **NTILE(n)** – Divides rows into equal groups
 
----
+-----------------------------------------------------------------------------------------------------------------
 
 ### ➕ Aggregate Window Functions
 
@@ -653,15 +647,7 @@ Here is the **list of commonly used Window Functions** in database:
 4. **MIN()**
 5. **MAX()**
 
-(Used with `OVER()` clause)
-
-Example:
-
-```sql
-SUM(salary) OVER (PARTITION BY department)
-```
-
----
+-----------------------------------------------------------------------------------------------------------------
 
 ### 🔁 Value Functions
 
@@ -671,7 +657,7 @@ SUM(salary) OVER (PARTITION BY department)
 4. **LAST_VALUE()** – Last value in window
 5. **NTH_VALUE()** – Nth value in window
 
----
+-----------------------------------------------------------------------------------------------------------------
 
 ### 🪟 Important Clause
 
@@ -679,65 +665,9 @@ SUM(salary) OVER (PARTITION BY department)
 * **PARTITION BY** – Divides data into groups
 * **ORDER BY** – Defines order inside window
 
----
-
-If you want, I can also give simple examples for each function 👍
 -----------------------------------------------------------------------------------------------------------------
-34.What are aggregate functions?
-->aggregate function is funnction they are perform operation on the group of the data and return the single value.
-
-	Function	Description
-	SUM()		Adds up all the values in a column
-	AVG()		Calculates the average value
-	COUNT()		Counts the number of rows
-	MAX()		Returns the highest value
-	MIN()		Returns the lowest value
+								{{{{{{🔹 Advanced Database Questions (61–100)]]]]]]]]
 -----------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-🔹 Advanced Database Questions (61–100)
 
 What is a CTE (Common Table Expression)?
 -----------------------------------------------------------------------------------------------------------------
@@ -828,66 +758,387 @@ How do you handle database connection errors in Node.js?
 
 
 
+++++++++=========+++++++===========+++++++++++++++++=========+++++++===========+++++++++++++++++=========+++++++===========
+++++++++=========+++++++===========+++++++++++++++++=========+++++++===========+++++++++++++++++=========+++++++===========
 
-*]From customer and orders tables, find the customer whose total order amount is the highest.
-->
-
-
-You want 100+ SQL practice questions like this (JOIN + GROUP BY + highest type) 👍
-
-Here are **120+ SQL Interview Practice Questions** (Simple to Advanced)
-
----
 
 # 🔹 BASIC (1–25)
 
 1. Select all customers.
+	
+	select * from customers;
+
 2. Select customers from Pune.
+
+	select * from customers where city = 'Pune';
+
 3. Find customers whose age > 25.
+
+	select * from customers where age > 25;
+	
 4. Count total customers.
+
+	select count(*) as total_customers
+	from customers;
+
 5. Find maximum salary.
+
+	select max(salary) as max_salary
+	from employee;
+
 6. Find minimum price.
+
+	select min(price) as min_price
+	from order;
+
 7. Find average marks.
+
+	select avg(marks) as avg_marks
+	from student;
+
 8. Find total order amount.
+
+	select sum(amout) as total_order_amount
+	from orders;
+
 9. Display distinct cities.
+
+	select distinct city from employee;
+
 10. Sort customers by name.
+
+	select * from customers 
+	order by name DESC;
+
 11. Sort salary in descending order.
+
+	select * from employee
+	order by salary DESC;
+
 12. Find customers whose name starts with 'A'.
+
+	select * from customers
+	where name LIKE 'A%';
+
 13. Find customers whose name ends with 'n'.
+
+	select * from customers
+	where name LIKE '%n';
+
 14. Find NULL values in table.
+
+	select * from student
+	where marks is NULL;
+
 15. Replace NULL with default value.
+
+	SELECT COALESCE(age, 22) AS age
+	FROM Student;
+
 16. Use BETWEEN operator example.
+
+	select * from student 
+	where marks between 99 and 100;
+
 17. Use IN operator example.
+
+	SELECT *
+	FROM Student
+	WHERE marks IN (80, 90, 100);
+
 18. Use NOT IN operator.
+
+	SELECT *
+	FROM Student
+	WHERE marks NOT IN (80, 90, 100);	
+
 19. Use LIMIT clause.
+
+	select * from student limit 5;
+
 20. Use OFFSET clause.
+
+	select * from student offset 5;
+
 21. Create a table.
+
+	CREATE TABLE TABLE_NAME(
+		_id SERIAL PRIMARY KEY,
+		field_name varchar(100) NOT NULL,
+	);
+
 22. Add new column in table.
+
+	INSERT INTO (field_name_1,field_name_2,...)
+	VALUES (value_1,value_2,..);
+
 23. Update salary by 10%.
+
+	update employee
+	set salary = salary + (salary * 10) / 100;
+
+
 24. Delete specific record.
+
+	DELETE FROM TABLE_NAME
+	WHERE condition
+
 25. Drop table.
+
+	DROP TABLE TABLE_NAME;
 
 ---
 
 # 🔹 JOIN QUESTIONS (26–50)
 
 26. Inner join customer & orders.
+
+	insert into customer(name,address,city,mobile)
+	values('Vishal Nimbarte','Pune, Maharastra','Pune','9284495360');
+
+	insert into orders(customer_id,order_name,order_amout)
+	values(1,'one plus',35000);
+
+	select * from customer;
+	select * from orders;
+
+	select 
+		c.name,
+		c.address,
+		c.city,
+		c.mobile,
+		o.order_name,
+		o.order_amout
+	from customer as c
+	inner join orders as o
+	on c.customer_id = o.customer_id;
+
 27. Left join example.
+
+	LEFT JOIN returns all records from the left table 
+	and 
+	matching records from the right table. 
+	If no matching record is found in the right table, 
+	then the right table columns return NULL values.
+
+	select 
+		c.name,
+		c.address,
+		c.city,
+		c.mobile,
+		o.customer_id,
+		o.order_name,
+		o.order_amout
+	from customer as c
+	left join orders as o
+	on c.customer_id = o.customer_id;
+
 28. Right join example.
+
+	RIGHT JOIN return all records from the right table,
+	and
+	matching records from the left table.
+	if no matching record is found in the left table,
+	then the left table coloumn return null values.
+
+	select 
+		c.customer_name,
+		c.city,
+		o.customer_id,
+		o.order_amount
+	from customer as c
+	RIGHT JOIN orders as o
+	on c.customer_id = o.customer_id;
+
 29. Full join example.
+
+	FULL JOIN returns all records from both tables. 
+	If matching records are found, they are combined. 
+	If no match is found, NULL values are returned for the missing side.
+
+	select 
+		c.customer_name,
+		o.customer_id,
+		o.order_amount
+	from customer as c
+	FULL JOIN orders as o
+	ON c.customer_id = o.customer_id;
+
 30. Find customers without orders.
+
+	SELECT
+		customer.customer_id,
+		customer.customer_name
+	FROM customer
+	LEFT JOIN orders
+	ON customer.customer_id = orders.customer_id
+	WHERE orders.customer_id IS NULL;
+
 31. Find orders without customers.
+
+	select 
+		orders.order_id,
+		orders.order_amount
+	from customer
+	right join orders
+	on customer.customer_id = orders.customer_id
+	where customer.customer_id is null;
+
 32. Count orders per customer.
+
+	select 
+		customer.customer_name,
+		count(*) as order_count
+	from customer
+	inner join orders
+	on customer.customer_id = orders.customer_id
+	group by customer.customer_name;
+
 33. Find total order amount per customer.
+
+	select 
+		customer.customer_name,
+		sum(order_amount) as total_amount
+	from customer
+	inner join orders
+	on customer.customer_id = orders.customer_id
+	group by customer.customer_name;
+
 34. Find highest order per customer.
+
+	//higher order count
+	select 
+		customer.customer_name,
+		count(*) as orders_count
+	from customer
+	inner join orders
+	on customer.customer_id = orders.customer_id
+	group by customer.customer_name
+	order by orders_count DESC ;
+
+	//find highest amount order 
+	select 
+		customer.customer_name,
+		sum(order_amount) as totoal_amount
+	from customer
+	inner join orders
+	on customer.customer_id = orders.customer_id
+	group by customer.customer_name 
+	order by totoal_amount DESC limit 1;
+
 35. Find lowest order per customer.
+
+	//lowest order count
+	select 
+		customer.customer_name,
+		count(*) as orders_count
+	from customer
+	inner join orders
+	on customer.customer_id = orders.customer_id
+	group by customer.customer_name
+	order by orders_count limit 1;
+
+	//lowest order amount 
+	select 
+		customer.customer_name,
+		sum(order_amount) as totoal_amount
+	from customer
+	inner join orders
+	on customer.customer_id = orders.customer_id
+	group by customer.customer_name 
+	order by totoal_amount limit 1;
+
 36. Find customer with highest total order value.
+
+	select 
+		customer.customer_name,
+		sum(order_amount) as total_amount
+	from customer
+	inner join orders
+	on customer.customer_id = orders.customer_id
+	group by customer.customer_name
+	order by total_amount DESC limit 1;
+
 37. Find top 3 customers by total purchase.
+
+	select 
+		customer.customer_name,
+		sum(order_amount) as total_amount
+	from customer
+	inner join orders
+	on customer.customer_id = orders.customer_id
+	group by customer.customer_name
+	order by total_amount DESC limit 3;
+
 38. Find average order value per customer.
+
+	select 
+		customer.customer_name,
+		avg(order_amount) as avg_amount
+	from customer
+	inner join orders
+	on customer.customer_id = orders.customer_id
+	group by customer.customer_name;
+
 39. Find customers with more than 5 orders.
-40. Find customers whose total purchase > 50000.
+
+	select
+		customer.customer_name,
+		count(*) as total_order_count
+	from customer
+	inner join orders
+	on customer.customer_id = orders.customer_id
+	group by customer.customer_name
+	having count(*) > 5;
+
+40. Find customers whose total purchase > 5000.
+
+	select 
+		customer.customer_name,
+		sum(order_amount) as total_order_count
+	from customer
+	inner join orders
+	on customer.customer_id = orders.customer_id
+	group by customer.customer_name
+	having sum(order_amount) > 5000;
+
 41. Find second highest salary.
+
+	select * from employee
+	order by salary DESC offset 1 limit 1;
+
+	SELECT *
+	FROM employee
+	WHERE salary = (
+		SELECT MAX(salary)
+		FROM employee
+		WHERE salary < (
+			SELECT MAX(salary)
+			FROM employee
+		)
+	);
+
+	Using window function 
+
+	SELECT emp_id,
+		emp_name,
+		salary
+	FROM (
+		SELECT *,
+			DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk
+		FROM employee
+	) t
+	WHERE rnk = 2;
+
 42. Find duplicate records.
+
+	select 
+		emp_name,
+		count(emp_name) as total_emp_count
+	from employee
+	group by emp_name
+	having count(emp_name)>1;
+
 43. Delete duplicate records.
 44. Self join example.
 45. Find employee and manager name.
@@ -949,6 +1200,72 @@ Here are **120+ SQL Interview Practice Questions** (Simple to Advanced)
 
 ---
 
+# 🔹 AGGREGATE FUNCTION
+
+1.Find the total number of students
+
+    SELECT COUNT(*) AS total_students
+    FROM Student;
+
+2.Find the average marks of all students
+
+    SELECT AVG(marks) AS average_marks
+    FROM Student;
+
+3. Find the highest marks
+
+    SELECT MAX(marks) as highest_marks 
+    FROM Student;
+
+4. Find the lowest marks
+    SELECT MIN(marks) AS lowest_marks
+    FROM Student;
+
+5. Find the total marks of all students
+    SELECT SUM(marks) AS total_marks
+    FROM Student;
+
+6. Find the number of students in each course
+    SELECT course, COUNT(*) AS total_students
+    FROM Student
+    GROUP BY course;
+
+7. Find the average marks course-wise
+    SELECT course, AVG(marks) AS average_marks
+    FROM Student
+    GROUP BY course;
+
+9. Find courses whose average marks are greater than 75
+    SELECT course, AVG(marks) AS avg_marks
+    FROM Student
+    GROUP BY course
+    HAVING AVG(marks) > 75;
+
+10. Find the highest marks in each course
+    SELECT course, MAX(marks) AS highest_marks
+    FROM Student
+    GROUP BY course;
+
+11. Find the lowest marks in each course
+    SELECT course, MIN(marks) AS lowest_marks
+    FROM Student
+    GROUP BY course;
+
+12. Find the total marks course-wise
+    SELECT course, SUM(marks) AS total_marks
+    FROM Student
+    GROUP BY course;
+
+13. Find students whose age is greater than the average age:
+    SELECT *
+    FROM student
+    WHERE student_age >
+    (
+        SELECT AVG(student_age)
+        FROM student
+    );
+
+
 # 🔹 ADVANCED (91–120)
 
 91. Find running total of sales.
@@ -981,14 +1298,3 @@ Here are **120+ SQL Interview Practice Questions** (Simple to Advanced)
 118. ACID properties.
 119. Find performance optimization query.
 120. Explain execution plan.
-
----
-
-If you want, I can also:
-
-* ✅ Provide answers for all
-* ✅ Create PDF for practice
-* ✅ Give real interview-level hard questions
-* ✅ Give company-based questions (TCS, Infosys, Capgemini, etc.)
-
-Tell me what you want next 😊

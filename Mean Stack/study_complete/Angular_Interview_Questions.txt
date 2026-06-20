@@ -10,6 +10,8 @@ Real Time Implementation Process
 
 177.How do you display error message for form validation in Angular?
 ->We display error messages by checking the form control is invalid and touched or dirty, then show the message using the errors property in the template.
+
+
 [Asking in interview implementation]}}}IMP}}}
 -------------------------------------------------------------------
 179.How to implement security measures for Angular?
@@ -78,39 +80,6 @@ Real Time Implementation Process
 59. Angular Routing
 60. Data Binding (`One-way`, `Two-way`)
 
-You can mention these in your resume, interview discussion, or project explanation as Angular practical implementations.
-
-------------------------------------------------------------------------------------------------------
-Good Afternoon Ma'am, 
-My name is Vishal Nimbarte. I am currently working as a Software Developer at Technogrowth Software Solutions, I have 2+ years of experience in software development. So, During this time, I have worked on two to three major projects with differance domain like a e-commerce platform and logistics solution and i am currently worked as a client side Bajaj Finserv and my currently working to the Uniconnect Web application it's a bajaj product for calling center. i have strongly specialization in Angular and Node.js.I also have hands-on experience in developing scalable and user-friendly web applications.
-
-so, that's all about me.
-
-Thank you!
-------------------------------------------------------------------------------------------------------
-what is your current project and what i your role?
-->my current project is Uniconnect Web Application.
-->and In my current role, I handle both frontend and backend development, integrate third-party APIs, and improve application performance.
-------------------------------------------------------------------------------------------------------
-what is current role?
-->In my current role, I handle both frontend and backend development, integrate third-party APIs, and improve application performance.
-------------------------------------------------------------------------------------------------------
-what is size of team?
-->I'm part of an 10-members team that includes 5 Full Stack Developers, a Team Lead,a QA lead , Manager,  Business Analyst, and a Tester. We work together using the Agile methodology to deliver quality solutions.
-------------------------------------------------------------------------------------------------------
-what is notice period?
-->My current notice period is 45 days, but I am open to discussing an early release if needed.
-------------------------------------------------------------------------------------------------------
-what is your current salary?
-->My current salary is 4.5 LPA.
-------------------------------------------------------------------------------------------------------
-what is your expecetation ?
-->Based on my skills and experience, I am expecting 7 LPA.
-------------------------------------------------------------------------------------------------------
-## **Short 2–3 Line Version (for Resume)**
-> Working on Uniconnect, a Bajaj web application used by call center teams for customer calling and loan tracking.
-> The system supports inbound/outbound calls, AI Voice-Bot, call logs, and recordings.
-> Contributed to both frontend and backend with role-based access for Super Admin, Admin, Supervisor, TL, and Agents.
 
 
 
