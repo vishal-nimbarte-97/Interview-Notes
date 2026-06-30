@@ -10,30 +10,100 @@ https://www.turing.com/interview-questions/docker
 1️⃣ What is Docker?
 
 Answer:
-Docker is a containerization platform that allows developers to package applications with all dependencies and run them consistently across environments.
+    Docker is a containerization tool. and used deployment process of application.
+
+    When we create an application, it needs:
+        Specific language version
+        Dependencies
+        Sub-dependencies
+        Configurations
+
+    If we run the application on another system, there may be:
+        Version mismatch issues
+        Missing dependencies
+        Environment issues
+        
+    To solve this problem, we use Docker.
+
+    Docker packages the application and all its requirements into a container.
+        A container contains:
+        Application code
+        Dependencies
+        Sub-dependencies
+        Configurations
+
+    This container can run on any system that has Docker installed.
+
+    No need to install packages or set up the environment again and again.
+
+    The application works the same way on every system.
 ----------------------------------------------------------------------------------------
 2️⃣ What is a Docker Container?
 
 Answer:
-A Docker container is a lightweight, isolated runtime environment created from a Docker image that runs an application.
+Docker Container is created using a Docker Image. 
+A Docker Container is the actual running instance of the image. 
+When the container runs, the application runs inside it on the system. 
+We can start, stop, restart, and delete the container as needed.
+
+
+in short: Docker Container is the actual running instance of a Docker Image. After creating a container, we can start it, stop it, restart it, check its logs, monitor its status, and execute the application inside it.
+
+Process:
+
+    Docker Image
+        ↓
+    docker run
+        ↓
+    Docker Container
+        ↓
+    Application Running
+
+Remember:
+
+    Container is running.
+    We can start, stop, restart, and delete it.
+    Multiple containers can be created from one image.
 ----------------------------------------------------------------------------------------
 3️⃣ What is a Docker Image?
 
 Answer:
-A Docker image is a read-only template used to create containers.
-It contains application code, libraries, dependencies, and OS instructions.
+Docker Image is a template or blueprint. 
+It contains all the requirements of an application, such as application code, dependencies, sub-dependencies, libraries, and configurations. 
+It is used to create Docker containers. 
+The image itself does not run; 
+when we run the image, 
+Docker creates a container from it.
+
+Process:
+
+    Application Code
+        +
+    Dependencies
+        +
+    Configurations
+        ↓
+    Docker Image
+
+Remember:
+
+    Image is a template.
+    Image is not running.
+    Image is used to create containers.
+
 ----------------------------------------------------------------------------------------
 4️⃣ Docker vs Virtual Machine?
-Docker	Virtual Machine
-Lightweight	Heavy
-Shares host OS	Own OS
-Faster startup	Slow startup
-Less resource usage	High resource usage.
+Docker	                Virtual Machine
+Lightweight	            Heavy
+Shares host OS	        Own OS
+Faster startup	        Slow startup
+Less resource usage	    High resource usage.
 ----------------------------------------------------------------------------------------
 5️⃣ What is Dockerfile?
-
 Answer:
-A Dockerfile is a text file with instructions to build a Docker image.
+A Dockerfile is a text file with set of instructions to build a Docker image.
+
+Dockerfile is a set of instructions used to define the application setup and create a Docker Image using the docker build command.
 
 Example:
 
@@ -48,9 +118,9 @@ CMD ["node", "index.js"]
 ----------------------------------------------------------------------------------------
 6️⃣ Difference between docker run and docker start?
 
-docker run → Creates + starts a new container
+docker run = Create + Start Container
+docker start = Start Existing Container Only ✅
 
-docker start → Starts an existing stopped container
 ----------------------------------------------------------------------------------------
 7️⃣ How to check running containers?
 docker ps
@@ -58,12 +128,19 @@ docker ps
 8️⃣ How to check all containers?
 docker ps -a
 ----------------------------------------------------------------------------------------
+7️⃣ How to check stop containers?
+docker stop <container_name>
+----------------------------------------------------------------------------------------
 9️⃣ How to remove a container?
 docker rm container_name
 ----------------------------------------------------------------------------------------
 🔟 How to remove an image?
 docker rmi image_name
 ----------------------------------------------------------------------------------------
+
+
+
+
 🔹 NETWORKING & DATABASE QUESTIONS
 ----------------------------------------------------------------------------------------
 11️⃣ How do containers communicate?
@@ -92,19 +169,23 @@ A Docker volume stores persistent data outside the container lifecycle.
 
 Answer:
 Without volumes, database data is lost when containers restart.
+
+
+
 ----------------------------------------------------------------------------------------
 🔹 DOCKER COMPOSE QUESTIONS (IMPORTANT 🔥)
 ----------------------------------------------------------------------------------------
-16️⃣ What is Docker Compose?
+16️⃣ What is Docker Compose?}}}IMP}}}
 
 Answer:
 Docker Compose is a tool to define and run multi-container applications using a single YAML file.
 ----------------------------------------------------------------------------------------
-17️⃣ docker-compose vs docker run?
-docker-compose	docker run
-Multi-container	Single container
-Easy networking	Manual setup
-YAML config	CLI-based
+17️⃣ docker-compose vs docker run?}}}IMP}}}
+docker-compose	    docker run
+-------------------------------------
+Multi-container	    Single container
+Easy networking	    Manual setup
+YAML config	        CLI-based
 ----------------------------------------------------------------------------------------
 18️⃣ What is depends_on?
 
@@ -116,6 +197,11 @@ docker-compose up -d
 ----------------------------------------------------------------------------------------
 20️⃣ How to stop services?
 docker-compose down
+----------------------------------------------------------------------------------------
+21 How to build docker compose file 
+-> docker compose build
+
+
 ----------------------------------------------------------------------------------------
 🔹 NODE + DOCKER QUESTIONS
 ----------------------------------------------------------------------------------------

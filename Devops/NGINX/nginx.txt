@@ -1,0 +1,173 @@
+*}What is nginx and what is uses of nginx?
+-> In my current application, we use NGINX as a reverse proxy. ✅
+-> All client requests first come to NGINX instead of directly hitting the backend server. ✅
+-> Our backend is horizontally scaled, so we have multiple backend servers. ✅
+-> Each backend server contains the same backend code. ✅
+-> NGINX is configured as a load balancer. ✅
+-> By default, NGINX uses the Round Robin algorithm to distribute requests. ✅
+-> All requests do not go to a single server. ✅
+-> The load is shared among multiple backend servers. ✅
+-> This improves performance, scalability, and high availability. ✅
+________________________________________________________________________________________________________
+*}Why did you use NGINX in the frontend?
+-> We use NGINX in the frontend because Angular provides static files after the build.
+-> These static files contain HTML, CSS, and JavaScript.
+-> NGINX hosts these static files and serves them to the clients.
+-> All client requests first come to NGINX.
+-> NGINX works as a reverse proxy.
+-> The frontend does not directly call the backend server.
+-> NGINX forwards the API requests to the backend server.
+-> If we have multiple backend servers, NGINX distributes the requests (by default using the Round Robin algorithm).
+-> This improves security because the backend servers are not directly exposed to the clients.
+-> It also provides load balancing, better performance, scalability, and makes deployment easier.
+________________________________________________________________________________________________________
+*}Why not call the backend directly?
+-> We don't call the backend directly because of security purposes. ✅
+-> The backend servers are not exposed to the clients. ✅
+-> All client requests first come to NGINX. ✅
+-> NGINX works as a reverse proxy. ✅
+-> NGINX forwards the request to the backend servers. ✅
+-> By default, NGINX uses the Round Robin algorithm. ✅
+-> Round Robin distributes requests to multiple servers. ✅
+-> Load balancing is done, so all requests don't go to a single server. ✅
+-> If one server goes down, NGINX can pass the request to another healthy server (if configured). ✅
+-> Main purposes are security, load balancing, and high availability. ________________________________________________________________________________________________________
+*}no nginx configuration why frontend side used backend side also we used nginx so why your application nginx config write in frontend side?
+-> NGINX configuration is not in the frontend side as well as backend side.
+-> NGINX is used during the deployment process of the application.
+-> The NGINX configuration file is usually written with the Angular application.
+-> After the Angular build, it provides static files like HTML, CSS, and JavaScript.
+-> NGINX uses these static files as a host/server and serves them to the clients.
+-> When multiple clients send requests, all requests first reach NGINX.
+-> NGINX works as a reverse proxy.
+-> NGINX uses its configuration and algorithm to decide which backend server should handle the request.
+-> On the backend side, we use horizontal scaling, which means we have multiple servers.
+-> By default, NGINX uses the Round Robin algorithm to distribute requests among all backend servers.
+-> Because of this, every server gets requests properly, and the load does not go to a single server.
+-> If one backend server goes down, NGINX can send the request to another healthy server (if configured).
+-> NGINX handles the client requests and forwards them to the available backend server.
+-> This improves performance, scalability, high availability, and security because clients cannot directly access the backend servers.
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+1. What is NGINX?
+✅NGINX is a web server.
+✅It is also used as a reverse proxy.
+✅It is used as a load balancer.
+✅It can serve static files like HTML, CSS, JavaScript, images, etc.
+✅In my current project, we mainly use NGINX as a reverse proxy and load balancer.
+________________________________________________________________________________________________________
+2. Why do you use NGINX in your project?
+✅We use NGINX as a reverse proxy.
+✅All client requests first come to NGINX.
+✅NGINX forwards the request to the backend server.
+✅It provides security because the backend is not directly exposed.
+✅It also provides load balancing.
+✅It improves performance and scalability.
+________________________________________________________________________________________________________
+3. Why not call the backend directly?
+✅The main reason is security.
+✅Backend servers are not directly exposed.
+✅All client requests first come to NGINX.
+✅NGINX works as a reverse proxy.
+✅NGINX forwards the requests to the backend.
+✅It also provides load balancing.
+✅If one server is down, requests can go to another healthy server (if configured).
+________________________________________________________________________________________________________
+4. What is Reverse Proxy?
+✅Reverse proxy means clients never call the backend directly.
+✅All requests first come to NGINX.
+✅NGINX receives the request.
+✅NGINX forwards the request to the backend.
+✅Backend sends the response to NGINX.
+✅NGINX returns the response to the client.
+________________________________________________________________________________________________________
+5. What is Load Balancing?
+✅Load balancing means distributing requests.
+✅We have multiple backend servers.
+✅NGINX distributes requests among all servers.
+✅By default, it uses Round Robin.
+✅Load does not go to a single server.
+✅Performance becomes better.
+________________________________________________________________________________________________________
+6. What is Round Robin?
+✅Round Robin is the default algorithm in NGINX.
+✅It sends requests one by one to different servers.
+✅Server 1 gets the first request.
+✅Server 2 gets the second request.
+✅Server 3 gets the third request.
+✅Then it starts again from Server 1.
+________________________________________________________________________________________________________
+7. Why do you use NGINX with Angular?
+✅Angular build generates static files.
+✅Static files contain HTML, CSS, and JavaScript.
+✅NGINX hosts these static files.
+✅NGINX serves these files to clients.
+✅API requests are forwarded to the backend.
+________________________________________________________________________________________________________
+8. What is Horizontal Scaling?
+✅Horizontal scaling means adding multiple backend servers.
+✅Every server contains the same backend code.
+✅NGINX distributes requests among them.
+✅Load is shared.
+✅Application can handle more users.
+________________________________________________________________________________________________________
+9. What happens if one backend server goes down?
+✅If one server is down,
+✅NGINX can forward requests to another healthy server (if configured).
+✅Users can continue using the application.
+✅This improves high availability.
+________________________________________________________________________________________________________
+10. What are Static Files?
+✅Static files are HTML.
+✅CSS.
+✅JavaScript.
+✅Images.
+✅Fonts.
+✅Angular generates these files after build.
+✅NGINX serves these files.
+________________________________________________________________________________________________________
+11. How does the request flow in your project?
+✅Client sends the request.
+✅Request reaches NGINX.
+✅NGINX serves Angular static files.
+✅Angular sends API request.
+✅API request again comes to NGINX.
+✅NGINX forwards it to the backend.
+✅Backend sends response.
+✅NGINX returns response to the client.
+________________________________________________________________________________________________________
+12. Why do we keep the NGINX configuration with Angular?
+✅Angular build generates static files.
+✅NGINX serves those static files.
+✅During deployment, the NGINX configuration is kept with the frontend.
+✅It also forwards API requests to the backend.
+________________________________________________________________________________________________________
+13. What are the advantages of NGINX?
+✅Reverse proxy.
+✅Load balancing.
+✅Security.
+✅Better performance.
+✅Scalability.
+✅High availability.
+✅Serves static files.
+✅SSL termination (if configured).
+________________________________________________________________________________________________________
+14. Is NGINX part of frontend or backend?
+✅NGINX is not part of frontend code.
+✅NGINX is not part of backend code.
+✅It is deployed separately.
+✅It works between the client and backend servers.
+________________________________________________________________________________________________________
+15. Explain NGINX in your project.
+✅We use Angular in the frontend.
+✅After build, Angular generates static files.
+✅NGINX hosts these static files.
+✅Clients first access NGINX.
+✅NGINX serves the Angular application.
+✅API requests first come to NGINX.
+✅NGINX works as a reverse proxy.
+✅We have multiple backend servers (horizontal scaling).
+✅NGINX distributes requests by default using Round Robin.
+✅Load is shared across all servers.
+✅If one server goes down, NGINX can send requests to another healthy server (if configured).
+✅This improves security, performance, scalability, and high availability.
+________________________________________________________________________________________________________
