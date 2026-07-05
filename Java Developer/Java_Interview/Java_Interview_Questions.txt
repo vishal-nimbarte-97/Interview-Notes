@@ -169,29 +169,32 @@ Handles memory management, garbage collection, and security
 JVM makes Java platform independent by running the same byte code on different OS.
 ------------------------------------------------------------------------------------------------------------
 21.What is JIT Compiler?
-->JIT stands for Just-In-Time compiler.
-
-It is a part of the JVM that improves performance by compiling byte code into machine code at runtime, just before execution.
-
-Instead of interpreting byte code line by line every time, JIT compiles blocks or methods of code into native machine code, making the program run faster.
-
-It combines the benefits of interpretation (platform independence) and compilation (speed).
+    JIT stands for Just-In-Time Compiler.
+    It is a part of the JVM.
+    It converts bytecode into native machine code at runtime.
+    It improves performance by making execution faster than normal interpretation.
 ------------------------------------------------------------------------------------------------------------
 22.What is differences between the JIT and Interpreter?
-->JIT compiler and interpreter are both parts of the JVM, but they are different components.
-The interpreter executes byte code line by line.
-The JIT compiler compiles byte code into machine code in chunks or methods at runtime for better performance.
-The JVM first uses the interpreter to start running the program quickly. Then, frequently used parts (hot spots) are compiled by the JIT for faster execution.
+->  Both JIT Compiler and Interpreter are parts of the JVM.
+        Interpreter:
+            Executes bytecode line by line.
+            Starts execution quickly.
+            Slower performance for repeated code.
+        JIT Compiler:
+            Converts bytecode into native machine code.
+            Compiles methods or frequently used code (hot spots) at runtime.
+            Improves performance.
+        How JVM uses them:
+            JVM first uses the Interpreter to start execution quickly.
+            Then JIT compiles frequently used code for faster execution
 ------------------------------------------------------------------------------------------------------------
 23.What is Virtual Machine?
-->A Virtual Machine (VM) is a software-based simulation of a physical computer.
-It behaves like a real computer but runs inside another physical machine.
-
-Key Points:
-VM does not physically exist — it’s created by software.
-It allows running multiple operating systems or environments on a single physical machine.
-It provides isolation and security between different VMs.
-In Java, JVM (Java Virtual Machine) is a type of virtual machine that runs Java byte code.
+    A Virtual Machine (VM) is a software-based system that works like a real computer.
+    It is not physically present.
+    It runs on a host computer using virtualization software.
+    It allows you to use a computer remotely like a normal system.
+    It is often created using cloud platforms like AWS.
+    You can access it using credentials and remote desktop tools.
 ------------------------------------------------------------------------------------------------------------
 24.how many memory areas in java?
 ->Java has five main memory areas managed by the JVM:
@@ -201,6 +204,11 @@ Method Area – Stores class-level data like class structures, constants, and st
 Stack – Stores local variables and method call information for each thread.
 Program Counter (PC) Register – Keeps track of the current instruction being executed in a thread.
 Native Method Stack – Used for native (non-Java) method calls.
+
+->  Method area stores class-level data like static variables and methods. 
+->  Heap stores objects, arrays, and strings. 
+->  Stack stores local variables and method calls. 
+->  Program Counter Register and Native Method Stack are used for internal JVM operations and native code execution.
 ------------------------------------------------------------------------------------------------------------
 25.Main 3 Memory Areas in Java:
 
@@ -210,8 +218,8 @@ Stack :- stack contain the local variable and local methods
 
 Method Area :- static variables and static methods are stored in method area.
 ------------------------------------------------------------------------------------------------------------
-26.Explain Heap Memory Area?
-->heap memory also contain the String Constance Pool and String Litral pool 
+26.Explain Heap Memory Area?}}}IMP}}}
+->heap memory also contain the String Constance Pool and String Litral pool.
 ------------------------------------------------------------------------------------------------------------
 27.Explain Deep architecure of class loader?
 ->
@@ -224,6 +232,7 @@ Method Area :- static variables and static methods are stored in method area.
          [ Custom ClassLoader (Optional) ]
 
 ✅ Summary Points:
+
 Java has 3 main ClassLoaders: Bootstrap, Extension, Application.
 Follows parent delegation model.
 Loads .class files dynamically at runtime.
@@ -235,14 +244,19 @@ It asks Extension → Bootstrap, then finally loads if not found by parents.
 28.What data is stored in method area?
 ->.class file information
 ->static variable
+->static constance
+->class level data
 ------------------------------------------------------------------------------------------------------------
 29.What data is stored in Heap Area?
 ->object
 ->arrays
 ->instance variable
+->String
+->Object level data
 ------------------------------------------------------------------------------------------------------------
 30.what data is stored in stack Area?
 ->current running methods 
+->method calls
 ->lacal variables
 ------------------------------------------------------------------------------------------------------------
 31.Data Types In Java?
@@ -255,26 +269,26 @@ It asks Extension → Bootstrap, then finally loads if not found by parents.
 32.what is differences between the primitve and non-primitive data types?
 
 ✅ Primitive Data Types
-Built-in/basic data types provided by Java.
-Examples: int, float, char, boolean, byte, short, long, double.
-Memory is allocated at compile-time.
-Stored in stack memory.
-Has a fixed size (e.g., int = 4 bytes).
-Cannot be null.
-Does not support inheritance or methods.
-Default values: 0, 0.0, false, etc.
-Directly supports arithmetic operations like +, -, *, /.
+    Built-in/basic data types provided by Java.
+    Examples: int, float, char, boolean, byte, short, long, double.
+    Memory is allocated at compile-time.
+    Stored in stack memory.
+    Has a fixed size (e.g., int = 4 bytes).
+    Cannot be null.
+    Does not support inheritance or methods.
+    Default values: 0, 0.0, false, etc.
+    Directly supports arithmetic operations like +, -, *, /.
 
 ✅ Non-Primitive Data Types
-Also called reference types.
-Examples: String, Array, Class, Interface, Object.
-Memory is allocated at runtime.
-Stored in heap memory.
-Size is not fixed, depends on object content.
-Can be null.
-Supports inheritance, polymorphism, and methods.
-Default value is null.
-Operations are done using methods (e.g., str.length(), arr.length).
+    Also called reference types.
+    Examples: String, Array, Class, Interface, Object.
+    Memory is allocated at runtime.
+    Stored in heap memory.
+    Size is not fixed, depends on object content.
+    Can be null.
+    Supports inheritance, polymorphism, and methods.
+    Default value is null.
+    Operations are done using methods (e.g., str.length(), arr.length).
 
 ------------------------------------------------------------------------------------------------------------
 33.What is Wrapper Classes.
@@ -417,6 +431,8 @@ They use keywords like public, private, protected, and default (no keyword) to c
     protected: Accessible within package and subclasses
     default (no keyword): Accessible within the same package only
 ------------------------------------------------------------------------------------------------------------
+
+
 ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 42.What is Oop's?
