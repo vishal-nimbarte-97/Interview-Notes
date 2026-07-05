@@ -1,29 +1,24 @@
 📌 What is a Microservice?
 
-    Microservice architecture means a collection of services, where every service is:
-
-    Developed individually
-    Deployed individually
-    Responsible for a specific task
-
-    Today, most platforms like e-commerce and banking systems use this architecture because:
-
-    Every service can be developed independently
-    Every service can be deployed separately
-    It is easy to scale and manage
------------------------------------------------------------------------------------------------
-📌 About Your Project (CQRS Pattern)
-
-    In microservices, there are different patterns.
-    In my current project, we are using the CQRS pattern.
-
-    CQRS means we separate read and write operations.
+✅Microservices architecture is a collection of services
+✅Each service development and deployment is done individually
+✅Every service has a different-different task (specific responsibility)
+✅It is widely used in e-commerce, logistics, and fintech domains
+✅In my current project also, we are using microservices architecture
+✅We use different patterns like:
+    1.Saga pattern
+    2.CQRS pattern
+✅I have experience in CQRS pattern
+✅In this pattern, read and write services are different
+✅Write service is used for POST / create operations
+✅Read service is used only for GET / read operations
 -----------------------------------------------------------------------------------------------
 🔷 Our Architecture Contains:
     
     API Gateway
         It is the entry point
         All client requests come here first
+        Handle CORS 
 
     Write Service (Command Side)
     Handles:
@@ -53,8 +48,73 @@
 
     "In my application, I have three databases: read, write, and audit logs. They are synced using Kafka events. Practically, when I store data in the write database, an event is published to Kafka. That event goes to the read service and audit log service, and then the data is stored in the read database and audit database. In this way, data is synced across all databases.”
 -----------------------------------------------------------------------------------------------
+🔹 1. Basic Concept Questions
+What is microservices architecture?
+Monolith vs Microservices difference?
+Why did you move from monolith to microservices?
+Advantages and disadvantages of microservices?
+When should we NOT use microservices?
+-----------------------------------------------------------------------------------------------
+2. Design & Architecture Questions
+How do you design microservices for an e-commerce system?
+How do microservices communicate with each other?
+What is synchronous vs asynchronous communication?
+What is API Gateway and why is it used?
+How do you handle service discovery?
+-----------------------------------------------------------------------------------------------
+3. Database & Data Management
+Database per service vs shared database?
+How do you handle data consistency across services?
+What is distributed transaction?
+What is Saga pattern? (very important)
+What is eventual consistency?
+-----------------------------------------------------------------------------------------------
+🔹 4. Patterns (VERY IMPORTANT for you)
+What is CQRS pattern?
+What is Saga pattern?
+What is Circuit Breaker pattern?
+What is Bulkhead pattern?
+What is API Gateway pattern?
+
+👉 They will ask:
+
+Where did you use it in your project?
+Why did you choose it?
+-----------------------------------------------------------------------------------------------
+🔹 5. Spring Boot + Microservices (MOST ASKED)
+How do you create microservices using Spring Boot?
+What is Spring Cloud?
+What is Eureka (service discovery)?
+What is Spring Cloud Gateway?
+How do you secure microservices? (JWT, OAuth2)
+How do you handle configuration management?
+-----------------------------------------------------------------------------------------------
+🔹 6. Communication & Messaging
+REST vs Messaging (Kafka/RabbitMQ)
+Why Kafka is used in microservices?
+What is event-driven architecture?
+What is producer-consumer model?
+-----------------------------------------------------------------------------------------------
+🔹 7. Resilience & Production Issues
+What happens if one service fails?
+How do you handle downtime?
+What is Circuit Breaker (Resilience4j)?
+How do you handle retries and timeouts?
+-----------------------------------------------------------------------------------------------
+8. DevOps / Deployment (Very important for 3+ yrs)
+How do you deploy microservices?
+Docker vs Kubernetes?
+CI/CD pipeline explanation?
+How do you scale services?
+-----------------------------------------------------------------------------------------------
+🔥 MOST IMPORTANT FOR YOU (based on your CQRS experience):
+Explain CQRS with real example
+Why did you use CQRS?
+What problem did CQRS solve in your project?
+-----------------------------------------------------------------------------------------------
 
 
+-----------------------------------------------------------------------------------------------
  api-gateway/
  ├── src/
  │

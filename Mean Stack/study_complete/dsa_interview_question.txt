@@ -13,10 +13,10 @@ Here's a comprehensive breakdown of **Data Structures and Algorithms (DSA)** top
 Interview-ready summary 🧠
 
 _____________________________________]]Time Complexity]]_______________________________________
-
+ 
 1 for loop → O(n)
 2 for nested loops → O(n²)
-2 for loops sequentially → O(n) two for loop differnt different used so n + n = Big O of 2n
+2 for loops sequentially → O(n) two for loop differnt different used so n + n = O(2n)
 3 for nested loops → O(n³)
 ______________________________________________________________________________________________
 
@@ -32,7 +32,6 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________
 }}}how to share data between two components
 ______________________________________________________________________________________________
-
 }}}What is Difference between linked list and arraylist and array
 Array and Linked List are both data structures used to store data.
 

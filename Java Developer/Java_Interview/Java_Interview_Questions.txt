@@ -34,17 +34,15 @@ This is why we say: "Write Once, Run Anywhere."
 
 ------------------------------------------------------------------------------------------------------------
 6.What is static or dynamic programming language?
-→ A static programming language is one where type checking and memory allocation for variables (including primitive types) happens at compile time.
--> Example :- c and C++
-→ A dynamic programming language is one where type checking and memory allocation happens at runtime.
--> Example : python and javascript
+->Static language: Data type is checked at compile time. Example: Java, C, C++.
+->Dynamic language: Data type is checked at runtime. Example: Python, JavaScript.
 ------------------------------------------------------------------------------------------------------------
 7.How java is dynamic programming language?
 ->  Basically, Java is a statically typed language
-    But it has dynamic features like:
-    Reflection
-    Dynamic class loading
-    Runtime method dispatch (polymorphism)
+->  But it has dynamic features like:
+->  Reflection
+->  Dynamic class loading
+->  Runtime method dispatch (polymorphism) so that the reason was java is dynamic programing language.
 ------------------------------------------------------------------------------------------------------------
 8.Why java does not require pre-processor?
 ->Java does not require a preprocessor because it uses a package-based system instead of header files like in C or   C++.
@@ -74,14 +72,22 @@ Java uses call by value only. For objects, the reference value is passed, so cha
 → C and C++ do not have a built-in garbage collector, so programmers must manually manage memory.
 → Because of this, Java reduces memory leaks and errors, giving it better memory management than C and C++.
 ------------------------------------------------------------------------------------------------------------
+12.Explain Garbage Collector?
+    Java has a Garbage Collector (GC).
+    It works dynamically.
+    If there are no longer used objects or unwanted objects in memory, the Garbage Collector identifies them.
+    It automatically clears/removes those objects from memory.
+    So, the programmer does not need to handle memory manually.
+    This helps to free memory and improve application performance.
+------------------------------------------------------------------------------------------------------------
 12.features of Java?
-Simple: Syntax is easy and similar to C and C++
-Platform Independent: Write once, run anywhere on any operating system
-Portable: Can run on different hardware without changes
-Object-Oriented: Supports OOP concepts like inheritance, polymorphism, encapsulation, and abstraction
-Secure: Provides strong security features compared to many other languages
-Multithreaded: Supports multiple threads running simultaneously for better performance
-Robust: Uses strong exception handling and error checking to create reliable programs.
+    Simple: Syntax is easy and similar to C and C++
+    Platform Independent: Write once, run anywhere on any operating system
+    Portable: Can run on different hardware without changes
+    Object-Oriented: Supports OOP concepts like inheritance, polymorphism, encapsulation, and abstraction
+    Secure: Provides strong security features compared to many other languages
+    Multithreaded: Supports multiple threads running simultaneously for better performance
+    Robust: Uses strong exception handling and error checking to create reliable programs.
 ------------------------------------------------------------------------------------------------------------
 13.What do you mean by platform independent?
 → In Java, platform independent means:
@@ -101,16 +107,21 @@ Write code once and run it on any operating system.
     There are two types of packages:
     Pre-defined packages – Provided by Java (like java.util, java.io, etc.)
     User-defined packages – Created by the programmer to organize custom classes.
-
 ------------------------------------------------------------------------------------------------------------
 16.What is Role of Compiler?
-->The compiler in Java converts human-readable source code (written in .java file) into byte code (stored in .class file).
-This byte code is not platform-specific and can run on any operating system using the Java Virtual Machine (JVM).
+    A compiler converts human-readable code into machine code.
+    The main purpose of the compiler is compilation.
+    It also checks the syntax of the program.
+    If there are syntax errors, the compiler shows them before the program runs.
+    If there are no errors, it generates the machine code.
 ------------------------------------------------------------------------------------------------------------
 17.What is Interpretor?
-->The Interpreter in Java is a part of the JVM, and its main role is to execute the byte code line by line at runtime.
-->Java code → compiled by javac → creates .class (byte code)
-->JVM uses Interpreter to read and run the byte code line by line
+    First, we create a Java (.java) file.
+    The compiler compiles the Java file and generates a .class file (bytecode).
+    After that, the JVM executes the .class file.
+    Inside the JVM, the Interpreter works.
+    The Interpreter executes the bytecode line by line.
+    This is the main purpose of the Interpreter.
 ------------------------------------------------------------------------------------------------------------
 18.What is JDK?
 ->JDK stands for Java Development Kit.
