@@ -162,5 +162,46 @@ class Main
 
 ______________________________________________________________________________
 
+// - ]]Remove duplicates
 
+// const arr = [12,12,23,78,90,56,23,23,23,12];
+
+class Main{
+    public static void main(String[] args){
+        int arr[] = {12,12,23,78,90,56,23,23,23};
+        Main obj = new Main();
+        System.out.println("Before Remove Duplicates : ");
+        obj.printArray(arr);
+        int new_arr[] = obj.removeDuplicate(arr);
+        System.out.println("After Remove Duplicates : ");
+        obj.printArray(new_arr);
+    }
+    public int[] removeDuplicate(int[] arr){
+        int newArray[] = new int[arr.length];
+        int index = 0;
+        for(int i=0;i<arr.length;i++){
+            boolean isDuplicate = false;
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[i]==arr[j]){
+                    isDuplicate = true;
+                }
+            }
+            if(!isDuplicate){
+                newArray[index] = arr[i];
+                index++;
+            }
+        }
+        int result[] = new int[index];
+        for(int i=0;i<index;i++){
+            result[i] = newArray[i];
+        }
+        return result;
+    }
+    public void printArray(int[] arr){
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+    }
+}
 

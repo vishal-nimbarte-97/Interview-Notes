@@ -435,6 +435,8 @@ They use keywords like public, private, protected, and default (no keyword) to c
 
 ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+
 42.What is Oop's?
 ->Writing code using classes and objects to make it more organized, reusable, and easier to maintain is called OOPs (Object-Oriented Programming System).
 ->It is the most popular programming paradign used b the programmers.
@@ -462,7 +464,6 @@ With the help of a class, we can create objects.
 ->method is the set of the code and instruction.
 ------------------------------------------------------------------------------------------------------------
 47.What is constructor?
-->Constructor is the Predefined class they are present in the java.lang.reflect package.
 ->A constructor is a special method in a class because the method name and the class name are the same, and it does not have any return type. It is used to initialize objects of the class.
 ->there is three types of the constructor
 ->A.default constructor :- whenever we can not create a any constructor in the class so that timing compiler are add automatically constructor that is called as the default constructor.
@@ -470,8 +471,6 @@ With the help of a class, we can create objects.
 ->B.parameterized constructor :- This constructor are create by programer for initialize the object of the classes.
 ->C.0-Argument constructor(No Argument Constructors) :- This constructor also created by the programer because they are used the parameterized constructor so that timinng by default values are passed so that timing they are need to the 0-Argument constructor.
 ------------------------------------------------------------------------------------------------------------
-
-
 48.What is differences between constructor and method.
 ->constructor:constructor does not have a any return type.
 ->method:method Always have return type.
@@ -518,6 +517,9 @@ class Demo
 -> Constructor Overriding is not possible in Java.
 -> Constructor overloading means a single class contains multiple constructors with the same name but different numbers or types of arguments.
 -> This allows creating objects in different ways by passing different arguments to the constructor.
+
+    Constructor overriding is not possible because constructors are not inherited by the child class, and overriding is only possible for inherited methods.
+
 ------------------------------------------------------------------------------------------------------------
 51.constructors chaining(using this keyword)? 
 ->Constructor chaining means one constructor calls another constructor in the same class using the this keyword.
@@ -540,7 +542,6 @@ class Demo
         Demo d = new Demo(90);
     }
 }
-
 ------------------------------------------------------------------------------------------------------------
 52.constructor with Abstract class and interface?
 ->Abstract class have a constructor
@@ -595,12 +596,11 @@ class Main
 55.How Object are crated?
 ->using the new keyword they are creating the object of the class.
 ------------------------------------------------------------------------------------------------------------
-56.What is HashCode?
+56.What is HashCode?}}}imp}}}
 ->✅ HashCode is a numeric (integer) value assigned to an object to help identify it, especially in hash-based collections.
 ------------------------------------------------------------------------------------------------------------
 59.What is inheritance?
-->Inheritance is a concept of object-oriented programming where the child class can access the properties and methods of the parent class. It helps in reusing code and building a relationship between classes.
-->Inheritance means a child class can access some properties and methods of its parent class. It is useful for reusing code and avoiding duplication.
+->Inheritance is a concept in Java where a child class can access the properties and methods of a parent class using the extends keyword. It is used for code reusability and represents an IS-A relationship between classes.
 ------------------------------------------------------------------------------------------------------------
 60.Types of Inheritance?
 -> Basically, there are five types of inheritance:
@@ -619,11 +619,12 @@ class Main
 
     Hybrid Inheritance:
     -> Combination of two or more inheritance types is called hybrid inheritance.
-------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 61.What is used of relationship between java classes?
 ->code reused.
 ->less execution.
 ->less memory.
+->write code Optim
 ------------------------------------------------------------------------------------------------------------
 62. Types of Relationship in Java
 
@@ -688,6 +689,7 @@ Here, Document Uses-A Printer.
 ------------------------------------------------------------------------------------------------------------
 63.What is Encaspulation?
 ->Encapsulation means data members and member functions are wrapped in a single unit, which is called encapsulation.
+and all data members we declared as a private
 We access and store the information using public getter and setter methods.
 ------------------------------------------------------------------------------------------------------------
 64.What is Bean Class?
@@ -700,47 +702,33 @@ No-argument constructor – A constructor with no parameters.
 ------------------------------------------------------------------------------------------------------------
 65. What is a POJO class in Java?
 ->POJO stands for Plain Old Java Object.
-A POJO class is a simple Java class that:
-Does not extend or implement any special Java frameworks or libraries.
-Has private fields (variables).
-Provides public getters and setters to access those fields.
-May include a no-argument constructor.
-Is used to represent and store data (like a model or data object).
+POJO class is a simple Java class. In this class, there are no restrictions. We can declare variables as private, public, or protected. We can use any type of constructor (default, parameterized, or both), and getter/setter methods are optional.
+------------------------------------------------------------------------------------------------------------
+POJO = No Rules
 
-->A POJO class is just a normal Java class used to hold data, without depending on any special Java framework or rules.
+✅ Any access modifier (private, public, protected)
+✅ Any constructor
+✅ Getter/Setter optional
+
+Bean = Rules
+
+✅ Private variables
+✅ Public getter/setter
+✅ Public no-argument constructor
+
+One line to remember forever
+
+POJO = No restrictions.
+Bean = POJO + some rules.
 ------------------------------------------------------------------------------------------------------------
 66.What is Polymorphism?
-
-->polymorphism means many forms of the one task.
-
-->👉 In Java, polymorphism means one object can perform multiple actions depending on how it is used. It is an important part of Object-Oriented Programming (OOP).
-
-Types of Polymorphism in Java:
-
-1. Compile-Time Polymorphism
-Also known as Static Polymorphism or Method Overloading.
-It is resolved during compilation.
-
-There are two ways to achieve Compile-Time Polymorphism:
-
-A. Method Overloading – Same method name with different parameters.
-    ->Same Method Name
-    ->Within the Same Class
-    ->different parameters
-
-B. Operator Overloading – Java supports this only in limited form (like + for numbers and strings).
-    ->Same Method name
-    ->Within different class
-    ->same parameters
-    ->Is-A Realationship
-
-2. Runtime Polymorphism
-Also known as Dynamic Polymorphism or Method Overriding.
-It is resolved during runtime.
-
-There is one main way to achieve Runtime Polymorphism:
-A. Method Overriding – A subclass provides a specific implementation of a method that is already defined in its superclass.
-
+✔ Polymorphism means multiple forms.
+✔ One task can be performed in multiple ways.
+✔ Two types:
+Compile-time (Static)
+Runtime (Dynamic)
+✔ Compile-time polymorphism is achieved using method overloading.
+✔ Runtime polymorphism is achieved using method overriding.
 ------------------------------------------------------------------------------------------------------------
 67.What is the differences between the method overloading and method overriding?
 → Method Overloading means a single class contains two or more methods with the same name, but they have different parameters (either in number, type, or order).
@@ -758,13 +746,16 @@ It is used in Is-A relationship (Inheritance) and is called runtime polymorphism
 ->runtime polymorphism occured in runtime and it is also called as dynamic polymorphism or late binding.
 ------------------------------------------------------------------------------------------------------------
 70.What is Varargs?
-->Varargs (variable arguments) allow a method to accept multiple values of the same type using a single parameter.
-------------------------------------------------------------------------------------------------------------
+->Varargs (Variable Arguments) allow us to pass multiple values as arguments to a method using a single parameter.
+Varargs are defined using three dots (...) followed by the variable name.
+Internally, varargs are treated as an array.
+Varargs allow us to pass zero or more arguments of the same data type.
+----------------------  --------------------------------------------------------------------------------------
 71.Which Methods cannot Override?
 ->private methods cannot be override.
 ->final methods cannot be override.
 ->static methods cannot be override
-------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
 72.What is abstraction?
 ->abstraction is hiding the implementation part and highlighted the main services.like a car engine are hiding but the car handle and break are show there main services.
 ->Abstract class contain the Abstract method and concreat method.
@@ -775,20 +766,35 @@ It is used in Is-A relationship (Inheritance) and is called runtime polymorphism
 ->abstract class supports both method overriding and method overloading
 ------------------------------------------------------------------------------------------------------------
 73.Abstract class have a constructor so what is used of this constructor?
-->Yes, an abstract class can have a constructor. Even though we cannot create an object of an abstract class directly, the constructor is used to initialize some fields or write logic. When a child class extends the abstract class, it automatically calls the abstract class constructor using super().
+->Yes, Abstract class cannot create the object directly.
+Abstract class can contain a constructor because the constructor is used to initialize the child class values.
+When the child class object is created, the abstract class constructor is called first using super().
+Abstract class can contain abstract methods and concrete methods.
+Abstract methods implementation is provided by the child class.
+We cannot create an object of an abstract class, but we can create a reference of an abstract class and refer to the child class object.
 ------------------------------------------------------------------------------------------------------------
 74.What is differences between the abstract method and concreat method?
-->abstract method and concreat method both are part of the class and they are used to the abstraction provided by the class 
-->abstract method does not have a body 
-->but the concreate method have a body 
-->if you create a abstract method so that time need to the abstract keyword
-->but the concreat method case they are not need of the  abstract keyword
+✅Abstract method:
+    Abstract method does not contain a body.
+    It is declared using the abstract keyword.
+    When a child class extends the abstract class, it must provide the implementation of the abstract method.
+✅Concrete method:
+    Concrete method is a simple method that contains a body.
+    It does not require any keyword.
+    It can be declared inside a normal class or abstract class.
+    After extending the abstract class, the child class does not need to implement the concrete method again.
 ------------------------------------------------------------------------------------------------------------
 75.what is differences between the abstract class and concreat class in java?
-->abstract class contain the abstract method as will as concreat class.
-->concreat class contain only the concreat method does not contain the abstract methods.
-->when ever we can create the abstract class that timing need to the abstract class.
-->but the concreat class creating timing they are not need to the abstract keyword.
+✅Abstract Class:
+    Abstract class is created using the abstract keyword.
+    It can contain both abstract methods and concrete methods.
+    Abstract methods do not contain a body.
+    We cannot create an object of an abstract class.
+✅Concrete Class:
+    Concrete class is a normal class and does not require any keyword.
+    It contains complete implementation of all methods.
+    It cannot contain abstract methods.
+    We can create an object of a concrete class.
 ------------------------------------------------------------------------------------------------------------
 76.What is interface.
 ->interface provided fully abstraction as compared to the abstract class because abstract class provided only the partial abstraction. because of they are contain to the concreate and abstract methods.
@@ -802,7 +808,7 @@ It is used in Is-A relationship (Inheritance) and is called runtime polymorphism
 ->abstract class creating timing they are need to the abstract class and they are contain to the abscract class as well as concreat methods 
 ->but the interface contain only the abscract methods 
 ->interface does not contain the constructor 
-->but the abscract class have a constructor of the class
+->but the abscract class have a constructor of the class 
 ------------------------------------------------------------------------------------------------------------
 ->interface cannot be private or protected they are only default or public.
 ->but the inner interface can be anything like a public, private, default and protected
@@ -824,7 +830,7 @@ Example: In a class, you make the name field private and use getName() and setNa
 ------------------------------------------------------------------------------------------------------------
 79.Which are 6 main pillers in OOP's?
 ->Classes
-->Object and Methods 
+->Object  
 ->Inheritance
 ->Polymorphism
 ->Abstraction
@@ -911,6 +917,8 @@ Example: ArithmeticException, NullPointerException
 93.How to used of try and catch block?
 ->try and catch block Basically used to handling exeception and try block can write risky code and catch block contain exception handling code.
 ------------------------------------------------------------------------------------------------------------
+
+
 94.What is used "throw" keyword?
 ->throw keyword Basically used to create an exception object manually.
 ->and throw most of the used in to create a user-defined exeception
