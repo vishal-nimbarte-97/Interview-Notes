@@ -101,6 +101,7 @@ Real Time Implementation Process
 ->forRoot() is used for initializing configurations in the main module (AppModule).
 In our project, we have created multiple feature modules, and their routes or configurations are loaded using forChild().
 ------------------------------------------------------------------------------------------------------
+
 0.what is signals?
 👉 Signals are lightweight state management for local or component state, and they automatically update and do not require much code.
 
@@ -137,7 +138,7 @@ effect(() => {
 Signals are easy to use, reduce boilerplate code, and improve reactivity compared to traditional approaches like RxJS for simple state handling.
 
 ------------------------------------------------------------------------------------------------------
-0.Types of signals in angular?
+0.Types of signals in angular? ]]]COPY]]]
 👉There are mainly 3 types of signals in Angular:
 
 👉 Writable Signal = store/change data
@@ -152,6 +153,7 @@ Decorators are written using the @ symbol and help Angular understand the purpos
 
 For example:
 
+@viewchild and @viewComponent
 @Component → defines a component
 @Injectable → defines a service
 @Input → receives data from parent component
@@ -232,7 +234,7 @@ D.two way data binding :- two way data binding means they are combination bwtwee
 ->	We can write any service in the angular and this service if you want to used the our compoent so they are inject using the constructor and this process is called as the Dependency Injection. 
 ------------------------------------------------------------------------------------------------------
 12.What is Routing in Angular?
-->If you want to navigate one view to another view that is the concept of the routing. 
+->If you want to navigate one view to another view that is the concept of the routing and in that case without reloading the entire application. 
 ------------------------------------------------------------------------------------------------------
 13.What is Route Gaurd and there types?
 ->A route guard is used to protect the routes in our angular applicaion from unauthorized access.
@@ -478,7 +480,6 @@ Example: changing class, style, or attributes dynamically.
 HostListener → listens to events
 HostBinding → updates/binds properties to the element
 ------------------------------------------------------------------------------------------------------
-
 31.What is an Interceptor in Angular?
 ->An interceptor in Angular is a service that catches all http & https request before they go to the server and all responce before they reach the app. 
 ->It is used for things like a adding tokens, logging and handling errors.
@@ -528,6 +529,7 @@ ngModel is a directive in Angular used for two-way data binding between the HTML
 ✅ Uses of ngModel
 Two-way data binding
 Template-driven forms
+
 Live search functionality
 Synchronizing data between HTML and TS file
 
@@ -794,15 +796,15 @@ In my previous project, Welling Parcel Service, I used NG-ZORRO for UI developme
 
 -> ng-zorro and angular material both are also used in posiible in single project but they are properly manage becasue of changes confilt layout and css
 ------------------------------------------------------------------------------------------------------
-
-52.What is pipes?
+52.What is pipes?}}IMP}}}
 ->Pipes are used to transform data in the template.
 ->They use the pipe (|) operator.
 ->Pipes change how data is displayed, not the original data.
 
 ->In-built Pipes Examples
 	date → formats date
-	uppercase → converts text to uppercase
+	
+  uppercase → converts text to uppercase
 	lowercase → converts text to lowercase
 	currency → formats currency
 	percent → formats percentage
@@ -835,7 +837,7 @@ Async pipe is type of impure pipe because they are continuously listening the Ob
 If any data changes in TypeScript file then async pipe automatically update the UI.
 Also there is no need of manual subscribe and unsubscribe because async pipe automatically handle everything internally.
 ------------------------------------------------------------------------------------------------------
-54.How to apply background colors to rows in a table based on the age condition (age>18 blue else green)?
+54.How to apply background colors to rows in a table based on the age condition (age>18 blue else green)?}}}IMP}}}
 ->]]]Important Question Asking in Interview
 ------------------------------------------------------------------------------------------------------
 0.What is HttpClientModule in Angular?
@@ -1511,7 +1513,7 @@ real time example is when we search products like clothes, shoes or mobiles on s
 
 that is the reason why after searching one product we start seeing similar advertisements repeatedly on internet.
 ------------------------------------------------------------------------------------------------------
-102.Encapsulation in Angular?
+102.Encapsulation in Angular?}}}IMP}}}
 ->In Angular, Encapsulation is used to isolate the CSS styles of a component, so that:
 One component’s styles do not affect other components.
 Other components’ styles do not apply to the current component.
@@ -1562,6 +1564,8 @@ so this will manually detect the changes and refresh the UI data on screen.
 109.What is zone.js?
 ->zone.js is a library used in Angular that helps to detect changes automatically when any asynchronous operations (like API calls, timers, or events) happen.
 ->It tells Angular when something has changed, so Angular can update the UI without manual effort.
+
+->Real Time Example :- Session Inactivity in angular
 ------------------------------------------------------------------------------------------------------
 Zone.js → Track async operations
       ↓
@@ -1570,6 +1574,14 @@ NgZone → Notify Angular
 Angular Change Detection → Detect changes
       ↓
 UI Update
+
+
+
+
+
+
+
+
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ------------------------------------------------------------------------------------------------------
@@ -1579,7 +1591,15 @@ UI Update
 
 Next Time Start from this Questions
 
-
+102.Encapsulation in Angular?}}}IMP}}}
+->In Angular, Encapsulation is used to isolate the CSS styles of a component, so that:
+One component’s styles do not affect other components.
+Other components’ styles do not apply to the current component.
+->There is the three main types :- 
+->Emulated(By default) -> by default set (we can used or not they are directly apply to the components css styles).
+->ShadowDom -> fully isolated
+->None -> No encaspulaltion
+------------------------------------------------------------------------------------------------------
 154.What is a Shared Module in Angular?
 ->Shared Module contains common code that we can reuse in other modules by importing it. It helps to avoid writing the same code again and again.
 ->so this share module create a services , set the enums of files and more utilities used for used in entire applicaion
@@ -2484,6 +2504,8 @@ FORMS REGARDING Question Aksing in Interview Last Timing :- }}}IMPORTANT}}}
 -------------------------------------------------------------------------------------------------------------
 
 
+
+
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ----------------------------------------------RxJS Library--------------------------------------------
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -2497,15 +2519,12 @@ What is RxJs ?
 ->With the help of this command "npm install rxjs" you will download the RxJs.
 ------------------------------------------------------------------------------------------------------
 111.What is RxJS and why is it used in Angular?
-->RxJs is Reactive Extensions for JavaScript Library, they are handle the asynchronous operation or api's calls and there responce and request.
-->Rxjs provided the Observable and Observer for the handling the responce and request.
+->RxJS stands for Reactive Extensions for JavaScript. It is a library used in Angular to handle asynchronous operations like API calls, user events, and timers. RxJS works with Observables, and Angular uses it because it makes handling asynchronous data easy and clean. It also provides many operators like map(), filter(), debounceTime(), throttleTime(), and takeUntil().
 ------------------------------------------------------------------------------------------------------
 112.What is Observable?
-->observable is a data producer, like a api's responce, clicking the events and occuring the responce so they are obserable
+->Observable is a data producer that produces or emits data over time. If we want to receive that data, we need to subscribe to the Observable.
 
-Observable = Data Producer
-
-It produces data over time.
+Observable = Data Producer [It produces data over time.]
 
 Example:
 
@@ -2514,12 +2533,25 @@ Button click events
 Form input changes
 ------------------------------------------------------------------------------------------------------
 113.what is Observer?
--> Observer is a data consumer that receives and handles data emitted by an Observable.
+-> Observer is a data consumer and they are received the data from the Observable and handle this data using the next, error and complete method.
 
 Observer = Data Consumer 
+
+this.userObservable.subscribe({
+  next: (data) => {
+    console.log(data);
+  },
+  error: (err) => {
+    console.log(err);
+  },
+  complete: () => {
+    console.log('Completed');
+  }
+});
+
 ------------------------------------------------------------------------------------------------------
 114.what is subscription?
--> Subscription is the connection between an Observable and an Observer.
+-> Subscription is the connection between an Observable and an Observer. and [ explain both Observable and Observer ]
 ------------------------------------------------------------------------------------------------------
 115.What is operators?
 -> Operators are functions provided by RxJS that are used to transform observable data 
@@ -2595,7 +2627,7 @@ this.myObservable.subscribe((data: string): void => {
 }
 ------------------------------------------------------------------------------------------------------
 114.What is Promises?
-->Promise is a core JavaScript object. Using Promise, we can perform asynchronous operations. It has three main states: Pending, Resolved, and Rejected. Once the Promise is executed, it returns either a resolved or rejected state based on the result. We can handle the response using .then() and errors using .catch().
+-> Promise is a core JavaScript object. Using Promise, we can perform asynchronous operations. It has three main states: Pending, Resolved, and Rejected. Once the Promise is executed, it returns either a resolved or rejected state based on the result. We can handle the response using .then() and errors using .catch().
 ------------------------------------------------------------------------------------------------------
 115.Explain About Observable?
 -> Observable is a data producer in RxJS. It's simple like API responses, click events, form value changes, and user interactions; all of these can be Observables. First of all, we need to subscribe to the Observable, then the data starts occurring and we receive the response. Unlike Promise, Observable can return multiple values over time, and we can also unsubscribe when it is no longer needed. So this overall process is called an Observable
@@ -2806,7 +2838,7 @@ subject.subscribe(value => {
 subject.next(1);
 subject.next(2);
 ------------------------------------------------------------------------------------------------------
-130.What is Event Driven Architecture?
+130.What is Event Driven Architecture?}}}}IMPORTANT}}}}
 ->Event-Driven Architecture (EDA) means two or more components (or parts of a system) communicate with each other by sending and receiving events, without being directly connected to each other.
 
 -> Real-Time Example: Subject & Broadcast (Event-Driven Architecture)
@@ -2861,6 +2893,10 @@ If the user types again within that time, the timer resets
 API is called only once after typing stops
 ✔️ This reduces unnecessary API calls and improves performance.
 ------------------------------------------------------------------------------------------------------
+
+
+
+
 135.Cold(Unicast) vs Hot(Multicast) Observable in RxJS?}}}IMP}}}
 
 In Cold Observable:
@@ -2906,9 +2942,8 @@ ngOnInit(): void {
 ------------------------------------------------------------------------------------------------------
 136.how to converted cold to hot observable?}}}IMP}}}
 -> To convert a Cold Observable to a Hot Observable, we can use:
-   Subject
-   share() or shareReplay() operator
-
+   1.Subject
+   2.share() or shareReplay() operator
 ------------------------------------------------------------------------------------------------------
 137.What is API Polling?
 ->API polling means the client continuously hits the API again and again to check whether a specific output has occurred or not.
@@ -3108,15 +3143,13 @@ It is mainly used in cases like the login page.
 If the network is slow, the user may hit multiple requests, which is not good practice and also loads the server.
 So throttleTime allows one request and makes some wait time before sending the next request.
 ------------------------------------------------------------------------------------------------------
-
-
 147.Differance between forkJoin() & combineLatest()?}}}IMP}}}
 => forkJoin() is basically used when we want two or more API responses to be completed first and then perform some calculation or merge the responses.
 In this case, forkJoin() waits for every API to be called and completed.
 After all the APIs are executed, it combines all the responses and then returns the final result to the frontend.
 => forkJoin() waits for all API calls to complete, then combines their responses and returns a single result.
 
-=> combineLatest is used when two or more APIs are called.
+=> combineLatest is used when two or more APIs are called.}}}}IMP -> Understanding proper concepts}}}
 It waits until all APIs return at least one response.
 After that, whenever any API returns a new response, combineLatest sends the latest combined data.
 => combineLatest returns the latest data whenever any API response changes, after all APIs have returned once.
