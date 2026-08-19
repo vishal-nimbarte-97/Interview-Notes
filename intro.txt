@@ -1,0 +1,15 @@
+# Self Introduction
+
+Good morning, Sir.
+
+My name is Vishal Nimbarte, and I am currently working on the client side for Bajaj Finserv. I have experience as a Full Stack Developer, in that experience I have worked on Angular, Node.js, Express.js, and Nest.js. I also have a proper understanding of databases like PostgreSQL and MongoDB.
+
+Currently, I am working on a call center web application at Bajaj Finserv. In this project, my role is as a Full Stack Developer. Apart from that, I also work on Nginx and SIP.js, and I have an idea of how they work on the frontend side. I also have experience in the deployment process using Docker and experience with the Microservice Architecture pattern CQRS in this project.
+
+Previously, I worked on Wellington Parcel Service, which is a Canada-based logistics platform. In that project, my role was also as a Full Stack Developer. I mainly focused on the integration between frontend and backend development. I also integrated third-party carrier APIs like DHL, Obibox, and Atlas. WPS provides two types of portals: an order creation portal and an order tracking portal.
+
+I also worked as an Angular Developer at KPay. KPay is an IoT-based electronic device-providing application. In that project, my role was as an Angular Developer. I developed mobile-responsive and browser-specific resolution UIs. I also worked with two to three UI libraries, such as NG-ZORRO, PrimeNG, Angular Material, and Bootstrap.
+
+So, based on my overall experience, I work as a Full Stack Developer, mainly focusing on frontend and backend development using Angular and Node.js technologies.
+
+Thank you, Sir.
