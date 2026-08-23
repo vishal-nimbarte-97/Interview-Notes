@@ -6,7 +6,7 @@ Real-time scenario:
 
 We have two services:
 
-Order-Service
+Order-Service and 
 Notification-Service
 
 In this case, when the user creates the order, after the order is created they need a notification.

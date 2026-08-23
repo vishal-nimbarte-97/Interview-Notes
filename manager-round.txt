@@ -120,18 +120,18 @@ ________________________________________________________________________________
 Then I explain my point and discuss both solutions. We choose the solution that is better for the project.
 If needed, we discuss it with the senior developer or team lead.
 _____________________________________________________________________________________________________
-Q9. How do you handle a production bug?
+.]]]How do you handle a production bug?
 -> "First, I try to reproduce the issue on UAT and check the browser console, network requests, application logs and backend logs. Then I identify whether the issue is from frontend, backend, database, or network communication. After identifying the root cause, I fix it, test the scenario, and verify that the fix doesn't affect existing functionality."
 _____________________________________________________________________________________________________
-Q10. How do you prioritize multiple tasks?
+.]]]How do you prioritize multiple tasks?
 -> First, I check the priority and business impact of each task.
 I complete critical and production-related issues first, then I work on the remaining tasks based on their priority and deadline.
 _____________________________________________________________________________________________________
-Q11. Have you worked in an Agile/Scrum team?
+.]]]Have you worked in an Agile/Scrum team?
 -> Yes, I have worked in an Agile/Scrum team. We use Jira to manage our tasks and track the sprint work.
 We have daily stand-up meetings, sprint planning, and sprint reviews. We take tasks from Jira based on priority and complete them during the sprint.
 _____________________________________________________________________________________________________
-Q12. How do you communicate with your team when you are blocked?
+.]]]How do you communicate with your team when you are blocked?
 -> If I am blocked, first I try to understand and solve the issue myself.
 If I still cannot resolve it, I discuss the issue with my team or senior developer and explain the problem clearly.
 I also update the task in Jira if required, so the team knows about the blocker.
@@ -143,99 +143,131 @@ Because your resume contains many technologies, expect questions such as:
 
 Angular
 
-Why Angular?
+.]]]Why Angular?
 ->Angular is a TypeScript-based frontend framework developed by Google for building Single Page Applications (SPAs).
 
 Angular uses TypeScript and provides many features like component-based architecture, lazy loading, HttpClient, guards, services, and routing.
 _____________________________________________________________________________________________________
-What is RxJS?
+.]]]What is RxJS?
 -> RxJS is a Reactive Extensions library for JavaScript. It is used to handle asynchronous operations in Angular, like API calls, events, and data streams.
 _____________________________________________________________________________________________________
-Observable vs Promise?
+.]]]Observable vs Promise?
 👉 Observable is a feature of RxJS library, while Promise is a core JavaScript object.
 👉 Both are used to handle asynchronous operations in Angular applications.
 👉 Promise handles only one value and cannot be cancelled or unsubscribed once started.
 👉 Observable can handle multiple values over time and can be unsubscribed to stop the data stream.
 👉 Promise has three states: Pending, Resolved, and Rejected.but Observable does not have predefined states like Promise.
 _____________________________________________________________________________________________________
-What are Angular interceptors?
-->Angular interceptor is basically used before the request reaches the server.
+.]]]What are Angular interceptors?
+-> Angular interceptor is basically used before the request reaches the server.
 Every request first goes through the interceptor. There, we validate the request and add the access token, then send the request to the backend server.
 After getting the response, the interceptor also handles the response and then sends it to the application. 
 _____________________________________________________________________________________________________
-What are guards?
+.]]]What are guards?
 ->Guards are used to secure or protect routes in an Angular application.
 Authorized users can access the protected routes. If an unauthorized user tries to access them, the guard redirects the user to the login page.
 _____________________________________________________________________________________________________
-How do you communicate between components?
+.]]]How do you communicate between components?
 -> in angular multiple ways to commmuncating between the components 
 For parent-child communication, we can use @Input() and @Output(). We can also use @ViewChild and @ViewChildren.
 We can use localStorage and sessionStorage when required.
 We can use RxJS Subjects or BehaviorSubject for communication between components.
 We can also use NgRx for state management, where we maintain a centralized state and use it across the application.
 _____________________________________________________________________________________________________
-How do you optimize Angular performance?
+.]]]How do you optimize Angular performance?
 ->I optimize Angular performance in multiple ways. For build performance, we use AOT compilation and production build options.
-
 I also try to prevent memory leaks by properly unsubscribing from Observables and removing unused objects or code.
-
 There are multiple things we can use to improve Angular performance, depending on the application.
 _____________________________________________________________________________________________________
+
 Node.js/NestJS
 
-Why NestJS?
+.]]]Why NestJS?
 ->nestJs is node.js framwork and they are providing the structre of application that means with help of cli command we have 
 provding the basic structure of application and that contant component bases architecture, services , routes, gaurds, dependencies injection and interceptors.
 _____________________________________________________________________________________________________
-Express vs NestJS?
--> I have used both Express.js and NestJS. The main difference is that in Express.js, we need to manually create the project structure. In NestJS, using the CLI commands, it provides a basic structure for the application.
+.]]]Express vs NestJS?
+-> I have used both Express.js and NestJS. The main difference is that in Express.js, we need to manually create the project structure. In NestJS, using the CLI commands, it provides a basic structure for the application and they are containing basic component bases architecture, services , routes, gaurds, dependencies injection and interceptors.
 _____________________________________________________________________________________________________
-What is Middleware?
+.]]]What is Middleware?
 -> Middleware is a function in the backend that works in the middle of the request and response.
 The request first comes to the middleware, where we can validate the request. If the request is not valid, we can return the response directly. If it is valid, the request is passed to the next part, like the controller, route, or service.
 _____________________________________________________________________________________________________
-What is dependency injection?
+.]]]What is dependency injection?
 -> We create multiple services in a project, and when we need a service in a component or another class, we inject that service through the constructor.
 Angular or NestJS creates and provides the instance of that service, and then we can use its methods. This process is called Dependency Injection (DI).
 _____________________________________________________________________________________________________
-What are guards/interceptors in NestJS?
+.]]]What are guards/interceptors in NestJS?
 -> Guards are basically used to protect the routes in our application. They check whether the user is authorized to access the route.
 Interceptors are used to handle the request and response. For example, we can add extra headers to the request or handle the response before sending it back.
 _____________________________________________________________________________________________________
-How do you create REST APIs?
+.]]]How do you create REST APIs?
 ->To create REST APIs in NestJS, we use annotations, controllers, services, and models.
 First, we understand the business requirement and decide which endpoint we need, like GET, POST, PATCH, or DELETE.
 Then we create the controller with the required annotations for the endpoints. The controller calls the service, and the service contains the business logic. The service also connects with the model to work with the database and table data.
 _____________________________________________________________________________________________________
-How do you handle exceptions?
+.]]]How do you handle exceptions?
 ->An unwanted or unexpected event that disturbs the normal flow of the program is called an exception.
 We handle exceptions using the try-catch block. In NestJS, we can also use built-in exception handling and exception filters. 
 _____________________________________________________________________________________________________
+
 Microservices
 
-What is microservice architecture?
+.]]]What is microservice architecture?
 -> Microservice architecture means we divide the application into multiple small and independent services. Each service can be developed and deployed independently.
 If one service is down, it should not crash the overall application.
 I have worked with two patterns: CQRS and Saga pattern.
 Currently, I work with the CQRS pattern, where read and write operations are separated into different services.
 I have also worked with the Saga pattern, where we create separate services for different modules. For example, in my Wellington Parcel project, we had separate services like Order Service, Tracking Service, and other small services. This makes development and deployment easier.
 _____________________________________________________________________________________________________
-Why did you use microservices?
+.]]]Why did you use microservices?
 -> We used microservices to divide the application into small and independent services.
 Each service can be developed and deployed independently. Also, if one service has an issue, the overall application does not go down.
 It also makes development, maintenance, and scaling easier.
 _____________________________________________________________________________________________________
-How do services communicate?
+.]]]How do services communicate in nestJs?
 ->In NestJS, we use @MessagePattern() for communication between microservices. One service sends a message, and another service receives and processes it.
 _____________________________________________________________________________________________________
-What is the difference between synchronous and asynchronous communication?
+.]]]What is the difference between synchronous and asynchronous communication?
 ->Synchronous: The sender waits for the response before continuing the next operation.
 Asynchronous: The sender does not wait for the response and can continue the next operation. The response can come later.
 _____________________________________________________________________________________________________
-Have you worked with RabbitMQ/Kafka?
-->Yes, I have worked with Kafka. I have used Kafka for asynchronous communication between services and for handling event-based communication.
+.]]]Have you worked with RabbitMQ/Kafka?
+->Yes, I have worked with Kafka. I have used Kafka for asynchronous communication between two or more services and for handling event-based communication.
+
 I have basic understanding of RabbitMQ, but my practical experience is mainly with Kafka.
+
+Apache Kafka is a message broker and it helps communication between two services instead of REST API.
+
+Real-time scenario:
+
+We have two services:
+
+Order-Service and Notification-Service
+
+In this case, when the user creates the order, after the order is created they need a notification.
+
+Since we are using Microservices Architecture Pattern, we need communication between the two services.
+
+We can use REST API for communication between two services, but this is not a good way because every time one service needs to hit another service API. After some time the system becomes complex and both services become tightly coupled.
+
+So in this case we use Kafka message broker.
+
+With the help of Kafka:
+
+Order-Service publishes the event/message to Kafka
+Kafka stores the message in a topic
+Notification-Service gets/consumes this event
+Then Notification-Service sends the notification
+
+So this is the overall real-time scenario of Kafka and asynchronous communication between microservices.
 _____________________________________________________________________________________________________
+
+
+
+
+
+
 
 Database
 
