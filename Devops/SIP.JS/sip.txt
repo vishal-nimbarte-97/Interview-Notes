@@ -1,0 +1,94 @@
+As per my understanding, SIP.js is a JavaScript library which is used to implement SIP functionality in our application. SIP stands for Session Initiation Protocol, and it is mainly used for call signaling and managing the call session in the browser.
+In my project, I worked on the SIP.js library, and I handled how dynamic SIP headers are passed to the FreeSWITCH server. When the agent clicks on the call button, first the INVITE request is sent to the FreeSWITCH server through SIP.js.
+After sending the INVITE, I receive the 100 status code, which means Trying. After that, I receive 180 Ringing when the customer side is ringing, and sometimes 183 Session Progress. Then, when the customer accepts the call, I receive 200 OK, and after that the call is connected between the agent and customer.
+In this flow, I also worked on dynamic headers. We pass multiple types of information through these headers, like call direction, URI, campaign, process, agent information, customer or lead information, list information, callback information, and agent DID number.
+These dynamic headers are passed in the SIP INVITE request using SIP.js extraHeaders. FreeSWITCH receives these headers and can use this information for call routing, campaign processing, lead tracking, and reporting.
+So basically, SIP.js is handling the SIP signaling part in our Angular application, FreeSWITCH is handling the SIP server-side call processing, and WebRTC is handling the actual audio communication between the agent and customer.
+
+
+Sure. For an interview, you can explain your SIP.js implementation **step by step** like this:
+
+### SIP.js Call Flow – Step by Step
+
+1. **SIP.js Integration**
+   - SIP.js is a JavaScript library used to implement **SIP functionality in the browser**.
+   - SIP stands for **Session Initiation Protocol**.
+   - In my Angular application, SIP.js is mainly responsible for **SIP signaling and call session management**.
+
+2. **Agent Clicks the Call Button**
+   - When the agent clicks the **Call** button, my Angular application initiates the call using SIP.js.
+
+3. **Dynamic SIP Headers**
+   - Before sending the call request, I prepare the required **dynamic SIP headers**.
+   - These headers contain information such as:
+     - Call direction
+     - URI / From / To information
+     - Campaign
+     - Process
+     - Agent information
+     - Customer / Lead information
+     - List information
+     - Callback information
+     - Agent DID number
+
+4. **INVITE Request**
+   - SIP.js sends an **SIP INVITE request** to the FreeSWITCH server.
+   - The dynamic information is passed in the INVITE request using SIP.js `extraHeaders`.
+
+5. **FreeSWITCH Receives the INVITE**
+   - FreeSWITCH receives the INVITE request along with the dynamic headers.
+   - It processes the call information and performs the required **call routing and business logic**.
+
+6. **100 Trying**
+   - FreeSWITCH sends a **100 Trying** response.
+   - This means the INVITE request has been received and the server is processing the call.
+
+7. **180 Ringing**
+   - When the customer-side phone starts ringing, I receive a **180 Ringing** response.
+   - This indicates that the call is being alerted to the customer.
+
+8. **183 Session Progress — Sometimes**
+   - In some call flows, I may receive **183 Session Progress**.
+   - This is generally used to indicate that the session is progressing and can also be associated with **early media**.
+
+9. **200 OK**
+   - When the customer accepts the call, FreeSWITCH sends a **200 OK** response.
+   - This indicates that the call has been successfully accepted.
+
+10. **ACK**
+   - After receiving the 200 OK, SIP.js sends an **ACK**.
+   - This completes the SIP signaling handshake for establishing the call.
+
+11. **Call Connected**
+   - After the signaling is successfully established, the agent and customer can communicate through the call.
+
+12. **WebRTC Handles Audio**
+   - **SIP.js handles the SIP signaling**, while **WebRTC handles the real-time audio communication** in the browser.
+   - WebRTC provides the audio/media communication between the browser and the telephony system.
+
+13. **Dynamic Headers Used by FreeSWITCH**
+   - FreeSWITCH can use the dynamic header information for:
+     - Call routing
+     - Campaign processing
+     - Lead/customer tracking
+     - Agent identification
+     - Callback handling
+     - Reporting and monitoring
+
+### Simple Architecture
+
+**Angular Application → SIP.js → FreeSWITCH → Customer**
+
+And the responsibilities are:
+
+- **Angular** → User interface and call button
+- **SIP.js** → SIP signaling and call session management
+- **Dynamic SIP Headers** → Pass business/call-related information
+- **FreeSWITCH** → SIP server, call routing and call processing
+- **WebRTC** → Real-time audio/media communication
+
+### Short Interview Version
+
+> “In my project, I worked with SIP.js in an Angular application to implement browser-based calling. When an agent clicks the call button, SIP.js creates and sends an INVITE request to FreeSWITCH with dynamic SIP headers using `extraHeaders`. These headers contain information like call direction, campaign, process, agent, customer, lead, callback, and DID information.  
+>
+> After the INVITE, we receive responses such as 100 Trying, 180 Ringing, sometimes 183 Session Progress, and finally 200 OK when the customer accepts the call. SIP.js then sends an ACK, and the call is established. SIP.js mainly handles SIP signaling, FreeSWITCH handles server-side call processing and routing, and WebRTC handles the actual real-time audio communication.”
