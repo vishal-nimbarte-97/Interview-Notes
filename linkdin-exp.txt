@@ -1,0 +1,52 @@
+🔹 Angular Interview Questions
+
+1. @Input() vs @Output()
+2. ViewChild vs ContentChild
+3. Reactive Forms vs Template-Driven Forms
+4. ng-template vs ng-container vs ng-content
+5. Angular Lifecycle Hooks
+6. Lazy Loading
+7. Observable vs Promise
+8. HTTP Interceptors
+9. Dependency Injection Hierarchy
+10. Change Detection — Default vs OnPush
+
+🔹 Angular Building Blocks
+
+The second image covers the 6 important building blocks of Angular:
+
+* Components — Build the UI
+* Services — Handle business logic & data
+* Directives — Control HTML behavior
+* Pipes — Transform data for display
+* Guards — Protect routes
+* Interceptors — Manage HTTP requests & responses
+
+
+________________________________________________________________________
+
+1) What is a closure in JavaScript?
+2) What is an Execution Context in JavaScript?
+3) How Angular bootstraps an application
+4) What are Signals? In which scenarios would you prefer Signals over BehaviorSubject
+5) What is Dependency Injection and why do we use it? How would you inject a service at the component level? - what's Singleton object means ?
+6) How do you create a custom validator? How would you create a validator for a scenario like "enter email or password"
+7) What are the different types of forms in Angular? How would you achieve two-way data binding using Reactive Forms?
+8) Parent–Child & Sibling Communication
+6) Change Detection & Zone.js
+7) What is the difference between switchMap, concatMap, mergeMap, and exhaustMap? What are their practical use cases?
+8) What is the difference between Cold and Hot Observables?
+9) What is the difference between CanActivate and CanActivateChild?
+10) Explain the Angular lifecycle hooks and their execution order.
+11) How would you implement parent-child communication?
+12) How would you implement communication between sibling components?
+13) How would you improve the performance of an Angular application? For example, lazy loading, trackBy, pagination, etc.
+14) What are some approaches you would use to handle performance issues with large lists?
+15) How do you optimize images in a web application?
+16) Do u have experience with unit testing?
+17) How do u use AI for development after u have gathered requirement of a feature?
+18) Will be open tto work on ReactJs or Nextjs also ?
+19) Any exposure on Cloud ?
+
+________________________________________________________________________
+

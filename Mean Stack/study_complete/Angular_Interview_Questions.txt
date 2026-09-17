@@ -2504,7 +2504,7 @@ FORMS REGARDING Question Aksing in Interview Last Timing :- }}}IMPORTANT}}}
 -------------------------------------------------------------------------------------------------------------
 
 
-
+# RxJS
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ----------------------------------------------RxJS Library--------------------------------------------
@@ -3286,13 +3286,12 @@ SenWell Asking Interview Questions :-
 --------------------------------------------------------------------------------------------------------------------
 
 
-🧠 1. Current Angular Version (as of Feb 2026)
-📌 The latest stable release of Angular is Angular v21.
+🧠 1. Current Angular Version (as of Feb 2026)  
+📌 The latest stable release of Angular is Angular v22.
 --------------------------------------------------------------------------------------------------------------------
 ⚡ 2.  What They Are Angular Signals?
-=> Signals are used to store values and manage UI state.
-   They automatically update the UI when the value changes, without using subscribe() or unsubscribe().
-   They are better than RxJS for simple state management, especially for UI-related state.
+=> 👉 Signals are lightweight state management for local or component state, and they automatically update and do not require much code.
+=> In Angular, Signals are a lightweight state management functionality used for managing local component state. With the help of Signals, we can manage small states with less code. For small state management, we don't always need to use NgRx or RxJS. When the signal value changes, Angular automatically updates the UI.
 
 One-line interview answer 🎯
 Angular Signals manage reactive UI state without subscriptions, while RxJS is still used for async data streams and APIs.
@@ -3319,14 +3318,16 @@ bootstrapApplication(App);
 --------------------------------------------------------------------------------------------------------------------
 
 📊 3. Differences Between Angular 16, 19, and Current (v21)
+
 all the curent latest version introduced 
-->standalone compenent
-->signals
-->routing 
-->Reactivity
-->SSR-server side Rendering
-->Hydration improvements
-->CLI & Tooling
+  ->standalone compenent
+  ->signals
+  ->routing 
+  ->Reactivity
+  ->SSR-server side Rendering
+  ->Hydration improvements
+  ->CLI & Tooling
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Area                | Angular 16                                                | Angular 19                                                                          | Angular 21 (latest)                                                                            |
 | ------------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -3342,7 +3343,6 @@ all the curent latest version introduced
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------------------------------------------
-
 🧭 4. Angular Router Essentials
 📍 What Angular Router Does
 
@@ -3353,7 +3353,6 @@ Use the routerLink directive on an <a> (or other) to navigate:
 <a routerLink="/home">Home</a>
 
 This binds the link to the Angular Router path without page reload.
-
 
 🎯 Detecting Active Links — routerLinkActive
 Use routerLinkActive to apply styles when the link matches the current route:
@@ -3376,7 +3375,6 @@ const routes: Routes = [
   { path: '**', redirectTo: '/not-found' }
 ];
 
-
 redirectTo: target route to navigate.
 
 pathMatch: 'full': ensures exact empty path matches before redirect.
@@ -3389,14 +3387,34 @@ redirectTo
 --------------------------------------------------------------------------------------------------------------------
 📊 5. What is Architecture of Current Angular Project?
 
-  My curent Angular project follows a modular, component-based architecture.
-  The application is divided into feature modules, core, and shared modules.
-  Core module contains common services like authentication, guards, and HTTP interceptors.
-  Shared module has reusable components, pipes, and directives.
-  Each business feature has its own module and most of them are lazy-loaded.
-  UI logic is handled by components, while API calls and business logic are handled by services using HttpClient.
-  Navigation is managed using Angular Router with routerLink, guards, and redirects.
-  This architecture helps in scalability, performance, and easy maintenance
+=> Modular + Component-Based Architecture
+    Our Angular application follows a modular and component-based architecture.
+
+=> Feature-Wise Modules
+    We create separate modules for different features.
+
+=> Each module contains its own:
+    Components
+    Services
+    Routes
+
+=> Common Module
+    We have a Common Module for common/reusable functionality.
+
+=> Authentication Module
+    We have a separate Authentication Module for login and authentication-related functionality.
+
+=> Lazy Loading
+    Feature modules are lazy loaded to improve application performance and optimization.
+
+=> RxJS
+    We use RxJS for:
+    State management
+    API calls
+    Handling asynchronous operations
+
+=> Component Communication
+    We use Subject and BehaviorSubject for communication between components.
 
 src/
 │

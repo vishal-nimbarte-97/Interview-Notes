@@ -829,3 +829,25 @@ entries(): Returns an iterator for key-value pairs.
 for (let [key, value] of [1, 2].entries()) console.log(key, value);
 // Logs: 0 1, 1 2
 -----------------------------------------------------------------------------------------------------------------
+
+
+let, const, var
+== vs ===
+map, filter, reduce
+Promise vs Observable
+async/await
+callback
+closure
+hoisting
+event loop
+synchronous vs asynchronous
+spread/rest operators
+destructuring
+interfaces vs types
+generics
+access modifiers
+abstract classes
+union/intersection types
+optional chaining
+nullish coalescing
+TypeScript decorators

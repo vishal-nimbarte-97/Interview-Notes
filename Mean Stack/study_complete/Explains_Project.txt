@@ -2,12 +2,15 @@
 You can mention these in your resume, interview discussion, or project explanation as Angular practical implementations.
 
 ------------------------------------------------------------------------------------------------------
-Good Afternoon Ma'am, 
-My name is Vishal Nimbarte. I am currently working as a Software Developer at Technogrowth Software Solutions, I have 2+ years of experience in software development. So, During this time, I have worked on two to three major projects with differance domain like a e-commerce platform and logistics solution and i am currently worked as a client side Bajaj Finserv and my currently working to the Uniconnect Web application it's a bajaj product for calling center. i have strongly specialization in Angular and Node.js.I also have hands-on experience in developing scalable and user-friendly web applications.
+Good afternoon, Ma'am.
+My name is Vishal Nimbarte, and I am currently working on the client side for Bajaj Finserv. My current payroll company is Technogrowth Software Solutions. So, I have around 3 years of experience as a Full Stack Developer. During this experience, I have worked with Angular, Node.js, Express.js, and NestJS. I also have an understanding of databases like PostgreSQL and MongoDB.
 
-so, that's all about me.
+Currently, I am working on a call center web application at Bajaj Finserv. In this project, my role is as a Full Stack Developer. Apart from that, I also work with Nginx and SIP.js, and I have an understanding of how they work on the frontend side. I also have experience with the deployment process using Docker and Microservices architecture with the CQRS pattern in this project.
 
-Thank you!
+Currently, I mostly work on the frontend side, and I also work on the backend side. The work ratio is approximately 60% frontend and 40% backend.
+
+So, that's all about me. Thank you.
+
 ------------------------------------------------------------------------------------------------------
 what is your current project and what i your role?
 ->my current project is Uniconnect Web Application.
@@ -23,10 +26,10 @@ what is notice period?
 ->My current notice period is 45 days, but I am open to discussing an early release if needed.
 ------------------------------------------------------------------------------------------------------
 what is your current salary?
-->My current salary is 4.5 LPA.
+->My current salary is 6 LPA.
 ------------------------------------------------------------------------------------------------------
 what is your expecetation ?
-->Based on my skills and experience, I am expecting 7 LPA.
+->Based on my skills and experience, I am expecting 8 LPA.
 ------------------------------------------------------------------------------------------------------
 ## **Short 2–3 Line Version (for Resume)**
 > Working on Uniconnect, a Bajaj web application used by call center teams for customer calling and loan tracking.
