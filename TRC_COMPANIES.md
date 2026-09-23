@@ -96,50 +96,139 @@ For example: xxxxx.yyyyy.zzzzz
 Here the first part is Header, second part is Payload, and third part is Signature.
 
 ## Where should you store the JWT on the frontend?
-What are the security risks of storing JWT in localStorage?
-What is the difference between access token and refresh token?
-How do you implement token expiration?
-How do you handle an expired JWT in Angular?
-How do you implement logout with JWT?
-How do you prevent unauthorized users from accessing APIs?
-What is RBAC?
-What is ACL?
-Difference between RBAC and ACL?
-How would you implement role-based authorization in NestJS?
-How do Angular route guards help with authorization?
-Can Angular guards alone provide security?
-Why must authorization also be implemented on the backend?
+=> in my current application i used the localstorage for stored the access token
+
+## What are the security risks of storing JWT in localStorage?
+=> * Main security risk is that if an attacker gets the **token from localStorage**, they can use that access token to call the protected endpoints and access the application data.
+* So, in my current application, we don't directly store the access token in localStorage.
+* We use an **encryption mechanism** before storing the token in localStorage.
+* Whenever we need the token, we decrypt it on the frontend and send it with the API request.
+* This way, we have an additional layer of security for storing the token.
+
+## What is the difference between access token and refresh token?
+=> Access token expiry validity is less, like 2 minutes to 5 minutes.
+Refresh token expiry validity is longer, like 7 days.
+When the access token expires, frontend calls the refresh token API.
+Backend validates the refresh token and generates a new access token.
+Frontend receives the new access token and uses it for the next API requests.
+So basically, access token is used for API requests, and refresh token is used to get a new access token.
+
+## How do you implement token expiration?
+=> We implement token expiration by providing the expiry time while creating the JWT token.
+In the JWT sign method, we provide the expiry time, like 2 minutes or 5 minutes.
+After that expiry time, the token becomes invalid.
+Backend validates the token on every protected API request.
+If the token is expired, backend returns 401 Unauthorized.
+
+## How do you handle an expired JWT in Angular?
+=> In frontend side, when the JWT is expired, backend returns 401 Unauthorized.
+We handle this 401 response using the Angular HTTP Interceptor.
+Then frontend clears the token from localStorage.
+After that, we navigate the user to the login page.
+User logs in again and gets a new token.
+
+## How do you implement logout with JWT?
+=>When user clicks on the Logout button, frontend clears the JWT token from localStorage.
+Then we clear the user session/data from the frontend.
+After that, we navigate the user to the login page.
+If required, we can also call the logout API from the backend side.
+After logout, the old token should not be used for accessing protected APIs.
+
+## How do you prevent unauthorized users from accessing APIs?
+=>We use JWT authentication and role-based authorization.
+For every protected API request, frontend sends the JWT token in the Authorization header.
+Backend first validates the JWT token.
+After that, backend checks the user's role and permission.
+If the user is not authorized, backend returns 403 Forbidden.
+If the token is missing or invalid, backend returns 401 Unauthorized.
+So only authenticated and authorized users can access the protected APIs.
+
+## What is RBAC?
+=>RBAC means roll based access controlled
+=>user role wise access the routes and used the user wise portal 
+
+## What is ACL?
+=>ACL stands for Access Control List.
+Basically, ACL defines which user can access which resource or API.
+For example, in our application, an Agent can access agent-related APIs, but they cannot access Admin APIs.
+So, ACL is used to control access based on user permissions.
+
+## Difference between RBAC and ACL?
+## How would you implement role-based authorization in NestJS?
+## How do Angular route guards help with authorization?
+## Can Angular guards alone provide security?
+## Why must authorization also be implemented on the backend?
 
 # 2. OAuth2 — VERY IMPORTANT
-What is OAuth 2.0?
-Difference between OAuth2 and JWT?
-Is OAuth2 an authentication protocol?
-Explain the OAuth2 authorization code flow.
-What is an access token in OAuth2?
-What is a refresh token?
-What is the difference between OAuth2 and OpenID Connect (OIDC)?
-What is SSO?
-How does SSO work?
-What is the role of an Identity Provider (IdP)?
-What are SAML, OAuth2 and OIDC?
-When would you use SAML vs OIDC?
+
+## What is OAuth 2.0?
+=> OAuth 2.0 is an authorization protocol.
+In my current application, we use Microsoft SSO login as a real example.
+When user clicks on the SSO login button, user is redirected to Microsoft.
+Microsoft authenticates the user and provides the required token.
+Our application uses this token to access the required protected information.
+So, basically Microsoft SSO is a real-world example where OAuth 2.0 is used for authorization, and with OIDC it is also used for authentication.
+
+## Difference between OAuth2 and JWT?
+=> OAuth 2.0 is mainly used in the SSO login case, where we use a third-party Identity Provider like Microsoft to login to our application.
+In this case, we get an access token from the third-party provider and use it to access the required information.
+JWT is a token format. In our current application, backend can create a JWT using user details like user ID, username, role and expiry.
+Real-time example:
+OAuth 2.0 → Microsoft SSO login
+JWT → Our application backend creates and validates the application token
+So basically, OAuth 2.0 is the authorization flow, and JWT is the token format.
+
+## Is OAuth2 an authentication protocol?
+=> 
+No, OAuth 2.0 is mainly an authorization protocol.
+It is used to give an application permission to access protected resources.
+For authentication, we commonly use OIDC (OpenID Connect) on top of OAuth 2.0.
+For example, in our Microsoft SSO, OAuth 2.0 handles the authorization flow and OIDC handles the user authentication.
+
+## Explain the OAuth2 authorization code flow.
+=>
+First, user clicks on the SSO Login button in our application.
+Angular has the required Microsoft IdP configuration.
+After clicking the button, Angular creates the required login request/link and redirects the user to the Microsoft login page.
+User selects or enters their Microsoft account details and completes the login.
+Microsoft validates the user and returns an authorization code to our application.
+Angular sends this code to our backend.
+Backend sends the code to Microsoft and gets the required access token and other token information.
+We don't directly use the Microsoft token as our application login token.
+Backend validates the Microsoft response and checks whether the user is available/allowed in our application.
+If everything is valid, backend generates our application JWT token and returns it to Angular.
+Angular uses our application token for the current application's API requests.
+So the user is successfully logged into our application using Microsoft SSO.
+
+Basically:
+
+Angular → Microsoft Login → Authorization Code → Backend → Microsoft → Access Token → Validate User → Application JWT → Angular
+
+## What is an access token in OAuth2?
+## What is a refresh token?
+## What is the difference between OAuth2 and OpenID Connect (OIDC)?
+## What is SSO?
+## How does SSO work?
+## What is the role of an Identity Provider (IdP)?
+## What are SAML, OAuth2 and OIDC?
+## When would you use SAML vs OIDC?
 
 # 3. Angular Security — HIGH PRIORITY
-How do you secure an Angular application?
-What is an HTTP interceptor?
-How do you attach JWT to every API request using an interceptor?
-How do you handle 401 Unauthorized responses globally?
-How do you protect routes using CanActivate?
-Can a user bypass an Angular route guard?
-What is XSS?
-How can you prevent XSS in Angular?
-Why should you avoid using innerHTML with untrusted data?
-What is CSRF?
-How can CSRF attacks be prevented?
-What is CORS?
-Is CORS an authentication mechanism?
-How do you configure CORS in NestJS?
-What is Content Security Policy (CSP)?
+## How do you secure an Angular application?
+## What is an HTTP interceptor?
+## How do you attach JWT to every API request using an interceptor?
+## How do you handle 401 Unauthorized responses globally?
+## How do you protect routes using CanActivate?
+## Can a user bypass an Angular route guard?
+## What is XSS?
+## How can you prevent XSS in Angular?
+## Why should you avoid using innerHTML with untrusted data?
+## What is CSRF?
+## How can CSRF attacks be prevented?
+## What is CORS?
+## Is CORS an authentication mechanism?
+## How do you configure CORS in NestJS?
+## What is Content Security Policy (CSP)?
 
 # 4. Node.js / NestJS Security
 How do you secure a NestJS REST API?
@@ -231,15 +320,94 @@ Agent
 
 The backend should verify these permissions; hiding a button in Angular is not security.
 
-8. SSO / SAML / OIDC
-What is SSO?
-How does SSO work between Angular and backend?
-What is an Identity Provider?
-What is SAML?
-What is OIDC?
-Difference between SAML and OIDC?
-What happens when an SSO token expires?
-How would you integrate an enterprise SSO provider into Angular + NestJS?
+# 8. SSO / SAML / OIDC
+
+## What is SSO?
+=> SSO stands for Single Sign-On.
+Basically, SSO means user can login to different applications using one common login.
+For example, in my current application, we have used Microsoft SSO.
+User can login into our application using their Microsoft account.
+So user does not need to create a separate username and password for our application.
+Basically, Microsoft handles the user login and authentication, and after successful login, our application allows the user to access the application.
+So, one common login is used to access the application. This is called SSO.
+
+## How does SSO work between Angular and backend?
+=> 
+## OIDC SSO
+
+In our SSO case, we used OIDC, and most of the SSO flow was handled from the frontend side.
+For OIDC, some configuration details are provided by the Microsoft side, like client ID, tenant details, redirect URL, SSO/login URL and other configuration details.
+These details are configured in our frontend application.
+When the user clicks on the SSO Login button, the request goes to the Microsoft Identity Server.
+Microsoft opens the SSO login UI, and the user provides the required information and completes the login or two-step verification.
+After successful authentication, Microsoft sends a response back to our application. This response contains the required OIDC tokens, such as the ID token and access token.
+We don't directly use this Microsoft token as our application's token.
+We send the required token to our backend.
+Backend validates the Microsoft token and checks whether the user is valid and allowed to access our application.
+After successful validation, our backend generates our application JWT token and returns it to the frontend.
+Then frontend stores/uses our application token for the protected API requests.
+
+So basically the flow is:
+
+Angular → Microsoft SSO → User Authentication → OIDC Token → Backend → Token Validation → Application JWT → Angular
+
+This is how we completed the SSO login using OIDC.
+
+## SAML SSO
+
+We also used SAML for SSO.
+In the SAML case, most of the SSO-related processing was handled on the backend side.
+Frontend side, we mainly have the SSO Login button.
+When the user clicks the button, the request goes to our backend.
+Backend generates or provides the required SAML login URL, and frontend opens that URL.
+Then the Microsoft SSO login portal is opened.
+User provides the required information and completes the authentication.
+After successful authentication, Microsoft sends a SAML response in XML format.
+This SAML response goes back to our backend through the configured callback/ACS endpoint.
+Backend validates the SAML response and gets the required user information from the SAML assertion.
+After successful validation, backend generates our application JWT token.
+This application token is then returned to the frontend, and the user is logged into our application.
+
+So basically the SAML flow is:
+
+Angular → Backend → Microsoft SSO → User Authentication → SAML XML Response → Backend → Validate SAML Response → Application JWT → Angular
+
+So this overall process is called SSO login using SAML.
+
+### What is an Identity Provider?[idp]
+=> 
+Identity Provider means a service which handles user authentication and login.
+For example, in our application we used Microsoft as the Identity Provider.
+User clicks on SSO login, Microsoft authenticates the user, and sends the required token or response to our application.
+Then backend validates it and allows the user to login.
+
+
+### What is SAML?
+=> 
+SAML stands for Security Assertion Markup Language.
+It is mainly used for SSO authentication.
+In SAML, the authentication response is generally in XML format.
+In our project, we used Microsoft SSO with SAML.
+
+### What is OIDC?
+=> 
+OIDC stands for OpenID Connect.
+It is an authentication protocol built on top of OAuth 2.0.
+It is commonly used for SSO and user authentication.
+In our project, we used Microsoft SSO with OIDC, where we received tokens after successful login.
+
+### Difference between SAML and OIDC?
+=>Both are authentication protocols mainly used for SSO.
+The main difference is SAML uses XML-based responses, and in our project the SAML configuration and most of the processing was handled on the backend side.
+We used OIDC, where the SSO configuration was mainly done on the frontend side, and most of the SSO flow was handled from the frontend.
+After successful login, the backend validates the response/token and generates our application token.
+
+### What happens when an SSO token expires?
+=> When the SSO token expires, the token is no longer valid.
+Backend validates the token and returns 401 Unauthorized.
+Frontend detects the 401 response.
+Then frontend can refresh the token if refresh token is available, or redirect the user to the SSO login page again.
+After successful login, the user gets a new token and can continue using the application.
 
 # 9. Production Security Questions
 

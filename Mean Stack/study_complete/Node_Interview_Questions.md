@@ -1,11 +1,15 @@
-}}}What is differance between the nest framework and express framework.
+# What is differance between the nest framework and express framework.
+=> I have used both NestJS and ExpressJS.
+=> As per my experience, ExpressJS is a lightweight framework, so we need to manually create and configure the project.
+=> For example, first we use npm init -y, then the package.json and package-lock.json files are created. After that, we install the required packages based on our requirements and manually create the project structure.
+=> In NestJS, we have CLI commands, so project creation is much easier. We can create the project using the NestJS CLI and it provides the basic project setup.
+=> NestJS also provides a proper structure like modules, controllers, services, app.module.ts, and main.ts.
+=> So basically, ExpressJS gives us more flexibility and we need to create the structure manually, while NestJS provides a predefined and structured architecture with CLI support.
 ________________________________________________________________________________
-}}}Server Questions Asking by Interviewers
-________________________________________________________________________________
-}}}what is load balanced?
+# what is load balanced?
 -> “Load balancing is the process of balancing the client requests across multiple servers so that the complete load does not come on a single server. In this, all client requests are distributed to multiple servers, and every client can properly interact with the application and get a proper response without waiting. This process is called load balancing.”
 ---------------------------------------------------------------------------------------------------------------
-}}}how to scaling the server?
+# how to scaling the server?
 -> “Server scaling means increasing the server capacity so that multiple client requests are properly handled without interruption or waiting.
 
 So mainly we used two ways for scaling the server:
@@ -25,7 +29,7 @@ On the backend side also, NGINX is configured, and inside the configuration we u
 
 So using this way, in my project we handle multiple client requests efficiently.”
 ---------------------------------------------------------------------------------------------------------------
-}}}What is Round Robin?
+# What is Round Robin?
 ->“Round Robin is a load balancing algorithm. In this algorithm, client requests are handled one by one and distributed to different servers.
 
 For example, if we have three servers:
@@ -39,18 +43,17 @@ So in this way, requests are properly distributed and the complete load does not
 
 In my project also, we follow this Round Robin approach using NGINX for handling multiple client requests efficiently.”
 ---------------------------------------------------------------------------------------------------------------
-
-0.What is V8 Engine?
+# 0.What is V8 Engine?
 ->V8 Engine is an open-source JavaScript engine developed by Google, written in C++, and used to execute JavaScript code—mainly in Google Chrome (and also in Node.js).
 ---------------------------------------------------------------------------------------------------------------
-1.What is Node.js?
+# 1.What is Node.js?
 ->Node.js is a runtime environment that runs JavaScript on the server side.
 ---------------------------------------------------------------------------------------------------------------
-1.HOW TO NODE JS WORK?
+# 1.HOW TO NODE JS WORK?
 ->Node.js is the runtiming environment and they are write the javascript code , and they are executed to chrome v8 engine, that means javsacript code run on server side.
 ->basically javascript is the single threaded programing language but the with the help fo the libuv package the node.js are handling the multiple request at same timing. because libuv package contain the event loop and non-blocking I/O.
 ---------------------------------------------------------------------------------------------------------------
-2.What is event-driven programming in Node.js?
+# 2.What is event-driven programming in Node.js?
 ->Event-Driven programing means event handling concept in the backend side , it's same functionality like a event handling.
 
 ->they are contain the main three parts :- 
@@ -72,35 +75,35 @@ eventEmitter.on('eventOccured',(req,res)=>{
 
 eventEmitter.emit('eventOccured');
 ---------------------------------------------------------------------------------------------------------------
-3.How does Node.js handle asynchronous I/O operations?
+# 3.How does Node.js handle asynchronous I/O operations?
 ->The node.js are handle the asynchronous I/O Operation using the libuv package because of the libuv contain to the threads pool and event loop.
 ->Threads Pool 
 ->Event Loop
 ---------------------------------------------------------------------------------------------------------------
-4.What is Non-Blocking I/O In Node.JS?
+# 4.What is Non-Blocking I/O In Node.JS?
 ->Non-Blocking I/O means every client request or user request they are not deppend upon with each other they are parallelly executed.
 ->that the process is called the Non-Blocking I/O.
 ---------------------------------------------------------------------------------------------------------------
-5.Node js is single threaded language or multithreaded language?
+# 5.Node js is single threaded language or multithreaded language?
 ->In the Node.js is the Run Time Enviroment and they are used the jacascript for the execution and this javascript is the single threaded programing language, but the node js are used the libuv package and this libuv package are contain to the thread pool and event loop. so that the reason was the node.js are handling the multiple request at same timing.
 ---------------------------------------------------------------------------------------------------------------
-6.what is HTTP Module & Create a Server In Node JS?
+# 6.what is HTTP Module & Create a Server In Node JS?
 ->If we want to handle networking requests like GET, POST, UPDATE, DELETE, PATCH, we use the HTTP module.
 ->If we want to handle these requests in a secure way, we use the HTTPS module, but it needs an SSL certificate, which is usually purchased and contains a certificate file and password.
 ---------------------------------------------------------------------------------------------------------------
-7.What is URL MODULE IN NODE JS.
+# 7.What is URL MODULE IN NODE JS.
 ->URL is Uniform Resource Locator
 ->and The URL module is used to work with web addresses (URLs).
 ->URL module basically used to handle the request of the path they are occured to the frontend side like. 
 ->It helps to read, parse, and manage the parts of a URL, like the path, query, or parameters, when a user makes a request.
 ->In short, It helps Node.js understand and handle the user’s request URL.
 ---------------------------------------------------------------------------------------------------------------
-8.WHAT IS ROUTING IN NODE JS?
+# 8.WHAT IS ROUTING IN NODE JS?
 -> if you want to navigate to the one view to the another view that is called as the routing.
 -> but the backend side the routing means path of the client request 
 -> and this rquest wise which controller , services and reposotry are executed they are find and this service or controller are executed with the help of the routing.
 ---------------------------------------------------------------------------------------------------------------
-9.Types of Routes in Node.js (Using the Express JS).
+# 9.Types of Routes in Node.js (Using the Express JS).
 -> In Express, routes are based on HTTP methods:
 
 GET → Used to fetch or get data from the server.
@@ -109,7 +112,7 @@ PUT → Used to update all the data completely.
 PATCH → Used to update data partially, field by field.
 DELETE → Used to remove/delete data from the server.
 ---------------------------------------------------------------------------------------------------------------
-10.PATH MODULE IN NODE JS?
+# 10.PATH MODULE IN NODE JS?
 ->The Path module is used to work with file and directory paths.
 ->It helps Node.js find and manage files like .pdf, .json, etc.
 ->It has many functions to handle paths, for example:
@@ -119,10 +122,10 @@ DELETE → Used to remove/delete data from the server.
 In short:
 	The Path module helps work with and manipulate file paths easily in Node.js.
 ---------------------------------------------------------------------------------------------------------------
-11.What is Module Scope & Module Wrapper Function In Node JS?
+# 11.What is Module Scope & Module Wrapper Function In Node JS?
 ->Module Scope means in the single folder contain to the number of the js files and this files contian to the data member and member function are there , so this is the one module scope , and this module are used to the another module so we can used to the import or export functionality are used.
 ---------------------------------------------------------------------------------------------------------------
-12.What is Module Wrapper Function in Node.js
+# 12.What is Module Wrapper Function in Node.js
 ->In a single JS file, we can write the same data members and member functions using the module wrapper function.
 ->We just use circular braces ( ) and write the code inside.
 ->If we want another set of data members and functions, we can create one more circular braces and write code inside it.
@@ -149,7 +152,7 @@ In short:
     greet(); // Output: Welcome to NodeJS
 })();
 ---------------------------------------------------------------------------------------------------------------
-13.What is CallBack Function?
+# 13.What is CallBack Function?
 -> The function passed as an argument to the another function that is called as the CallBack function.
 
 funtion show(callback) --> Higher Order function 
@@ -164,10 +167,10 @@ function newShow()
 
 show(newShow);
 ---------------------------------------------------------------------------------------------------------------
-14.Why Used CallBack Function?
+# 14.Why Used CallBack Function?
 -> The callback function are used to the handling the asychrounous operation in the node.js .
 ---------------------------------------------------------------------------------------------------------------
-15.What is Callback Hell (Pyramid of Doom):
+# 15.What is Callback Hell (Pyramid of Doom):
 ->A callback function calls another callback, and that one calls another callback, making nested callbacks.
 ->This is called Callback Hell or Pyramid of Doom.
 ->To avoid it, we can use Promises or async/await.
@@ -224,7 +227,7 @@ async function callWait(){
 
 callWait();
 ---------------------------------------------------------------------------------------------------------------
-16.What is the purpose of the EventEmitter in Node.js, and how do you use it?
+# 16.What is the purpose of the EventEmitter in Node.js, and how do you use it?
 ->Event Emitter basically used in the node.js they are creating the custom events in the node.js . 
 ->and there are three main parts event emitter,event listner and event handler.
 
@@ -237,7 +240,7 @@ eventEmitter.on('greet',()=>{
 
 eventEmitter.emit('greet');
 ---------------------------------------------------------------------------------------------------------------
-17.What is Libuv & Thread Pool In Node Js?
+# 17.What is Libuv & Thread Pool In Node Js?
 -> Libuv is a library which is created using C language.
 -> C language is directly supported by the system kernel.
 -> This kernel manages the CPU cores.
@@ -245,11 +248,11 @@ eventEmitter.emit('greet');
 -> These threads work together and that is called the thread pool.
 -> With the help of the Libuv library, JavaScript handles asynchronous I/O operations in Node.js. because of Libuv package contain the threads pool and event loop.
 ---------------------------------------------------------------------------------------------------------------
-18.What is Network I/O in Node Js?
+# 18.What is Network I/O in Node Js?
 -> If you want to handle networking concepts in Node.js, you can use the http and https modules.
 -> These modules are used to handle network I/O operations, like sending requests and receiving responses over the network.
 ---------------------------------------------------------------------------------------------------------------
-19.How does the Node.js event loop work, and why is it important?
+# 19.How does the Node.js event loop work, and why is it important?
 -> Node.js contains both synchronous and asynchronous functions.
 -> These functions are executed and stored in the call stack.
 -> Asynchronous functions take more time for execution, so their requests go to another server or database.
@@ -259,13 +262,13 @@ eventEmitter.emit('greet');
 -> Through callbacks, the response is provided.
 -> the event loop is important because of it's allows Node.js to handle non-blocking and asynchronous operations efficiently. 
 ---------------------------------------------------------------------------------------------------------------
-20.What do you mean by event loop in Node.js?
+# 20.What do you mean by event loop in Node.js?
 -> Event loop continuously checks whether the call stack is empty or not.
 -> If the call stack is empty, then it passes callbacks to the call stack.
 -> After that, those callbacks are executed.
 -> The main importance of the event loop is that it passes callbacks to the call stack based on priority.
 ---------------------------------------------------------------------------------------------------------------
-21.Explain about the Event Loop Phases in Node.JS?
+# 21.Explain about the Event Loop Phases in Node.JS?
 -> There are six phases in the Node.js event loop.
 -> timers, pending callbacks , Idle / Prepare , Poll, Check, Close CallBacks
 -> These phases are executed priority-wise.
@@ -277,27 +280,27 @@ eventEmitter.emit('greet');
 -> 5.Check → This phase executes the setImmediate callback.
 -> 6.Close Callbacks → This phase is used to close callback resources when they are used.
 ---------------------------------------------------------------------------------------------------------------
-22.How to Asynchronouse Code are Executed?
+# 22.How to Asynchronouse Code are Executed?
 -> Asynchronous code is executed in Node.js using the Libuv package.
 -> Libuv contains the thread pool and the event loop.
 -> With the help of the thread pool and event loop, Node.js executes asynchronous code in a non-blocking way.
 ---------------------------------------------------------------------------------------------------------------
-23.What is the Micro-Task Queue? 
+# 23.What is the Micro-Task Queue? 
 -> Micro-tasks are executed before the event loop.
 -> It contains the nextTick queue and the Promise queue.
 -> First nextTick is executed, then Promise callbacks.
 -> After that, the event loop (macro tasks) execution starts.
 ---------------------------------------------------------------------------------------------------------------
-24.What is Macro Task Queue?
+# 24.What is Macro Task Queue?
 -> Macro task queue means the event loop phases in Node.js.
 -> In the macro task queue, all event loop phase queues are executed one by one.
 ---------------------------------------------------------------------------------------------------------------
-25.Can you explain the differences between process.nextTick() and setImmediate()?
+# 25.Can you explain the differences between process.nextTick() and setImmediate()?
 -> process.nextTick() has the first priority for execution, setImmediate() executes after.
 -> process.nextTick() is part of the micro-task, setImmediate() is part of the macro-task.
 -> First, the process.nextTick queue is executed, then the setImmediate queue.
 ---------------------------------------------------------------------------------------------------------------
-26.What are streams in Node.js, and what are their different types?
+# 26.What are streams in Node.js, and what are their different types?
 ->Streams is a process: they are working with file data step by step.
 ->Instead of loading the overall file data at a single timing, streams handle data piece by piece (chunk by chunk).
 ->This means you can start working on the data while it’s still coming in, without waiting for the full file to finish loading.
@@ -307,7 +310,7 @@ eventEmitter.emit('greet');
 ---------------------------------------------------------------------------------------------------------------
 -------------------------------------------Implement this Concept ---------------------------------------------
 ---------------------------------------------------------------------------------------------------------------
-27.How do you implement caching in a Node.js application?
+# 27.How do you implement caching in a Node.js application?
 -> We can use Redis (open-source library) or a temp.json file to store cached data in a Node.js application.
 -> If you want caching, you can create a temp.json file or use the Redis library to handle caching.
 
@@ -317,13 +320,13 @@ eventEmitter.emit('greet');
 -> so that reason the responce timing is less because of they are not perform DB operation.
 -> we used radis or temp.json file so our DB Operation save.
 ---------------------------------------------------------------------------------------------------------------
-50.what is redis?
+# 50.what is redis?
 -> Redis is an open-source in-memory database.
 -> It is used for memory management in Node.js applications.
 -> Mainly Redis is used to handle caching, so data can be stored in memory and accessed very fast.
 -> With the help of Redis, we can save our database data in memory and reduce database calls.
 ---------------------------------------------------------------------------------------------------------------
-51. How is Redis used?
+# 51. How is Redis used?
 -> Redis is mainly used for caching data.
 Flow:
 -> First, the application checks data in Redis.
@@ -332,7 +335,7 @@ Flow:
 -> Then the data is stored in Redis for future use.
 -> This helps to improve performance and reduce database load.
 ---------------------------------------------------------------------------------------------------------------
-28.What is load balancing, and how would you implement it in a Node.js environment?
+# 28.What is load balancing, and how would you implement it in a Node.js environment?
 -> Load balancing means handling the client request traffic so that server is not overloading or not a crashed.
 -> As per my experience, I have seen load balancing in two ways: frontend side and backend side.
 🔀 Frontend Side (Nginx Reverse Proxy)
@@ -346,7 +349,7 @@ Flow:
 	One core means one process, and each process works like a worker thread.
 	So when client requests come, they are handled by these worker processes, and this is backend side load balancing.
 ----------------------------------------------------------------------------------------------------------------
-29.what is cluster module?
+# 29.what is cluster module?
 -> Cluster module is used to handling the cores of system.
    By default, Node.js  is single-threaded, that means only one core is used.
    With the help of cluster module, we create multiple processes using the system cores.
@@ -363,7 +366,7 @@ Flow:
 	That worker handles the request and gives back the response.
 	This process works with the help of async functions, promises, and callback functions.->The Cluster module in Node.js is used to run the application using all available CPU cores.
 ---------------------------------------------------------------------------------------------------------------
-29.What security concerns should you be aware of when developing a Node.js application?
+# 29.What security concerns should you be aware of when developing a Node.js application?
 --> JWT for login case → I will use JSON Web Token for secure login sessions.
 --> Load balancing → Helps to manage multiple client requests so no single server is overloaded.
 --> Rate-limiting → Protects against brute-force attacks and too many requests from one client.
@@ -374,7 +377,7 @@ Flow:
 --> ORM instead of raw queries → ORM helps to avoid SQL injection and makes database queries safer.
 --> Stored procedure → For database operations, I also use stored procedures. This adds another layer of security because the logic is inside the database, and it ---> reduces the chance of SQL injection compared to writing raw queries directly in code.
 ---------------------------------------------------------------------------------------------------------------
-29.0.🔹]]] What is Load Balancing in Node.js?
+# 29.0.🔹]]] What is Load Balancing in Node.js?
 ->Node.js runs on one CPU core by default.
 ->Cluster allows Node.js to:
 	Create multiple worker processes
@@ -392,12 +395,12 @@ Flow:
 
 👉 Each worker handles some requests.
 ---------------------------------------------------------------------------------------------------------------
-30.How do you handle versioning in a Node.js API?
+# 30.How do you handle versioning in a Node.js API?
 we can used the v1 or v2 for handling the veriosn in the node.js 
 ->some time old api are used to the old customer and that timing they are not need to the new feauters but they are working this api, some new customer are create the new api for the some features add and they are not blobk the api for using the version in the node.js
 ->in my current project i handle version using the v1,v2 routes in that cases the old user are used the old api and current api version are changes so the new customer are used the newest api and they are some enhancement are write to this api and handling to using the v1 and v2 rougin process.
 ---------------------------------------------------------------------------------------------------------------
-31.What is PM2 ?
+# 31.What is PM2 ?
 ->PM2 is basically a production process manager for Node.js apps.
 
 It is used to:
@@ -426,16 +429,16 @@ Auto-start after server reboot
 pm2 startup
 pm2 save
 ---------------------------------------------------------------------------------------------------------------
-31.What is the difference between Buffer and Stream in Node.js?
+# 31.What is the difference between Buffer and Stream in Node.js?
 ->they both are used to the handling the file regarding process in the node.js server.
 ->the main differance is 
 ->Use Buffer for small files or quick manipulation
 ->Use Stream for large files or continuous data
 ---------------------------------------------------------------------------------------------------------------
-32.what are state in promise?
+# 32.what are state in promise?
 -> There are the three state of the promises resolved, rejected and pending.
 ---------------------------------------------------------------------------------------------------------------
-33.what are used promise.all()?
+# 33.what are used promise.all()?
 ->Promise.all() is used to execute all promises, and if one promise fails, the overall output fails.
 
 const promise_1 = new Promise((resolve, reject) => {
@@ -458,7 +461,7 @@ Promise.all([promise_1, promise_2, promise_3])
     console.log(error);
   })
 ---------------------------------------------------------------------------------------------------------------
-34.What is vertical scaling and horizontal scaling?
+# 34.What is vertical scaling and horizontal scaling?
 ->Vertical scaling means a single server handles more load, so we increase the hardware parts like RAM, CPU, or storage.
 ->Horizontal scaling means multiple servers are used to handle the load.
 
@@ -466,11 +469,11 @@ Example :-
 ->When server side is only Node.js running on a single server, and to handle more load we increase CPU, RAM, or storage, this is a vertical scaling example.
 ->When Node.js is used with NGINX, and multiple Node.js servers are running behind NGINX to handle the load, this is a horizontal scaling example.
 ---------------------------------------------------------------------------------------------------------------
-35.How do you use the cluster module to scale a Node.js application?
+# 35.How do you use the cluster module to scale a Node.js application?
 ->Cluster module in Node.js is used to scale an application by creating multiple worker processes.
 It uses the system’s logical CPU cores to fork worker processes, so the load is distributed across all cores.
 ---------------------------------------------------------------------------------------------------------------
-36.What difference between monolithic Architecture and microservice Architecture?
+# 36.What difference between monolithic Architecture and microservice Architecture?
 ->As per my experience, I have worked with both monolithic and microservices architectures.
 On the frontend side, the application follows a monolithic architecture, while on the backend side, I have used microservices architecture, where the Saga pattern is used to manage distributed transactions.
 ->On the backend side, services like read service, write service, API Gateway, audit log service, and Prometheus monitoring are implemented as independent microservices.
@@ -503,7 +506,7 @@ These services work independently and communicate with each other using RabbitMQ
 	If Payment Service fails, users cannot pay, but they can still browse products or login.
 	Each service can be developed, deployed, and scaled separately.
 ---------------------------------------------------------------------------------------------------------------
-37.How to share data between two services?
+# 37.How to share data between two services?
 ➡️ API communication (REST):
 In this case, service APIs are used for sending and receiving data between services. One service calls another service API and uses the data.
 
@@ -517,7 +520,7 @@ WebSocket is also used for communication between two or more services. In this c
 ➡️ Shared Database (not recommended):
 Sharing the database is not recommended because services become dependent on each other.
 ---------------------------------------------------------------------------------------------------------------
-38.What is the Synchronous and Asynchronous Programing Languages ?.
+# 38.What is the Synchronous and Asynchronous Programing Languages ?.
 ➡️ Synchronous Programming Language:
 In synchronous programming, functions are executed one by one, and each function waits for the previous function to complete.
 
@@ -533,7 +536,7 @@ This is the process of synchronous programming.
 In asynchronous programming, functions are executed independently and do not wait for each other.
 Multiple functions can be executed in parallel or non-blocking way.
 ---------------------------------------------------------------------------------------------------------------
-38.Differance bwtween the require and import?
+# 38.Differance bwtween the require and import?
 ➡️ Both require and import are used to import modules into our JavaScript file.
 
 Comman Differance is :- 
@@ -543,16 +546,16 @@ Comman Differance is :-
 
 require is part of the older CommonJS module system (used in Node.js), while import is part of the modern ES6 (ECMAScript Module) system used in modern JavaScript.
 ---------------------------------------------------------------------------------------------------------------
-39.Explain the concept of middleware in Node.js.
+# 39.Explain the concept of middleware in Node.js.
 ➡️ Middleware is the mid part between the user request and the server.
 ➡️ Before the request reaches the server, it first occurs in the middleware, where request validation, token checking, route type, and headers are verified.
 ➡️ After everything is ok so then, with the help of next(), the request goes to the server.
 ---------------------------------------------------------------------------------------------------------------
-40.How do you optimize the performance of a Node.js application?
+# 40.How do you optimize the performance of a Node.js application?
 ➡️ I use asynchronous programming and handle I/O-intensive work instead of CPU-intensive work.
 ➡️ I use async/await and promises to create asynchronous functions, which helps keep the application fast and non-blocking.
 ---------------------------------------------------------------------------------------------------------------
-41.What is Web Socket ? 
+# 41.What is Web Socket ? 
 ➡️ WebSocket is a continuous, real-time communication between the client and the server, allowing data to be sent and received without creating new requests.
 
 Real Time Senario :- 
@@ -567,13 +570,13 @@ Real Time Senario :-
 	Listen using .on() → receive data or events on either side.
 	Handle requirements → perform actions like updating UI, sending notifications, or processing messages.
 ---------------------------------------------------------------------------------------------------------------
-42.How do you handle non blocking operations in Node.js?
+# 42.How do you handle non blocking operations in Node.js?
 -> In Node.js, non-blocking operations are handled using async/await and promises.
 
 -> Non-blocking I/O means the operation does not wait for other operations to complete.
 Multiple client requests are executed independently and do not depend on each other, so the server can handle many requests at the same time.
 ---------------------------------------------------------------------------------------------------------------
-43.How can you prevent SQL injection in a Node.js application?
+# 43.How can you prevent SQL injection in a Node.js application?
 ->To prevent SQL injection in Node.js:
 	➡️Use parameterized queries
 	➡️Validate user input or data
@@ -581,14 +584,14 @@ Multiple client requests are executed independently and do not depend on each ot
 	➡️Avoid raw SQL queries
 	➡️Use stored procedures
 ---------------------------------------------------------------------------------------------------------------
-44.How would you handle data encryption in a Node.js project?
+# 44.How would you handle data encryption in a Node.js project?
 ➡️Use HTTPS/SSL to encrypt data in transit
 ➡️Use bcrypt to hash passwords
 ➡️Use crypto module for encrypting sensitive data
 ➡️Store secrets and keys in environment variables
 ➡️Use JWT with signed tokens for authentication
 ---------------------------------------------------------------------------------------------------------------
-45.How would you connect to a PostgreSQL database in a Node.js app?
+# 45.How would you connect to a PostgreSQL database in a Node.js app?
 	const { Pool } = require('pg');
 
 	const pool = new Pool({
@@ -607,7 +610,7 @@ Multiple client requests are executed independently and do not depend on each ot
 		console.log("Error connecting to the database : ", error);
 	});
 ---------------------------------------------------------------------------------------------------------------
-46.What are the differences between using an ORM and raw SQL queries in Node.js?
+# 46.What are the differences between using an ORM and raw SQL queries in Node.js?
 ✅ Code-First Approach
 	First, we write the code (models/entities)
 	Then we run the code
@@ -628,7 +631,7 @@ Database → Code (manually mapped)
 
 => Code-first with ORM is good for fast development and simple CRUD operations, but for complex data and performance-critical queries, using raw SQL queries is a better and more reliable option.
 --------------------------------------------------------------------------------------------------------------
-47.How would you handle database connection pooling in a Node.js application?
+# 47.How would you handle database connection pooling in a Node.js application?
 ->create a connection node and database they are need to crating the pool 
 
 const {Pool} = require('pg');
@@ -649,10 +652,10 @@ pool.connect()
 		console.log('Database Not Connected..!');
 	});
 ---------------------------------------------------------------------------------------------------------------
-48. How would you connect to a MongoDB database in a Node.js app?
+# 48. How would you connect to a MongoDB database in a Node.js app?
 => ]]]]
 ---------------------------------------------------------------------------------------------------------------
-49.How would you implement rate limiting in a Node.js API?
+# 49.How would you implement rate limiting in a Node.js API?
 ✅Rate Limiting in Node.js :-
 ->If you want to use rate limiting in our application, first install the express-rate-limit module and use it in the Node.js app.
 ->We set how many times a single IP can hit an API.
@@ -697,7 +700,7 @@ Example :-
 	});
 
 ---------------------------------------------------------------------------------------------------------------
-50.What is JWT?
+# 50.What is JWT?
 ->JWT stands for JSON Web Token.
 ->JWT is used for creating tokens, which help the client and server communicate securely.
 ->They are commonly used in applications for authentication and authorization.
@@ -719,18 +722,18 @@ const userInfo = {
 const token = jwt.sign(userInfo, secret_key, { expiresIn: 120 });
 console.log("Token :- ", token);
 ---------------------------------------------------------------------------------------------------------------
-51.How JWT Works?
+# 51.How JWT Works?
 ->JWT is used for secure communication between client and server.
 ->For every request, the token is sent securely from client to server.
 ->From the token, the server knows which type of user is hitting the request.
 ---------------------------------------------------------------------------------------------------------------
-52.Explain the structure of a JWT.?
+# 52.Explain the structure of a JWT.?
 ->JWT structure contains Header, Payload, and Signature, which together make the token secure.
 ---------------------------------------------------------------------------------------------------------------
-53.What are the three parts of a JWT?
+# 53.What are the three parts of a JWT?
 -> JWT has three parts: Header, Payload, and Signature.
 ---------------------------------------------------------------------------------------------------------------
-54.How do you create a JWT in Node.js?
+# 54.How do you create a JWT in Node.js?
 -> if you want to create the JWT Token in the node.js so we can used the jsonwebtoken module and that module are contain to the sign method.
 
 Example :- 
@@ -744,14 +747,14 @@ const userInfo = {
 const token = jwt.sign(userInfo, secret_key, { expiresIn: 120 });
 console.log("Token :- ", token);
 ---------------------------------------------------------------------------------------------------------------
-55.What is the purpose of the header in a JWT?
+# 55.What is the purpose of the header in a JWT?
 ->The JWT header is used to identify the request type, such as mobile or browser, and helps in handling authentication.
 ---------------------------------------------------------------------------------------------------------------
-56.What's config in Node.js ?
+# 56.What's config in Node.js ?
 → A config file in Node.js is used to store application configuration details like database connection, Redis settings, API keys, ports, and environment variables.
 → It helps to separate configuration from business logic, making the application easy to manage, secure, and environment-specific (development, testing, production).
 ---------------------------------------------------------------------------------------------------------------
-57.What's optional in TypeScript?
+# 57.What's optional in TypeScript?
 → Optional in TypeScript means parameters are not required for a function to work.
 → It is defined using the ? symbol.
 → Optional parameters allow a function to be called with or without that parameter.
@@ -762,16 +765,16 @@ function greet(name?: string) {
 }
 → Here, name is optional, so the function works even if the parameter is not passed.
 ---------------------------------------------------------------------------------------------------------------
-58.What are nullables in TypeScript?
+# 58.What are nullables in TypeScript?
 -> In TypeScript, nullables refer to the types that can have a value of null or undefined.
 ---------------------------------------------------------------------------------------------------------------
-59.]] TypeScript is used in nodejs applicaion?
+# 59.]] TypeScript is used in nodejs applicaion?
 	npm init -y
 	npm install typescript ts-node @types/node --save-dev
 	npx tsc --init
 => with the help of this command we can used the typescript in the node.js project.
 ---------------------------------------------------------------------------------------------------------------
-59.What is an interface?(if there is 2 inteface like user and user address how will you map)?
+# 59.What is an interface?(if there is 2 inteface like user and user address how will you map)?
 → Interface is used to define the structure of an object.
 → If there are two interfaces (like User and UserAddress), you can map them by referencing one interface inside another.
 
@@ -790,20 +793,20 @@ interface User {
 → Here, User is mapped with UserAddress using the address property.
 → This helps to organize data, reuse interfaces, and keep the structure clear.
 ---------------------------------------------------------------------------------------------------------------
-60.Could you explain package.json?
+# 60.Could you explain package.json?
 ->pcakges.json are stored the dependencies of the our node applcaiotn.
 ---------------------------------------------------------------------------------------------------------------
-61.Could you explain the packages used for file uploading in Node.js?
+# 61.Could you explain the packages used for file uploading in Node.js?
 → For file uploading in Node.js, we commonly use the multer module.
 → Multer is used to handle multipart/form-data and upload files in a Node.js application.
 → In this case, the files are stored on the server or cloud storage, and only the file path or file URL is stored in the database.
 → This is a good practice because it improves performance, security, and scalability
 ---------------------------------------------------------------------------------------------------------------
-62.Current nodejs version ?
+# 62.Current nodejs version ?
 ->current node.js version is v25
 ->in the my current project i have used the v21
 ---------------------------------------------------------------------------------------------------------------
-63.Rest api in node (explain flow)?
+# 63.Rest api in node (explain flow)?
 → First, a client like mobile app, browser, or Postman sends an HTTP request.
 → The request type can be GET, POST, PUT, or DELETE.
 → The request reaches the Node.js server.
@@ -815,7 +818,7 @@ interface User {
 → Finally, the controller sends the response back to the client in JSON format.
 👉 This is the overall flow of a REST API in Node.js.
 ---------------------------------------------------------------------------------------------------------------
-64.Difference between import and require?
+# 64.Difference between import and require?
 → Both import and require are used to import modules into the current JavaScript file.
 → import is part of ES6 (latest JavaScript) and is mainly used in modern Node.js and frontend frameworks.
 → require is part of CommonJS and was used in older versions of Node.js.
@@ -823,7 +826,7 @@ interface User {
 → require works with dynamic imports and loads modules at runtime.
 👉 So, import is the modern way, and require is the older Node.js approach.
 ---------------------------------------------------------------------------------------------------------------
-65.Difference between find and filter?
+# 65.Difference between find and filter?
 → Both find and filter are JavaScript array methods used to perform operations on data.
 → find() :- 
 	Used to find the first matching element in an array
@@ -839,12 +842,12 @@ const arr = [12,23,34,45,46,67];
 const number_1 = arr.find((data)=>{return data>23});//34 return only match values otherwise return undefined 
 const number_2 = arr.filter((data)=>{return data>23});//34,35,36,67 they are return arrays other wise empty array 
 ---------------------------------------------------------------------------------------------------------------
-66.Any encryption algorithm you have used?
+# 66.Any encryption algorithm you have used?
 → Yes, I have used the bcrypt module for encrypting user passwords before storing them in the database.
 → This module uses salt and a hashing algorithm to make the passwords secure and hard to crack.
 → During login, the hashed password is compared instead of decrypting it.
 ---------------------------------------------------------------------------------------------------------------
-66.Any encryption algorithm you have used? 
+# 66.Any encryption algorithm you have used? 
 -> Yes , In the My Current Application WPS they are used the Encryption alogorith AES and SHA-256 are used for the encrypted data are stored the databases.
 
 const bcrypt = require('bcrypt');
@@ -854,25 +857,25 @@ bcrypt.hash('Vishal@123', 10, (err, hash) => {
   console.log(hash);
 });
 ---------------------------------------------------------------------------------------------------------------
-69.Difference between async await and promise ?
+# 69.Difference between async await and promise ?
 -> async/await and promise both are the concept of the javascript for handling the asynchronouse operation in node.js 
 -> so async is used for declared the function as a asycnhronous and await is used for pause the execution of code 
 -> and promise is the object is javacript they are always return the three main state resolved,rejected and pending.
 ---------------------------------------------------------------------------------------------------------------
-71.Do you know about scheduling in Node Js ?
+# 71.Do you know about scheduling in Node Js ?
 -> Yes, I know about scheduling in Node.js  for timing-related tasks. The concept is to set a specific time, and at that time the event will be triggered — that is the idea of scheduling in Node.js. . For this, we can use setTimeout, setInterval, and also the node-cron module for scheduling.
 -> In my last project, I used scheduling for tasks like reporting and data dumping. These tasks were set to specific timings, and at those times they were triggered and performed the required actions.
 ----------------------------------------------------------------------------------------------------------------
-72.Have you used typescript in node JS?
+# 72.Have you used typescript in node JS?
 -> Yes, I have used TypeScript in Node.js, but it is not set up by default. So we need to install third-party packages to configure and use TypeScript properly in a Node.js  application.
 ----------------------------------------------------------------------------------------------------------------
-73.how do you validate the request body in node.js? Any  package for that?
+# 73.how do you validate the request body in node.js? Any  package for that?
 -> Validation in Node.js  can be done in different ways like manual validation, middleware validation, and also by using packages. In my projects, I have used manual validation for simple checks, middleware validation to handle request data before reaching the controller, and also express-validator package for validating the user request body in a structured way.
 ----------------------------------------------------------------------------------------------------------------
-74.have you created swagger in node js?
+# 74.have you created swagger in node js?
 ->Yes, I can used the Swagger in the node.Js and In the my current Node application i can used the swagger for the collection of the api's for the third party integration case and also the used the postman tool to hit the api.
 ----------------------------------------------------------------------------------------------------------------
-75.Fat arrow function of JavaScript?
+# 75.Fat arrow function of JavaScript?
 -> Fat arrow function is called the arrow function in JavaScript. As compared to regular functions, the lines of code are less, making them shorter and cleaner. Arrow functions also have their own lexical this, which means they don’t bind this dynamically like regular functions — instead, they inherit it from the surrounding scope.
 
 Example :- 
@@ -889,10 +892,10 @@ const arrowFunction = (a,b) => {
 regularFunction();
 arrowFunction(23,78);
 ---------------------------------------------------------------------------------------------------------------
-76.How to achieve Concurrency  in Node JS.?
+# 76.How to achieve Concurrency  in Node JS.?
 -> In Node.js  to achieve concurrency we can use event-driven programming and non-blocking I/O operations. Node.js  is mostly used for I/O intensive work instead of CPU-intensive work because of its single-threaded nature. For handling asynchronous tasks, we use async/await and Promise keywords to create asynchronous functions, which allow multiple operations to run concurrently without blocking the main thread.
 ---------------------------------------------------------------------------------------------------------------
-77.What is used of reduce method.
+# 77.What is used of reduce method.
 -> reduce is a JavaScript array method used to process all elements in an array and return a single value as the result.
 -> It is commonly used for calculations, like sum, product, or combining values from the array.
 
@@ -907,24 +910,24 @@ const value = arr.reduce((acc,data)=>{
 
 console.log(value);
 ---------------------------------------------------------------------------------------------------------------
-78.What are some ways to handle errors in a Node.js application?
+# 78.What are some ways to handle errors in a Node.js application?
 -> In a Node.js application, we can handle errors using try-catch blocks.
 -> The risky code is written in the try block, and the error-handling code is written in the catch block.
 -> If we are using resources (like files, DB connections), we can use a finally block to release or close them.
 -> In Node.js, errors can also be handled globally using middleware (in frameworks like Express).
 -> Additionally, errors can be handled manually in each service or controller.
 ---------------------------------------------------------------------------------------------------------------
-79.How can you prevent SQL injection in a Node.js application?
+# 79.How can you prevent SQL injection in a Node.js application?
 -> prevent SQL injection so i used the SP and parameterized queries. and also used ORM.
 ---------------------------------------------------------------------------------------------------------------
-80.What is SQL Injection?
+# 80.What is SQL Injection?
 ->SQL Injection is breaking SQL conditions to access an account without the actual password.
 ->SQL Injection is possible when we do not use parameterized queries or stored procedures and use simple queries without validation.
 ->In that case, an attacker or hacker breaks the SQL queries, and without authentication, they can get database data or insert data.
 ->This whole process is called SQL Injection.
 ->To avoid SQL Injection, we should use ORM, stored procedures, and parameterized queries.
 ---------------------------------------------------------------------------------------------------------------
-81.How do you handle authentication and authorization securely in a Node.js app?
+# 81.How do you handle authentication and authorization securely in a Node.js app?
 ->"Authentication is the process of checking if user is logged in or not using JWT Token. In case JWT token expires, user cannot login or access our application.
 ->Authorization uses RBAC to handle permissions." that means which type of the user they are access the which type of the module.
 
@@ -938,7 +941,7 @@ console.log(value);
 
 
 ---------------------------------------------------------------------------------------------------------------
-49.How would you implement rate limiting in a Node.js API?}}}}}IMP}}}}}
+# 49.How would you implement rate limiting in a Node.js API?}}}}}IMP}}}}}
 ✅Rate Limiting in Node.js :-
 ->If you want to use rate limiting in our application, first install the express-rate-limit module and use it in the Node.js app.
 ->We set how many times a single IP can hit an API.
@@ -982,17 +985,17 @@ Example :-
 	console.log('Node server running on port 3000');
 	});
 ---------------------------------------------------------------------------------------------------------------
-81.What is express-rate-limit module used & What is DDoS ?
+# 81.What is express-rate-limit module used & What is DDoS ?
 -> Multiple clients send multiple fake requests and they are not handled so server crashes. We use express-rate-limit to prevent DDoS attack. It blocks multiple requests sent by one client."
 ---------------------------------------------------------------------------------------------------------------
-82.What are some common security best practices for securing an Express.js application?
+# 82.What are some common security best practices for securing an Express.js application?
 -> used express-rate-limit = prevents brute force/DDoS
 -> used bcrypt package = secure password hashing
 -> used HTTPS over HTTP = encrypts data
 -> prevent SQL Injection = for critical security
 -> used Stored procedures = safe database queries
 ---------------------------------------------------------------------------------------------------------------
-83.How would you handle data encryption in a Node.js project?
+# 83.How would you handle data encryption in a Node.js project?
 -> "In Node.js, we handle encryption using the bcrypt module. 
 -> In real-time scenario, user passwords are stored in encrypted format in the database, so we use bcrypt module. 
 -> Also use SHA-256 algorithm, AES, and optimization techniques."
@@ -1001,10 +1004,10 @@ Example :-
 	AES = symmetric encryption
 	Real Time scenario = password storage
 ---------------------------------------------------------------------------------------------------------------
-84.What is the difference between the package.json and package-lock.json?
+# 84.What is the difference between the package.json and package-lock.json?
 ->"Both package.json and package-lock.json are created when the Node project is created. package.json contains the path of dependencies our Node.js project and package-lock.json contains path of their sub-dependencies of the project."
 ---------------------------------------------------------------------------------------------------------------
-85.How do you create a custom Node.js module, and how would you share it across projects?
+# 85.How do you create a custom Node.js module, and how would you share it across projects?
 -> To create a custom module, I use exports and import keywords.
 -> With the help of the require keyword, that custom module is used in the entire application.
 
@@ -1016,22 +1019,22 @@ Example :-
 	Using it:
 	const { myFunction } = require('./myModule');  // Import
 ---------------------------------------------------------------------------------------------------------------
-86.Types of module in Node.js ?
+# 86.Types of module in Node.js ?
 ->Core modules (built-in): http, https, fs, path, os
 ->Third-party modules: nodemon, pg (npm install needed)  
 ->Custom modules: Created by programmer by there requirements wise
 ---------------------------------------------------------------------------------------------------------------
-87.Alternative Way of Nodemon in Node.js ?
+# 87.Alternative Way of Nodemon in Node.js ?
 -> Alternative way of Nodemon: node --watch index
 -> Nodemon needs to download nodemon module and configure in package.json file. But using --watch, there is no need to install any package and no need for configuration.
 ---------------------------------------------------------------------------------------------------------------
-88.How to Improving the performance of a Node.js server.
+# 88.How to Improving the performance of a Node.js server.
 -> "To improve Node.js server performance:
 ✅ Use asynchronous functions using async and await
 ✅ Write I/O intensive work and avoid CPU intensive work
 ✅ Increase thread pool using UV_THREAD_POOL_SIZE
 ---------------------------------------------------------------------------------------------------------------
-89.What is the promises?
+# 89.What is the promises?
 ->Promises is the javascript object and they are used to handling the asynchronous operation in the node.js and they are provided the three main state resolved, rejected and pending.
 
 const myPromise = new Promise((resolve,reject) => {
@@ -1048,7 +1051,7 @@ myPromise.then((result) => {
     console.log("Error :- ",error);
 });
 ---------------------------------------------------------------------------------------------------------------
-90.What is the asyn/await?
+# 90.What is the asyn/await?
 -> Async/await is used to handle asynchronous operations in Node.js. They were introduced in ECMAScript 6 (ES6). async makes a function asynchronous, and await pauses code execution until a Promise completes.
 
 Example :- 
@@ -1063,19 +1066,19 @@ async function simpleWork(){
     console.log("Work done!");        
 }
 ---------------------------------------------------------------------------------------------------------------
-91.Difference between the promise and asyc/await?
+# 91.Difference between the promise and asyc/await?
 ->promises and async/await both are the core concept of the javsacropt.
 ->the promise is the object of the javascript and they are contain to the threee main state for execution timing 
 ->resolved, reject and pending  
 ->async/await are used to handle the asynchronous opetaion in the node js , the async are used that measn our function is the aycnchouse and they are return to the promises and await are used for stop the execution code and wait.
 ---------------------------------------------------------------------------------------------------------------
-92.what is difference between the https and http module?
+# 92.what is difference between the https and http module?
 ->Both http and https modules are used to handle API requests. The http module is not secure, but the https module is secure because it uses SSL/SSL certificates. We usually use http in development or testing (UAT, staging), and https in production.
 ---------------------------------------------------------------------------------------------------------------
-93.Without using the express server we can create the node.js server it's possible to creating the server in the node.js ?
+# 93.Without using the express server we can create the node.js server it's possible to creating the server in the node.js ?
 ->Yes, it is possible to create a server in Node.js without Express. The server works, but the disadvantage is that the code becomes longer and harder to manage.
 ---------------------------------------------------------------------------------------------------------------
-94.What is Higher Order Function?
+# 94.What is Higher Order Function?
 -> A higher order function is a function that accepts another function as an argument and/or returns a function.
 
 function show()
@@ -1091,70 +1094,70 @@ newFunction(show);//callback function
 ------------------------------------------------Expressjs------------------------------------------------------
 
 
-What is Express.js and why is it used?
-How does Express.js differ from Node.js?
-How do you install and set up an Express app?
-How do you start an Express server?
-What are middleware functions?
-What is the purpose of next() in middleware?
-What is routing in Express?
-What is the difference between app.get() and app.post()?
-How do you serve static files in Express?
-What are req.params, req.query, and req.body?
-How do you parse incoming request bodies?
-What is the use of res.send() and res.json()?
-How do you redirect in Express?
-How can you send status codes in Express responses?
-What is app.listen() used for?
+# What is Express.js and why is it used?
+# How does Express.js differ from Node.js?
+# How do you install and set up an Express app?
+# How do you start an Express server?
+# What are middleware functions?
+# What is the purpose of next() in middleware?
+# What is routing in Express?
+# What is the difference between app.get() and app.post()?
+# How do you serve static files in Express?
+# What are req.params, req.query, and req.body?
+# How do you parse incoming request bodies?
+# What is the use of res.send() and res.json()?
+# How do you redirect in Express?
+# How can you send status codes in Express responses?
+# What is app.listen() used for?
 
 ⚙️ Intermediate Level
-What is the difference between app.use() and route-specific methods?
-How do you create reusable routes using express.Router()?
-How do you structure a large Express application?
-How do you use environment variables in an Express app?
-What is res.locals and when would you use it?
-How do you implement logging in Express (e.g., using morgan)?
-How do you handle 404 errors in Express?
-How do you create custom error-handling middleware?
-What is a CORS issue, and how do you solve it in Express?
-How do you handle async/await errors in Express routes?
-How do you validate incoming requests in Express (e.g., using express-validator or Joi)?
-How do you manage sessions in Express?
-How do you implement authentication with JWT in Express?
-How do you handle file uploads using multer?
-How do you implement route-level middleware?
-What is the use of helmet in Express?
+# What is the difference between app.use() and route-specific methods?
+# How do you create reusable routes using express.Router()?
+# How do you structure a large Express application?
+# How do you use environment variables in an Express app?
+# What is res.locals and when would you use it?
+# How do you implement logging in Express (e.g., using morgan)?
+# How do you handle 404 errors in Express?
+# How do you create custom error-handling middleware?
+# What is a CORS issue, and how do you solve it in Express?
+# How do you handle async/await errors in Express routes?
+# How do you validate incoming requests in Express (e.g., using express-validator or Joi)?
+# How do you manage sessions in Express?
+# How do you implement authentication with JWT in Express?
+# How do you handle file uploads using multer?
+# How do you implement route-level middleware?
+# What is the use of helmet in Express?
 
 🔐 Advanced Level
-How do you implement role-based access control in Express?
-How do you prevent common security vulnerabilities in Express (e.g., XSS, CSRF)?
-How do you use rate limiting in Express (e.g., express-rate-limit)?
-How would you handle caching in Express apps?
-How do you perform server-side rendering (SSR) with Express?
-How do you write unit tests for Express routes using Jest or Mocha?
-How do you write integration tests with Supertest?
-How do you version your API in Express?
-What’s the difference between synchronous and asynchronous middleware?
-What are some common performance optimizations in Express?
-How do you gracefully shut down an Express server?
-How can you use clustering or workers in Express to improve performance?
-How do you integrate a PostgreSQL or MongoDB database with Express?
-What are some best practices for error logging in production?
-How do you implement pagination in API responses?
-How do you handle large file uploads or streaming responses in Express?
-How can you use Express with WebSockets?
-How do you protect routes in Express (e.g., with middleware)?
-What is the event loop, and how does it relate to Express?
-How do you create a RESTful API using Express?
-How do you implement throttling to prevent abuse in an API?
-How do you pass data between middlewares?
-How can you conditionally apply middleware to specific routes?
-What are signed cookies, and how are they used in Express?
+# How do you implement role-based access control in Express?
+# How do you prevent common security vulnerabilities in Express (e.g., XSS, CSRF)?
+# How do you use rate limiting in Express (e.g., express-rate-limit)?
+# How would you handle caching in Express apps?
+# How do you perform server-side rendering (SSR) with Express?
+# How do you write unit tests for Express routes using Jest or Mocha?
+# How do you write integration tests with Supertest?
+# How do you version your API in Express?
+# What’s the difference between synchronous and asynchronous middleware?
+# What are some common performance optimizations in Express?
+# How do you gracefully shut down an Express server?
+# How can you use clustering or workers in Express to improve performance?
+# How do you integrate a PostgreSQL or MongoDB database with Express?
+# What are some best practices for error logging in production?
+# How do you implement pagination in API responses?
+# How do you handle large file uploads or streaming responses in Express?
+# How can you use Express with WebSockets?
+# How do you protect routes in Express (e.g., with middleware)?
+# What is the event loop, and how does it relate to Express?
+# How do you create a RESTful API using Express?
+# How do you implement throttling to prevent abuse in an API?
+# How do you pass data between middlewares?
+# How can you conditionally apply middleware to specific routes?
+# What are signed cookies, and how are they used in Express?
 
 
 +++++++++++++++++++++++++++++++++++++++++++++++Skymeric Technologies – Node JS Questioner+++++++++++++++++++++++++++++++++++++
 
-✅ 1. Explain the Node.js event loop architecture in detail.
+# ✅ 1. Explain the Node.js event loop architecture in detail.
 Answer:- 
 	Basically Node.js used the libuv library,
 	and this library contains the event loop and thread pool.
@@ -1183,7 +1186,7 @@ Answer:-
 
 	So, that is the overall scenario of the event loop architecture.
 ___________________________________________________________________________________________________
-✅ 2. How does Node.js scale on multi-core CPUs?
+# ✅ 2. How does Node.js scale on multi-core CPUs?
 Answer:
 	Node.js server by default is single-threaded because it uses JavaScript, and JavaScript is a single-threaded programming language.
 
@@ -1199,7 +1202,7 @@ Answer:
 
 	So, NGINX is used for handling load balancing in our application.
 __________________________________________________________________________________________________
-✅ 3. When would you NOT use Node.js?
+# ✅ 3. When would you NOT use Node.js?
 Answer:
 	We should not use Node.js when the application is CPU-intensive work.
 	Because CPU-intensive work blocks the event loop and it affects the performance of the Node.js application.
@@ -1209,7 +1212,7 @@ Answer:
 	CPU-intensive work means tasks like mathematical calculations, video processing, audio processing, like that type of tasks.
 	These tasks are performed by the CPU, and the main CPU keeps working, so in that case the event loop gets blocked.
 ________________________________________________________________________________
-✅ 4. Explain how to handle CPU-intensive tasks
+# ✅ 4. Explain how to handle CPU-intensive tasks
 Answer:
 	If we want to perform CPU-intensive work, we can use the worker threads module.
 	Worker threads create another threads for performing this CPU-intensive work, and they do not block the main thread.
@@ -1247,7 +1250,7 @@ woker.js
 
 	parentPort.postMessage(sum);
 ________________________________________________________________________________________________________________________
-✅ 5. What is the difference between a Microservice and an API Gateway?
+# ✅ 5. What is the difference between a Microservice and an API Gateway?
 Answer :- 
 
 	Microservice means each and every service is independent, because they have their own development, deployment, and also their own database.
@@ -1275,7 +1278,7 @@ Answer :-
 | Used for application features                   | Used for validation, auth, rate limiting, logging, load balancing |
 -----------------------------------------------------------------------------------------------------------------------
 ________________________________________________________________________________________________________________________
-✅ 6. Explain Node.js memory model & GC
+# ✅ 6. Explain Node.js memory model & GC
 Answer :- 
 	In Node.js, the memory model and GC are handled by the V8 JavaScript engine by default, and they do not need to be handled by the programmer.
 
@@ -1294,12 +1297,12 @@ Answer :-
 	The Garbage Collector (GC) also works by default, and it is executed by the V8 JavaScript engine.
 	It is used to remove unwanted or no longer used objects from memory.
 ________________________________________________________________________________________________________________________
-✅ 7. What is backpressure in Node streams?
+# ✅ 7. What is backpressure in Node streams?
 Backpressure: Producer sends data faster than consumer can handle.
 Solution: using .pipe() since it manages flow:
 fs.createReadStream('largefile.txt').pipe(res);
 ________________________________________
-✅ 8. Explain caching patterns in Node backend
+# ✅ 8. Explain caching patterns in Node backend
 Types:
 Layer	Tech
 Browser	HTTP Cache, Service Worker
@@ -1314,7 +1317,7 @@ Example Redis
 const cached = await redis.get(key);
 if (cached) return JSON.parse(cached);
 ________________________________________
-✅ 9. Explain JWT vs Session-based Auth
+# ✅ 9. Explain JWT vs Session-based Auth
 Feature	JWT	Session
 Storage	Client side	Server memory/Redis
 Scalability	High	Needs distributed store
@@ -1324,7 +1327,7 @@ JWT best practices:
 •	HttpOnly cookies
 •	Rotate tokens
 ________________________________________
-✅ 10. What is Domain Driven Design (DDD) in Node?
+# ✅ 10. What is Domain Driven Design (DDD) in Node?
 Purpose: Structure large backend apps
 Layers:
 •	Domain layer — business logic
@@ -1333,7 +1336,7 @@ Layers:
 •	API layer — controllers/routes
 NestJS follows DDD well.
 ________________________________________
-✅ 11. How to prevent blocking event loop?
+# ✅ 11. How to prevent blocking event loop?
 •	Avoid sync functions (fs.readFileSync)
 •	Use worker threads for CPU work
 •	Use async DB drivers
@@ -1342,7 +1345,7 @@ Monitor example:
 const start = Date.now();
 setImmediate(() => console.log(Date.now() - start));
 ________________________________________
-✅ 12. What are Node.js best security practices?
+# ✅ 12. What are Node.js best security practices?
 •	Validate input (Joi/Zod)
 •	Escape output — prevent XSS
 •	Helmet headers
@@ -1350,7 +1353,7 @@ ________________________________________
 •	Rotate secrets
 •	Avoid eval, Function()
 ________________________________________
-✅ 13. Explain DB connection pooling
+# ✅ 13. Explain DB connection pooling
 Connection pool reuses DB connections to improve performance.
 Node ORMs implement pooling:
 •	Sequelize
@@ -1360,7 +1363,7 @@ Node ORMs implement pooling:
 Example (MySQL pool):
 mysql.createPool({ connectionLimit: 10 });
 ________________________________________
-✅ 14. Explain Circuit Breaker pattern
+# ✅ 14. Explain Circuit Breaker pattern
 Used to stop cascading failures in microservices.
 Libraries:
 •	opossum
@@ -1371,7 +1374,7 @@ Behaviors:
 •	Closed → normal
 Good for external API failure handling.
 ________________________________________
-✅ 15. Observability in Node apps
+# ✅ 15. Observability in Node apps
 Key components:
 •	Logs — Winston / Pino
 •	Metrics — Prometheus + Grafana
@@ -1383,47 +1386,47 @@ app.get('/healthz', (req,res)=>res.send('OK'));
 
 
 
-✅ 1. What is the Node.js event loop and why is it important?
+# ✅ 1. What is the Node.js event loop and why is it important?
 Answer:
 -> The event loop is used for handling asynchronous operations in Node.js. . It continuously checks if the call stack is empty or not. When the call stack is empty, the event loop takes tasks from the event queue and passes them to the call stack to execute asynchronous functions. It is important because it handles non-blocking I/O, and every request is independent — one request does not depend on another.
 ________________________________________________________________________________________________________________________
-✅ 2. Explain the difference between microservices and monolithic Node.js architecture.
+# ✅ 2. Explain the difference between microservices and monolithic Node.js architecture.
 Answer:
 -> Monolithic architecture is a single code base that contains all the modules developed and deployed together, and it usually has one database. In this case, if any error or problem occurs, the entire application can go down.
 
 But in microservice architecture, services are created module-wise. They are developed, deployed, and maintained separately, and each service can have its own database. They do not depend on each other, so if one service or module goes down, the overall application does not go down. This is the main advantage of microservices.
 ________________________________________________________________________________________________________________________
-✅ 3. Why is Node.js good for I/O-intensive workloads, but not CPU-heavy tasks?
+# ✅ 3. Why is Node.js good for I/O-intensive workloads, but not CPU-heavy tasks?
 Answer:
 -> Yes, Node.js  is good for I/O-intensive workloads instead of CPU-intensive work because CPU-intensive tasks are performed by the system CPU and they block the event loop. This directly affects the performance of the Node.js  server and increases the load on it. That is the reason CPU-intensive tasks are heavy for a Node.js  server, while I/O-intensive tasks are handled efficiently with its non-blocking architecture.
 ________________________________________________________________________________________________________________________
-✅ 4. How do you handle CPU-intensive tasks in Node.js?
+# ✅ 4. How do you handle CPU-intensive tasks in Node.js?
 Answer:
 -> If we want to handle CPU-intensive tasks in a Node.js  server, we can use the cluster module. The cluster module creates worker processes, and each worker process runs separately to perform the CPU-intensive work. CPU-intensive tasks include things like math calculations, video processing, audio processing, etc. Another way is to create a separate service or use another programming language that is better suited for performing CPU-intensive tasks.
 ________________________________________________________________________________________________________________________
-✅ 5. What is clustering in Node.js?
+# ✅ 5. What is clustering in Node.js?
 Answer:
 -> In Node.js, clustering is achieved using the cluster module. With the help of clustering, worker processes are created, and they depend on the system’s CPU logical cores. For example, if my system contains 4 cores, then 4 worker processes will be created. When multiple clients send requests, Node.js  uses the main thread to pass these requests to the worker processes. The worker processes handle the tasks and, with the help of callbacks, return the response. This is the overall process of clustering in Node.js..
 ________________________________________________________________________________________________________________________
-✅ 6. How do you secure a Node.js API?
+# ✅ 6. How do you secure a Node.js API?
 Answer:
 -> I used JWT, OAuth2 access token and refresh token concepts for authentication and authorization. I also used middleware so that every request is validated before reaching the server. For secure communication, I used HTTPS instead of HTTP, which means every client request is securely transmitted to the server. Most importantly, I avoided writing secret keys directly in the code (using environment variables instead), and I handled a proper CORS policy to control which domains can access the API.
 ________________________________________________________________________________________________________________________
-✅ 7. Difference between process.nextTick(), setImmediate(), setTimeout()?
+# ✅ 7. Difference between process.nextTick(), setImmediate(), setTimeout()?
 Answer:
 -> process.nextTick() is a type of microtask, and it has the first priority compared to setImmediate() and setTimeout().
 -> setImmediate() and setTimeout() are types of macrotasks, and they have second priority after microtasks.
 -> The setTimeout() queue is present in the timer phase of the event loop, while setImmediate() is executed in the check phase of the event loop.
 ________________________________________________________________________________________________________________________
-✅ 8. What is streaming in Node.js?
+# ✅ 8. What is streaming in Node.js?
 Answer:
 -> Streaming means handling file-related tasks like getting the file data and performing operations on it step by step instead of loading the whole file at once. If we want to handle file-related concepts, we can use the fs module and the stream module in Node.js. . Streaming is useful for working with large files or continuous data because it improves performance and reduces memory usage.
 ________________________________________________________________________________________________________________________
-✅ 9. What are Middlewares?
+# ✅ 9. What are Middlewares?
 Answer:
 -> Middlewares are the middle part between the client request and the server. When a request comes, it first passes through the middleware. In this middleware, the request can be validated or processed, and then it is sent to the server. This is the overall concept of middlewares. Middleware is also used for global error handling and can perform tasks like authentication, logging, or modifying request/response objects before reaching the server logic.
 ________________________________________________________________________________________________________________________
-✅ 10. Difference between CommonJS and ES Modules in Node
+# ✅ 10. Difference between CommonJS and ES Modules in Node
 Answer:
 -> CommonJS is the old module system in Node.js, while ES Modules (ESM) are the newest features of JavaScript. There are several differences between them:
 
@@ -1433,7 +1436,7 @@ CommonJS modules are loaded synchronously, while ES Modules are loaded asynchron
 ES Modules support static analysis (tools can understand imports/exports before running code), which helps with tree-shaking and optimization.
 CommonJS is widely used in older Node.js  projects, while ES Modules are the standard for modern JavaScript development.
 ________________________________________________________________________________________________________________________
-✅ 11. When to use Streams vs Buffers?
+# ✅ 11. When to use Streams vs Buffers?
 Answer:
 -> Streams and Buffers are used for handling file-related operations in Node.js.
 Streams are used when we want to load file data chunk by chunk instead of loading the entire file at once. This is useful for large files or continuous data, as it saves memory and improves performance.
@@ -1447,7 +1450,7 @@ Performance						Better for I/O-intensive tasks				Suitable for quick, small ope
 Modules used					fs module with stream API					Buffer class in Node.js
 Example							Reading a big file in chunks				Converting string to binary data
 ________________________________________________________________________________________________________________________
-✅ 12. Explain Middleware vs Interceptors vs Filters
+# ✅ 12. Explain Middleware vs Interceptors vs Filters
 Answer:
 -> Middleware is the middle part between the client request and the server. With the help of middleware, the user request is validated first and then sent to the server.
 
@@ -1455,7 +1458,7 @@ Answer:
 
 -> Filters are mainly used for filtering data or handling exceptions. In JavaScript, filters are often used to process or transform data before sending it back to the client.
 ________________________________________________________________________________________________________________________
-✅ 13. Common Node.js performance improvements
+# ✅ 13. Common Node.js performance improvements
 Answer:
 -> In Node.js  server, performance can be improved in different ways:
 Use the cluster module to create worker processes and utilize multiple CPU cores.
@@ -1463,7 +1466,7 @@ Focus on I/O-intensive work instead of CPU-heavy tasks, since Node.js  is best f
 Handle CORS properly to avoid unnecessary issues with cross-origin requests.
 Use Nginx for load balancing, so multiple requests are distributed across servers efficiently.
 ________________________________________________________________________________________________________________________
-✅ 14. What is backpressure in Node.js streams?
+# ✅ 14. What is backpressure in Node.js streams?
 Answer:
 Backpressure = when the data producer is faster than the consumer, memory can get overloaded.
 Node.js  avoids this problem because readStream.pipe(writeStream) automatically handles backpressure by pausing and resuming the flow so the consumer can catch up.
@@ -1472,7 +1475,7 @@ Node.js  avoids this problem because readStream.pipe(writeStream) automatically 
 Producer faster → backpressure occurs.
 pipe() → solves it by balancing producer and consumer speed.
 ________________________________________________________________________________________________________________________
-✅ 15. Explain JWT token refresh flow
+# ✅ 15. Explain JWT token refresh flow
 Answer:
 	Client sends request with expired access token → server detects it’s expired.
 	Server rejects the request (401 Unauthorized) → client knows token is invalid.

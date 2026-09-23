@@ -435,6 +435,7 @@ https://www.codinn.dev/tricky-javascript/es6789-code-snippets-interview-question
 
     findFirstChar(str);
 ------------------------------------------------------------------
+
 - ]]Find duplicate number
 
   const arr = [23,12,23,42,78,90,42];

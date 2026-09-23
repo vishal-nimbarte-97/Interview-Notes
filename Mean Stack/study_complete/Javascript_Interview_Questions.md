@@ -794,8 +794,6 @@ const arr = [1, 2, 3];
 arr.reverse();
 console.log(arr); // [3, 2, 1]
 
-
-
 -----------------------------------------------------------------------------------------------------------------
 6. Combining and Joining
 join(): Combines elements into a string.
