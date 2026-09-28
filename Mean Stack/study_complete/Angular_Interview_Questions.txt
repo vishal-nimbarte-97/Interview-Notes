@@ -2531,6 +2531,10 @@ Example:
 API response
 Button click events
 Form input changes
+
+=> Observable means data producer. They produce data over time, like API responses, events, and socket data.
+=> When we need the data from the Observable, we subscribe to it.
+=> When we don't need the data anymore, we unsubscribe from the Observable.
 ------------------------------------------------------------------------------------------------------
 113.what is Observer?
 -> Observer is a data consumer and they are received the data from the Observable and handle this data using the next, error and complete method.
@@ -2549,13 +2553,16 @@ this.userObservable.subscribe({
   }
 });
 
+=> Observer is a data consumer. They consume the data produced by the Observable.
+=> We can handle the response using the Observer, like next for the successful data, error for handling errors, and complete when the Observable is completed.
+=> Before the data comes to the Observer, we can use RxJS operators like map, filter, and switchMap to modify or transform the data.
 ------------------------------------------------------------------------------------------------------
 114.what is subscription?
 -> Subscription is the connection between an Observable and an Observer. and [ explain both Observable and Observer ]
 ------------------------------------------------------------------------------------------------------
 115.What is operators?
 -> Operators are functions provided by RxJS that are used to transform observable data 
-example like map(), filter(), find() etc operator are thre to transform the obserable data 
+example like map(), filter(), find() etc operator are there to transform the obserable data 
 ------------------------------------------------------------------------------------------------------
 116.what is subject?
 -> "subject means combination of observable and observer they receive data and send to multiple subscribers"
@@ -2630,7 +2637,7 @@ this.myObservable.subscribe((data: string): void => {
 -> Promise is a core JavaScript object. Using Promise, we can perform asynchronous operations. It has three main states: Pending, Resolved, and Rejected. Once the Promise is executed, it returns either a resolved or rejected state based on the result. We can handle the response using .then() and errors using .catch().
 ------------------------------------------------------------------------------------------------------
 115.Explain About Observable?
--> Observable is a data producer in RxJS. It's simple like API responses, click events, form value changes, and user interactions; all of these can be Observables. First of all, we need to subscribe to the Observable, then the data starts occurring and we receive the response. Unlike Promise, Observable can return multiple values over time, and we can also unsubscribe when it is no longer needed. So this overall process is called an Observable
+-> Observable is a data producer in RxJS. It's simple like API responses, click events, form value changes, and user interactions; all of these can be Observables. First of all, we need to subscribe to the Observable, then the data starts occurring and we receive the response. Unlike Promise, Observable can return multiple values over time, and we can also unsubscribe when it is no longer needed. So this overall process is called an Observable.
 ------------------------------------------------------------------------------------------------------
 120.What are Operator?
 👉 RxJS operator is a predefined function used to modify or handle API response data.
@@ -2786,7 +2793,7 @@ The new request does not depend on the previous one
 ->and, The pipe() method allows you to use one or more operators to transform or handle the data from an Observable.
 ->simpellly, operators is functions of Rxjs.
 ------------------------------------------------------------------------------------------------------
-128.What is Unsubscribe() Important?
+128.What is Unsubscribe() Important?[close the resources & avoid the memory leakage]
 ->We use Observable, so they need to be closed because they use resources.
 ->If we don’t close them, the process keeps running in the background.
 ->So unsubscribe() is used to close the Observable, means stop that process.
@@ -2806,6 +2813,11 @@ ngOnDestroy() {
   this.subscription?.unsubscribe();
 }
 ------------------------------------------------------------------------------------------------------
+
+
+
+
+
 129.What is a Subject in RxJS?
 ->Subject is used to share data between two components.
 ->In this case, we write the Subject inside a service, and this service works like a middle layer between the two components.
