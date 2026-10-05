@@ -2813,11 +2813,6 @@ ngOnDestroy() {
   this.subscription?.unsubscribe();
 }
 ------------------------------------------------------------------------------------------------------
-
-
-
-
-
 129.What is a Subject in RxJS?
 ->Subject is used to share data between two components.
 ->In this case, we write the Subject inside a service, and this service works like a middle layer between the two components.
@@ -2862,11 +2857,12 @@ subject.next(2);
 
 Real Time Senario :- 
 
-Component A  --->  Subject (Broadcast)
+          send events
+Component A  --->  Subject (Broadcast) [Service]
                        |
-                       |----> Component B (Subscriber)
-                       |----> Component C (Subscriber)
-                       |----> Component D (Subscriber)
+                       |----> Component B (Subscribe Service)
+                       |----> Component C (Subscribe Service)
+                       |----> Component D (Subscribe Service)
 
 ------------------------------------------------------------------------------------------------------
 131.What is Shedulers?
@@ -2905,10 +2901,6 @@ If the user types again within that time, the timer resets
 API is called only once after typing stops
 ✔️ This reduces unnecessary API calls and improves performance.
 ------------------------------------------------------------------------------------------------------
-
-
-
-
 135.Cold(Unicast) vs Hot(Multicast) Observable in RxJS?}}}IMP}}}
 
 In Cold Observable:
@@ -2952,7 +2944,7 @@ ngOnInit(): void {
 }
 
 ------------------------------------------------------------------------------------------------------
-136.how to converted cold to hot observable?}}}IMP}}}
+136.how to converted cold to hot observable? }}} IMP }}}
 -> To convert a Cold Observable to a Hot Observable, we can use:
    1.Subject
    2.share() or shareReplay() operator
@@ -2964,7 +2956,7 @@ For example, in order tracking:
 You create an order
 Order current status is Pending
 At this time, API polling continuously checks:
-Order is updated or not
+Order is updated or notz
 Status is changed or not
 The API keeps calling until the order status changes (like Processing, Shipped, Delivered).
 ------------------------------------------------------------------------------------------------------
@@ -3155,7 +3147,7 @@ It is mainly used in cases like the login page.
 If the network is slow, the user may hit multiple requests, which is not good practice and also loads the server.
 So throttleTime allows one request and makes some wait time before sending the next request.
 ------------------------------------------------------------------------------------------------------
-147.Differance between forkJoin() & combineLatest()?}}}IMP}}}
+147.Differance between forkJoin() & combineLatest()? }}} IMP }}}
 => forkJoin() is basically used when we want two or more API responses to be completed first and then perform some calculation or merge the responses.
 In this case, forkJoin() waits for every API to be called and completed.
 After all the APIs are executed, it combines all the responses and then returns the final result to the frontend.
@@ -3201,7 +3193,9 @@ So I use takeUntil to cancel the pending HTTP request when switching modules.
 
 => I cancel unnecessary HTTP requests in Angular using takeUntil so that pending requests don’t complete when the user navigates away.
 ------------------------------------------------------------------------------------------------------
-150.How do you use RxJS with Angular Forms?}}}}IMP}}}}
+
+
+150.How do you use RxJS with Angular Forms? }}}}IMP}}}}
 ->RxJS in Angular Forms helps reactively handle form input and manage API calls efficiently.
 ------------------------------------------------------------------------------------------------------
 151.How do you Handle Real-Time data stream in Angular using RxJS?
